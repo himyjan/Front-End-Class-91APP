@@ -31,7 +31,7 @@
   </script>
   <style type="text/tailwindcss">
     @layer utilities {
-      }
+    }
     </style>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Sans TC" />
   <style>
@@ -42,9 +42,216 @@
     }
   </style>
 </head>
-  <body>
-    <div id="root"></div>
-    <script type="text/babel">
+
+<body>
+  <!-- header and top navBar content -->
+  <header class="">
+    <nav class="fixed top-0 z-[999] w-full mobile:h-[102px] desktop:h-[140px]">
+      <div class="
+                flex
+                bg-[#ffffff]
+                mobile:justify-center mobile:items-center mobile:h-[52px]
+                desktop:flex-row
+                desktop:justify-start
+                desktop:items-center
+                desktop:h-[100px]
+            " id="nav-container">
+        <a href="#" aria-label="logo">
+          <img class="
+                    cursor-pointer
+                    mobile:w-[129px] mobile:h-[24px]
+                    desktop:w-[258px] desktop:h-[48px] desktop:ml-[60px]
+                " src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055669914406982/logo.png" alt=""
+            id="logo" />
+        </a>
+        <div class="
+                desktop:cursor-pointer
+                mobile:hidden
+                desktop:block
+                desktop:mt-[15px]
+                desktop:ml-[95px]
+                desktop:text-[20px]
+                desktop:text-[#3F3A3A]
+                desktop:hover:text-[#8B572A]
+                desktop:tracking-[30px]
+                desktop:leading-[28px]
+                desktop:text-center
+                desktop:border-solid
+                desktop:border-r-[1px]
+                desktop:border-[#3F3A3A]
+                ">
+          <a href="#">女裝</a>
+        </div>
+        <div class="
+                desktop:cursor-pointer
+                mobile:hidden
+                desktop:block
+                desktop:mt-[15px]
+                desktop:ml-[36px]
+                desktop:text-[20px]
+                desktop:text-[#3F3A3A]
+                desktop:hover:text-[#8B572A]
+                desktop:tracking-[30px]
+                desktop:leading-[28px]
+                desktop:text-center
+                desktop:border-solid
+                desktop:border-r-[1px]
+                desktop:border-[#3F3A3A]
+                ">
+          <a href="#">男裝</a>
+        </div>
+        <div class="
+                desktop:cursor-pointer
+                mobile:hidden
+                desktop:block
+                desktop:mt-[15px]
+                desktop:ml-[36px]
+                desktop:text-[20px]
+                desktop:text-[#3F3A3A]
+                desktop:hover:text-[#8B572A]
+                desktop:tracking-[30px]
+                desktop:leading-[28px]
+                desktop:text-center
+                desktop:border-solid
+                desktop:border-r-[1px]
+                desktop:border-[#3F3A3A]
+                ">
+          <a href="#">配件</a>
+        </div>
+
+        <input class="
+                mobile:hidden
+                desktop:block
+                desktop:w-[214px]
+                desktop:h-[44px]
+                desktop:bg-[url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055671386603581/search.png')]
+                desktop:bg-no-repeat
+                desktop:ml-auto
+                desktop:mr-[42px]
+                desktop:bg-right
+                desktop:border-solid
+                desktop:border-[1px]
+                desktop:border-[#979797]
+                desktop:rounded-[20px]
+                desktop:pl-[20px]
+                desktop:placeholder:text-[20px]
+                desktop:placeholder:text-[#8B572A]
+                desktop:placeholder:leading-[24px]
+                " type="text" placeholder="西裝" id="nav-searchBar" />
+
+        <div class="
+                mobile:hidden
+                desktop:flex
+                desktop:cursor-pointer
+                desktop:relative
+                desktop:justify-center
+                desktop:items-center
+                desktop:w-[44px]
+                desktop:h-[44px]
+                desktop:mr-[42px]
+                " id="nav-cart-wrapper">
+          <a href="#">
+            <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007154394585894962/image.png" alt=""
+              aria-label="img-shopping-cart"
+              onmouseover="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1006055626180399154/image_1_.png'"
+              onmouseout="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1007154394585894962/image.png'"
+              class="" id="img-shopping-cart" />
+          </a>
+          <div class="
+                    absolute
+                    flex
+                    justify-center
+                    items-center
+                    w-[24px]
+                    h-[24px]
+                    top-[45%]
+                    left-[45%]
+                    bg-[#8b572a]
+                    rounded-[50%]
+                    text-[#ffffff]
+                    leading-[24px]
+                " id="nav-circle">
+            1
+          </div>
+        </div>
+
+        <a href="#" aria-label="nav-profile">
+          <img class="
+                    mobile:hidden
+                    desktop:cursor-pointer
+                    desktop:block
+                    desktop:w-[40px]
+                    desktop:h-[40px]
+                    desktop:mr-[54px]
+                " src="https://cdn.discordapp.com/attachments/1001702231785099304/1007154394904666112/profile.png"
+            alt=""
+            onmouseover="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1006055670421925960/profile_1.png'"
+            onmouseout="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1007154394904666112/profile.png'"
+            id="nav-profile" />
+        </a>
+
+        <img class="
+                mobile:absolute
+                mobile:right-[16px]
+                mobile:cursor-pointer
+                mobile:block
+                mobile:w-[40px]
+                mobile:h-[40px]
+                desktop:hidden
+                " src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055671386603581/search.png"
+          alt="" id="nav-mobile-search" />
+      </div>
+
+      <div class="
+                bg-[#313538]
+                mobile:flex
+                mobile:justify-evenly
+                mobile:items-center
+                mobile:h-[50px]
+                desktop:h-[40px]
+            " id="nav-block">
+        <div class="
+                mobile:block
+                mobile:cursor-pointer
+                mobile:text-[16px]
+                mobile:text-[#828282]
+                mobile:hover:text-[#ffffff]
+                mobile:leading-[22px]
+                desktop:hidden
+                ">
+          <a href="#">女裝</a>
+        </div>
+        <img class="mobile:block desktop:hidden"
+          src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055671801860126/split.png" alt="" />
+        <div class="
+                mobile:block
+                mobile:cursor-pointer
+                mobile:text-[16px]
+                mobile:text-[#828282]
+                mobile:hover:text-[#ffffff]
+                mobile:leading-[22px]
+                desktop:hidden
+                ">
+          <a href="#">男裝</a>
+        </div>
+        <img class="mobile:block desktop:hidden"
+          src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055671801860126/split.png" alt="" />
+        <div class="
+                mobile:block
+                mobile:cursor-pointer
+                mobile:text-[16px]
+                mobile:text-[#828282]
+                mobile:hover:text-[#ffffff]
+                mobile:leading-[22px]
+                desktop:hidden
+                ">
+          <a href="#">配件</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <script type="text/babel">
       // const {
       //   useState,
       //   useEffect,
@@ -91,8 +298,8 @@
       //     </React.StrictMode>
       //   </QueryClientProvider>
       // );
-    </script>
-    <!--
+  </script>
+  <!--
       Note: this page is a great way to try React but it's not suitable for production.
       It slowly compiles JSX with Babel in the browser and uses a large development build of React.
 
@@ -105,5 +312,6 @@
       You can also use React without JSX, in which case you can remove Babel:
       https://reactjs.org/docs/react-without-jsx.html
     -->
-  </body>
+</body>
+
 </html>

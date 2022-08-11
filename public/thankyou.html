@@ -1,40 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-      charset="UTF-8"
-    />
-    <title>Assignment (Week 0 Part 0)</title>
-    <script src="https://unpkg.com/react/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
 
-    <!-- Don't use this in production: -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/@tanstack/react-query/build/umd/index.production.js"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              clifford: "#da373d",
-            },
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8" />
+  <title>STYLiSH</title>
+  <script src="https://unpkg.com/react/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+
+  <!-- Don't use this in production: -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@tanstack/react-query/build/umd/index.production.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          },
+          screens: {
+            mobile: '0px',
+            // => @media (min-width: 640px) { ... }
+
+            desktop: '1280px',
+            // => @media (min-width: 1280px) { ... }
           },
         },
-      };
-    </script>
-    <style type="text/tailwindcss">
-      @layer utilities {
+      },
+    };
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
       }
     </style>
-    <style>
-      * {
-        margin: 0;
-      }
-    </style>
-  </head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Sans TC" />
+  <style>
+    * {
+      margin: 0;
+      font-family: 'Noto Sans TC';
+      font-style: normal;
+    }
+  </style>
+</head>
   <body>
     <div id="root"></div>
     <script type="text/babel">

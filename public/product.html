@@ -255,7 +255,7 @@
   <div class="flex flex-col w-full mx-auto
           mobile:mt-[102px] mobile:max-w-[100vw]
           desktop:mt-[205px] desktop:max-w-[960px]" id="">
-    <div class="flex mibile:flex-col desktop:flex-row desktop:items-center" id="">
+    <div class="flex mobile:flex-col desktop:flex-row desktop:items-center" id="">
       <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png" alt=""
         class="
               object-cover
@@ -272,9 +272,9 @@
         <div class="mt-[40px] text-[30px] text-[#3F3A3A] leading-[36px]" id="product-name">
           TWD.799
         </div>
-        <div class="flex flex-row w-[360px] h-0 mt-[20px] mb-0
-        content-[''] border-solid border-[#3F3A3A] border-b-[1px] m-auto before:mr-[10px] after:ml-[10px]"
-          id="split-border"></div>
+        <div class="flex flex-row w-[360px] h-0 mt-[20px] mb-0 mx-0
+        content-[''] border-solid border-[#3F3A3A] border-b-[1px] before:mr-[10px] after:ml-[10px]" id="split-border">
+        </div>
         <div class="flex flex-row mt-[30px]" id="product-color">
           <div class="flex items-center w-[72px] text-[20px] text-[#3F3A3A] leading-[24px] tracking-[4px]"
             id="product-color-label">
@@ -312,7 +312,7 @@
                     " id="product-color3"></div>
           </div>
         </div>
-        <div class="flex flex-row mt-[30px]" id="product-size">
+        <div class="flex flex-row mt-[19px]" id="product-size">
           <div class="flex items-center w-[72px] text-[20px] text-[#3F3A3A] leading-[24px] tracking-[4px]"
             id="product-size-label">
             尺寸｜
@@ -361,18 +361,28 @@
                       " id="product-sizeL">L</div>
           </div>
         </div>
-        <div class="flex flex-row mt-[30px]" id="product-amount">
+        <div class="flex flex-row mt-[19px]" id="product-amount">
           <div class="flex items-center w-[72px] text-[20px] text-[#3F3A3A] leading-[24px] tracking-[4px]"
             id="product-amount-label">
             數量｜
           </div>
 
-          <div class="">
-
+          <div
+            class="flex flex-row justify-between items-center w-[160px] h-[44px] bg-[#ffffff] border-solid border-[1px] border-[#979797]"
+            id="">
+            <div class="cursor-pointer w-[9px] h-[32px] ml-[15px] text-[16px] text-[#000000] leading-[32px]">
+              -
+            </div>
+            <div class="cursor-pointer w-[9px] h-[32px] text-[16px] text-[#8B572A] leading-[32px]">
+              1
+            </div>
+            <div class="cursor-pointer w-[9px] h-[32px] mr-[15px] text-[16px] text-[#000000] leading-[32px]">
+              +
+            </div>
           </div>
         </div>
         <div
-          class="flex justify-center items-center w-[360px] h-[64px] mt-[29px] bg-[#000000] text-[20px] text-[#FFFFFF] box-border border-solid border-[1px] border-[#979797]"
+          class="flex justify-center items-center w-[360px] h-[64px] mt-[29px] bg-[#000000] text-[20px] text-[#FFFFFF] leading-[30px] tracking-[4px] box-border border-solid border-[1px] border-[#979797]"
           onclick="alert('加入購物車成功！')">
           加入購物車
         </div>
@@ -411,7 +421,7 @@
             " id="product-image" />
     <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251147196747866/1.png" alt="" class="
               object-cover
-              mobile:w-full mobile:mt-[20px]
+              mobile:w-full mobile:mt-[20px] mobile:mb-[32px]
               desktop:w-[960px] desktop:h-[540px] desktop:mt-[30px] desktop:mb-[49px]
             " id="product-image" />
   </div>
@@ -502,7 +512,7 @@
       </div>
     </div>
 
-    <div class="mobile:block desktop:hidden w-full bg-[#313538] mt-[6px]" id="mobile-bottom">
+    <div class="mobile:block desktop:hidden w-full bg-[#313538]" id="mobile-bottom">
       <div class="flex flex-col items-center max-w-[360px] mx-auto pt-[23px]" id="mobile-container">
         <div class="flex justify-center items-end w-full" id="mobile-contactlist">
           <div class="ml-[40px] mr-[36px]" id="mobile-contact">

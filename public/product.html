@@ -312,10 +312,10 @@
               content-['']
               border-solid border-[#3f3a3a] border-b-[1px]
             " id="split-border"></div>
-        <div class="flex flex-row mobile:mt-[20px] desktop:mt-[10px]" id="product-color">
+        <div class="flex flex-row items-center mobile:mt-[20px] desktop:mt-[10px]" id="product-color">
           <div class="
-                flex
-                items-center
+                inline-block
+                mobile:w-[62px]
                 desktop:w-[72px]
                 text-[#3f3a3a]
                 mobile:text-[14px] mobile:leading-[17px] mobile:tracking-[2.8px]
@@ -390,10 +390,10 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-row mt-[19px]" id="product-size">
+        <div class="flex flex-row items-center mt-[19px]" id="product-size">
           <div class="
-                flex
-                items-center
+                inline-block
+                mobile:w-[62px]
                 desktop:w-[72px]
                 text-[#3f3a3a]
                 mobile:text-[14px] mobile:leading-[17px] mobile:tracking-[2.8px]
@@ -460,11 +460,11 @@
         </div>
         <div class="flex flex-row mt-[19px]" id="product-amount">
           <div class="
-                items-center
-                desktop:w-[72px]
                 text-[#3f3a3a]
                 mobile:hidden
-                desktop:flex
+                mobile:w-[62px]
+                desktop:inline-block
+                desktop:w-[72px]
                 desktop:text-[20px]
                 desktop:leading-[24px]
                 desktop:tracking-[4px]
@@ -494,15 +494,13 @@
                 ">
               -
             </div>
-            <div class="
-                  cursor-pointer
-                  w-[9px]
-                  h-[32px]
-                  text-[16px] text-[#8B572A]
+            <input class="
+                  cursor-pointer w-[95%] text-center
+                  mobile:text-[20px] mobile:text-[#8B572A] mobile:leading-[22px]
+                  desktop:text-[16px] desktop:text-[#8B572A] desktop:leading-[32px]
                   leading-[32px]
-                ">
-              1
-            </div>
+                " placeholder="1" value="1">
+            </input>
             <div class="
                   cursor-pointer
                   w-[9px]

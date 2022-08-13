@@ -267,7 +267,7 @@
           " id="product-image" />
       <div class="
             flex flex-col
-            mobile:ml-[24px]
+            mobile:mx-[24px]
             desktop:ml-[40px]
             desktop:items-start
             desktop:h-[746.66px]
@@ -302,10 +302,10 @@
           <div class="
                 flex
                 items-center
-                w-[72px]
-                text-[20px] text-[#3F3A3A]
-                leading-[24px]
-                tracking-[4px]
+                desktop:w-[72px]
+                text-[#3F3A3A]
+                mobile:text-[14px] mobile:leading-[17px] mobile:tracking-[2.8px]
+                desktop:text-[20px] desktop:leading-[24px] desktop:tracking-[4px]
               " id="product-color-label">
             顏色｜
           </div>
@@ -314,6 +314,8 @@
                 flex flex-row
                 mobile:w-full mobile:items-center mobile:h-[40px]
                 desktop:w-[360px]
+                mobile:ml-[24px]
+                desktop:ml-[24px]
               " id="product-color">
             <div class="
                   cursor-pointer
@@ -348,10 +350,10 @@
           <div class="
                 flex
                 items-center
-                w-[72px]
-                text-[20px] text-[#3F3A3A]
-                leading-[24px]
-                tracking-[4px]
+                desktop:w-[72px]
+                text-[#3F3A3A]
+                mobile:text-[14px] mobile:leading-[17px] mobile:tracking-[2.8px]
+                desktop:text-[20px] desktop:leading-[24px] desktop:tracking-[4px]
               " id="product-size-label">
             尺寸｜
           </div>
@@ -360,6 +362,8 @@
                 flex flex-row
                 mobile:w-full mobile:items-center mobile:h-[40px]
                 desktop:w-[360px]
+                mobile:ml-[24px]
+                desktop:ml-[24px]
               " id="product-size">
             <div class="
                   cursor-pointer
@@ -410,12 +414,11 @@
         </div>
         <div class="flex flex-row mt-[19px]" id="product-amount">
           <div class="
-                flex
                 items-center
-                w-[72px]
-                text-[20px] text-[#3F3A3A]
-                leading-[24px]
-                tracking-[4px]
+                desktop:w-[72px]
+                text-[#3F3A3A]
+                mobile:hidden
+                desktop:flex desktop:text-[20px] desktop:leading-[24px] desktop:tracking-[4px]
               " id="product-amount-label">
             數量｜
           </div>
@@ -424,7 +427,8 @@
                 flex flex-row
                 justify-between
                 items-center
-                w-[160px]
+                mobile:w-full
+                desktop:w-[160px]
                 h-[44px]
                 bg-[#ffffff]
                 border-solid border-[1px] border-[#979797]
@@ -464,7 +468,8 @@
               flex
               justify-center
               items-center
-              w-[360px]
+              mobile:w-full
+              desktop:w-[360px]
               h-[64px]
               mt-[29px]
               bg-[#000000]

@@ -34,6 +34,8 @@
       }
     </style>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Sans TC" />
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
   <style>
     * {
       margin: 0;
@@ -79,7 +81,7 @@
               desktop:border-solid
               desktop:border-r-[1px]
               desktop:border-[#3F3A3A]
-            " name="top-nav-bar-desktop-women-dresses">
+            " onclick="fetch" name="top-nav-bar-desktop-women-dresses">
           <a href="#/women-dresses">女裝</a>
         </div>
         <div class="
@@ -1092,18 +1094,25 @@
     // mouseover 跟 mouseenter差別在哪? https://ithelp.ithome.com.tw/articles/10251677
     { //w0p2
       const slidesImage = document.querySelector('div[name="slides"]');
+      // slides navigation dot box for putting slides navigation dot in it
       const dotBox = document.querySelector('div[name="dot-box"]');
       const slidesTextMain = document.querySelector('div[name="slides-text-main"]');
       const slidesTextDescribe = document.querySelector('div[name="slides-text-describe"]');
+      // get marketingCampaignAPISlidersPromise for API promise
+      const marketingCampaignAPISlidersPromise = fetch("https://api.appworks-school.tw/api/1.0/marketing/campaigns")
+        .then((response) => response.json())
+      // get json key "data" value in API promise
+      const apiJson = await marketingCampaignAPISlidersPromise.then(result => result.data);
+      // intervalID to save interval id, which's running changeSlides function
+      let intervalID;
+      // slides current activating dot index
+      let currentIndex = 0;
+      // string variable to save create dotBox dot html code
+      let addToDotListHtml = "";
 
-      function autoplaySlides(data) {
-        const apiJson = data.data;
-        let intervalID;
-        let currentIndex = 0;
-        let addToDotListHtml = "";
-
-        for (let i = 0; i < apiJson.length; i++) {
-          addToDotListHtml += `<div class="
+      // create dotBox dot html code in string
+      for (let i = 0; i < apiJson.length; i++) {
+        addToDotListHtml += `<div class="
                             cursor-pointer
                             bg-no-repeat
                             bg-cover
@@ -1118,72 +1127,78 @@
                             bg-[url('hhttps://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png')]
                             " data-index=${i} data-id=${apiJson[i].product_id} name="dot
                             "></div>`;
-        }
-
-        dotBox.innerHTML = addToDotListHtml;
-        const dotArray = document.querySelectorAll('div[name="dot-box"] div');
-
-        function changeToIndex(index) {
-          slidesImage.style.backgroundImage = `url(${apiJson[index].picture})`;
-          slidesTextMain.innerHTML = apiJson[index].story.split("。")[0].replaceAll("\r\n", "<br>");
-          slidesTextDescribe.innerHTML = apiJson[index].story.split("。")[1].replaceAll("<br>", "");
-          dotArray.forEach((dotElement) => {
-            dotElement.style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png')`;
-          });
-          dotArray[index].style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dot-1.png')`;
-          currentIndex = index;
-        }
-
-        dotBox.addEventListener("click", (e) => {
-          changeToIndex(e.target.dataset.index);
-        });
-
-        function changeSlides() {
-          if (currentIndex < apiJson.length) {
-            changeToIndex(currentIndex);
-            currentIndex++;
-          } else {
-            changeToIndex(0);
-          }
-        }
-
-        function AddChangeSlidesInterval() {
-          clearInterval(intervalID);
-          intervalID = setInterval(changeSlides, 5000);
-        }
-
-        slidesImage.addEventListener("mouseover", (intervalID) => {
-          clearInterval(intervalID);
-        });
-
-        slidesImage.addEventListener("mouseout", () => {
-          AddChangeSlidesInterval()
-        });
-
-        changeToIndex(0);
-        AddChangeSlidesInterval();
       }
 
-      fetch("https://api.appworks-school.tw/api/1.0/marketing/campaigns")
-        .then((response) => response.json())
-        .then((data) => autoplaySlides(data));
+      // add dotBox dot html code to dotBox
+      dotBox.innerHTML = addToDotListHtml;
+      // get dotArray array from html querySelectorAll( .dot-box div )
+      const dotArray = document.querySelectorAll('div[name="dot-box"] div');
+
+      // changeSlidesToIndex function, More easily to changing change slides to index informations
+      function changeSlidesToIndex(index) {
+        slidesImage.style.backgroundImage = `url(${apiJson[index].picture})`;
+        slidesTextMain.innerHTML = apiJson[index].story.split("。")[0].replaceAll("\r\n", "<br>");
+        slidesTextDescribe.innerHTML = apiJson[index].story.split("。")[1].replaceAll("<br>", "");
+        dotArray.forEach((dotElement) => {
+          dotElement.style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png')`;
+        });
+        dotArray[index].style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dot-1.png')`;
+        currentIndex = index;
+      }
+
+      // add click event listener to dotBox, for changing change slides to trigger event dot index informations
+      dotBox.addEventListener("click", (e) => {
+        changeSlidesToIndex(e.target.dataset.index);
+      });
+
+      // changeSlides function, that's function for setInterval to autopPlay slides
+      function changeSlides() {
+        if (currentIndex < apiJson.length) {
+          changeSlidesToIndex(currentIndex);
+          currentIndex++;
+        } else {
+          changeSlidesToIndex(0);
+        }
+      }
+
+      // AddChangeSlidesInterval use for create a interval and save interval id. Set interval to repeat running changeSlides function with delay time
+      function AddChangeSlidesInterval(delay) {
+        clearInterval(intervalID);
+        intervalID = setInterval(changeSlides, delay);
+      }
+
+      // remove interval when mouse hover slides area,remove interval running changeSlides function by interval id
+      slidesImage.addEventListener("mouseover", (intervalID) => {
+        clearInterval(intervalID);
+      });
+
+      // create a new interval running changeSlides function with delay 5 seconds
+      slidesImage.addEventListener("mouseout", () => {
+        AddChangeSlidesInterval(5000)
+      });
+
+      // Main function call for auto play slides entry point
+      changeSlidesToIndex(0);
+      AddChangeSlidesInterval(5000);
     }
 
     { //w0p3
       const productList = document.querySelector('div[name="product-list"]');
       const spinner = document.querySelector('div[name="spinner"]');
+      // get marketingCampaignAPISlidersPromise for API promise
+      const productListAPIPromise = fetch('https://api.appworks-school.tw/api/1.0/products/all')
+        .then((response) => response.json())
+      // get json key "data" in API promise
+      const products = await productListAPIPromise.then(result => result.data);
+      let addToProductListHtml = '';
+      const url = 'https://api.appworks-school.tw/api/1.0/products/all';
+      // let count = data.next_paging;
+      let hasNextPage = true;
 
-      function showProducts(data) {
-        const products = data.data;
-        let addToProductListHtml = '';
-        const url = 'https://api.appworks-school.tw/api/1.0/products/all';
-        let count = data.next_paging;
-        let hasNextPage = true;
-
-        for (let i = 0; i < products.length; i++) {
-          let addToProductColorListHtml = '';
-          for (let j = 0; j < products[i]['colors'].length; j++) {
-            addToProductColorListHtml += `<div class="
+      for (let i = 0; i < products.length; i++) {
+        let addToProductColorListHtml = '';
+        for (let j = 0; j < products[i]['colors'].length; j++) {
+          addToProductColorListHtml += `<div class="
                                               cursor-pointer
                                               bg-[#${products[i]['colors'][j].code}]
                                               border-solid border-[1px] border-[#d3d3d3]
@@ -1192,8 +1207,8 @@
                                               desktop:h-[24px]
                                               desktop:mt-[20px]
                                               desktop:mr-[10px]" name="product-colors"></div>`;
-          }
-          addToProductListHtml += `
+        }
+        addToProductListHtml += `
               <div class="
                   flex flex-col
                   mobile:w-[46%] mobile:mx-[3px]
@@ -1236,13 +1251,8 @@
                     desktop:tracking-[4px]" name="product-price">TWD.${products[i].price}</div>
               </div>
               `;
-        }
-        productList.innerHTML = addToProductListHtml;
       }
-
-      fetch('https://api.appworks-school.tw/api/1.0/products/all')
-        .then((response) => response.json())
-        .then((data) => showProducts(data));
+      productList.innerHTML = addToProductListHtml;
     }
 
     { //w0p4

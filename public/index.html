@@ -306,22 +306,15 @@
           mobile:mt-[265px]
           desktop:mt-[596px]
         " name="dot-box">
-      <div class="
-            cursor-pointer
-            mobile:w-[4px] mobile:h-[4px] mobile:ml-[4.4px] mobile:mr-[4.4px]
-            desktop:w-[10px]
-            desktop:h-[10px]
-            desktop:ml-[11px]
-            desktop:mr-[11px]" name="slides-dot">
-        <!-- <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dot-1.png" class="
-            cursor-pointer
-            mobile:w-[4px] mobile:h-[4px] mobile:ml-[4.4px] mobile:mr-[4.4px]
-            desktop:w-[10px]
-            desktop:h-[10px]
-            desktop:ml-[11px]
-            desktop:mr-[11px]
-          " alt="" />
-      <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png" class="
+      <!-- <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dotArray-1.png" class="
+                cursor-pointer
+                mobile:w-[4px] mobile:h-[4px] mobile:ml-[4.4px] mobile:mr-[4.4px]
+                desktop:w-[10px]
+                desktop:h-[10px]
+                desktop:ml-[11px]
+                desktop:mr-[11px]
+              " alt="" />
+      <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dotArray-1.png" class="
             cursor-pointer
             mobile:w-[4px] mobile:h-[4px] mobile:ml-[4.4px] mobile:mr-[4.4px]
             desktop:w-[10px]
@@ -329,7 +322,7 @@
             desktop:ml-[11px]
             desktop:mr-[11px]
           " alt="" />
-      <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png" class="
+      <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dotArray-2.png" class="
             cursor-pointer
             mobile:w-[4px] mobile:h-[4px] mobile:ml-[4.4px] mobile:mr-[4.4px]
             desktop:w-[10px]
@@ -337,7 +330,7 @@
             desktop:ml-[11px]
             desktop:mr-[11px]
           " alt="" />
-      <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png" class="
+      <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dotArray-2.png" class="
             cursor-pointer
             mobile:w-[4px] mobile:h-[4px] mobile:ml-[4.4px] mobile:mr-[4.4px]
             desktop:w-[10px]
@@ -345,7 +338,15 @@
             desktop:ml-[11px]
             desktop:mr-[11px]
           " alt="" />
-      <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png" class="
+      <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dotArray-2.png" class="
+            cursor-pointer
+            mobile:w-[4px] mobile:h-[4px] mobile:ml-[4.4px] mobile:mr-[4.4px]
+            desktop:w-[10px]
+            desktop:h-[10px]
+            desktop:ml-[11px]
+            desktop:mr-[11px]
+          " alt="" />
+      <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dotArray-2.png" class="
             cursor-pointer
             mobile:w-[4px] mobile:h-[4px] mobile:ml-[4.4px] mobile:mr-[4.4px]
             desktop:w-[10px]
@@ -353,8 +354,8 @@
             desktop:ml-[11px]
             desktop:mr-[11px]
           " alt="" /> -->
-      </div>
     </div>
+  </div>
   </div>
 
   <div class="flex justify-center w-full">
@@ -1071,21 +1072,18 @@
 
   <script type="module">
     // https://swiperjs.com/demos#autoplay
+    // mouseover 跟 mouseenter差別在哪? https://ithelp.ithome.com.tw/articles/10251677
     { //w0p2
-      const slidesImg = document.querySelector('div[name="slides"]');
-      const dotList = document.querySelector('div[name="dot-box"]');
+      const slidesImage = document.querySelector('div[name="slides"]');
+      const dotBox = document.querySelector('div[name="dot-box"]');
       const slidesTextMain = document.querySelector('div[name="slides-text-main"]');
       const slidesTextDescribe = document.querySelector('div[name="slides-text-describe"]');
 
-      fetch('https://api.appworks-school.tw/api/1.0/marketing/campaigns')
-        .then((response) => response.json())
-        .then((data) => autoplaySlides(data));
-
       function autoplaySlides(data) {
         const apiJson = data.data;
-        let interval;
+        let intervalID;
         let currentIndex = 0;
-        let addToDotListHtml = '';
+        let addToDotListHtml = "";
 
         for (let i = 0; i < apiJson.length; i++) {
           addToDotListHtml += `<div class="
@@ -1105,22 +1103,22 @@
                             "></div>`;
         }
 
-        dotList.innerHTML = addToDotListHtml;
-        const dot = document.querySelectorAll('div[name="dot-box"] div');
+        dotBox.innerHTML = addToDotListHtml;
+        const dotArray = document.querySelectorAll('div[name="dot-box"] div');
 
         function changeToIndex(index) {
-          slidesImg.style.backgroundImage = `url(${apiJson[index].picture})`;
-          slidesTextMain.innerHTML = apiJson[index].story.replace('\r\n', '<br />').split('。')[0];
-          slidesTextDescribe.innerHTML = apiJson[index].story.replace('\r\n', '<br />').split('。')[1];
-          for (let i = 0; i < dot.length; i++) {
-            dot[i].style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png')`;
-          }
-          dot[index].style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dot-1.png')`;
-          currentIndex = index
+          slidesImage.style.backgroundImage = `url(${apiJson[index].picture})`;
+          slidesTextMain.innerHTML = apiJson[index].story.split("。")[0].replaceAll("\r\n", "<br>");
+          slidesTextDescribe.innerHTML = apiJson[index].story.split("。")[1].replaceAll("<br>", "");
+          dotArray.forEach((dotElement) => {
+            dotElement.style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png')`;
+          });
+          dotArray[index].style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dot-1.png')`;
+          currentIndex = index;
         }
 
-        dotList.addEventListener('click', (e) => {
-          changeToIndex(e.target.dataset.index)
+        dotBox.addEventListener("click", (e) => {
+          changeToIndex(e.target.dataset.index);
         });
 
         function changeSlides() {
@@ -1132,16 +1130,26 @@
           }
         }
 
-        slidesImg.addEventListener('mouseenter', (interval) => {
-          clearInterval(interval);
+        function AddChangeSlidesInterval() {
+          clearInterval(intervalID);
+          intervalID = setInterval(changeSlides, 5000);
+        }
+
+        slidesImage.addEventListener("mouseover", () => {
+          clearAllIntervalById()
         });
 
-        slidesImg.addEventListener('mouseleave', (interval) => {
-          interval = setInterval(changeSlides, 5000);
+        slidesImage.addEventListener("mouseout", () => {
+          AddChangeSlidesInterval()
         });
 
-        interval = setInterval(changeSlides, 5000);
+        changeToIndex(0);
+        AddChangeSlidesInterval();
       }
+
+      fetch("https://api.appworks-school.tw/api/1.0/marketing/campaigns")
+        .then((response) => response.json())
+        .then((data) => autoplaySlides(data));
     }
   </script>
 

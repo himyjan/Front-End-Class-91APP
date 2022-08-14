@@ -1110,17 +1110,11 @@
         function changeToIndex(index) {
           slidesImg.style.backgroundImage = `url(${apiJson[index].picture})`;
           slidesTextMain.innerHTML = apiJson[index].story.split("。")[0].replaceAll("\r\n", "<br>");
-          slidesTextDescribe.innerHTML = apiJson[index].story
-            .split("。")[1]
-            .replaceAll("<br>", "");
+          slidesTextDescribe.innerHTML = apiJson[index].story.split("。")[1].replaceAll("<br>", "");
           for (let i = 0; i < dot.length; i++) {
-            dot[
-              i
-            ].style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png')`;
+            dot[i].style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png')`;
           }
-          dot[
-            index
-          ].style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dot-1.png')`;
+          dot[index].style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dot-1.png')`;
           currentIndex = index;
         }
 

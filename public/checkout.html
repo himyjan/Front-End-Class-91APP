@@ -816,13 +816,11 @@
               " type="text" placeholder="收件人姓名" id="nav-searchBar" />
         </div>
         <div class="
-              mobile:w-full
-              desktop:w-[352px]
               mobile:mt-[6px]
-              ml-0
-              desktop:mt-[10px] desktop:ml-[344px]
-              inline-block
-              text-[#8b572a]
+              desktop:mt-[10px]
+              text-end text-[#8b572a]
+              mobile:max-w-none
+              desktop:max-w-[696px]
               mobile:text-[14px] mobile:leading-[17px]
               desktop:text-[16px] desktop:leading-[19px]
             " id=" cart-title">
@@ -1115,102 +1113,99 @@
                 desktop:placeholder:text-[16px]
                 desktop:placeholder:leading-[19px]
               " type="text" placeholder="後三碼" id="nav-searchBar" />
+        </div>
+        <div class="
+              flex flex-col
+              w-full
+              ml-auto
+              mobile:mt-[24px] mobile:mb-[28px]
+              desktop:mt-[40px] desktop:mb-[148px]
+            " id="product-info">
+          <div class="flex flex-row items-center ml-auto" id="">
+            <div class="text-[#3f3a3a] text-[16px] leading-[19px]" id="product-name">
+              總金額
+            </div>
+            <div class="
+                  ml-auto
+                  mr-[8px]
+                  text-[#3f3a3a] text-[16px]
+                  leading-[19px]
+                " id="product-name">
+              NT.
+            </div>
+            <div class="text-[#3f3a3a] text-[30px] leading-[36px]" id="product-name">
+              2397
+            </div>
+          </div>
+          <div class="flex flex-row items-center mt-[20px] ml-auto" id="">
+            <div class="text-[#3f3a3a] text-[16px] leading-[19px]" id="product-name">
+              運費
+            </div>
+            <div class="
+                  ml-auto
+                  mr-[8px]
+                  text-[#3f3a3a] text-[16px]
+                  leading-[19px]
+                " id="product-name">
+              NT.
+            </div>
+            <div class="text-[#3f3a3a] text-[30px] leading-[36px]" id="product-name">
+              30
+            </div>
+          </div>
 
           <div class="
-                flex flex-col
+                flex flex-row
                 w-full
+                h-0
+                my-[20px]
                 ml-auto
-                mobile:mt-[24px] mobile:mb-[28px]
-                desktop:mt-[40px] desktop:mb-[148px]
-              " id="product-info">
-            <div class="flex flex-row items-center ml-auto" id="">
-              <div class="text-[#3f3a3a] text-[16px] leading-[19px]" id="product-name">
-                總金額
-              </div>
-              <div class="
-                    ml-auto
-                    mr-[8px]
-                    text-[#3f3a3a] text-[16px]
-                    leading-[19px]
-                  " id="product-name">
-                NT.
-              </div>
-              <div class="text-[#3f3a3a] text-[30px] leading-[36px]" id="product-name">
-                2397
-              </div>
-            </div>
-            <div class="flex flex-row items-center mt-[20px] ml-auto" id="">
-              <div class="text-[#3f3a3a] text-[16px] leading-[19px]" id="product-name">
-                運費
-              </div>
-              <div class="
-                    ml-auto
-                    mr-[8px]
-                    text-[#3f3a3a] text-[16px]
-                    leading-[19px]
-                  " id="product-name">
-                NT.
-              </div>
-              <div class="text-[#3f3a3a] text-[30px] leading-[36px]" id="product-name">
-                30
-              </div>
-            </div>
+                max-w-[240px]
+                content-['']
+                border-solid border-[#3f3a3a] border-b-[1px]
+              " id="split-border"></div>
 
+          <div class="flex flex-row items-center ml-auto" id="">
+            <div class="text-[#3f3a3a] text-[16px] leading-[19px]" id="product-name">
+              應付金額
+            </div>
             <div class="
-                  flex flex-row
-                  w-full
-                  h-0
-                  my-[20px]
                   ml-auto
-                  max-w-[240px]
-                  content-['']
-                  border-solid border-[#3f3a3a] border-b-[1px]
-                " id="split-border"></div>
-
-            <div class="flex flex-row items-center ml-auto" id="">
-              <div class="text-[#3f3a3a] text-[16px] leading-[19px]" id="product-name">
-                應付金額
-              </div>
-              <div class="
-                    ml-auto
-                    mr-[8px]
-                    text-[#3f3a3a] text-[16px]
-                    leading-[19px]
-                  " id="product-name">
-                NT.
-              </div>
-              <div class="text-[#3f3a3a] text-[30px] leading-[36px]" id="product-name">
-                2427
-              </div>
+                  mr-[8px]
+                  text-[#3f3a3a] text-[16px]
+                  leading-[19px]
+                " id="product-name">
+              NT.
             </div>
-
-            <div class="
-                  cursor-pointer
-                  flex
-                  justify-center
-                  items-center
-                  mobile:w-full
-                  desktop:w-[240]
-                  mobile:h-[44px]
-                  desktop:h-[64px]
-                  mobile:mt-[36px]
-                  desktop:mt-[50px]
-                  bg-[#000000]
-                  text-[#FFFFFF]
-                  mobile:text-[16px]
-                  mobile:leading-[30px]
-                  mobile:tracking-[3.2px]
-                  desktop:text-[20px]
-                  desktop:leading-[30px]
-                  desktop:tracking-[4px]
-                  mobile:border-none
-                  desktop:box-border
-                  desktop:border-solid
-                  desktop:border-[1px]
-                  desktop:border-[#979797]
-                " onclick="alert('開始付款！')">
-              確認付款
+            <div class="text-[#3f3a3a] text-[30px] leading-[36px]" id="product-name">
+              2427
             </div>
+          </div>
+
+          <div class="
+                cursor-pointer
+                flex
+                justify-center
+                items-center
+                mobile:w-full
+                desktop:w-[240]
+                mobile:h-[44px]
+                desktop:h-[64px]
+                mobile:mt-[36px]
+                desktop:mt-[50px]
+                bg-[#000000]
+                text-[#FFFFFF]
+                mobile:text-[16px] mobile:leading-[30px] mobile:tracking-[3.2px]
+                desktop:text-[20px]
+                desktop:leading-[30px]
+                desktop:tracking-[4px]
+                mobile:border-none
+                desktop:box-border
+                desktop:border-solid
+                desktop:border-[1px]
+                desktop:border-[#979797]
+              " onclick="alert('開始付款！')">
+            確認付款
           </div>
         </div>
       </div>

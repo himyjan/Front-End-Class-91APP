@@ -356,7 +356,6 @@
           " alt="" /> -->
     </div>
   </div>
-  </div>
 
   <div class="flex justify-center w-full">
     <div class="
@@ -1151,6 +1150,45 @@
         .then((response) => response.json())
         .then((data) => autoplaySlides(data));
     }
+
+    { //w0p3
+      const product = document.querySelector('.product');
+
+      // window.onload();
+
+      function showProducts(data) {
+        const products = data.data;
+        let li = '';
+
+        for (let i = 0; i < products.length; i++) {
+          let colorList = '';
+          for (let j = 0; j < products[i]['colors'].length; j++) {
+            colorList += `<li class="product-colors" style="background-color: #${products[i]['colors'][j].code}"></li>`;
+          }
+          li += `
+			<li class="product-list">
+			<img src="${products[i].main_image}" />
+			<ul class="product-color">
+			${colorList}
+			</ul>
+			<p class="product-name">${products[i].title}</p>
+			<p class="product-price">TWD.${products[i].price}</p>
+			</li>
+			`;
+        }
+        product.innerHTML = li;
+      }
+
+
+      fetch('https://api.appworks-school.tw/api/1.0/products/all')
+        .then((response) => response.json())
+        .then((data) => showProducts(data));
+    }
+
+    { //w0p4
+
+    }
+
   </script>
 
   <script type="text/babel">

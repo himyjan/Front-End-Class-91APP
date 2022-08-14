@@ -305,15 +305,16 @@
           max-w-[1200px]
           mobile:mt-[265px]
           desktop:mt-[596px]
-        " name="dotArray-box">
-      <div class="
-            cursor-pointer
-            mobile:w-[4px] mobile:h-[4px] mobile:ml-[4.4px] mobile:mr-[4.4px]
-            desktop:w-[10px]
-            desktop:h-[10px]
-            desktop:ml-[11px]
-            desktop:mr-[11px]" name="slides-dotArray">
-        <!-- <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dotArray-1.png" class="
+        " name="dot-box">
+      <!-- <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dotArray-1.png" class="
+                cursor-pointer
+                mobile:w-[4px] mobile:h-[4px] mobile:ml-[4.4px] mobile:mr-[4.4px]
+                desktop:w-[10px]
+                desktop:h-[10px]
+                desktop:ml-[11px]
+                desktop:mr-[11px]
+              " alt="" />
+      <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dotArray-1.png" class="
             cursor-pointer
             mobile:w-[4px] mobile:h-[4px] mobile:ml-[4.4px] mobile:mr-[4.4px]
             desktop:w-[10px]
@@ -353,8 +354,8 @@
             desktop:ml-[11px]
             desktop:mr-[11px]
           " alt="" /> -->
-      </div>
     </div>
+  </div>
   </div>
 
   <div class="flex justify-center w-full">
@@ -1099,8 +1100,8 @@
                             desktop:h-[10px]
                             desktop:ml-[11px]
                             desktop:mr-[11px]
-                            bg-[url('hhttps://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dotArray-2.png')]
-                            " data-index=${i} data-id=${apiJson[i].product_id} name="dotArray
+                            bg-[url('hhttps://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png')]
+                            " data-index=${i} data-id=${apiJson[i].product_id} name="dot
                             "></div>`;
         }
 
@@ -1112,9 +1113,9 @@
           slidesTextMain.innerHTML = apiJson[index].story.split("。")[0].replaceAll("\r\n", "<br>");
           slidesTextDescribe.innerHTML = apiJson[index].story.split("。")[1].replaceAll("<br>", "");
           dotArray.forEach((dotElement) => {
-            dotElement.style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dotArray-2.png')`;
+            dotElement.style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png')`;
           });
-          dotArray[index].style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dotArray-1.png')`;
+          dotArray[index].style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dot-1.png')`;
           currentIndex = index;
         }
 

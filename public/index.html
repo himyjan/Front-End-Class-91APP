@@ -1111,8 +1111,8 @@
 
         function changeToIndex(index) {
           slidesImg.style.backgroundImage = `url(${apiJson[index].picture})`;
-          slidesTextMain.innerHTML = apiJson[index].story.replace('\r\n', '<br />').split('。')[0];
-          slidesTextDescribe.innerHTML = apiJson[index].story.replace('\r\n', '<br />').split('。')[1];
+          slidesTextMain.innerHTML = apiJson[index].story.replaceAll('\r\n', '<br />').split('。')[0];
+          slidesTextDescribe.innerHTML = apiJson[index].story.replaceAll('\r\n', '<br />').split('。')[1];
           for (let i = 0; i < dot.length; i++) {
             dot[i].style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png')`;
           }

@@ -1171,10 +1171,14 @@
 
     { //w0p3
       const productList = document.querySelector('div[name="product-list"]');
+      const spinner = document.querySelector('div[name="spinner"]');
 
       function showProducts(data) {
         const products = data.data;
         let addToProductListHtml = '';
+        const url = 'https://api.appworks-school.tw/api/1.0/products/all';
+        let count = data.next_paging;
+        let hasNextPage = true;
 
         for (let i = 0; i < products.length; i++) {
           let addToProductColorListHtml = '';

@@ -1134,8 +1134,8 @@
           intervalID = setInterval(changeSlides, 5000);
         }
 
-        slidesImage.addEventListener("mouseover", () => {
-          clearAllIntervalById()
+        slidesImage.addEventListener("mouseover", (intervalID) => {
+          clearInterval(intervalID);
         });
 
         slidesImage.addEventListener("mouseout", () => {

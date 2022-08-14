@@ -34,6 +34,8 @@
       }
     </style>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Sans TC" />
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
   <style>
     * {
       margin: 0;
@@ -79,8 +81,8 @@
               desktop:border-solid
               desktop:border-r-[1px]
               desktop:border-[#3F3A3A]
-            " name="top-nav-bar-desktop-women-dresses">
-          <a href="#">女裝</a>
+            " onclick="fetch" name="top-nav-bar-desktop-women-dresses">
+          <a href="#/women-dresses">女裝</a>
         </div>
         <div class="
               desktop:cursor-pointer
@@ -98,7 +100,7 @@
               desktop:border-r-[1px]
               desktop:border-[#3F3A3A]
             " name="top-nav-bar-desktop-men-dresses">
-          <a href="#">男裝</a>
+          <a href="#/men-dresses">男裝</a>
         </div>
         <div class="
               desktop:cursor-pointer
@@ -115,8 +117,8 @@
               desktop:border-solid
               desktop:border-r-[1px]
               desktop:border-[#3F3A3A]
-            " name="top-nav-bar-desktop-accessory">
-          <a href="#">配件</a>
+            " name="top-nav-bar-desktop-accessories">
+          <a href="#/accessories">配件</a>
         </div>
 
         <input class="
@@ -168,8 +170,10 @@
                 bg-[#8b572a]
                 rounded-[50%]
                 text-[#ffffff]
+                text-[16px]
                 leading-[24px]
               " name="top-nav-bar-desktop-shopping-cart-notification-numbers">
+            <div class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#8b572a] opacity-75"></div>
             1
           </div>
         </div>
@@ -217,7 +221,7 @@
               mobile:leading-[22px]
               desktop:hidden
             " name="top-nav-bar-below-mobile-women-dresses">
-          <a href="#">女裝</a>
+          <a href="#/women-dresses">女裝</a>
         </div>
         <img class="mobile:block desktop:hidden"
           src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055671801860126/split.png" alt="" />
@@ -230,7 +234,7 @@
               mobile:leading-[22px]
               desktop:hidden
             " name="top-nav-bar-below-mobile-men-dresses">
-          <a href="#">男裝</a>
+          <a href="#/men-dresses">男裝</a>
         </div>
         <img class="mobile:block desktop:hidden"
           src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055671801860126/split.png" alt="" />
@@ -242,8 +246,8 @@
               mobile:hover:text-[#ffffff]
               mobile:leading-[22px]
               desktop:hidden
-            " name="top-nav-bar-below-mobile-accessory">
-          <a href="#">配件</a>
+            " name="top-nav-bar-below-mobile-accessories">
+          <a href="#/accessories">配件</a>
         </div>
       </div>
     </nav>
@@ -357,12 +361,13 @@
     </div>
   </div>
 
-  <div class="flex justify-center w-full">
+  <div class="flex flex-col justify-center w-full">
     <div class="
           flex flex-wrap
           justify-center
           slidesTextMain-start
           w-full
+          mx-auto
           mobile:mt-[15px] mobile:max-w-[100vw]
           desktop:mt-[70px] desktop:max-w-[1200px]
         " name="product-list">
@@ -847,6 +852,20 @@
         </div>
       </div> -->
     </div>
+    <div role="status" class="mx-auto animate-bounce" name="spinner">
+      <div class="animate-pulse">
+        <svg class="inline mr-2 w-32 h-32 text-gray-200 animate-spin dark:text-gray-600 fill-orange-600"
+          viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+            fill="currentColor" />
+          <path
+            d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+            fill="currentFill" />
+        </svg>
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
   </div>
 
   <!-- footer and bottom navBar content -->
@@ -1043,8 +1062,9 @@
                 left-[37%]
                 bg-[#8b572a]
                 rounded-[50%]
-                text-[#ffffff]
+                text-[#ffffff] text-[16px] leading-[24px]
               " name="bottom-nav-bar-mobile-stick-shopping-cart-notification-numbers">
+            <div class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#8b572a] opacity-75"></div>
             1
           </div>
         </div>
@@ -1074,18 +1094,25 @@
     // mouseover 跟 mouseenter差別在哪? https://ithelp.ithome.com.tw/articles/10251677
     { //w0p2
       const slidesImage = document.querySelector('div[name="slides"]');
+      // slides navigation dot box for putting slides navigation dot in it
       const dotBox = document.querySelector('div[name="dot-box"]');
       const slidesTextMain = document.querySelector('div[name="slides-text-main"]');
       const slidesTextDescribe = document.querySelector('div[name="slides-text-describe"]');
+      // get marketingCampaignAPISlidersPromise for API promise
+      const marketingCampaignAPISlidersPromise = fetch("https://api.appworks-school.tw/api/1.0/marketing/campaigns")
+        .then((response) => response.json())
+      // get json key "data" value in API promise
+      const apiJson = await marketingCampaignAPISlidersPromise.then(result => result.data);
+      // intervalID to save interval id, which's running changeSlides function
+      let intervalID;
+      // slides current activating dot index
+      let currentIndex = 0;
+      // string variable to save create dotBox dot html code
+      let addToDotListHtml = "";
 
-      function autoplaySlides(data) {
-        const apiJson = data.data;
-        let intervalID;
-        let currentIndex = 0;
-        let addToDotListHtml = "";
-
-        for (let i = 0; i < apiJson.length; i++) {
-          addToDotListHtml += `<div class="
+      // create dotBox dot html code in string
+      for (let i = 0; i < apiJson.length; i++) {
+        addToDotListHtml += `<div class="
                             cursor-pointer
                             bg-no-repeat
                             bg-cover
@@ -1100,68 +1127,78 @@
                             bg-[url('hhttps://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png')]
                             " data-index=${i} data-id=${apiJson[i].product_id} name="dot
                             "></div>`;
-        }
-
-        dotBox.innerHTML = addToDotListHtml;
-        const dotArray = document.querySelectorAll('div[name="dot-box"] div');
-
-        function changeToIndex(index) {
-          slidesImage.style.backgroundImage = `url(${apiJson[index].picture})`;
-          slidesTextMain.innerHTML = apiJson[index].story.split("。")[0].replaceAll("\r\n", "<br>");
-          slidesTextDescribe.innerHTML = apiJson[index].story.split("。")[1].replaceAll("<br>", "");
-          dotArray.forEach((dotElement) => {
-            dotElement.style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png')`;
-          });
-          dotArray[index].style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dot-1.png')`;
-          currentIndex = index;
-        }
-
-        dotBox.addEventListener("click", (e) => {
-          changeToIndex(e.target.dataset.index);
-        });
-
-        function changeSlides() {
-          if (currentIndex < apiJson.length) {
-            changeToIndex(currentIndex);
-            currentIndex++;
-          } else {
-            changeToIndex(0);
-          }
-        }
-
-        function AddChangeSlidesInterval() {
-          clearInterval(intervalID);
-          intervalID = setInterval(changeSlides, 5000);
-        }
-
-        slidesImage.addEventListener("mouseover", () => {
-          clearAllIntervalById()
-        });
-
-        slidesImage.addEventListener("mouseout", () => {
-          AddChangeSlidesInterval()
-        });
-
-        changeToIndex(0);
-        AddChangeSlidesInterval();
       }
 
-      fetch("https://api.appworks-school.tw/api/1.0/marketing/campaigns")
-        .then((response) => response.json())
-        .then((data) => autoplaySlides(data));
+      // add dotBox dot html code to dotBox
+      dotBox.innerHTML = addToDotListHtml;
+      // get dotArray array from html querySelectorAll( .dot-box div )
+      const dotArray = document.querySelectorAll('div[name="dot-box"] div');
+
+      // changeSlidesToIndex function, More easily to changing change slides to index informations
+      function changeSlidesToIndex(index) {
+        slidesImage.style.backgroundImage = `url(${apiJson[index].picture})`;
+        slidesTextMain.innerHTML = apiJson[index].story.split("。")[0].replaceAll("\r\n", "<br>");
+        slidesTextDescribe.innerHTML = apiJson[index].story.split("。")[1].replaceAll("<br>", "");
+        dotArray.forEach((dotElement) => {
+          dotElement.style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png')`;
+        });
+        dotArray[index].style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dot-1.png')`;
+        currentIndex = index;
+      }
+
+      // add click event listener to dotBox, for changing change slides to trigger event dot index informations
+      dotBox.addEventListener("click", (e) => {
+        changeSlidesToIndex(e.target.dataset.index);
+      });
+
+      // changeSlides function, that's function for setInterval to autopPlay slides
+      function changeSlides() {
+        if (currentIndex < apiJson.length) {
+          changeSlidesToIndex(currentIndex);
+          currentIndex++;
+        } else {
+          changeSlidesToIndex(0);
+        }
+      }
+
+      // AddChangeSlidesInterval use for create a interval and save interval id. Set interval to repeat running changeSlides function with delay time
+      function AddChangeSlidesInterval(delay) {
+        clearInterval(intervalID);
+        intervalID = setInterval(changeSlides, delay);
+      }
+
+      // remove interval when mouse hover slides area,remove interval running changeSlides function by interval id
+      slidesImage.addEventListener("mouseover", (intervalID) => {
+        clearInterval(intervalID);
+      });
+
+      // create a new interval running changeSlides function with delay 5 seconds
+      slidesImage.addEventListener("mouseout", () => {
+        AddChangeSlidesInterval(5000)
+      });
+
+      // Main function call for auto play slides entry point
+      changeSlidesToIndex(0);
+      AddChangeSlidesInterval(5000);
     }
 
     { //w0p3
       const productList = document.querySelector('div[name="product-list"]');
+      const spinner = document.querySelector('div[name="spinner"]');
+      // get marketingCampaignAPISlidersPromise for API promise
+      const productListAPIPromise = fetch('https://api.appworks-school.tw/api/1.0/products/all')
+        .then((response) => response.json())
+      // get json key "data" in API promise
+      const products = await productListAPIPromise.then(result => result.data);
+      let addToProductListHtml = '';
+      const url = 'https://api.appworks-school.tw/api/1.0/products/all';
+      // let count = data.next_paging;
+      let hasNextPage = true;
 
-      function showProducts(data) {
-        const products = data.data;
-        let addToProductListHtml = '';
-
-        for (let i = 0; i < products.length; i++) {
-          let addToProductColorListHtml = '';
-          for (let j = 0; j < products[i]['colors'].length; j++) {
-            addToProductColorListHtml += `<div class="
+      for (let i = 0; i < products.length; i++) {
+        let addToProductColorListHtml = '';
+        for (let j = 0; j < products[i]['colors'].length; j++) {
+          addToProductColorListHtml += `<div class="
                                               cursor-pointer
                                               bg-[#${products[i]['colors'][j].code}]
                                               border-solid border-[1px] border-[#d3d3d3]
@@ -1170,8 +1207,8 @@
                                               desktop:h-[24px]
                                               desktop:mt-[20px]
                                               desktop:mr-[10px]" name="product-colors"></div>`;
-          }
-          addToProductListHtml += `
+        }
+        addToProductListHtml += `
               <div class="
                   flex flex-col
                   mobile:w-[46%] mobile:mx-[3px]
@@ -1214,19 +1251,13 @@
                     desktop:tracking-[4px]" name="product-price">TWD.${products[i].price}</div>
               </div>
               `;
-        }
-        productList.innerHTML = addToProductListHtml;
       }
-
-      fetch('https://api.appworks-school.tw/api/1.0/products/all')
-        .then((response) => response.json())
-        .then((data) => showProducts(data));
+      productList.innerHTML = addToProductListHtml;
     }
 
     { //w0p4
 
     }
-
   </script>
 
   <script type="text/babel">

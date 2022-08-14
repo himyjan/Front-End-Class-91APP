@@ -1076,17 +1076,15 @@
       const slidesImg = document.querySelector('div[name="slides"]');
       const dotList = document.querySelector('div[name="dot-box"]');
       const slidesTextMain = document.querySelector('div[name="slides-text-main"]');
-      const slidesTextDescribe = document.querySelector('div[name="slides-text-describe"]');
-
-      fetch('https://api.appworks-school.tw/api/1.0/marketing/campaigns')
-        .then((response) => response.json())
-        .then((data) => autoplaySlides(data));
+      const slidesTextDescribe = document.querySelector(
+        'div[name="slides-text-describe"]'
+      );
 
       function autoplaySlides(data) {
         const apiJson = data.data;
         let interval = setInterval(changeSlides, 5000);
         let currentIndex = 0;
-        let addToDotListHtml = '';
+        let addToDotListHtml = "";
 
         for (let i = 0; i < apiJson.length; i++) {
           addToDotListHtml += `<div class="
@@ -1111,17 +1109,23 @@
 
         function changeToIndex(index) {
           slidesImg.style.backgroundImage = `url(${apiJson[index].picture})`;
-          slidesTextMain.innerHTML = apiJson[index].story.replaceAll('\r\n', '<br />').split('。')[0];
-          slidesTextDescribe.innerHTML = apiJson[index].story.replaceAll('\r\n', '<br />').split('。')[1];
+          slidesTextMain.innerHTML = apiJson[index].story.split("。")[0].replaceAll("\r\n", "<br>");
+          slidesTextDescribe.innerHTML = apiJson[index].story
+            .split("。")[1]
+            .replaceAll("<br>", "");
           for (let i = 0; i < dot.length; i++) {
-            dot[i].style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png')`;
+            dot[
+              i
+            ].style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png')`;
           }
-          dot[index].style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dot-1.png')`;
-          currentIndex = index
+          dot[
+            index
+          ].style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dot-1.png')`;
+          currentIndex = index;
         }
 
-        dotList.addEventListener('click', (e) => {
-          changeToIndex(e.target.dataset.index)
+        dotList.addEventListener("click", (e) => {
+          changeToIndex(e.target.dataset.index);
         });
 
         function changeSlides() {
@@ -1133,14 +1137,20 @@
           }
         }
 
-        slidesImg.addEventListener('mouseover', (interval) => {
+        slidesImg.addEventListener("mouseover", () => {
           clearInterval(interval);
         });
 
-        slidesImg.addEventListener('mouseout', (interval) => {
+        slidesImg.addEventListener("mouseout", () => {
           interval = setInterval(changeSlides, 5000);
         });
+
+        changeToIndex(0);
       }
+
+      fetch("https://api.appworks-school.tw/api/1.0/marketing/campaigns")
+        .then((response) => response.json())
+        .then((data) => autoplaySlides(data));
     }
   </script>
 

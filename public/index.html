@@ -366,7 +366,7 @@
           mobile:mt-[15px] mobile:max-w-[100vw]
           desktop:mt-[70px] desktop:max-w-[1200px]
         " name="product-list">
-      <div class="
+      <!-- <div class="
             flex flex-col
             mobile:w-[46%] mobile:mx-[3px]
             desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]
@@ -381,7 +381,7 @@
               flex flex-row
               mobile:w-full mobile:items-center mobile:h-[40px]
               desktop:w-[360px]
-            " name="product-color">
+            " name="product-color-list">
           <div class="
                 cursor-pointer
                 bg-[#ffffff]
@@ -461,7 +461,7 @@
               flex flex-row
               mobile:w-full mobile:items-center mobile:h-[40px]
               desktop:w-[360px]
-            " name="product-color">
+            " name="product-color-list">
           <div class="
                 cursor-pointer
                 bg-[#ffffff]
@@ -541,7 +541,7 @@
               flex flex-row
               mobile:w-full mobile:items-center mobile:h-[40px]
               desktop:w-[360px]
-            " name="product-color">
+            " name="product-color-list">
           <div class="
                 cursor-pointer
                 bg-[#ffffff]
@@ -621,7 +621,7 @@
               flex flex-row
               mobile:w-full mobile:items-center mobile:h-[40px]
               desktop:w-[360px]
-            " name="product-color">
+            " name="product-color-list">
           <div class="
                 cursor-pointer
                 bg-[#ffffff]
@@ -701,7 +701,7 @@
               flex flex-row
               mobile:w-full mobile:items-center mobile:h-[40px]
               desktop:w-[360px]
-            " name="product-color">
+            " name="product-color-list">
           <div class="
                 cursor-pointer
                 bg-[#ffffff]
@@ -781,7 +781,7 @@
               flex flex-row
               mobile:w-full mobile:items-center mobile:h-[40px]
               desktop:w-[360px]
-            " name="product-color">
+            " name="product-color-list">
           <div class="
                 cursor-pointer
                 bg-[#ffffff]
@@ -845,7 +845,7 @@
             " name="product-price">
           TWD.799
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 
@@ -1150,6 +1150,83 @@
         .then((response) => response.json())
         .then((data) => autoplaySlides(data));
     }
+
+    { //w0p3
+      const productList = document.querySelector('div[name="product-list"]');
+
+      function showProducts(data) {
+        const products = data.data;
+        let addToProductListHtml = '';
+
+        for (let i = 0; i < products.length; i++) {
+          let addToProductColorListHtml = '';
+          for (let j = 0; j < products[i]['colors'].length; j++) {
+            addToProductColorListHtml += `<div class="
+                                              cursor-pointer
+                                              bg-[#${products[i]['colors'][j].code}]
+                                              border-solid border-[1px] border-[#d3d3d3]
+                                              mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
+                                              desktop:w-[24px]
+                                              desktop:h-[24px]
+                                              desktop:mt-[20px]
+                                              desktop:mr-[10px]" name="product-colors"></div>`;
+          }
+          addToProductListHtml += `
+              <div class="
+                  flex flex-col
+                  mobile:w-[46%] mobile:mx-[3px]
+                  desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]" name="product">
+                <img src="${products[i].main_image}" class="
+                    object-cover
+                    mobile:w-full mobile:h-full
+                    desktop:w-[360px] desktop:h-[480px]" name="product-image" />
+                <div class="
+                    flex flex-row
+                    mobile:w-full mobile:items-center mobile:h-[40px]
+                    desktop:w-[360px]" name="product-color-list">
+                  ${addToProductColorListHtml}
+                </div>
+                <div class="
+                    cursor-pointer
+                    mobile:mt-[8px]
+                    mobile:text-[12px]
+                    mobile:tracking-[2.4px]
+                    mobile:text-[#000000]
+                    mobile:leading-[14px]
+                    desktop:mt-[10px]
+                    desktop:text-[20px]
+                    desktop:tracking-[4px]
+                    desktop:text-[#3F3A3A]
+                    desktop:leading-[24px]" name="product-name">${products[i].title}</div>
+                <div class="
+                    cursor-pointer
+                    mobile:mt-[8px]
+                    mobile:mb-[24px]
+                    mobile:text-[12px]
+                    mobile:text-[#000000]
+                    mobile:leading-[14px]
+                    mobile:tracking-[2.4px]
+                    desktop:mt-[10px]
+                    desktop:mb-[64px]
+                    desktop:text-[20px]
+                    desktop:text-[#3F3A3A]
+                    desktop:leading-[24px]
+                    desktop:tracking-[4px]" name="product-price">TWD.${products[i].price}</div>
+              </div>
+              `;
+        }
+        productList.innerHTML = addToProductListHtml;
+      }
+
+      fetch('https://api.appworks-school.tw/api/1.0/products/all')
+        .then((response) => response.json())
+        .then((data) => showProducts(data));
+    }
+
+    { //w0p4
+
+    }
+
   </script>
 
   <script type="text/babel">

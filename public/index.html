@@ -1077,13 +1077,11 @@
       const slidesImage = document.querySelector('div[name="slides"]');
       const dotBox = document.querySelector('div[name="dot-box"]');
       const slidesTextMain = document.querySelector('div[name="slides-text-main"]');
-      const slidesTextDescribe = document.querySelector(
-        'div[name="slides-text-describe"]'
-      );
+      const slidesTextDescribe = document.querySelector('div[name="slides-text-describe"]');
 
       function autoplaySlides(data) {
         const apiJson = data.data;
-        let intervalID = [];
+        let intervalID;
         let currentIndex = 0;
         let addToDotListHtml = "";
 
@@ -1132,15 +1130,9 @@
           }
         }
 
-        function clearAllIntervalById() {
-          intervalID.forEach(id => {
-            clearInterval(id);
-          });
-        }
-
         function AddChangeSlidesInterval() {
-          clearAllIntervalById()
-          intervalID.add(setInterval(changeSlides, 5000));
+          clearInterval(intervalID);
+          intervalID = setInterval(changeSlides, 5000);
         }
 
         slidesImage.addEventListener("mouseover", () => {

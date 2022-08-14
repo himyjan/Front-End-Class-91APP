@@ -1071,6 +1071,7 @@
 
   <script type="module">
     // https://swiperjs.com/demos#autoplay
+    // mouseover 跟 mouseenter差別在哪? https://ithelp.ithome.com.tw/articles/10251677
     { //w0p2
       const slidesImg = document.querySelector('div[name="slides"]');
       const dotList = document.querySelector('div[name="dot-box"]');
@@ -1083,7 +1084,7 @@
 
       function autoplaySlides(data) {
         const apiJson = data.data;
-        let interval;
+        let interval = setInterval(changeSlides, 5000);
         let currentIndex = 0;
         let addToDotListHtml = '';
 
@@ -1132,15 +1133,13 @@
           }
         }
 
-        slidesImg.addEventListener('mouseenter', (interval) => {
+        slidesImg.addEventListener('mouseover', (interval) => {
           clearInterval(interval);
         });
 
-        slidesImg.addEventListener('mouseleave', (interval) => {
+        slidesImg.addEventListener('mouseout', (interval) => {
           interval = setInterval(changeSlides, 5000);
         });
-
-        interval = setInterval(changeSlides, 5000);
       }
     }
   </script>

@@ -259,7 +259,7 @@
         mobile:h-[185px] mobile:mt-[102px]
         desktop:h-[500px] desktop:mt-[140px]
         bg-[url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055626872475758/image.png')]
-      " name="banner">
+      " name="slides">
     <div class="
           relative
           h-full
@@ -268,8 +268,8 @@
           mx-auto
           max-w-[1160px]
           mobile:w-[92%]
-        " name="banner-container">
-      <div class="absolute w-full" name="banner-content">
+        " name="slides-container">
+      <div class="absolute w-full" name="slides-slidesTextMain">
         <div class="
               cursor-pointer
               text-left
@@ -278,7 +278,7 @@
               desktop:text-[30px]
               desktop:leading-[57px]
               desktop:text-[#070707]
-            " name="slider-text-main">
+            " name="slides-text-main">
           於是<br />
           我也想要給你<br />
           一個那麼美好的自己。<br />
@@ -288,7 +288,7 @@
               text-left
               mobile:text-[12px] mobile:leading-[28px]
               desktop:text-[20px] desktop:leading-[64px]
-            " name="slider-text-describe">
+            " name="slides-text-describe">
           不朽《與自己和好如初》
         </div>
       </div>
@@ -305,8 +305,15 @@
           max-w-[1200px]
           mobile:mt-[265px]
           desktop:mt-[596px]
-        " name="dot-container">
-      <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dot-1.png" class="
+        " name="dot-box">
+      <div class="
+            cursor-pointer
+            mobile:w-[4px] mobile:h-[4px] mobile:ml-[4.4px] mobile:mr-[4.4px]
+            desktop:w-[10px]
+            desktop:h-[10px]
+            desktop:ml-[11px]
+            desktop:mr-[11px]" name="slides-dot">
+        <!-- <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dot-1.png" class="
             cursor-pointer
             mobile:w-[4px] mobile:h-[4px] mobile:ml-[4.4px] mobile:mr-[4.4px]
             desktop:w-[10px]
@@ -345,7 +352,8 @@
             desktop:h-[10px]
             desktop:ml-[11px]
             desktop:mr-[11px]
-          " alt="" />
+          " alt="" /> -->
+      </div>
     </div>
   </div>
 
@@ -353,7 +361,7 @@
     <div class="
           flex flex-wrap
           justify-center
-          content-start
+          slidesTextMain-start
           w-full
           mobile:mt-[15px] mobile:max-w-[100vw]
           desktop:mt-[70px] desktop:max-w-[1200px]
@@ -1062,7 +1070,79 @@
   </footer>
 
   <script type="module">
+    // https://swiperjs.com/demos#autoplay
+    { //w0p2
+      const slidesImg = document.querySelector('div[name="slides"]');
+      const dotList = document.querySelector('div[name="dot-box"]');
+      const slidesTextMain = document.querySelector('div[name="slides-text-main"]');
+      const slidesTextDescribe = document.querySelector('div[name="slides-text-describe"]');
 
+      fetch('https://api.appworks-school.tw/api/1.0/marketing/campaigns')
+        .then((response) => response.json())
+        .then((data) => autoplaySlides(data));
+
+      function autoplaySlides(data) {
+        const apiJson = data.data;
+        let interval;
+        let currentIndex = 0;
+        let addToDotListHtml = '';
+
+        for (let i = 0; i < apiJson.length; i++) {
+          addToDotListHtml += `<div class="
+                            cursor-pointer
+                            bg-no-repeat
+                            bg-cover
+                            mobile:w-[4px]
+                            mobile:h-[4px]
+                            mobile:ml-[4.4px]
+                            mobile:mr-[4.4px]
+                            desktop:w-[10px]
+                            desktop:h-[10px]
+                            desktop:ml-[11px]
+                            desktop:mr-[11px]
+                            bg-[url('hhttps://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png')]
+                            " data-index=${i} data-id=${apiJson[i].product_id} name="dot
+                            "></div>`;
+        }
+
+        dotList.innerHTML = addToDotListHtml;
+        const dot = document.querySelectorAll('div[name="dot-box"] div');
+
+        function changeToIndex(index) {
+          slidesImg.style.backgroundImage = `url(${apiJson[index].picture})`;
+          slidesTextMain.innerHTML = apiJson[index].story.replace('\r\n', '<br />').split('。')[0];
+          slidesTextDescribe.innerHTML = apiJson[index].story.replace('\r\n', '<br />').split('。')[1];
+          for (let i = 0; i < dot.length; i++) {
+            dot[i].style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png')`;
+          }
+          dot[index].style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dot-1.png')`;
+          currentIndex = index
+        }
+
+        dotList.addEventListener('click', (e) => {
+          changeToIndex(e.target.dataset.index)
+        });
+
+        function changeSlides() {
+          if (currentIndex < apiJson.length) {
+            changeToIndex(currentIndex);
+            currentIndex++;
+          } else {
+            changeToIndex(0);
+          }
+        }
+
+        slidesImg.addEventListener('mouseenter', (interval) => {
+          clearInterval(interval);
+        });
+
+        slidesImg.addEventListener('mouseleave', (interval) => {
+          interval = setInterval(changeSlides, 5000);
+        });
+
+        interval = setInterval(changeSlides, 5000);
+      }
+    }
   </script>
 
   <script type="text/babel">

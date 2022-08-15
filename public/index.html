@@ -2624,8 +2624,7 @@
   <script type="module">
     // https://swiperjs.com/demos#autoplay
     // mouseover 跟 mouseenter差別在哪? https://ithelp.ithome.com.tw/articles/10251677
-    {
-      //w0p2
+    { //w0p2
       const slidesImage = document.querySelector('div[name="slides"]');
       // slides navigation dot box for putting slides navigation dot in it
       const dotBox = document.querySelector('div[name="dot-box"]');
@@ -2730,98 +2729,98 @@
       changeSlidesToIndex(0);
       addChangeSlidesInterval(5000);
     }
-      /*
-  { //w0p3
-    const productList = document.querySelector('div[name="product-list"]');
-    // get marketingCampaignAPISlidersPromise for API promise
-    const productListAPIPromise = fetch('https://api.appworks-school.tw/api/1.0/products/all')
-      .then((response) => response.json())
-    // get json key "data" in API promise
-    const products = await productListAPIPromise.then(result => result.data);
-    let addToProductListHtml = '';
+    /*
+    { //w0p3
+      const productList = document.querySelector('div[name="product-list"]');
+      // get marketingCampaignAPISlidersPromise for API promise
+      const productListAPIPromise = fetch('https://api.appworks-school.tw/api/1.0/products/all')
+        .then((response) => response.json())
+      // get json key "data" in API promise
+      const products = await productListAPIPromise.then(result => result.data);
+      let addToProductListHtml = '';
 
-    for (let i = 0; i < products.length; i++) {
-      let addToProductColorListHtml = '';
-      for (let j = 0; j < products[i]['colors'].length; j++) {
-        addToProductColorListHtml += `<div class="
-                                        cursor-pointer
-                                        bg-[#${products[i]['colors'][j].code}]
-                                        border-solid border-[1px] border-[#d3d3d3]
-                                        mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
-                                        desktop:w-[24px]
-                                        desktop:h-[24px]
-                                        desktop:mt-[20px]
-                                        desktop:mr-[10px]" name="product-colors"></div>`;
+      for (let i = 0; i < products.length; i++) {
+        let addToProductColorListHtml = '';
+        for (let j = 0; j < products[i]['colors'].length; j++) {
+          addToProductColorListHtml += `<div class="
+                                          cursor-pointer
+                                          bg-[#${products[i]['colors'][j].code}]
+                                          border-solid border-[1px] border-[#d3d3d3]
+                                          mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
+                                          desktop:w-[24px]
+                                          desktop:h-[24px]
+                                          desktop:mt-[20px]
+                                          desktop:mr-[10px]" name="product-colors"></div>`;
+        }
+        addToProductListHtml += `<div class="
+                                    flex flex-col
+                                    mobile:w-[46%] mobile:mx-[3px]
+                                    desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]" name="product">
+                                  <img src="${products[i].main_image}" class="
+                                      object-cover
+                                      mobile:w-full mobile:h-full
+                                      desktop:w-[360px] desktop:h-[480px]" name="product-image" />
+                                  <div class="
+                                      flex flex-row
+                                      mobile:w-full mobile:items-center mobile:h-[40px]
+                                      desktop:w-[360px]" name="product-color-list">
+                                    ${addToProductColorListHtml}
+                                  </div>
+                                  <div class="
+                                      cursor-pointer
+                                      mobile:mt-[8px]
+                                      mobile:text-[12px]
+                                      mobile:tracking-[2.4px]
+                                      mobile:text-[#000000]
+                                      mobile:leading-[14px]
+                                      desktop:mt-[10px]
+                                      desktop:text-[20px]
+                                      desktop:tracking-[4px]
+                                      desktop:text-[#3F3A3A]
+                                      desktop:leading-[24px]" name="product-name">${products[i].title}</div>
+                                  <div class="
+                                      cursor-pointer
+                                      mobile:mt-[8px]
+                                      mobile:mb-[24px]
+                                      mobile:text-[12px]
+                                      mobile:text-[#000000]
+                                      mobile:leading-[14px]
+                                      mobile:tracking-[2.4px]
+                                      desktop:mt-[10px]
+                                      desktop:mb-[64px]
+                                      desktop:text-[20px]
+                                      desktop:text-[#3F3A3A]
+                                      desktop:leading-[24px]
+                                      desktop:tracking-[4px]" name="product-price">TWD.${products[i].price}</div>
+                                </div>`;
       }
-      addToProductListHtml += `<div class="
-                                  flex flex-col
-                                  mobile:w-[46%] mobile:mx-[3px]
-                                  desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]" name="product">
-                                <img src="${products[i].main_image}" class="
-                                    object-cover
-                                    mobile:w-full mobile:h-full
-                                    desktop:w-[360px] desktop:h-[480px]" name="product-image" />
-                                <div class="
-                                    flex flex-row
-                                    mobile:w-full mobile:items-center mobile:h-[40px]
-                                    desktop:w-[360px]" name="product-color-list">
-                                  ${addToProductColorListHtml}
-                                </div>
-                                <div class="
-                                    cursor-pointer
-                                    mobile:mt-[8px]
-                                    mobile:text-[12px]
-                                    mobile:tracking-[2.4px]
-                                    mobile:text-[#000000]
-                                    mobile:leading-[14px]
-                                    desktop:mt-[10px]
-                                    desktop:text-[20px]
-                                    desktop:tracking-[4px]
-                                    desktop:text-[#3F3A3A]
-                                    desktop:leading-[24px]" name="product-name">${products[i].title}</div>
-                                <div class="
-                                    cursor-pointer
-                                    mobile:mt-[8px]
-                                    mobile:mb-[24px]
-                                    mobile:text-[12px]
-                                    mobile:text-[#000000]
-                                    mobile:leading-[14px]
-                                    mobile:tracking-[2.4px]
-                                    desktop:mt-[10px]
-                                    desktop:mb-[64px]
-                                    desktop:text-[20px]
-                                    desktop:text-[#3F3A3A]
-                                    desktop:leading-[24px]
-                                    desktop:tracking-[4px]" name="product-price">TWD.${products[i].price}</div>
-                              </div>`;
+      productList.innerHTML = addToProductListHtml;
     }
-    productList.innerHTML = addToProductListHtml;
-  }
 
 
-  { //w0p4
-    const spinner = document.querySelector('div[name="spinner"]');
-    const intersectionObserverTarget = document.querySelector('div[name="bottom-nav-bar-mobile-box-box"], div[name="bottom-nav"]');
+    { //w0p4
+      const spinner = document.querySelector('div[name="spinner"]');
+      const intersectionObserverTarget = document.querySelector('div[name="bottom-nav-bar-mobile-box-box"], div[name="bottom-nav"]');
 
-    const url = 'https://api.appworks-school.tw/api/1.0/products/all';
-    // let count = data.next_paging;
-    let hasNextPage = true;
-    let intersectionObserver = new IntersectionObserver((entries) => {
-      console.log(entries[0].intersectionRatio);
-      if (entries[0].intersectionRatio <= 0) {
-        spinner.style.visibility = "hidden";
-        return
+      const url = 'https://api.appworks-school.tw/api/1.0/products/all';
+      // let count = data.next_paging;
+      let hasNextPage = true;
+      let intersectionObserver = new IntersectionObserver((entries) => {
+        console.log(entries[0].intersectionRatio);
+        if (entries[0].intersectionRatio <= 0) {
+          spinner.style.visibility = "hidden";
+          return
+        }
+        if (hasNextPage) {
+          spinner.style.visibility = "visible";
+        }
+        console.log("load new items");
       }
-      if (hasNextPage) {
-        spinner.style.visibility = "visible";
-      }
-      console.log("load new items");
+      );
+
+      intersectionObserver.observe(intersectionObserverTarget)
     }
-    );
-
-    intersectionObserver.observe(intersectionObserverTarget)
-  }
-  */
+    */
   </script>
 
   <script type="text/babel">

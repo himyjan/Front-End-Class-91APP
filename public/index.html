@@ -870,7 +870,7 @@
     </div>
   </div>
 
-  <div class="" id="product-page">
+  <div class="hidden" id="product-page">
     <div class="
           flex flex-col
           w-full
@@ -1250,7 +1250,7 @@
     </div>
   </div>
 
-  <div class="" id="checkout-page">
+  <div class="hidden" id="checkout-page">
     <div class="
           flex flex-col
           w-full
@@ -2538,9 +2538,6 @@
       // get json key "data" in API promise
       const products = await productListAPIPromise.then(result => result.data);
       let addToProductListHtml = '';
-      const url = 'https://api.appworks-school.tw/api/1.0/products/all';
-      // let count = data.next_paging;
-      let hasNextPage = true;
 
       for (let i = 0; i < products.length; i++) {
         let addToProductColorListHtml = '';

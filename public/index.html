@@ -34,6 +34,8 @@
       }
     </style>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Sans TC" />
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
   <style>
     * {
       margin: 0;
@@ -79,8 +81,8 @@
               desktop:border-solid
               desktop:border-r-[1px]
               desktop:border-[#3F3A3A]
-            " name="top-nav-bar-desktop-women-dresses">
-          <a href="#">女裝</a>
+            " onclick="fetch" name="top-nav-bar-desktop-women-dresses">
+          <a href="#/women-dresses">女裝</a>
         </div>
         <div class="
               desktop:cursor-pointer
@@ -98,7 +100,7 @@
               desktop:border-r-[1px]
               desktop:border-[#3F3A3A]
             " name="top-nav-bar-desktop-men-dresses">
-          <a href="#">男裝</a>
+          <a href="#/men-dresses">男裝</a>
         </div>
         <div class="
               desktop:cursor-pointer
@@ -115,8 +117,8 @@
               desktop:border-solid
               desktop:border-r-[1px]
               desktop:border-[#3F3A3A]
-            " name="top-nav-bar-desktop-accessory">
-          <a href="#">配件</a>
+            " name="top-nav-bar-desktop-accessories">
+          <a href="#/accessories">配件</a>
         </div>
 
         <input class="
@@ -137,7 +139,7 @@
               desktop:placeholder:text-[20px]
               desktop:placeholder:text-[#8B572A]
               desktop:placeholder:leading-[24px]
-            " type="text" placeholder="西裝" name="top-nav-bar-desktop-search-bar" />
+            " type="text" placeholder="西裝" value="" name="top-nav-bar-desktop-search-bar" />
 
         <div class="
               mobile:hidden
@@ -168,8 +170,10 @@
                 bg-[#8b572a]
                 rounded-[50%]
                 text-[#ffffff]
+                text-[16px]
                 leading-[24px]
               " name="top-nav-bar-desktop-shopping-cart-notification-numbers">
+            <div class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#8b572a] opacity-75"></div>
             1
           </div>
         </div>
@@ -188,16 +192,41 @@
             name="top-nav-bar-desktop-profile" />
         </a>
 
-        <img class="
-              mobile:absolute
-              mobile:right-[16px]
-              mobile:cursor-pointer
-              mobile:block
-              mobile:w-[40px]
-              mobile:h-[40px]
+        <input class="
               desktop:hidden
-            " src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055671386603581/search.png" alt=""
-          name="top-nav-bar-mobile-search" />
+              mobile:block
+              mobile:absolute
+              mobile:fixed
+              mobile:w-[44px]
+              mobile:z-0
+              mobile:right-5
+              mobile:h-[44px]
+              mobile:bg-[url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055671386603581/search.png')]
+              mobile:bg-no-repeat
+              mobile:bg-right
+              mobile:border-none
+              mobile:hover:border-solid
+              mobile:focus:border-solid
+              mobile:border-[1px]
+              mobile:border-[#979797]
+              mobile:rounded-[20px]
+              mobile:pl-[20px]
+              mobile:text-[20px]
+              mobile:placeholder:text-[20px]
+              mobile:hover:text-[#8B572A]
+              mobile:focus:text-[#8B572A]
+              mobile:text-[#8B572A]/0
+              mobile:placeholder:text-[#8B572A]/0
+              mobile:hover:placeholder:text-[#8B572A]
+              mobile:focus:placeholder:text-[#8B572A]
+              mobile:leading-[24px]
+              mobile:placeholder:leading-[24px]
+              mobile:transition-all
+              mobile:duration-700
+              mobile:ease-in-out
+              hover:w-[calc(100%-48px)]
+              focus:w-[calc(100%-48px)]
+            " type="text" placeholder="" value="" name="top-nav-bar-mobile-search" />
       </div>
 
       <div class="
@@ -217,7 +246,7 @@
               mobile:leading-[22px]
               desktop:hidden
             " name="top-nav-bar-below-mobile-women-dresses">
-          <a href="#">女裝</a>
+          <a href="#/women-dresses">女裝</a>
         </div>
         <img class="mobile:block desktop:hidden"
           src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055671801860126/split.png" alt="" />
@@ -230,7 +259,7 @@
               mobile:leading-[22px]
               desktop:hidden
             " name="top-nav-bar-below-mobile-men-dresses">
-          <a href="#">男裝</a>
+          <a href="#/men-dresses">男裝</a>
         </div>
         <img class="mobile:block desktop:hidden"
           src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055671801860126/split.png" alt="" />
@@ -242,8 +271,8 @@
               mobile:hover:text-[#ffffff]
               mobile:leading-[22px]
               desktop:hidden
-            " name="top-nav-bar-below-mobile-accessory">
-          <a href="#">配件</a>
+            " name="top-nav-bar-below-mobile-accessories">
+          <a href="#/accessories">配件</a>
         </div>
       </div>
     </nav>
@@ -259,8 +288,7 @@
         transition-[background-image]
         mobile:h-[185px] mobile:mt-[102px]
         desktop:h-[500px] desktop:mt-[140px]
-        bg-[url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055626872475758/image.png')]
-      " name="slides">
+              " name="slides">
       <div class="
           relative
           h-full
@@ -280,9 +308,9 @@
               desktop:leading-[57px]
               desktop:text-[#070707]
             " name="slides-text-main">
-            於是<br />
+            <!-- 於是<br />
             我也想要給你<br />
-            一個那麼美好的自己。<br />
+            一個那麼美好的自己。<br /> -->
           </div>
           <div class="
               cursor-pointer
@@ -290,7 +318,7 @@
               mobile:text-[12px] mobile:leading-[28px]
               desktop:text-[20px] desktop:leading-[64px]
             " name="slides-text-describe">
-            不朽《與自己和好如初》
+            <!-- 不朽《與自己和好如初》 -->
           </div>
         </div>
       </div>
@@ -307,54 +335,86 @@
           mobile:mt-[265px]
           desktop:mt-[596px]
         " name="dot-box">
-        <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dotArray-1.png" class="
-                cursor-pointer
-                mobile:w-[4px] mobile:h-[4px] mobile:ml-[4.4px] mobile:mr-[4.4px]
-                desktop:w-[10px]
-                desktop:h-[10px]
-                desktop:ml-[11px]
-                desktop:mr-[11px]
-              " alt="" />
-        <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dotArray-1.png" class="
-            cursor-pointer
-            mobile:w-[4px] mobile:h-[4px] mobile:ml-[4.4px] mobile:mr-[4.4px]
-            desktop:w-[10px]
-            desktop:h-[10px]
-            desktop:ml-[11px]
-            desktop:mr-[11px]
-          " alt="" />
-        <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dotArray-2.png" class="
-            cursor-pointer
-            mobile:w-[4px] mobile:h-[4px] mobile:ml-[4.4px] mobile:mr-[4.4px]
-            desktop:w-[10px]
-            desktop:h-[10px]
-            desktop:ml-[11px]
-            desktop:mr-[11px]
-          " alt="" />
-        <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dotArray-2.png" class="
-            cursor-pointer
-            mobile:w-[4px] mobile:h-[4px] mobile:ml-[4.4px] mobile:mr-[4.4px]
-            desktop:w-[10px]
-            desktop:h-[10px]
-            desktop:ml-[11px]
-            desktop:mr-[11px]
-          " alt="" />
-        <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dotArray-2.png" class="
-            cursor-pointer
-            mobile:w-[4px] mobile:h-[4px] mobile:ml-[4.4px] mobile:mr-[4.4px]
-            desktop:w-[10px]
-            desktop:h-[10px]
-            desktop:ml-[11px]
-            desktop:mr-[11px]
-          " alt="" />
-        <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dotArray-2.png" class="
-            cursor-pointer
-            mobile:w-[4px] mobile:h-[4px] mobile:ml-[4.4px] mobile:mr-[4.4px]
-            desktop:w-[10px]
-            desktop:h-[10px]
-            desktop:ml-[11px]
-            desktop:mr-[11px]
-          " alt="" /> -->
+        <!-- <div class="
+        cursor-pointer
+        bg-no-repeat
+        bg-cover
+        rounded-full
+        mobile:w-[4px]
+        mobile:h-[4px]
+        mobile:ml-[4.4px]
+        mobile:mr-[4.4px]
+        desktop:w-[10px]
+        desktop:h-[10px]
+        desktop:ml-[11px]
+        desktop:mr-[11px]
+        bg-[#8B572A]
+        " data-index=${i} data-id=${apiJson[i].product_id} name="dot
+        "></div>
+        <div class="
+        cursor-pointer
+        bg-no-repeat
+        bg-cover
+        rounded-full
+        mobile:w-[4px]
+        mobile:h-[4px]
+        mobile:ml-[4.4px]
+        mobile:mr-[4.4px]
+        desktop:w-[10px]
+        desktop:h-[10px]
+        desktop:ml-[11px]
+        desktop:mr-[11px]
+        bg-[#ffffff]/40
+        " data-index=${i} data-id=${apiJson[i].product_id} name="dot
+        "></div>
+        <div class="
+        cursor-pointer
+        bg-no-repeat
+        bg-cover
+        rounded-full
+        mobile:w-[4px]
+        mobile:h-[4px]
+        mobile:ml-[4.4px]
+        mobile:mr-[4.4px]
+        desktop:w-[10px]
+        desktop:h-[10px]
+        desktop:ml-[11px]
+        desktop:mr-[11px]
+        bg-[#ffffff]/40
+        " data-index=${i} data-id=${apiJson[i].product_id} name="dot
+        "></div>
+        <div class="
+        cursor-pointer
+        bg-no-repeat
+        bg-cover
+        rounded-full
+        mobile:w-[4px]
+        mobile:h-[4px]
+        mobile:ml-[4.4px]
+        mobile:mr-[4.4px]
+        desktop:w-[10px]
+        desktop:h-[10px]
+        desktop:ml-[11px]
+        desktop:mr-[11px]
+        bg-[#ffffff]/40
+        " data-index=${i} data-id=${apiJson[i].product_id} name="dot
+        "></div>
+        <div class="
+        cursor-pointer
+        bg-no-repeat
+        bg-cover
+        rounded-full
+        mobile:w-[4px]
+        mobile:h-[4px]
+        mobile:ml-[4.4px]
+        mobile:mr-[4.4px]
+        desktop:w-[10px]
+        desktop:h-[10px]
+        desktop:ml-[11px]
+        desktop:mr-[11px]
+        bg-[#ffffff]/40
+        " data-index=${i} data-id=${apiJson[i].product_id} name="dot
+        "></div> -->
       </div>
     </div>
 
@@ -1809,7 +1869,7 @@
                   mobile:placeholder:text-[14px] mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                " type="text" placeholder="收件人姓名" id="nav-searchBar" />
+                " type="text" placeholder="收件人姓名" value id="nav-searchBar" />
           </div>
           <div class="
                 mobile:mt-[6px]
@@ -1851,7 +1911,7 @@
                   mobile:placeholder:text-[14px] mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                " type="text" placeholder="手機" id="nav-searchBar" />
+                " type="text" placeholder="手機" value="" id="nav-searchBar" />
           </div>
           <div class="
                 flex
@@ -1882,7 +1942,7 @@
                   mobile:placeholder:text-[14px] mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                " type="text" placeholder="地址" id="nav-searchBar" />
+                " type="text" placeholder="地址" value="" id="nav-searchBar" />
           </div>
           <div class="
                 flex
@@ -1913,7 +1973,7 @@
                   mobile:placeholder:text-[14px] mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                " type="text" placeholder="手機" id="nav-searchBar" />
+                " type="text" placeholder="手機" value="" id="nav-searchBar" />
           </div>
           <div class="
                 flex
@@ -1944,7 +2004,7 @@
                   mobile:placeholder:text-[14px] mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                " type="text" placeholder="Email" id="nav-searchBar" />
+                " type="text" placeholder="Email" value="" id="nav-searchBar" />
           </div>
           <div class="
                 flex
@@ -2046,7 +2106,7 @@
                   mobile:placeholder:text-[14px] mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                " type="text" placeholder="**** **** **** ****" id="nav-searchBar" />
+                " type="text" placeholder="**** **** **** ****" value="" id="nav-searchBar" />
           </div>
           <div class="
                 flex
@@ -2077,7 +2137,7 @@
                   mobile:placeholder:text-[14px] mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                " type="text" placeholder="MM / YY" id="nav-searchBar" />
+                " type="text" placeholder="MM / YY" value="" id="nav-searchBar" />
           </div>
           <div class="
                 flex
@@ -2108,7 +2168,7 @@
                   mobile:placeholder:text-[14px] mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                " type="text" placeholder="後三碼" id="nav-searchBar" />
+                " type="text" placeholder="後三碼" value="" id="nav-searchBar" />
           </div>
           <div class="
                 flex flex-col
@@ -2405,8 +2465,9 @@
                 left-[37%]
                 bg-[#8b572a]
                 rounded-[50%]
-                text-[#ffffff]
+                text-[#ffffff] text-[16px] leading-[24px]
               " name="bottom-nav-bar-mobile-stick-shopping-cart-notification-numbers">
+            <div class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#8b572a] opacity-75"></div>
             1
           </div>
         </div>
@@ -2458,6 +2519,7 @@
                             cursor-pointer
                             bg-no-repeat
                             bg-cover
+                            rounded-full
                             mobile:w-[4px]
                             mobile:h-[4px]
                             mobile:ml-[4.4px]
@@ -2466,7 +2528,7 @@
                             desktop:h-[10px]
                             desktop:ml-[11px]
                             desktop:mr-[11px]
-                            bg-[url('hhttps://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png')]
+                            bg-[#ffffff]/40
                             " data-index=${i} data-id=${apiJson[i].product_id} name="dot
                             "></div>`;
       }
@@ -2482,9 +2544,11 @@
         slidesTextMain.innerHTML = apiJson[index].story.split("。")[0].replaceAll("\r\n", "<br>");
         slidesTextDescribe.innerHTML = apiJson[index].story.split("。")[1].replaceAll("<br>", "");
         dotArray.forEach((dotElement) => {
-          dotElement.style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png')`;
+          dotElement.classList.remove("bg-[#8B572A]");
+          dotElement.classList.add("bg-[#ffffff]/40");
         });
-        dotArray[index].style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dot-1.png')`;
+        dotArray[index].classList.remove("bg-[#ffffff]/40");
+        dotArray[index].classList.add("bg-[#8B572A]")
         currentIndex = index;
       }
 
@@ -2503,8 +2567,8 @@
         }
       }
 
-      // AddChangeSlidesInterval use for create a interval and save interval id. Set interval to repeat running changeSlides function with delay time
-      function AddChangeSlidesInterval(delay) {
+      // addChangeSlidesInterval use for create a interval and save interval id. Set interval to repeat running changeSlides function with delay time
+      function addChangeSlidesInterval(delay) {
         clearInterval(intervalID);
         intervalID = setInterval(changeSlides, delay);
       }
@@ -2516,13 +2580,102 @@
 
       // create a new interval running changeSlides function with delay 5 seconds
       slidesImage.addEventListener("mouseout", () => {
-        AddChangeSlidesInterval(5000)
+        addChangeSlidesInterval(5000)
       });
 
       // Main function call for auto play slides entry point
       changeSlidesToIndex(0);
-      AddChangeSlidesInterval(5000);
+      addChangeSlidesInterval(5000);
     }
+/*
+            { //w0p3
+              const productList = document.querySelector('div[name="product-list"]');
+              const spinner = document.querySelector('div[name="spinner"]');
+              const intersectionObserverTarget = document.querySelector('div[name="bottom-nav-bar-mobile-box-box"], div[name="bottom-nav"]');
+              // get marketingCampaignAPISlidersPromise for API promise
+              const productListAPIPromise = fetch('https://api.appworks-school.tw/api/1.0/products/all')
+                .then((response) => response.json())
+              // get json key "data" in API promise
+              const products = await productListAPIPromise.then(result => result.data);
+              let addToProductListHtml = '';
+              const url = 'https://api.appworks-school.tw/api/1.0/products/all';
+              // let count = data.next_paging;
+              let hasNextPage = true;
+              let intersectionObserver = new IntersectionObserver((entries) => {
+                console.log(entries[0].intersectionRatio);
+                if (entries[0].intersectionRatio <= 0) {
+                  spinner.style.visibility = "hidden";
+                  return
+                }
+                if (hasNextPage) {
+                  spinner.style.visibility = "visible";
+                }
+                console.log("load new items");
+              }
+              );
+
+              intersectionObserver.observe(intersectionObserverTarget)
+
+              for (let i = 0; i < products.length; i++) {
+                let addToProductColorListHtml = '';
+                for (let j = 0; j < products[i]['colors'].length; j++) {
+                  addToProductColorListHtml += `<div class="
+                                                      cursor-pointer
+                                                      bg-[#${products[i]['colors'][j].code}]
+                                                      border-solid border-[1px] border-[#d3d3d3]
+                                                      mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
+                                                      desktop:w-[24px]
+                                                      desktop:h-[24px]
+                                                      desktop:mt-[20px]
+                                                      desktop:mr-[10px]" name="product-colors"></div>`;
+                }
+                addToProductListHtml += `
+                      <div class="
+                          flex flex-col
+                          mobile:w-[46%] mobile:mx-[3px]
+                          desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]" name="product">
+                        <img src="${products[i].main_image}" class="
+                            object-cover
+                            mobile:w-full mobile:h-full
+                            desktop:w-[360px] desktop:h-[480px]" name="product-image" />
+                        <div class="
+                            flex flex-row
+                            mobile:w-full mobile:items-center mobile:h-[40px]
+                            desktop:w-[360px]" name="product-color-list">
+                          ${addToProductColorListHtml}
+                        </div>
+                        <div class="
+                            cursor-pointer
+                            mobile:mt-[8px]
+                            mobile:text-[12px]
+                            mobile:tracking-[2.4px]
+                            mobile:text-[#000000]
+                            mobile:leading-[14px]
+                            desktop:mt-[10px]
+                            desktop:text-[20px]
+                            desktop:tracking-[4px]
+                            desktop:text-[#3F3A3A]
+                            desktop:leading-[24px]" name="product-name">${products[i].title}</div>
+                        <div class="
+                            cursor-pointer
+                            mobile:mt-[8px]
+                            mobile:mb-[24px]
+                            mobile:text-[12px]
+                            mobile:text-[#000000]
+                            mobile:leading-[14px]
+                            mobile:tracking-[2.4px]
+                            desktop:mt-[10px]
+                            desktop:mb-[64px]
+                            desktop:text-[20px]
+                            desktop:text-[#3F3A3A]
+                            desktop:leading-[24px]
+                            desktop:tracking-[4px]" name="product-price">TWD.${products[i].price}</div>
+                      </div>
+                      `;
+              }
+              productList.innerHTML = addToProductListHtml;
+            }
+            */
   </script>
 
   <script type="text/babel">

@@ -45,7 +45,7 @@
 
 <body class="">
   <!-- header and top navBar content -->
-  <header class="">
+  <header class="" name="top-nav">
     <nav class="fixed top-0 z-[999] w-full mobile:h-[102px] desktop:h-[140px]">
       <div class="
             flex
@@ -55,14 +55,14 @@
             desktop:justify-start
             desktop:items-center
             desktop:h-[100px]
-          " id="nav-container">
-        <a href="#" aria-label="logo">
+          " name="top-nav-bar-box">
+        <a href="#" aria-label="website-logo-link" name="top-nav-bar-website-logo-link">
           <img class="
                 cursor-pointer
                 mobile:w-[129px] mobile:h-[24px]
                 desktop:w-[258px] desktop:h-[48px] desktop:ml-[60px]
               " src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055669914406982/logo.png" alt=""
-            id="logo" />
+            name="top-nav-bar-website-logo" />
         </a>
         <div class="
               desktop:cursor-pointer
@@ -79,7 +79,7 @@
               desktop:border-solid
               desktop:border-r-[1px]
               desktop:border-[#3F3A3A]
-            ">
+            " name="top-nav-bar-desktop-women-dresses">
           <a href="#">女裝</a>
         </div>
         <div class="
@@ -97,7 +97,7 @@
               desktop:border-solid
               desktop:border-r-[1px]
               desktop:border-[#3F3A3A]
-            ">
+            " name="top-nav-bar-desktop-men-dresses">
           <a href="#">男裝</a>
         </div>
         <div class="
@@ -115,7 +115,7 @@
               desktop:border-solid
               desktop:border-r-[1px]
               desktop:border-[#3F3A3A]
-            ">
+            " name="top-nav-bar-desktop-accessory">
           <a href="#">配件</a>
         </div>
 
@@ -137,7 +137,7 @@
               desktop:placeholder:text-[20px]
               desktop:placeholder:text-[#8B572A]
               desktop:placeholder:leading-[24px]
-            " type="text" placeholder="西裝" id="nav-searchBar" />
+            " type="text" placeholder="西裝" name="top-nav-bar-desktop-search-bar" />
 
         <div class="
               mobile:hidden
@@ -149,13 +149,12 @@
               desktop:w-[44px]
               desktop:h-[44px]
               desktop:mr-[42px]
-            " id="nav-cart-wrapper">
-          <a href="#">
+            " name="top-nav-bar-desktop-shopping-cart-box">
+          <a href="#" aria-label="shopping-cart-image-link" name="top-nav-bar-desktop-shopping-cart-image-link">
             <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007154394585894962/image.png" alt=""
-              aria-label="img-shopping-cart"
               onmouseover="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1006055626180399154/image_1_.png'"
               onmouseout="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1007154394585894962/image.png'"
-              class="" id="img-shopping-cart" />
+              class="" name="top-nav-bar-desktop-shopping-cart-image" />
           </a>
           <div class="
                 absolute
@@ -170,12 +169,12 @@
                 rounded-[50%]
                 text-[#ffffff]
                 leading-[24px]
-              " id="nav-circle">
+              " name="top-nav-bar-desktop-shopping-cart-notification-numbers">
             1
           </div>
         </div>
 
-        <a href="#" aria-label="nav-profile">
+        <a href="#" aria-label="profile-link" name="top-nav-bar-desktop-profile-link">
           <img class="
                 mobile:hidden
                 desktop:cursor-pointer
@@ -186,7 +185,7 @@
               " src="https://cdn.discordapp.com/attachments/1001702231785099304/1007154394904666112/profile.png" alt=""
             onmouseover="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1006055670421925960/profile_1.png'"
             onmouseout="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1007154394904666112/profile.png'"
-            id="nav-profile" />
+            name="top-nav-bar-desktop-profile" />
         </a>
 
         <img class="
@@ -198,7 +197,7 @@
               mobile:h-[40px]
               desktop:hidden
             " src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055671386603581/search.png" alt=""
-          id="nav-mobile-search" />
+          name="top-nav-bar-mobile-search" />
       </div>
 
       <div class="
@@ -208,7 +207,7 @@
             mobile:items-center
             mobile:h-[50px]
             desktop:h-[40px]
-          " id="nav-block">
+          " name="top-nav-bar-below">
         <div class="
               mobile:block
               mobile:cursor-pointer
@@ -217,7 +216,7 @@
               mobile:hover:text-[#ffffff]
               mobile:leading-[22px]
               desktop:hidden
-            ">
+            " name="top-nav-bar-below-mobile-women-dresses">
           <a href="#">女裝</a>
         </div>
         <img class="mobile:block desktop:hidden"
@@ -230,7 +229,7 @@
               mobile:hover:text-[#ffffff]
               mobile:leading-[22px]
               desktop:hidden
-            ">
+            " name="top-nav-bar-below-mobile-men-dresses">
           <a href="#">男裝</a>
         </div>
         <img class="mobile:block desktop:hidden"
@@ -243,7 +242,7 @@
               mobile:hover:text-[#ffffff]
               mobile:leading-[22px]
               desktop:hidden
-            ">
+            " name="top-nav-bar-below-mobile-accessory">
           <a href="#">配件</a>
         </div>
       </div>
@@ -251,7 +250,8 @@
   </header>
 
   <!-- main body content -->
-  <div class="
+  <div class="" id="main-page">
+    <div class="
         bg-center bg-cover
         w-full
         ease-out
@@ -260,8 +260,8 @@
         mobile:h-[185px] mobile:mt-[102px]
         desktop:h-[500px] desktop:mt-[140px]
         bg-[url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055626872475758/image.png')]
-      " id="banner">
-    <div class="
+      " name="slides">
+      <div class="
           relative
           h-full
           left-0
@@ -269,9 +269,9 @@
           mx-auto
           max-w-[1160px]
           mobile:w-[92%]
-        " id="banner-container">
-      <div class="absolute w-full" id="banner-content">
-        <div class="
+        " name="slides-container">
+        <div class="absolute w-full" name="slides-slidesTextMain">
+          <div class="
               cursor-pointer
               text-left
               mobile:mt-[36px] mobile:text-[15px] mobile:leading-[28px]
@@ -279,22 +279,22 @@
               desktop:text-[30px]
               desktop:leading-[57px]
               desktop:text-[#070707]
-            " id="slider-text-main">
-          於是<br />
-          我也想要給你<br />
-          一個那麼美好的自己。<br />
-        </div>
-        <div class="
+            " name="slides-text-main">
+            於是<br />
+            我也想要給你<br />
+            一個那麼美好的自己。<br />
+          </div>
+          <div class="
               cursor-pointer
               text-left
               mobile:text-[12px] mobile:leading-[28px]
               desktop:text-[20px] desktop:leading-[64px]
-            " id="slider-text-describe">
-          不朽《與自己和好如初》
+            " name="slides-text-describe">
+            不朽《與自己和好如初》
+          </div>
         </div>
       </div>
-    </div>
-    <div class="
+      <div class="
           absolute
           flex
           justify-center
@@ -306,8 +306,16 @@
           max-w-[1200px]
           mobile:mt-[265px]
           desktop:mt-[596px]
-        " id="dot-container">
-      <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dot-1.png" class="
+        " name="dot-box">
+        <!-- <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dotArray-1.png" class="
+                cursor-pointer
+                mobile:w-[4px] mobile:h-[4px] mobile:ml-[4.4px] mobile:mr-[4.4px]
+                desktop:w-[10px]
+                desktop:h-[10px]
+                desktop:ml-[11px]
+                desktop:mr-[11px]
+              " alt="" />
+      <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dotArray-1.png" class="
             cursor-pointer
             mobile:w-[4px] mobile:h-[4px] mobile:ml-[4.4px] mobile:mr-[4.4px]
             desktop:w-[10px]
@@ -315,7 +323,7 @@
             desktop:ml-[11px]
             desktop:mr-[11px]
           " alt="" />
-      <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png" class="
+      <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dotArray-2.png" class="
             cursor-pointer
             mobile:w-[4px] mobile:h-[4px] mobile:ml-[4.4px] mobile:mr-[4.4px]
             desktop:w-[10px]
@@ -323,7 +331,7 @@
             desktop:ml-[11px]
             desktop:mr-[11px]
           " alt="" />
-      <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png" class="
+      <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dotArray-2.png" class="
             cursor-pointer
             mobile:w-[4px] mobile:h-[4px] mobile:ml-[4.4px] mobile:mr-[4.4px]
             desktop:w-[10px]
@@ -331,7 +339,7 @@
             desktop:ml-[11px]
             desktop:mr-[11px]
           " alt="" />
-      <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png" class="
+      <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dotArray-2.png" class="
             cursor-pointer
             mobile:w-[4px] mobile:h-[4px] mobile:ml-[4.4px] mobile:mr-[4.4px]
             desktop:w-[10px]
@@ -339,43 +347,43 @@
             desktop:ml-[11px]
             desktop:mr-[11px]
           " alt="" />
-      <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png" class="
+      <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dotArray-2.png" class="
             cursor-pointer
             mobile:w-[4px] mobile:h-[4px] mobile:ml-[4.4px] mobile:mr-[4.4px]
             desktop:w-[10px]
             desktop:h-[10px]
             desktop:ml-[11px]
             desktop:mr-[11px]
-          " alt="" />
+          " alt="" /> -->
+      </div>
     </div>
-  </div>
 
-  <div class="flex justify-center w-full">
-    <div class="
+    <div class="flex justify-center w-full">
+      <div class="
           flex flex-wrap
           justify-center
-          content-start
+          slidesTextMain-start
           w-full
           mobile:mt-[15px] mobile:max-w-[100vw]
           desktop:mt-[70px] desktop:max-w-[1200px]
-        " id=" product-list">
-      <div class="
+        " name="product-list">
+        <div class="
             flex flex-col
             mobile:w-[46%] mobile:mx-[3px]
             desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]
-          " id="product-1">
-        <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png" alt=""
-          class="
+          " name="product-1">
+          <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png" alt=""
+            class="
               object-cover
               mobile:w-full mobile:h-full
               desktop:w-[360px] desktop:h-[480px]
-            " id="product-image" />
-        <div class="
+            " name="product-image" />
+          <div class="
               flex flex-row
               mobile:w-full mobile:items-center mobile:h-[40px]
               desktop:w-[360px]
-            " id="product-color">
-          <div class="
+            " name="product-color">
+            <div class="
                 cursor-pointer
                 bg-[#ffffff]
                 border-solid border-[1px] border-[#d3d3d3]
@@ -384,8 +392,8 @@
                 desktop:h-[24px]
                 desktop:mt-[20px]
                 desktop:mr-[10px]
-              " id="product-color1"></div>
-          <div class="
+              " name="product-color1"></div>
+            <div class="
                 cursor-pointer
                 bg-[#ddffbb]
                 border-solid border-[1px] border-[#d3d3d3]
@@ -394,8 +402,8 @@
                 desktop:h-[24px]
                 desktop:mt-[20px]
                 desktop:mr-[10px]
-              " id="product-color2"></div>
-          <div class="
+              " name="product-color2"></div>
+            <div class="
                 cursor-pointer
                 bg-[#d3d3d3]
                 border-solid border-[1px] border-[#d3d3d3]
@@ -404,9 +412,9 @@
                 desktop:h-[24px]
                 desktop:mt-[20px]
                 desktop:mr-[10px]
-              " id="product-color3"></div>
-        </div>
-        <div class="
+              " name="product-color3"></div>
+          </div>
+          <div class="
               cursor-pointer
               mobile:mt-[8px]
               mobile:text-[12px]
@@ -418,10 +426,10 @@
               desktop:tracking-[4px]
               desktop:text-[#3F3A3A]
               desktop:leading-[24px]
-            " id="product-name">
-          前開衩扭結洋裝
-        </div>
-        <div class="
+            " name="product-name">
+            前開衩扭結洋裝
+          </div>
+          <div class="
               cursor-pointer
               mobile:mt-[8px]
               mobile:mb-[24px]
@@ -435,415 +443,1761 @@
               desktop:text-[#3F3A3A]
               desktop:leading-[24px]
               desktop:tracking-[4px]
-            " id=" product-price">
-          TWD.799
+            " name="product-price">
+            TWD.799
+          </div>
+        </div>
+        <div class="
+            flex flex-col
+            mobile:w-[46%] mobile:mx-[3px]
+            desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]
+          " name="product-2">
+          <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png" alt=""
+            class="
+              object-cover
+              mobile:w-full mobile:h-full
+              desktop:w-[360px] desktop:h-[480px]
+            " name="product-image" />
+          <div class="
+              flex flex-row
+              mobile:w-full mobile:items-center mobile:h-[40px]
+              desktop:w-[360px]
+            " name="product-color">
+            <div class="
+                cursor-pointer
+                bg-[#ffffff]
+                border-solid border-[1px] border-[#d3d3d3]
+                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
+                desktop:w-[24px]
+                desktop:h-[24px]
+                desktop:mt-[20px]
+                desktop:mr-[10px]
+              " name="product-color1"></div>
+            <div class="
+                cursor-pointer
+                bg-[#ddffbb]
+                border-solid border-[1px] border-[#d3d3d3]
+                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
+                desktop:w-[24px]
+                desktop:h-[24px]
+                desktop:mt-[20px]
+                desktop:mr-[10px]
+              " name="product-color2"></div>
+            <div class="
+                cursor-pointer
+                bg-[#d3d3d3]
+                border-solid border-[1px] border-[#d3d3d3]
+                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
+                desktop:w-[24px]
+                desktop:h-[24px]
+                desktop:mt-[20px]
+                desktop:mr-[10px]
+              " name="product-color3"></div>
+          </div>
+          <div class="
+              cursor-pointer
+              mobile:mt-[8px]
+              mobile:text-[12px]
+              mobile:tracking-[2.4px]
+              mobile:text-[#000000]
+              mobile:leading-[14px]
+              desktop:mt-[10px]
+              desktop:text-[20px]
+              desktop:tracking-[4px]
+              desktop:text-[#3F3A3A]
+              desktop:leading-[24px]
+            " name="product-name">
+            前開衩扭結洋裝
+          </div>
+          <div class="
+              cursor-pointer
+              mobile:mt-[8px]
+              mobile:mb-[24px]
+              mobile:text-[12px]
+              mobile:text-[#000000]
+              mobile:leading-[14px]
+              mobile:tracking-[2.4px]
+              desktop:mt-[10px]
+              desktop:mb-[64px]
+              desktop:text-[20px]
+              desktop:text-[#3F3A3A]
+              desktop:leading-[24px]
+              desktop:tracking-[4px]
+            " name="product-price">
+            TWD.799
+          </div>
+        </div>
+        <div class="
+            flex flex-col
+            mobile:w-[46%] mobile:mx-[3px]
+            desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]
+          " name="product-3">
+          <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png" alt=""
+            class="
+              object-cover
+              mobile:w-full mobile:h-full
+              desktop:w-[360px] desktop:h-[480px]
+            " name="product-image" />
+          <div class="
+              flex flex-row
+              mobile:w-full mobile:items-center mobile:h-[40px]
+              desktop:w-[360px]
+            " name="product-color">
+            <div class="
+                cursor-pointer
+                bg-[#ffffff]
+                border-solid border-[1px] border-[#d3d3d3]
+                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
+                desktop:w-[24px]
+                desktop:h-[24px]
+                desktop:mt-[20px]
+                desktop:mr-[10px]
+              " name="product-color1"></div>
+            <div class="
+                cursor-pointer
+                bg-[#ddffbb]
+                border-solid border-[1px] border-[#d3d3d3]
+                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
+                desktop:w-[24px]
+                desktop:h-[24px]
+                desktop:mt-[20px]
+                desktop:mr-[10px]
+              " name="product-color2"></div>
+            <div class="
+                cursor-pointer
+                bg-[#d3d3d3]
+                border-solid border-[1px] border-[#d3d3d3]
+                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
+                desktop:w-[24px]
+                desktop:h-[24px]
+                desktop:mt-[20px]
+                desktop:mr-[10px]
+              " name="product-color3"></div>
+          </div>
+          <div class="
+              cursor-pointer
+              mobile:mt-[8px]
+              mobile:text-[12px]
+              mobile:tracking-[2.4px]
+              mobile:text-[#000000]
+              mobile:leading-[14px]
+              desktop:mt-[10px]
+              desktop:text-[20px]
+              desktop:tracking-[4px]
+              desktop:text-[#3F3A3A]
+              desktop:leading-[24px]
+            " name="product-name">
+            前開衩扭結洋裝
+          </div>
+          <div class="
+              cursor-pointer
+              mobile:mt-[8px]
+              mobile:mb-[24px]
+              mobile:text-[12px]
+              mobile:text-[#000000]
+              mobile:leading-[14px]
+              mobile:tracking-[2.4px]
+              desktop:mt-[10px]
+              desktop:mb-[64px]
+              desktop:text-[20px]
+              desktop:text-[#3F3A3A]
+              desktop:leading-[24px]
+              desktop:tracking-[4px]
+            " name="product-price">
+            TWD.799
+          </div>
+        </div>
+        <div class="
+            flex flex-col
+            mobile:w-[46%] mobile:mx-[3px]
+            desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]
+          " name="product-4">
+          <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png" alt=""
+            class="
+              object-cover
+              mobile:w-full mobile:h-full
+              desktop:w-[360px] desktop:h-[480px]
+            " name="product-image" />
+          <div class="
+              flex flex-row
+              mobile:w-full mobile:items-center mobile:h-[40px]
+              desktop:w-[360px]
+            " name="product-color">
+            <div class="
+                cursor-pointer
+                bg-[#ffffff]
+                border-solid border-[1px] border-[#d3d3d3]
+                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
+                desktop:w-[24px]
+                desktop:h-[24px]
+                desktop:mt-[20px]
+                desktop:mr-[10px]
+              " name="product-color1"></div>
+            <div class="
+                cursor-pointer
+                bg-[#ddffbb]
+                border-solid border-[1px] border-[#d3d3d3]
+                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
+                desktop:w-[24px]
+                desktop:h-[24px]
+                desktop:mt-[20px]
+                desktop:mr-[10px]
+              " name="product-color2"></div>
+            <div class="
+                cursor-pointer
+                bg-[#d3d3d3]
+                border-solid border-[1px] border-[#d3d3d3]
+                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
+                desktop:w-[24px]
+                desktop:h-[24px]
+                desktop:mt-[20px]
+                desktop:mr-[10px]
+              " name="product-color3"></div>
+          </div>
+          <div class="
+              cursor-pointer
+              mobile:mt-[8px]
+              mobile:text-[12px]
+              mobile:tracking-[2.4px]
+              mobile:text-[#000000]
+              mobile:leading-[14px]
+              desktop:mt-[10px]
+              desktop:text-[20px]
+              desktop:tracking-[4px]
+              desktop:text-[#3F3A3A]
+              desktop:leading-[24px]
+            " name="product-name">
+            前開衩扭結洋裝
+          </div>
+          <div class="
+              cursor-pointer
+              mobile:mt-[8px]
+              mobile:mb-[24px]
+              mobile:text-[12px]
+              mobile:text-[#000000]
+              mobile:leading-[14px]
+              mobile:tracking-[2.4px]
+              desktop:mt-[10px]
+              desktop:mb-[64px]
+              desktop:text-[20px]
+              desktop:text-[#3F3A3A]
+              desktop:leading-[24px]
+              desktop:tracking-[4px]
+            " name="product-price">
+            TWD.799
+          </div>
+        </div>
+        <div class="
+            flex flex-col
+            mobile:w-[46%] mobile:mx-[3px]
+            desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]
+          " name="product-5">
+          <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png" alt=""
+            class="
+              object-cover
+              mobile:w-full mobile:h-full
+              desktop:w-[360px] desktop:h-[480px]
+            " name="product-image" />
+          <div class="
+              flex flex-row
+              mobile:w-full mobile:items-center mobile:h-[40px]
+              desktop:w-[360px]
+            " name="product-color">
+            <div class="
+                cursor-pointer
+                bg-[#ffffff]
+                border-solid border-[1px] border-[#d3d3d3]
+                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
+                desktop:w-[24px]
+                desktop:h-[24px]
+                desktop:mt-[20px]
+                desktop:mr-[10px]
+              " name="product-color1"></div>
+            <div class="
+                cursor-pointer
+                bg-[#ddffbb]
+                border-solid border-[1px] border-[#d3d3d3]
+                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
+                desktop:w-[24px]
+                desktop:h-[24px]
+                desktop:mt-[20px]
+                desktop:mr-[10px]
+              " name="product-color2"></div>
+            <div class="
+                cursor-pointer
+                bg-[#d3d3d3]
+                border-solid border-[1px] border-[#d3d3d3]
+                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
+                desktop:w-[24px]
+                desktop:h-[24px]
+                desktop:mt-[20px]
+                desktop:mr-[10px]
+              " name="product-color3"></div>
+          </div>
+          <div class="
+              cursor-pointer
+              mobile:mt-[8px]
+              mobile:text-[12px]
+              mobile:tracking-[2.4px]
+              mobile:text-[#000000]
+              mobile:leading-[14px]
+              desktop:mt-[10px]
+              desktop:text-[20px]
+              desktop:tracking-[4px]
+              desktop:text-[#3F3A3A]
+              desktop:leading-[24px]
+            " name="product-name">
+            前開衩扭結洋裝
+          </div>
+          <div class="
+              cursor-pointer
+              mobile:mt-[8px]
+              mobile:mb-[24px]
+              mobile:text-[12px]
+              mobile:text-[#000000]
+              mobile:leading-[14px]
+              mobile:tracking-[2.4px]
+              desktop:mt-[10px]
+              desktop:mb-[64px]
+              desktop:text-[20px]
+              desktop:text-[#3F3A3A]
+              desktop:leading-[24px]
+              desktop:tracking-[4px]
+            " name="product-price">
+            TWD.799
+          </div>
+        </div>
+        <div class="
+            flex flex-col
+            mobile:w-[46%] mobile:mx-[3px]
+            desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]
+          " name="product-6">
+          <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png" alt=""
+            class="
+              object-cover
+              mobile:w-full mobile:h-full
+              desktop:w-[360px] desktop:h-[480px]
+            " name="product-image" />
+          <div class="
+              flex flex-row
+              mobile:w-full mobile:items-center mobile:h-[40px]
+              desktop:w-[360px]
+            " name="product-color">
+            <div class="
+                cursor-pointer
+                bg-[#ffffff]
+                border-solid border-[1px] border-[#d3d3d3]
+                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
+                desktop:w-[24px]
+                desktop:h-[24px]
+                desktop:mt-[20px]
+                desktop:mr-[10px]
+              " name="product-color1"></div>
+            <div class="
+                cursor-pointer
+                bg-[#ddffbb]
+                border-solid border-[1px] border-[#d3d3d3]
+                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
+                desktop:w-[24px]
+                desktop:h-[24px]
+                desktop:mt-[20px]
+                desktop:mr-[10px]
+              " name="product-color2"></div>
+            <div class="
+                cursor-pointer
+                bg-[#d3d3d3]
+                border-solid border-[1px] border-[#d3d3d3]
+                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
+                desktop:w-[24px]
+                desktop:h-[24px]
+                desktop:mt-[20px]
+                desktop:mr-[10px]
+              " name="product-color3"></div>
+          </div>
+          <div class="
+              cursor-pointer
+              mobile:mt-[8px]
+              mobile:text-[12px]
+              mobile:tracking-[2.4px]
+              mobile:text-[#000000]
+              mobile:leading-[14px]
+              desktop:mt-[10px]
+              desktop:text-[20px]
+              desktop:tracking-[4px]
+              desktop:text-[#3F3A3A]
+              desktop:leading-[24px]
+            " name="product-name">
+            前開衩扭結洋裝
+          </div>
+          <div class="
+              cursor-pointer
+              mobile:mt-[8px]
+              mobile:mb-[24px]
+              mobile:text-[12px]
+              mobile:text-[#000000]
+              mobile:leading-[14px]
+              mobile:tracking-[2.4px]
+              desktop:mt-[10px]
+              desktop:mb-[64px]
+              desktop:text-[20px]
+              desktop:text-[#3F3A3A]
+              desktop:leading-[24px]
+              desktop:tracking-[4px]
+            " name="product-price">
+            TWD.799
+          </div>
         </div>
       </div>
-      <div class="
-            flex flex-col
-            mobile:w-[46%] mobile:mx-[3px]
-            desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]
-          " id="product-2">
+    </div>
+  </div>
+
+  <div class="hidden" id="product-page">
+    <div class="
+          flex flex-col
+          w-full
+          mx-auto
+          mobile:mt-[102px] mobile:max-w-[1070px]
+          desktop:mt-[140px] desktop:max-w-[960px]
+        " id="">
+      <div class="flex mobile:flex-col mobile:mt-0 desktop:flex-row desktop:mt-[65px] desktop:items-center" id="">
         <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png" alt=""
           class="
               object-cover
-              mobile:w-full mobile:h-full
-              desktop:w-[360px] desktop:h-[480px]
+              mobile:w-full
+              desktop:w-[560px] desktop:h-[746.66px]
             " id="product-image" />
         <div class="
-              flex flex-row
-              mobile:w-full mobile:items-center mobile:h-[40px]
-              desktop:w-[360px]
-            " id="product-color">
+              flex flex-col
+              mobile:mx-[24px] mobile:max-h-none mobile:max-w-none
+              desktop:ml-[40px]
+              desktop:mr-0
+              desktop:items-start
+              desktop:max-h-[746.66px]
+              desktop:max-w-[360px]
+            " id="product-info">
+          <div class="
+                text-[#3f3a3a]
+                mobile:text-[20px]
+                mobile:leading-[24px]
+                mobile:tracking-[4px]
+                mobile:mt-[17px]
+                desktop:text-[32px]
+                desktop:leading-[38px]
+                desktop:tracking-[6.4px]
+                desktop:mt-0
+              " id="product-name">
+            前開衩扭結洋裝
+          </div>
+          <div class="
+                text-[#BABABA]
+                mobile:text-[16px]
+                mobile:leading-[19px]
+                mobile:tracking-[3.2px]
+                mobile:mt-[10px]
+                desktop:text-[20px]
+                desktop:leading-[24px]
+                desktop:tracking-[4px]
+                desktop:mt-[16px]
+              " id="product-name">
+            201807201824
+          </div>
+          <div class="
+                text-[#3f3a3a]
+                mobile:text-[20px] mobile:leading-[24px] mobile:mt-[20px]
+                desktop:text-[30px] desktop:leading-[36px] desktop:mt-[40px]
+              " id="product-name">
+            TWD.799
+          </div>
+          <div class="
+                flex flex-row
+                w-full
+                h-0
+                mobile:my-[10px]
+                desktop:max-w-none desktop:my-[20px] desktop:max-w-[360px]
+                content-['']
+                border-solid border-[#3f3a3a] border-b-[1px]
+              " id="split-border"></div>
+          <div class="
+                flex flex-row
+                items-center
+                mobile:mt-[20px]
+                desktop:mt-[10px]
+              " id="product-color">
+            <div class="
+                  inline-block
+                  mobile:w-[62px]
+                  desktop:w-[72px]
+                  text-[#3f3a3a]
+                  mobile:text-[14px] mobile:leading-[17px] mobile:tracking-[2.8px]
+                  desktop:text-[20px]
+                  desktop:leading-[24px]
+                  desktop:tracking-[4px]
+                " id="product-color-label">
+              顏色｜
+            </div>
+
+            <div class="
+                  flex flex-row
+                  mobile:w-full mobile:items-center mobile:h-[40px]
+                  desktop:w-[360px]
+                  mobile:ml-[6.5px]
+                  desktop:ml-[16.5px]
+                " id="product-color">
+              <div class="
+                    flex
+                    justify-center
+                    items-center
+                    w-[36px]
+                    h-[36px]
+                    mobile:ml-[7px] mobile:mr-[7px]
+                    desktop:ml-[9.5px] desktop:mr-[9.5px]
+                    border-solid border-[1px] border-[#979797]
+                  ">
+                <div class="
+                      cursor-pointer
+                      bg-[#ffffff]
+                      border-solid border-[1px] border-[#d3d3d3]
+                      w-[24px]
+                      h-[24px]
+                    " id="product-color1"></div>
+              </div>
+              <div class="
+                    flex
+                    justify-center
+                    items-center
+                    w-[36px]
+                    h-[36px]
+                    mobile:ml-[7px] mobile:mr-[7px]
+                    desktop:ml-[9.5px] desktop:mr-[9.5px]
+                    border-solid border-[1px] border-[#979797]/0
+                  ">
+                <div class="
+                      cursor-pointer
+                      bg-[#ddffbb]
+                      border-solid border-[1px] border-[#d3d3d3]
+                      w-[24px]
+                      h-[24px]
+                    " id="product-color2"></div>
+              </div>
+              <div class="
+                    flex
+                    justify-center
+                    items-center
+                    w-[36px]
+                    h-[36px]
+                    mobile:ml-[7px] mobile:mr-[7px]
+                    desktop:ml-[9.5px] desktop:mr-[9.5px]
+                    border-solid border-[1px] border-[#979797]/0
+                  ">
+                <div class="
+                      cursor-pointer
+                      bg-[#cccccc]
+                      border-solid border-[1px] border-[#d3d3d3]
+                      w-[24px]
+                      h-[24px]
+                    " id="product-color3"></div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-row items-center mt-[19px]" id="product-size">
+            <div class="
+                  inline-block
+                  mobile:w-[62px]
+                  desktop:w-[72px]
+                  text-[#3f3a3a]
+                  mobile:text-[14px] mobile:leading-[17px] mobile:tracking-[2.8px]
+                  desktop:text-[20px]
+                  desktop:leading-[24px]
+                  desktop:tracking-[4px]
+                " id="product-size-label">
+              尺寸｜
+            </div>
+
+            <div class="
+                  flex flex-row
+                  mobile:w-full mobile:items-center mobile:h-[40px]
+                  desktop:w-[360px]
+                  mobile:ml-[6.5px]
+                  desktop:ml-[16.5px]
+                " id="product-size">
+              <div class="
+                    cursor-pointer
+                    flex
+                    justify-center
+                    items-center
+                    bg-[#000000]
+                    text-[#ffffff]
+                    rounded-[16px]
+                    w-[36px]
+                    h-[36px]
+                    mobile:ml-[7px] mobile:mr-[7px]
+                    desktop:ml-[9.5px] desktop:mr-[9.5px]
+                  " id="product-sizeS">
+                S
+              </div>
+              <div class="
+                    cursor-pointer
+                    flex
+                    justify-center
+                    items-center
+                    bg-[#ececec]
+                    text-[#3f3a3a]
+                    rounded-[16px]
+                    w-[36px]
+                    h-[36px]
+                    mobile:ml-[7px] mobile:mr-[7px]
+                    desktop:ml-[9.5px] desktop:mr-[9.5px]
+                  " id="product-sizeM">
+                M
+              </div>
+              <div class="
+                    cursor-pointer
+                    flex
+                    justify-center
+                    items-center
+                    bg-[#ececec/25]
+                    text-[#3f3a3a/25]
+                    rounded-[16px]
+                    w-[36px]
+                    h-[36px]
+                    mobile:ml-[7px] mobile:mr-[7px]
+                    desktop:ml-[9.5px] desktop:mr-[9.5px]
+                  " id="product-sizeL">
+                L
+              </div>
+            </div>
+          </div>
+          <div class="
+                flex flex-row
+                items-center
+                mobile:mt-[30px]
+                desktop:mt-[19px]
+              " id="product-amount-box">
+            <div class="
+                  mobile:hidden
+                  desktop:inline-block
+                  mobile:w-[62px]
+                  desktop:w-[72px]
+                  text-[#3f3a3a]
+                  mobile:text-[14px] mobile:leading-[17px] mobile:tracking-[2.8px]
+                  desktop:text-[20px]
+                  desktop:leading-[24px]
+                  desktop:tracking-[4px]
+                " id="product-amount-label">
+              數量｜
+            </div>
+
+            <div class="
+                  flex flex-row
+                  justify-between
+                  items-center
+                  mobile:w-full
+                  desktop:w-[160px]
+                  h-[44px]
+                  mobile:ml-0
+                  desktop:ml-[25px]
+                  bg-[#ffffff]
+                  border-solid border-[1px] border-[#979797]
+                " id="">
+              <div class="
+                    cursor-pointer
+                    w-[6px]
+                    h-[32px]
+                    ml-[15px]
+                    text-[16px] text-[#000000]
+                    leading-[32px]
+                  " id="product-amount-minus">
+                -
+              </div>
+              <input class="
+                    cursor-pointer
+                    w-[90%]
+                    text-center
+                    mobile:text-[20px] mobile:text-[#8B572A] mobile:leading-[22px]
+                    desktop:text-[16px]
+                    desktop:text-[#8B572A]
+                    desktop:leading-[32px]
+                    leading-[32px]
+                  " placeholder="1" value="1" id="product-amount" />
+              <div class="
+                    cursor-pointer
+                    w-[9px]
+                    h-[32px]
+                    mr-[15px]
+                    text-[16px] text-[#000000]
+                    leading-[32px]
+                  " id="product-amount-plus">
+                +
+              </div>
+            </div>
+          </div>
           <div class="
                 cursor-pointer
-                bg-[#ffffff]
-                border-solid border-[1px] border-[#d3d3d3]
-                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
-                desktop:w-[24px]
-                desktop:h-[24px]
-                desktop:mt-[20px]
-                desktop:mr-[10px]
-              " id="product-color1"></div>
+                flex
+                justify-center
+                items-center
+                mobile:w-full
+                desktop:w-[360px]
+                mobile:h-[44px]
+                desktop:h-[64px]
+                mobile:mt-[10px]
+                desktop:mt-[29px]
+                bg-[#000000]
+                text-[#FFFFFF]
+                mobile:text-[16px] mobile:leading-[30px] mobile:tracking-[3.2px]
+                desktop:text-[20px] desktop:leading-[30px] desktop:tracking-[4px]
+                mobile:border-none
+                desktop:box-border
+                desktop:border-solid
+                desktop:border-[1px]
+                desktop:border-[#979797]
+              " onclick="alert('加入購物車成功！')">
+            加入購物車
+          </div>
           <div class="
-                cursor-pointer
-                bg-[#ddffbb]
-                border-solid border-[1px] border-[#d3d3d3]
-                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
-                desktop:w-[24px]
-                desktop:h-[24px]
-                desktop:mt-[20px]
-                desktop:mr-[10px]
-              " id="product-color2"></div>
-          <div class="
-                cursor-pointer
-                bg-[#d3d3d3]
-                border-solid border-[1px] border-[#d3d3d3]
-                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
-                desktop:w-[24px]
-                desktop:h-[24px]
-                desktop:mt-[20px]
-                desktop:mr-[10px]
-              " id="product-color3"></div>
-        </div>
-        <div class="
-              cursor-pointer
-              mobile:mt-[8px]
-              mobile:text-[12px]
-              mobile:tracking-[2.4px]
-              mobile:text-[#000000]
-              mobile:leading-[14px]
-              desktop:mt-[10px]
-              desktop:text-[20px]
-              desktop:tracking-[4px]
-              desktop:text-[#3F3A3A]
-              desktop:leading-[24px]
-            " id="product-name">
-          前開衩扭結洋裝
-        </div>
-        <div class="
-              cursor-pointer
-              mobile:mt-[8px]
-              mobile:mb-[24px]
-              mobile:text-[12px]
-              mobile:text-[#000000]
-              mobile:leading-[14px]
-              mobile:tracking-[2.4px]
-              desktop:mt-[10px]
-              desktop:mb-[64px]
-              desktop:text-[20px]
-              desktop:text-[#3F3A3A]
-              desktop:leading-[24px]
-              desktop:tracking-[4px]
-            " id=" product-price">
-          TWD.799
+                mobile:mt-[28px]
+                desktop:mt-[40px]
+                text-[#3f3a3a]
+                mobile:text-[14px] mobile:leading-[24px]
+                desktop:text-[20px] desktop:leading-[30px]
+              " id="product-spec">
+            實品顏色依單品照為主<br /><br />
+            棉 100%<br />
+            厚薄：薄<br />
+            彈性：無<br /><br />
+            清洗：手洗，溫水<br />
+            產地：中國
+          </div>
         </div>
       </div>
-      <div class="
-            flex flex-col
-            mobile:w-[46%] mobile:mx-[3px]
-            desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]
-          " id="product-3">
-        <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png" alt=""
-          class="
-              object-cover
-              mobile:w-full mobile:h-full
-              desktop:w-[360px] desktop:h-[480px]
-            " id="product-image" />
+      <div class="mobile:mx-[24px] mobile:mb-[32px] desktop:mb-[49px] desktop:mx-0" id="product-describe">
         <div class="
-              flex flex-row
-              mobile:w-full mobile:items-center mobile:h-[40px]
-              desktop:w-[360px]
-            " id="product-color">
+              flex
+              items-center
+              h-[30px]
+              mobile:mt-[28px]
+              desktop:mt-[50.33px]
+              w-full
+            ">
           <div class="
-                cursor-pointer
-                bg-[#ffffff]
-                border-solid border-[1px] border-[#d3d3d3]
-                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
-                desktop:w-[24px]
-                desktop:h-[24px]
-                desktop:mt-[20px]
-                desktop:mr-[10px]
-              " id="product-color1"></div>
+                inline-block
+                text-[#8B572A]
+                mobile:w-[152px]
+                mobile:text-[16px]
+                mobile:leading-[30px]
+                mobile:tracking-[3.2px]
+                desktop:w-[180px]
+                desktop:text-[20px]
+                desktop:leading-[30px]
+                desktop:tracking-[3px]
+              " id="product-name">
+            更多產品資訊
+          </div>
           <div class="
-                cursor-pointer
-                bg-[#ddffbb]
-                border-solid border-[1px] border-[#d3d3d3]
-                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
-                desktop:w-[24px]
-                desktop:h-[24px]
-                desktop:mt-[20px]
-                desktop:mr-[10px]
-              " id="product-color2"></div>
-          <div class="
-                cursor-pointer
-                bg-[#d3d3d3]
-                border-solid border-[1px] border-[#d3d3d3]
-                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
-                desktop:w-[24px]
-                desktop:h-[24px]
-                desktop:mt-[20px]
-                desktop:mr-[10px]
-              " id="product-color3"></div>
+                flex flex-row
+                w-full
+                h-0
+                mobile:ml-0
+                desktop:ml-[64px]
+                content-['']
+                border-solid border-[#3f3a3a] border-b-[1px]
+              " id="split-border"></div>
         </div>
         <div class="
-              cursor-pointer
-              mobile:mt-[8px]
-              mobile:text-[12px]
-              mobile:tracking-[2.4px]
-              mobile:text-[#000000]
-              mobile:leading-[14px]
-              desktop:mt-[10px]
-              desktop:text-[20px]
-              desktop:tracking-[4px]
-              desktop:text-[#3F3A3A]
-              desktop:leading-[24px]
+              flex
+              items-center
+              mobile:mt-[12px]
+              desktop:mt-[28px]
+              my-0
+              text-[#3f3a3a]
+              mobile:text-[14px] mobile:leading-[25px]
+              desktop:text-[20px] desktop:leading-[30px]
             " id="product-name">
-          前開衩扭結洋裝
+          O.N.S is all about options, which is why we took our staple polo shirt
+          and upgraded it with slubby linen jersey, making it even lighter for
+          those who prefer their summer style extra-breezy.
         </div>
-        <div class="
-              cursor-pointer
-              mobile:mt-[8px]
-              mobile:mb-[24px]
-              mobile:text-[12px]
-              mobile:text-[#000000]
-              mobile:leading-[14px]
-              mobile:tracking-[2.4px]
-              desktop:mt-[10px]
-              desktop:mb-[64px]
-              desktop:text-[20px]
-              desktop:text-[#3F3A3A]
-              desktop:leading-[24px]
-              desktop:tracking-[4px]
-            " id=" product-price">
-          TWD.799
-        </div>
+        <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251147632947271/0.png" alt="" class="
+              object-cover
+              mobile:w-full mobile:mt-[20px]
+              desktop:w-[960px] desktop:h-[540px] desktop:mt-[30px]
+            " id="product-image" />
+        <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251147196747866/1.png" alt="" class="
+              object-cover
+              mobile:w-full mobile:mt-[20px]
+              desktop:w-[960px] desktop:h-[540px] desktop:mt-[30px]
+            " id="product-image" />
       </div>
-      <div class="
-            flex flex-col
-            mobile:w-[46%] mobile:mx-[3px]
-            desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]
-          " id="product-4">
-        <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png" alt=""
-          class="
-              object-cover
-              mobile:w-full mobile:h-full
-              desktop:w-[360px] desktop:h-[480px]
-            " id="product-image" />
+    </div>
+  </div>
+
+  <div class="hidden" id="checkout-page">
+    <div class="
+          flex flex-col
+          w-full
+          mx-auto
+          mobile:mt-[102px] mobile:max-w-[1070px]
+          desktop:mt-[140px] desktop:max-w-[1160px]
+        " id="">
+      <div class="flex flex-col mobile:mx-[24px] desktop:mx-0" id="">
         <div class="
               flex flex-row
-              mobile:w-full mobile:items-center mobile:h-[40px]
-              desktop:w-[360px]
-            " id="product-color">
+              mobile:mt-[20px]
+              desktop:mt-[51px] desktop:items-start
+            " id="cart-title-box">
           <div class="
-                cursor-pointer
-                bg-[#ffffff]
-                border-solid border-[1px] border-[#d3d3d3]
-                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
-                desktop:w-[24px]
-                desktop:h-[24px]
-                desktop:mt-[20px]
-                desktop:mr-[10px]
-              " id="product-color1"></div>
+                inline-block
+                font-bold
+                text-[#3f3a3a] text-[16px]
+                leading-[19px]
+                mobile:mr-0
+                desktop:mr-[468px]
+              " id="cart-title">
+            購物車(3)
+          </div>
           <div class="
-                cursor-pointer
-                bg-[#ddffbb]
-                border-solid border-[1px] border-[#d3d3d3]
-                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
-                desktop:w-[24px]
-                desktop:h-[24px]
-                desktop:mt-[20px]
-                desktop:mr-[10px]
-              " id="product-color2"></div>
+                text-[#3f3a3a] text-[16px]
+                leading-[19px]
+                mobile:hidden mobile:mr-0
+                desktop:inline-block desktop:mr-[160px]
+              " id="cart-title">
+            數量
+          </div>
           <div class="
-                cursor-pointer
-                bg-[#d3d3d3]
-                border-solid border-[1px] border-[#d3d3d3]
-                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
-                desktop:w-[24px]
-                desktop:h-[24px]
-                desktop:mt-[20px]
-                desktop:mr-[10px]
-              " id="product-color3"></div>
+                text-[#3f3a3a] text-[16px]
+                leading-[19px]
+                mobile:hidden mobile:mr-0
+                desktop:inline-block desktop:mr-[160px]
+              " id="cart-title">
+            單價
+          </div>
+          <div class="
+                text-[#3f3a3a] text-[16px]
+                leading-[19px]
+                mobile:hidden
+                desktop:inline-block
+              " id="cart-title">
+            小計
+          </div>
         </div>
+
         <div class="
-              cursor-pointer
-              mobile:mt-[8px]
-              mobile:text-[12px]
-              mobile:tracking-[2.4px]
-              mobile:text-[#000000]
-              mobile:leading-[14px]
-              desktop:mt-[10px]
-              desktop:text-[20px]
-              desktop:tracking-[4px]
-              desktop:text-[#3F3A3A]
-              desktop:leading-[24px]
-            " id="product-name">
-          前開衩扭結洋裝
+              w-full
+              mobile:mt-0 mobile:pb-[20px]
+              desktop:pb-0
+              desktop:mt-[16px]
+              desktop:pb-[40px]
+              desktop:border-solid
+              desktop:border-[1px]
+              desktop:border-[#979797]
+              mobile:border-none
+            ">
+          <div class="
+                relative
+                flex
+                mobile:flex-col
+                desktop:flex-row
+                mobile:mt-[10px] mobile:ml-0
+                desktop:mt-[30px] desktop:ml-[32px]
+              " id="">
+            <div class="
+                  flex flex-row
+                  w-full
+                  h-0
+                  mobile:block mobile:my-[10px]
+                  desktop:hidden desktop:my-0
+                  content-['']
+                  border-solid border-[#3f3a3a] border-b-[1px]
+                " id="split-border"></div>
+            <div class="flex flex-row" id="">
+              <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251332052295720/image.png" alt=""
+                class="object-cover w-[114px] h-[152px]" id="product-image" />
+              <div class="
+                    flex flex-col
+                    mobile:w-full mobile:ml-[10px]
+                    desktop:w-[354px] desktop:ml-[16px]
+                  " id="">
+                <div class="
+                      text-[#000000]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:text-[16px] desktop:leading-[19px]
+                    " id="">
+                  前開衩扭結洋裝
+                </div>
+                <div class="
+                      mobile:mt-[20px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:mt-[18px] desktop:text-[16px] desktop:leading-[19px]
+                    " id="">
+                  201807201824
+                </div>
+                <div class="
+                      mobile:mt-[24px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:mt-[22px] desktop:text-[16px] desktop:leading-[19px]
+                    " id="">
+                  顏色｜白
+                </div>
+                <div class="
+                      mobile:mt-[12px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:mt-[10px] desktop:text-[16px] desktop:leading-[19px]
+                    " id="">
+                  尺寸｜M
+                </div>
+              </div>
+              <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007859059120156743/trash.png" alt=""
+                class="
+                    absolute
+                    object-cover
+                    w-[44px]
+                    h-[44px]
+                    mobile:left-[calc(100%-44px)]
+                    desktop:left-[calc(100%-74px)]
+                    mobile:mt-0
+                    desktop:mt-[54px]
+                  " id="product-image" />
+            </div>
+            <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" id="">
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                數量
+              </div>
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                單價
+              </div>
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                小計
+              </div>
+            </div>
+            <div class="
+                  flex flex-row
+                  items-center
+                  mobile:h-[30px] mobile:mt-[12px] mobile:ml-[12px]
+                  desktop:h-[32px] desktop:mt-[60px] desktop:ml-0
+                " id="">
+              <select class="
+                    w-[80px]
+                    mobile:h-[30px] mobile:mr-[12px]
+                    desktop:h-[32px] desktop:mr-[56px]
+                    pl-[16px]
+                    bg-[#F3F3F3]
+                    rounded-[8px]
+                    border-solid border-[1px] border-[#979797]
+                  " name="amount" id="amount" title="From">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+              <div class="
+                    flex
+                    justify-center
+                    items-center
+                    text-[#3f3a3a] text-center
+                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
+                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
+                  " id="">
+                TWD.799
+              </div>
+              <div class="
+                    flex
+                    justify-center
+                    items-center
+                    text-[#3f3a3a] text-center
+                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
+                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
+                  " id="">
+                TWD.799
+              </div>
+            </div>
+          </div>
+          <div class="
+                relative
+                flex
+                mobile:flex-col
+                desktop:flex-row
+                mobile:mt-[10px] mobile:ml-0
+                desktop:mt-[30px] desktop:ml-[32px]
+              " id="">
+            <div class="
+                  flex flex-row
+                  w-full
+                  h-0
+                  mobile:block mobile:my-[20px]
+                  desktop:hidden desktop:my-0
+                  content-['']
+                  border-solid border-[#3f3a3a] border-b-[1px]
+                " id="split-border"></div>
+            <div class="flex flex-row" id="">
+              <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251332052295720/image.png" alt=""
+                class="object-cover w-[114px] h-[152px]" id="product-image" />
+              <div class="
+                    flex flex-col
+                    mobile:w-full mobile:ml-[10px]
+                    desktop:w-[354px] desktop:ml-[16px]
+                  " id="">
+                <div class="
+                      text-[#000000]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:text-[16px] desktop:leading-[19px]
+                    " id="">
+                  前開衩扭結洋裝
+                </div>
+                <div class="
+                      mobile:mt-[20px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:mt-[18px] desktop:text-[16px] desktop:leading-[19px]
+                    " id="">
+                  201807201824
+                </div>
+                <div class="
+                      mobile:mt-[24px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:mt-[22px] desktop:text-[16px] desktop:leading-[19px]
+                    " id="">
+                  顏色｜白
+                </div>
+                <div class="
+                      mobile:mt-[12px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:mt-[10px] desktop:text-[16px] desktop:leading-[19px]
+                    " id="">
+                  尺寸｜M
+                </div>
+              </div>
+              <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007859059120156743/trash.png" alt=""
+                class="
+                    absolute
+                    object-cover
+                    w-[44px]
+                    h-[44px]
+                    mobile:left-[calc(100%-44px)]
+                    desktop:left-[calc(100%-74px)]
+                    mobile:mt-0
+                    desktop:mt-[54px]
+                  " id="product-image" />
+            </div>
+            <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" id="">
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                數量
+              </div>
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                單價
+              </div>
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                小計
+              </div>
+            </div>
+            <div class="
+                  flex flex-row
+                  items-center
+                  mobile:h-[30px] mobile:mt-[12px] mobile:ml-[12px]
+                  desktop:h-[32px] desktop:mt-[60px] desktop:ml-0
+                " id="">
+              <select class="
+                    w-[80px]
+                    mobile:h-[30px] mobile:mr-[12px]
+                    desktop:h-[32px] desktop:mr-[56px]
+                    pl-[16px]
+                    bg-[#F3F3F3]
+                    rounded-[8px]
+                    border-solid border-[1px] border-[#979797]
+                  " name="amount" id="amount" title="From">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+              <div class="
+                    flex
+                    justify-center
+                    items-center
+                    text-[#3f3a3a] text-center
+                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
+                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
+                  " id="">
+                TWD.799
+              </div>
+              <div class="
+                    flex
+                    justify-center
+                    items-center
+                    text-[#3f3a3a] text-center
+                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
+                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
+                  " id="">
+                TWD.799
+              </div>
+            </div>
+          </div>
+          <div class="
+                relative
+                flex
+                mobile:flex-col
+                desktop:flex-row
+                mobile:mt-[10px] mobile:ml-0
+                desktop:mt-[30px] desktop:ml-[32px]
+              " id="">
+            <div class="
+                  flex flex-row
+                  w-full
+                  h-0
+                  mobile:block mobile:my-[20px]
+                  desktop:hidden desktop:my-0
+                  content-['']
+                  border-solid border-[#3f3a3a] border-b-[1px]
+                " id="split-border"></div>
+            <div class="flex flex-row" id="">
+              <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251332052295720/image.png" alt=""
+                class="object-cover w-[114px] h-[152px]" id="product-image" />
+              <div class="
+                    flex flex-col
+                    mobile:w-full mobile:ml-[10px]
+                    desktop:w-[354px] desktop:ml-[16px]
+                  " id="">
+                <div class="
+                      text-[#000000]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:text-[16px] desktop:leading-[19px]
+                    " id="">
+                  前開衩扭結洋裝
+                </div>
+                <div class="
+                      mobile:mt-[20px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:mt-[18px] desktop:text-[16px] desktop:leading-[19px]
+                    " id="">
+                  201807201824
+                </div>
+                <div class="
+                      mobile:mt-[24px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:mt-[22px] desktop:text-[16px] desktop:leading-[19px]
+                    " id="">
+                  顏色｜白
+                </div>
+                <div class="
+                      mobile:mt-[12px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:mt-[10px] desktop:text-[16px] desktop:leading-[19px]
+                    " id="">
+                  尺寸｜M
+                </div>
+              </div>
+              <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007859059120156743/trash.png" alt=""
+                class="
+                    absolute
+                    object-cover
+                    w-[44px]
+                    h-[44px]
+                    mobile:left-[calc(100%-44px)]
+                    desktop:left-[calc(100%-74px)]
+                    mobile:mt-0
+                    desktop:mt-[54px]
+                  " id="product-image" />
+            </div>
+            <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" id="">
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                數量
+              </div>
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                單價
+              </div>
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                小計
+              </div>
+            </div>
+            <div class="
+                  flex flex-row
+                  items-center
+                  mobile:h-[30px] mobile:mt-[12px] mobile:ml-[12px]
+                  desktop:h-[32px] desktop:mt-[60px] desktop:ml-0
+                " id="">
+              <select class="
+                    w-[80px]
+                    mobile:h-[30px] mobile:mr-[12px]
+                    desktop:h-[32px] desktop:mr-[56px]
+                    pl-[16px]
+                    bg-[#F3F3F3]
+                    rounded-[8px]
+                    border-solid border-[1px] border-[#979797]
+                  " name="amount" id="amount" title="From">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+              <div class="
+                    flex
+                    justify-center
+                    items-center
+                    text-[#3f3a3a] text-center
+                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
+                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
+                  " id="">
+                TWD.799
+              </div>
+              <div class="
+                    flex
+                    justify-center
+                    items-center
+                    text-[#3f3a3a] text-center
+                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
+                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
+                  " id="">
+                TWD.799
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="
-              cursor-pointer
-              mobile:mt-[8px]
-              mobile:mb-[24px]
-              mobile:text-[12px]
-              mobile:text-[#000000]
-              mobile:leading-[14px]
-              mobile:tracking-[2.4px]
-              desktop:mt-[10px]
-              desktop:mb-[64px]
-              desktop:text-[20px]
-              desktop:text-[#3F3A3A]
-              desktop:leading-[24px]
-              desktop:tracking-[4px]
-            " id=" product-price">
-          TWD.799
+
+        <div class="flex flex-row mobile:mt-0 desktop:mt-[50px]" id="cart-title-box">
+          <div class="
+                inline-block
+                font-bold
+                text-[#3f3a3a] text-[16px]
+                leading-[19px]
+                mobile:mr-0
+                desktop:mr-[468px]
+              " id="cart-title">
+            訂購資料
+          </div>
         </div>
-      </div>
-      <div class="
-            flex flex-col
-            mobile:w-[46%] mobile:mx-[3px]
-            desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]
-          " id="product-5">
-        <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png" alt=""
-          class="
-              object-cover
-              mobile:w-full mobile:h-full
-              desktop:w-[360px] desktop:h-[480px]
-            " id="product-image" />
+
         <div class="
               flex flex-row
-              mobile:w-full mobile:items-center mobile:h-[40px]
-              desktop:w-[360px]
-            " id="product-color">
+              w-full
+              h-0
+              mobile:block mobile:my-[16px]
+              desktop:hidden desktop:my-[10px]
+              content-['']
+              border-solid border-[#3f3a3a] border-b-[1px]
+            " id="split-border"></div>
+
+        <div class="" id="">
           <div class="
-                cursor-pointer
-                bg-[#ffffff]
-                border-solid border-[1px] border-[#d3d3d3]
-                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
-                desktop:w-[24px]
-                desktop:h-[24px]
-                desktop:mt-[20px]
-                desktop:mr-[10px]
-              " id="product-color1"></div>
+                flex
+                mobile:flex-col mobile:items-none
+                desktop:items-center desktop:flex-row
+                mobile:mt-[10px]
+                desktop:mt-[9px]
+              " id="">
+            <div class="
+                  mobile:w-auto mobile:text-start
+                  desktop:w-[120px]
+                  inline-block
+                  text-[#3f3a3a]
+                  mobile:text-[14px] mobile:leading-[17px]
+                  desktop:text-[16px] desktop:leading-[19px]
+                " id=" cart-title">
+              收件人姓名
+            </div>
+            <input class="
+                  mobile:w-full mobile:mt-[10px]
+                  desktop:mt-0
+                  h-[32px]
+                  desktop:w-[576px]
+                  pl-[1%]
+                  border-solid border-[1px] border-[#979797]
+                  rounded-[8px]
+                  placeholder:text-[#d3d3d3]
+                  mobile:placeholder:text-[14px] mobile:placeholder:leading-[17px]
+                  desktop:placeholder:text-[16px]
+                  desktop:placeholder:leading-[19px]
+                " type="text" placeholder="收件人姓名" id="nav-searchBar" />
+          </div>
           <div class="
-                cursor-pointer
-                bg-[#ddffbb]
-                border-solid border-[1px] border-[#d3d3d3]
-                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
-                desktop:w-[24px]
-                desktop:h-[24px]
-                desktop:mt-[20px]
-                desktop:mr-[10px]
-              " id="product-color2"></div>
+                mobile:mt-[6px]
+                desktop:mt-[10px]
+                text-end text-[#8b572a]
+                mobile:max-w-none
+                desktop:max-w-[696px]
+                mobile:text-[14px] mobile:leading-[17px]
+                desktop:text-[16px] desktop:leading-[19px]
+              " id=" cart-title">
+            務必填寫完整收件人姓名，避免包裹無法順利簽收
+          </div>
           <div class="
-                cursor-pointer
-                bg-[#d3d3d3]
-                border-solid border-[1px] border-[#d3d3d3]
-                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
-                desktop:w-[24px]
-                desktop:h-[24px]
-                desktop:mt-[20px]
-                desktop:mr-[10px]
-              " id="product-color3"></div>
+                flex
+                mobile:flex-col mobile:items-none
+                desktop:items-center desktop:flex-row
+                mobile:mt-[20px]
+                desktop:mt-[30px]
+              " id="">
+            <div class="
+                  mobile:w-auto mobile:text-start
+                  desktop:w-[120px]
+                  inline-block
+                  text-[#3f3a3a]
+                  mobile:text-[14px] mobile:leading-[17px]
+                  desktop:text-[16px] desktop:leading-[19px]
+                " id=" cart-title">
+              手機
+            </div>
+            <input class="
+                  mobile:w-full mobile:mt-[10px]
+                  desktop:mt-0
+                  h-[32px]
+                  desktop:w-[576px]
+                  pl-[1%]
+                  border-solid border-[1px] border-[#979797]
+                  rounded-[8px]
+                  placeholder:text-[#d3d3d3]
+                  mobile:placeholder:text-[14px] mobile:placeholder:leading-[17px]
+                  desktop:placeholder:text-[16px]
+                  desktop:placeholder:leading-[19px]
+                " type="text" placeholder="手機" id="nav-searchBar" />
+          </div>
+          <div class="
+                flex
+                mobile:flex-col mobile:items-none
+                desktop:items-center desktop:flex-row
+                mobile:mt-[20px]
+                desktop:mt-[30px]
+              " id="">
+            <div class="
+                  mobile:w-auto mobile:text-start
+                  desktop:w-[120px]
+                  inline-block
+                  text-[#3f3a3a]
+                  mobile:text-[14px] mobile:leading-[17px]
+                  desktop:text-[16px] desktop:leading-[19px]
+                " id=" cart-title">
+              地址
+            </div>
+            <input class="
+                  mobile:w-full mobile:mt-[10px]
+                  desktop:mt-0
+                  h-[32px]
+                  desktop:w-[576px]
+                  pl-[1%]
+                  border-solid border-[1px] border-[#979797]
+                  rounded-[8px]
+                  placeholder:text-[#d3d3d3]
+                  mobile:placeholder:text-[14px] mobile:placeholder:leading-[17px]
+                  desktop:placeholder:text-[16px]
+                  desktop:placeholder:leading-[19px]
+                " type="text" placeholder="地址" id="nav-searchBar" />
+          </div>
+          <div class="
+                flex
+                mobile:flex-col mobile:items-none
+                desktop:items-center desktop:flex-row
+                mobile:mt-[20px]
+                desktop:mt-[30px]
+              " id="">
+            <div class="
+                  mobile:w-auto mobile:text-start
+                  desktop:w-[120px]
+                  inline-block
+                  text-[#3f3a3a]
+                  mobile:text-[14px] mobile:leading-[17px]
+                  desktop:text-[16px] desktop:leading-[19px]
+                " id=" cart-title">
+              手機
+            </div>
+            <input class="
+                  mobile:w-full mobile:mt-[10px]
+                  desktop:mt-0
+                  h-[32px]
+                  desktop:w-[576px]
+                  pl-[1%]
+                  border-solid border-[1px] border-[#979797]
+                  rounded-[8px]
+                  placeholder:text-[#d3d3d3]
+                  mobile:placeholder:text-[14px] mobile:placeholder:leading-[17px]
+                  desktop:placeholder:text-[16px]
+                  desktop:placeholder:leading-[19px]
+                " type="text" placeholder="手機" id="nav-searchBar" />
+          </div>
+          <div class="
+                flex
+                mobile:flex-col mobile:items-none
+                desktop:items-center desktop:flex-row
+                mobile:mt-[20px]
+                desktop:mt-[30px]
+              " id="">
+            <div class="
+                  mobile:w-auto mobile:text-start
+                  desktop:w-[120px]
+                  inline-block
+                  text-[#3f3a3a]
+                  mobile:text-[14px] mobile:leading-[17px]
+                  desktop:text-[16px] desktop:leading-[19px]
+                " id=" cart-title">
+              Email
+            </div>
+            <input class="
+                  mobile:w-full mobile:mt-[10px]
+                  desktop:mt-0
+                  h-[32px]
+                  desktop:w-[576px]
+                  pl-[1%]
+                  border-solid border-[1px] border-[#979797]
+                  rounded-[8px]
+                  placeholder:text-[#d3d3d3]
+                  mobile:placeholder:text-[14px] mobile:placeholder:leading-[17px]
+                  desktop:placeholder:text-[16px]
+                  desktop:placeholder:leading-[19px]
+                " type="text" placeholder="Email" id="nav-searchBar" />
+          </div>
+          <div class="
+                flex
+                mobile:flex-col mobile:items-none
+                desktop:items-center desktop:flex-row
+                mobile:mt-[20px]
+                desktop:mt-[30px]
+              " id="">
+            <div class="
+                  mobile:w-auto mobile:text-start
+                  desktop:w-[120px]
+                  inline-block
+                  text-[#3f3a3a]
+                  mobile:text-[14px] mobile:leading-[17px]
+                  desktop:text-[16px] desktop:leading-[19px]
+                " id=" cart-title">
+              配送時間
+            </div>
+            <form class="flex items-center h-[26px] mobile:mt-[10px] desktop:mt-0">
+              <div class="flex flex-row items-center h-[26px]" id="">
+                <input type="radio" id="08:00-12:00" name="time" value="08:00-12:00" />
+                <label for="08:00-12:00" class="
+                      ml-[8px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px]
+                      desktop:text-[16px]
+                      leading-[26px]
+                    ">08:00-12:00</label><br />
+                <input type="radio" id="14:00-18:00" name="time" value="14:00-18:00" class="ml-[32px]" />
+                <label for="14:00-18:00" class="
+                      ml-[8px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px]
+                      desktop:text-[16px]
+                      leading-[26px]
+                    ">14:00-18:00</label><br />
+                <input type="radio" id="not-set" name="time" value="not-set" class="ml-[32px]" />
+                <label for="not-set" class="
+                      ml-[8px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px]
+                      desktop:text-[16px]
+                      leading-[26px]
+                    ">不指定</label>
+              </div>
+            </form>
+          </div>
         </div>
-        <div class="
-              cursor-pointer
-              mobile:mt-[8px]
-              mobile:text-[12px]
-              mobile:tracking-[2.4px]
-              mobile:text-[#000000]
-              mobile:leading-[14px]
-              desktop:mt-[10px]
-              desktop:text-[20px]
-              desktop:tracking-[4px]
-              desktop:text-[#3F3A3A]
-              desktop:leading-[24px]
-            " id="product-name">
-          前開衩扭結洋裝
+
+        <div class="flex flex-row mobile:mt-[20px] desktop:mt-[50px]" id="cart-title-box">
+          <div class="
+                inline-block
+                font-bold
+                text-[#3f3a3a] text-[16px]
+                leading-[19px]
+                mobile:mr-0
+                desktop:mr-[468px]
+              " id="cart-title">
+            付款資料
+          </div>
         </div>
-        <div class="
-              cursor-pointer
-              mobile:mt-[8px]
-              mobile:mb-[24px]
-              mobile:text-[12px]
-              mobile:text-[#000000]
-              mobile:leading-[14px]
-              mobile:tracking-[2.4px]
-              desktop:mt-[10px]
-              desktop:mb-[64px]
-              desktop:text-[20px]
-              desktop:text-[#3F3A3A]
-              desktop:leading-[24px]
-              desktop:tracking-[4px]
-            " id=" product-price">
-          TWD.799
-        </div>
-      </div>
-      <div class="
-            flex flex-col
-            mobile:w-[46%] mobile:mx-[3px]
-            desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]
-          " id="product-6">
-        <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png" alt=""
-          class="
-              object-cover
-              mobile:w-full mobile:h-full
-              desktop:w-[360px] desktop:h-[480px]
-            " id="product-image" />
+
         <div class="
               flex flex-row
-              mobile:w-full mobile:items-center mobile:h-[40px]
-              desktop:w-[360px]
-            " id="product-color">
+              w-full
+              h-0
+              mobile:block mobile:my-[16px]
+              desktop:hidden desktop:my-[10px]
+              content-['']
+              border-solid border-[#3f3a3a] border-b-[1px]
+            " id="split-border"></div>
+        <div class="" id="">
           <div class="
-                cursor-pointer
-                bg-[#ffffff]
-                border-solid border-[1px] border-[#d3d3d3]
-                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
-                desktop:w-[24px]
-                desktop:h-[24px]
-                desktop:mt-[20px]
-                desktop:mr-[10px]
-              " id="product-color1"></div>
+                flex
+                mobile:flex-col mobile:items-none
+                desktop:items-center desktop:flex-row
+                mobile:mt-[20px]
+                desktop:mt-[30px]
+              " id="">
+            <div class="
+                  mobile:w-auto mobile:text-start
+                  desktop:w-[120px]
+                  inline-block
+                  text-[#3f3a3a]
+                  mobile:text-[14px] mobile:leading-[17px]
+                  desktop:text-[16px] desktop:leading-[19px]
+                " id=" cart-title">
+              信用卡號碼
+            </div>
+            <input class="
+                  mobile:w-full mobile:mt-[10px]
+                  desktop:mt-0
+                  h-[32px]
+                  desktop:w-[576px]
+                  pl-[1%]
+                  border-solid border-[1px] border-[#979797]
+                  rounded-[8px]
+                  placeholder:text-[#d3d3d3]
+                  mobile:placeholder:text-[14px] mobile:placeholder:leading-[17px]
+                  desktop:placeholder:text-[16px]
+                  desktop:placeholder:leading-[19px]
+                " type="text" placeholder="**** **** **** ****" id="nav-searchBar" />
+          </div>
           <div class="
-                cursor-pointer
-                bg-[#ddffbb]
-                border-solid border-[1px] border-[#d3d3d3]
-                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
-                desktop:w-[24px]
-                desktop:h-[24px]
-                desktop:mt-[20px]
-                desktop:mr-[10px]
-              " id="product-color2"></div>
+                flex
+                mobile:flex-col mobile:items-none
+                desktop:items-center desktop:flex-row
+                mobile:mt-[20px]
+                desktop:mt-[30px]
+              " id="">
+            <div class="
+                  mobile:w-auto mobile:text-start
+                  desktop:w-[120px]
+                  inline-block
+                  text-[#3f3a3a]
+                  mobile:text-[14px] mobile:leading-[17px]
+                  desktop:text-[16px] desktop:leading-[19px]
+                " id=" cart-title">
+              有效期限
+            </div>
+            <input class="
+                  mobile:w-full mobile:mt-[10px]
+                  desktop:mt-0
+                  h-[32px]
+                  desktop:w-[576px]
+                  pl-[1%]
+                  border-solid border-[1px] border-[#979797]
+                  rounded-[8px]
+                  placeholder:text-[#d3d3d3]
+                  mobile:placeholder:text-[14px] mobile:placeholder:leading-[17px]
+                  desktop:placeholder:text-[16px]
+                  desktop:placeholder:leading-[19px]
+                " type="text" placeholder="MM / YY" id="nav-searchBar" />
+          </div>
           <div class="
-                cursor-pointer
-                bg-[#d3d3d3]
-                border-solid border-[1px] border-[#d3d3d3]
-                mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
-                desktop:w-[24px]
-                desktop:h-[24px]
-                desktop:mt-[20px]
-                desktop:mr-[10px]
-              " id="product-color3"></div>
-        </div>
-        <div class="
-              cursor-pointer
-              mobile:mt-[8px]
-              mobile:text-[12px]
-              mobile:tracking-[2.4px]
-              mobile:text-[#000000]
-              mobile:leading-[14px]
-              desktop:mt-[10px]
-              desktop:text-[20px]
-              desktop:tracking-[4px]
-              desktop:text-[#3F3A3A]
-              desktop:leading-[24px]
-            " id="product-name">
-          前開衩扭結洋裝
-        </div>
-        <div class="
-              cursor-pointer
-              mobile:mt-[8px]
-              mobile:mb-[24px]
-              mobile:text-[12px]
-              mobile:text-[#000000]
-              mobile:leading-[14px]
-              mobile:tracking-[2.4px]
-              desktop:mt-[10px]
-              desktop:mb-[64px]
-              desktop:text-[20px]
-              desktop:text-[#3F3A3A]
-              desktop:leading-[24px]
-              desktop:tracking-[4px]
-            " id=" product-price">
-          TWD.799
+                flex
+                mobile:flex-col mobile:items-none
+                desktop:items-center desktop:flex-row
+                mobile:mt-[20px]
+                desktop:mt-[30px]
+              " id="">
+            <div class="
+                  mobile:w-auto mobile:text-start
+                  desktop:w-[120px]
+                  inline-block
+                  text-[#3f3a3a]
+                  mobile:text-[14px] mobile:leading-[17px]
+                  desktop:text-[16px] desktop:leading-[19px]
+                " id=" cart-title">
+              安全碼
+            </div>
+            <input class="
+                  mobile:w-full mobile:mt-[10px]
+                  desktop:mt-0
+                  h-[32px]
+                  desktop:w-[576px]
+                  pl-[1%]
+                  border-solid border-[1px] border-[#979797]
+                  rounded-[8px]
+                  placeholder:text-[#d3d3d3]
+                  mobile:placeholder:text-[14px] mobile:placeholder:leading-[17px]
+                  desktop:placeholder:text-[16px]
+                  desktop:placeholder:leading-[19px]
+                " type="text" placeholder="後三碼" id="nav-searchBar" />
+          </div>
+          <div class="
+                flex flex-col
+                w-full
+                ml-auto
+                mobile:mt-[24px] mobile:mb-[28px]
+                desktop:mt-[40px] desktop:mb-[148px]
+              " id="product-info">
+            <div class="w-full ml-auto max-w-[240px]">
+              <div class="flex flex-row items-center ml-auto" id="">
+                <div class="text-[#3f3a3a] text-[16px] leading-[19px]" id="product-name">
+                  總金額
+                </div>
+                <div class="
+                    ml-auto
+                    mr-[8px]
+                    text-[#3f3a3a] text-[16px]
+                    leading-[19px]
+                  " id="product-name">
+                  NT.
+                </div>
+                <div class="text-[#3f3a3a] text-[30px] leading-[36px]" id="product-name">
+                  2397
+                </div>
+              </div>
+              <div class="flex flex-row items-center mt-[20px] ml-auto" id="">
+                <div class="text-[#3f3a3a] text-[16px] leading-[19px]" id="product-name">
+                  運費
+                </div>
+                <div class="
+                    ml-auto
+                    mr-[8px]
+                    text-[#3f3a3a] text-[16px]
+                    leading-[19px]
+                  " id="product-name">
+                  NT.
+                </div>
+                <div class="text-[#3f3a3a] text-[30px] leading-[36px]" id="product-name">
+                  30
+                </div>
+              </div>
+
+              <div class="
+                  flex flex-row
+                  w-full
+                  h-0
+                  my-[20px]
+                  ml-auto
+                  max-w-[240px]
+                  content-['']
+                  border-solid border-[#3f3a3a] border-b-[1px]
+                " id="split-border"></div>
+
+              <div class="flex flex-row items-center ml-auto" id="">
+                <div class="text-[#3f3a3a] text-[16px] leading-[19px]" id="product-name">
+                  應付金額
+                </div>
+                <div class="
+                    ml-auto
+                    mr-[8px]
+                    text-[#3f3a3a] text-[16px]
+                    leading-[19px]
+                  " id="product-name">
+                  NT.
+                </div>
+                <div class="text-[#3f3a3a] text-[30px] leading-[36px]" id="product-name">
+                  2427
+                </div>
+              </div>
+            </div>
+
+            <div class="
+                  cursor-pointer
+                  flex
+                  justify-center
+                  items-center
+                  mobile:w-full
+                  desktop:w-[240]
+                  mobile:h-[44px]
+                  desktop:h-[64px]
+                  mobile:mt-[36px]
+                  desktop:mt-[50px]
+                  bg-[#000000]
+                  text-[#FFFFFF]
+                  mobile:text-[16px] mobile:leading-[30px] mobile:tracking-[3.2px]
+                  desktop:text-[20px]
+                  desktop:leading-[30px]
+                  desktop:tracking-[4px]
+                  mobile:border-none
+                  desktop:box-border
+                  desktop:border-solid
+                  desktop:border-[1px]
+                  desktop:border-[#979797]
+                " onclick="alert('開始付款！')">
+              確認付款
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
   <!-- footer and bottom navBar content -->
-  <footer class="">
+  <footer class="" name="bottom-nav">
     <div class="
           mobile:hidden
           desktop:flex
@@ -853,8 +2207,8 @@
           desktop:h-[115px]
           desktop:mx-auto
           desktop:bg-[#313538]
-        " id="footer-container">
-      <div class="flex mr-[101px]" id="footer-info">
+        " name="bottom-nav-bar-desktop-box">
+      <div class="flex mr-[101px]" name="bottom-nav-bar-desktop-links">
         <div class="
               cursor-pointer
               w-[134px]
@@ -862,8 +2216,8 @@
               text-[16px] text-[#f5f5f5] text-center
               leading-[22px]
               border-solid border-r-[1px] border-[#828282]
-            ">
-          <a href="#" class=""> 關於 STYLiSH </a>
+            " name="bottom-nav-bar-desktop-info-about">
+          <a href="#" class="" name="bottom-nav-bar-desktop-info-about-link">關於 STYLiSH</a>
         </div>
         <div class="
               cursor-pointer
@@ -872,8 +2226,8 @@
               text-[16px] text-[#f5f5f5] text-center
               leading-[22px]
               border-solid border-r-[1px] border-[#828282]
-            ">
-          <a href="#" class=""> 服務條款 </a>
+            " name="bottom-nav-bar-desktop-info-service-terms">
+          <a href="#" class="" name="bottom-nav-bar-desktop-info-service-terms-link">服務條款</a>
         </div>
         <div class="
               cursor-pointer
@@ -882,8 +2236,8 @@
               text-[16px] text-[#f5f5f5] text-center
               leading-[22px]
               border-solid border-r-[1px] border-[#828282]
-            ">
-          <a href="#" class=""> 隱私政策 </a>
+            " name="bottom-nav-bar-desktop-privacy-policy">
+          <a href="#" class="" name="bottom-nav-bar-desktop-privacy-policy-link">隱私政策</a>
         </div>
         <div class="
               cursor-pointer
@@ -892,8 +2246,8 @@
               text-[16px] text-[#f5f5f5] text-center
               leading-[22px]
               border-solid border-r-[1px] border-[#828282]
-            ">
-          <a href="#" class=""> 聯絡我們 </a>
+            " name="bottom-nav-bar-desktop-contact-us">
+          <a href="#" class="" name="bottom-nav-bar-desktop-contact-us-link">聯絡我們</a>
         </div>
         <div class="
               cursor-pointer
@@ -902,79 +2256,78 @@
               text-[16px] text-[#f5f5f5] text-center
               leading-[22px]
               border-none
-            ">
-          <a href="#" class=""> FAQ </a>
+            " name="bottom-nav-bar-desktop-frequently-asked-questions">
+          <a href="#" class="" name="bottom-nav-bar-desktop-frequently-asked-questions-link">FAQ</a>
         </div>
       </div>
-      <div class="flex justify-center items-center" id="footer-media">
+      <div class="flex justify-center items-center" name="bottom-nav-bar-desktop-social-media-links">
         <div class="cursor-pointer w-[50px] h-[50px] mr-[30px]">
-          <a href="#" aria-label="line"><img
+          <a href="#" aria-label="line-image-link" name="bottom-nav-bar-desktop-line-image-link"><img
               src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279856017418/line.png" alt=""
-              class="w-full h-full" id="img-line" /></a>
+              class="w-full h-full" name="bottom-nav-bar-desktop-line-image" /></a>
         </div>
         <div class="cursor-pointer w-[50px] h-[50px] mr-[30px]">
-          <a href="#" aria-label="twitter"><img
+          <a href="#" aria-label="twitter-image-link" name="bottom-nav-bar-desktop-twitter-image-link"><img
               src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279512080465/twitter.png" alt=""
-              class="w-full h-full" id="img-twitter" /></a>
+              class="w-full h-full" name="bottom-nav-bar-desktop-twitter-image" /></a>
         </div>
         <div class="cursor-pointer w-[50px] h-[50px] mr-[30px]">
-          <a href="#" aria-label="facebook"><img
+          <a href="#" aria-label="facebook-image-link" name="bottom-nav-bar-desktop-facebook-image-link"><img
               src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138280220917851/facebook.png" alt=""
-              class="w-full h-full" id="img-facebook" /></a>
+              class="w-full h-full" name="bottom-nav-bar-desktop-facebook-image" /></a>
         </div>
-        <div class="text-[12px] text-[#828282] leading-[17px] text-center">
+        <div class="text-[12px] text-[#828282] leading-[17px] text-center"
+          name="bottom-nav-bar-desktop-all-rights-reserved">
           © 2018. All rights reserved.
         </div>
       </div>
     </div>
 
-    <div class="mobile:block desktop:hidden w-full bg-[#313538] mt-[6px]" id="mobile-bottom">
-      <div class="flex flex-col items-center max-w-[360px] mx-auto pt-[23px]" id="mobile-container">
-        <div class="flex justify-center items-end w-full" id="mobile-contactlist">
-          <div class="ml-[40px] mr-[36px]" id="mobile-contact">
-            <a href="#" class="">
-              <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]">
-                關於 STYLiSH
-              </div>
-            </a>
-            <a href="#" class="">
-              <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]">
-                服務條款
-              </div>
-            </a>
-            <a href="#" class="">
-              <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[13px]">
-                隱私政策
-              </div>
-            </a>
+    <div class="mobile:block desktop:hidden w-full bg-[#313538]" name="bottom-nav-bar-mobile-box-box">
+      <div class="flex flex-col items-center max-w-[360px] mx-auto pt-[23px]" name="bottom-nav-bar-mobile-box">
+        <div class="flex justify-center items-end w-full" name="bottom-nav-bar-mobile-contactlist">
+          <div class="ml-[40px] mr-[36px]" name="bottom-nav-bar-mobile-links-part1"
+            name="bottom-nav-bar-mobile-info-about">
+            <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]">
+              <a href="#" class="" aria-label="info-about-link" name="bottom-nav-bar-mobile-info-about-link">關於
+                STYLiSH</a>
+            </div>
+            <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]"
+              name="bottom-nav-bar-mobile-info-service-terms">
+              <a href="#" class="" aria-label="service-terms-link"
+                name="bottom-nav-bar-mobile-info-service-terms-link">服務條款</a>
+            </div>
+            <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[13px]"
+              name="bottom-nav-bar-mobile-privacy-policy">
+              <a href="#" class="" aria-label="privacy-policy-link"
+                name="bottom-nav-bar-mobile-privacy-policy-link">隱私政策</a>
+            </div>
           </div>
-          <div class="mr-[31px]" id="mobile-contact">
-            <a href="#" class="">
-              <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]">
-                聯絡我們
-              </div>
-            </a>
-            <a href="#" class="">
-              <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[41px]">
-                FAQ
-              </div>
-            </a>
+          <div class="mr-[31px]" name="bottom-nav-bar-mobile-links-part2">
+            <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]" name="bottom-nav-bar-mobile-contact-us">
+              <a href="#" class="" aria-label="contact-us-link" name="bottom-nav-bar-mobile-contact-us-link">聯絡我們</a>
+            </div>
+            <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[41px]"
+              name="bottom-nav-bar-mobile-frequently-asked-questions">
+              <a href="#" class="" aria-label="frequently-asked-questions-link"
+                name="bottom-nav-bar-mobile-frequently-asked-questions-link">FAQ</a>
+            </div>
           </div>
-          <div class="flex justify-between items-center mb-[51px]" id="mobile-media">
+          <div class="flex justify-between items-center mb-[51px]" name="bottom-nav-bar-mobile-social-media-links">
             <div class="w-[20px] h-[20px] mr-[14px]">
-              <a href="#" aria-label="line"><img
+              <a href="#" aria-label="line-image-link" name="bottom-nav-bar-mobile-line-image-link"><img
                   src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279856017418/line.png" alt=""
-                  class="w-full h-full" id="img-line" /></a>
+                  class="w-full h-full" name="bottom-nav-bar-mobile-line-image" /></a>
             </div>
             <div class="w-[20px] h-[20px] mr-[14px]">
-              <a href="#" aria-label="twitter"><img
+              <a href="#" aria-label="twitter-image-link" name="bottom-nav-bar-mobile-twitter-image-link"><img
                   src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279512080465/twitter.png"
-                  alt="" class="w-full h-full" id=" img-twitter" /></a>
+                  alt="" class="w-full h-full" name="bottom-nav-bar-mobile-twitter-image" /></a>
             </div>
             <div class="w-[20px] h-[20px] mr-[24px]">
-              <a href="#" aria-label="facebook"><img
+              <a href="#" aria-label="facebook-image-link" name="bottom-nav-bar-mobile-facebook-image-link"><img
                   src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138280220917851/facebook.png"
-                  alt="" class="w-full h-full" id="img-facebook" /></a>
+                  alt="" class="w-full h-full" name="bottom-nav-bar-mobile-facebook-image" /></a>
             </div>
           </div>
         </div>
@@ -985,7 +2338,7 @@
               mt-[13px]
               mx-auto
               mb-[80px]
-            " id="mobile-copyright">
+            " name="bottom-nav-bar-mobile-all-rights-reserved">
           © 2018. All rights reserved.
         </div>
       </div>
@@ -1001,7 +2354,7 @@
           mobile:bottom-0
           mobile:bg-[#313538]
           desktop:hidden
-        " id="mobile-bottom-nav-stick">
+        " name="bottom-nav-bar-mobile-stick">
       <div class="
             flex
             justify-center
@@ -1009,7 +2362,7 @@
             w-[50%]
             h-[24px]
             border-solid border-r-[1px] border-[#828282]
-          " id="mobile-cart">
+          " name="bottom-nav-bar-mobile-stick-cart">
         <div class="
               relative
               cursor-pointer
@@ -1018,11 +2371,12 @@
               items-center
               w-[180px]
               mx-auto
-            " id="cart-wrapper">
-          <a href="#">
+            " name="bottom-nav-bar-mobile-stick-shopping-cart-box">
+          <a href="#" aria-label="shopping-cart-image-link" name="bottom-nav-bar-mobile-stick-shopping-cart-image-link">
             <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006534620352880671/image.png" alt=""
-              aria-label="img-shopping-cart" id="img-shopping-cart" /></a>
-          <div class="text-[16px] text-[#ffffff] leading-[16px] text-center">
+              name="bottom-nav-bar-mobile-stick-shopping-cart-image" /></a>
+          <div class="text-[16px] text-[#ffffff] leading-[16px] text-center"
+            name="bottom-nav-bar-mobile-stick-shopping-cart-text">
             購物車
           </div>
           <div class="
@@ -1037,7 +2391,7 @@
                 bg-[#8b572a]
                 rounded-[50%]
                 text-[#ffffff]
-              " id="mobile-circle">
+              " name="bottom-nav-bar-mobile-stick-shopping-cart-notification-numbers">
             1
           </div>
         </div>
@@ -1050,16 +2404,111 @@
             items-center
             w-[180px]
             mx-auto
-          " id="profile-wrapper">
-        <a href="#">
+          " name="profile-box">
+        <a href="#" aria-label="member-image-link" name="bottom-nav-bar-mobile-stick-member-image-link">
           <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055670895890453/profile.png" alt=""
-            aria-label="img-member" id="img-member" /></a>
-        <div class="text-[16px] text-[#ffffff] leading-[16px] text-center">
+            name="bottom-nav-bar-mobile-stick-member-image" /></a>
+        <div class="text-[16px] text-[#ffffff] leading-[16px] text-center"
+          name="bottom-nav-bar-mobile-stick-member-text">
           會員
         </div>
       </div>
     </div>
   </footer>
+
+  <script type="module">
+    // https://swiperjs.com/demos#autoplay
+    // mouseover 跟 mouseenter差別在哪? https://ithelp.ithome.com.tw/articles/10251677
+    { //w0p2
+      const slidesImage = document.querySelector('div[name="slides"]');
+      // slides navigation dot box for putting slides navigation dot in it
+      const dotBox = document.querySelector('div[name="dot-box"]');
+      const slidesTextMain = document.querySelector('div[name="slides-text-main"]');
+      const slidesTextDescribe = document.querySelector('div[name="slides-text-describe"]');
+      // get marketingCampaignAPISlidersPromise for API promise
+      const marketingCampaignAPISlidersPromise = fetch("https://api.appworks-school.tw/api/1.0/marketing/campaigns")
+        .then((response) => response.json())
+      // get json key "data" value in API promise
+      const apiJson = await marketingCampaignAPISlidersPromise.then(result => result.data);
+      // intervalID to save interval id, which's running changeSlides function
+      let intervalID;
+      // slides current activating dot index
+      let currentIndex = 0;
+      // string variable to save create dotBox dot html code
+      let addToDotListHtml = "";
+
+      // create dotBox dot html code in string
+      for (let i = 0; i < apiJson.length; i++) {
+        addToDotListHtml += `<div class="
+                            cursor-pointer
+                            bg-no-repeat
+                            bg-cover
+                            mobile:w-[4px]
+                            mobile:h-[4px]
+                            mobile:ml-[4.4px]
+                            mobile:mr-[4.4px]
+                            desktop:w-[10px]
+                            desktop:h-[10px]
+                            desktop:ml-[11px]
+                            desktop:mr-[11px]
+                            bg-[url('hhttps://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png')]
+                            " data-index=${i} data-id=${apiJson[i].product_id} name="dot
+                            "></div>`;
+      }
+
+      // add dotBox dot html code to dotBox
+      dotBox.innerHTML = addToDotListHtml;
+      // get dotArray array from html querySelectorAll( .dot-box div )
+      const dotArray = document.querySelectorAll('div[name="dot-box"] div');
+
+      // changeSlidesToIndex function, More easily to changing change slides to index informations
+      function changeSlidesToIndex(index) {
+        slidesImage.style.backgroundImage = `url(${apiJson[index].picture})`;
+        slidesTextMain.innerHTML = apiJson[index].story.split("。")[0].replaceAll("\r\n", "<br>");
+        slidesTextDescribe.innerHTML = apiJson[index].story.split("。")[1].replaceAll("<br>", "");
+        dotArray.forEach((dotElement) => {
+          dotElement.style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055625131823134/dot-2.png')`;
+        });
+        dotArray[index].style.backgroundImage = `url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055624821461083/dot-1.png')`;
+        currentIndex = index;
+      }
+
+      // add click event listener to dotBox, for changing change slides to trigger event dot index informations
+      dotBox.addEventListener("click", (e) => {
+        changeSlidesToIndex(e.target.dataset.index);
+      });
+
+      // changeSlides function, that's function for setInterval to autopPlay slides
+      function changeSlides() {
+        if (currentIndex < apiJson.length) {
+          changeSlidesToIndex(currentIndex);
+          currentIndex++;
+        } else {
+          changeSlidesToIndex(0);
+        }
+      }
+
+      // AddChangeSlidesInterval use for create a interval and save interval id. Set interval to repeat running changeSlides function with delay time
+      function AddChangeSlidesInterval(delay) {
+        clearInterval(intervalID);
+        intervalID = setInterval(changeSlides, delay);
+      }
+
+      // remove interval when mouse hover slides area,remove interval running changeSlides function by interval id
+      slidesImage.addEventListener("mouseover", (intervalID) => {
+        clearInterval(intervalID);
+      });
+
+      // create a new interval running changeSlides function with delay 5 seconds
+      slidesImage.addEventListener("mouseout", () => {
+        AddChangeSlidesInterval(5000)
+      });
+
+      // Main function call for auto play slides entry point
+      changeSlidesToIndex(0);
+      AddChangeSlidesInterval(5000);
+    }
+  </script>
 
   <script type="text/babel">
       // const {

@@ -1,72 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-      charset="UTF-8"
-    />
-    <title>STYLiSH</title>
-    <link
-      rel="shortcut icon"
-      href="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"
-      type="image/x-icon"
-    />
-    <script src="https://unpkg.com/react/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
 
-    <!-- Don't use this in production: -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/@tanstack/react-query/build/umd/index.production.js"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              clifford: '#da373d',
-            },
-            screens: {
-              mobile: '0px',
-              // => @media (min-width: 640px) { ... }
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8" />
+  <title>STYLiSH</title>
+  <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"
+    type="image/x-icon" />
+  <script src="https://unpkg.com/react/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
 
-              desktop: '1280px',
-              // => @media (min-width: 1280px) { ... }
-            },
+  <!-- Don't use this in production: -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@tanstack/react-query/build/umd/index.production.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          },
+          screens: {
+            mobile: '0px',
+            // => @media (min-width: 640px) { ... }
+
+            desktop: '1280px',
+            // => @media (min-width: 1280px) { ... }
           },
         },
-      };
-    </script>
-    <style type="text/tailwindcss">
-      @layer utilities {
+      },
+    };
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
       }
     </style>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Noto Sans TC"
-    />
-    <link
-      href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-    <style>
-      * {
-        margin: 0;
-        font-family: 'Noto Sans TC';
-        font-style: normal;
-      }
-    </style>
-  </head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Sans TC" />
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet" />
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      font-family: 'Noto Sans TC';
+      font-style: normal;
+    }
+  </style>
+</head>
 
-  <body class="">
-    <!-- header and top navBar content -->
-    <header class="" name="top-nav">
-      <nav
-        class="fixed top-0 z-[999] w-full mobile:h-[102px] desktop:h-[140px]"
-      >
-        <div
-          class="
+<body class="">
+  <!-- header and top navBar content -->
+  <header class="" name="top-nav">
+    <nav class="fixed top-0 z-[999] w-full mobile:h-[102px] desktop:h-[140px]">
+      <div class="
             flex
             bg-[#ffffff]
             mobile:justify-center mobile:items-center mobile:h-[52px]
@@ -74,27 +59,16 @@
             desktop:justify-start
             desktop:items-center
             desktop:h-[100px]
-          "
-          name="top-nav-bar-box"
-        >
-          <a
-            href="#"
-            aria-label="website-logo-link"
-            name="top-nav-bar-website-logo-link"
-          >
-            <img
-              class="
+          " name="top-nav-bar-box">
+        <a href="#" aria-label="website-logo-link" name="top-nav-bar-website-logo-link">
+          <img class="
                 cursor-pointer
                 mobile:w-[129px] mobile:h-[24px]
                 desktop:w-[258px] desktop:h-[48px] desktop:ml-[60px]
-              "
-              src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055669914406982/logo.png"
-              alt=""
-              name="top-nav-bar-website-logo"
-            />
-          </a>
-          <div
-            class="
+              " src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055669914406982/logo.png" alt=""
+            name="top-nav-bar-website-logo" />
+        </a>
+        <div class="
               desktop:cursor-pointer
               mobile:hidden
               desktop:block
@@ -109,14 +83,10 @@
               desktop:border-solid
               desktop:border-r-[1px]
               desktop:border-[#3F3A3A]
-            "
-            onclick="fetch"
-            name="top-nav-bar-desktop-women-dresses"
-          >
-            <a href="#/women-dresses">女裝</a>
-          </div>
-          <div
-            class="
+            " onclick="fetch" name="top-nav-bar-desktop-women-dresses">
+          <a href="#/women-dresses">女裝</a>
+        </div>
+        <div class="
               desktop:cursor-pointer
               mobile:hidden
               desktop:block
@@ -131,13 +101,10 @@
               desktop:border-solid
               desktop:border-r-[1px]
               desktop:border-[#3F3A3A]
-            "
-            name="top-nav-bar-desktop-men-dresses"
-          >
-            <a href="#/men-dresses">男裝</a>
-          </div>
-          <div
-            class="
+            " name="top-nav-bar-desktop-men-dresses">
+          <a href="#/men-dresses">男裝</a>
+        </div>
+        <div class="
               desktop:cursor-pointer
               mobile:hidden
               desktop:block
@@ -152,14 +119,11 @@
               desktop:border-solid
               desktop:border-r-[1px]
               desktop:border-[#3F3A3A]
-            "
-            name="top-nav-bar-desktop-accessories"
-          >
-            <a href="#/accessories">配件</a>
-          </div>
+            " name="top-nav-bar-desktop-accessories">
+          <a href="#/accessories">配件</a>
+        </div>
 
-          <input
-            class="
+        <input class="
               mobile:hidden
               desktop:block
               desktop:w-[214px]
@@ -180,16 +144,9 @@
               desktop:placeholder:text-[20px]
               desktop:placeholder:text-[#8B572A]
               desktop:placeholder:leading-[24px]
-            "
-            type="text"
-            placeholder=""
-            title="search-bar"
-            value=""
-            name="top-nav-bar-desktop-search-bar"
-          />
+            " type="text" placeholder="" title="search-bar" value="" name="top-nav-bar-desktop-search-bar" />
 
-          <div
-            class="
+        <div class="
               mobile:hidden
               desktop:flex
               desktop:cursor-pointer
@@ -199,25 +156,14 @@
               desktop:w-[44px]
               desktop:h-[44px]
               desktop:mr-[42px]
-            "
-            name="top-nav-bar-desktop-shopping-cart-box"
-          >
-            <a
-              href="#"
-              aria-label="shopping-cart-image-link"
-              name="top-nav-bar-desktop-shopping-cart-image-link"
-            >
-              <img
-                src="https://cdn.discordapp.com/attachments/1001702231785099304/1007154394585894962/image.png"
-                alt=""
-                onmouseover="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1006055626180399154/image_1_.png'"
-                onmouseout="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1007154394585894962/image.png'"
-                class=""
-                name="top-nav-bar-desktop-shopping-cart-image"
-              />
-            </a>
-            <div
-              class="
+            " name="top-nav-bar-desktop-shopping-cart-box">
+          <a href="#" aria-label="shopping-cart-image-link" name="top-nav-bar-desktop-shopping-cart-image-link">
+            <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007154394585894962/image.png" alt=""
+              onmouseover="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1006055626180399154/image_1_.png'"
+              onmouseout="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1007154394585894962/image.png'"
+              class="" name="top-nav-bar-desktop-shopping-cart-image" />
+          </a>
+          <div class="
                 absolute
                 flex
                 justify-center
@@ -230,11 +176,8 @@
                 rounded-[50%]
                 text-[#ffffff] text-[16px]
                 leading-[24px]
-              "
-              name="top-nav-bar-desktop-shopping-cart-notification-numbers"
-            >
-              <div
-                class="
+              " name="top-nav-bar-desktop-shopping-cart-notification-numbers">
+            <div class="
                   animate-ping
                   absolute
                   inline-flex
@@ -243,36 +186,26 @@
                   rounded-full
                   bg-[#8b572a]
                   opacity-75
-                "
-              ></div>
-              1
-            </div>
+                "></div>
+            1
           </div>
+        </div>
 
-          <a
-            href="#"
-            aria-label="profile-link"
-            name="top-nav-bar-desktop-profile-link"
-          >
-            <img
-              class="
+        <a href="#" aria-label="profile-link" name="top-nav-bar-desktop-profile-link">
+          <img class="
                 mobile:hidden
                 desktop:cursor-pointer
                 desktop:block
                 desktop:w-[40px]
                 desktop:h-[40px]
                 desktop:mr-[54px]
-              "
-              src="https://cdn.discordapp.com/attachments/1001702231785099304/1007154394904666112/profile.png"
-              alt=""
-              onmouseover="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1006055670421925960/profile_1.png'"
-              onmouseout="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1007154394904666112/profile.png'"
-              name="top-nav-bar-desktop-profile"
-            />
-          </a>
+              " src="https://cdn.discordapp.com/attachments/1001702231785099304/1007154394904666112/profile.png" alt=""
+            onmouseover="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1006055670421925960/profile_1.png'"
+            onmouseout="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1007154394904666112/profile.png'"
+            name="top-nav-bar-desktop-profile" />
+        </a>
 
-          <input
-            class="
+        <input class="
               desktop:hidden
               mobile:block
               mobile:absolute
@@ -306,28 +239,18 @@
               mobile:ease-in-out
               mobile:hover:w-[calc(100%-20px)]
               mobile:focus:w-[calc(100%-20px)]
-            "
-            type="text"
-            placeholder=""
-            title="search-bar"
-            value=""
-            name="top-nav-bar-mobile-search"
-          />
-        </div>
+            " type="text" placeholder="" title="search-bar" value="" name="top-nav-bar-mobile-search" />
+      </div>
 
-        <div
-          class="
+      <div class="
             bg-[#313538]
             mobile:flex
             mobile:justify-evenly
             mobile:items-center
             mobile:h-[50px]
             desktop:h-[40px]
-          "
-          name="top-nav-bar-below"
-        >
-          <div
-            class="
+          " name="top-nav-bar-below">
+        <div class="
               mobile:block
               mobile:cursor-pointer
               mobile:text-[16px]
@@ -335,57 +258,42 @@
               mobile:hover:text-[#ffffff]
               mobile:leading-[22px]
               desktop:hidden
-            "
-            name="top-nav-bar-below-mobile-women-dresses"
-          >
-            <a href="#/women-dresses">女裝</a>
-          </div>
-          <img
-            class="mobile:block desktop:hidden"
-            src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055671801860126/split.png"
-            alt=""
-          />
-          <div
-            class="
-              mobile:block
-              mobile:cursor-pointer
-              mobile:text-[16px]
-              mobile:text-[#828282]
-              mobile:hover:text-[#ffffff]
-              mobile:leading-[22px]
-              desktop:hidden
-            "
-            name="top-nav-bar-below-mobile-men-dresses"
-          >
-            <a href="#/men-dresses">男裝</a>
-          </div>
-          <img
-            class="mobile:block desktop:hidden"
-            src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055671801860126/split.png"
-            alt=""
-          />
-          <div
-            class="
-              mobile:block
-              mobile:cursor-pointer
-              mobile:text-[16px]
-              mobile:text-[#828282]
-              mobile:hover:text-[#ffffff]
-              mobile:leading-[22px]
-              desktop:hidden
-            "
-            name="top-nav-bar-below-mobile-accessories"
-          >
-            <a href="#/accessories">配件</a>
-          </div>
+            " name="top-nav-bar-below-mobile-women-dresses">
+          <a href="#/women-dresses">女裝</a>
         </div>
-      </nav>
-    </header>
+        <img class="mobile:block desktop:hidden"
+          src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055671801860126/split.png" alt="" />
+        <div class="
+              mobile:block
+              mobile:cursor-pointer
+              mobile:text-[16px]
+              mobile:text-[#828282]
+              mobile:hover:text-[#ffffff]
+              mobile:leading-[22px]
+              desktop:hidden
+            " name="top-nav-bar-below-mobile-men-dresses">
+          <a href="#/men-dresses">男裝</a>
+        </div>
+        <img class="mobile:block desktop:hidden"
+          src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055671801860126/split.png" alt="" />
+        <div class="
+              mobile:block
+              mobile:cursor-pointer
+              mobile:text-[16px]
+              mobile:text-[#828282]
+              mobile:hover:text-[#ffffff]
+              mobile:leading-[22px]
+              desktop:hidden
+            " name="top-nav-bar-below-mobile-accessories">
+          <a href="#/accessories">配件</a>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-    <!-- main body content -->
-    <div class="" id="main-page">
-      <div
-        class="
+  <!-- main body content -->
+  <div class="" id="main-page">
+    <div class="
           bg-center bg-cover
           w-full
           ease-out
@@ -393,11 +301,8 @@
           transition-[background-image]
           mobile:h-[185px] mobile:mt-[102px]
           desktop:h-[500px] desktop:mt-[140px]
-        "
-        name="slides"
-      >
-        <div
-          class="
+        " name="slides">
+      <div class="
             relative
             h-full
             left-0
@@ -405,12 +310,9 @@
             mx-auto
             max-w-[1160px]
             mobile:w-[calc(100%-48px)]
-          "
-          name="slides-container"
-        >
-          <div class="absolute w-full" name="slides-slidesTextMain">
-            <div
-              class="
+          " name="slides-container">
+        <div class="absolute w-full" name="slides-slidesTextMain">
+          <div class="
                 cursor-pointer
                 text-left
                 mobile:mt-[36px] mobile:text-[15px] mobile:leading-[28px]
@@ -418,28 +320,22 @@
                 desktop:text-[30px]
                 desktop:leading-[57px]
                 desktop:text-[#070707]
-              "
-              name="slides-text-main"
-            >
-              <!-- 於是<br />
+              " name="slides-text-main">
+            <!-- 於是<br />
             我也想要給你<br />
             一個那麼美好的自己。<br /> -->
-            </div>
-            <div
-              class="
+          </div>
+          <div class="
                 cursor-pointer
                 text-left
                 mobile:text-[12px] mobile:leading-[28px]
                 desktop:text-[20px] desktop:leading-[64px]
-              "
-              name="slides-text-describe"
-            >
-              <!-- 不朽《與自己和好如初》 -->
-            </div>
+              " name="slides-text-describe">
+            <!-- 不朽《與自己和好如初》 -->
           </div>
         </div>
-        <div
-          class="
+      </div>
+      <div class="
             absolute
             flex
             justify-center
@@ -451,10 +347,8 @@
             max-w-[1200px]
             mobile:mt-[265px]
             desktop:mt-[596px]
-          "
-          name="dot-box"
-        >
-          <!-- <div class="
+          " name="dot-box">
+        <!-- <div class="
         cursor-pointer
         bg-no-repeat
         bg-cover
@@ -534,12 +428,11 @@
         bg-[#ffffff]/40
         " index=${i} id=${apiJson[i].id} product_id=${apiJson[i].product_id} name="dot
         "></div> -->
-        </div>
       </div>
+    </div>
 
-      <div class="flex flex-col justify-center w-full">
-        <div
-          class="
+    <div class="flex flex-col justify-center w-full">
+      <div class="
             flex flex-wrap
             justify-center
             slidesTextMain-start
@@ -547,10 +440,8 @@
             mx-auto
             mobile:mt-[15px] mobile:max-w-[100vw]
             desktop:mt-[70px] desktop:max-w-[1200px]
-          "
-          name="product-list"
-        >
-          <!-- <div
+          " name="product-list">
+        <!-- <div
             class="
               flex flex-col
               mobile:w-[calc(50%-27px)] mobile:mx-[3px]
@@ -1240,8 +1131,8 @@
               TWD.799
             </div>
           </div> -->
-        </div>
-        <!-- <div role="status" class="mx-auto animate-bounce" name="spinner">
+      </div>
+      <!-- <div role="status" class="mx-auto animate-bounce" name="spinner">
           <div class="animate-pulse">
             <svg class="inline mr-2 w-32 h-32 text-gray-200 animate-spin dark:text-gray-600 fill-orange-600"
               viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1255,41 +1146,30 @@
             <span class="sr-only">Loading...</span>
           </div>
         </div> -->
-      </div>
     </div>
+  </div>
 
-    <div class="hidden" id="product-page">
-      <div
-        class="
+  <div class="hidden" id="product-page">
+    <div class="
           flex flex-col
           w-full
           mx-auto
           mobile:mt-[102px] mobile:max-w-[1070px]
           desktop:mt-[140px] desktop:max-w-[960px]
-        "
-        id=""
-      >
-        <div
-          class="
+        " id="">
+      <div class="
             flex
             mobile:flex-col mobile:mt-0
             desktop:flex-row desktop:mt-[65px] desktop:items-center
-          "
-          id=""
-        >
-          <img
-            src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png"
-            alt=""
-            class="
+          " id="">
+        <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png" alt=""
+          class="
               cursor-pointer
               object-cover
               mobile:w-full
               desktop:w-[560px] desktop:h-[746.66px]
-            "
-            id="product-image"
-          />
-          <div
-            class="
+            " id="product-image" />
+        <div class="
               flex flex-col
               mobile:mx-[24px] mobile:max-h-none mobile:max-w-none
               desktop:ml-[40px]
@@ -1297,11 +1177,8 @@
               desktop:items-start
               desktop:max-h-[746.66px]
               desktop:max-w-[360px]
-            "
-            id="product-info"
-          >
-            <div
-              class="
+            " id="product-info">
+          <div class="
                 text-[#3f3a3a]
                 mobile:text-[20px]
                 mobile:leading-[24px]
@@ -1311,13 +1188,10 @@
                 desktop:leading-[38px]
                 desktop:tracking-[6.4px]
                 desktop:mt-0
-              "
-              id="product-name"
-            >
-              前開衩扭結洋裝
-            </div>
-            <div
-              class="
+              " id="product-name">
+            前開衩扭結洋裝
+          </div>
+          <div class="
                 text-[#BABABA]
                 mobile:text-[16px]
                 mobile:leading-[19px]
@@ -1327,23 +1201,17 @@
                 desktop:leading-[24px]
                 desktop:tracking-[4px]
                 desktop:mt-[16px]
-              "
-              id="product-name"
-            >
-              201807201824
-            </div>
-            <div
-              class="
+              " id="product-name">
+            201807201824
+          </div>
+          <div class="
                 text-[#3f3a3a]
                 mobile:text-[20px] mobile:leading-[24px] mobile:mt-[20px]
                 desktop:text-[30px] desktop:leading-[36px] desktop:mt-[40px]
-              "
-              id="product-name"
-            >
-              TWD.799
-            </div>
-            <div
-              class="
+              " id="product-name">
+            TWD.799
+          </div>
+          <div class="
                 flex flex-row
                 w-full
                 h-0
@@ -1351,20 +1219,14 @@
                 desktop:max-w-none desktop:my-[20px] desktop:max-w-[360px]
                 content-['']
                 border-solid border-[#3f3a3a] border-b-[1px]
-              "
-              id="split-border"
-            ></div>
-            <div
-              class="
+              " id="split-border"></div>
+          <div class="
                 flex flex-row
                 items-center
                 mobile:mt-[20px]
                 desktop:mt-[10px]
-              "
-              id="product-color"
-            >
-              <div
-                class="
+              " id="product-color">
+            <div class="
                   inline-block
                   mobile:w-[62px]
                   desktop:w-[72px]
@@ -1375,24 +1237,18 @@
                   desktop:text-[20px]
                   desktop:leading-[24px]
                   desktop:tracking-[4px]
-                "
-                id="product-color-label"
-              >
-                顏色｜
-              </div>
+                " id="product-color-label">
+              顏色｜
+            </div>
 
-              <div
-                class="
+            <div class="
                   flex flex-row
                   mobile:w-full mobile:items-center mobile:h-[40px]
                   desktop:w-[360px]
                   mobile:ml-[6.5px]
                   desktop:ml-[16.5px]
-                "
-                id="product-color"
-              >
-                <div
-                  class="
+                " id="product-color">
+              <div class="
                     flex
                     justify-center
                     items-center
@@ -1401,21 +1257,16 @@
                     mobile:ml-[7px] mobile:mr-[7px]
                     desktop:ml-[9.5px] desktop:mr-[9.5px]
                     border-solid border-[1px] border-[#979797]
-                  "
-                >
-                  <div
-                    class="
+                  ">
+                <div class="
                       cursor-pointer
                       bg-[#ffffff]
                       border-solid border-[1px] border-[#d3d3d3]
                       w-[24px]
                       h-[24px]
-                    "
-                    id="product-color1"
-                  ></div>
-                </div>
-                <div
-                  class="
+                    " id="product-color1"></div>
+              </div>
+              <div class="
                     flex
                     justify-center
                     items-center
@@ -1424,21 +1275,16 @@
                     mobile:ml-[7px] mobile:mr-[7px]
                     desktop:ml-[9.5px] desktop:mr-[9.5px]
                     border-solid border-[1px] border-[#979797]/0
-                  "
-                >
-                  <div
-                    class="
+                  ">
+                <div class="
                       cursor-pointer
                       bg-[#ddffbb]
                       border-solid border-[1px] border-[#d3d3d3]
                       w-[24px]
                       h-[24px]
-                    "
-                    id="product-color2"
-                  ></div>
-                </div>
-                <div
-                  class="
+                    " id="product-color2"></div>
+              </div>
+              <div class="
                     flex
                     justify-center
                     items-center
@@ -1447,24 +1293,19 @@
                     mobile:ml-[7px] mobile:mr-[7px]
                     desktop:ml-[9.5px] desktop:mr-[9.5px]
                     border-solid border-[1px] border-[#979797]/0
-                  "
-                >
-                  <div
-                    class="
+                  ">
+                <div class="
                       cursor-pointer
                       bg-[#cccccc]
                       border-solid border-[1px] border-[#d3d3d3]
                       w-[24px]
                       h-[24px]
-                    "
-                    id="product-color3"
-                  ></div>
-                </div>
+                    " id="product-color3"></div>
               </div>
             </div>
-            <div class="flex flex-row items-center mt-[19px]" id="product-size">
-              <div
-                class="
+          </div>
+          <div class="flex flex-row items-center mt-[19px]" id="product-size">
+            <div class="
                   inline-block
                   mobile:w-[62px]
                   desktop:w-[72px]
@@ -1475,24 +1316,18 @@
                   desktop:text-[20px]
                   desktop:leading-[24px]
                   desktop:tracking-[4px]
-                "
-                id="product-size-label"
-              >
-                尺寸｜
-              </div>
+                " id="product-size-label">
+              尺寸｜
+            </div>
 
-              <div
-                class="
+            <div class="
                   flex flex-row
                   mobile:w-full mobile:items-center mobile:h-[40px]
                   desktop:w-[360px]
                   mobile:ml-[6.5px]
                   desktop:ml-[16.5px]
-                "
-                id="product-size"
-              >
-                <div
-                  class="
+                " id="product-size">
+              <div class="
                     cursor-pointer
                     flex
                     justify-center
@@ -1504,13 +1339,10 @@
                     h-[36px]
                     mobile:ml-[7px] mobile:mr-[7px]
                     desktop:ml-[9.5px] desktop:mr-[9.5px]
-                  "
-                  id="product-sizeS"
-                >
-                  S
-                </div>
-                <div
-                  class="
+                  " id="product-sizeS">
+                S
+              </div>
+              <div class="
                     cursor-pointer
                     flex
                     justify-center
@@ -1522,13 +1354,10 @@
                     h-[36px]
                     mobile:ml-[7px] mobile:mr-[7px]
                     desktop:ml-[9.5px] desktop:mr-[9.5px]
-                  "
-                  id="product-sizeM"
-                >
-                  M
-                </div>
-                <div
-                  class="
+                  " id="product-sizeM">
+                M
+              </div>
+              <div class="
                     cursor-pointer
                     flex
                     justify-center
@@ -1540,24 +1369,18 @@
                     h-[36px]
                     mobile:ml-[7px] mobile:mr-[7px]
                     desktop:ml-[9.5px] desktop:mr-[9.5px]
-                  "
-                  id="product-sizeL"
-                >
-                  L
-                </div>
+                  " id="product-sizeL">
+                L
               </div>
             </div>
-            <div
-              class="
+          </div>
+          <div class="
                 flex flex-row
                 items-center
                 mobile:mt-[30px]
                 desktop:mt-[19px]
-              "
-              id="product-amount-box"
-            >
-              <div
-                class="
+              " id="product-amount-box">
+            <div class="
                   mobile:hidden
                   desktop:inline-block
                   mobile:w-[62px]
@@ -1569,14 +1392,11 @@
                   desktop:text-[20px]
                   desktop:leading-[24px]
                   desktop:tracking-[4px]
-                "
-                id="product-amount-label"
-              >
-                數量｜
-              </div>
+                " id="product-amount-label">
+              數量｜
+            </div>
 
-              <div
-                class="
+            <div class="
                   flex flex-row
                   justify-between
                   items-center
@@ -1587,24 +1407,18 @@
                   desktop:ml-[25px]
                   bg-[#ffffff]
                   border-solid border-[1px] border-[#979797]
-                "
-                id=""
-              >
-                <div
-                  class="
+                " id="">
+              <div class="
                     cursor-pointer
                     w-[6px]
                     h-[32px]
                     ml-[15px]
                     text-[16px] text-[#000000]
                     leading-[32px]
-                  "
-                  id="product-amount-minus"
-                >
-                  -
-                </div>
-                <input
-                  class="
+                  " id="product-amount-minus">
+                -
+              </div>
+              <input class="
                     cursor-pointer
                     w-[90%]
                     text-center
@@ -1615,29 +1429,20 @@
                     desktop:text-[#8B572A]
                     desktop:leading-[32px]
                     leading-[32px]
-                  "
-                  placeholder="1"
-                  title="input-amount"
-                  value="1"
-                  id="product-amount"
-                />
-                <div
-                  class="
+                  " placeholder="1" title="input-amount" value="1" id="product-amount" />
+              <div class="
                     cursor-pointer
                     w-[9px]
                     h-[32px]
                     mr-[15px]
                     text-[16px] text-[#000000]
                     leading-[32px]
-                  "
-                  id="product-amount-plus"
-                >
-                  +
-                </div>
+                  " id="product-amount-plus">
+                +
               </div>
             </div>
-            <div
-              class="
+          </div>
+          <div class="
                 cursor-pointer
                 flex
                 justify-center
@@ -1659,49 +1464,38 @@
                 desktop:border-solid
                 desktop:border-[1px]
                 desktop:border-[#979797]
-              "
-              onclick="alert('加入購物車成功！')"
-            >
-              加入購物車
-            </div>
-            <div
-              class="
+              " onclick="alert('加入購物車成功！')">
+            加入購物車
+          </div>
+          <div class="
                 mobile:mt-[28px]
                 desktop:mt-[40px]
                 text-[#3f3a3a]
                 mobile:text-[14px] mobile:leading-[24px]
                 desktop:text-[20px] desktop:leading-[30px]
-              "
-              id="product-spec"
-            >
-              實品顏色依單品照為主<br /><br />
-              棉 100%<br />
-              厚薄：薄<br />
-              彈性：無<br /><br />
-              清洗：手洗，溫水<br />
-              產地：中國
-            </div>
+              " id="product-spec">
+            實品顏色依單品照為主<br /><br />
+            棉 100%<br />
+            厚薄：薄<br />
+            彈性：無<br /><br />
+            清洗：手洗，溫水<br />
+            產地：中國
           </div>
         </div>
-        <div
-          class="
+      </div>
+      <div class="
             mobile:mx-[24px] mobile:mb-[32px]
             desktop:mb-[49px] desktop:mx-0
-          "
-          id="product-describe"
-        >
-          <div
-            class="
+          " id="product-describe">
+        <div class="
               flex
               items-center
               h-[30px]
               mobile:mt-[28px]
               desktop:mt-[50.33px]
               w-full
-            "
-          >
-            <div
-              class="
+            ">
+          <div class="
                 inline-block
                 text-[#8B572A]
                 mobile:w-[152px]
@@ -1712,13 +1506,10 @@
                 desktop:text-[20px]
                 desktop:leading-[30px]
                 desktop:tracking-[3px]
-              "
-              id="product-name"
-            >
-              更多產品資訊
-            </div>
-            <div
-              class="
+              " id="product-name">
+            更多產品資訊
+          </div>
+          <div class="
                 flex flex-row
                 w-full
                 h-0
@@ -1726,12 +1517,9 @@
                 desktop:ml-[64px]
                 content-['']
                 border-solid border-[#3f3a3a] border-b-[1px]
-              "
-              id="split-border"
-            ></div>
-          </div>
-          <div
-            class="
+              " id="split-border"></div>
+        </div>
+        <div class="
               flex
               items-center
               mobile:mt-[12px]
@@ -1740,107 +1528,76 @@
               text-[#3f3a3a]
               mobile:text-[14px] mobile:leading-[25px]
               desktop:text-[20px] desktop:leading-[30px]
-            "
-            id="product-name"
-          >
-            O.N.S is all about options, which is why we took our staple polo
-            shirt and upgraded it with slubby linen jersey, making it even
-            lighter for those who prefer their summer style extra-breezy.
-          </div>
-          <img
-            src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251147632947271/0.png"
-            alt=""
-            class="
-              object-cover
-              mobile:w-full mobile:mt-[20px]
-              desktop:w-[960px] desktop:h-[540px] desktop:mt-[30px]
-            "
-            id="product-image"
-          />
-          <img
-            src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251147196747866/1.png"
-            alt=""
-            class="
-              object-cover
-              mobile:w-full mobile:mt-[20px]
-              desktop:w-[960px] desktop:h-[540px] desktop:mt-[30px]
-            "
-            id="product-image"
-          />
+            " id="product-name">
+          O.N.S is all about options, which is why we took our staple polo
+          shirt and upgraded it with slubby linen jersey, making it even
+          lighter for those who prefer their summer style extra-breezy.
         </div>
+        <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251147632947271/0.png" alt="" class="
+              object-cover
+              mobile:w-full mobile:mt-[20px]
+              desktop:w-[960px] desktop:h-[540px] desktop:mt-[30px]
+            " id="product-image" />
+        <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251147196747866/1.png" alt="" class="
+              object-cover
+              mobile:w-full mobile:mt-[20px]
+              desktop:w-[960px] desktop:h-[540px] desktop:mt-[30px]
+            " id="product-image" />
       </div>
     </div>
+  </div>
 
-    <div class="hidden" id="checkout-page">
-      <div
-        class="
+  <div class="hidden" id="checkout-page">
+    <div class="
           flex flex-col
           w-full
           mx-auto
           mobile:mt-[102px] mobile:max-w-[1070px]
           desktop:mt-[140px] desktop:max-w-[1160px]
-        "
-        id=""
-      >
-        <div class="flex flex-col mobile:mx-[24px] desktop:mx-0" id="">
-          <div
-            class="
+        " id="">
+      <div class="flex flex-col mobile:mx-[24px] desktop:mx-0" id="">
+        <div class="
               flex flex-row
               mobile:mt-[20px]
               desktop:mt-[51px] desktop:items-start
-            "
-            id="cart-title-box"
-          >
-            <div
-              class="
+            " id="cart-title-box">
+          <div class="
                 inline-block
                 font-bold
                 text-[#3f3a3a] text-[16px]
                 leading-[19px]
                 mobile:mr-0
                 desktop:mr-[468px]
-              "
-              id="cart-title"
-            >
-              購物車(3)
-            </div>
-            <div
-              class="
+              " id="cart-title">
+            購物車(3)
+          </div>
+          <div class="
                 text-[#3f3a3a] text-[16px]
                 leading-[19px]
                 mobile:hidden mobile:mr-0
                 desktop:inline-block desktop:mr-[160px]
-              "
-              id="cart-title"
-            >
-              數量
-            </div>
-            <div
-              class="
+              " id="cart-title">
+            數量
+          </div>
+          <div class="
                 text-[#3f3a3a] text-[16px]
                 leading-[19px]
                 mobile:hidden mobile:mr-0
                 desktop:inline-block desktop:mr-[160px]
-              "
-              id="cart-title"
-            >
-              單價
-            </div>
-            <div
-              class="
+              " id="cart-title">
+            單價
+          </div>
+          <div class="
                 text-[#3f3a3a] text-[16px]
                 leading-[19px]
                 mobile:hidden
                 desktop:inline-block
-              "
-              id="cart-title"
-            >
-              小計
-            </div>
+              " id="cart-title">
+            小計
           </div>
+        </div>
 
-          <div
-            class="
+        <div class="
               w-full
               mobile:mt-0
               desktop:mt-[16px]
@@ -1848,21 +1605,16 @@
               desktop:border-[1px]
               desktop:border-[#979797]
               mobile:border-none
-            "
-          >
-            <div
-              class="
+            ">
+          <div class="
                 relative
                 flex
                 mobile:flex-col
                 desktop:flex-row
                 mobile:mt-[10px] mobile:ml-0
                 desktop:mt-[30px] desktop:ml-[32px]
-              "
-              id=""
-            >
-              <div
-                class="
+              " id="">
+            <div class="
                   flex flex-row
                   w-full
                   h-0
@@ -1870,78 +1622,55 @@
                   desktop:hidden desktop:my-0
                   content-['']
                   border-solid border-[#3f3a3a] border-b-[1px]
-                "
-                id="split-border"
-              ></div>
-              <div class="flex flex-row" id="">
-                <img
-                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251332052295720/image.png"
-                  alt=""
-                  class="object-cover w-[114px] h-[152px]"
-                  id="product-image"
-                />
-                <div
-                  class="
+                " id="split-border"></div>
+            <div class="flex flex-row" id="">
+              <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251332052295720/image.png" alt=""
+                class="object-cover w-[114px] h-[152px]" id="product-image" />
+              <div class="
                     flex flex-col
                     mobile:w-full mobile:ml-[10px]
                     desktop:w-[354px] desktop:ml-[16px]
-                  "
-                  id=""
-                >
-                  <div
-                    class="
+                  " id="">
+                <div class="
                       text-[#000000]
                       mobile:text-[14px] mobile:leading-[17px]
                       desktop:text-[16px] desktop:leading-[19px]
-                    "
-                    id=""
-                  >
-                    前開衩扭結洋裝
-                  </div>
-                  <div
-                    class="
+                    " id="">
+                  前開衩扭結洋裝
+                </div>
+                <div class="
                       mobile:mt-[20px]
                       text-[#3f3a3a]
                       mobile:text-[14px] mobile:leading-[17px]
                       desktop:mt-[18px]
                       desktop:text-[16px]
                       desktop:leading-[19px]
-                    "
-                    id=""
-                  >
-                    201807201824
-                  </div>
-                  <div
-                    class="
+                    " id="">
+                  201807201824
+                </div>
+                <div class="
                       mobile:mt-[24px]
                       text-[#3f3a3a]
                       mobile:text-[14px] mobile:leading-[17px]
                       desktop:mt-[22px]
                       desktop:text-[16px]
                       desktop:leading-[19px]
-                    "
-                    id=""
-                  >
-                    顏色｜白
-                  </div>
-                  <div
-                    class="
+                    " id="">
+                  顏色｜白
+                </div>
+                <div class="
                       mobile:mt-[12px]
                       text-[#3f3a3a]
                       mobile:text-[14px] mobile:leading-[17px]
                       desktop:mt-[10px]
                       desktop:text-[16px]
                       desktop:leading-[19px]
-                    "
-                    id=""
-                  >
-                    尺寸｜M
-                  </div>
+                    " id="">
+                  尺寸｜M
                 </div>
-                <img
-                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007859059120156743/trash.png"
-                  alt=""
-                  class="
+              </div>
+              <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007859059120156743/trash.png" alt=""
+                class="
                     absolute
                     object-cover
                     w-[44px]
@@ -1950,13 +1679,22 @@
                     desktop:left-[calc(100%-74px)]
                     mobile:mt-0
                     desktop:mt-[54px]
-                  "
-                  id="product-image"
-                />
+                  " id="product-image" />
+            </div>
+            <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" id="">
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                數量
               </div>
-              <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" id="">
-                <div
-                  class="
+              <div class="
                     text-[#3f3a3a]
                     mobile:block
                     mobile:w-[104px]
@@ -1965,260 +1703,29 @@
                     mobile:text-[14px]
                     mobile:leading-[17px]
                     desktop:hidden
-                  "
-                  id="cart-title"
-                >
-                  數量
-                </div>
-                <div
-                  class="
-                    text-[#3f3a3a]
-                    mobile:block
-                    mobile:w-[104px]
-                    mobile:h-[17px]
-                    mobile:text-center
-                    mobile:text-[14px]
-                    mobile:leading-[17px]
-                    desktop:hidden
-                  "
-                  id="cart-title"
-                >
-                  單價
-                </div>
-                <div
-                  class="
-                    text-[#3f3a3a]
-                    mobile:block
-                    mobile:w-[104px]
-                    mobile:h-[17px]
-                    mobile:text-center
-                    mobile:text-[14px]
-                    mobile:leading-[17px]
-                    desktop:hidden
-                  "
-                  id="cart-title"
-                >
-                  小計
-                </div>
+                  " id="cart-title">
+                單價
               </div>
-              <div
-                class="
-                  flex flex-row
-                  items-center
-                  mobile:h-[30px] mobile:mt-[12px] mobile:ml-[12px]
-                  desktop:h-[32px] desktop:mt-[60px] desktop:ml-0
-                "
-                id=""
-              >
-                <select
-                  class="
-                    w-[80px]
-                    mobile:h-[30px] mobile:mr-[12px]
-                    desktop:h-[32px] desktop:mr-[56px]
-                    pl-[16px]
-                    bg-[#F3F3F3]
-                    rounded-[8px]
-                    border-solid border-[1px] border-[#979797]
-                  "
-                  name="amount"
-                  id=""
-                  title="From"
-                >
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <div
-                  class="
-                    flex
-                    justify-center
-                    items-center
-                    text-[#3f3a3a] text-center
-                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
-                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
-                  "
-                  id=""
-                >
-                  TWD.799
-                </div>
-                <div
-                  class="
-                    flex
-                    justify-center
-                    items-center
-                    text-[#3f3a3a] text-center
-                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
-                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
-                  "
-                  id=""
-                >
-                  TWD.799
-                </div>
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                小計
               </div>
             </div>
-            <div
-              class="
-                relative
-                flex
-                mobile:flex-col
-                desktop:flex-row
-                mobile:mt-[10px] mobile:ml-0
-                desktop:mt-[30px] desktop:ml-[32px]
-              "
-              id=""
-            >
-              <div
-                class="
-                  flex flex-row
-                  w-full
-                  h-0
-                  mobile:block mobile:my-[20px]
-                  desktop:hidden desktop:my-0
-                  content-['']
-                  border-solid border-[#3f3a3a] border-b-[1px]
-                "
-                id="split-border"
-              ></div>
-              <div class="flex flex-row" id="">
-                <img
-                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251332052295720/image.png"
-                  alt=""
-                  class="object-cover w-[114px] h-[152px]"
-                  id="product-image"
-                />
-                <div
-                  class="
-                    flex flex-col
-                    mobile:w-full mobile:ml-[10px]
-                    desktop:w-[354px] desktop:ml-[16px]
-                  "
-                  id=""
-                >
-                  <div
-                    class="
-                      text-[#000000]
-                      mobile:text-[14px] mobile:leading-[17px]
-                      desktop:text-[16px] desktop:leading-[19px]
-                    "
-                    id=""
-                  >
-                    前開衩扭結洋裝
-                  </div>
-                  <div
-                    class="
-                      mobile:mt-[20px]
-                      text-[#3f3a3a]
-                      mobile:text-[14px] mobile:leading-[17px]
-                      desktop:mt-[18px]
-                      desktop:text-[16px]
-                      desktop:leading-[19px]
-                    "
-                    id=""
-                  >
-                    201807201824
-                  </div>
-                  <div
-                    class="
-                      mobile:mt-[24px]
-                      text-[#3f3a3a]
-                      mobile:text-[14px] mobile:leading-[17px]
-                      desktop:mt-[22px]
-                      desktop:text-[16px]
-                      desktop:leading-[19px]
-                    "
-                    id=""
-                  >
-                    顏色｜白
-                  </div>
-                  <div
-                    class="
-                      mobile:mt-[12px]
-                      text-[#3f3a3a]
-                      mobile:text-[14px] mobile:leading-[17px]
-                      desktop:mt-[10px]
-                      desktop:text-[16px]
-                      desktop:leading-[19px]
-                    "
-                    id=""
-                  >
-                    尺寸｜M
-                  </div>
-                </div>
-                <img
-                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007859059120156743/trash.png"
-                  alt=""
-                  class="
-                    absolute
-                    object-cover
-                    w-[44px]
-                    h-[44px]
-                    mobile:left-[calc(100%-44px)]
-                    desktop:left-[calc(100%-74px)]
-                    mobile:mt-0
-                    desktop:mt-[54px]
-                  "
-                  id="product-image"
-                />
-              </div>
-              <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" id="">
-                <div
-                  class="
-                    text-[#3f3a3a]
-                    mobile:block
-                    mobile:w-[104px]
-                    mobile:h-[17px]
-                    mobile:text-center
-                    mobile:text-[14px]
-                    mobile:leading-[17px]
-                    desktop:hidden
-                  "
-                  id="cart-title"
-                >
-                  數量
-                </div>
-                <div
-                  class="
-                    text-[#3f3a3a]
-                    mobile:block
-                    mobile:w-[104px]
-                    mobile:h-[17px]
-                    mobile:text-center
-                    mobile:text-[14px]
-                    mobile:leading-[17px]
-                    desktop:hidden
-                  "
-                  id="cart-title"
-                >
-                  單價
-                </div>
-                <div
-                  class="
-                    text-[#3f3a3a]
-                    mobile:block
-                    mobile:w-[104px]
-                    mobile:h-[17px]
-                    mobile:text-center
-                    mobile:text-[14px]
-                    mobile:leading-[17px]
-                    desktop:hidden
-                  "
-                  id="cart-title"
-                >
-                  小計
-                </div>
-              </div>
-              <div
-                class="
+            <div class="
                   flex flex-row
                   items-center
                   mobile:h-[30px] mobile:mt-[12px] mobile:ml-[12px]
                   desktop:h-[32px] desktop:mt-[60px] desktop:ml-0
-                "
-                id=""
-              >
-                <select
-                  class="
+                " id="">
+              <select class="
                     w-[80px]
                     mobile:h-[30px] mobile:mr-[12px]
                     desktop:h-[32px] desktop:mr-[56px]
@@ -2226,255 +1733,347 @@
                     bg-[#F3F3F3]
                     rounded-[8px]
                     border-solid border-[1px] border-[#979797]
-                  "
-                  name="amount"
-                  id=""
-                  title="From"
-                >
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <div
-                  class="
+                  " name="amount" id="" title="From">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+              <div class="
                     flex
                     justify-center
                     items-center
                     text-[#3f3a3a] text-center
                     desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
                     mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
-                  "
-                  id=""
-                >
-                  TWD.799
-                </div>
-                <div
-                  class="
-                    flex
-                    justify-center
-                    items-center
-                    text-[#3f3a3a] text-center
-                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
-                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
-                  "
-                  id=""
-                >
-                  TWD.799
-                </div>
+                  " id="">
+                TWD.799
               </div>
-            </div>
-            <div
-              class="
-                relative
-                flex
-                mobile:flex-col
-                desktop:flex-row
-                mobile:mt-[10px] mobile:ml-0
-                desktop:mt-[30px] desktop:ml-[32px]
-              "
-              id=""
-            >
-              <div
-                class="
-                  flex flex-row
-                  w-full
-                  h-0
-                  mobile:block mobile:my-[20px]
-                  desktop:hidden desktop:my-0
-                  content-['']
-                  border-solid border-[#3f3a3a] border-b-[1px]
-                "
-                id="split-border"
-              ></div>
-              <div class="flex flex-row" id="">
-                <img
-                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251332052295720/image.png"
-                  alt=""
-                  class="object-cover w-[114px] h-[152px]"
-                  id="product-image"
-                />
-                <div
-                  class="
-                    flex flex-col
-                    mobile:w-full mobile:ml-[10px]
-                    desktop:w-[354px] desktop:ml-[16px]
-                  "
-                  id=""
-                >
-                  <div
-                    class="
-                      text-[#000000]
-                      mobile:text-[14px] mobile:leading-[17px]
-                      desktop:text-[16px] desktop:leading-[19px]
-                    "
-                    id=""
-                  >
-                    前開衩扭結洋裝
-                  </div>
-                  <div
-                    class="
-                      mobile:mt-[20px]
-                      text-[#3f3a3a]
-                      mobile:text-[14px] mobile:leading-[17px]
-                      desktop:mt-[18px]
-                      desktop:text-[16px]
-                      desktop:leading-[19px]
-                    "
-                    id=""
-                  >
-                    201807201824
-                  </div>
-                  <div
-                    class="
-                      mobile:mt-[24px]
-                      text-[#3f3a3a]
-                      mobile:text-[14px] mobile:leading-[17px]
-                      desktop:mt-[22px]
-                      desktop:text-[16px]
-                      desktop:leading-[19px]
-                    "
-                    id=""
-                  >
-                    顏色｜白
-                  </div>
-                  <div
-                    class="
-                      mobile:mt-[12px]
-                      text-[#3f3a3a]
-                      mobile:text-[14px] mobile:leading-[17px]
-                      desktop:mt-[10px]
-                      desktop:text-[16px]
-                      desktop:leading-[19px]
-                    "
-                    id=""
-                  >
-                    尺寸｜M
-                  </div>
-                </div>
-                <img
-                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007859059120156743/trash.png"
-                  alt=""
-                  class="
-                    absolute
-                    object-cover
-                    w-[44px]
-                    h-[44px]
-                    mobile:left-[calc(100%-44px)]
-                    desktop:left-[calc(100%-74px)]
-                    mobile:mt-0
-                    desktop:mt-[54px]
-                  "
-                  id="product-image"
-                />
-              </div>
-              <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" id="">
-                <div
-                  class="
-                    text-[#3f3a3a]
-                    mobile:block
-                    mobile:w-[104px]
-                    mobile:h-[17px]
-                    mobile:text-center
-                    mobile:text-[14px]
-                    mobile:leading-[17px]
-                    desktop:hidden
-                  "
-                  id="cart-title"
-                >
-                  數量
-                </div>
-                <div
-                  class="
-                    text-[#3f3a3a]
-                    mobile:block
-                    mobile:w-[104px]
-                    mobile:h-[17px]
-                    mobile:text-center
-                    mobile:text-[14px]
-                    mobile:leading-[17px]
-                    desktop:hidden
-                  "
-                  id="cart-title"
-                >
-                  單價
-                </div>
-                <div
-                  class="
-                    text-[#3f3a3a]
-                    mobile:block
-                    mobile:w-[104px]
-                    mobile:h-[17px]
-                    mobile:text-center
-                    mobile:text-[14px]
-                    mobile:leading-[17px]
-                    desktop:hidden
-                  "
-                  id="cart-title"
-                >
-                  小計
-                </div>
-              </div>
-              <div
-                class="
-                  flex flex-row
-                  items-center
-                  mobile:h-[30px] mobile:mt-[12px] mobile:ml-[12px]
-                  desktop:h-[32px] desktop:mt-[60px] desktop:ml-0
-                "
-                id=""
-              >
-                <select
-                  class="
-                    w-[80px]
-                    mobile:h-[30px] mobile:mr-[12px]
-                    desktop:h-[32px] desktop:mr-[56px]
-                    pl-[16px]
-                    bg-[#F3F3F3]
-                    rounded-[8px]
-                    border-solid border-[1px] border-[#979797]
-                  "
-                  name="amount"
-                  id=""
-                  title="From"
-                >
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <div
-                  class="
+              <div class="
                     flex
                     justify-center
                     items-center
                     text-[#3f3a3a] text-center
                     desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
                     mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
-                  "
-                  id=""
-                >
-                  TWD.799
-                </div>
-                <div
-                  class="
-                    flex
-                    justify-center
-                    items-center
-                    text-[#3f3a3a] text-center
-                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
-                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
-                  "
-                  id=""
-                >
-                  TWD.799
-                </div>
+                  " id="">
+                TWD.799
               </div>
             </div>
           </div>
+          <div class="
+                relative
+                flex
+                mobile:flex-col
+                desktop:flex-row
+                mobile:mt-[10px] mobile:ml-0
+                desktop:mt-[30px] desktop:ml-[32px]
+              " id="">
+            <div class="
+                  flex flex-row
+                  w-full
+                  h-0
+                  mobile:block mobile:my-[20px]
+                  desktop:hidden desktop:my-0
+                  content-['']
+                  border-solid border-[#3f3a3a] border-b-[1px]
+                " id="split-border"></div>
+            <div class="flex flex-row" id="">
+              <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251332052295720/image.png" alt=""
+                class="object-cover w-[114px] h-[152px]" id="product-image" />
+              <div class="
+                    flex flex-col
+                    mobile:w-full mobile:ml-[10px]
+                    desktop:w-[354px] desktop:ml-[16px]
+                  " id="">
+                <div class="
+                      text-[#000000]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:text-[16px] desktop:leading-[19px]
+                    " id="">
+                  前開衩扭結洋裝
+                </div>
+                <div class="
+                      mobile:mt-[20px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:mt-[18px]
+                      desktop:text-[16px]
+                      desktop:leading-[19px]
+                    " id="">
+                  201807201824
+                </div>
+                <div class="
+                      mobile:mt-[24px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:mt-[22px]
+                      desktop:text-[16px]
+                      desktop:leading-[19px]
+                    " id="">
+                  顏色｜白
+                </div>
+                <div class="
+                      mobile:mt-[12px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:mt-[10px]
+                      desktop:text-[16px]
+                      desktop:leading-[19px]
+                    " id="">
+                  尺寸｜M
+                </div>
+              </div>
+              <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007859059120156743/trash.png" alt=""
+                class="
+                    absolute
+                    object-cover
+                    w-[44px]
+                    h-[44px]
+                    mobile:left-[calc(100%-44px)]
+                    desktop:left-[calc(100%-74px)]
+                    mobile:mt-0
+                    desktop:mt-[54px]
+                  " id="product-image" />
+            </div>
+            <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" id="">
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                數量
+              </div>
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                單價
+              </div>
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                小計
+              </div>
+            </div>
+            <div class="
+                  flex flex-row
+                  items-center
+                  mobile:h-[30px] mobile:mt-[12px] mobile:ml-[12px]
+                  desktop:h-[32px] desktop:mt-[60px] desktop:ml-0
+                " id="">
+              <select class="
+                    w-[80px]
+                    mobile:h-[30px] mobile:mr-[12px]
+                    desktop:h-[32px] desktop:mr-[56px]
+                    pl-[16px]
+                    bg-[#F3F3F3]
+                    rounded-[8px]
+                    border-solid border-[1px] border-[#979797]
+                  " name="amount" id="" title="From">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+              <div class="
+                    flex
+                    justify-center
+                    items-center
+                    text-[#3f3a3a] text-center
+                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
+                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
+                  " id="">
+                TWD.799
+              </div>
+              <div class="
+                    flex
+                    justify-center
+                    items-center
+                    text-[#3f3a3a] text-center
+                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
+                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
+                  " id="">
+                TWD.799
+              </div>
+            </div>
+          </div>
+          <div class="
+                relative
+                flex
+                mobile:flex-col
+                desktop:flex-row
+                mobile:mt-[10px] mobile:ml-0
+                desktop:mt-[30px] desktop:ml-[32px]
+              " id="">
+            <div class="
+                  flex flex-row
+                  w-full
+                  h-0
+                  mobile:block mobile:my-[20px]
+                  desktop:hidden desktop:my-0
+                  content-['']
+                  border-solid border-[#3f3a3a] border-b-[1px]
+                " id="split-border"></div>
+            <div class="flex flex-row" id="">
+              <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251332052295720/image.png" alt=""
+                class="object-cover w-[114px] h-[152px]" id="product-image" />
+              <div class="
+                    flex flex-col
+                    mobile:w-full mobile:ml-[10px]
+                    desktop:w-[354px] desktop:ml-[16px]
+                  " id="">
+                <div class="
+                      text-[#000000]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:text-[16px] desktop:leading-[19px]
+                    " id="">
+                  前開衩扭結洋裝
+                </div>
+                <div class="
+                      mobile:mt-[20px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:mt-[18px]
+                      desktop:text-[16px]
+                      desktop:leading-[19px]
+                    " id="">
+                  201807201824
+                </div>
+                <div class="
+                      mobile:mt-[24px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:mt-[22px]
+                      desktop:text-[16px]
+                      desktop:leading-[19px]
+                    " id="">
+                  顏色｜白
+                </div>
+                <div class="
+                      mobile:mt-[12px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:mt-[10px]
+                      desktop:text-[16px]
+                      desktop:leading-[19px]
+                    " id="">
+                  尺寸｜M
+                </div>
+              </div>
+              <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007859059120156743/trash.png" alt=""
+                class="
+                    absolute
+                    object-cover
+                    w-[44px]
+                    h-[44px]
+                    mobile:left-[calc(100%-44px)]
+                    desktop:left-[calc(100%-74px)]
+                    mobile:mt-0
+                    desktop:mt-[54px]
+                  " id="product-image" />
+            </div>
+            <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" id="">
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                數量
+              </div>
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                單價
+              </div>
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                小計
+              </div>
+            </div>
+            <div class="
+                  flex flex-row
+                  items-center
+                  mobile:h-[30px] mobile:mt-[12px] mobile:ml-[12px]
+                  desktop:h-[32px] desktop:mt-[60px] desktop:ml-0
+                " id="">
+              <select class="
+                    w-[80px]
+                    mobile:h-[30px] mobile:mr-[12px]
+                    desktop:h-[32px] desktop:mr-[56px]
+                    pl-[16px]
+                    bg-[#F3F3F3]
+                    rounded-[8px]
+                    border-solid border-[1px] border-[#979797]
+                  " name="amount" id="" title="From">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+              <div class="
+                    flex
+                    justify-center
+                    items-center
+                    text-[#3f3a3a] text-center
+                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
+                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
+                  " id="">
+                TWD.799
+              </div>
+              <div class="
+                    flex
+                    justify-center
+                    items-center
+                    text-[#3f3a3a] text-center
+                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
+                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
+                  " id="">
+                TWD.799
+              </div>
+            </div>
+          </div>
+        </div>
 
-          <div
-            class="
+        <div class="
               flex flex-row
               items-center
               w-full
@@ -2483,11 +2082,8 @@
               mobile:mt-[20px]
               desktop:mt-[40px]
               bg-gray-200
-            "
-            id=""
-          >
-            <div
-              class="
+            " id="">
+          <div class="
                 w-auto
                 inline-block
                 text-[#3f3a3a]
@@ -2495,13 +2091,10 @@
                 desktop:ml-[60px] desktop:mr-[20px]
                 mobile:text-[8px] mobile:leading-[17px]
                 desktop:text-[16px] desktop:leading-[19px]
-              "
-              id=""
-            >
-              配送國家
-            </div>
-            <select
-              class="
+              " id="">
+            配送國家
+          </div>
+          <select class="
                 mobile:w-auto
                 desktop:w-[160px]
                 h-[24px]
@@ -2512,15 +2105,10 @@
                 bg-[#F3F3F3]
                 rounded-[8px]
                 border-solid border-[1px] border-[#979797]
-              "
-              name="amount"
-              id=""
-              title="From"
-            >
-              <option value="TW">臺灣及離島</option>
-            </select>
-            <div
-              class="
+              " name="amount" id="" title="From">
+            <option value="TW">臺灣及離島</option>
+          </select>
+          <div class="
                 w-auto
                 inline-block
                 text-[#3f3a3a]
@@ -2528,13 +2116,10 @@
                 desktop:ml-[60px] desktop:mr-[20px]
                 mobile:text-[8px] mobile:leading-[17px]
                 desktop:text-[16px] desktop:leading-[19px]
-              "
-              id=""
-            >
-              付款方式
-            </div>
-            <select
-              class="
+              " id="">
+            付款方式
+          </div>
+          <select class="
                 mobile:w-auto
                 desktop:w-[160px]
                 h-[24px]
@@ -2545,50 +2130,36 @@
                 bg-[#F3F3F3]
                 rounded-[8px]
                 border-solid border-[1px] border-[#979797]
-              "
-              name="amount"
-              id=""
-              title="From"
-            >
-              <option value="creditCard">信用卡付款</option>
-            </select>
-          </div>
+              " name="amount" id="" title="From">
+            <option value="creditCard">信用卡付款</option>
+          </select>
+        </div>
 
-          <div
-            class="
+        <div class="
               mt-[20px]
               mb-[50px]
               mobile:text-[8px] mobile:leading-[17px]
               desktop:text-[16px] desktop:leading-[19px]
-            "
-            id=""
-          >
-            ※提醒您：<br />
-            ●選擇宅配-請填寫正確收件人資訊，避免包裹配送不達<br />
-            ●選擇超商-請填寫正確收件人姓名(與證件相符)，避免無法領取
-          </div>
+            " id="">
+          ※提醒您：<br />
+          ●選擇宅配-請填寫正確收件人資訊，避免包裹配送不達<br />
+          ●選擇超商-請填寫正確收件人姓名(與證件相符)，避免無法領取
+        </div>
 
-          <div
-            class="flex flex-row mobile:mt-0 desktop:mt-[50px]"
-            id="cart-title-box"
-          >
-            <div
-              class="
+        <div class="flex flex-row mobile:mt-0 desktop:mt-[50px]" id="cart-title-box">
+          <div class="
                 inline-block
                 font-bold
                 text-[#3f3a3a] text-[16px]
                 leading-[19px]
                 mobile:mr-0
                 desktop:mr-[468px]
-              "
-              id="cart-title"
-            >
-              訂購資料
-            </div>
+              " id="cart-title">
+            訂購資料
           </div>
+        </div>
 
-          <div
-            class="
+        <div class="
               flex flex-row
               w-full
               h-0
@@ -2596,36 +2167,27 @@
               desktop:my-[10px]
               content-['']
               border-solid border-[#3f3a3a] border-b-[1px]
-            "
-            id="split-border"
-          ></div>
+            " id="split-border"></div>
 
-          <div class="" id="">
-            <div
-              class="
+        <div class="" id="">
+          <div class="
                 flex
                 mobile:flex-col mobile:items-none
                 desktop:items-center desktop:flex-row
                 mobile:mt-[10px]
                 desktop:mt-[9px]
-              "
-              id=""
-            >
-              <div
-                class="
+              " id="">
+            <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
                   inline-block
                   text-[#3f3a3a]
                   mobile:text-[14px] mobile:leading-[17px]
                   desktop:text-[16px] desktop:leading-[19px]
-                "
-                id=" cart-title"
-              >
-                收件人姓名
-              </div>
-              <input
-                class="
+                " id=" cart-title">
+              收件人姓名
+            </div>
+            <input class="
                   mobile:w-full mobile:mt-[10px]
                   desktop:mt-0
                   h-[32px]
@@ -2638,17 +2200,9 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                "
-                type="text"
-                placeholder="收件人姓名"
-                title="input-name"
-                value=""
-                name="nav-searchBar"
-                id=""
-              />
-            </div>
-            <div
-              class="
+                " type="text" placeholder="收件人姓名" title="input-name" value="" name="nav-searchBar" id="" />
+          </div>
+          <div class="
                 mobile:mt-[6px]
                 desktop:mt-[10px]
                 text-end text-[#8b572a]
@@ -2656,301 +2210,199 @@
                 desktop:max-w-[696px]
                 mobile:text-[14px] mobile:leading-[17px]
                 desktop:text-[16px] desktop:leading-[19px]
-              "
-              id=" cart-title"
-            >
-              務必填寫完整收件人姓名，避免包裹無法順利簽收
-            </div>
-            <div
-              class="
-                flex
-                mobile:flex-col mobile:items-none
-                desktop:items-center desktop:flex-row
-                mobile:mt-[20px]
-                desktop:mt-[30px]
-              "
-              id=""
-            >
-              <div
-                class="
-                  mobile:w-auto mobile:text-start
-                  desktop:w-[120px]
-                  inline-block
-                  text-[#3f3a3a]
-                  mobile:text-[14px] mobile:leading-[17px]
-                  desktop:text-[16px] desktop:leading-[19px]
-                "
-                id=" cart-title"
-              >
-                手機
-              </div>
-              <input
-                class="
-                  mobile:w-full mobile:mt-[10px]
-                  desktop:mt-0
-                  h-[32px]
-                  desktop:w-[576px]
-                  pl-[1%]
-                  border-solid border-[1px] border-[#979797]
-                  rounded-[8px]
-                  placeholder:text-[#d3d3d3]
-                  mobile:placeholder:text-[14px]
-                  mobile:placeholder:leading-[17px]
-                  desktop:placeholder:text-[16px]
-                  desktop:placeholder:leading-[19px]
-                "
-                type="text"
-                placeholder="手機"
-                title="input-phone-number"
-                value=""
-                name="nav-searchBar"
-                id=""
-              />
-            </div>
-            <div
-              class="
-                flex
-                mobile:flex-col mobile:items-none
-                desktop:items-center desktop:flex-row
-                mobile:mt-[20px]
-                desktop:mt-[30px]
-              "
-              id=""
-            >
-              <div
-                class="
-                  mobile:w-auto mobile:text-start
-                  desktop:w-[120px]
-                  inline-block
-                  text-[#3f3a3a]
-                  mobile:text-[14px] mobile:leading-[17px]
-                  desktop:text-[16px] desktop:leading-[19px]
-                "
-                id=" cart-title"
-              >
-                地址
-              </div>
-              <input
-                class="
-                  mobile:w-full mobile:mt-[10px]
-                  desktop:mt-0
-                  h-[32px]
-                  desktop:w-[576px]
-                  pl-[1%]
-                  border-solid border-[1px] border-[#979797]
-                  rounded-[8px]
-                  placeholder:text-[#d3d3d3]
-                  mobile:placeholder:text-[14px]
-                  mobile:placeholder:leading-[17px]
-                  desktop:placeholder:text-[16px]
-                  desktop:placeholder:leading-[19px]
-                "
-                type="text"
-                placeholder="地址"
-                title="input-address"
-                value=""
-                name="nav-searchBar"
-                id=""
-              />
-            </div>
-            <div
-              class="
-                flex
-                mobile:flex-col mobile:items-none
-                desktop:items-center desktop:flex-row
-                mobile:mt-[20px]
-                desktop:mt-[30px]
-              "
-              id=""
-            >
-              <div
-                class="
-                  mobile:w-auto mobile:text-start
-                  desktop:w-[120px]
-                  inline-block
-                  text-[#3f3a3a]
-                  mobile:text-[14px] mobile:leading-[17px]
-                  desktop:text-[16px] desktop:leading-[19px]
-                "
-                id=" cart-title"
-              >
-                手機
-              </div>
-              <input
-                class="
-                  mobile:w-full mobile:mt-[10px]
-                  desktop:mt-0
-                  h-[32px]
-                  desktop:w-[576px]
-                  pl-[1%]
-                  border-solid border-[1px] border-[#979797]
-                  rounded-[8px]
-                  placeholder:text-[#d3d3d3]
-                  mobile:placeholder:text-[14px]
-                  mobile:placeholder:leading-[17px]
-                  desktop:placeholder:text-[16px]
-                  desktop:placeholder:leading-[19px]
-                "
-                type="text"
-                placeholder="手機"
-                title="input-phone-number"
-                value=""
-                name="nav-searchBar"
-                id=""
-              />
-            </div>
-            <div
-              class="
-                flex
-                mobile:flex-col mobile:items-none
-                desktop:items-center desktop:flex-row
-                mobile:mt-[20px]
-                desktop:mt-[30px]
-              "
-              id=""
-            >
-              <div
-                class="
-                  mobile:w-auto mobile:text-start
-                  desktop:w-[120px]
-                  inline-block
-                  text-[#3f3a3a]
-                  mobile:text-[14px] mobile:leading-[17px]
-                  desktop:text-[16px] desktop:leading-[19px]
-                "
-                id=" cart-title"
-              >
-                Email
-              </div>
-              <input
-                class="
-                  mobile:w-full mobile:mt-[10px]
-                  desktop:mt-0
-                  h-[32px]
-                  desktop:w-[576px]
-                  pl-[1%]
-                  border-solid border-[1px] border-[#979797]
-                  rounded-[8px]
-                  placeholder:text-[#d3d3d3]
-                  mobile:placeholder:text-[14px]
-                  mobile:placeholder:leading-[17px]
-                  desktop:placeholder:text-[16px]
-                  desktop:placeholder:leading-[19px]
-                "
-                type="text"
-                placeholder="Email"
-                title="input-email"
-                value=""
-                name="nav-searchBar"
-                id=""
-              />
-            </div>
-            <div
-              class="
-                flex
-                mobile:flex-col mobile:items-none
-                desktop:items-center desktop:flex-row
-                mobile:mt-[20px]
-                desktop:mt-[30px]
-              "
-              id=""
-            >
-              <div
-                class="
-                  mobile:w-auto mobile:text-start
-                  desktop:w-[120px]
-                  inline-block
-                  text-[#3f3a3a]
-                  mobile:text-[14px] mobile:leading-[17px]
-                  desktop:text-[16px] desktop:leading-[19px]
-                "
-                id=" cart-title"
-              >
-                配送時間
-              </div>
-              <form
-                class="flex items-center h-[26px] mobile:mt-[10px] desktop:mt-0"
-              >
-                <div class="flex flex-row items-center h-[26px]" id="">
-                  <input
-                    type="radio"
-                    id="08:00-12:00"
-                    name="time"
-                    value="08:00-12:00"
-                  />
-                  <label
-                    for="08:00-12:00"
-                    class="
-                      ml-[8px]
-                      text-[#3f3a3a]
-                      mobile:text-[14px]
-                      desktop:text-[16px]
-                      leading-[26px]
-                    "
-                    >08:00-12:00</label
-                  ><br />
-                  <input
-                    type="radio"
-                    id="14:00-18:00"
-                    name="time"
-                    value="14:00-18:00"
-                    class="ml-[32px]"
-                  />
-                  <label
-                    for="14:00-18:00"
-                    class="
-                      ml-[8px]
-                      text-[#3f3a3a]
-                      mobile:text-[14px]
-                      desktop:text-[16px]
-                      leading-[26px]
-                    "
-                    >14:00-18:00</label
-                  ><br />
-                  <input
-                    type="radio"
-                    id="not-set"
-                    name="time"
-                    value="not-set"
-                    class="ml-[32px]"
-                  />
-                  <label
-                    for="not-set"
-                    class="
-                      ml-[8px]
-                      text-[#3f3a3a]
-                      mobile:text-[14px]
-                      desktop:text-[16px]
-                      leading-[26px]
-                    "
-                    >不指定</label
-                  >
-                </div>
-              </form>
-            </div>
+              " id=" cart-title">
+            務必填寫完整收件人姓名，避免包裹無法順利簽收
           </div>
+          <div class="
+                flex
+                mobile:flex-col mobile:items-none
+                desktop:items-center desktop:flex-row
+                mobile:mt-[20px]
+                desktop:mt-[30px]
+              " id="">
+            <div class="
+                  mobile:w-auto mobile:text-start
+                  desktop:w-[120px]
+                  inline-block
+                  text-[#3f3a3a]
+                  mobile:text-[14px] mobile:leading-[17px]
+                  desktop:text-[16px] desktop:leading-[19px]
+                " id=" cart-title">
+              手機
+            </div>
+            <input class="
+                  mobile:w-full mobile:mt-[10px]
+                  desktop:mt-0
+                  h-[32px]
+                  desktop:w-[576px]
+                  pl-[1%]
+                  border-solid border-[1px] border-[#979797]
+                  rounded-[8px]
+                  placeholder:text-[#d3d3d3]
+                  mobile:placeholder:text-[14px]
+                  mobile:placeholder:leading-[17px]
+                  desktop:placeholder:text-[16px]
+                  desktop:placeholder:leading-[19px]
+                " type="text" placeholder="手機" title="input-phone-number" value="" name="nav-searchBar" id="" />
+          </div>
+          <div class="
+                flex
+                mobile:flex-col mobile:items-none
+                desktop:items-center desktop:flex-row
+                mobile:mt-[20px]
+                desktop:mt-[30px]
+              " id="">
+            <div class="
+                  mobile:w-auto mobile:text-start
+                  desktop:w-[120px]
+                  inline-block
+                  text-[#3f3a3a]
+                  mobile:text-[14px] mobile:leading-[17px]
+                  desktop:text-[16px] desktop:leading-[19px]
+                " id=" cart-title">
+              地址
+            </div>
+            <input class="
+                  mobile:w-full mobile:mt-[10px]
+                  desktop:mt-0
+                  h-[32px]
+                  desktop:w-[576px]
+                  pl-[1%]
+                  border-solid border-[1px] border-[#979797]
+                  rounded-[8px]
+                  placeholder:text-[#d3d3d3]
+                  mobile:placeholder:text-[14px]
+                  mobile:placeholder:leading-[17px]
+                  desktop:placeholder:text-[16px]
+                  desktop:placeholder:leading-[19px]
+                " type="text" placeholder="地址" title="input-address" value="" name="nav-searchBar" id="" />
+          </div>
+          <div class="
+                flex
+                mobile:flex-col mobile:items-none
+                desktop:items-center desktop:flex-row
+                mobile:mt-[20px]
+                desktop:mt-[30px]
+              " id="">
+            <div class="
+                  mobile:w-auto mobile:text-start
+                  desktop:w-[120px]
+                  inline-block
+                  text-[#3f3a3a]
+                  mobile:text-[14px] mobile:leading-[17px]
+                  desktop:text-[16px] desktop:leading-[19px]
+                " id=" cart-title">
+              手機
+            </div>
+            <input class="
+                  mobile:w-full mobile:mt-[10px]
+                  desktop:mt-0
+                  h-[32px]
+                  desktop:w-[576px]
+                  pl-[1%]
+                  border-solid border-[1px] border-[#979797]
+                  rounded-[8px]
+                  placeholder:text-[#d3d3d3]
+                  mobile:placeholder:text-[14px]
+                  mobile:placeholder:leading-[17px]
+                  desktop:placeholder:text-[16px]
+                  desktop:placeholder:leading-[19px]
+                " type="text" placeholder="手機" title="input-phone-number" value="" name="nav-searchBar" id="" />
+          </div>
+          <div class="
+                flex
+                mobile:flex-col mobile:items-none
+                desktop:items-center desktop:flex-row
+                mobile:mt-[20px]
+                desktop:mt-[30px]
+              " id="">
+            <div class="
+                  mobile:w-auto mobile:text-start
+                  desktop:w-[120px]
+                  inline-block
+                  text-[#3f3a3a]
+                  mobile:text-[14px] mobile:leading-[17px]
+                  desktop:text-[16px] desktop:leading-[19px]
+                " id=" cart-title">
+              Email
+            </div>
+            <input class="
+                  mobile:w-full mobile:mt-[10px]
+                  desktop:mt-0
+                  h-[32px]
+                  desktop:w-[576px]
+                  pl-[1%]
+                  border-solid border-[1px] border-[#979797]
+                  rounded-[8px]
+                  placeholder:text-[#d3d3d3]
+                  mobile:placeholder:text-[14px]
+                  mobile:placeholder:leading-[17px]
+                  desktop:placeholder:text-[16px]
+                  desktop:placeholder:leading-[19px]
+                " type="text" placeholder="Email" title="input-email" value="" name="nav-searchBar" id="" />
+          </div>
+          <div class="
+                flex
+                mobile:flex-col mobile:items-none
+                desktop:items-center desktop:flex-row
+                mobile:mt-[20px]
+                desktop:mt-[30px]
+              " id="">
+            <div class="
+                  mobile:w-auto mobile:text-start
+                  desktop:w-[120px]
+                  inline-block
+                  text-[#3f3a3a]
+                  mobile:text-[14px] mobile:leading-[17px]
+                  desktop:text-[16px] desktop:leading-[19px]
+                " id=" cart-title">
+              配送時間
+            </div>
+            <form class="flex items-center h-[26px] mobile:mt-[10px] desktop:mt-0">
+              <div class="flex flex-row items-center h-[26px]" id="">
+                <input type="radio" id="08:00-12:00" name="time" value="08:00-12:00" />
+                <label for="08:00-12:00" class="
+                      ml-[8px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px]
+                      desktop:text-[16px]
+                      leading-[26px]
+                    ">08:00-12:00</label><br />
+                <input type="radio" id="14:00-18:00" name="time" value="14:00-18:00" class="ml-[32px]" />
+                <label for="14:00-18:00" class="
+                      ml-[8px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px]
+                      desktop:text-[16px]
+                      leading-[26px]
+                    ">14:00-18:00</label><br />
+                <input type="radio" id="not-set" name="time" value="not-set" class="ml-[32px]" />
+                <label for="not-set" class="
+                      ml-[8px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px]
+                      desktop:text-[16px]
+                      leading-[26px]
+                    ">不指定</label>
+              </div>
+            </form>
+          </div>
+        </div>
 
-          <div
-            class="flex flex-row mobile:mt-[20px] desktop:mt-[50px]"
-            id="cart-title-box"
-          >
-            <div
-              class="
+        <div class="flex flex-row mobile:mt-[20px] desktop:mt-[50px]" id="cart-title-box">
+          <div class="
                 inline-block
                 font-bold
                 text-[#3f3a3a] text-[16px]
                 leading-[19px]
                 mobile:mr-0
                 desktop:mr-[468px]
-              "
-              id="cart-title"
-            >
-              付款資料
-            </div>
+              " id="cart-title">
+            付款資料
           </div>
+        </div>
 
-          <div
-            class="
+        <div class="
               flex flex-row
               w-full
               h-0
@@ -2958,35 +2410,26 @@
               desktop:my-[10px]
               content-['']
               border-solid border-[#3f3a3a] border-b-[1px]
-            "
-            id="split-border"
-          ></div>
-          <div class="" id="">
-            <div
-              class="
+            " id="split-border"></div>
+        <div class="" id="">
+          <div class="
                 flex
                 mobile:flex-col mobile:items-none
                 desktop:items-center desktop:flex-row
                 mobile:mt-[20px]
                 desktop:mt-[30px]
-              "
-              id=""
-            >
-              <div
-                class="
+              " id="">
+            <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
                   inline-block
                   text-[#3f3a3a]
                   mobile:text-[14px] mobile:leading-[17px]
                   desktop:text-[16px] desktop:leading-[19px]
-                "
-                id=" cart-title"
-              >
-                信用卡號碼
-              </div>
-              <input
-                class="
+                " id=" cart-title">
+              信用卡號碼
+            </div>
+            <input class="
                   mobile:w-full mobile:mt-[10px]
                   desktop:mt-0
                   h-[32px]
@@ -2999,40 +2442,27 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                "
-                type="text"
-                placeholder="**** **** **** ****"
-                title="input-credit-card-number"
-                value=""
-                name="nav-searchBar"
-                id=""
-              />
-            </div>
-            <div
-              class="
+                " type="text" placeholder="**** **** **** ****" title="input-credit-card-number" value=""
+              name="nav-searchBar" id="" />
+          </div>
+          <div class="
                 flex
                 mobile:flex-col mobile:items-none
                 desktop:items-center desktop:flex-row
                 mobile:mt-[20px]
                 desktop:mt-[30px]
-              "
-              id=""
-            >
-              <div
-                class="
+              " id="">
+            <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
                   inline-block
                   text-[#3f3a3a]
                   mobile:text-[14px] mobile:leading-[17px]
                   desktop:text-[16px] desktop:leading-[19px]
-                "
-                id=" cart-title"
-              >
-                有效期限
-              </div>
-              <input
-                class="
+                " id=" cart-title">
+              有效期限
+            </div>
+            <input class="
                   mobile:w-full mobile:mt-[10px]
                   desktop:mt-0
                   h-[32px]
@@ -3045,40 +2475,27 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                "
-                type="text"
-                placeholder="MM / YY"
-                title="input-credit-card-valid-month"
-                value=""
-                name="nav-searchBar"
-                id=""
-              />
-            </div>
-            <div
-              class="
+                " type="text" placeholder="MM / YY" title="input-credit-card-valid-month" value="" name="nav-searchBar"
+              id="" />
+          </div>
+          <div class="
                 flex
                 mobile:flex-col mobile:items-none
                 desktop:items-center desktop:flex-row
                 mobile:mt-[20px]
                 desktop:mt-[30px]
-              "
-              id=""
-            >
-              <div
-                class="
+              " id="">
+            <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
                   inline-block
                   text-[#3f3a3a]
                   mobile:text-[14px] mobile:leading-[17px]
                   desktop:text-[16px] desktop:leading-[19px]
-                "
-                id=" cart-title"
-              >
-                安全碼
-              </div>
-              <input
-                class="
+                " id=" cart-title">
+              安全碼
+            </div>
+            <input class="
                   mobile:w-full mobile:mt-[10px]
                   desktop:mt-0
                   h-[32px]
@@ -3091,79 +2508,50 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                "
-                type="text"
-                placeholder="後三碼"
-                title="input-credit-card-CSC"
-                value=""
-                name="nav-searchBar"
-                id=""
-              />
-            </div>
-            <div
-              class="
+                " type="text" placeholder="後三碼" title="input-credit-card-CSC" value="" name="nav-searchBar" id="" />
+          </div>
+          <div class="
                 flex flex-col
                 w-full
                 ml-auto
                 mobile:mt-[24px] mobile:mb-[28px]
                 desktop:mt-[40px] desktop:mb-[148px]
-              "
-              id="product-info"
-            >
-              <div class="w-full ml-auto max-w-[240px]">
-                <div class="flex flex-row items-center ml-auto" id="">
-                  <div
-                    class="text-[#3f3a3a] text-[16px] leading-[19px]"
-                    id="product-name"
-                  >
-                    總金額
-                  </div>
-                  <div
-                    class="
+              " id="product-info">
+            <div class="w-full ml-auto max-w-[240px]">
+              <div class="flex flex-row items-center ml-auto" id="">
+                <div class="text-[#3f3a3a] text-[16px] leading-[19px]" id="product-name">
+                  總金額
+                </div>
+                <div class="
                       ml-auto
                       mr-[8px]
                       text-[#3f3a3a] text-[16px]
                       leading-[19px]
-                    "
-                    id="product-name"
-                  >
-                    NT.
-                  </div>
-                  <div
-                    class="text-[#3f3a3a] text-[30px] leading-[36px]"
-                    id="product-name"
-                  >
-                    2397
-                  </div>
+                    " id="product-name">
+                  NT.
                 </div>
-                <div class="flex flex-row items-center mt-[20px] ml-auto" id="">
-                  <div
-                    class="text-[#3f3a3a] text-[16px] leading-[19px]"
-                    id="product-name"
-                  >
-                    運費
-                  </div>
-                  <div
-                    class="
+                <div class="text-[#3f3a3a] text-[30px] leading-[36px]" id="product-name">
+                  2397
+                </div>
+              </div>
+              <div class="flex flex-row items-center mt-[20px] ml-auto" id="">
+                <div class="text-[#3f3a3a] text-[16px] leading-[19px]" id="product-name">
+                  運費
+                </div>
+                <div class="
                       ml-auto
                       mr-[8px]
                       text-[#3f3a3a] text-[16px]
                       leading-[19px]
-                    "
-                    id="product-name"
-                  >
-                    NT.
-                  </div>
-                  <div
-                    class="text-[#3f3a3a] text-[30px] leading-[36px]"
-                    id="product-name"
-                  >
-                    30
-                  </div>
+                    " id="product-name">
+                  NT.
                 </div>
+                <div class="text-[#3f3a3a] text-[30px] leading-[36px]" id="product-name">
+                  30
+                </div>
+              </div>
 
-                <div
-                  class="
+              <div class="
                     flex flex-row
                     w-full
                     h-0
@@ -3172,39 +2560,27 @@
                     max-w-[240px]
                     content-['']
                     border-solid border-[#3f3a3a] border-b-[1px]
-                  "
-                  id="split-border"
-                ></div>
+                  " id="split-border"></div>
 
-                <div class="flex flex-row items-center ml-auto" id="">
-                  <div
-                    class="text-[#3f3a3a] text-[16px] leading-[19px]"
-                    id="product-name"
-                  >
-                    應付金額
-                  </div>
-                  <div
-                    class="
+              <div class="flex flex-row items-center ml-auto" id="">
+                <div class="text-[#3f3a3a] text-[16px] leading-[19px]" id="product-name">
+                  應付金額
+                </div>
+                <div class="
                       ml-auto
                       mr-[8px]
                       text-[#3f3a3a] text-[16px]
                       leading-[19px]
-                    "
-                    id="product-name"
-                  >
-                    NT.
-                  </div>
-                  <div
-                    class="text-[#3f3a3a] text-[30px] leading-[36px]"
-                    id="product-name"
-                  >
-                    2427
-                  </div>
+                    " id="product-name">
+                  NT.
+                </div>
+                <div class="text-[#3f3a3a] text-[30px] leading-[36px]" id="product-name">
+                  2427
                 </div>
               </div>
+            </div>
 
-              <div
-                class="
+            <div class="
                   cursor-pointer
                   flex
                   justify-center
@@ -3228,21 +2604,18 @@
                   desktop:border-solid
                   desktop:border-[1px]
                   desktop:border-[#979797]
-                "
-                onclick="alert('開始付款！')"
-              >
-                確認付款
-              </div>
+                " onclick="alert('開始付款！')">
+              確認付款
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- footer and bottom navBar content -->
-    <footer class="" name="bottom-nav">
-      <div
-        class="
+  <!-- footer and bottom navBar content -->
+  <footer class="" name="bottom-nav">
+    <div class="
           mobile:hidden
           desktop:flex
           desktop:justify-center
@@ -3251,281 +2624,144 @@
           desktop:h-[115px]
           desktop:mx-auto
           desktop:bg-[#313538]
-        "
-        name="bottom-nav-bar-desktop-box"
-      >
-        <div class="flex mr-[101px]" name="bottom-nav-bar-desktop-links">
-          <div
-            class="
+        " name="bottom-nav-bar-desktop-box">
+      <div class="flex mr-[101px]" name="bottom-nav-bar-desktop-links">
+        <div class="
               cursor-pointer
               w-[134px]
               h-[22px]
               text-[16px] text-[#f5f5f5] text-center
               leading-[22px]
               border-solid border-r-[1px] border-[#828282]
-            "
-            name="bottom-nav-bar-desktop-info-about"
-          >
-            <a href="#" class="" name="bottom-nav-bar-desktop-info-about-link"
-              >關於 STYLiSH</a
-            >
-          </div>
-          <div
-            class="
+            " name="bottom-nav-bar-desktop-info-about">
+          <a href="#" class="" name="bottom-nav-bar-desktop-info-about-link">關於 STYLiSH</a>
+        </div>
+        <div class="
               cursor-pointer
               w-[134px]
               h-[22px]
               text-[16px] text-[#f5f5f5] text-center
               leading-[22px]
               border-solid border-r-[1px] border-[#828282]
-            "
-            name="bottom-nav-bar-desktop-info-service-terms"
-          >
-            <a
-              href="#"
-              class=""
-              name="bottom-nav-bar-desktop-info-service-terms-link"
-              >服務條款</a
-            >
-          </div>
-          <div
-            class="
+            " name="bottom-nav-bar-desktop-info-service-terms">
+          <a href="#" class="" name="bottom-nav-bar-desktop-info-service-terms-link">服務條款</a>
+        </div>
+        <div class="
               cursor-pointer
               w-[134px]
               h-[22px]
               text-[16px] text-[#f5f5f5] text-center
               leading-[22px]
               border-solid border-r-[1px] border-[#828282]
-            "
-            name="bottom-nav-bar-desktop-privacy-policy"
-          >
-            <a
-              href="#"
-              class=""
-              name="bottom-nav-bar-desktop-privacy-policy-link"
-              >隱私政策</a
-            >
-          </div>
-          <div
-            class="
+            " name="bottom-nav-bar-desktop-privacy-policy">
+          <a href="#" class="" name="bottom-nav-bar-desktop-privacy-policy-link">隱私政策</a>
+        </div>
+        <div class="
               cursor-pointer
               w-[134px]
               h-[22px]
               text-[16px] text-[#f5f5f5] text-center
               leading-[22px]
               border-solid border-r-[1px] border-[#828282]
-            "
-            name="bottom-nav-bar-desktop-contact-us"
-          >
-            <a href="#" class="" name="bottom-nav-bar-desktop-contact-us-link"
-              >聯絡我們</a
-            >
-          </div>
-          <div
-            class="
+            " name="bottom-nav-bar-desktop-contact-us">
+          <a href="#" class="" name="bottom-nav-bar-desktop-contact-us-link">聯絡我們</a>
+        </div>
+        <div class="
               cursor-pointer
               w-[134px]
               h-[22px]
               text-[16px] text-[#f5f5f5] text-center
               leading-[22px]
               border-none
-            "
-            name="bottom-nav-bar-desktop-frequently-asked-questions"
-          >
-            <a
-              href="#"
-              class=""
-              name="bottom-nav-bar-desktop-frequently-asked-questions-link"
-              >FAQ</a
-            >
-          </div>
-        </div>
-        <div
-          class="flex justify-center items-center"
-          name="bottom-nav-bar-desktop-social-media-links"
-        >
-          <div class="cursor-pointer w-[50px] h-[50px] mr-[30px]">
-            <a
-              href="#"
-              aria-label="line-image-link"
-              name="bottom-nav-bar-desktop-line-image-link"
-              ><img
-                src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279856017418/line.png"
-                alt=""
-                class="w-full h-full"
-                name="bottom-nav-bar-desktop-line-image"
-            /></a>
-          </div>
-          <div class="cursor-pointer w-[50px] h-[50px] mr-[30px]">
-            <a
-              href="#"
-              aria-label="twitter-image-link"
-              name="bottom-nav-bar-desktop-twitter-image-link"
-              ><img
-                src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279512080465/twitter.png"
-                alt=""
-                class="w-full h-full"
-                name="bottom-nav-bar-desktop-twitter-image"
-            /></a>
-          </div>
-          <div class="cursor-pointer w-[50px] h-[50px] mr-[30px]">
-            <a
-              href="#"
-              aria-label="facebook-image-link"
-              name="bottom-nav-bar-desktop-facebook-image-link"
-              ><img
-                src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138280220917851/facebook.png"
-                alt=""
-                class="w-full h-full"
-                name="bottom-nav-bar-desktop-facebook-image"
-            /></a>
-          </div>
-          <div
-            class="text-[12px] text-[#828282] leading-[17px] text-center"
-            name="bottom-nav-bar-desktop-all-rights-reserved"
-          >
-            © 2018. All rights reserved.
-          </div>
+            " name="bottom-nav-bar-desktop-frequently-asked-questions">
+          <a href="#" class="" name="bottom-nav-bar-desktop-frequently-asked-questions-link">FAQ</a>
         </div>
       </div>
+      <div class="flex justify-center items-center" name="bottom-nav-bar-desktop-social-media-links">
+        <div class="cursor-pointer w-[50px] h-[50px] mr-[30px]">
+          <a href="#" aria-label="line-image-link" name="bottom-nav-bar-desktop-line-image-link"><img
+              src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279856017418/line.png" alt=""
+              class="w-full h-full" name="bottom-nav-bar-desktop-line-image" /></a>
+        </div>
+        <div class="cursor-pointer w-[50px] h-[50px] mr-[30px]">
+          <a href="#" aria-label="twitter-image-link" name="bottom-nav-bar-desktop-twitter-image-link"><img
+              src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279512080465/twitter.png" alt=""
+              class="w-full h-full" name="bottom-nav-bar-desktop-twitter-image" /></a>
+        </div>
+        <div class="cursor-pointer w-[50px] h-[50px] mr-[30px]">
+          <a href="#" aria-label="facebook-image-link" name="bottom-nav-bar-desktop-facebook-image-link"><img
+              src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138280220917851/facebook.png" alt=""
+              class="w-full h-full" name="bottom-nav-bar-desktop-facebook-image" /></a>
+        </div>
+        <div class="text-[12px] text-[#828282] leading-[17px] text-center"
+          name="bottom-nav-bar-desktop-all-rights-reserved">
+          © 2018. All rights reserved.
+        </div>
+      </div>
+    </div>
 
-      <div
-        class="mobile:block desktop:hidden w-full bg-[#313538]"
-        name="bottom-nav-bar-mobile-box-box"
-      >
-        <div
-          class="flex flex-col items-center max-w-[360px] mx-auto pt-[23px]"
-          name="bottom-nav-bar-mobile-box"
-        >
-          <div
-            class="flex justify-center items-end w-full"
-            name="bottom-nav-bar-mobile-contactlist"
-          >
-            <div
-              class="ml-[40px] mr-[36px]"
-              name="bottom-nav-bar-mobile-links-part1"
-              name="bottom-nav-bar-mobile-info-about"
-            >
-              <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]">
-                <a
-                  href="#"
-                  class=""
-                  aria-label="info-about-link"
-                  name="bottom-nav-bar-mobile-info-about-link"
-                  >關於 STYLiSH</a
-                >
-              </div>
-              <div
-                class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]"
-                name="bottom-nav-bar-mobile-info-service-terms"
-              >
-                <a
-                  href="#"
-                  class=""
-                  aria-label="service-terms-link"
-                  name="bottom-nav-bar-mobile-info-service-terms-link"
-                  >服務條款</a
-                >
-              </div>
-              <div
-                class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[13px]"
-                name="bottom-nav-bar-mobile-privacy-policy"
-              >
-                <a
-                  href="#"
-                  class=""
-                  aria-label="privacy-policy-link"
-                  name="bottom-nav-bar-mobile-privacy-policy-link"
-                  >隱私政策</a
-                >
-              </div>
+    <div class="mobile:block desktop:hidden w-full bg-[#313538]" name="bottom-nav-bar-mobile-box-box">
+      <div class="flex flex-col items-center max-w-[360px] mx-auto pt-[23px]" name="bottom-nav-bar-mobile-box">
+        <div class="flex justify-center items-end w-full" name="bottom-nav-bar-mobile-contactlist">
+          <div class="ml-[40px] mr-[36px]" name="bottom-nav-bar-mobile-links-part1"
+            name="bottom-nav-bar-mobile-info-about">
+            <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]">
+              <a href="#" class="" aria-label="info-about-link" name="bottom-nav-bar-mobile-info-about-link">關於
+                STYLiSH</a>
             </div>
-            <div class="mr-[31px]" name="bottom-nav-bar-mobile-links-part2">
-              <div
-                class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]"
-                name="bottom-nav-bar-mobile-contact-us"
-              >
-                <a
-                  href="#"
-                  class=""
-                  aria-label="contact-us-link"
-                  name="bottom-nav-bar-mobile-contact-us-link"
-                  >聯絡我們</a
-                >
-              </div>
-              <div
-                class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[41px]"
-                name="bottom-nav-bar-mobile-frequently-asked-questions"
-              >
-                <a
-                  href="#"
-                  class=""
-                  aria-label="frequently-asked-questions-link"
-                  name="bottom-nav-bar-mobile-frequently-asked-questions-link"
-                  >FAQ</a
-                >
-              </div>
+            <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]"
+              name="bottom-nav-bar-mobile-info-service-terms">
+              <a href="#" class="" aria-label="service-terms-link"
+                name="bottom-nav-bar-mobile-info-service-terms-link">服務條款</a>
             </div>
-            <div
-              class="flex justify-between items-center mb-[51px]"
-              name="bottom-nav-bar-mobile-social-media-links"
-            >
-              <div class="w-[20px] h-[20px] mr-[14px]">
-                <a
-                  href="#"
-                  aria-label="line-image-link"
-                  name="bottom-nav-bar-mobile-line-image-link"
-                  ><img
-                    src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279856017418/line.png"
-                    alt=""
-                    class="w-full h-full"
-                    name="bottom-nav-bar-mobile-line-image"
-                /></a>
-              </div>
-              <div class="w-[20px] h-[20px] mr-[14px]">
-                <a
-                  href="#"
-                  aria-label="twitter-image-link"
-                  name="bottom-nav-bar-mobile-twitter-image-link"
-                  ><img
-                    src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279512080465/twitter.png"
-                    alt=""
-                    class="w-full h-full"
-                    name="bottom-nav-bar-mobile-twitter-image"
-                /></a>
-              </div>
-              <div class="w-[20px] h-[20px] mr-[24px]">
-                <a
-                  href="#"
-                  aria-label="facebook-image-link"
-                  name="bottom-nav-bar-mobile-facebook-image-link"
-                  ><img
-                    src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138280220917851/facebook.png"
-                    alt=""
-                    class="w-full h-full"
-                    name="bottom-nav-bar-mobile-facebook-image"
-                /></a>
-              </div>
+            <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[13px]"
+              name="bottom-nav-bar-mobile-privacy-policy">
+              <a href="#" class="" aria-label="privacy-policy-link"
+                name="bottom-nav-bar-mobile-privacy-policy-link">隱私政策</a>
             </div>
           </div>
-          <div
-            class="
+          <div class="mr-[31px]" name="bottom-nav-bar-mobile-links-part2">
+            <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]" name="bottom-nav-bar-mobile-contact-us">
+              <a href="#" class="" aria-label="contact-us-link" name="bottom-nav-bar-mobile-contact-us-link">聯絡我們</a>
+            </div>
+            <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[41px]"
+              name="bottom-nav-bar-mobile-frequently-asked-questions">
+              <a href="#" class="" aria-label="frequently-asked-questions-link"
+                name="bottom-nav-bar-mobile-frequently-asked-questions-link">FAQ</a>
+            </div>
+          </div>
+          <div class="flex justify-between items-center mb-[51px]" name="bottom-nav-bar-mobile-social-media-links">
+            <div class="w-[20px] h-[20px] mr-[14px]">
+              <a href="#" aria-label="line-image-link" name="bottom-nav-bar-mobile-line-image-link"><img
+                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279856017418/line.png" alt=""
+                  class="w-full h-full" name="bottom-nav-bar-mobile-line-image" /></a>
+            </div>
+            <div class="w-[20px] h-[20px] mr-[14px]">
+              <a href="#" aria-label="twitter-image-link" name="bottom-nav-bar-mobile-twitter-image-link"><img
+                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279512080465/twitter.png"
+                  alt="" class="w-full h-full" name="bottom-nav-bar-mobile-twitter-image" /></a>
+            </div>
+            <div class="w-[20px] h-[20px] mr-[24px]">
+              <a href="#" aria-label="facebook-image-link" name="bottom-nav-bar-mobile-facebook-image-link"><img
+                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138280220917851/facebook.png"
+                  alt="" class="w-full h-full" name="bottom-nav-bar-mobile-facebook-image" /></a>
+            </div>
+          </div>
+        </div>
+        <div class="
               text-[10px] text-[#828282]
               leading-[14px]
               text-center
               mt-[13px]
               mx-auto
               mb-[80px]
-            "
-            name="bottom-nav-bar-mobile-all-rights-reserved"
-          >
-            © 2018. All rights reserved.
-          </div>
+            " name="bottom-nav-bar-mobile-all-rights-reserved">
+          © 2018. All rights reserved.
         </div>
       </div>
+    </div>
 
-      <div
-        class="
+    <div class="
           mobile:flex
           mobile:fixed
           mobile:justify-center
@@ -3535,22 +2771,16 @@
           mobile:bottom-0
           mobile:bg-[#313538]
           desktop:hidden
-        "
-        name="bottom-nav-bar-mobile-stick"
-      >
-        <div
-          class="
+        " name="bottom-nav-bar-mobile-stick">
+      <div class="
             flex
             justify-center
             items-center
             w-[50%]
             h-[24px]
             border-solid border-r-[1px] border-[#828282]
-          "
-          name="bottom-nav-bar-mobile-stick-cart"
-        >
-          <div
-            class="
+          " name="bottom-nav-bar-mobile-stick-cart">
+        <div class="
               relative
               cursor-pointer
               flex flex-row
@@ -3558,27 +2788,15 @@
               items-center
               w-[180px]
               mx-auto
-            "
-            name="bottom-nav-bar-mobile-stick-shopping-cart-box"
-          >
-            <a
-              href="#"
-              aria-label="shopping-cart-image-link"
-              name="bottom-nav-bar-mobile-stick-shopping-cart-image-link"
-            >
-              <img
-                src="https://cdn.discordapp.com/attachments/1001702231785099304/1006534620352880671/image.png"
-                alt=""
-                name="bottom-nav-bar-mobile-stick-shopping-cart-image"
-            /></a>
-            <div
-              class="text-[16px] text-[#ffffff] leading-[16px] text-center"
-              name="bottom-nav-bar-mobile-stick-shopping-cart-text"
-            >
-              購物車
-            </div>
-            <div
-              class="
+            " name="bottom-nav-bar-mobile-stick-shopping-cart-box">
+          <a href="#" aria-label="shopping-cart-image-link" name="bottom-nav-bar-mobile-stick-shopping-cart-image-link">
+            <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006534620352880671/image.png" alt=""
+              name="bottom-nav-bar-mobile-stick-shopping-cart-image" /></a>
+          <div class="text-[16px] text-[#ffffff] leading-[16px] text-center"
+            name="bottom-nav-bar-mobile-stick-shopping-cart-text">
+            購物車
+          </div>
+          <div class="
                 absolute
                 flex
                 justify-center
@@ -3591,11 +2809,8 @@
                 rounded-[50%]
                 text-[#ffffff] text-[16px]
                 leading-[24px]
-              "
-              name="bottom-nav-bar-mobile-stick-shopping-cart-notification-numbers"
-            >
-              <div
-                class="
+              " name="bottom-nav-bar-mobile-stick-shopping-cart-notification-numbers">
+            <div class="
                   animate-ping
                   absolute
                   inline-flex
@@ -3604,14 +2819,12 @@
                   rounded-full
                   bg-[#8b572a]
                   opacity-75
-                "
-              ></div>
-              1
-            </div>
+                "></div>
+            1
           </div>
         </div>
-        <div
-          class="
+      </div>
+      <div class="
             relative
             cursor-pointer
             flex flex-row
@@ -3619,65 +2832,54 @@
             items-center
             w-[180px]
             mx-auto
-          "
-          name="profile-box"
-        >
-          <a
-            href="#"
-            aria-label="member-image-link"
-            name="bottom-nav-bar-mobile-stick-member-image-link"
-          >
-            <img
-              src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055670895890453/profile.png"
-              alt=""
-              name="bottom-nav-bar-mobile-stick-member-image"
-          /></a>
-          <div
-            class="text-[16px] text-[#ffffff] leading-[16px] text-center"
-            name="bottom-nav-bar-mobile-stick-member-text"
-          >
-            會員
-          </div>
+          " name="profile-box">
+        <a href="#" aria-label="member-image-link" name="bottom-nav-bar-mobile-stick-member-image-link">
+          <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055670895890453/profile.png" alt=""
+            name="bottom-nav-bar-mobile-stick-member-image" /></a>
+        <div class="text-[16px] text-[#ffffff] leading-[16px] text-center"
+          name="bottom-nav-bar-mobile-stick-member-text">
+          會員
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <script type="module">
-      // https://swiperjs.com/demos#autoplay
-      // mouseover 跟 mouseenter差別在哪? https://ithelp.ithome.com.tw/articles/10251677
-      {
-        // w0p2 Step 1: Get Marketing Campaigns
-        const slidesHtmlDivElement =
-          document.querySelector('div[name="slides"]');
-        // slides navigation dot box for putting slides navigation dot in it
-        const dotBoxHtmlDivElement = document.querySelector(
-          'div[name="dot-box"]'
+  <script type="module">
+    // https://swiperjs.com/demos#autoplay
+    // mouseover 跟 mouseenter差別在哪? https://ithelp.ithome.com.tw/articles/10251677
+    {
+      // w0p2 Step 1: Get Marketing Campaigns
+      const slidesHtmlDivElement =
+        document.querySelector('div[name="slides"]');
+      // slides navigation dot box for putting slides navigation dot in it
+      const dotBoxHtmlDivElement = document.querySelector(
+        'div[name="dot-box"]'
+      );
+      const slidesTextMainHtmlDivElement = document.querySelector(
+        'div[name="slides-text-main"]'
+      );
+      const slidesTextDescribeHtmlDivElement = document.querySelector(
+        'div[name="slides-text-describe"]'
+      );
+      // get marketingCampaignAPISlidersPromise for API promise
+      const marketingCampaignAPISlidersPromise = fetch(
+        'https://api.appworks-school.tw/api/1.0/marketing/campaigns'
+      ).then((response) => response.json());
+      // get json key "data" value in API promise
+      const marketingCampaignAPIJson =
+        await marketingCampaignAPISlidersPromise.then(
+          (result) => result.data
         );
-        const slidesTextMainHtmlDivElement = document.querySelector(
-          'div[name="slides-text-main"]'
-        );
-        const slidesTextDescribeHtmlDivElement = document.querySelector(
-          'div[name="slides-text-describe"]'
-        );
-        // get marketingCampaignAPISlidersPromise for API promise
-        const marketingCampaignAPISlidersPromise = fetch(
-          'https://api.appworks-school.tw/api/1.0/marketing/campaigns'
-        ).then((response) => response.json());
-        // get json key "data" value in API promise
-        const marketingCampaignAPIJson =
-          await marketingCampaignAPISlidersPromise.then(
-            (result) => result.data
-          );
-        // slidesIntervalID to save interval id, which's running changeSlides function
-        let slidesIntervalID;
-        // slides current activating dot index
-        let currentSlidesIndex = 0;
-        // string variable to save create dotBox dot html code
-        let addToDotListHtmlDivElementString = '';
+      // slidesIntervalID to save interval id, which's running changeSlides function
+      let slidesIntervalID;
+      // slides current activating dot index
+      let currentSlidesIndex = 0;
+      // string variable to save create dotBox dot html code
+      let addToDotListHtmlDivElementString = '';
 
-        // create dotBox dot html code in string
-        for (let i = 0; i < marketingCampaignAPIJson.length; i++) {
-          addToDotListHtmlDivElementString += `<div class="
+      // create dotBox dot html code in string
+      for (let i = 0; i < marketingCampaignAPIJson.length; i++) {
+        addToDotListHtmlDivElementString += `<div class="
                           cursor-pointer
                           bg-no-repeat
                           bg-cover
@@ -3693,97 +2895,97 @@
                           bg-[#ffffff]/40
                           " index=${i} id=${marketingCampaignAPIJson[i].id} product_id=${marketingCampaignAPIJson[i].product_id} name="dot
                           "></div>`;
-        }
-
-        // add dotBox dot html code to dotBox
-        dotBoxHtmlDivElement.innerHTML = addToDotListHtmlDivElementString;
-        // get dot array from html querySelectorAll( .dot-box div )
-        const dotHtmlDivElement = document.querySelectorAll(
-          'div[name="dot-box"] div'
-        );
-
-        // changeSlidesToIndex function, More easily to changing change slides to index informations
-        function changeSlidesToIndex(index) {
-          slidesHtmlDivElement.style.backgroundImage = `url(${marketingCampaignAPIJson[index].picture})`;
-          slidesTextMainHtmlDivElement.innerHTML = marketingCampaignAPIJson[
-            index
-          ].story
-            .split('。')[0]
-            .replaceAll('\r\n', '<br>');
-          slidesTextDescribeHtmlDivElement.innerHTML = marketingCampaignAPIJson[
-            index
-          ].story
-            .split('。')[1]
-            .replaceAll('<br>', '');
-          dotHtmlDivElement.forEach((dotElement) => {
-            dotElement.classList.remove('bg-[#8B572A]');
-            dotElement.classList.add('bg-[#ffffff]/40');
-          });
-          dotHtmlDivElement[index].classList.remove('bg-[#ffffff]/40');
-          dotHtmlDivElement[index].classList.add('bg-[#8B572A]');
-          currentSlidesIndex = index;
-        }
-
-        // add click event listener to dotBox, for changing change slides to trigger event dot index informations
-        dotBoxHtmlDivElement.addEventListener('click', (e) => {
-          if (e.target.getAttribute('id') != null) {
-            changeSlidesToIndex(e.target.getAttribute('id') - 1);
-          }
-        });
-
-        // changeSlides function, that's function for setInterval to autopPlay slides
-        function changeSlides() {
-          if (currentSlidesIndex < marketingCampaignAPIJson.length) {
-            changeSlidesToIndex(currentSlidesIndex);
-            currentSlidesIndex++;
-          } else {
-            changeSlidesToIndex(0);
-          }
-        }
-
-        // addChangeSlidesInterval use for create a interval and save interval id. Set interval to repeat running changeSlides function with delay time
-        function addChangeSlidesInterval(intervalDelay) {
-          clearInterval(slidesIntervalID);
-          slidesIntervalID = setInterval(changeSlides, intervalDelay);
-        }
-
-        // remove interval when mouse hover slides area,remove interval running changeSlides function by interval id
-        slidesHtmlDivElement.addEventListener('mouseover', () => {
-          clearInterval(slidesIntervalID);
-        });
-
-        // create a new interval running changeSlides function with delay 5 seconds
-        slidesHtmlDivElement.addEventListener('mouseout', () => {
-          addChangeSlidesInterval(5000);
-        });
-
-        // Main function call for auto play slides entry point
-        changeSlidesToIndex(0);
-        addChangeSlidesInterval(5000);
       }
 
-      {
-        // w0p3
-        // w0p3 Step 1: Connect to RESTful API for Data of All Products
-        const productListHtmlDivElement = document.querySelector(
-          'div[name="product-list"]'
-        );
-        // get marketingCampaignAPISlidersPromise for API promise
-        const productListAPIPromise = fetch(
-          'https://api.appworks-school.tw/api/1.0/products/all'
-        ).then((response) => response.json());
-        // get json key "data" in API promise
-        const productListAPIJson = await productListAPIPromise.then(
-          (result) => result.data
-        );
+      // add dotBox dot html code to dotBox
+      dotBoxHtmlDivElement.innerHTML = addToDotListHtmlDivElementString;
+      // get dot array from html querySelectorAll( .dot-box div )
+      const dotHtmlDivElement = document.querySelectorAll(
+        'div[name="dot-box"] div'
+      );
 
-        // w0p3 Step 3: Complete Paging Feature
-        let addToProductListHtmlString = '';
+      // changeSlidesToIndex function, More easily to changing change slides to index informations
+      function changeSlidesToIndex(index) {
+        slidesHtmlDivElement.style.backgroundImage = `url(${marketingCampaignAPIJson[index].picture})`;
+        slidesTextMainHtmlDivElement.innerHTML = marketingCampaignAPIJson[
+          index
+        ].story
+          .split('。')[0]
+          .replaceAll('\r\n', '<br>');
+        slidesTextDescribeHtmlDivElement.innerHTML = marketingCampaignAPIJson[
+          index
+        ].story
+          .split('。')[1]
+          .replaceAll('<br>', '');
+        dotHtmlDivElement.forEach((dotElement) => {
+          dotElement.classList.remove('bg-[#8B572A]');
+          dotElement.classList.add('bg-[#ffffff]/40');
+        });
+        dotHtmlDivElement[index].classList.remove('bg-[#ffffff]/40');
+        dotHtmlDivElement[index].classList.add('bg-[#8B572A]');
+        currentSlidesIndex = index;
+      }
 
-        for (let i = 0; i < productListAPIJson.length; i++) {
-          let addToProductColorListHtml = '';
-          for (let j = 0; j < productListAPIJson[i]['colors'].length; j++) {
-            addToProductColorListHtml += `<div class="
+      // add click event listener to dotBox, for changing change slides to trigger event dot index informations
+      dotBoxHtmlDivElement.addEventListener('click', (e) => {
+        if (e.target.getAttribute('id') != null) {
+          changeSlidesToIndex(e.target.getAttribute('id') - 1);
+        }
+      });
+
+      // changeSlides function, that's function for setInterval to autopPlay slides
+      function changeSlides() {
+        if (currentSlidesIndex < marketingCampaignAPIJson.length) {
+          changeSlidesToIndex(currentSlidesIndex);
+          currentSlidesIndex++;
+        } else {
+          changeSlidesToIndex(0);
+        }
+      }
+
+      // addChangeSlidesInterval use for create a interval and save interval id. Set interval to repeat running changeSlides function with delay time
+      function addChangeSlidesInterval(intervalDelay) {
+        clearInterval(slidesIntervalID);
+        slidesIntervalID = setInterval(changeSlides, intervalDelay);
+      }
+
+      // remove interval when mouse hover slides area,remove interval running changeSlides function by interval id
+      slidesHtmlDivElement.addEventListener('mouseover', () => {
+        clearInterval(slidesIntervalID);
+      });
+
+      // create a new interval running changeSlides function with delay 5 seconds
+      slidesHtmlDivElement.addEventListener('mouseout', () => {
+        addChangeSlidesInterval(5000);
+      });
+
+      // Main function call for auto play slides entry point
+      changeSlidesToIndex(0);
+      addChangeSlidesInterval(5000);
+    }
+
+    {
+      // w0p3
+      // w0p3 Step 1: Connect to RESTful API for Data of All Products
+      const productListHtmlDivElement = document.querySelector(
+        'div[name="product-list"]'
+      );
+      // get marketingCampaignAPISlidersPromise for API promise
+      const productListAPIPromise = fetch(
+        'https://api.appworks-school.tw/api/1.0/products/all'
+      ).then((response) => response.json());
+      // get json key "data" in API promise
+      const productListAPIJson = await productListAPIPromise.then(
+        (result) => result.data
+      );
+
+      // w0p3 Step 3: Complete Paging Feature
+      let addToProductListHtmlString = '';
+
+      for (let i = 0; i < productListAPIJson.length; i++) {
+        let addToProductColorListHtml = '';
+        for (let j = 0; j < productListAPIJson[i]['colors'].length; j++) {
+          addToProductColorListHtml += `<div class="
                                         cursor-pointer
                                         bg-[#${productListAPIJson[i]['colors'][j].code}]
                                         border-solid border-[1px] border-[#d3d3d3]
@@ -3792,8 +2994,8 @@
                                         desktop:h-[24px]
                                         desktop:mt-[20px]
                                         desktop:mr-[10px]" name="product-colors"></div>`;
-          }
-          addToProductListHtmlString += `<div class="
+        }
+        addToProductListHtmlString += `<div class="
                                   flex flex-col
                                   mobile:w-[calc(50%-27px)] mobile:mx-[3px]
                                   desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]" name="product">
@@ -3834,51 +3036,51 @@
                                     desktop:leading-[24px]
                                     desktop:tracking-[4px]" name="product-price">TWD.${productListAPIJson[i].price}</div>
                               </div>`;
+      }
+      productListHtmlDivElement.innerHTML = addToProductListHtmlString;
+    }
+
+    /*
+    {
+      // w0p4
+      // w0p4 Step 1: Connect to RESTful API for Data of All Products
+      const url = 'https://api.appworks-school.tw/api/1.0/products/all';
+      const switchCurrent = document.querySelectorAll('.nav-ul a');
+      const mobileSwitchCurrent =
+        document.querySelectorAll('.block-search a');
+      const logo = document.querySelector('.nav-logo');
+      const loading = document.querySelector('.spinner');
+      const desktopSearch = document.querySelector('.nav-searchBar');
+      const search = document.querySelector('.nav-mobileSearch');
+      const input = document.querySelector('.nav-input');
+      // let count = data.next_paging;
+      let hasNextPage = true;
+
+      // w0p4 spinner
+      const spinnerHtmlDivElement = document.querySelector(
+        'div[name="spinner"]'
+      );
+      const intersectionObserverTarget = document.querySelector(
+        'div[name="bottom-nav-bar-mobile-box-box"], div[name="bottom-nav"]'
+      );
+
+      let intersectionObserver = new IntersectionObserver((entries) => {
+        if (entries[0].intersectionRatio <= 0) {
+          spinnerHtmlDivElement.style.visibility = 'hidden';
+          return;
         }
-        productListHtmlDivElement.innerHTML = addToProductListHtmlString;
-      }
+        if (hasNextPage) {
+          spinnerHtmlDivElement.style.visibility = 'visible';
+        }
+        console.log('load new items');
+      });
 
-      /*
-      {
-        // w0p4
-        // w0p4 Step 1: Connect to RESTful API for Data of All Products
-        const url = 'https://api.appworks-school.tw/api/1.0/products/all';
-        const switchCurrent = document.querySelectorAll('.nav-ul a');
-        const mobileSwitchCurrent =
-          document.querySelectorAll('.block-search a');
-        const logo = document.querySelector('.nav-logo');
-        const loading = document.querySelector('.spinner');
-        const desktopSearch = document.querySelector('.nav-searchBar');
-        const search = document.querySelector('.nav-mobileSearch');
-        const input = document.querySelector('.nav-input');
-        // let count = data.next_paging;
-        let hasNextPage = true;
+      intersectionObserver.observe(intersectionObserverTarget);
+    }
+    */
+  </script>
 
-        // w0p4 spinner
-        const spinnerHtmlDivElement = document.querySelector(
-          'div[name="spinner"]'
-        );
-        const intersectionObserverTarget = document.querySelector(
-          'div[name="bottom-nav-bar-mobile-box-box"], div[name="bottom-nav"]'
-        );
-
-        let intersectionObserver = new IntersectionObserver((entries) => {
-          if (entries[0].intersectionRatio <= 0) {
-            spinnerHtmlDivElement.style.visibility = 'hidden';
-            return;
-          }
-          if (hasNextPage) {
-            spinnerHtmlDivElement.style.visibility = 'visible';
-          }
-          console.log('load new items');
-        });
-
-        intersectionObserver.observe(intersectionObserverTarget);
-      }
-      */
-    </script>
-
-    <script type="text/babel">
+  <script type="text/babel">
       // const {
       //   useState,
       //   useEffect,
@@ -3925,8 +3127,8 @@
       //     </React.StrictMode>
       //   </QueryClientProvider>
       // );
-    </script>
-    <!--
+  </script>
+  <!--
       Note: this page is a great way to try React but it's not suitable for production.
       It slowly compiles JSX with Babel in the browser and uses a large development build of React.
 
@@ -3939,7 +3141,8 @@
       You can also use React without JSX, in which case you can remove Babel:
       https://reactjs.org/docs/react-without-jsx.html
     -->
-  </body>
+</body>
+
 </html>
 
 <!-- <link rel="stylesheet" href="styles.css" />

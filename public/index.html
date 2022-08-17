@@ -522,12 +522,12 @@
             <div
               class="
                 cursor-pointer
-                mobile:mt-[8px]
+                mobile:mt-[10px]
                 mobile:text-[12px]
                 mobile:tracking-[2.4px]
                 mobile:text-[#000000]
                 mobile:leading-[14px]
-                desktop:mt-[10px]
+                desktop:mt-[20px]
                 desktop:text-[20px]
                 desktop:tracking-[4px]
                 desktop:text-[#3F3A3A]
@@ -637,12 +637,12 @@
             <div
               class="
                 cursor-pointer
-                mobile:mt-[8px]
+                mobile:mt-[10px]
                 mobile:text-[12px]
                 mobile:tracking-[2.4px]
                 mobile:text-[#000000]
                 mobile:leading-[14px]
-                desktop:mt-[10px]
+                desktop:mt-[20px]
                 desktop:text-[20px]
                 desktop:tracking-[4px]
                 desktop:text-[#3F3A3A]
@@ -752,12 +752,12 @@
             <div
               class="
                 cursor-pointer
-                mobile:mt-[8px]
+                mobile:mt-[10px]
                 mobile:text-[12px]
                 mobile:tracking-[2.4px]
                 mobile:text-[#000000]
                 mobile:leading-[14px]
-                desktop:mt-[10px]
+                desktop:mt-[20px]
                 desktop:text-[20px]
                 desktop:tracking-[4px]
                 desktop:text-[#3F3A3A]
@@ -867,12 +867,12 @@
             <div
               class="
                 cursor-pointer
-                mobile:mt-[8px]
+                mobile:mt-[10px]
                 mobile:text-[12px]
                 mobile:tracking-[2.4px]
                 mobile:text-[#000000]
                 mobile:leading-[14px]
-                desktop:mt-[10px]
+                desktop:mt-[20px]
                 desktop:text-[20px]
                 desktop:tracking-[4px]
                 desktop:text-[#3F3A3A]
@@ -982,12 +982,12 @@
             <div
               class="
                 cursor-pointer
-                mobile:mt-[8px]
+                mobile:mt-[10px]
                 mobile:text-[12px]
                 mobile:tracking-[2.4px]
                 mobile:text-[#000000]
                 mobile:leading-[14px]
-                desktop:mt-[10px]
+                desktop:mt-[20px]
                 desktop:text-[20px]
                 desktop:tracking-[4px]
                 desktop:text-[#3F3A3A]
@@ -1097,12 +1097,12 @@
             <div
               class="
                 cursor-pointer
-                mobile:mt-[8px]
+                mobile:mt-[10px]
                 mobile:text-[12px]
                 mobile:tracking-[2.4px]
                 mobile:text-[#000000]
                 mobile:leading-[14px]
-                desktop:mt-[10px]
+                desktop:mt-[20px]
                 desktop:text-[20px]
                 desktop:tracking-[4px]
                 desktop:text-[#3F3A3A]
@@ -2975,82 +2975,82 @@
     }
 
     /*
-  {
-    // w0p3
-    // w0p3 Step 1: Connect to RESTful API for Data of All Products
-    // get marketingCampaignAPISlidersPromise for API promise
-    const productListAPIPromise = fetch(
-      'https://api.appworks-school.tw/api/1.0/products/all'
-    ).then((response) => response.json());
-    // get json key "data" in API promise
-    const productListAPIJson = await productListAPIPromise.then(
-      (result) => result.data
-    );
+{
+  // w0p3
+  // w0p3 Step 1: Connect to RESTful API for Data of All Products
+  // get marketingCampaignAPISlidersPromise for API promise
+  const productListAPIPromise = fetch(
+    'https://api.appworks-school.tw/api/1.0/products/all'
+  ).then((response) => response.json());
+  // get json key "data" in API promise
+  const productListAPIJson = await productListAPIPromise.then(
+    (result) => result.data
+  );
 
-    // w0p3 Step 3: Complete Paging Feature
-    const productListHtmlDivElement = document.querySelector(
-      'div[name="product-list"]'
-    );
-    let addToProductListHtmlString = '';
+  // w0p3 Step 3: Complete Paging Feature
+  const productListHtmlDivElement = document.querySelector(
+    'div[name="product-list"]'
+  );
+  let addToProductListHtmlString = '';
 
-    for (let i = 0; i < productListAPIJson.length; i++) {
-      let addToProductColorListHtml = '';
-      for (let j = 0; j < productListAPIJson[i]['colors'].length; j++) {
-        addToProductColorListHtml += `<div class="
-                                    cursor-pointer
-                                    bg-[#${productListAPIJson[i]['colors'][j].code}]
-                                    border-solid border-[1px] border-[#d3d3d3]
-                                    mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
-                                    desktop:w-[24px]
-                                    desktop:h-[24px]
-                                    desktop:mt-[20px]
-                                    desktop:mr-[10px]" name="product-colors"></div>`;
-      }
-      addToProductListHtmlString += `<div class="
-                              flex flex-col
-                              mobile:w-[calc(50%-27px)] mobile:mx-[3px]
-                              desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]" name="product">
-                            <img src="${productListAPIJson[i].main_image}" class="
-                                object-cover
-                                mobile:w-full mobile:h-full
-                                desktop:w-[360px] desktop:h-[480px]" name="product-image" />
-                            <div class="
-                                flex flex-row
-                                mobile:w-full mobile:items-center mobile:h-[40px]
-                                desktop:w-[360px]" name="product-color-list">
-                              ${addToProductColorListHtml}
-                            </div>
-                            <div class="
-                                cursor-pointer
-                                mobile:mt-[8px]
-                                mobile:text-[12px]
-                                mobile:tracking-[2.4px]
-                                mobile:text-[#000000]
-                                mobile:leading-[14px]
-                                desktop:mt-[10px]
-                                desktop:text-[20px]
-                                desktop:tracking-[4px]
-                                desktop:text-[#3F3A3A]
-                                desktop:leading-[24px]" name="product-name">${productListAPIJson[i].title}</div>
-                            <div class="
-                                cursor-pointer
-                                mobile:mt-[8px]
-                                mobile:mb-[24px]
-                                mobile:text-[12px]
-                                mobile:text-[#000000]
-                                mobile:leading-[14px]
-                                mobile:tracking-[2.4px]
-                                desktop:mt-[10px]
-                                desktop:mb-[64px]
-                                desktop:text-[20px]
-                                desktop:text-[#3F3A3A]
-                                desktop:leading-[24px]
-                                desktop:tracking-[4px]" name="product-price">TWD.${productListAPIJson[i].price}</div>
-                          </div>`;
+  for (let i = 0; i < productListAPIJson.length; i++) {
+    let addToProductColorListHtml = '';
+    for (let j = 0; j < productListAPIJson[i]['colors'].length; j++) {
+      addToProductColorListHtml += `<div class="
+                                  cursor-pointer
+                                  bg-[#${productListAPIJson[i]['colors'][j].code}]
+                                  border-solid border-[1px] border-[#d3d3d3]
+                                  mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
+                                  desktop:w-[24px]
+                                  desktop:h-[24px]
+                                  desktop:mt-[20px]
+                                  desktop:mr-[10px]" name="product-colors"></div>`;
     }
-    productListHtmlDivElement.innerHTML = addToProductListHtmlString;
+    addToProductListHtmlString += `<div class="
+                            flex flex-col
+                            mobile:w-[calc(50%-27px)] mobile:mx-[3px]
+                            desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]" name="product">
+                          <img src="${productListAPIJson[i].main_image}" class="
+                              object-cover
+                              mobile:w-full mobile:h-full
+                              desktop:w-[360px] desktop:h-[480px]" name="product-image" />
+                          <div class="
+                              flex flex-row
+                              mobile:w-full mobile:items-center mobile:h-[40px]
+                              desktop:w-[360px]" name="product-color-list">
+                            ${addToProductColorListHtml}
+                          </div>
+                          <div class="
+                              cursor-pointer
+                              mobile:mt-[8px]
+                              mobile:text-[12px]
+                              mobile:tracking-[2.4px]
+                              mobile:text-[#000000]
+                              mobile:leading-[14px]
+                              desktop:mt-[10px]
+                              desktop:text-[20px]
+                              desktop:tracking-[4px]
+                              desktop:text-[#3F3A3A]
+                              desktop:leading-[24px]" name="product-name">${productListAPIJson[i].title}</div>
+                          <div class="
+                              cursor-pointer
+                              mobile:mt-[8px]
+                              mobile:mb-[24px]
+                              mobile:text-[12px]
+                              mobile:text-[#000000]
+                              mobile:leading-[14px]
+                              mobile:tracking-[2.4px]
+                              desktop:mt-[10px]
+                              desktop:mb-[64px]
+                              desktop:text-[20px]
+                              desktop:text-[#3F3A3A]
+                              desktop:leading-[24px]
+                              desktop:tracking-[4px]" name="product-price">TWD.${productListAPIJson[i].price}</div>
+                        </div>`;
   }
-  */
+  productListHtmlDivElement.innerHTML = addToProductListHtmlString;
+}
+*/
 
     {
       // w0p4
@@ -3125,10 +3125,10 @@
               // if (Math.round(window.innerWidth) >= 1280) {}
               if (j == 0) {
                 addTailwindCSSColorMarginLeftAdjust =
-                  'mobile:mr-[3px] desktop:mr-[20px]';
+                  'mobile:mr-[3px] desktop:mr-[5px]';
               } else {
                 addTailwindCSSColorMarginLeftAdjust =
-                  'mobile:mx-[3px] desktop:mx-[20px]';
+                  'mobile:mx-[3px] desktop:mx-[5px]';
               }
               addToProductColorListHtml += `<div class="
                                         cursor-pointer
@@ -3157,12 +3157,12 @@
                                 </div>
                                 <div class="
                                     cursor-pointer
-                                    mobile:mt-[8px]
+                                    mobile:mt-[10px]
                                     mobile:text-[12px]
                                     mobile:tracking-[2.4px]
                                     mobile:text-[#000000]
                                     mobile:leading-[14px]
-                                    desktop:mt-[10px]
+                                    desktop:mt-[20px]
                                     desktop:text-[20px]
                                     desktop:tracking-[4px]
                                     desktop:text-[#3F3A3A]

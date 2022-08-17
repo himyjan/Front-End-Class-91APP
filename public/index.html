@@ -3189,69 +3189,165 @@ productListHtmlDivElement.innerHTML = addToProductListHtmlString;
       }
 
       function showCategoryNavBarTextColorBrown(divName) {
+        // // method 1
         // const topNavBarChangeCategoryHtmlDivElement = [document
-        // .querySelector('img[name="top-nav-bar-desktop-women-dresses"]'),document
-        // .querySelector('img[name="top-nav-bar-desktop-men-dresses"]'),document
-        // .querySelector('img[name="top-nav-bar-desktop-accessories"]'),document
-        // .querySelector('img[name="top-nav-bar-below-mobile-women-dresses"]'),document
-        // .querySelector('img[name="top-nav-bar-below-mobile-men-dresses"]'),document
-        // .querySelector('img[name="top-nav-bar-below-mobile-accessories"]')];
+        //   .querySelector('div[name="top-nav-bar-desktop-women-dresses"]'), document
+        //     .querySelector('div[name="top-nav-bar-desktop-men-dresses"]'), document
+        //       .querySelector('div[name="top-nav-bar-desktop-accessories"]'), document
+        //         .querySelector('div[name="top-nav-bar-below-mobile-women-dresses"]'), document
+        //           .querySelector('div[name="top-nav-bar-below-mobile-men-dresses"]'), document
+        //             .querySelector('div[name="top-nav-bar-below-mobile-accessories"]')];
         // if (mode == 'all') {
-        //   topNavBarChangeCategoryHtmlDivElement[0].classList
-        //   topNavBarChangeCategoryHtmlDivElement[0].classList
-        //   topNavBarChangeCategoryHtmlDivElement[1].classList
-        //   topNavBarChangeCategoryHtmlDivElement[1].classList
-        //   topNavBarChangeCategoryHtmlDivElement[2].classList
-        //   topNavBarChangeCategoryHtmlDivElement[2].classList
-        //   topNavBarChangeCategoryHtmlDivElement[3].classList
-        //   topNavBarChangeCategoryHtmlDivElement[3].classList
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList
-        //   topNavBarChangeCategoryHtmlDivElement[5].classList
-        //   topNavBarChangeCategoryHtmlDivElement[5].classList
+        //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove(
+        //     'desktop:text-[#8B572A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[0].classList.add(
+        //     'desktop:text-[#3F3A3A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[1].classList.remove(
+        //     'desktop:text-[#8B572A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[1].classList.add(
+        //     'desktop:text-[#3F3A3A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[2].classList.remove(
+        //     'desktop:text-[#8B572A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[2].classList.add(
+        //     'desktop:text-[#3F3A3A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove(
+        //     'mobile:text-[#ffffff]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[3].classList.add(
+        //     'mobile:text-[#828282]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[4].classList.remove(
+        //     'mobile:text-[#ffffff]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[4].classList.add(
+        //     'mobile:text-[#828282]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[5].classList.remove(
+        //     'mobile:text-[#ffffff]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[5].classList.add(
+        //     'mobile:text-[#828282]'
+        //   );
         // } else if (mode == 'women') {
-        //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove("text-[#828282]");
-        //   topNavBarChangeCategoryHtmlDivElement[0].classList.add("text-[#8B572A]");
-        //   topNavBarChangeCategoryHtmlDivElement[1].classList
-        //   topNavBarChangeCategoryHtmlDivElement[1].classList
-        //   topNavBarChangeCategoryHtmlDivElement[2].classList
-        //   topNavBarChangeCategoryHtmlDivElement[2].classList
-        //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove("text-[#828282]");
-        //   topNavBarChangeCategoryHtmlDivElement[3].classList.add("text-[#8B572A]");
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList
-        //   topNavBarChangeCategoryHtmlDivElement[5].classList
-        //   topNavBarChangeCategoryHtmlDivElement[5].classList
+        //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove(
+        //     'desktop:text-[#3F3A3A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[0].classList.add(
+        //     'desktop:text-[#8B572A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[1].classList.remove(
+        //     'desktop:text-[#8B572A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[1].classList.add(
+        //     'desktop:text-[#3F3A3A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[2].classList.remove(
+        //     'desktop:text-[#8B572A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[2].classList.add(
+        //     'desktop:text-[#3F3A3A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove(
+        //     'mobile:text-[#828282]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[3].classList.add(
+        //     'mobile:text-[#ffffff]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[4].classList.remove(
+        //     'mobile:text-[#ffffff]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[4].classList.add(
+        //     'mobile:text-[#828282]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[5].classList.remove(
+        //     'mobile:text-[#ffffff]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[5].classList.add(
+        //     'mobile:text-[#828282]'
+        //   );
         // } else if (mode == 'men') {
-        //   topNavBarChangeCategoryHtmlDivElement[0].classList
-        //   topNavBarChangeCategoryHtmlDivElement[0].classList
-        //   topNavBarChangeCategoryHtmlDivElement[1].classList.remove("text-[#828282]");
-        //   topNavBarChangeCategoryHtmlDivElement[1].classList.add("text-[#8B572A]");
-        //   topNavBarChangeCategoryHtmlDivElement[2].classList
-        //   topNavBarChangeCategoryHtmlDivElement[2].classList
-        //   topNavBarChangeCategoryHtmlDivElement[3].classList
-        //   topNavBarChangeCategoryHtmlDivElement[3].classList
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList.remove("text-[#828282]");
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList.add("text-[#8B572A]");
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList
-        //   topNavBarChangeCategoryHtmlDivElement[5].classList
-        //   topNavBarChangeCategoryHtmlDivElement[5].classList
+        //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove(
+        //     'desktop:text-[#8B572A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[0].classList.add(
+        //     'desktop:text-[#3F3A3A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[1].classList.remove(
+        //     'desktop:text-[#3F3A3A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[1].classList.add(
+        //     'desktop:text-[#8B572A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[2].classList.remove(
+        //     'desktop:text-[#8B572A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[2].classList.add(
+        //     'desktop:text-[#3F3A3A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove(
+        //     'mobile:text-[#ffffff]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[3].classList.add(
+        //     'mobile:text-[#828282]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[4].classList.remove(
+        //     'mobile:text-[#828282]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[4].classList.add(
+        //     'mobile:text-[#ffffff]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[5].classList.remove(
+        //     'mobile:text-[#ffffff]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[5].classList.add(
+        //     'mobile:text-[#828282]'
+        //   );
         // } else if (mode == 'accessories') {
-        //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove("text-[#828282]");
-        //   topNavBarChangeCategoryHtmlDivElement[0].classList.add("text-[#8B572A]");
-        //   topNavBarChangeCategoryHtmlDivElement[1].classList
-        //   topNavBarChangeCategoryHtmlDivElement[1].classList
-        //   topNavBarChangeCategoryHtmlDivElement[2].classList
-        //   topNavBarChangeCategoryHtmlDivElement[2].classList
-        //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove("text-[#828282]");
-        //   topNavBarChangeCategoryHtmlDivElement[3].classList.add("text-[#8B572A]");
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList
-        //   topNavBarChangeCategoryHtmlDivElement[5].classList
-        //   topNavBarChangeCategoryHtmlDivElement[5].classList
+        //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove(
+        //     'desktop:text-[#8B572A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[0].classList.add(
+        //     'desktop:text-[#3F3A3A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[1].classList.remove(
+        //     'desktop:text-[#8B572A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[1].classList.add(
+        //     'desktop:text-[#3F3A3A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[2].classList.remove(
+        //     'desktop:text-[#3F3A3A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[2].classList.add(
+        //     'desktop:text-[#8B572A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove(
+        //     'mobile:text-[#ffffff]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[3].classList.add(
+        //     'mobile:text-[#828282]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[4].classList.remove(
+        //     'mobile:text-[#ffffff]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[4].classList.add(
+        //     'mobile:text-[#828282]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[5].classList.remove(
+        //     'mobile:text-[#828282]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[5].classList.add(
+        //     'mobile:text-[#ffffff]'
+        //   );
         // }
 
+        // method 2
         const topNavBarChangeCategoryHtmlDivElementName = [
           'top-nav-bar-desktop-women-dresses',
           'top-nav-bar-desktop-men-dresses',
@@ -3260,6 +3356,7 @@ productListHtmlDivElement.innerHTML = addToProductListHtmlString;
           'top-nav-bar-below-mobile-men-dresses',
           'top-nav-bar-below-mobile-accessories',
         ];
+
         topNavBarChangeCategoryHtmlDivElementName.forEach(
           (HtmlDivElementName) => {
             const changeTextColorHtmlDivElement = document.querySelector(
@@ -3282,11 +3379,11 @@ productListHtmlDivElement.innerHTML = addToProductListHtmlString;
                 );
               } else if (
                 changeTextColorHtmlDivElement.classList.contains(
-                  'desktop:text-[#828282]'
+                  'desktop:text-[#3F3A3A]'
                 )
               ) {
                 changeTextColorHtmlDivElement.classList.remove(
-                  'desktop:text-[#828282]'
+                  'desktop:text-[#3F3A3A]'
                 );
                 changeTextColorHtmlDivElement.classList.add(
                   'desktop:text-[#8B572A]'
@@ -3313,7 +3410,7 @@ productListHtmlDivElement.innerHTML = addToProductListHtmlString;
                   'desktop:text-[#8B572A]'
                 );
                 changeTextColorHtmlDivElement.classList.add(
-                  'desktop:text-[#828282]'
+                  'desktop:text-[#3F3A3A]'
                 );
               }
             }

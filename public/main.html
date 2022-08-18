@@ -6,13 +6,15 @@
   <title>STYLiSH</title>
   <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"
     type="image/x-icon" />
-  <script src="https://unpkg.com/react/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+  <!-- <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script> -->
 
   <!-- Don't use this in production: -->
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
+  <!-- <script src="https://unpkg.com/@tanstack/react-query/build/umd/index.production.js"></script> -->
+  <script src="https://unpkg.com/viewerjs/dist/viewer.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/viewerjs/dist/viewer.min.css" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/@tanstack/react-query/build/umd/index.production.js"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -36,8 +38,11 @@
       }
     </style>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Sans TC" />
-  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet" />
-  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <!-- <link
+      href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script> -->
   <style>
     * {
       margin: 0;
@@ -144,7 +149,7 @@
               desktop:placeholder:text-[20px]
               desktop:placeholder:text-[#8B572A]
               desktop:placeholder:leading-[24px]
-            " type="text" placeholder="" value="" name="top-nav-bar-desktop-search-bar" />
+            " type="text" placeholder="" title="search-bar" value="" name="top-nav-bar-desktop-search-bar" />
 
         <div class="
               mobile:hidden
@@ -239,7 +244,7 @@
               mobile:ease-in-out
               mobile:hover:w-[calc(100%-20px)]
               mobile:focus:w-[calc(100%-20px)]
-            " type="text" placeholder="" value="" name="top-nav-bar-mobile-search" />
+            " type="text" placeholder="" title="search-bar" value="" name="top-nav-bar-mobile-search" />
       </div>
 
       <div class="
@@ -292,7 +297,7 @@
   </header>
 
   <!-- main body content -->
-  <div class="" id="main-page">
+  <div class="" name="main-page" id="main-page">
     <div class="
           bg-center bg-cover
           w-full
@@ -434,31 +439,41 @@
     <div class="flex flex-col justify-center w-full">
       <div class="
             flex flex-wrap
-            justify-center
-            slidesTextMain-start
             w-full
-            mx-auto
-            mobile:mt-[15px] mobile:max-w-[100vw]
+            mobile:mx-[21px]
+            desktop:mx-auto
+            mobile:mt-[15px]
             desktop:mt-[70px] desktop:max-w-[1200px]
           " name="product-list">
-        <div class="
+        <!-- <div
+            class="
               flex flex-col
               mobile:w-[calc(50%-27px)] mobile:mx-[3px]
               desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]
-            " name="product-1">
-          <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png" alt=""
-            class="
+            "
+            name="product-1"
+          >
+            <img
+              src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png"
+              alt=""
+              class="
                 cursor-pointer
                 object-cover
                 mobile:w-full mobile:h-full
                 desktop:w-[360px] desktop:h-[480px]
-              " name="product-image" />
-          <div class="
+              "
+              name="product-image"
+            />
+            <div
+              class="
                 flex flex-row
                 mobile:w-full mobile:items-center mobile:h-[40px]
                 desktop:w-[360px]
-              " name="product-color-list">
-            <div class="
+              "
+              name="product-color-list"
+            >
+              <div
+                class="
                   cursor-pointer
                   bg-[#ffffff]
                   border-solid border-[1px] border-[#d3d3d3]
@@ -470,8 +485,11 @@
                   desktop:h-[24px]
                   desktop:mt-[20px]
                   desktop:mr-[10px]
-                " name="product-color1"></div>
-            <div class="
+                "
+                name="product-color1"
+              ></div>
+              <div
+                class="
                   cursor-pointer
                   bg-[#ddffbb]
                   border-solid border-[1px] border-[#d3d3d3]
@@ -483,8 +501,11 @@
                   desktop:h-[24px]
                   desktop:mt-[20px]
                   desktop:mr-[10px]
-                " name="product-color2"></div>
-            <div class="
+                "
+                name="product-color2"
+              ></div>
+              <div
+                class="
                   cursor-pointer
                   bg-[#d3d3d3]
                   border-solid border-[1px] border-[#d3d3d3]
@@ -496,24 +517,30 @@
                   desktop:h-[24px]
                   desktop:mt-[20px]
                   desktop:mr-[10px]
-                " name="product-color3"></div>
-          </div>
-          <div class="
+                "
+                name="product-color3"
+              ></div>
+            </div>
+            <div
+              class="
                 cursor-pointer
-                mobile:mt-[8px]
+                mobile:mt-[10px]
                 mobile:text-[12px]
                 mobile:tracking-[2.4px]
                 mobile:text-[#000000]
                 mobile:leading-[14px]
-                desktop:mt-[10px]
+                desktop:mt-[20px]
                 desktop:text-[20px]
                 desktop:tracking-[4px]
                 desktop:text-[#3F3A3A]
                 desktop:leading-[24px]
-              " name="product-name">
-            前開衩扭結洋裝
-          </div>
-          <div class="
+              "
+              name="product-name"
+            >
+              前開衩扭結洋裝
+            </div>
+            <div
+              class="
                 cursor-pointer
                 mobile:mt-[8px]
                 mobile:mb-[24px]
@@ -527,28 +554,41 @@
                 desktop:text-[#3F3A3A]
                 desktop:leading-[24px]
                 desktop:tracking-[4px]
-              " name="product-price">
-            TWD.799
+              "
+              name="product-price"
+            >
+              TWD.799
+            </div>
           </div>
-        </div>
-        <div class="
+          <div
+            class="
               flex flex-col
               mobile:w-[calc(50%-27px)] mobile:mx-[3px]
               desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]
-            " name="product-2">
-          <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png" alt=""
-            class="
+            "
+            name="product-2"
+          >
+            <img
+              src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png"
+              alt=""
+              class="
                 cursor-pointer
                 object-cover
                 mobile:w-full mobile:h-full
                 desktop:w-[360px] desktop:h-[480px]
-              " name="product-image" />
-          <div class="
+              "
+              name="product-image"
+            />
+            <div
+              class="
                 flex flex-row
                 mobile:w-full mobile:items-center mobile:h-[40px]
                 desktop:w-[360px]
-              " name="product-color-list">
-            <div class="
+              "
+              name="product-color-list"
+            >
+              <div
+                class="
                   cursor-pointer
                   bg-[#ffffff]
                   border-solid border-[1px] border-[#d3d3d3]
@@ -560,8 +600,11 @@
                   desktop:h-[24px]
                   desktop:mt-[20px]
                   desktop:mr-[10px]
-                " name="product-color1"></div>
-            <div class="
+                "
+                name="product-color1"
+              ></div>
+              <div
+                class="
                   cursor-pointer
                   bg-[#ddffbb]
                   border-solid border-[1px] border-[#d3d3d3]
@@ -573,8 +616,11 @@
                   desktop:h-[24px]
                   desktop:mt-[20px]
                   desktop:mr-[10px]
-                " name="product-color2"></div>
-            <div class="
+                "
+                name="product-color2"
+              ></div>
+              <div
+                class="
                   cursor-pointer
                   bg-[#d3d3d3]
                   border-solid border-[1px] border-[#d3d3d3]
@@ -586,24 +632,30 @@
                   desktop:h-[24px]
                   desktop:mt-[20px]
                   desktop:mr-[10px]
-                " name="product-color3"></div>
-          </div>
-          <div class="
+                "
+                name="product-color3"
+              ></div>
+            </div>
+            <div
+              class="
                 cursor-pointer
-                mobile:mt-[8px]
+                mobile:mt-[10px]
                 mobile:text-[12px]
                 mobile:tracking-[2.4px]
                 mobile:text-[#000000]
                 mobile:leading-[14px]
-                desktop:mt-[10px]
+                desktop:mt-[20px]
                 desktop:text-[20px]
                 desktop:tracking-[4px]
                 desktop:text-[#3F3A3A]
                 desktop:leading-[24px]
-              " name="product-name">
-            前開衩扭結洋裝
-          </div>
-          <div class="
+              "
+              name="product-name"
+            >
+              前開衩扭結洋裝
+            </div>
+            <div
+              class="
                 cursor-pointer
                 mobile:mt-[8px]
                 mobile:mb-[24px]
@@ -617,28 +669,41 @@
                 desktop:text-[#3F3A3A]
                 desktop:leading-[24px]
                 desktop:tracking-[4px]
-              " name="product-price">
-            TWD.799
+              "
+              name="product-price"
+            >
+              TWD.799
+            </div>
           </div>
-        </div>
-        <div class="
+          <div
+            class="
               flex flex-col
               mobile:w-[calc(50%-27px)] mobile:mx-[3px]
               desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]
-            " name="product-3">
-          <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png" alt=""
-            class="
+            "
+            name="product-3"
+          >
+            <img
+              src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png"
+              alt=""
+              class="
                 cursor-pointer
                 object-cover
                 mobile:w-full mobile:h-full
                 desktop:w-[360px] desktop:h-[480px]
-              " name="product-image" />
-          <div class="
+              "
+              name="product-image"
+            />
+            <div
+              class="
                 flex flex-row
                 mobile:w-full mobile:items-center mobile:h-[40px]
                 desktop:w-[360px]
-              " name="product-color-list">
-            <div class="
+              "
+              name="product-color-list"
+            >
+              <div
+                class="
                   cursor-pointer
                   bg-[#ffffff]
                   border-solid border-[1px] border-[#d3d3d3]
@@ -650,8 +715,11 @@
                   desktop:h-[24px]
                   desktop:mt-[20px]
                   desktop:mr-[10px]
-                " name="product-color1"></div>
-            <div class="
+                "
+                name="product-color1"
+              ></div>
+              <div
+                class="
                   cursor-pointer
                   bg-[#ddffbb]
                   border-solid border-[1px] border-[#d3d3d3]
@@ -663,8 +731,11 @@
                   desktop:h-[24px]
                   desktop:mt-[20px]
                   desktop:mr-[10px]
-                " name="product-color2"></div>
-            <div class="
+                "
+                name="product-color2"
+              ></div>
+              <div
+                class="
                   cursor-pointer
                   bg-[#d3d3d3]
                   border-solid border-[1px] border-[#d3d3d3]
@@ -676,24 +747,30 @@
                   desktop:h-[24px]
                   desktop:mt-[20px]
                   desktop:mr-[10px]
-                " name="product-color3"></div>
-          </div>
-          <div class="
+                "
+                name="product-color3"
+              ></div>
+            </div>
+            <div
+              class="
                 cursor-pointer
-                mobile:mt-[8px]
+                mobile:mt-[10px]
                 mobile:text-[12px]
                 mobile:tracking-[2.4px]
                 mobile:text-[#000000]
                 mobile:leading-[14px]
-                desktop:mt-[10px]
+                desktop:mt-[20px]
                 desktop:text-[20px]
                 desktop:tracking-[4px]
                 desktop:text-[#3F3A3A]
                 desktop:leading-[24px]
-              " name="product-name">
-            前開衩扭結洋裝
-          </div>
-          <div class="
+              "
+              name="product-name"
+            >
+              前開衩扭結洋裝
+            </div>
+            <div
+              class="
                 cursor-pointer
                 mobile:mt-[8px]
                 mobile:mb-[24px]
@@ -707,28 +784,41 @@
                 desktop:text-[#3F3A3A]
                 desktop:leading-[24px]
                 desktop:tracking-[4px]
-              " name="product-price">
-            TWD.799
+              "
+              name="product-price"
+            >
+              TWD.799
+            </div>
           </div>
-        </div>
-        <div class="
+          <div
+            class="
               flex flex-col
               mobile:w-[calc(50%-27px)] mobile:mx-[3px]
               desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]
-            " name="product-4">
-          <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png" alt=""
-            class="
+            "
+            name="product-4"
+          >
+            <img
+              src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png"
+              alt=""
+              class="
                 cursor-pointer
                 object-cover
                 mobile:w-full mobile:h-full
                 desktop:w-[360px] desktop:h-[480px]
-              " name="product-image" />
-          <div class="
+              "
+              name="product-image"
+            />
+            <div
+              class="
                 flex flex-row
                 mobile:w-full mobile:items-center mobile:h-[40px]
                 desktop:w-[360px]
-              " name="product-color-list">
-            <div class="
+              "
+              name="product-color-list"
+            >
+              <div
+                class="
                   cursor-pointer
                   bg-[#ffffff]
                   border-solid border-[1px] border-[#d3d3d3]
@@ -740,8 +830,11 @@
                   desktop:h-[24px]
                   desktop:mt-[20px]
                   desktop:mr-[10px]
-                " name="product-color1"></div>
-            <div class="
+                "
+                name="product-color1"
+              ></div>
+              <div
+                class="
                   cursor-pointer
                   bg-[#ddffbb]
                   border-solid border-[1px] border-[#d3d3d3]
@@ -753,8 +846,11 @@
                   desktop:h-[24px]
                   desktop:mt-[20px]
                   desktop:mr-[10px]
-                " name="product-color2"></div>
-            <div class="
+                "
+                name="product-color2"
+              ></div>
+              <div
+                class="
                   cursor-pointer
                   bg-[#d3d3d3]
                   border-solid border-[1px] border-[#d3d3d3]
@@ -766,24 +862,30 @@
                   desktop:h-[24px]
                   desktop:mt-[20px]
                   desktop:mr-[10px]
-                " name="product-color3"></div>
-          </div>
-          <div class="
+                "
+                name="product-color3"
+              ></div>
+            </div>
+            <div
+              class="
                 cursor-pointer
-                mobile:mt-[8px]
+                mobile:mt-[10px]
                 mobile:text-[12px]
                 mobile:tracking-[2.4px]
                 mobile:text-[#000000]
                 mobile:leading-[14px]
-                desktop:mt-[10px]
+                desktop:mt-[20px]
                 desktop:text-[20px]
                 desktop:tracking-[4px]
                 desktop:text-[#3F3A3A]
                 desktop:leading-[24px]
-              " name="product-name">
-            前開衩扭結洋裝
-          </div>
-          <div class="
+              "
+              name="product-name"
+            >
+              前開衩扭結洋裝
+            </div>
+            <div
+              class="
                 cursor-pointer
                 mobile:mt-[8px]
                 mobile:mb-[24px]
@@ -797,28 +899,41 @@
                 desktop:text-[#3F3A3A]
                 desktop:leading-[24px]
                 desktop:tracking-[4px]
-              " name="product-price">
-            TWD.799
+              "
+              name="product-price"
+            >
+              TWD.799
+            </div>
           </div>
-        </div>
-        <div class="
+          <div
+            class="
               flex flex-col
               mobile:w-[calc(50%-27px)] mobile:mx-[3px]
               desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]
-            " name="product-5">
-          <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png" alt=""
-            class="
+            "
+            name="product-5"
+          >
+            <img
+              src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png"
+              alt=""
+              class="
                 cursor-pointer
                 object-cover
                 mobile:w-full mobile:h-full
                 desktop:w-[360px] desktop:h-[480px]
-              " name="product-image" />
-          <div class="
+              "
+              name="product-image"
+            />
+            <div
+              class="
                 flex flex-row
                 mobile:w-full mobile:items-center mobile:h-[40px]
                 desktop:w-[360px]
-              " name="product-color-list">
-            <div class="
+              "
+              name="product-color-list"
+            >
+              <div
+                class="
                   cursor-pointer
                   bg-[#ffffff]
                   border-solid border-[1px] border-[#d3d3d3]
@@ -830,8 +945,11 @@
                   desktop:h-[24px]
                   desktop:mt-[20px]
                   desktop:mr-[10px]
-                " name="product-color1"></div>
-            <div class="
+                "
+                name="product-color1"
+              ></div>
+              <div
+                class="
                   cursor-pointer
                   bg-[#ddffbb]
                   border-solid border-[1px] border-[#d3d3d3]
@@ -843,8 +961,11 @@
                   desktop:h-[24px]
                   desktop:mt-[20px]
                   desktop:mr-[10px]
-                " name="product-color2"></div>
-            <div class="
+                "
+                name="product-color2"
+              ></div>
+              <div
+                class="
                   cursor-pointer
                   bg-[#d3d3d3]
                   border-solid border-[1px] border-[#d3d3d3]
@@ -856,24 +977,30 @@
                   desktop:h-[24px]
                   desktop:mt-[20px]
                   desktop:mr-[10px]
-                " name="product-color3"></div>
-          </div>
-          <div class="
+                "
+                name="product-color3"
+              ></div>
+            </div>
+            <div
+              class="
                 cursor-pointer
-                mobile:mt-[8px]
+                mobile:mt-[10px]
                 mobile:text-[12px]
                 mobile:tracking-[2.4px]
                 mobile:text-[#000000]
                 mobile:leading-[14px]
-                desktop:mt-[10px]
+                desktop:mt-[20px]
                 desktop:text-[20px]
                 desktop:tracking-[4px]
                 desktop:text-[#3F3A3A]
                 desktop:leading-[24px]
-              " name="product-name">
-            前開衩扭結洋裝
-          </div>
-          <div class="
+              "
+              name="product-name"
+            >
+              前開衩扭結洋裝
+            </div>
+            <div
+              class="
                 cursor-pointer
                 mobile:mt-[8px]
                 mobile:mb-[24px]
@@ -887,28 +1014,41 @@
                 desktop:text-[#3F3A3A]
                 desktop:leading-[24px]
                 desktop:tracking-[4px]
-              " name="product-price">
-            TWD.799
+              "
+              name="product-price"
+            >
+              TWD.799
+            </div>
           </div>
-        </div>
-        <div class="
+          <div
+            class="
               flex flex-col
               mobile:w-[calc(50%-27px)] mobile:mx-[3px]
               desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]
-            " name="product-6">
-          <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png" alt=""
-            class="
+            "
+            name="product-6"
+          >
+            <img
+              src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png"
+              alt=""
+              class="
                 cursor-pointer
                 object-cover
                 mobile:w-full mobile:h-full
                 desktop:w-[360px] desktop:h-[480px]
-              " name="product-image" />
-          <div class="
+              "
+              name="product-image"
+            />
+            <div
+              class="
                 flex flex-row
                 mobile:w-full mobile:items-center mobile:h-[40px]
                 desktop:w-[360px]
-              " name="product-color-list">
-            <div class="
+              "
+              name="product-color-list"
+            >
+              <div
+                class="
                   cursor-pointer
                   bg-[#ffffff]
                   border-solid border-[1px] border-[#d3d3d3]
@@ -920,8 +1060,11 @@
                   desktop:h-[24px]
                   desktop:mt-[20px]
                   desktop:mr-[10px]
-                " name="product-color1"></div>
-            <div class="
+                "
+                name="product-color1"
+              ></div>
+              <div
+                class="
                   cursor-pointer
                   bg-[#ddffbb]
                   border-solid border-[1px] border-[#d3d3d3]
@@ -933,8 +1076,11 @@
                   desktop:h-[24px]
                   desktop:mt-[20px]
                   desktop:mr-[10px]
-                " name="product-color2"></div>
-            <div class="
+                "
+                name="product-color2"
+              ></div>
+              <div
+                class="
                   cursor-pointer
                   bg-[#d3d3d3]
                   border-solid border-[1px] border-[#d3d3d3]
@@ -946,24 +1092,30 @@
                   desktop:h-[24px]
                   desktop:mt-[20px]
                   desktop:mr-[10px]
-                " name="product-color3"></div>
-          </div>
-          <div class="
+                "
+                name="product-color3"
+              ></div>
+            </div>
+            <div
+              class="
                 cursor-pointer
-                mobile:mt-[8px]
+                mobile:mt-[10px]
                 mobile:text-[12px]
                 mobile:tracking-[2.4px]
                 mobile:text-[#000000]
                 mobile:leading-[14px]
-                desktop:mt-[10px]
+                desktop:mt-[20px]
                 desktop:text-[20px]
                 desktop:tracking-[4px]
                 desktop:text-[#3F3A3A]
                 desktop:leading-[24px]
-              " name="product-name">
-            前開衩扭結洋裝
-          </div>
-          <div class="
+              "
+              name="product-name"
+            >
+              前開衩扭結洋裝
+            </div>
+            <div
+              class="
                 cursor-pointer
                 mobile:mt-[8px]
                 mobile:mb-[24px]
@@ -977,48 +1129,62 @@
                 desktop:text-[#3F3A3A]
                 desktop:leading-[24px]
                 desktop:tracking-[4px]
-              " name="product-price">
-            TWD.799
-          </div>
+              "
+              name="product-price"
+            >
+              TWD.799
+            </div>
+          </div> -->
+      </div>
+      <div role="status" class="mx-auto animate-bounce" name="spinner">
+        <div class="animate-pulse">
+          <svg class="
+                inline
+                mr-2
+                w-32
+                h-32
+                text-gray-200
+                animate-spin
+                dark:text-gray-600
+                fill-orange-600
+              " viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+              fill="currentColor" />
+            <path
+              d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+              fill="currentFill" />
+          </svg>
+          <span class="sr-only">Loading...</span>
         </div>
       </div>
-      <!-- <div role="status" class="mx-auto animate-bounce" name="spinner">
-          <div class="animate-pulse">
-            <svg class="inline mr-2 w-32 h-32 text-gray-200 animate-spin dark:text-gray-600 fill-orange-600"
-              viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-                fill="currentColor" />
-              <path
-                d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-                fill="currentFill" />
-            </svg>
-            <span class="sr-only">Loading...</span>
-          </div>
-        </div> -->
     </div>
   </div>
 
-  <div class="hidden" id="product-page">
+  <div class="hidden" name="product-page" id="product-page">
     <div class="
           flex flex-col
           w-full
           mx-auto
           mobile:mt-[102px] mobile:max-w-[1070px]
           desktop:mt-[140px] desktop:max-w-[960px]
-        " id="">
+        " name="" id="">
       <div class="
             flex
             mobile:flex-col mobile:mt-0
             desktop:flex-row desktop:mt-[65px] desktop:items-center
-          " id="">
-        <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png" alt=""
-          class="
-              cursor-pointer
-              object-cover
-              mobile:w-full
-              desktop:w-[560px] desktop:h-[746.66px]
-            " id="product-image" />
+          " name="" id="">
+        <div class="" name="product-main-image-viewer-box" id="">
+          <div class="" name="product-main-image-viewer" id="">
+            <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png" alt=""
+              class="
+                  cursor-pointer
+                  object-cover
+                  mobile:w-full
+                  desktop:w-[560px] desktop:h-[746.66px]
+                " name="product-image" id="" />
+          </div>
+        </div>
         <div class="
               flex flex-col
               mobile:mx-[24px] mobile:max-h-none mobile:max-w-none
@@ -1257,7 +1423,7 @@
                   desktop:ml-[25px]
                   bg-[#ffffff]
                   border-solid border-[1px] border-[#979797]
-                " id="">
+                " name="" id="">
               <div class="
                     cursor-pointer
                     w-[6px]
@@ -1279,7 +1445,7 @@
                     desktop:text-[#8B572A]
                     desktop:leading-[32px]
                     leading-[32px]
-                  " placeholder="1" value="1" id="product-amount" />
+                  " placeholder="1" title="input-amount" value="1" id="product-amount" />
               <div class="
                     cursor-pointer
                     w-[9px]
@@ -1383,29 +1549,35 @@
           shirt and upgraded it with slubby linen jersey, making it even
           lighter for those who prefer their summer style extra-breezy.
         </div>
-        <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251147632947271/0.png" alt="" class="
-              object-cover
-              mobile:w-full mobile:mt-[20px]
-              desktop:w-[960px] desktop:h-[540px] desktop:mt-[30px]
-            " id="product-image" />
-        <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251147196747866/1.png" alt="" class="
-              object-cover
-              mobile:w-full mobile:mt-[20px]
-              desktop:w-[960px] desktop:h-[540px] desktop:mt-[30px]
-            " id="product-image" />
+        <div class="" name="product-image-viewer-box" id="">
+          <div class="" name="product-image-viewer" id="">
+            <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251147632947271/0.png" alt=""
+              class="
+                  object-cover
+                  mobile:w-full mobile:mt-[20px]
+                  desktop:w-[960px] desktop:h-[540px] desktop:mt-[30px]
+                " name="product-image" id="" />
+            <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251147196747866/1.png" alt=""
+              class="
+                  object-cover
+                  mobile:w-full mobile:mt-[20px]
+                  desktop:w-[960px] desktop:h-[540px] desktop:mt-[30px]
+                " name="product-image" id="" />
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="hidden" id="checkout-page">
+  <div class="hidden" name="checkout-page" id="checkout-page">
     <div class="
           flex flex-col
           w-full
           mx-auto
           mobile:mt-[102px] mobile:max-w-[1070px]
           desktop:mt-[140px] desktop:max-w-[1160px]
-        " id="">
-      <div class="flex flex-col mobile:mx-[24px] desktop:mx-0" id="">
+        " name="" id="">
+      <div class="flex flex-col mobile:mx-[24px] desktop:mx-0" name="" id="">
         <div class="
               flex flex-row
               mobile:mt-[20px]
@@ -1449,10 +1621,8 @@
 
         <div class="
               w-full
-              mobile:mt-0 mobile:pb-[20px]
-              desktop:pb-0
+              mobile:mt-0
               desktop:mt-[16px]
-              desktop:pb-[40px]
               desktop:border-solid
               desktop:border-[1px]
               desktop:border-[#979797]
@@ -1465,7 +1635,7 @@
                 desktop:flex-row
                 mobile:mt-[10px] mobile:ml-0
                 desktop:mt-[30px] desktop:ml-[32px]
-              " id="">
+              " name="" id="">
             <div class="
                   flex flex-row
                   w-full
@@ -1475,19 +1645,19 @@
                   content-['']
                   border-solid border-[#3f3a3a] border-b-[1px]
                 " id="split-border"></div>
-            <div class="flex flex-row" id="">
+            <div class="flex flex-row" name="" id="">
               <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251332052295720/image.png" alt=""
-                class="object-cover w-[114px] h-[152px]" id="product-image" />
+                class="object-cover w-[114px] h-[152px]" name="product-image" id="" />
               <div class="
                     flex flex-col
                     mobile:w-full mobile:ml-[10px]
                     desktop:w-[354px] desktop:ml-[16px]
-                  " id="">
+                  " name="" id="">
                 <div class="
                       text-[#000000]
                       mobile:text-[14px] mobile:leading-[17px]
                       desktop:text-[16px] desktop:leading-[19px]
-                    " id="">
+                    " name="" id="">
                   前開衩扭結洋裝
                 </div>
                 <div class="
@@ -1497,7 +1667,7 @@
                       desktop:mt-[18px]
                       desktop:text-[16px]
                       desktop:leading-[19px]
-                    " id="">
+                    " name="" id="">
                   201807201824
                 </div>
                 <div class="
@@ -1507,7 +1677,7 @@
                       desktop:mt-[22px]
                       desktop:text-[16px]
                       desktop:leading-[19px]
-                    " id="">
+                    " name="" id="">
                   顏色｜白
                 </div>
                 <div class="
@@ -1517,7 +1687,7 @@
                       desktop:mt-[10px]
                       desktop:text-[16px]
                       desktop:leading-[19px]
-                    " id="">
+                    " name="" id="">
                   尺寸｜M
                 </div>
               </div>
@@ -1531,9 +1701,9 @@
                     desktop:left-[calc(100%-74px)]
                     mobile:mt-0
                     desktop:mt-[54px]
-                  " id="product-image" />
+                  " name="product-image" id="" />
             </div>
-            <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" id="">
+            <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" name="" id="">
               <div class="
                     text-[#3f3a3a]
                     mobile:block
@@ -1576,7 +1746,7 @@
                   items-center
                   mobile:h-[30px] mobile:mt-[12px] mobile:ml-[12px]
                   desktop:h-[32px] desktop:mt-[60px] desktop:ml-0
-                " id="">
+                " name="" id="">
               <select class="
                     w-[80px]
                     mobile:h-[30px] mobile:mr-[12px]
@@ -1585,7 +1755,7 @@
                     bg-[#F3F3F3]
                     rounded-[8px]
                     border-solid border-[1px] border-[#979797]
-                  " name="amount" id="amount" title="From">
+                  " name="amount" name="" id="" title="From">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -1598,7 +1768,7 @@
                     text-[#3f3a3a] text-center
                     desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
                     mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
-                  " id="">
+                  " name="" id="">
                 TWD.799
               </div>
               <div class="
@@ -1608,7 +1778,7 @@
                     text-[#3f3a3a] text-center
                     desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
                     mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
-                  " id="">
+                  " name="" id="">
                 TWD.799
               </div>
             </div>
@@ -1620,7 +1790,7 @@
                 desktop:flex-row
                 mobile:mt-[10px] mobile:ml-0
                 desktop:mt-[30px] desktop:ml-[32px]
-              " id="">
+              " name="" id="">
             <div class="
                   flex flex-row
                   w-full
@@ -1630,19 +1800,19 @@
                   content-['']
                   border-solid border-[#3f3a3a] border-b-[1px]
                 " id="split-border"></div>
-            <div class="flex flex-row" id="">
+            <div class="flex flex-row" name="" id="">
               <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251332052295720/image.png" alt=""
-                class="object-cover w-[114px] h-[152px]" id="product-image" />
+                class="object-cover w-[114px] h-[152px]" name="product-image" id="" />
               <div class="
                     flex flex-col
                     mobile:w-full mobile:ml-[10px]
                     desktop:w-[354px] desktop:ml-[16px]
-                  " id="">
+                  " name="" id="">
                 <div class="
                       text-[#000000]
                       mobile:text-[14px] mobile:leading-[17px]
                       desktop:text-[16px] desktop:leading-[19px]
-                    " id="">
+                    " name="" id="">
                   前開衩扭結洋裝
                 </div>
                 <div class="
@@ -1652,7 +1822,7 @@
                       desktop:mt-[18px]
                       desktop:text-[16px]
                       desktop:leading-[19px]
-                    " id="">
+                    " name="" id="">
                   201807201824
                 </div>
                 <div class="
@@ -1662,7 +1832,7 @@
                       desktop:mt-[22px]
                       desktop:text-[16px]
                       desktop:leading-[19px]
-                    " id="">
+                    " name="" id="">
                   顏色｜白
                 </div>
                 <div class="
@@ -1672,7 +1842,7 @@
                       desktop:mt-[10px]
                       desktop:text-[16px]
                       desktop:leading-[19px]
-                    " id="">
+                    " name="" id="">
                   尺寸｜M
                 </div>
               </div>
@@ -1686,9 +1856,9 @@
                     desktop:left-[calc(100%-74px)]
                     mobile:mt-0
                     desktop:mt-[54px]
-                  " id="product-image" />
+                  " name="product-image" id="" />
             </div>
-            <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" id="">
+            <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" name="" id="">
               <div class="
                     text-[#3f3a3a]
                     mobile:block
@@ -1731,7 +1901,7 @@
                   items-center
                   mobile:h-[30px] mobile:mt-[12px] mobile:ml-[12px]
                   desktop:h-[32px] desktop:mt-[60px] desktop:ml-0
-                " id="">
+                " name="" id="">
               <select class="
                     w-[80px]
                     mobile:h-[30px] mobile:mr-[12px]
@@ -1740,7 +1910,7 @@
                     bg-[#F3F3F3]
                     rounded-[8px]
                     border-solid border-[1px] border-[#979797]
-                  " name="amount" id="amount" title="From">
+                  " name="amount" name="" id="" title="From">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -1753,7 +1923,7 @@
                     text-[#3f3a3a] text-center
                     desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
                     mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
-                  " id="">
+                  " name="" id="">
                 TWD.799
               </div>
               <div class="
@@ -1763,7 +1933,7 @@
                     text-[#3f3a3a] text-center
                     desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
                     mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
-                  " id="">
+                  " name="" id="">
                 TWD.799
               </div>
             </div>
@@ -1775,7 +1945,7 @@
                 desktop:flex-row
                 mobile:mt-[10px] mobile:ml-0
                 desktop:mt-[30px] desktop:ml-[32px]
-              " id="">
+              " name="" id="">
             <div class="
                   flex flex-row
                   w-full
@@ -1785,19 +1955,19 @@
                   content-['']
                   border-solid border-[#3f3a3a] border-b-[1px]
                 " id="split-border"></div>
-            <div class="flex flex-row" id="">
+            <div class="flex flex-row" name="" id="">
               <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251332052295720/image.png" alt=""
-                class="object-cover w-[114px] h-[152px]" id="product-image" />
+                class="object-cover w-[114px] h-[152px]" name="product-image" id="" />
               <div class="
                     flex flex-col
                     mobile:w-full mobile:ml-[10px]
                     desktop:w-[354px] desktop:ml-[16px]
-                  " id="">
+                  " name="" id="">
                 <div class="
                       text-[#000000]
                       mobile:text-[14px] mobile:leading-[17px]
                       desktop:text-[16px] desktop:leading-[19px]
-                    " id="">
+                    " name="" id="">
                   前開衩扭結洋裝
                 </div>
                 <div class="
@@ -1807,7 +1977,7 @@
                       desktop:mt-[18px]
                       desktop:text-[16px]
                       desktop:leading-[19px]
-                    " id="">
+                    " name="" id="">
                   201807201824
                 </div>
                 <div class="
@@ -1817,7 +1987,7 @@
                       desktop:mt-[22px]
                       desktop:text-[16px]
                       desktop:leading-[19px]
-                    " id="">
+                    " name="" id="">
                   顏色｜白
                 </div>
                 <div class="
@@ -1827,7 +1997,7 @@
                       desktop:mt-[10px]
                       desktop:text-[16px]
                       desktop:leading-[19px]
-                    " id="">
+                    " name="" id="">
                   尺寸｜M
                 </div>
               </div>
@@ -1841,9 +2011,9 @@
                     desktop:left-[calc(100%-74px)]
                     mobile:mt-0
                     desktop:mt-[54px]
-                  " id="product-image" />
+                  " name="product-image" id="" />
             </div>
-            <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" id="">
+            <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" name="" id="">
               <div class="
                     text-[#3f3a3a]
                     mobile:block
@@ -1886,7 +2056,7 @@
                   items-center
                   mobile:h-[30px] mobile:mt-[12px] mobile:ml-[12px]
                   desktop:h-[32px] desktop:mt-[60px] desktop:ml-0
-                " id="">
+                " name="" id="">
               <select class="
                     w-[80px]
                     mobile:h-[30px] mobile:mr-[12px]
@@ -1895,7 +2065,7 @@
                     bg-[#F3F3F3]
                     rounded-[8px]
                     border-solid border-[1px] border-[#979797]
-                  " name="amount" id="amount" title="From">
+                  " name="amount" name="" id="" title="From">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -1908,7 +2078,7 @@
                     text-[#3f3a3a] text-center
                     desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
                     mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
-                  " id="">
+                  " name="" id="">
                 TWD.799
               </div>
               <div class="
@@ -1918,11 +2088,84 @@
                     text-[#3f3a3a] text-center
                     desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
                     mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
-                  " id="">
+                  " name="" id="">
                 TWD.799
               </div>
             </div>
           </div>
+        </div>
+
+        <div class="
+              flex flex-row
+              items-center
+              w-full
+              mobile:h-[60px]
+              desktop:h-[90px]
+              mobile:mt-[20px]
+              desktop:mt-[40px]
+              bg-gray-200
+            " name="" id="">
+          <div class="
+                w-auto
+                inline-block
+                text-[#3f3a3a]
+                mobile:ml-[10px] mobile:mr-[10px]
+                desktop:ml-[60px] desktop:mr-[20px]
+                mobile:text-[8px] mobile:leading-[17px]
+                desktop:text-[16px] desktop:leading-[19px]
+              " name="" id="">
+            配送國家
+          </div>
+          <select class="
+                mobile:w-auto
+                desktop:w-[160px]
+                h-[24px]
+                mobile:text-[8px] mobile:leading-[17px]
+                desktop:text-[16px] desktop:leading-[19px]
+                mobile:pl-0
+                desktop:pl-[16px]
+                bg-[#F3F3F3]
+                rounded-[8px]
+                border-solid border-[1px] border-[#979797]
+              " name="amount" name="" id="" title="From">
+            <option value="TW">臺灣及離島</option>
+          </select>
+          <div class="
+                w-auto
+                inline-block
+                text-[#3f3a3a]
+                mobile:ml-[10px] mobile:mr-[10px]
+                desktop:ml-[60px] desktop:mr-[20px]
+                mobile:text-[8px] mobile:leading-[17px]
+                desktop:text-[16px] desktop:leading-[19px]
+              " name="" id="">
+            付款方式
+          </div>
+          <select class="
+                mobile:w-auto
+                desktop:w-[160px]
+                h-[24px]
+                mobile:text-[8px] mobile:leading-[17px]
+                desktop:text-[12px] desktop:leading-[19px]
+                mobile:pl-0
+                desktop:pl-[16px]
+                bg-[#F3F3F3]
+                rounded-[8px]
+                border-solid border-[1px] border-[#979797]
+              " name="amount" name="" id="" title="From">
+            <option value="creditCard">信用卡付款</option>
+          </select>
+        </div>
+
+        <div class="
+              mt-[20px]
+              mb-[50px]
+              mobile:text-[8px] mobile:leading-[17px]
+              desktop:text-[16px] desktop:leading-[19px]
+            " name="" id="">
+          ※提醒您：<br />
+          ●選擇宅配-請填寫正確收件人資訊，避免包裹配送不達<br />
+          ●選擇超商-請填寫正確收件人姓名(與證件相符)，避免無法領取
         </div>
 
         <div class="flex flex-row mobile:mt-0 desktop:mt-[50px]" id="cart-title-box">
@@ -1942,20 +2185,20 @@
               flex flex-row
               w-full
               h-0
-              mobile:block mobile:my-[16px]
-              desktop:hidden desktop:my-[10px]
+              mobile:my-[16px]
+              desktop:my-[10px]
               content-['']
               border-solid border-[#3f3a3a] border-b-[1px]
             " id="split-border"></div>
 
-        <div class="" id="">
+        <div class="" name="" id="">
           <div class="
                 flex
                 mobile:flex-col mobile:items-none
                 desktop:items-center desktop:flex-row
                 mobile:mt-[10px]
                 desktop:mt-[9px]
-              " id="">
+              " name="" id="">
             <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
@@ -1979,7 +2222,7 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                " type="text" placeholder="收件人姓名" value id="nav-searchBar" />
+                " type="text" placeholder="收件人姓名" title="input-name" value="" name="nav-searchBar" name="" id="" />
           </div>
           <div class="
                 mobile:mt-[6px]
@@ -1998,7 +2241,7 @@
                 desktop:items-center desktop:flex-row
                 mobile:mt-[20px]
                 desktop:mt-[30px]
-              " id="">
+              " name="" id="">
             <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
@@ -2022,7 +2265,8 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                " type="text" placeholder="手機" value="" id="nav-searchBar" />
+                " type="text" placeholder="手機" title="input-phone-number" value="" name="nav-searchBar" name=""
+              id="" />
           </div>
           <div class="
                 flex
@@ -2030,7 +2274,7 @@
                 desktop:items-center desktop:flex-row
                 mobile:mt-[20px]
                 desktop:mt-[30px]
-              " id="">
+              " name="" id="">
             <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
@@ -2054,7 +2298,7 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                " type="text" placeholder="地址" value="" id="nav-searchBar" />
+                " type="text" placeholder="地址" title="input-address" value="" name="nav-searchBar" name="" id="" />
           </div>
           <div class="
                 flex
@@ -2062,7 +2306,7 @@
                 desktop:items-center desktop:flex-row
                 mobile:mt-[20px]
                 desktop:mt-[30px]
-              " id="">
+              " name="" id="">
             <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
@@ -2086,7 +2330,8 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                " type="text" placeholder="手機" value="" id="nav-searchBar" />
+                " type="text" placeholder="手機" title="input-phone-number" value="" name="nav-searchBar" name=""
+              id="" />
           </div>
           <div class="
                 flex
@@ -2094,7 +2339,7 @@
                 desktop:items-center desktop:flex-row
                 mobile:mt-[20px]
                 desktop:mt-[30px]
-              " id="">
+              " name="" id="">
             <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
@@ -2118,7 +2363,7 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                " type="text" placeholder="Email" value="" id="nav-searchBar" />
+                " type="text" placeholder="Email" title="input-email" value="" name="nav-searchBar" name="" id="" />
           </div>
           <div class="
                 flex
@@ -2126,7 +2371,7 @@
                 desktop:items-center desktop:flex-row
                 mobile:mt-[20px]
                 desktop:mt-[30px]
-              " id="">
+              " name="" id="">
             <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
@@ -2138,7 +2383,7 @@
               配送時間
             </div>
             <form class="flex items-center h-[26px] mobile:mt-[10px] desktop:mt-0">
-              <div class="flex flex-row items-center h-[26px]" id="">
+              <div class="flex flex-row items-center h-[26px]" name="" id="">
                 <input type="radio" id="08:00-12:00" name="time" value="08:00-12:00" />
                 <label for="08:00-12:00" class="
                       ml-[8px]
@@ -2185,19 +2430,19 @@
               flex flex-row
               w-full
               h-0
-              mobile:block mobile:my-[16px]
-              desktop:hidden desktop:my-[10px]
+              mobile:my-[16px]
+              desktop:my-[10px]
               content-['']
               border-solid border-[#3f3a3a] border-b-[1px]
             " id="split-border"></div>
-        <div class="" id="">
+        <div class="" name="" id="">
           <div class="
                 flex
                 mobile:flex-col mobile:items-none
                 desktop:items-center desktop:flex-row
                 mobile:mt-[20px]
                 desktop:mt-[30px]
-              " id="">
+              " name="" id="">
             <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
@@ -2221,7 +2466,8 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                " type="text" placeholder="**** **** **** ****" value="" id="nav-searchBar" />
+                " type="text" placeholder="**** **** **** ****" title="input-credit-card-number" value=""
+              name="nav-searchBar" name="" id="" />
           </div>
           <div class="
                 flex
@@ -2229,7 +2475,7 @@
                 desktop:items-center desktop:flex-row
                 mobile:mt-[20px]
                 desktop:mt-[30px]
-              " id="">
+              " name="" id="">
             <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
@@ -2253,7 +2499,8 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                " type="text" placeholder="MM / YY" value="" id="nav-searchBar" />
+                " type="text" placeholder="MM / YY" title="input-credit-card-valid-month" value="" name="nav-searchBar"
+              name="" id="" />
           </div>
           <div class="
                 flex
@@ -2261,7 +2508,7 @@
                 desktop:items-center desktop:flex-row
                 mobile:mt-[20px]
                 desktop:mt-[30px]
-              " id="">
+              " name="" id="">
             <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
@@ -2285,7 +2532,8 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                " type="text" placeholder="後三碼" value="" id="nav-searchBar" />
+                " type="text" placeholder="後三碼" title="input-credit-card-CSC" value="" name="nav-searchBar" name=""
+              id="" />
           </div>
           <div class="
                 flex flex-col
@@ -2295,7 +2543,7 @@
                 desktop:mt-[40px] desktop:mb-[148px]
               " id="product-info">
             <div class="w-full ml-auto max-w-[240px]">
-              <div class="flex flex-row items-center ml-auto" id="">
+              <div class="flex flex-row items-center ml-auto" name="" id="">
                 <div class="text-[#3f3a3a] text-[16px] leading-[19px]" id="product-name">
                   總金額
                 </div>
@@ -2311,7 +2559,7 @@
                   2397
                 </div>
               </div>
-              <div class="flex flex-row items-center mt-[20px] ml-auto" id="">
+              <div class="flex flex-row items-center mt-[20px] ml-auto" name="" id="">
                 <div class="text-[#3f3a3a] text-[16px] leading-[19px]" id="product-name">
                   運費
                 </div>
@@ -2339,7 +2587,7 @@
                     border-solid border-[#3f3a3a] border-b-[1px]
                   " id="split-border"></div>
 
-              <div class="flex flex-row items-center ml-auto" id="">
+              <div class="flex flex-row items-center ml-auto" name="" id="">
                 <div class="text-[#3f3a3a] text-[16px] leading-[19px]" id="product-name">
                   應付金額
                 </div>
@@ -2387,6 +2635,37 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="hidden" name="aboutUs-page" id="aboutUs-page">
+    <div class="
+          w-fill
+          mx-auto
+          mobile:max-w-[calc(100%-24px)]
+          desktop:max-w-[1200px]
+          mobile:pt-[102px]
+          desktop:pt-[140px]
+        " name="aboutUs-page-box" id="aboutUs-page-box">
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="380"
+        src="//music.163.com/outchain/player?type=4&id=526820640&auto=1&height=430"></iframe>
+
+      <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/videoseries?list=PLSTNI7-8XwI_sKUzLPJ5r0Ir7IOdVJVxm" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/videoseries?list=PLU06aQIBfRn_VsLIt2dlSl6I5osvs24yk" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <iframe width="330" height="100" scrolling="no" frameborder="no" allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/199035792&color=%2387d8ef&auto_play=false"></iframe>
+
+      <iframe src="https://streetvoice.com/music/embed/?id=387411" width="330" height="100" frameborder="0"
+        marginheight="0" marginwidth="0" scrolling="no"></iframe>
+
+      <iframe scrolling="no" allow="autoplay"
+        src="https://open.spotify.com/embed/track/16HPj2zrjdSXCH5SGf0NY0?si=2584d6594f65412a" frameborder="no"></iframe>
     </div>
   </div>
 
@@ -2480,9 +2759,8 @@
     <div class="mobile:block desktop:hidden w-full bg-[#313538]" name="bottom-nav-bar-mobile-box-box">
       <div class="flex flex-col items-center max-w-[360px] mx-auto pt-[23px]" name="bottom-nav-bar-mobile-box">
         <div class="flex justify-center items-end w-full" name="bottom-nav-bar-mobile-contactlist">
-          <div class="ml-[40px] mr-[36px]" name="bottom-nav-bar-mobile-links-part1"
-            name="bottom-nav-bar-mobile-info-about">
-            <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]">
+          <div class="ml-[40px] mr-[36px]" name="bottom-nav-bar-mobile-links-part1">
+            <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]" name="bottom-nav-bar-mobile-info-about">
               <a href="#" class="" aria-label="info-about-link" name="bottom-nav-bar-mobile-info-about-link">關於
                 STYLiSH</a>
             </div>
@@ -2624,14 +2902,18 @@
   <script type="module">
     // https://swiperjs.com/demos#autoplay
     // mouseover 跟 mouseenter差別在哪? https://ithelp.ithome.com.tw/articles/10251677
-    { //w0p2
-      const slidesImage = document.querySelector('div[name="slides"]');
+    {
+      // w0p2 Step 1: Get Marketing Campaigns
+      const slidesHtmlDivElement =
+        document.querySelector('div[name="slides"]');
       // slides navigation dot box for putting slides navigation dot in it
-      const dotBox = document.querySelector('div[name="dot-box"]');
-      const slidesTextMain = document.querySelector(
+      const dotBoxHtmlDivElement = document.querySelector(
+        'div[name="dot-box"]'
+      );
+      const slidesTextMainHtmlDivElement = document.querySelector(
         'div[name="slides-text-main"]'
       );
-      const slidesTextDescribe = document.querySelector(
+      const slidesTextDescribeHtmlDivElement = document.querySelector(
         'div[name="slides-text-describe"]'
       );
       // get marketingCampaignAPISlidersPromise for API promise
@@ -2639,61 +2921,68 @@
         'https://api.appworks-school.tw/api/1.0/marketing/campaigns'
       ).then((response) => response.json());
       // get json key "data" value in API promise
-      const apiJson = await marketingCampaignAPISlidersPromise.then(
-        (result) => result.data
-      );
-      // intervalID to save interval id, which's running changeSlides function
-      let intervalID;
+      const marketingCampaignAPIJson =
+        await marketingCampaignAPISlidersPromise.then(
+          (result) => result.data
+        );
+      // slidesIntervalID to save interval id, which's running changeSlides function
+      let slidesIntervalID;
       // slides current activating dot index
-      let currentIndex = 0;
+      let currentSlidesIndex = 0;
       // string variable to save create dotBox dot html code
-      let addToDotListHtml = '';
+      let addToDotListHtmlDivElementString = '';
 
       // create dotBox dot html code in string
-      for (let i = 0; i < apiJson.length; i++) {
-        addToDotListHtml += `<div class="
-                            cursor-pointer
-                            bg-no-repeat
-                            bg-cover
-                            rounded-full
-                            mobile:w-[4px]
-                            mobile:h-[4px]
-                            mobile:ml-[4.4px]
-                            mobile:mr-[4.4px]
-                            desktop:w-[10px]
-                            desktop:h-[10px]
-                            desktop:ml-[11px]
-                            desktop:mr-[11px]
-                            bg-[#ffffff]/40
-                            " index=${i} id=${apiJson[i].id} product_id=${apiJson[i].product_id} name="dot
-                            "></div>`;
+      for (let i = 0; i < marketingCampaignAPIJson.length; i++) {
+        addToDotListHtmlDivElementString += `<div class="
+                                cursor-pointer
+                                bg-no-repeat
+                                bg-cover
+                                rounded-full
+                                mobile:w-[4px]
+                                mobile:h-[4px]
+                                mobile:ml-[4.4px]
+                                mobile:mr-[4.4px]
+                                desktop:w-[10px]
+                                desktop:h-[10px]
+                                desktop:ml-[11px]
+                                desktop:mr-[11px]
+                                bg-[#ffffff]/40
+                                " index=${i} id=${marketingCampaignAPIJson[i].id} product_id=${marketingCampaignAPIJson[i].product_id} name="dot
+                                "></div>`;
       }
 
       // add dotBox dot html code to dotBox
-      dotBox.innerHTML = addToDotListHtml;
-      // get dotArray array from html querySelectorAll( .dot-box div )
-      const dotArray = document.querySelectorAll('div[name="dot-box"] div');
+      dotBoxHtmlDivElement.innerHTML = addToDotListHtmlDivElementString;
+      // get dot array from html querySelectorAll( .dot-box div )
+      const dotHtmlDivElement = document.querySelectorAll(
+        'div[name="dot-box"] div'
+      );
 
       // changeSlidesToIndex function, More easily to changing change slides to index informations
       function changeSlidesToIndex(index) {
-        slidesImage.style.backgroundImage = `url(${apiJson[index].picture})`;
-        slidesTextMain.innerHTML = apiJson[index].story
+        slidesHtmlDivElement.style.backgroundImage = `url(${marketingCampaignAPIJson[index].picture})`;
+        slidesTextMainHtmlDivElement.innerHTML = marketingCampaignAPIJson[
+          index
+        ].story
           .split('。')[0]
           .replaceAll('\r\n', '<br>');
-        slidesTextDescribe.innerHTML = apiJson[index].story
+        slidesTextDescribeHtmlDivElement.innerHTML = marketingCampaignAPIJson[
+          index
+        ].story
           .split('。')[1]
           .replaceAll('<br>', '');
-        dotArray.forEach((dotElement) => {
+        dotHtmlDivElement.forEach((dotElement) => {
           dotElement.classList.remove('bg-[#8B572A]');
           dotElement.classList.add('bg-[#ffffff]/40');
         });
-        dotArray[index].classList.remove('bg-[#ffffff]/40');
-        dotArray[index].classList.add('bg-[#8B572A]');
-        currentIndex = index;
+        dotHtmlDivElement[index].classList.remove('bg-[#ffffff]/40');
+        dotHtmlDivElement[index].classList.add('bg-[#8B572A]');
+        currentSlidesIndex = index;
       }
 
       // add click event listener to dotBox, for changing change slides to trigger event dot index informations
-      dotBox.addEventListener('click', (e) => {
+      dotBoxHtmlDivElement.addEventListener('click', (e) => {
         if (e.target.getAttribute('id') != null) {
           changeSlidesToIndex(e.target.getAttribute('id') - 1);
         }
@@ -2701,27 +2990,27 @@
 
       // changeSlides function, that's function for setInterval to autopPlay slides
       function changeSlides() {
-        if (currentIndex < apiJson.length) {
-          changeSlidesToIndex(currentIndex);
-          currentIndex++;
+        if (currentSlidesIndex < marketingCampaignAPIJson.length) {
+          changeSlidesToIndex(currentSlidesIndex);
+          currentSlidesIndex++;
         } else {
           changeSlidesToIndex(0);
         }
       }
 
       // addChangeSlidesInterval use for create a interval and save interval id. Set interval to repeat running changeSlides function with delay time
-      function addChangeSlidesInterval(delay) {
-        clearInterval(intervalID);
-        intervalID = setInterval(changeSlides, delay);
+      function addChangeSlidesInterval(intervalDelay) {
+        clearInterval(slidesIntervalID);
+        slidesIntervalID = setInterval(changeSlides, intervalDelay);
       }
 
       // remove interval when mouse hover slides area,remove interval running changeSlides function by interval id
-      slidesImage.addEventListener('mouseover', () => {
-        clearInterval(intervalID);
+      slidesHtmlDivElement.addEventListener('mouseover', () => {
+        clearInterval(slidesIntervalID);
       });
 
       // create a new interval running changeSlides function with delay 5 seconds
-      slidesImage.addEventListener('mouseout', () => {
+      slidesHtmlDivElement.addEventListener('mouseout', () => {
         addChangeSlidesInterval(5000);
       });
 
@@ -2731,96 +3020,682 @@
     }
 
     /*
-    { //w0p3
-      const productList = document.querySelector('div[name="product-list"]');
-      // get marketingCampaignAPISlidersPromise for API promise
-      const productListAPIPromise = fetch('https://api.appworks-school.tw/api/1.0/products/all')
-        .then((response) => response.json())
-      // get json key "data" in API promise
-      const products = await productListAPIPromise.then(result => result.data);
-      let addToProductListHtml = '';
+    {
+    // w0p3
+    // w0p3 Step 1: Connect to RESTful API for Data of All Products
+    // get marketingCampaignAPISlidersPromise for API promise
+    const productListAPIPromise = fetch(
+      'https://api.appworks-school.tw/api/1.0/products/all'
+    ).then((response) => response.json());
+    // get json key "data" in API promise
+    const productListAPIJson = await productListAPIPromise.then(
+      (result) => result.data
+    );
 
-      for (let i = 0; i < products.length; i++) {
-        let addToProductColorListHtml = '';
-        for (let j = 0; j < products[i]['colors'].length; j++) {
-          addToProductColorListHtml += `<div class="
-                                          cursor-pointer
-                                          bg-[#${products[i]['colors'][j].code}]
-                                          border-solid border-[1px] border-[#d3d3d3]
-                                          mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
-                                          desktop:w-[24px]
-                                          desktop:h-[24px]
-                                          desktop:mt-[20px]
-                                          desktop:mr-[10px]" name="product-colors"></div>`;
-        }
-        addToProductListHtml += `<div class="
-                                    flex flex-col
-                                    mobile:w-[calc(50%-27px)] mobile:mx-[3px]
-                                    desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]" name="product">
-                                  <img src="${products[i].main_image}" class="
-                                      object-cover
-                                      mobile:w-full mobile:h-full
-                                      desktop:w-[360px] desktop:h-[480px]" name="product-image" />
-                                  <div class="
-                                      flex flex-row
-                                      mobile:w-full mobile:items-center mobile:h-[40px]
-                                      desktop:w-[360px]" name="product-color-list">
-                                    ${addToProductColorListHtml}
-                                  </div>
-                                  <div class="
-                                      cursor-pointer
-                                      mobile:mt-[8px]
-                                      mobile:text-[12px]
-                                      mobile:tracking-[2.4px]
-                                      mobile:text-[#000000]
-                                      mobile:leading-[14px]
-                                      desktop:mt-[10px]
-                                      desktop:text-[20px]
-                                      desktop:tracking-[4px]
-                                      desktop:text-[#3F3A3A]
-                                      desktop:leading-[24px]" name="product-name">${products[i].title}</div>
-                                  <div class="
-                                      cursor-pointer
-                                      mobile:mt-[8px]
-                                      mobile:mb-[24px]
-                                      mobile:text-[12px]
-                                      mobile:text-[#000000]
-                                      mobile:leading-[14px]
-                                      mobile:tracking-[2.4px]
-                                      desktop:mt-[10px]
-                                      desktop:mb-[64px]
-                                      desktop:text-[20px]
-                                      desktop:text-[#3F3A3A]
-                                      desktop:leading-[24px]
-                                      desktop:tracking-[4px]" name="product-price">TWD.${products[i].price}</div>
-                                </div>`;
+    // w0p3 Step 3: Complete Paging Feature
+    const productListHtmlDivElement = document.querySelector(
+      'div[name="product-list"]'
+    );
+    let addToProductListHtmlString = '';
+
+    for (let i = 0; i < productListAPIJson.length; i++) {
+      let addToProductColorListHtml = '';
+      for (let j = 0; j < productListAPIJson[i]['colors'].length; j++) {
+        addToProductColorListHtml += `<div class="
+                                    cursor-pointer
+                                    bg-[#${productListAPIJson[i]['colors'][j].code}]
+                                    border-solid border-[1px] border-[#d3d3d3]
+                                    mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
+                                    desktop:w-[24px]
+                                    desktop:h-[24px]
+                                    desktop:mt-[20px]
+                                    desktop:mr-[10px]" name="product-colors"></div>`;
       }
-      productList.innerHTML = addToProductListHtml;
+      addToProductListHtmlString += `<div class="
+                              flex flex-col
+                              mobile:w-[calc(50%-27px)] mobile:mx-[3px]
+                              desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]" name="product">
+                            <img src="${productListAPIJson[i].main_image}" class="
+                                object-cover
+                                mobile:w-full mobile:h-full
+                                desktop:w-[360px] desktop:h-[480px]" name="product-image" />
+                            <div class="
+                                flex flex-row
+                                mobile:w-full mobile:items-center mobile:h-[40px]
+                                desktop:w-[360px]" name="product-color-list">
+                              ${addToProductColorListHtml}
+                            </div>
+                            <div class="
+                                cursor-pointer
+                                mobile:mt-[8px]
+                                mobile:text-[12px]
+                                mobile:tracking-[2.4px]
+                                mobile:text-[#000000]
+                                mobile:leading-[14px]
+                                desktop:mt-[10px]
+                                desktop:text-[20px]
+                                desktop:tracking-[4px]
+                                desktop:text-[#3F3A3A]
+                                desktop:leading-[24px]" name="product-name">${productListAPIJson[i].title}</div>
+                            <div class="
+                                cursor-pointer
+                                mobile:mt-[8px]
+                                mobile:mb-[24px]
+                                mobile:text-[12px]
+                                mobile:text-[#000000]
+                                mobile:leading-[14px]
+                                mobile:tracking-[2.4px]
+                                desktop:mt-[10px]
+                                desktop:mb-[64px]
+                                desktop:text-[20px]
+                                desktop:text-[#3F3A3A]
+                                desktop:leading-[24px]
+                                desktop:tracking-[4px]" name="product-price">TWD.${productListAPIJson[i].price}</div>
+                          </div>`;
     }
-
-    { //w0p4
-      const spinner = document.querySelector('div[name="spinner"]');
-      const intersectionObserverTarget = document.querySelector('div[name="bottom-nav-bar-mobile-box-box"], div[name="bottom-nav"]');
-
-      const url = 'https://api.appworks-school.tw/api/1.0/products/all';
-      // let count = data.next_paging;
-      let hasNextPage = true;
-      let intersectionObserver = new IntersectionObserver((entries) => {
-        console.log(entries[0].intersectionRatio);
-        if (entries[0].intersectionRatio <= 0) {
-          spinner.style.visibility = "hidden";
-          return
-        }
-        if (hasNextPage) {
-          spinner.style.visibility = "visible";
-        }
-        console.log("load new items");
-      }
-      );
-
-      intersectionObserver.observe(intersectionObserverTarget)
+    productListHtmlDivElement.innerHTML = addToProductListHtmlString;
     }
     */
+
+    {
+      // w0p4
+      // w0p4 Step 1: Complete Product Category Feature
+      //              Infinite Scroll
+      const modeUrl = {
+        all: 'https://api.appworks-school.tw/api/1.0/products/all',
+        women: 'https://api.appworks-school.tw/api/1.0/products/women',
+        men: 'https://api.appworks-school.tw/api/1.0/products/men',
+        accessories:
+          'https://api.appworks-school.tw/api/1.0/products/accessories',
+      };
+      let mode = 'all';
+      let hasNextPage = true;
+      let renderPageNumber = 0;
+      let fetchUrl = '';
+
+      let searchMode = false;
+      let searchKeyWord = '';
+
+      function showProductListUIByCategoryPagingOrSearchKeyWord() {
+        if (renderPageNumber == 0) {
+          scrollTo(0, 0);
+        }
+        if (searchMode) {
+          fetchUrl = `https://api.appworks-school.tw/api/1.0/products/search?keyword=${searchKeyWord}`;
+        } else {
+          fetchUrl = `${modeUrl[mode]}?paging=${renderPageNumber}`;
+        }
+        fetch(fetchUrl).then(async (response) => {
+          const productListAPIJson = await response.json();
+          const productListAPIJsonData = productListAPIJson.data;
+
+          'next_paging' in productListAPIJson
+            ? (hasNextPage = true)
+            : (hasNextPage = false);
+
+          // w0p3 Step 3: Complete Paging Feature
+          const productListHtmlDivElement = document.querySelector(
+            'div[name="product-list"]'
+          );
+          let addToProductListHtmlString = '';
+
+          renderPageNumber == 0
+            ? (addToProductListHtmlString = '')
+            : (addToProductListHtmlString =
+              productListHtmlDivElement.innerHTML);
+
+          if (searchMode) {
+            if (productListAPIJsonData.length == 0) {
+              productListHtmlDivElement.innerHTML =
+                '<div class="flex justify-center w-full" name=""><div class="text-[48px] text-[#8B572A]" name="product-error">查無此商品!</div></div>';
+              hasNextPage = false;
+              searchMode = false;
+              return;
+            }
+            addToProductListHtmlString = '';
+          }
+
+          const count = (
+            addToProductListHtmlString.match(/product-image/g) || []
+          ).length;
+
+          for (let i = 0; i < productListAPIJsonData.length; i++) {
+            let addToProductColorListHtml = '';
+            for (
+              let j = 0;
+              j < productListAPIJsonData[i]['colors'].length;
+              j++
+            ) {
+              let addTailwindCSSColorMarginLeftAdjust = '';
+              // if (Math.round(window.innerWidth) >= 1280) {}
+              if (j == 0) {
+                addTailwindCSSColorMarginLeftAdjust =
+                  'mobile:mr-[3px] desktop:mr-[5px]';
+              } else {
+                addTailwindCSSColorMarginLeftAdjust =
+                  'mobile:mx-[3px] desktop:mx-[5px]';
+              }
+              addToProductColorListHtml += `<div class="
+                                              cursor-pointer
+                                              bg-[#${productListAPIJsonData[i]['colors'][j].code}]
+                                              border-solid border-[1px] border-[#d3d3d3]
+                                              mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px]
+                                              ${addTailwindCSSColorMarginLeftAdjust}
+                                              desktop:w-[24px]
+                                              desktop:h-[24px]
+                                              desktop:mt-[20px]
+                                              desktop:mr-[10px]" name="product-colors"></div>`;
+            }
+            addToProductListHtmlString += `<div class="
+                                        flex flex-col
+                                        mobile:w-[calc(50%-27px)]
+                                        desktop:w-[360px] desktop:h-[666px] mobile:mx-[3px] desktop:mx-[20px]" name="product">
+                                      <img src="${productListAPIJsonData[i].main_image}" class="
+                                          object-cover
+                                          mobile:w-full mobile:h-full
+                                          desktop:w-[360px] desktop:h-[480px]" name="product-image" />
+                                      <div class="
+                                          flex flex-row
+                                          mobile:w-full mobile:items-center mobile:h-[40px]
+                                          desktop:w-[360px]" name="product-color-list">
+                                        ${addToProductColorListHtml}
+                                      </div>
+                                      <div class="
+                                          cursor-pointer
+                                          mobile:mt-[10px]
+                                          mobile:text-[12px]
+                                          mobile:tracking-[2.4px]
+                                          mobile:text-[#000000]
+                                          mobile:leading-[14px]
+                                          desktop:mt-[20px]
+                                          desktop:text-[20px]
+                                          desktop:tracking-[4px]
+                                          desktop:text-[#3F3A3A]
+                                          desktop:leading-[24px]" name="product-name">${productListAPIJsonData[i].title}</div>
+                                      <div class="
+                                          cursor-pointer
+                                          mobile:mt-[8px]
+                                          mobile:mb-[24px]
+                                          mobile:text-[12px]
+                                          mobile:text-[#000000]
+                                          mobile:leading-[14px]
+                                          mobile:tracking-[2.4px]
+                                          desktop:mt-[10px]
+                                          desktop:mb-[64px]、
+                                          desktop:text-[20px]
+                                          desktop:text-[#3F3A3A]
+                                          desktop:leading-[24px]
+                                          desktop:tracking-[4px]" name="product-price">TWD.${productListAPIJsonData[i].price}</div>
+                                    </div>`;
+          }
+          productListHtmlDivElement.innerHTML = addToProductListHtmlString;
+          searchMode = false;
+        });
+      }
+
+      function showCategoryNavBarTextColorBrown(divName) {
+        // // method 1
+        // const topNavBarChangeCategoryHtmlDivElement = [document
+        //   .querySelector('div[name="top-nav-bar-desktop-women-dresses"]'), document
+        //     .querySelector('div[name="top-nav-bar-desktop-men-dresses"]'), document
+        //       .querySelector('div[name="top-nav-bar-desktop-accessories"]'), document
+        //         .querySelector('div[name="top-nav-bar-below-mobile-women-dresses"]'), document
+        //           .querySelector('div[name="top-nav-bar-below-mobile-men-dresses"]'), document
+        //             .querySelector('div[name="top-nav-bar-below-mobile-accessories"]')];
+        // if (mode == 'all') {
+        //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove(
+        //     'desktop:text-[#8B572A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[0].classList.add(
+        //     'desktop:text-[#3F3A3A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[1].classList.remove(
+        //     'desktop:text-[#8B572A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[1].classList.add(
+        //     'desktop:text-[#3F3A3A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[2].classList.remove(
+        //     'desktop:text-[#8B572A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[2].classList.add(
+        //     'desktop:text-[#3F3A3A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove(
+        //     'mobile:text-[#ffffff]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[3].classList.add(
+        //     'mobile:text-[#828282]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[4].classList.remove(
+        //     'mobile:text-[#ffffff]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[4].classList.add(
+        //     'mobile:text-[#828282]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[5].classList.remove(
+        //     'mobile:text-[#ffffff]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[5].classList.add(
+        //     'mobile:text-[#828282]'
+        //   );
+        // } else if (mode == 'women') {
+        //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove(
+        //     'desktop:text-[#3F3A3A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[0].classList.add(
+        //     'desktop:text-[#8B572A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[1].classList.remove(
+        //     'desktop:text-[#8B572A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[1].classList.add(
+        //     'desktop:text-[#3F3A3A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[2].classList.remove(
+        //     'desktop:text-[#8B572A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[2].classList.add(
+        //     'desktop:text-[#3F3A3A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove(
+        //     'mobile:text-[#828282]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[3].classList.add(
+        //     'mobile:text-[#ffffff]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[4].classList.remove(
+        //     'mobile:text-[#ffffff]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[4].classList.add(
+        //     'mobile:text-[#828282]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[5].classList.remove(
+        //     'mobile:text-[#ffffff]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[5].classList.add(
+        //     'mobile:text-[#828282]'
+        //   );
+        // } else if (mode == 'men') {
+        //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove(
+        //     'desktop:text-[#8B572A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[0].classList.add(
+        //     'desktop:text-[#3F3A3A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[1].classList.remove(
+        //     'desktop:text-[#3F3A3A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[1].classList.add(
+        //     'desktop:text-[#8B572A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[2].classList.remove(
+        //     'desktop:text-[#8B572A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[2].classList.add(
+        //     'desktop:text-[#3F3A3A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove(
+        //     'mobile:text-[#ffffff]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[3].classList.add(
+        //     'mobile:text-[#828282]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[4].classList.remove(
+        //     'mobile:text-[#828282]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[4].classList.add(
+        //     'mobile:text-[#ffffff]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[5].classList.remove(
+        //     'mobile:text-[#ffffff]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[5].classList.add(
+        //     'mobile:text-[#828282]'
+        //   );
+        // } else if (mode == 'accessories') {
+        //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove(
+        //     'desktop:text-[#8B572A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[0].classList.add(
+        //     'desktop:text-[#3F3A3A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[1].classList.remove(
+        //     'desktop:text-[#8B572A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[1].classList.add(
+        //     'desktop:text-[#3F3A3A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[2].classList.remove(
+        //     'desktop:text-[#3F3A3A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[2].classList.add(
+        //     'desktop:text-[#8B572A]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove(
+        //     'mobile:text-[#ffffff]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[3].classList.add(
+        //     'mobile:text-[#828282]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[4].classList.remove(
+        //     'mobile:text-[#ffffff]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[4].classList.add(
+        //     'mobile:text-[#828282]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[5].classList.remove(
+        //     'mobile:text-[#828282]'
+        //   );
+        //   topNavBarChangeCategoryHtmlDivElement[5].classList.add(
+        //     'mobile:text-[#ffffff]'
+        //   );
+        // }
+
+        // method 2
+        const topNavBarChangeCategoryHtmlDivElementName = [
+          'top-nav-bar-desktop-women-dresses',
+          'top-nav-bar-desktop-men-dresses',
+          'top-nav-bar-desktop-accessories',
+          'top-nav-bar-below-mobile-women-dresses',
+          'top-nav-bar-below-mobile-men-dresses',
+          'top-nav-bar-below-mobile-accessories',
+        ];
+
+        topNavBarChangeCategoryHtmlDivElementName.forEach(
+          (HtmlDivElementName) => {
+            const changeTextColorHtmlDivElement = document.querySelector(
+              `div[name="${HtmlDivElementName}"]`
+            );
+
+            if (changeTextColorHtmlDivElement.innerHTML.includes(divName)) {
+              if (
+                changeTextColorHtmlDivElement.classList.contains(
+                  'mobile:text-[#828282]'
+                )
+              ) {
+                changeTextColorHtmlDivElement.classList.remove(
+                  'mobile:text-[#828282]'
+                );
+                changeTextColorHtmlDivElement.classList.add(
+                  'mobile:text-[#ffffff]'
+                );
+              } else if (
+                changeTextColorHtmlDivElement.classList.contains(
+                  'desktop:text-[#3F3A3A]'
+                )
+              ) {
+                changeTextColorHtmlDivElement.classList.remove(
+                  'desktop:text-[#3F3A3A]'
+                );
+                changeTextColorHtmlDivElement.classList.add(
+                  'desktop:text-[#8B572A]'
+                );
+              }
+            } else {
+              if (
+                changeTextColorHtmlDivElement.classList.contains(
+                  'mobile:text-[#ffffff]'
+                )
+              ) {
+                changeTextColorHtmlDivElement.classList.remove(
+                  'mobile:text-[#ffffff]'
+                );
+                changeTextColorHtmlDivElement.classList.add(
+                  'mobile:text-[#828282]'
+                );
+              } else if (
+                changeTextColorHtmlDivElement.classList.contains(
+                  'desktop:text-[#8B572A]'
+                )
+              ) {
+                changeTextColorHtmlDivElement.classList.remove(
+                  'desktop:text-[#8B572A]'
+                );
+                changeTextColorHtmlDivElement.classList.add(
+                  'desktop:text-[#3F3A3A]'
+                );
+              }
+            }
+          }
+        );
+      }
+
+      mode = 'all';
+      renderPageNumber = 0;
+      showProductListUIByCategoryPagingOrSearchKeyWord();
+
+      document
+        .querySelector('img[name="top-nav-bar-website-logo"]')
+        .addEventListener('click', (e) => {
+          changePage('main-page');
+          mode = 'all';
+          renderPageNumber = 0;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        });
+      document
+        .querySelector('div[name="top-nav-bar-desktop-women-dresses"]')
+        .addEventListener('click', (e) => {
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          changePage('main-page');
+          mode = 'women';
+          renderPageNumber = 0;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        });
+      document
+        .querySelector('div[name="top-nav-bar-desktop-men-dresses"]')
+        .addEventListener('click', (e) => {
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          changePage('main-page');
+          mode = 'men';
+          renderPageNumber = 0;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        });
+      document
+        .querySelector('div[name="top-nav-bar-desktop-accessories"]')
+        .addEventListener('click', (e) => {
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          changePage('main-page');
+          mode = 'accessories';
+          renderPageNumber = 0;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        });
+      document
+        .querySelector('div[name="top-nav-bar-below-mobile-women-dresses"]')
+        .addEventListener('click', (e) => {
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          changePage('main-page');
+          mode = 'women';
+          renderPageNumber = 0;
+          showProductListUIByCategoryPagingOrSearchKeyWord('women', 0);
+        });
+      document
+        .querySelector('div[name="top-nav-bar-desktop-men-dresses"]')
+        .addEventListener('click', (e) => {
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          changePage('main-page');
+          mode = 'men';
+          renderPageNumber = 0;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        });
+      document
+        .querySelector('div[name="top-nav-bar-desktop-accessories"]')
+        .addEventListener('click', (e) => {
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          changePage('main-page');
+          mode = 'accessories';
+          renderPageNumber = 0;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        });
+      document
+        .querySelector('div[name="top-nav-bar-below-mobile-women-dresses"]')
+        .addEventListener('click', (e) => {
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          changePage('main-page');
+          mode = 'women';
+          renderPageNumber = 0;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        });
+      document
+        .querySelector('div[name="top-nav-bar-below-mobile-men-dresses"]')
+        .addEventListener('click', (e) => {
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          changePage('main-page');
+          mode = 'men';
+          renderPageNumber = 0;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        });
+      document
+        .querySelector('div[name="top-nav-bar-below-mobile-accessories"]')
+        .addEventListener('click', (e) => {
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          changePage('main-page');
+          mode = 'accessories';
+          renderPageNumber = 0;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        });
+
+      // w0p4 spinner animation switch using intersection Observer
+      const spinnerHtmlDivElement = document.querySelector(
+        'div[name="spinner"]'
+      );
+      const intersectionObserverTargetDesktop = document.querySelector(
+        'div[name="bottom-nav-bar-desktop-box"]'
+      );
+      const intersectionObserverTargetMobile = document.querySelector(
+        'div[name="bottom-nav-bar-mobile-box-box"]'
+      );
+
+      let intersectionObserver = new IntersectionObserver((entries) => {
+        if (entries[0].intersectionRatio <= 0) {
+          spinnerHtmlDivElement.style.visibility = 'hidden';
+          return;
+        }
+        if (hasNextPage) {
+          spinnerHtmlDivElement.style.visibility = 'visible';
+          renderPageNumber++;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        }
+      });
+
+      intersectionObserver.observe(intersectionObserverTargetDesktop);
+      intersectionObserver.observe(intersectionObserverTargetMobile);
+
+      // w0p4 Step 2: Complete Search Feature
+      // desktopSearch
+      document
+        .querySelector('input[name="top-nav-bar-desktop-search-bar"]')
+        .addEventListener('keypress', (e) => {
+          if (e.key === 'Enter') {
+            scrollTo(0, 0);
+            searchKeyWord = e.target.value;
+            searchMode = true;
+            showProductListUIByCategoryPagingOrSearchKeyWord();
+          }
+        });
+      document
+        .querySelector('input[name="top-nav-bar-desktop-search-bar"]')
+        .addEventListener('click', (e) => {
+          const clickTarget = e.target;
+          const clickTargetWidth = clickTarget.offsetWidth;
+          const xCoordInClickTarget =
+            e.clientX - clickTarget.getBoundingClientRect().left;
+          if (clickTargetWidth / 1.2 > xCoordInClickTarget) {
+            // clicked left
+            e.target.focus();
+          } else {
+            // clicked right
+            scrollTo(0, 0);
+            searchKeyWord = e.target.value;
+            searchMode = true;
+            showProductListUIByCategoryPagingOrSearchKeyWord();
+          }
+        });
+      //. mobileSearch
+      document
+        .querySelector('input[name="top-nav-bar-mobile-search"]')
+        .addEventListener('keypress', (e) => {
+          if (e.key === 'Enter') {
+            scrollTo(0, 0);
+            searchKeyWord = e.target.value;
+            searchMode = true;
+            showProductListUIByCategoryPagingOrSearchKeyWord();
+          }
+        });
+      document
+        .querySelector('input[name="top-nav-bar-mobile-search"]')
+        .addEventListener('click', (e) => {
+          const clickTarget = e.target;
+          const clickTargetWidth = clickTarget.offsetWidth;
+          const xCoordInClickTarget =
+            e.clientX - clickTarget.getBoundingClientRect().left;
+          if (clickTargetWidth / 1.2 > xCoordInClickTarget) {
+            // clicked left
+            e.target.focus();
+          } else {
+            // clicked right
+            scrollTo(0, 0);
+            searchKeyWord = e.target.value;
+            searchMode = true;
+            showProductListUIByCategoryPagingOrSearchKeyWord();
+          }
+        });
+    }
+
+    // function changePage
+    function changePage(showPageName) {
+      const pageHtmlDivElementName = [
+        'main-page',
+        'product-page',
+        'checkout-page',
+        'aboutUs-page',
+      ];
+      pageHtmlDivElementName.forEach((pageName) => {
+        const pageHtmlDivElement = document.querySelector(
+          `div[name="${pageName}"]`
+        );
+        if (!pageHtmlDivElement.classList.contains('hidden')) {
+          pageHtmlDivElement.classList.add('hidden');
+        }
+      });
+      const showPageHtmlDivElement = document.querySelector(
+        `div[name="${showPageName}"]`
+      );
+      if (showPageHtmlDivElement.classList.contains('hidden')) {
+        showPageHtmlDivElement.classList.remove('hidden');
+      }
+    }
+    document
+      .querySelector('div[name="bottom-nav-bar-desktop-info-about"]')
+      .addEventListener('click', (e) => {
+        changePage('aboutUs-page');
+      });
+    document
+      .querySelector('div[name="bottom-nav-bar-mobile-info-about"]')
+      .addEventListener('click', (e) => {
+        changePage('aboutUs-page');
+      });
+
+    // JavaScript image viewer. https://github.com/fengyuanchen/viewerjs
+    // View an image.
+    const productMainImageViewer = new Viewer(
+      document.querySelector('div[name="product-main-image-viewer"]'),
+      {
+        inline: false,
+        viewed() {
+          productMainImageViewer.zoomTo(1);
+        },
+      }
+    );
+    const productImageViewer = new Viewer(
+      document.querySelector('div[name="product-image-viewer"]'),
+      {
+        inline: false,
+        viewed() {
+          productImageViewer.zoomTo(1);
+        },
+      }
+    );
   </script>
 
   <script type="text/babel">
@@ -2862,7 +3737,7 @@
       // const queryClient = new QueryClient();
 
       // const root = ReactDOM.createRoot(document.getElementById("root"));
-      // root.render(
+      // root.showProductListUIByCategoryPagingOrSearchKeyWord(
       //   // Provide the client to your App
       //   <QueryClientProvider client={queryClient}>
       //     <React.StrictMode>

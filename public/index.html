@@ -3996,7 +3996,7 @@
     document
       .querySelector('div[name="top-nav-bar-desktop-shopping-cart-box"]')
       .addEventListener('click', (e) => {
-        history.replaceState(null, null, 'checkout');
+        history.replaceState(null, null, '/checkout');
         showCategoryNavBarTextColorBrown('all');
         changePage('checkout-page');
       });
@@ -4005,14 +4005,14 @@
         'div[name="bottom-nav-bar-mobile-stick-shopping-cart-box"]'
       )
       .addEventListener('click', (e) => {
-        history.replaceState(null, null, 'checkout');
+        history.replaceState(null, null, '/checkout');
         showCategoryNavBarTextColorBrown('all');
         changePage('checkout-page');
       });
     document
       .querySelector('div[name="top-nav-bar-desktop-profile-box"]')
       .addEventListener('click', (e) => {
-        history.replaceState(null, null, 'profile');
+        history.replaceState(null, null, '/profile');
         showCategoryNavBarTextColorBrown('all');
         changePage('profile-page');
       });
@@ -4021,21 +4021,21 @@
         'div[name="bottom-nav-bar-mobile-stick-shopping-profile-box"]'
       )
       .addEventListener('click', (e) => {
-        history.replaceState(null, null, 'profile');
+        history.replaceState(null, null, '/profile');
         showCategoryNavBarTextColorBrown('all');
         changePage('profile-page');
       });
     document
       .querySelector('div[name="bottom-nav-bar-desktop-info-about"]')
       .addEventListener('click', (e) => {
-        history.replaceState(null, null, 'aboutus');
+        history.replaceState(null, null, '/aboutus');
         showCategoryNavBarTextColorBrown('all');
         changePage('aboutUs-page');
       });
     document
       .querySelector('div[name="bottom-nav-bar-mobile-info-about"]')
       .addEventListener('click', (e) => {
-        history.replaceState(null, null, 'aboutus');
+        history.replaceState(null, null, '/aboutus');
         showCategoryNavBarTextColorBrown('all');
         changePage('aboutUs-page');
       });

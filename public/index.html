@@ -65,14 +65,14 @@
             desktop:items-center
             desktop:h-[100px]
           " name="top-nav-bar-box">
-        <a href="#" aria-label="website-logo-link" name="top-nav-bar-website-logo-link">
+        <div name="top-nav-bar-website-logo-link">
           <img class="
                 cursor-pointer
                 mobile:w-[129px] mobile:h-[24px]
                 desktop:w-[258px] desktop:h-[48px] desktop:ml-[60px]
               " src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055669914406982/logo.png" alt=""
             name="top-nav-bar-website-logo" />
-        </a>
+        </div>
         <div class="
               desktop:cursor-pointer
               mobile:hidden
@@ -88,8 +88,8 @@
               desktop:border-solid
               desktop:border-r-[1px]
               desktop:border-[#3F3A3A]
-            " onclick="fetch" name="top-nav-bar-desktop-women-dresses">
-          <a href="#/women-dresses">女裝</a>
+            " name="top-nav-bar-desktop-women-dresses">
+          <div name="top-nav-bar-desktop-women-dresses-link">女裝</div>
         </div>
         <div class="
               desktop:cursor-pointer
@@ -107,7 +107,7 @@
               desktop:border-r-[1px]
               desktop:border-[#3F3A3A]
             " name="top-nav-bar-desktop-men-dresses">
-          <a href="#/men-dresses">男裝</a>
+          <div name="top-nav-bar-desktop-men-dresses-link">男裝</div>
         </div>
         <div class="
               desktop:cursor-pointer
@@ -125,7 +125,7 @@
               desktop:border-r-[1px]
               desktop:border-[#3F3A3A]
             " name="top-nav-bar-desktop-accessories">
-          <a href="#/accessories">配件</a>
+          <div name="top-nav-bar-desktop-accessories-link">配件</div>
         </div>
 
         <input class="
@@ -162,12 +162,12 @@
               desktop:h-[44px]
               desktop:mr-[42px]
             " name="top-nav-bar-desktop-shopping-cart-box">
-          <a href="#" aria-label="shopping-cart-image-link" name="top-nav-bar-desktop-shopping-cart-image-link">
+          <div name="top-nav-bar-desktop-shopping-cart-box-link">
             <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007154394585894962/image.png" alt=""
               onmouseover="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1006055626180399154/image_1_.png'"
               onmouseout="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1007154394585894962/image.png'"
               class="" name="top-nav-bar-desktop-shopping-cart-image" />
-          </a>
+          </div>
           <div class="
                 absolute
                 flex
@@ -196,7 +196,7 @@
           </div>
         </div>
 
-        <a href="#" aria-label="profile-link" name="top-nav-bar-desktop-profile-link">
+        <div name="top-nav-bar-desktop-profile-box">
           <img class="
                 mobile:hidden
                 desktop:cursor-pointer
@@ -208,7 +208,7 @@
             onmouseover="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1006055670421925960/profile_1.png'"
             onmouseout="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1007154394904666112/profile.png'"
             name="top-nav-bar-desktop-profile" />
-        </a>
+        </div>
 
         <input class="
               desktop:hidden
@@ -264,7 +264,7 @@
               mobile:leading-[22px]
               desktop:hidden
             " name="top-nav-bar-below-mobile-women-dresses">
-          <a href="#/women-dresses">女裝</a>
+          <div name="top-nav-bar-below-mobile-women-dresses-link">女裝</div>
         </div>
         <img class="mobile:block desktop:hidden"
           src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055671801860126/split.png" alt="" />
@@ -277,7 +277,7 @@
               mobile:leading-[22px]
               desktop:hidden
             " name="top-nav-bar-below-mobile-men-dresses">
-          <a href="#/men-dresses">男裝</a>
+          <div name="top-nav-bar-below-mobile-men-dresses-link">男裝</div>
         </div>
         <img class="mobile:block desktop:hidden"
           src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055671801860126/split.png" alt="" />
@@ -290,7 +290,7 @@
               mobile:leading-[22px]
               desktop:hidden
             " name="top-nav-bar-below-mobile-accessories">
-          <a href="#/accessories">配件</a>
+          <div name="top-nav-bar-below-mobile-accessories-link">配件</div>
         </div>
       </div>
     </nav>
@@ -2638,6 +2638,10 @@
     </div>
   </div>
 
+  <div class="hidden" name="profile-page" id="profile-page">
+
+  </div>
+
   <div class="hidden" name="aboutUs-page" id="aboutUs-page">
     <div class="
           w-fill
@@ -2689,7 +2693,9 @@
               leading-[22px]
               border-solid border-r-[1px] border-[#828282]
             " name="bottom-nav-bar-desktop-info-about">
-          <a href="#" class="" name="bottom-nav-bar-desktop-info-about-link">關於 STYLiSH</a>
+          <div name="bottom-nav-bar-desktop-info-about-link">
+            關於 STYLiSH
+          </div>
         </div>
         <div class="
               cursor-pointer
@@ -2699,7 +2705,9 @@
               leading-[22px]
               border-solid border-r-[1px] border-[#828282]
             " name="bottom-nav-bar-desktop-info-service-terms">
-          <a href="#" class="" name="bottom-nav-bar-desktop-info-service-terms-link">服務條款</a>
+          <div name="bottom-nav-bar-desktop-info-service-terms-link">
+            服務條款
+          </div>
         </div>
         <div class="
               cursor-pointer
@@ -2709,7 +2717,9 @@
               leading-[22px]
               border-solid border-r-[1px] border-[#828282]
             " name="bottom-nav-bar-desktop-privacy-policy">
-          <a href="#" class="" name="bottom-nav-bar-desktop-privacy-policy-link">隱私政策</a>
+          <div name="bottom-nav-bar-desktop-privacy-policy-link">
+            隱私政策
+          </div>
         </div>
         <div class="
               cursor-pointer
@@ -2719,7 +2729,7 @@
               leading-[22px]
               border-solid border-r-[1px] border-[#828282]
             " name="bottom-nav-bar-desktop-contact-us">
-          <a href="#" class="" name="bottom-nav-bar-desktop-contact-us-link">聯絡我們</a>
+          <div name="bottom-nav-bar-desktop-contact-us-link">聯絡我們</div>
         </div>
         <div class="
               cursor-pointer
@@ -2729,24 +2739,29 @@
               leading-[22px]
               border-none
             " name="bottom-nav-bar-desktop-frequently-asked-questions">
-          <a href="#" class="" name="bottom-nav-bar-desktop-frequently-asked-questions-link">FAQ</a>
+          <div name="bottom-nav-bar-desktop-frequently-asked-questions-link">
+            FAQ
+          </div>
         </div>
       </div>
       <div class="flex justify-center items-center" name="bottom-nav-bar-desktop-social-media-links">
         <div class="cursor-pointer w-[50px] h-[50px] mr-[30px]">
-          <a href="#" aria-label="line-image-link" name="bottom-nav-bar-desktop-line-image-link"><img
-              src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279856017418/line.png" alt=""
-              class="w-full h-full" name="bottom-nav-bar-desktop-line-image" /></a>
+          <div name="bottom-nav-bar-desktop-line-image-link">
+            <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279856017418/line.png" alt=""
+              class="w-full h-full" name="bottom-nav-bar-desktop-line-image" />
+          </div>
         </div>
         <div class="cursor-pointer w-[50px] h-[50px] mr-[30px]">
-          <a href="#" aria-label="twitter-image-link" name="bottom-nav-bar-desktop-twitter-image-link"><img
-              src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279512080465/twitter.png" alt=""
-              class="w-full h-full" name="bottom-nav-bar-desktop-twitter-image" /></a>
+          <div name="bottom-nav-bar-desktop-twitter-image-link">
+            <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279512080465/twitter.png" alt=""
+              class="w-full h-full" name="bottom-nav-bar-desktop-twitter-image" />
+          </div>
         </div>
         <div class="cursor-pointer w-[50px] h-[50px] mr-[30px]">
-          <a href="#" aria-label="facebook-image-link" name="bottom-nav-bar-desktop-facebook-image-link"><img
-              src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138280220917851/facebook.png" alt=""
-              class="w-full h-full" name="bottom-nav-bar-desktop-facebook-image" /></a>
+          <div name="bottom-nav-bar-desktop-facebook-image-link">
+            <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138280220917851/facebook.png"
+              alt="" class="w-full h-full" name="bottom-nav-bar-desktop-facebook-image" />
+          </div>
         </div>
         <div class="text-[12px] text-[#828282] leading-[17px] text-center"
           name="bottom-nav-bar-desktop-all-rights-reserved">
@@ -2760,45 +2775,52 @@
         <div class="flex justify-center items-end w-full" name="bottom-nav-bar-mobile-contactlist">
           <div class="ml-[40px] mr-[36px]" name="bottom-nav-bar-mobile-links-part1">
             <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]" name="bottom-nav-bar-mobile-info-about">
-              <a href="#" class="" aria-label="info-about-link" name="bottom-nav-bar-mobile-info-about-link">關於
-                STYLiSH</a>
+              <div name="bottom-nav-bar-mobile-info-about-link">
+                關於 STYLiSH
+              </div>
             </div>
             <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]"
               name="bottom-nav-bar-mobile-info-service-terms">
-              <a href="#" class="" aria-label="service-terms-link"
-                name="bottom-nav-bar-mobile-info-service-terms-link">服務條款</a>
+              <div name="bottom-nav-bar-mobile-info-service-terms-link">
+                服務條款
+              </div>
             </div>
             <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[13px]"
               name="bottom-nav-bar-mobile-privacy-policy">
-              <a href="#" class="" aria-label="privacy-policy-link"
-                name="bottom-nav-bar-mobile-privacy-policy-link">隱私政策</a>
+              <div name="bottom-nav-bar-mobile-privacy-policy-link">
+                隱私政策
+              </div>
             </div>
           </div>
           <div class="mr-[31px]" name="bottom-nav-bar-mobile-links-part2">
             <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]" name="bottom-nav-bar-mobile-contact-us">
-              <a href="#" class="" aria-label="contact-us-link" name="bottom-nav-bar-mobile-contact-us-link">聯絡我們</a>
+              <div name="bottom-nav-bar-mobile-contact-us-link">聯絡我們</div>
             </div>
             <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[41px]"
               name="bottom-nav-bar-mobile-frequently-asked-questions">
-              <a href="#" class="" aria-label="frequently-asked-questions-link"
-                name="bottom-nav-bar-mobile-frequently-asked-questions-link">FAQ</a>
+              <div name="bottom-nav-bar-mobile-frequently-asked-questions-link">
+                FAQ
+              </div>
             </div>
           </div>
           <div class="flex justify-between items-center mb-[51px]" name="bottom-nav-bar-mobile-social-media-links">
             <div class="w-[20px] h-[20px] mr-[14px]">
-              <a href="#" aria-label="line-image-link" name="bottom-nav-bar-mobile-line-image-link"><img
-                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279856017418/line.png" alt=""
-                  class="w-full h-full" name="bottom-nav-bar-mobile-line-image" /></a>
+              <div name="bottom-nav-bar-mobile-line-image-link">
+                <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279856017418/line.png"
+                  alt="" class="w-full h-full" name="bottom-nav-bar-mobile-line-image" />
+              </div>
             </div>
             <div class="w-[20px] h-[20px] mr-[14px]">
-              <a href="#" aria-label="twitter-image-link" name="bottom-nav-bar-mobile-twitter-image-link"><img
-                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279512080465/twitter.png"
-                  alt="" class="w-full h-full" name="bottom-nav-bar-mobile-twitter-image" /></a>
+              <div name="bottom-nav-bar-mobile-twitter-image-link">
+                <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279512080465/twitter.png"
+                  alt="" class="w-full h-full" name="bottom-nav-bar-mobile-twitter-image" />
+              </div>
             </div>
             <div class="w-[20px] h-[20px] mr-[24px]">
-              <a href="#" aria-label="facebook-image-link" name="bottom-nav-bar-mobile-facebook-image-link"><img
-                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138280220917851/facebook.png"
-                  alt="" class="w-full h-full" name="bottom-nav-bar-mobile-facebook-image" /></a>
+              <div name="bottom-nav-bar-mobile-facebook-image-link">
+                <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138280220917851/facebook.png"
+                  alt="" class="w-full h-full" name="bottom-nav-bar-mobile-facebook-image" />
+              </div>
             </div>
           </div>
         </div>
@@ -2843,9 +2865,10 @@
               w-[180px]
               mx-auto
             " name="bottom-nav-bar-mobile-stick-shopping-cart-box">
-          <a href="#" aria-label="shopping-cart-image-link" name="bottom-nav-bar-mobile-stick-shopping-cart-image-link">
+          <div name="bottom-nav-bar-mobile-stick-shopping-cart-image-link">
             <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006534620352880671/image.png" alt=""
-              name="bottom-nav-bar-mobile-stick-shopping-cart-image" /></a>
+              name="bottom-nav-bar-mobile-stick-shopping-cart-image" />
+          </div>
           <div class="text-[16px] text-[#ffffff] leading-[16px] text-center"
             name="bottom-nav-bar-mobile-stick-shopping-cart-text">
             購物車
@@ -2886,12 +2909,13 @@
             items-center
             w-[180px]
             mx-auto
-          " name="profile-box">
-        <a href="#" aria-label="member-image-link" name="bottom-nav-bar-mobile-stick-member-image-link">
+          " name="bottom-nav-bar-mobile-stick-shopping-profile-box">
+        <div name="bottom-nav-bar-mobile-stick-shopping-profile-box-link">
           <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055670895890453/profile.png" alt=""
-            name="bottom-nav-bar-mobile-stick-member-image" /></a>
+            name="bottom-nav-bar-mobile-stick-shopping-profile-box-image" />
+        </div>
         <div class="text-[16px] text-[#ffffff] leading-[16px] text-center"
-          name="bottom-nav-bar-mobile-stick-member-text">
+          name="bottom-nav-bar-mobile-stick-shopping-profile-box-text">
           會員
         </div>
       </div>
@@ -3019,82 +3043,82 @@
     }
 
     /*
-  {
-  // w0p3
-  // w0p3 Step 1: Connect to RESTful API for Data of All Products
-  // get marketingCampaignAPISlidersPromise for API promise
-  const productListAPIPromise = fetch(
-    'https://api.appworks-school.tw/api/1.0/products/all'
-  ).then((response) => response.json());
-  // get json key "data" in API promise
-  const productListAPIJson = await productListAPIPromise.then(
-    (result) => result.data
-  );
+{
+// w0p3
+// w0p3 Step 1: Connect to RESTful API for Data of All Products
+// get marketingCampaignAPISlidersPromise for API promise
+const productListAPIPromise = fetch(
+'https://api.appworks-school.tw/api/1.0/products/all'
+).then((response) => response.json());
+// get json key "data" in API promise
+const productListAPIJson = await productListAPIPromise.then(
+(result) => result.data
+);
 
-  // w0p3 Step 3: Complete Paging Feature
-  const productListHtmlDivElement = document.querySelector(
-    'div[name="product-list"]'
-  );
-  let addToProductListHtmlString = '';
+// w0p3 Step 3: Complete Paging Feature
+const productListHtmlDivElement = document.querySelector(
+'div[name="product-list"]'
+);
+let addToProductListHtmlString = '';
 
-  for (let i = 0; i < productListAPIJson.length; i++) {
-    let addToProductColorListHtml = '';
-    for (let j = 0; j < productListAPIJson[i]['colors'].length; j++) {
-      addToProductColorListHtml += `<div class="
-                                  cursor-pointer
-                                  bg-[#${productListAPIJson[i]['colors'][j].code}]
-                                  border-solid border-[1px] border-[#d3d3d3]
-                                  mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
-                                  desktop:w-[24px]
-                                  desktop:h-[24px]
-                                  desktop:mt-[20px]
-                                  desktop:mr-[10px]" name="product-colors"></div>`;
-    }
-    addToProductListHtmlString += `<div class="
-                            flex flex-col
-                            mobile:w-[calc(50%-27px)] mobile:mx-[3px]
-                            desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]" name="product">
-                          <img src="${productListAPIJson[i].main_image}" class="
-                              object-cover
-                              mobile:w-full mobile:h-full
-                              desktop:w-[360px] desktop:h-[480px]" name="product-image" />
-                          <div class="
-                              flex flex-row
-                              mobile:w-full mobile:items-center mobile:h-[40px]
-                              desktop:w-[360px]" name="product-color-list">
-                            ${addToProductColorListHtml}
-                          </div>
-                          <div class="
+for (let i = 0; i < productListAPIJson.length; i++) {
+let addToProductColorListHtml = '';
+for (let j = 0; j < productListAPIJson[i]['colors'].length; j++) {
+  addToProductColorListHtml += `<div class="
                               cursor-pointer
-                              mobile:mt-[8px]
-                              mobile:text-[12px]
-                              mobile:tracking-[2.4px]
-                              mobile:text-[#000000]
-                              mobile:leading-[14px]
-                              desktop:mt-[10px]
-                              desktop:text-[20px]
-                              desktop:tracking-[4px]
-                              desktop:text-[#3F3A3A]
-                              desktop:leading-[24px]" name="product-name">${productListAPIJson[i].title}</div>
-                          <div class="
-                              cursor-pointer
-                              mobile:mt-[8px]
-                              mobile:mb-[24px]
-                              mobile:text-[12px]
-                              mobile:text-[#000000]
-                              mobile:leading-[14px]
-                              mobile:tracking-[2.4px]
-                              desktop:mt-[10px]
-                              desktop:mb-[64px]
-                              desktop:text-[20px]
-                              desktop:text-[#3F3A3A]
-                              desktop:leading-[24px]
-                              desktop:tracking-[4px]" name="product-price">TWD.${productListAPIJson[i].price}</div>
-                        </div>`;
-  }
-  productListHtmlDivElement.innerHTML = addToProductListHtmlString;
-  }
-  */
+                              bg-[#${productListAPIJson[i]['colors'][j].code}]
+                              border-solid border-[1px] border-[#d3d3d3]
+                              mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
+                              desktop:w-[24px]
+                              desktop:h-[24px]
+                              desktop:mt-[20px]
+                              desktop:mr-[10px]" name="product-colors"></div>`;
+}
+addToProductListHtmlString += `<div class="
+                        flex flex-col
+                        mobile:w-[calc(50%-27px)] mobile:mx-[3px]
+                        desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]" name="product">
+                      <img src="${productListAPIJson[i].main_image}" class="
+                          object-cover
+                          mobile:w-full mobile:h-full
+                          desktop:w-[360px] desktop:h-[480px]" name="product-image" />
+                      <div class="
+                          flex flex-row
+                          mobile:w-full mobile:items-center mobile:h-[40px]
+                          desktop:w-[360px]" name="product-color-list">
+                        ${addToProductColorListHtml}
+                      </div>
+                      <div class="
+                          cursor-pointer
+                          mobile:mt-[8px]
+                          mobile:text-[12px]
+                          mobile:tracking-[2.4px]
+                          mobile:text-[#000000]
+                          mobile:leading-[14px]
+                          desktop:mt-[10px]
+                          desktop:text-[20px]
+                          desktop:tracking-[4px]
+                          desktop:text-[#3F3A3A]
+                          desktop:leading-[24px]" name="product-name">${productListAPIJson[i].title}</div>
+                      <div class="
+                          cursor-pointer
+                          mobile:mt-[8px]
+                          mobile:mb-[24px]
+                          mobile:text-[12px]
+                          mobile:text-[#000000]
+                          mobile:leading-[14px]
+                          mobile:tracking-[2.4px]
+                          desktop:mt-[10px]
+                          desktop:mb-[64px]
+                          desktop:text-[20px]
+                          desktop:text-[#3F3A3A]
+                          desktop:leading-[24px]
+                          desktop:tracking-[4px]" name="product-price">TWD.${productListAPIJson[i].price}</div>
+                    </div>`;
+}
+productListHtmlDivElement.innerHTML = addToProductListHtmlString;
+}
+*/
 
     {
       // w0p4
@@ -3190,13 +3214,14 @@
                                         mobile:w-[calc(50%-27px)]
                                         desktop:w-[360px] desktop:h-[666px] mobile:mx-[3px] desktop:mx-[20px]" name="product">
                                       <img src="${productListAPIJsonData[i].main_image}" class="
+                                          cursor-pointer
                                           object-cover
                                           mobile:w-full mobile:h-full
                                           desktop:w-[360px] desktop:h-[480px]" name="product-image" />
                                       <div class="
-                                          flex flex-row
-                                          mobile:w-full mobile:items-center mobile:h-[40px]
-                                          desktop:w-[360px]" name="product-color-list">
+                                                flex flex-row
+                                                mobile:w-full mobile:items-center mobile:h-[40px]
+                                                desktop:w-[360px]" name="product-color-list">
                                         ${addToProductColorListHtml}
                                       </div>
                                       <div class="
@@ -3239,8 +3264,9 @@
       document
         .querySelector('img[name="top-nav-bar-website-logo"]')
         .addEventListener('click', (e) => {
-          showCategoryNavBarTextColorBrown('all');
+          history.replaceState(null, null, location.pathname);
           changePage('main-page');
+          showCategoryNavBarTextColorBrown('all');
           mode = 'all';
           renderPageNumber = 0;
           showProductListUIByCategoryPagingOrSearchKeyWord();
@@ -3248,8 +3274,9 @@
       document
         .querySelector('div[name="top-nav-bar-desktop-women-dresses"]')
         .addEventListener('click', (e) => {
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          history.replaceState(null, null, '?category=women');
           changePage('main-page');
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
           mode = 'women';
           renderPageNumber = 0;
           showProductListUIByCategoryPagingOrSearchKeyWord();
@@ -3257,8 +3284,9 @@
       document
         .querySelector('div[name="top-nav-bar-desktop-men-dresses"]')
         .addEventListener('click', (e) => {
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          history.replaceState(null, null, '?category=men');
           changePage('main-page');
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
           mode = 'men';
           renderPageNumber = 0;
           showProductListUIByCategoryPagingOrSearchKeyWord();
@@ -3266,8 +3294,9 @@
       document
         .querySelector('div[name="top-nav-bar-desktop-accessories"]')
         .addEventListener('click', (e) => {
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          history.replaceState(null, null, '?category=accessories');
           changePage('main-page');
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
           mode = 'accessories';
           renderPageNumber = 0;
           showProductListUIByCategoryPagingOrSearchKeyWord();
@@ -3275,8 +3304,9 @@
       document
         .querySelector('div[name="top-nav-bar-below-mobile-women-dresses"]')
         .addEventListener('click', (e) => {
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          history.replaceState(null, null, '?category=women');
           changePage('main-page');
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
           mode = 'women';
           renderPageNumber = 0;
           showProductListUIByCategoryPagingOrSearchKeyWord('women', 0);
@@ -3284,8 +3314,9 @@
       document
         .querySelector('div[name="top-nav-bar-desktop-men-dresses"]')
         .addEventListener('click', (e) => {
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          history.replaceState(null, null, '?category=men');
           changePage('main-page');
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
           mode = 'men';
           renderPageNumber = 0;
           showProductListUIByCategoryPagingOrSearchKeyWord();
@@ -3293,8 +3324,9 @@
       document
         .querySelector('div[name="top-nav-bar-desktop-accessories"]')
         .addEventListener('click', (e) => {
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          history.replaceState(null, null, '?category=accessories');
           changePage('main-page');
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
           mode = 'accessories';
           renderPageNumber = 0;
           showProductListUIByCategoryPagingOrSearchKeyWord();
@@ -3302,8 +3334,9 @@
       document
         .querySelector('div[name="top-nav-bar-below-mobile-women-dresses"]')
         .addEventListener('click', (e) => {
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          history.replaceState(null, null, '?category=women');
           changePage('main-page');
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
           mode = 'women';
           renderPageNumber = 0;
           showProductListUIByCategoryPagingOrSearchKeyWord();
@@ -3311,8 +3344,9 @@
       document
         .querySelector('div[name="top-nav-bar-below-mobile-men-dresses"]')
         .addEventListener('click', (e) => {
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          history.replaceState(null, null, '?category=men');
           changePage('main-page');
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
           mode = 'men';
           renderPageNumber = 0;
           showProductListUIByCategoryPagingOrSearchKeyWord();
@@ -3320,8 +3354,9 @@
       document
         .querySelector('div[name="top-nav-bar-below-mobile-accessories"]')
         .addEventListener('click', (e) => {
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          history.replaceState(null, null, '?category=accessories');
           changePage('main-page');
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
           mode = 'accessories';
           renderPageNumber = 0;
           showProductListUIByCategoryPagingOrSearchKeyWord();
@@ -3359,6 +3394,8 @@
         .querySelector('input[name="top-nav-bar-desktop-search-bar"]')
         .addEventListener('keypress', (e) => {
           if (e.key === 'Enter') {
+            history.replaceState(null, null, `?keyword=${e.target.value}`);
+            changePage('main-page');
             showCategoryNavBarTextColorBrown('all');
             scrollTo(0, 0);
             searchKeyWord = e.target.value;
@@ -3378,6 +3415,8 @@
             e.target.focus();
           } else {
             // clicked right
+            history.replaceState(null, null, `?keyword=${e.target.value}`);
+            changePage('main-page');
             showCategoryNavBarTextColorBrown('all');
             scrollTo(0, 0);
             searchKeyWord = e.target.value;
@@ -3390,6 +3429,8 @@
         .querySelector('input[name="top-nav-bar-mobile-search"]')
         .addEventListener('keypress', (e) => {
           if (e.key === 'Enter') {
+            history.replaceState(null, null, `?keyword=${e.target.value}`);
+            changePage('main-page');
             showCategoryNavBarTextColorBrown('all');
             scrollTo(0, 0);
             searchKeyWord = e.target.value;
@@ -3409,6 +3450,8 @@
             e.target.focus();
           } else {
             // clicked right
+            history.replaceState(null, null, `?keyword=${e.target.value}`);
+            changePage('main-page');
             showCategoryNavBarTextColorBrown('all');
             scrollTo(0, 0);
             searchKeyWord = e.target.value;
@@ -3593,7 +3636,6 @@
           const changeTextColorHtmlDivElement = document.querySelector(
             `div[name="${HtmlDivElementName}"]`
           );
-          console.log(divName);
           if (
             changeTextColorHtmlDivElement.innerHTML.includes(divName) &&
             divName != 'all'
@@ -3656,6 +3698,7 @@
         'main-page',
         'product-page',
         'checkout-page',
+        'profile-page',
         'aboutUs-page',
       ];
       pageHtmlDivElementName.forEach((pageName) => {
@@ -3676,27 +3719,105 @@
     document
       .querySelector('div[name="top-nav-bar-desktop-shopping-cart-box"]')
       .addEventListener('click', (e) => {
+        history.replaceState(null, null, 'checkout');
         showCategoryNavBarTextColorBrown('all');
         changePage('checkout-page');
       });
     document
-      .querySelector('div[name="bottom-nav-bar-mobile-stick-shopping-cart-box"]')
+      .querySelector(
+        'div[name="bottom-nav-bar-mobile-stick-shopping-cart-box"]'
+      )
       .addEventListener('click', (e) => {
+        history.replaceState(null, null, 'checkout');
         showCategoryNavBarTextColorBrown('all');
         changePage('checkout-page');
+      });
+    document
+      .querySelector('div[name="top-nav-bar-desktop-profile-box"]')
+      .addEventListener('click', (e) => {
+        history.replaceState(null, null, 'profile');
+        showCategoryNavBarTextColorBrown('all');
+        changePage('profile-page');
+      });
+    document
+      .querySelector(
+        'div[name="bottom-nav-bar-mobile-stick-shopping-profile-box"]'
+      )
+      .addEventListener('click', (e) => {
+        history.replaceState(null, null, 'profile');
+        showCategoryNavBarTextColorBrown('all');
+        changePage('profile-page');
       });
     document
       .querySelector('div[name="bottom-nav-bar-desktop-info-about"]')
       .addEventListener('click', (e) => {
+        history.replaceState(null, null, 'aboutus');
         showCategoryNavBarTextColorBrown('all');
         changePage('aboutUs-page');
       });
     document
       .querySelector('div[name="bottom-nav-bar-mobile-info-about"]')
       .addEventListener('click', (e) => {
+        history.replaceState(null, null, 'aboutus');
         showCategoryNavBarTextColorBrown('all');
         changePage('aboutUs-page');
       });
+
+    // // how-can-i-get-query-string-values-in-javascript https://stackoverflow.com/a/901144
+    // const params = new Proxy(new URLSearchParams(window.location.search), {
+    //   get: (searchParams, prop) => searchParams.get(prop),
+    // });
+    // // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+    // let value = params.some_key; // "some_value"
+
+    // // How to detect if URL has changed after hash in JavaScript https://stackoverflow.com/a/52809105
+    // window.addEventListener('locationchange', function () {
+    //   console.log('location changed!');
+    // });
+
+    // Listener event for when URL parameters change https://stackoverflow.com/a/73183359
+    let previousUrl = window.location.href;
+    const observer = new MutationObserver(function (mutations) {
+      if (window.location.href !== previousUrl) {
+        console.log(
+          `URL changed from ${previousUrl} to ${window.location.href}`
+        );
+        previousUrl = window.location.href;
+      }
+    });
+    const config = { subtree: true, childList: true };
+
+    // start listening to changes
+    observer.observe(document, config);
+
+    // stop listening to changes
+    // observer.disconnect();
+
+    // // Event when window.location.href changes https://stackoverflow.com/a/46428962
+    // var oldHref = document.location.href;
+
+    // window.onload = function () {
+    //   var bodyList = document.querySelector('body');
+
+    //   var observer = new MutationObserver(function (mutations) {
+    //     mutations.forEach(function (mutation) {
+    //       if (oldHref != document.location.href) {
+    //         console.log(
+    //           `URL changed from ${oldHref} to ${document.location.href}`
+    //         );
+    //         oldHref = document.location.href;
+    //         /* Changed ! your code here */
+    //       }
+    //     });
+    //   });
+
+    //   var config = {
+    //     childList: true,
+    //     subtree: true,
+    //   };
+
+    //   observer.observe(bodyList, config);
+    // };
 
     // JavaScript image viewer. https://github.com/fengyuanchen/viewerjs
     // View an image.

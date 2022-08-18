@@ -3019,82 +3019,82 @@
     }
 
     /*
-    {
-    // w0p3
-    // w0p3 Step 1: Connect to RESTful API for Data of All Products
-    // get marketingCampaignAPISlidersPromise for API promise
-    const productListAPIPromise = fetch(
-      'https://api.appworks-school.tw/api/1.0/products/all'
-    ).then((response) => response.json());
-    // get json key "data" in API promise
-    const productListAPIJson = await productListAPIPromise.then(
-      (result) => result.data
-    );
+  {
+  // w0p3
+  // w0p3 Step 1: Connect to RESTful API for Data of All Products
+  // get marketingCampaignAPISlidersPromise for API promise
+  const productListAPIPromise = fetch(
+    'https://api.appworks-school.tw/api/1.0/products/all'
+  ).then((response) => response.json());
+  // get json key "data" in API promise
+  const productListAPIJson = await productListAPIPromise.then(
+    (result) => result.data
+  );
 
-    // w0p3 Step 3: Complete Paging Feature
-    const productListHtmlDivElement = document.querySelector(
-      'div[name="product-list"]'
-    );
-    let addToProductListHtmlString = '';
+  // w0p3 Step 3: Complete Paging Feature
+  const productListHtmlDivElement = document.querySelector(
+    'div[name="product-list"]'
+  );
+  let addToProductListHtmlString = '';
 
-    for (let i = 0; i < productListAPIJson.length; i++) {
-      let addToProductColorListHtml = '';
-      for (let j = 0; j < productListAPIJson[i]['colors'].length; j++) {
-        addToProductColorListHtml += `<div class="
-                                    cursor-pointer
-                                    bg-[#${productListAPIJson[i]['colors'][j].code}]
-                                    border-solid border-[1px] border-[#d3d3d3]
-                                    mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
-                                    desktop:w-[24px]
-                                    desktop:h-[24px]
-                                    desktop:mt-[20px]
-                                    desktop:mr-[10px]" name="product-colors"></div>`;
-      }
-      addToProductListHtmlString += `<div class="
-                              flex flex-col
-                              mobile:w-[calc(50%-27px)] mobile:mx-[3px]
-                              desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]" name="product">
-                            <img src="${productListAPIJson[i].main_image}" class="
-                                object-cover
-                                mobile:w-full mobile:h-full
-                                desktop:w-[360px] desktop:h-[480px]" name="product-image" />
-                            <div class="
-                                flex flex-row
-                                mobile:w-full mobile:items-center mobile:h-[40px]
-                                desktop:w-[360px]" name="product-color-list">
-                              ${addToProductColorListHtml}
-                            </div>
-                            <div class="
-                                cursor-pointer
-                                mobile:mt-[8px]
-                                mobile:text-[12px]
-                                mobile:tracking-[2.4px]
-                                mobile:text-[#000000]
-                                mobile:leading-[14px]
-                                desktop:mt-[10px]
-                                desktop:text-[20px]
-                                desktop:tracking-[4px]
-                                desktop:text-[#3F3A3A]
-                                desktop:leading-[24px]" name="product-name">${productListAPIJson[i].title}</div>
-                            <div class="
-                                cursor-pointer
-                                mobile:mt-[8px]
-                                mobile:mb-[24px]
-                                mobile:text-[12px]
-                                mobile:text-[#000000]
-                                mobile:leading-[14px]
-                                mobile:tracking-[2.4px]
-                                desktop:mt-[10px]
-                                desktop:mb-[64px]
-                                desktop:text-[20px]
-                                desktop:text-[#3F3A3A]
-                                desktop:leading-[24px]
-                                desktop:tracking-[4px]" name="product-price">TWD.${productListAPIJson[i].price}</div>
-                          </div>`;
+  for (let i = 0; i < productListAPIJson.length; i++) {
+    let addToProductColorListHtml = '';
+    for (let j = 0; j < productListAPIJson[i]['colors'].length; j++) {
+      addToProductColorListHtml += `<div class="
+                                  cursor-pointer
+                                  bg-[#${productListAPIJson[i]['colors'][j].code}]
+                                  border-solid border-[1px] border-[#d3d3d3]
+                                  mobile:w-[12px] mobile:h-[12px] mobile:mt-[8px] mobile:mr-[6px]
+                                  desktop:w-[24px]
+                                  desktop:h-[24px]
+                                  desktop:mt-[20px]
+                                  desktop:mr-[10px]" name="product-colors"></div>`;
     }
-    productListHtmlDivElement.innerHTML = addToProductListHtmlString;
-    }
-    */
+    addToProductListHtmlString += `<div class="
+                            flex flex-col
+                            mobile:w-[calc(50%-27px)] mobile:mx-[3px]
+                            desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]" name="product">
+                          <img src="${productListAPIJson[i].main_image}" class="
+                              object-cover
+                              mobile:w-full mobile:h-full
+                              desktop:w-[360px] desktop:h-[480px]" name="product-image" />
+                          <div class="
+                              flex flex-row
+                              mobile:w-full mobile:items-center mobile:h-[40px]
+                              desktop:w-[360px]" name="product-color-list">
+                            ${addToProductColorListHtml}
+                          </div>
+                          <div class="
+                              cursor-pointer
+                              mobile:mt-[8px]
+                              mobile:text-[12px]
+                              mobile:tracking-[2.4px]
+                              mobile:text-[#000000]
+                              mobile:leading-[14px]
+                              desktop:mt-[10px]
+                              desktop:text-[20px]
+                              desktop:tracking-[4px]
+                              desktop:text-[#3F3A3A]
+                              desktop:leading-[24px]" name="product-name">${productListAPIJson[i].title}</div>
+                          <div class="
+                              cursor-pointer
+                              mobile:mt-[8px]
+                              mobile:mb-[24px]
+                              mobile:text-[12px]
+                              mobile:text-[#000000]
+                              mobile:leading-[14px]
+                              mobile:tracking-[2.4px]
+                              desktop:mt-[10px]
+                              desktop:mb-[64px]
+                              desktop:text-[20px]
+                              desktop:text-[#3F3A3A]
+                              desktop:leading-[24px]
+                              desktop:tracking-[4px]" name="product-price">TWD.${productListAPIJson[i].price}</div>
+                        </div>`;
+  }
+  productListHtmlDivElement.innerHTML = addToProductListHtmlString;
+  }
+  */
 
     {
       // w0p4
@@ -3232,234 +3232,6 @@
         });
       }
 
-      function showCategoryNavBarTextColorBrown(divName) {
-        // // method 1
-        // const topNavBarChangeCategoryHtmlDivElement = [document
-        //   .querySelector('div[name="top-nav-bar-desktop-women-dresses"]'), document
-        //     .querySelector('div[name="top-nav-bar-desktop-men-dresses"]'), document
-        //       .querySelector('div[name="top-nav-bar-desktop-accessories"]'), document
-        //         .querySelector('div[name="top-nav-bar-below-mobile-women-dresses"]'), document
-        //           .querySelector('div[name="top-nav-bar-below-mobile-men-dresses"]'), document
-        //             .querySelector('div[name="top-nav-bar-below-mobile-accessories"]')];
-        // if (mode == 'all') {
-        //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove(
-        //     'desktop:text-[#8B572A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[0].classList.add(
-        //     'desktop:text-[#3F3A3A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[1].classList.remove(
-        //     'desktop:text-[#8B572A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[1].classList.add(
-        //     'desktop:text-[#3F3A3A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[2].classList.remove(
-        //     'desktop:text-[#8B572A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[2].classList.add(
-        //     'desktop:text-[#3F3A3A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove(
-        //     'mobile:text-[#ffffff]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[3].classList.add(
-        //     'mobile:text-[#828282]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList.remove(
-        //     'mobile:text-[#ffffff]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList.add(
-        //     'mobile:text-[#828282]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[5].classList.remove(
-        //     'mobile:text-[#ffffff]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[5].classList.add(
-        //     'mobile:text-[#828282]'
-        //   );
-        // } else if (mode == 'women') {
-        //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove(
-        //     'desktop:text-[#3F3A3A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[0].classList.add(
-        //     'desktop:text-[#8B572A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[1].classList.remove(
-        //     'desktop:text-[#8B572A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[1].classList.add(
-        //     'desktop:text-[#3F3A3A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[2].classList.remove(
-        //     'desktop:text-[#8B572A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[2].classList.add(
-        //     'desktop:text-[#3F3A3A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove(
-        //     'mobile:text-[#828282]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[3].classList.add(
-        //     'mobile:text-[#ffffff]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList.remove(
-        //     'mobile:text-[#ffffff]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList.add(
-        //     'mobile:text-[#828282]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[5].classList.remove(
-        //     'mobile:text-[#ffffff]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[5].classList.add(
-        //     'mobile:text-[#828282]'
-        //   );
-        // } else if (mode == 'men') {
-        //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove(
-        //     'desktop:text-[#8B572A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[0].classList.add(
-        //     'desktop:text-[#3F3A3A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[1].classList.remove(
-        //     'desktop:text-[#3F3A3A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[1].classList.add(
-        //     'desktop:text-[#8B572A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[2].classList.remove(
-        //     'desktop:text-[#8B572A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[2].classList.add(
-        //     'desktop:text-[#3F3A3A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove(
-        //     'mobile:text-[#ffffff]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[3].classList.add(
-        //     'mobile:text-[#828282]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList.remove(
-        //     'mobile:text-[#828282]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList.add(
-        //     'mobile:text-[#ffffff]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[5].classList.remove(
-        //     'mobile:text-[#ffffff]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[5].classList.add(
-        //     'mobile:text-[#828282]'
-        //   );
-        // } else if (mode == 'accessories') {
-        //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove(
-        //     'desktop:text-[#8B572A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[0].classList.add(
-        //     'desktop:text-[#3F3A3A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[1].classList.remove(
-        //     'desktop:text-[#8B572A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[1].classList.add(
-        //     'desktop:text-[#3F3A3A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[2].classList.remove(
-        //     'desktop:text-[#3F3A3A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[2].classList.add(
-        //     'desktop:text-[#8B572A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove(
-        //     'mobile:text-[#ffffff]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[3].classList.add(
-        //     'mobile:text-[#828282]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList.remove(
-        //     'mobile:text-[#ffffff]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList.add(
-        //     'mobile:text-[#828282]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[5].classList.remove(
-        //     'mobile:text-[#828282]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[5].classList.add(
-        //     'mobile:text-[#ffffff]'
-        //   );
-        // }
-
-        // method 2
-        const topNavBarChangeCategoryHtmlDivElementName = [
-          'top-nav-bar-desktop-women-dresses',
-          'top-nav-bar-desktop-men-dresses',
-          'top-nav-bar-desktop-accessories',
-          'top-nav-bar-below-mobile-women-dresses',
-          'top-nav-bar-below-mobile-men-dresses',
-          'top-nav-bar-below-mobile-accessories',
-        ];
-
-        topNavBarChangeCategoryHtmlDivElementName.forEach(
-          (HtmlDivElementName) => {
-            const changeTextColorHtmlDivElement = document.querySelector(
-              `div[name="${HtmlDivElementName}"]`
-            );
-
-            if (changeTextColorHtmlDivElement.innerHTML.includes(divName)) {
-              if (
-                changeTextColorHtmlDivElement.classList.contains(
-                  'mobile:text-[#828282]'
-                )
-              ) {
-                changeTextColorHtmlDivElement.classList.remove(
-                  'mobile:text-[#828282]'
-                );
-                changeTextColorHtmlDivElement.classList.add(
-                  'mobile:text-[#ffffff]'
-                );
-              } else if (
-                changeTextColorHtmlDivElement.classList.contains(
-                  'desktop:text-[#3F3A3A]'
-                )
-              ) {
-                changeTextColorHtmlDivElement.classList.remove(
-                  'desktop:text-[#3F3A3A]'
-                );
-                changeTextColorHtmlDivElement.classList.add(
-                  'desktop:text-[#8B572A]'
-                );
-              }
-            } else {
-              if (
-                changeTextColorHtmlDivElement.classList.contains(
-                  'mobile:text-[#ffffff]'
-                )
-              ) {
-                changeTextColorHtmlDivElement.classList.remove(
-                  'mobile:text-[#ffffff]'
-                );
-                changeTextColorHtmlDivElement.classList.add(
-                  'mobile:text-[#828282]'
-                );
-              } else if (
-                changeTextColorHtmlDivElement.classList.contains(
-                  'desktop:text-[#8B572A]'
-                )
-              ) {
-                changeTextColorHtmlDivElement.classList.remove(
-                  'desktop:text-[#8B572A]'
-                );
-                changeTextColorHtmlDivElement.classList.add(
-                  'desktop:text-[#3F3A3A]'
-                );
-              }
-            }
-          }
-        );
-      }
-
       mode = 'all';
       renderPageNumber = 0;
       showProductListUIByCategoryPagingOrSearchKeyWord();
@@ -3467,6 +3239,7 @@
       document
         .querySelector('img[name="top-nav-bar-website-logo"]')
         .addEventListener('click', (e) => {
+          showCategoryNavBarTextColorBrown('all');
           changePage('main-page');
           mode = 'all';
           renderPageNumber = 0;
@@ -3586,6 +3359,7 @@
         .querySelector('input[name="top-nav-bar-desktop-search-bar"]')
         .addEventListener('keypress', (e) => {
           if (e.key === 'Enter') {
+            showCategoryNavBarTextColorBrown('all');
             scrollTo(0, 0);
             searchKeyWord = e.target.value;
             searchMode = true;
@@ -3604,6 +3378,7 @@
             e.target.focus();
           } else {
             // clicked right
+            showCategoryNavBarTextColorBrown('all');
             scrollTo(0, 0);
             searchKeyWord = e.target.value;
             searchMode = true;
@@ -3615,6 +3390,7 @@
         .querySelector('input[name="top-nav-bar-mobile-search"]')
         .addEventListener('keypress', (e) => {
           if (e.key === 'Enter') {
+            showCategoryNavBarTextColorBrown('all');
             scrollTo(0, 0);
             searchKeyWord = e.target.value;
             searchMode = true;
@@ -3633,12 +3409,245 @@
             e.target.focus();
           } else {
             // clicked right
+            showCategoryNavBarTextColorBrown('all');
             scrollTo(0, 0);
             searchKeyWord = e.target.value;
             searchMode = true;
             showProductListUIByCategoryPagingOrSearchKeyWord();
           }
         });
+    }
+
+    // w0p4 function
+    function showCategoryNavBarTextColorBrown(divName) {
+      // // method 1
+      // const topNavBarChangeCategoryHtmlDivElement = [document
+      //   .querySelector('div[name="top-nav-bar-desktop-women-dresses"]'), document
+      //     .querySelector('div[name="top-nav-bar-desktop-men-dresses"]'), document
+      //       .querySelector('div[name="top-nav-bar-desktop-accessories"]'), document
+      //         .querySelector('div[name="top-nav-bar-below-mobile-women-dresses"]'), document
+      //           .querySelector('div[name="top-nav-bar-below-mobile-men-dresses"]'), document
+      //             .querySelector('div[name="top-nav-bar-below-mobile-accessories"]')];
+      // if (mode == 'all') {
+      //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove(
+      //     'desktop:text-[#8B572A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[0].classList.add(
+      //     'desktop:text-[#3F3A3A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[1].classList.remove(
+      //     'desktop:text-[#8B572A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[1].classList.add(
+      //     'desktop:text-[#3F3A3A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[2].classList.remove(
+      //     'desktop:text-[#8B572A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[2].classList.add(
+      //     'desktop:text-[#3F3A3A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove(
+      //     'mobile:text-[#ffffff]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[3].classList.add(
+      //     'mobile:text-[#828282]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[4].classList.remove(
+      //     'mobile:text-[#ffffff]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[4].classList.add(
+      //     'mobile:text-[#828282]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[5].classList.remove(
+      //     'mobile:text-[#ffffff]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[5].classList.add(
+      //     'mobile:text-[#828282]'
+      //   );
+      // } else if (mode == 'women') {
+      //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove(
+      //     'desktop:text-[#3F3A3A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[0].classList.add(
+      //     'desktop:text-[#8B572A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[1].classList.remove(
+      //     'desktop:text-[#8B572A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[1].classList.add(
+      //     'desktop:text-[#3F3A3A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[2].classList.remove(
+      //     'desktop:text-[#8B572A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[2].classList.add(
+      //     'desktop:text-[#3F3A3A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove(
+      //     'mobile:text-[#828282]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[3].classList.add(
+      //     'mobile:text-[#ffffff]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[4].classList.remove(
+      //     'mobile:text-[#ffffff]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[4].classList.add(
+      //     'mobile:text-[#828282]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[5].classList.remove(
+      //     'mobile:text-[#ffffff]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[5].classList.add(
+      //     'mobile:text-[#828282]'
+      //   );
+      // } else if (mode == 'men') {
+      //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove(
+      //     'desktop:text-[#8B572A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[0].classList.add(
+      //     'desktop:text-[#3F3A3A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[1].classList.remove(
+      //     'desktop:text-[#3F3A3A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[1].classList.add(
+      //     'desktop:text-[#8B572A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[2].classList.remove(
+      //     'desktop:text-[#8B572A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[2].classList.add(
+      //     'desktop:text-[#3F3A3A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove(
+      //     'mobile:text-[#ffffff]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[3].classList.add(
+      //     'mobile:text-[#828282]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[4].classList.remove(
+      //     'mobile:text-[#828282]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[4].classList.add(
+      //     'mobile:text-[#ffffff]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[5].classList.remove(
+      //     'mobile:text-[#ffffff]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[5].classList.add(
+      //     'mobile:text-[#828282]'
+      //   );
+      // } else if (mode == 'accessories') {
+      //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove(
+      //     'desktop:text-[#8B572A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[0].classList.add(
+      //     'desktop:text-[#3F3A3A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[1].classList.remove(
+      //     'desktop:text-[#8B572A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[1].classList.add(
+      //     'desktop:text-[#3F3A3A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[2].classList.remove(
+      //     'desktop:text-[#3F3A3A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[2].classList.add(
+      //     'desktop:text-[#8B572A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove(
+      //     'mobile:text-[#ffffff]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[3].classList.add(
+      //     'mobile:text-[#828282]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[4].classList.remove(
+      //     'mobile:text-[#ffffff]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[4].classList.add(
+      //     'mobile:text-[#828282]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[5].classList.remove(
+      //     'mobile:text-[#828282]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[5].classList.add(
+      //     'mobile:text-[#ffffff]'
+      //   );
+      // }
+
+      // method 2
+      const topNavBarChangeCategoryHtmlDivElementName = [
+        'top-nav-bar-desktop-women-dresses',
+        'top-nav-bar-desktop-men-dresses',
+        'top-nav-bar-desktop-accessories',
+        'top-nav-bar-below-mobile-women-dresses',
+        'top-nav-bar-below-mobile-men-dresses',
+        'top-nav-bar-below-mobile-accessories',
+      ];
+
+      topNavBarChangeCategoryHtmlDivElementName.forEach(
+        (HtmlDivElementName) => {
+          const changeTextColorHtmlDivElement = document.querySelector(
+            `div[name="${HtmlDivElementName}"]`
+          );
+          console.log(divName);
+          if (
+            changeTextColorHtmlDivElement.innerHTML.includes(divName) &&
+            divName != 'all'
+          ) {
+            if (
+              changeTextColorHtmlDivElement.classList.contains(
+                'mobile:text-[#828282]'
+              )
+            ) {
+              changeTextColorHtmlDivElement.classList.remove(
+                'mobile:text-[#828282]'
+              );
+              changeTextColorHtmlDivElement.classList.add(
+                'mobile:text-[#ffffff]'
+              );
+            } else if (
+              changeTextColorHtmlDivElement.classList.contains(
+                'desktop:text-[#3F3A3A]'
+              )
+            ) {
+              changeTextColorHtmlDivElement.classList.remove(
+                'desktop:text-[#3F3A3A]'
+              );
+              changeTextColorHtmlDivElement.classList.add(
+                'desktop:text-[#8B572A]'
+              );
+            }
+          } else {
+            if (
+              changeTextColorHtmlDivElement.classList.contains(
+                'mobile:text-[#ffffff]'
+              )
+            ) {
+              changeTextColorHtmlDivElement.classList.remove(
+                'mobile:text-[#ffffff]'
+              );
+              changeTextColorHtmlDivElement.classList.add(
+                'mobile:text-[#828282]'
+              );
+            } else if (
+              changeTextColorHtmlDivElement.classList.contains(
+                'desktop:text-[#8B572A]'
+              )
+            ) {
+              changeTextColorHtmlDivElement.classList.remove(
+                'desktop:text-[#8B572A]'
+              );
+              changeTextColorHtmlDivElement.classList.add(
+                'desktop:text-[#3F3A3A]'
+              );
+            }
+          }
+        }
+      );
     }
 
     // function changePage
@@ -3665,13 +3674,27 @@
       }
     }
     document
+      .querySelector('div[name="top-nav-bar-desktop-shopping-cart-box"]')
+      .addEventListener('click', (e) => {
+        showCategoryNavBarTextColorBrown('all');
+        changePage('checkout-page');
+      });
+    document
+      .querySelector('div[name="bottom-nav-bar-mobile-stick-shopping-cart-box"]')
+      .addEventListener('click', (e) => {
+        showCategoryNavBarTextColorBrown('all');
+        changePage('checkout-page');
+      });
+    document
       .querySelector('div[name="bottom-nav-bar-desktop-info-about"]')
       .addEventListener('click', (e) => {
+        showCategoryNavBarTextColorBrown('all');
         changePage('aboutUs-page');
       });
     document
       .querySelector('div[name="bottom-nav-bar-mobile-info-about"]')
       .addEventListener('click', (e) => {
+        showCategoryNavBarTextColorBrown('all');
         changePage('aboutUs-page');
       });
 

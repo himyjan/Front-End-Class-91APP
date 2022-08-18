@@ -1,77 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-      charset="UTF-8"
-    />
-    <title>STYLiSH</title>
-    <link
-      rel="shortcut icon"
-      href="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"
-      type="image/x-icon"
-    />
-    <!-- <script src="https://unpkg.com/react/umd/react.development.js"></script>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8" />
+  <title>STYLiSH</title>
+  <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"
+    type="image/x-icon" />
+  <!-- <script src="https://unpkg.com/react/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script> -->
 
-    <!-- Don't use this in production: -->
-    <!-- <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
-    <!-- <script src="https://unpkg.com/@tanstack/react-query/build/umd/index.production.js"></script> -->
-    <script src="https://unpkg.com/viewerjs/dist/viewer.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/viewerjs/dist/viewer.min.css"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              clifford: '#da373d',
-            },
-            screens: {
-              mobile: '0px',
-              // => @media (min-width: 640px) { ... }
+  <!-- Don't use this in production: -->
+  <!-- <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
+  <!-- <script src="https://unpkg.com/@tanstack/react-query/build/umd/index.production.js"></script> -->
+  <script src="https://unpkg.com/viewerjs/dist/viewer.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/viewerjs/dist/viewer.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          },
+          screens: {
+            mobile: '0px',
+            // => @media (min-width: 640px) { ... }
 
-              desktop: '1280px',
-              // => @media (min-width: 1280px) { ... }
-            },
+            desktop: '1280px',
+            // => @media (min-width: 1280px) { ... }
           },
         },
-      };
-    </script>
-    <style type="text/tailwindcss">
-      @layer utilities {
+      },
+    };
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
       }
     </style>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Noto Sans TC"
-    />
-    <!-- <link
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Sans TC" />
+  <!-- <link
       href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
       rel="stylesheet"
     />
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script> -->
-    <style>
-      * {
-        margin: 0;
-        font-family: 'Noto Sans TC';
-        font-style: normal;
-      }
-    </style>
-  </head>
+  <style>
+    * {
+      margin: 0;
+      font-family: 'Noto Sans TC';
+      font-style: normal;
+    }
+  </style>
+</head>
 
-  <body class="">
-    <!-- header and top navBar content -->
-    <header class="" name="top-nav">
-      <nav
-        class="fixed top-0 z-[999] w-full mobile:h-[102px] desktop:h-[140px]"
-      >
-        <div
-          class="
+<body class="">
+  <!-- header and top navBar content -->
+  <header class="" name="top-nav">
+    <nav class="fixed top-0 z-[999] w-full mobile:h-[102px] desktop:h-[140px]">
+      <div class="
             flex
             bg-[#ffffff]
             mobile:justify-center mobile:items-center mobile:h-[52px]
@@ -79,23 +64,16 @@
             desktop:justify-start
             desktop:items-center
             desktop:h-[100px]
-          "
-          name="top-nav-bar-box"
-        >
-          <div name="top-nav-bar-website-logo-link">
-            <img
-              class="
+          " name="top-nav-bar-box">
+        <div name="top-nav-bar-website-logo-link">
+          <img class="
                 cursor-pointer
                 mobile:w-[129px] mobile:h-[24px]
                 desktop:w-[258px] desktop:h-[48px] desktop:ml-[60px]
-              "
-              src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055669914406982/logo.png"
-              alt=""
-              name="top-nav-bar-website-logo"
-            />
-          </div>
-          <div
-            class="
+              " src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055669914406982/logo.png" alt=""
+            name="top-nav-bar-website-logo" />
+        </div>
+        <div class="
               desktop:cursor-pointer
               mobile:hidden
               desktop:block
@@ -110,13 +88,10 @@
               desktop:border-solid
               desktop:border-r-[1px]
               desktop:border-[#3F3A3A]
-            "
-            name="top-nav-bar-desktop-women-dresses"
-          >
-            <div name="top-nav-bar-desktop-women-dresses-link">女裝</div>
-          </div>
-          <div
-            class="
+            " name="top-nav-bar-desktop-women-dresses">
+          <div name="top-nav-bar-desktop-women-dresses-link">女裝</div>
+        </div>
+        <div class="
               desktop:cursor-pointer
               mobile:hidden
               desktop:block
@@ -131,13 +106,10 @@
               desktop:border-solid
               desktop:border-r-[1px]
               desktop:border-[#3F3A3A]
-            "
-            name="top-nav-bar-desktop-men-dresses"
-          >
-            <div name="top-nav-bar-desktop-men-dresses-link">男裝</div>
-          </div>
-          <div
-            class="
+            " name="top-nav-bar-desktop-men-dresses">
+          <div name="top-nav-bar-desktop-men-dresses-link">男裝</div>
+        </div>
+        <div class="
               desktop:cursor-pointer
               mobile:hidden
               desktop:block
@@ -152,14 +124,11 @@
               desktop:border-solid
               desktop:border-r-[1px]
               desktop:border-[#3F3A3A]
-            "
-            name="top-nav-bar-desktop-accessories"
-          >
-            <div name="top-nav-bar-desktop-accessories-link">配件</div>
-          </div>
+            " name="top-nav-bar-desktop-accessories">
+          <div name="top-nav-bar-desktop-accessories-link">配件</div>
+        </div>
 
-          <input
-            class="
+        <input class="
               mobile:hidden
               desktop:block
               desktop:w-[214px]
@@ -180,16 +149,9 @@
               desktop:placeholder:text-[20px]
               desktop:placeholder:text-[#8B572A]
               desktop:placeholder:leading-[24px]
-            "
-            type="text"
-            placeholder=""
-            title="search-bar"
-            value=""
-            name="top-nav-bar-desktop-search-bar"
-          />
+            " type="text" placeholder="" title="search-bar" value="" name="top-nav-bar-desktop-search-bar" />
 
-          <div
-            class="
+        <div class="
               mobile:hidden
               desktop:flex
               desktop:cursor-pointer
@@ -199,21 +161,14 @@
               desktop:w-[44px]
               desktop:h-[44px]
               desktop:mr-[42px]
-            "
-            name="top-nav-bar-desktop-shopping-cart-box"
-          >
-            <div name="top-nav-bar-desktop-shopping-cart-box-link">
-              <img
-                src="https://cdn.discordapp.com/attachments/1001702231785099304/1007154394585894962/image.png"
-                alt=""
-                onmouseover="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1006055626180399154/image_1_.png'"
-                onmouseout="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1007154394585894962/image.png'"
-                class=""
-                name="top-nav-bar-desktop-shopping-cart-image"
-              />
-            </div>
-            <div
-              class="
+            " name="top-nav-bar-desktop-shopping-cart-box">
+          <div name="top-nav-bar-desktop-shopping-cart-box-link">
+            <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007154394585894962/image.png" alt=""
+              onmouseover="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1006055626180399154/image_1_.png'"
+              onmouseout="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1007154394585894962/image.png'"
+              class="" name="top-nav-bar-desktop-shopping-cart-image" />
+          </div>
+          <div class="
                 absolute
                 flex
                 justify-center
@@ -226,11 +181,8 @@
                 rounded-[50%]
                 text-[#ffffff] text-[16px]
                 leading-[24px]
-              "
-              name="top-nav-bar-desktop-shopping-cart-notification-numbers"
-            >
-              <div
-                class="
+              " name="top-nav-bar-desktop-shopping-cart-notification-numbers">
+            <div class="
                   animate-ping
                   absolute
                   inline-flex
@@ -239,32 +191,26 @@
                   rounded-full
                   bg-[#8b572a]
                   opacity-75
-                "
-              ></div>
-              1
-            </div>
+                "></div>
+            1
           </div>
+        </div>
 
-          <div name="top-nav-bar-desktop-profile-box">
-            <img
-              class="
+        <div name="top-nav-bar-desktop-profile-box">
+          <img class="
                 mobile:hidden
                 desktop:cursor-pointer
                 desktop:block
                 desktop:w-[40px]
                 desktop:h-[40px]
                 desktop:mr-[54px]
-              "
-              src="https://cdn.discordapp.com/attachments/1001702231785099304/1007154394904666112/profile.png"
-              alt=""
-              onmouseover="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1006055670421925960/profile_1.png'"
-              onmouseout="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1007154394904666112/profile.png'"
-              name="top-nav-bar-desktop-profile"
-            />
-          </div>
+              " src="https://cdn.discordapp.com/attachments/1001702231785099304/1007154394904666112/profile.png" alt=""
+            onmouseover="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1006055670421925960/profile_1.png'"
+            onmouseout="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1007154394904666112/profile.png'"
+            name="top-nav-bar-desktop-profile" />
+        </div>
 
-          <input
-            class="
+        <input class="
               desktop:hidden
               mobile:block
               mobile:absolute
@@ -298,28 +244,18 @@
               mobile:ease-in-out
               mobile:hover:w-[calc(100%-20px)]
               mobile:focus:w-[calc(100%-20px)]
-            "
-            type="text"
-            placeholder=""
-            title="search-bar"
-            value=""
-            name="top-nav-bar-mobile-search"
-          />
-        </div>
+            " type="text" placeholder="" title="search-bar" value="" name="top-nav-bar-mobile-search" />
+      </div>
 
-        <div
-          class="
+      <div class="
             bg-[#313538]
             mobile:flex
             mobile:justify-evenly
             mobile:items-center
             mobile:h-[50px]
             desktop:h-[40px]
-          "
-          name="top-nav-bar-below"
-        >
-          <div
-            class="
+          " name="top-nav-bar-below">
+        <div class="
               mobile:block
               mobile:cursor-pointer
               mobile:text-[16px]
@@ -327,57 +263,42 @@
               mobile:hover:text-[#ffffff]
               mobile:leading-[22px]
               desktop:hidden
-            "
-            name="top-nav-bar-below-mobile-women-dresses"
-          >
-            <div name="top-nav-bar-below-mobile-women-dresses-link">女裝</div>
-          </div>
-          <img
-            class="mobile:block desktop:hidden"
-            src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055671801860126/split.png"
-            alt=""
-          />
-          <div
-            class="
-              mobile:block
-              mobile:cursor-pointer
-              mobile:text-[16px]
-              mobile:text-[#828282]
-              mobile:hover:text-[#ffffff]
-              mobile:leading-[22px]
-              desktop:hidden
-            "
-            name="top-nav-bar-below-mobile-men-dresses"
-          >
-            <div name="top-nav-bar-below-mobile-men-dresses-link">男裝</div>
-          </div>
-          <img
-            class="mobile:block desktop:hidden"
-            src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055671801860126/split.png"
-            alt=""
-          />
-          <div
-            class="
-              mobile:block
-              mobile:cursor-pointer
-              mobile:text-[16px]
-              mobile:text-[#828282]
-              mobile:hover:text-[#ffffff]
-              mobile:leading-[22px]
-              desktop:hidden
-            "
-            name="top-nav-bar-below-mobile-accessories"
-          >
-            <div name="top-nav-bar-below-mobile-accessories-link">配件</div>
-          </div>
+            " name="top-nav-bar-below-mobile-women-dresses">
+          <div name="top-nav-bar-below-mobile-women-dresses-link">女裝</div>
         </div>
-      </nav>
-    </header>
+        <img class="mobile:block desktop:hidden"
+          src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055671801860126/split.png" alt="" />
+        <div class="
+              mobile:block
+              mobile:cursor-pointer
+              mobile:text-[16px]
+              mobile:text-[#828282]
+              mobile:hover:text-[#ffffff]
+              mobile:leading-[22px]
+              desktop:hidden
+            " name="top-nav-bar-below-mobile-men-dresses">
+          <div name="top-nav-bar-below-mobile-men-dresses-link">男裝</div>
+        </div>
+        <img class="mobile:block desktop:hidden"
+          src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055671801860126/split.png" alt="" />
+        <div class="
+              mobile:block
+              mobile:cursor-pointer
+              mobile:text-[16px]
+              mobile:text-[#828282]
+              mobile:hover:text-[#ffffff]
+              mobile:leading-[22px]
+              desktop:hidden
+            " name="top-nav-bar-below-mobile-accessories">
+          <div name="top-nav-bar-below-mobile-accessories-link">配件</div>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-    <!-- main body content -->
-    <div class="" name="main-page" id="main-page">
-      <div
-        class="
+  <!-- main body content -->
+  <div class="" name="main-page" id="main-page">
+    <div class="
           bg-center bg-cover
           w-full
           ease-out
@@ -385,11 +306,8 @@
           transition-[background-image]
           mobile:h-[185px] mobile:mt-[102px]
           desktop:h-[500px] desktop:mt-[140px]
-        "
-        name="slides"
-      >
-        <div
-          class="
+        " name="slides">
+      <div class="
             relative
             h-full
             left-0
@@ -397,12 +315,9 @@
             mx-auto
             max-w-[1160px]
             mobile:w-[calc(100%-48px)]
-          "
-          name="slides-container"
-        >
-          <div class="absolute w-full" name="slides-slidesTextMain">
-            <div
-              class="
+          " name="slides-container">
+        <div class="absolute w-full" name="slides-slidesTextMain">
+          <div class="
                 cursor-pointer
                 text-left
                 mobile:mt-[36px] mobile:text-[15px] mobile:leading-[28px]
@@ -410,28 +325,22 @@
                 desktop:text-[30px]
                 desktop:leading-[57px]
                 desktop:text-[#070707]
-              "
-              name="slides-text-main"
-            >
-              <!-- 於是<br />
+              " name="slides-text-main">
+            <!-- 於是<br />
             我也想要給你<br />
             一個那麼美好的自己。<br /> -->
-            </div>
-            <div
-              class="
+          </div>
+          <div class="
                 cursor-pointer
                 text-left
                 mobile:text-[12px] mobile:leading-[28px]
                 desktop:text-[20px] desktop:leading-[64px]
-              "
-              name="slides-text-describe"
-            >
-              <!-- 不朽《與自己和好如初》 -->
-            </div>
+              " name="slides-text-describe">
+            <!-- 不朽《與自己和好如初》 -->
           </div>
         </div>
-        <div
-          class="
+      </div>
+      <div class="
             absolute
             flex
             justify-center
@@ -443,10 +352,8 @@
             max-w-[1200px]
             mobile:mt-[265px]
             desktop:mt-[596px]
-          "
-          name="dot-box"
-        >
-          <!-- <div class="
+          " name="dot-box">
+        <!-- <div class="
         cursor-pointer
         bg-no-repeat
         bg-cover
@@ -526,22 +433,19 @@
         bg-[#ffffff]/40
         " index=${i} id=${apiJson[i].id} product_id=${apiJson[i].product_id} name="dot
         "></div> -->
-        </div>
       </div>
+    </div>
 
-      <div class="flex flex-col justify-center w-full">
-        <div
-          class="
+    <div class="flex flex-col justify-center w-full">
+      <div class="
             flex flex-wrap
             w-full
             mobile:mx-[21px]
             desktop:mx-auto
             mobile:mt-[15px]
             desktop:mt-[70px] desktop:max-w-[1200px]
-          "
-          name="product-list"
-        >
-          <!-- <div
+          " name="product-list">
+        <!-- <div
             class="
               flex flex-col
               mobile:w-[calc(50%-27px)] mobile:mx-[3px]
@@ -1231,11 +1135,10 @@
               TWD.799
             </div>
           </div> -->
-        </div>
-        <div role="status" class="mx-auto animate-bounce" name="spinner">
-          <div class="animate-pulse">
-            <svg
-              class="
+      </div>
+      <div role="status" class="mx-auto animate-bounce" name="spinner">
+        <div class="animate-pulse">
+          <svg class="
                 inline
                 mr-2
                 w-32
@@ -1244,39 +1147,29 @@
                 animate-spin
                 dark:text-gray-600
                 fill-orange-600
-              "
-              viewBox="0 0 100 101"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-                fill="currentColor"
-              />
-              <path
-                d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-                fill="currentFill"
-              />
-            </svg>
-            <span class="sr-only">Loading...</span>
-          </div>
+              " viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+              fill="currentColor" />
+            <path
+              d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+              fill="currentFill" />
+          </svg>
+          <span class="sr-only">Loading...</span>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="hidden" name="product-page" id="product-page">
-      <div
-        class="
+  <div class="hidden" name="product-page" id="product-page">
+    <div class="
           flex flex-col
           w-full
           mx-auto
           mobile:mt-[102px] mobile:max-w-[1070px]
           desktop:mt-[140px] desktop:max-w-[960px]
-        "
-        name="detail-wrapper"
-        id=""
-      >
-        <div class="" name="detail-container"></div>
+        " name="detail-wrapper" id="">
+      <div class="" name="detail-container">
         <!-- <div
           class="
             flex
@@ -1791,78 +1684,59 @@
         </div> -->
       </div>
     </div>
+  </div>
 
-    <div class="hidden" name="checkout-page" id="checkout-page">
-      <div
-        class="
+  <div class="hidden" name="checkout-page" id="checkout-page">
+    <div class="
           flex flex-col
           w-full
           mx-auto
           mobile:mt-[102px] mobile:max-w-[1070px]
           desktop:mt-[140px] desktop:max-w-[1160px]
-        "
-        name=""
-        id=""
-      >
-        <div class="flex flex-col mobile:mx-[24px] desktop:mx-0" name="" id="">
-          <div
-            class="
+        " name="" id="">
+      <div class="flex flex-col mobile:mx-[24px] desktop:mx-0" name="" id="">
+        <div class="
               flex flex-row
               mobile:mt-[20px]
               desktop:mt-[51px] desktop:items-start
-            "
-            id="cart-title-box"
-          >
-            <div
-              class="
+            " id="cart-title-box">
+          <div class="
                 inline-block
                 font-bold
                 text-[#3f3a3a] text-[16px]
                 leading-[19px]
                 mobile:mr-0
                 desktop:mr-[468px]
-              "
-              id="cart-title"
-            >
-              購物車(3)
-            </div>
-            <div
-              class="
+              " id="cart-title">
+            購物車(3)
+          </div>
+          <div class="
                 text-[#3f3a3a] text-[16px]
                 leading-[19px]
                 mobile:hidden mobile:mr-0
                 desktop:inline-block desktop:mr-[160px]
-              "
-              id="cart-title"
-            >
-              數量
-            </div>
-            <div
-              class="
+              " id="cart-title">
+            數量
+          </div>
+          <div class="
                 text-[#3f3a3a] text-[16px]
                 leading-[19px]
                 mobile:hidden mobile:mr-0
                 desktop:inline-block desktop:mr-[160px]
-              "
-              id="cart-title"
-            >
-              單價
-            </div>
-            <div
-              class="
+              " id="cart-title">
+            單價
+          </div>
+          <div class="
                 text-[#3f3a3a] text-[16px]
                 leading-[19px]
                 mobile:hidden
                 desktop:inline-block
-              "
-              id="cart-title"
-            >
-              小計
-            </div>
+              " id="cart-title">
+            小計
           </div>
+        </div>
 
-          <div
-            class="
+        <div class="
               w-full
               mobile:mt-0
               desktop:mt-[16px]
@@ -1870,22 +1744,16 @@
               desktop:border-[1px]
               desktop:border-[#979797]
               mobile:border-none
-            "
-          >
-            <div
-              class="
+            ">
+          <div class="
                 relative
                 flex
                 mobile:flex-col
                 desktop:flex-row
                 mobile:mt-[10px] mobile:ml-0
                 desktop:mt-[30px] desktop:ml-[32px]
-              "
-              name=""
-              id=""
-            >
-              <div
-                class="
+              " name="" id="">
+            <div class="
                   flex flex-row
                   w-full
                   h-0
@@ -1893,84 +1761,55 @@
                   desktop:hidden desktop:my-0
                   content-['']
                   border-solid border-[#3f3a3a] border-b-[1px]
-                "
-                id="split-border"
-              ></div>
-              <div class="flex flex-row" name="" id="">
-                <img
-                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251332052295720/image.png"
-                  alt=""
-                  class="object-cover w-[114px] h-[152px]"
-                  name="product-image"
-                  id=""
-                />
-                <div
-                  class="
+                " id="split-border"></div>
+            <div class="flex flex-row" name="" id="">
+              <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251332052295720/image.png" alt=""
+                class="object-cover w-[114px] h-[152px]" name="product-image" id="" />
+              <div class="
                     flex flex-col
                     mobile:w-full mobile:ml-[10px]
                     desktop:w-[354px] desktop:ml-[16px]
-                  "
-                  name=""
-                  id=""
-                >
-                  <div
-                    class="
+                  " name="" id="">
+                <div class="
                       text-[#000000]
                       mobile:text-[14px] mobile:leading-[17px]
                       desktop:text-[16px] desktop:leading-[19px]
-                    "
-                    name=""
-                    id=""
-                  >
-                    前開衩扭結洋裝
-                  </div>
-                  <div
-                    class="
+                    " name="" id="">
+                  前開衩扭結洋裝
+                </div>
+                <div class="
                       mobile:mt-[20px]
                       text-[#3f3a3a]
                       mobile:text-[14px] mobile:leading-[17px]
                       desktop:mt-[18px]
                       desktop:text-[16px]
                       desktop:leading-[19px]
-                    "
-                    name=""
-                    id=""
-                  >
-                    201807201824
-                  </div>
-                  <div
-                    class="
+                    " name="" id="">
+                  201807201824
+                </div>
+                <div class="
                       mobile:mt-[24px]
                       text-[#3f3a3a]
                       mobile:text-[14px] mobile:leading-[17px]
                       desktop:mt-[22px]
                       desktop:text-[16px]
                       desktop:leading-[19px]
-                    "
-                    name=""
-                    id=""
-                  >
-                    顏色｜白
-                  </div>
-                  <div
-                    class="
+                    " name="" id="">
+                  顏色｜白
+                </div>
+                <div class="
                       mobile:mt-[12px]
                       text-[#3f3a3a]
                       mobile:text-[14px] mobile:leading-[17px]
                       desktop:mt-[10px]
                       desktop:text-[16px]
                       desktop:leading-[19px]
-                    "
-                    name=""
-                    id=""
-                  >
-                    尺寸｜M
-                  </div>
+                    " name="" id="">
+                  尺寸｜M
                 </div>
-                <img
-                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007859059120156743/trash.png"
-                  alt=""
-                  class="
+              </div>
+              <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007859059120156743/trash.png" alt=""
+                class="
                     absolute
                     object-cover
                     w-[44px]
@@ -1979,18 +1818,22 @@
                     desktop:left-[calc(100%-74px)]
                     mobile:mt-0
                     desktop:mt-[54px]
-                  "
-                  name="product-image"
-                  id=""
-                />
+                  " name="product-image" id="" />
+            </div>
+            <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" name="" id="">
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                數量
               </div>
-              <div
-                class="flex flex-row mobile:mt-[20px] desktop:mt-0"
-                name=""
-                id=""
-              >
-                <div
-                  class="
+              <div class="
                     text-[#3f3a3a]
                     mobile:block
                     mobile:w-[104px]
@@ -1999,277 +1842,29 @@
                     mobile:text-[14px]
                     mobile:leading-[17px]
                     desktop:hidden
-                  "
-                  id="cart-title"
-                >
-                  數量
-                </div>
-                <div
-                  class="
-                    text-[#3f3a3a]
-                    mobile:block
-                    mobile:w-[104px]
-                    mobile:h-[17px]
-                    mobile:text-center
-                    mobile:text-[14px]
-                    mobile:leading-[17px]
-                    desktop:hidden
-                  "
-                  id="cart-title"
-                >
-                  單價
-                </div>
-                <div
-                  class="
-                    text-[#3f3a3a]
-                    mobile:block
-                    mobile:w-[104px]
-                    mobile:h-[17px]
-                    mobile:text-center
-                    mobile:text-[14px]
-                    mobile:leading-[17px]
-                    desktop:hidden
-                  "
-                  id="cart-title"
-                >
-                  小計
-                </div>
+                  " id="cart-title">
+                單價
               </div>
-              <div
-                class="
-                  flex flex-row
-                  items-center
-                  mobile:h-[30px] mobile:mt-[12px] mobile:ml-[12px]
-                  desktop:h-[32px] desktop:mt-[60px] desktop:ml-0
-                "
-                name=""
-                id=""
-              >
-                <select
-                  class="
-                    w-[80px]
-                    mobile:h-[30px] mobile:mr-[12px]
-                    desktop:h-[32px] desktop:mr-[56px]
-                    pl-[16px]
-                    bg-[#F3F3F3]
-                    rounded-[8px]
-                    border-solid border-[1px] border-[#979797]
-                  "
-                  name="amount"
-                  name=""
-                  id=""
-                  title="From"
-                >
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <div
-                  class="
-                    flex
-                    justify-center
-                    items-center
-                    text-[#3f3a3a] text-center
-                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
-                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
-                  "
-                  name=""
-                  id=""
-                >
-                  TWD.799
-                </div>
-                <div
-                  class="
-                    flex
-                    justify-center
-                    items-center
-                    text-[#3f3a3a] text-center
-                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
-                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
-                  "
-                  name=""
-                  id=""
-                >
-                  TWD.799
-                </div>
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                小計
               </div>
             </div>
-            <div
-              class="
-                relative
-                flex
-                mobile:flex-col
-                desktop:flex-row
-                mobile:mt-[10px] mobile:ml-0
-                desktop:mt-[30px] desktop:ml-[32px]
-              "
-              name=""
-              id=""
-            >
-              <div
-                class="
-                  flex flex-row
-                  w-full
-                  h-0
-                  mobile:block mobile:my-[20px]
-                  desktop:hidden desktop:my-0
-                  content-['']
-                  border-solid border-[#3f3a3a] border-b-[1px]
-                "
-                id="split-border"
-              ></div>
-              <div class="flex flex-row" name="" id="">
-                <img
-                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251332052295720/image.png"
-                  alt=""
-                  class="object-cover w-[114px] h-[152px]"
-                  name="product-image"
-                  id=""
-                />
-                <div
-                  class="
-                    flex flex-col
-                    mobile:w-full mobile:ml-[10px]
-                    desktop:w-[354px] desktop:ml-[16px]
-                  "
-                  name=""
-                  id=""
-                >
-                  <div
-                    class="
-                      text-[#000000]
-                      mobile:text-[14px] mobile:leading-[17px]
-                      desktop:text-[16px] desktop:leading-[19px]
-                    "
-                    name=""
-                    id=""
-                  >
-                    前開衩扭結洋裝
-                  </div>
-                  <div
-                    class="
-                      mobile:mt-[20px]
-                      text-[#3f3a3a]
-                      mobile:text-[14px] mobile:leading-[17px]
-                      desktop:mt-[18px]
-                      desktop:text-[16px]
-                      desktop:leading-[19px]
-                    "
-                    name=""
-                    id=""
-                  >
-                    201807201824
-                  </div>
-                  <div
-                    class="
-                      mobile:mt-[24px]
-                      text-[#3f3a3a]
-                      mobile:text-[14px] mobile:leading-[17px]
-                      desktop:mt-[22px]
-                      desktop:text-[16px]
-                      desktop:leading-[19px]
-                    "
-                    name=""
-                    id=""
-                  >
-                    顏色｜白
-                  </div>
-                  <div
-                    class="
-                      mobile:mt-[12px]
-                      text-[#3f3a3a]
-                      mobile:text-[14px] mobile:leading-[17px]
-                      desktop:mt-[10px]
-                      desktop:text-[16px]
-                      desktop:leading-[19px]
-                    "
-                    name=""
-                    id=""
-                  >
-                    尺寸｜M
-                  </div>
-                </div>
-                <img
-                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007859059120156743/trash.png"
-                  alt=""
-                  class="
-                    absolute
-                    object-cover
-                    w-[44px]
-                    h-[44px]
-                    mobile:left-[calc(100%-44px)]
-                    desktop:left-[calc(100%-74px)]
-                    mobile:mt-0
-                    desktop:mt-[54px]
-                  "
-                  name="product-image"
-                  id=""
-                />
-              </div>
-              <div
-                class="flex flex-row mobile:mt-[20px] desktop:mt-0"
-                name=""
-                id=""
-              >
-                <div
-                  class="
-                    text-[#3f3a3a]
-                    mobile:block
-                    mobile:w-[104px]
-                    mobile:h-[17px]
-                    mobile:text-center
-                    mobile:text-[14px]
-                    mobile:leading-[17px]
-                    desktop:hidden
-                  "
-                  id="cart-title"
-                >
-                  數量
-                </div>
-                <div
-                  class="
-                    text-[#3f3a3a]
-                    mobile:block
-                    mobile:w-[104px]
-                    mobile:h-[17px]
-                    mobile:text-center
-                    mobile:text-[14px]
-                    mobile:leading-[17px]
-                    desktop:hidden
-                  "
-                  id="cart-title"
-                >
-                  單價
-                </div>
-                <div
-                  class="
-                    text-[#3f3a3a]
-                    mobile:block
-                    mobile:w-[104px]
-                    mobile:h-[17px]
-                    mobile:text-center
-                    mobile:text-[14px]
-                    mobile:leading-[17px]
-                    desktop:hidden
-                  "
-                  id="cart-title"
-                >
-                  小計
-                </div>
-              </div>
-              <div
-                class="
+            <div class="
                   flex flex-row
                   items-center
                   mobile:h-[30px] mobile:mt-[12px] mobile:ml-[12px]
                   desktop:h-[32px] desktop:mt-[60px] desktop:ml-0
-                "
-                name=""
-                id=""
-              >
-                <select
-                  class="
+                " name="" id="">
+              <select class="
                     w-[80px]
                     mobile:h-[30px] mobile:mr-[12px]
                     desktop:h-[32px] desktop:mr-[56px]
@@ -2277,274 +1872,347 @@
                     bg-[#F3F3F3]
                     rounded-[8px]
                     border-solid border-[1px] border-[#979797]
-                  "
-                  name="amount"
-                  name=""
-                  id=""
-                  title="From"
-                >
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <div
-                  class="
+                  " name="amount" name="" id="" title="From">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+              <div class="
                     flex
                     justify-center
                     items-center
                     text-[#3f3a3a] text-center
                     desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
                     mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
-                  "
-                  name=""
-                  id=""
-                >
-                  TWD.799
-                </div>
-                <div
-                  class="
-                    flex
-                    justify-center
-                    items-center
-                    text-[#3f3a3a] text-center
-                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
-                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
-                  "
-                  name=""
-                  id=""
-                >
-                  TWD.799
-                </div>
+                  " name="" id="">
+                TWD.799
               </div>
-            </div>
-            <div
-              class="
-                relative
-                flex
-                mobile:flex-col
-                desktop:flex-row
-                mobile:mt-[10px] mobile:ml-0
-                desktop:mt-[30px] desktop:ml-[32px]
-              "
-              name=""
-              id=""
-            >
-              <div
-                class="
-                  flex flex-row
-                  w-full
-                  h-0
-                  mobile:block mobile:my-[20px]
-                  desktop:hidden desktop:my-0
-                  content-['']
-                  border-solid border-[#3f3a3a] border-b-[1px]
-                "
-                id="split-border"
-              ></div>
-              <div class="flex flex-row" name="" id="">
-                <img
-                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251332052295720/image.png"
-                  alt=""
-                  class="object-cover w-[114px] h-[152px]"
-                  name="product-image"
-                  id=""
-                />
-                <div
-                  class="
-                    flex flex-col
-                    mobile:w-full mobile:ml-[10px]
-                    desktop:w-[354px] desktop:ml-[16px]
-                  "
-                  name=""
-                  id=""
-                >
-                  <div
-                    class="
-                      text-[#000000]
-                      mobile:text-[14px] mobile:leading-[17px]
-                      desktop:text-[16px] desktop:leading-[19px]
-                    "
-                    name=""
-                    id=""
-                  >
-                    前開衩扭結洋裝
-                  </div>
-                  <div
-                    class="
-                      mobile:mt-[20px]
-                      text-[#3f3a3a]
-                      mobile:text-[14px] mobile:leading-[17px]
-                      desktop:mt-[18px]
-                      desktop:text-[16px]
-                      desktop:leading-[19px]
-                    "
-                    name=""
-                    id=""
-                  >
-                    201807201824
-                  </div>
-                  <div
-                    class="
-                      mobile:mt-[24px]
-                      text-[#3f3a3a]
-                      mobile:text-[14px] mobile:leading-[17px]
-                      desktop:mt-[22px]
-                      desktop:text-[16px]
-                      desktop:leading-[19px]
-                    "
-                    name=""
-                    id=""
-                  >
-                    顏色｜白
-                  </div>
-                  <div
-                    class="
-                      mobile:mt-[12px]
-                      text-[#3f3a3a]
-                      mobile:text-[14px] mobile:leading-[17px]
-                      desktop:mt-[10px]
-                      desktop:text-[16px]
-                      desktop:leading-[19px]
-                    "
-                    name=""
-                    id=""
-                  >
-                    尺寸｜M
-                  </div>
-                </div>
-                <img
-                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007859059120156743/trash.png"
-                  alt=""
-                  class="
-                    absolute
-                    object-cover
-                    w-[44px]
-                    h-[44px]
-                    mobile:left-[calc(100%-44px)]
-                    desktop:left-[calc(100%-74px)]
-                    mobile:mt-0
-                    desktop:mt-[54px]
-                  "
-                  name="product-image"
-                  id=""
-                />
-              </div>
-              <div
-                class="flex flex-row mobile:mt-[20px] desktop:mt-0"
-                name=""
-                id=""
-              >
-                <div
-                  class="
-                    text-[#3f3a3a]
-                    mobile:block
-                    mobile:w-[104px]
-                    mobile:h-[17px]
-                    mobile:text-center
-                    mobile:text-[14px]
-                    mobile:leading-[17px]
-                    desktop:hidden
-                  "
-                  id="cart-title"
-                >
-                  數量
-                </div>
-                <div
-                  class="
-                    text-[#3f3a3a]
-                    mobile:block
-                    mobile:w-[104px]
-                    mobile:h-[17px]
-                    mobile:text-center
-                    mobile:text-[14px]
-                    mobile:leading-[17px]
-                    desktop:hidden
-                  "
-                  id="cart-title"
-                >
-                  單價
-                </div>
-                <div
-                  class="
-                    text-[#3f3a3a]
-                    mobile:block
-                    mobile:w-[104px]
-                    mobile:h-[17px]
-                    mobile:text-center
-                    mobile:text-[14px]
-                    mobile:leading-[17px]
-                    desktop:hidden
-                  "
-                  id="cart-title"
-                >
-                  小計
-                </div>
-              </div>
-              <div
-                class="
-                  flex flex-row
-                  items-center
-                  mobile:h-[30px] mobile:mt-[12px] mobile:ml-[12px]
-                  desktop:h-[32px] desktop:mt-[60px] desktop:ml-0
-                "
-                name=""
-                id=""
-              >
-                <select
-                  class="
-                    w-[80px]
-                    mobile:h-[30px] mobile:mr-[12px]
-                    desktop:h-[32px] desktop:mr-[56px]
-                    pl-[16px]
-                    bg-[#F3F3F3]
-                    rounded-[8px]
-                    border-solid border-[1px] border-[#979797]
-                  "
-                  name="amount"
-                  name=""
-                  id=""
-                  title="From"
-                >
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <div
-                  class="
+              <div class="
                     flex
                     justify-center
                     items-center
                     text-[#3f3a3a] text-center
                     desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
                     mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
-                  "
-                  name=""
-                  id=""
-                >
-                  TWD.799
-                </div>
-                <div
-                  class="
-                    flex
-                    justify-center
-                    items-center
-                    text-[#3f3a3a] text-center
-                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
-                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
-                  "
-                  name=""
-                  id=""
-                >
-                  TWD.799
-                </div>
+                  " name="" id="">
+                TWD.799
               </div>
             </div>
           </div>
+          <div class="
+                relative
+                flex
+                mobile:flex-col
+                desktop:flex-row
+                mobile:mt-[10px] mobile:ml-0
+                desktop:mt-[30px] desktop:ml-[32px]
+              " name="" id="">
+            <div class="
+                  flex flex-row
+                  w-full
+                  h-0
+                  mobile:block mobile:my-[20px]
+                  desktop:hidden desktop:my-0
+                  content-['']
+                  border-solid border-[#3f3a3a] border-b-[1px]
+                " id="split-border"></div>
+            <div class="flex flex-row" name="" id="">
+              <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251332052295720/image.png" alt=""
+                class="object-cover w-[114px] h-[152px]" name="product-image" id="" />
+              <div class="
+                    flex flex-col
+                    mobile:w-full mobile:ml-[10px]
+                    desktop:w-[354px] desktop:ml-[16px]
+                  " name="" id="">
+                <div class="
+                      text-[#000000]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:text-[16px] desktop:leading-[19px]
+                    " name="" id="">
+                  前開衩扭結洋裝
+                </div>
+                <div class="
+                      mobile:mt-[20px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:mt-[18px]
+                      desktop:text-[16px]
+                      desktop:leading-[19px]
+                    " name="" id="">
+                  201807201824
+                </div>
+                <div class="
+                      mobile:mt-[24px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:mt-[22px]
+                      desktop:text-[16px]
+                      desktop:leading-[19px]
+                    " name="" id="">
+                  顏色｜白
+                </div>
+                <div class="
+                      mobile:mt-[12px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:mt-[10px]
+                      desktop:text-[16px]
+                      desktop:leading-[19px]
+                    " name="" id="">
+                  尺寸｜M
+                </div>
+              </div>
+              <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007859059120156743/trash.png" alt=""
+                class="
+                    absolute
+                    object-cover
+                    w-[44px]
+                    h-[44px]
+                    mobile:left-[calc(100%-44px)]
+                    desktop:left-[calc(100%-74px)]
+                    mobile:mt-0
+                    desktop:mt-[54px]
+                  " name="product-image" id="" />
+            </div>
+            <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" name="" id="">
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                數量
+              </div>
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                單價
+              </div>
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                小計
+              </div>
+            </div>
+            <div class="
+                  flex flex-row
+                  items-center
+                  mobile:h-[30px] mobile:mt-[12px] mobile:ml-[12px]
+                  desktop:h-[32px] desktop:mt-[60px] desktop:ml-0
+                " name="" id="">
+              <select class="
+                    w-[80px]
+                    mobile:h-[30px] mobile:mr-[12px]
+                    desktop:h-[32px] desktop:mr-[56px]
+                    pl-[16px]
+                    bg-[#F3F3F3]
+                    rounded-[8px]
+                    border-solid border-[1px] border-[#979797]
+                  " name="amount" name="" id="" title="From">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+              <div class="
+                    flex
+                    justify-center
+                    items-center
+                    text-[#3f3a3a] text-center
+                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
+                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
+                  " name="" id="">
+                TWD.799
+              </div>
+              <div class="
+                    flex
+                    justify-center
+                    items-center
+                    text-[#3f3a3a] text-center
+                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
+                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
+                  " name="" id="">
+                TWD.799
+              </div>
+            </div>
+          </div>
+          <div class="
+                relative
+                flex
+                mobile:flex-col
+                desktop:flex-row
+                mobile:mt-[10px] mobile:ml-0
+                desktop:mt-[30px] desktop:ml-[32px]
+              " name="" id="">
+            <div class="
+                  flex flex-row
+                  w-full
+                  h-0
+                  mobile:block mobile:my-[20px]
+                  desktop:hidden desktop:my-0
+                  content-['']
+                  border-solid border-[#3f3a3a] border-b-[1px]
+                " id="split-border"></div>
+            <div class="flex flex-row" name="" id="">
+              <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251332052295720/image.png" alt=""
+                class="object-cover w-[114px] h-[152px]" name="product-image" id="" />
+              <div class="
+                    flex flex-col
+                    mobile:w-full mobile:ml-[10px]
+                    desktop:w-[354px] desktop:ml-[16px]
+                  " name="" id="">
+                <div class="
+                      text-[#000000]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:text-[16px] desktop:leading-[19px]
+                    " name="" id="">
+                  前開衩扭結洋裝
+                </div>
+                <div class="
+                      mobile:mt-[20px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:mt-[18px]
+                      desktop:text-[16px]
+                      desktop:leading-[19px]
+                    " name="" id="">
+                  201807201824
+                </div>
+                <div class="
+                      mobile:mt-[24px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:mt-[22px]
+                      desktop:text-[16px]
+                      desktop:leading-[19px]
+                    " name="" id="">
+                  顏色｜白
+                </div>
+                <div class="
+                      mobile:mt-[12px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:mt-[10px]
+                      desktop:text-[16px]
+                      desktop:leading-[19px]
+                    " name="" id="">
+                  尺寸｜M
+                </div>
+              </div>
+              <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007859059120156743/trash.png" alt=""
+                class="
+                    absolute
+                    object-cover
+                    w-[44px]
+                    h-[44px]
+                    mobile:left-[calc(100%-44px)]
+                    desktop:left-[calc(100%-74px)]
+                    mobile:mt-0
+                    desktop:mt-[54px]
+                  " name="product-image" id="" />
+            </div>
+            <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" name="" id="">
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                數量
+              </div>
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                單價
+              </div>
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                小計
+              </div>
+            </div>
+            <div class="
+                  flex flex-row
+                  items-center
+                  mobile:h-[30px] mobile:mt-[12px] mobile:ml-[12px]
+                  desktop:h-[32px] desktop:mt-[60px] desktop:ml-0
+                " name="" id="">
+              <select class="
+                    w-[80px]
+                    mobile:h-[30px] mobile:mr-[12px]
+                    desktop:h-[32px] desktop:mr-[56px]
+                    pl-[16px]
+                    bg-[#F3F3F3]
+                    rounded-[8px]
+                    border-solid border-[1px] border-[#979797]
+                  " name="amount" name="" id="" title="From">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+              <div class="
+                    flex
+                    justify-center
+                    items-center
+                    text-[#3f3a3a] text-center
+                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
+                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
+                  " name="" id="">
+                TWD.799
+              </div>
+              <div class="
+                    flex
+                    justify-center
+                    items-center
+                    text-[#3f3a3a] text-center
+                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
+                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
+                  " name="" id="">
+                TWD.799
+              </div>
+            </div>
+          </div>
+        </div>
 
-          <div
-            class="
+        <div class="
               flex flex-row
               items-center
               w-full
@@ -2553,12 +2221,8 @@
               mobile:mt-[20px]
               desktop:mt-[40px]
               bg-gray-200
-            "
-            name=""
-            id=""
-          >
-            <div
-              class="
+            " name="" id="">
+          <div class="
                 w-auto
                 inline-block
                 text-[#3f3a3a]
@@ -2566,14 +2230,10 @@
                 desktop:ml-[60px] desktop:mr-[20px]
                 mobile:text-[8px] mobile:leading-[17px]
                 desktop:text-[16px] desktop:leading-[19px]
-              "
-              name=""
-              id=""
-            >
-              配送國家
-            </div>
-            <select
-              class="
+              " name="" id="">
+            配送國家
+          </div>
+          <select class="
                 mobile:w-auto
                 desktop:w-[160px]
                 h-[24px]
@@ -2584,16 +2244,10 @@
                 bg-[#F3F3F3]
                 rounded-[8px]
                 border-solid border-[1px] border-[#979797]
-              "
-              name="amount"
-              name=""
-              id=""
-              title="From"
-            >
-              <option value="TW">臺灣及離島</option>
-            </select>
-            <div
-              class="
+              " name="amount" name="" id="" title="From">
+            <option value="TW">臺灣及離島</option>
+          </select>
+          <div class="
                 w-auto
                 inline-block
                 text-[#3f3a3a]
@@ -2601,14 +2255,10 @@
                 desktop:ml-[60px] desktop:mr-[20px]
                 mobile:text-[8px] mobile:leading-[17px]
                 desktop:text-[16px] desktop:leading-[19px]
-              "
-              name=""
-              id=""
-            >
-              付款方式
-            </div>
-            <select
-              class="
+              " name="" id="">
+            付款方式
+          </div>
+          <select class="
                 mobile:w-auto
                 desktop:w-[160px]
                 h-[24px]
@@ -2619,52 +2269,36 @@
                 bg-[#F3F3F3]
                 rounded-[8px]
                 border-solid border-[1px] border-[#979797]
-              "
-              name="amount"
-              name=""
-              id=""
-              title="From"
-            >
-              <option value="creditCard">信用卡付款</option>
-            </select>
-          </div>
+              " name="amount" name="" id="" title="From">
+            <option value="creditCard">信用卡付款</option>
+          </select>
+        </div>
 
-          <div
-            class="
+        <div class="
               mt-[20px]
               mb-[50px]
               mobile:text-[8px] mobile:leading-[17px]
               desktop:text-[16px] desktop:leading-[19px]
-            "
-            name=""
-            id=""
-          >
-            ※提醒您：<br />
-            ●選擇宅配-請填寫正確收件人資訊，避免包裹配送不達<br />
-            ●選擇超商-請填寫正確收件人姓名(與證件相符)，避免無法領取
-          </div>
+            " name="" id="">
+          ※提醒您：<br />
+          ●選擇宅配-請填寫正確收件人資訊，避免包裹配送不達<br />
+          ●選擇超商-請填寫正確收件人姓名(與證件相符)，避免無法領取
+        </div>
 
-          <div
-            class="flex flex-row mobile:mt-0 desktop:mt-[50px]"
-            id="cart-title-box"
-          >
-            <div
-              class="
+        <div class="flex flex-row mobile:mt-0 desktop:mt-[50px]" id="cart-title-box">
+          <div class="
                 inline-block
                 font-bold
                 text-[#3f3a3a] text-[16px]
                 leading-[19px]
                 mobile:mr-0
                 desktop:mr-[468px]
-              "
-              id="cart-title"
-            >
-              訂購資料
-            </div>
+              " id="cart-title">
+            訂購資料
           </div>
+        </div>
 
-          <div
-            class="
+        <div class="
               flex flex-row
               w-full
               h-0
@@ -2672,37 +2306,27 @@
               desktop:my-[10px]
               content-['']
               border-solid border-[#3f3a3a] border-b-[1px]
-            "
-            id="split-border"
-          ></div>
+            " id="split-border"></div>
 
-          <div class="" name="" id="">
-            <div
-              class="
+        <div class="" name="" id="">
+          <div class="
                 flex
                 mobile:flex-col mobile:items-none
                 desktop:items-center desktop:flex-row
                 mobile:mt-[10px]
                 desktop:mt-[9px]
-              "
-              name=""
-              id=""
-            >
-              <div
-                class="
+              " name="" id="">
+            <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
                   inline-block
                   text-[#3f3a3a]
                   mobile:text-[14px] mobile:leading-[17px]
                   desktop:text-[16px] desktop:leading-[19px]
-                "
-                id=" cart-title"
-              >
-                收件人姓名
-              </div>
-              <input
-                class="
+                " id=" cart-title">
+              收件人姓名
+            </div>
+            <input class="
                   mobile:w-full mobile:mt-[10px]
                   desktop:mt-0
                   h-[32px]
@@ -2715,18 +2339,9 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                "
-                type="text"
-                placeholder="收件人姓名"
-                title="input-name"
-                value=""
-                name="nav-searchBar"
-                name=""
-                id=""
-              />
-            </div>
-            <div
-              class="
+                " type="text" placeholder="收件人姓名" title="input-name" value="" name="nav-searchBar" name="" id="" />
+          </div>
+          <div class="
                 mobile:mt-[6px]
                 desktop:mt-[10px]
                 text-end text-[#8b572a]
@@ -2734,310 +2349,201 @@
                 desktop:max-w-[696px]
                 mobile:text-[14px] mobile:leading-[17px]
                 desktop:text-[16px] desktop:leading-[19px]
-              "
-              id=" cart-title"
-            >
-              務必填寫完整收件人姓名，避免包裹無法順利簽收
-            </div>
-            <div
-              class="
-                flex
-                mobile:flex-col mobile:items-none
-                desktop:items-center desktop:flex-row
-                mobile:mt-[20px]
-                desktop:mt-[30px]
-              "
-              name=""
-              id=""
-            >
-              <div
-                class="
-                  mobile:w-auto mobile:text-start
-                  desktop:w-[120px]
-                  inline-block
-                  text-[#3f3a3a]
-                  mobile:text-[14px] mobile:leading-[17px]
-                  desktop:text-[16px] desktop:leading-[19px]
-                "
-                id=" cart-title"
-              >
-                手機
-              </div>
-              <input
-                class="
-                  mobile:w-full mobile:mt-[10px]
-                  desktop:mt-0
-                  h-[32px]
-                  desktop:w-[576px]
-                  pl-[1%]
-                  border-solid border-[1px] border-[#979797]
-                  rounded-[8px]
-                  placeholder:text-[#d3d3d3]
-                  mobile:placeholder:text-[14px]
-                  mobile:placeholder:leading-[17px]
-                  desktop:placeholder:text-[16px]
-                  desktop:placeholder:leading-[19px]
-                "
-                type="text"
-                placeholder="手機"
-                title="input-phone-number"
-                value=""
-                name="nav-searchBar"
-                name=""
-                id=""
-              />
-            </div>
-            <div
-              class="
-                flex
-                mobile:flex-col mobile:items-none
-                desktop:items-center desktop:flex-row
-                mobile:mt-[20px]
-                desktop:mt-[30px]
-              "
-              name=""
-              id=""
-            >
-              <div
-                class="
-                  mobile:w-auto mobile:text-start
-                  desktop:w-[120px]
-                  inline-block
-                  text-[#3f3a3a]
-                  mobile:text-[14px] mobile:leading-[17px]
-                  desktop:text-[16px] desktop:leading-[19px]
-                "
-                id=" cart-title"
-              >
-                地址
-              </div>
-              <input
-                class="
-                  mobile:w-full mobile:mt-[10px]
-                  desktop:mt-0
-                  h-[32px]
-                  desktop:w-[576px]
-                  pl-[1%]
-                  border-solid border-[1px] border-[#979797]
-                  rounded-[8px]
-                  placeholder:text-[#d3d3d3]
-                  mobile:placeholder:text-[14px]
-                  mobile:placeholder:leading-[17px]
-                  desktop:placeholder:text-[16px]
-                  desktop:placeholder:leading-[19px]
-                "
-                type="text"
-                placeholder="地址"
-                title="input-address"
-                value=""
-                name="nav-searchBar"
-                name=""
-                id=""
-              />
-            </div>
-            <div
-              class="
-                flex
-                mobile:flex-col mobile:items-none
-                desktop:items-center desktop:flex-row
-                mobile:mt-[20px]
-                desktop:mt-[30px]
-              "
-              name=""
-              id=""
-            >
-              <div
-                class="
-                  mobile:w-auto mobile:text-start
-                  desktop:w-[120px]
-                  inline-block
-                  text-[#3f3a3a]
-                  mobile:text-[14px] mobile:leading-[17px]
-                  desktop:text-[16px] desktop:leading-[19px]
-                "
-                id=" cart-title"
-              >
-                手機
-              </div>
-              <input
-                class="
-                  mobile:w-full mobile:mt-[10px]
-                  desktop:mt-0
-                  h-[32px]
-                  desktop:w-[576px]
-                  pl-[1%]
-                  border-solid border-[1px] border-[#979797]
-                  rounded-[8px]
-                  placeholder:text-[#d3d3d3]
-                  mobile:placeholder:text-[14px]
-                  mobile:placeholder:leading-[17px]
-                  desktop:placeholder:text-[16px]
-                  desktop:placeholder:leading-[19px]
-                "
-                type="text"
-                placeholder="手機"
-                title="input-phone-number"
-                value=""
-                name="nav-searchBar"
-                name=""
-                id=""
-              />
-            </div>
-            <div
-              class="
-                flex
-                mobile:flex-col mobile:items-none
-                desktop:items-center desktop:flex-row
-                mobile:mt-[20px]
-                desktop:mt-[30px]
-              "
-              name=""
-              id=""
-            >
-              <div
-                class="
-                  mobile:w-auto mobile:text-start
-                  desktop:w-[120px]
-                  inline-block
-                  text-[#3f3a3a]
-                  mobile:text-[14px] mobile:leading-[17px]
-                  desktop:text-[16px] desktop:leading-[19px]
-                "
-                id=" cart-title"
-              >
-                Email
-              </div>
-              <input
-                class="
-                  mobile:w-full mobile:mt-[10px]
-                  desktop:mt-0
-                  h-[32px]
-                  desktop:w-[576px]
-                  pl-[1%]
-                  border-solid border-[1px] border-[#979797]
-                  rounded-[8px]
-                  placeholder:text-[#d3d3d3]
-                  mobile:placeholder:text-[14px]
-                  mobile:placeholder:leading-[17px]
-                  desktop:placeholder:text-[16px]
-                  desktop:placeholder:leading-[19px]
-                "
-                type="text"
-                placeholder="Email"
-                title="input-email"
-                value=""
-                name="nav-searchBar"
-                name=""
-                id=""
-              />
-            </div>
-            <div
-              class="
-                flex
-                mobile:flex-col mobile:items-none
-                desktop:items-center desktop:flex-row
-                mobile:mt-[20px]
-                desktop:mt-[30px]
-              "
-              name=""
-              id=""
-            >
-              <div
-                class="
-                  mobile:w-auto mobile:text-start
-                  desktop:w-[120px]
-                  inline-block
-                  text-[#3f3a3a]
-                  mobile:text-[14px] mobile:leading-[17px]
-                  desktop:text-[16px] desktop:leading-[19px]
-                "
-                id=" cart-title"
-              >
-                配送時間
-              </div>
-              <form
-                class="flex items-center h-[26px] mobile:mt-[10px] desktop:mt-0"
-              >
-                <div class="flex flex-row items-center h-[26px]" name="" id="">
-                  <input
-                    type="radio"
-                    id="08:00-12:00"
-                    name="time"
-                    value="08:00-12:00"
-                  />
-                  <label
-                    for="08:00-12:00"
-                    class="
-                      ml-[8px]
-                      text-[#3f3a3a]
-                      mobile:text-[14px]
-                      desktop:text-[16px]
-                      leading-[26px]
-                    "
-                    >08:00-12:00</label
-                  ><br />
-                  <input
-                    type="radio"
-                    id="14:00-18:00"
-                    name="time"
-                    value="14:00-18:00"
-                    class="ml-[32px]"
-                  />
-                  <label
-                    for="14:00-18:00"
-                    class="
-                      ml-[8px]
-                      text-[#3f3a3a]
-                      mobile:text-[14px]
-                      desktop:text-[16px]
-                      leading-[26px]
-                    "
-                    >14:00-18:00</label
-                  ><br />
-                  <input
-                    type="radio"
-                    id="not-set"
-                    name="time"
-                    value="not-set"
-                    class="ml-[32px]"
-                  />
-                  <label
-                    for="not-set"
-                    class="
-                      ml-[8px]
-                      text-[#3f3a3a]
-                      mobile:text-[14px]
-                      desktop:text-[16px]
-                      leading-[26px]
-                    "
-                    >不指定</label
-                  >
-                </div>
-              </form>
-            </div>
+              " id=" cart-title">
+            務必填寫完整收件人姓名，避免包裹無法順利簽收
           </div>
+          <div class="
+                flex
+                mobile:flex-col mobile:items-none
+                desktop:items-center desktop:flex-row
+                mobile:mt-[20px]
+                desktop:mt-[30px]
+              " name="" id="">
+            <div class="
+                  mobile:w-auto mobile:text-start
+                  desktop:w-[120px]
+                  inline-block
+                  text-[#3f3a3a]
+                  mobile:text-[14px] mobile:leading-[17px]
+                  desktop:text-[16px] desktop:leading-[19px]
+                " id=" cart-title">
+              手機
+            </div>
+            <input class="
+                  mobile:w-full mobile:mt-[10px]
+                  desktop:mt-0
+                  h-[32px]
+                  desktop:w-[576px]
+                  pl-[1%]
+                  border-solid border-[1px] border-[#979797]
+                  rounded-[8px]
+                  placeholder:text-[#d3d3d3]
+                  mobile:placeholder:text-[14px]
+                  mobile:placeholder:leading-[17px]
+                  desktop:placeholder:text-[16px]
+                  desktop:placeholder:leading-[19px]
+                " type="text" placeholder="手機" title="input-phone-number" value="" name="nav-searchBar" name=""
+              id="" />
+          </div>
+          <div class="
+                flex
+                mobile:flex-col mobile:items-none
+                desktop:items-center desktop:flex-row
+                mobile:mt-[20px]
+                desktop:mt-[30px]
+              " name="" id="">
+            <div class="
+                  mobile:w-auto mobile:text-start
+                  desktop:w-[120px]
+                  inline-block
+                  text-[#3f3a3a]
+                  mobile:text-[14px] mobile:leading-[17px]
+                  desktop:text-[16px] desktop:leading-[19px]
+                " id=" cart-title">
+              地址
+            </div>
+            <input class="
+                  mobile:w-full mobile:mt-[10px]
+                  desktop:mt-0
+                  h-[32px]
+                  desktop:w-[576px]
+                  pl-[1%]
+                  border-solid border-[1px] border-[#979797]
+                  rounded-[8px]
+                  placeholder:text-[#d3d3d3]
+                  mobile:placeholder:text-[14px]
+                  mobile:placeholder:leading-[17px]
+                  desktop:placeholder:text-[16px]
+                  desktop:placeholder:leading-[19px]
+                " type="text" placeholder="地址" title="input-address" value="" name="nav-searchBar" name="" id="" />
+          </div>
+          <div class="
+                flex
+                mobile:flex-col mobile:items-none
+                desktop:items-center desktop:flex-row
+                mobile:mt-[20px]
+                desktop:mt-[30px]
+              " name="" id="">
+            <div class="
+                  mobile:w-auto mobile:text-start
+                  desktop:w-[120px]
+                  inline-block
+                  text-[#3f3a3a]
+                  mobile:text-[14px] mobile:leading-[17px]
+                  desktop:text-[16px] desktop:leading-[19px]
+                " id=" cart-title">
+              手機
+            </div>
+            <input class="
+                  mobile:w-full mobile:mt-[10px]
+                  desktop:mt-0
+                  h-[32px]
+                  desktop:w-[576px]
+                  pl-[1%]
+                  border-solid border-[1px] border-[#979797]
+                  rounded-[8px]
+                  placeholder:text-[#d3d3d3]
+                  mobile:placeholder:text-[14px]
+                  mobile:placeholder:leading-[17px]
+                  desktop:placeholder:text-[16px]
+                  desktop:placeholder:leading-[19px]
+                " type="text" placeholder="手機" title="input-phone-number" value="" name="nav-searchBar" name=""
+              id="" />
+          </div>
+          <div class="
+                flex
+                mobile:flex-col mobile:items-none
+                desktop:items-center desktop:flex-row
+                mobile:mt-[20px]
+                desktop:mt-[30px]
+              " name="" id="">
+            <div class="
+                  mobile:w-auto mobile:text-start
+                  desktop:w-[120px]
+                  inline-block
+                  text-[#3f3a3a]
+                  mobile:text-[14px] mobile:leading-[17px]
+                  desktop:text-[16px] desktop:leading-[19px]
+                " id=" cart-title">
+              Email
+            </div>
+            <input class="
+                  mobile:w-full mobile:mt-[10px]
+                  desktop:mt-0
+                  h-[32px]
+                  desktop:w-[576px]
+                  pl-[1%]
+                  border-solid border-[1px] border-[#979797]
+                  rounded-[8px]
+                  placeholder:text-[#d3d3d3]
+                  mobile:placeholder:text-[14px]
+                  mobile:placeholder:leading-[17px]
+                  desktop:placeholder:text-[16px]
+                  desktop:placeholder:leading-[19px]
+                " type="text" placeholder="Email" title="input-email" value="" name="nav-searchBar" name="" id="" />
+          </div>
+          <div class="
+                flex
+                mobile:flex-col mobile:items-none
+                desktop:items-center desktop:flex-row
+                mobile:mt-[20px]
+                desktop:mt-[30px]
+              " name="" id="">
+            <div class="
+                  mobile:w-auto mobile:text-start
+                  desktop:w-[120px]
+                  inline-block
+                  text-[#3f3a3a]
+                  mobile:text-[14px] mobile:leading-[17px]
+                  desktop:text-[16px] desktop:leading-[19px]
+                " id=" cart-title">
+              配送時間
+            </div>
+            <form class="flex items-center h-[26px] mobile:mt-[10px] desktop:mt-0">
+              <div class="flex flex-row items-center h-[26px]" name="" id="">
+                <input type="radio" id="08:00-12:00" name="time" value="08:00-12:00" />
+                <label for="08:00-12:00" class="
+                      ml-[8px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px]
+                      desktop:text-[16px]
+                      leading-[26px]
+                    ">08:00-12:00</label><br />
+                <input type="radio" id="14:00-18:00" name="time" value="14:00-18:00" class="ml-[32px]" />
+                <label for="14:00-18:00" class="
+                      ml-[8px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px]
+                      desktop:text-[16px]
+                      leading-[26px]
+                    ">14:00-18:00</label><br />
+                <input type="radio" id="not-set" name="time" value="not-set" class="ml-[32px]" />
+                <label for="not-set" class="
+                      ml-[8px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px]
+                      desktop:text-[16px]
+                      leading-[26px]
+                    ">不指定</label>
+              </div>
+            </form>
+          </div>
+        </div>
 
-          <div
-            class="flex flex-row mobile:mt-[20px] desktop:mt-[50px]"
-            id="cart-title-box"
-          >
-            <div
-              class="
+        <div class="flex flex-row mobile:mt-[20px] desktop:mt-[50px]" id="cart-title-box">
+          <div class="
                 inline-block
                 font-bold
                 text-[#3f3a3a] text-[16px]
                 leading-[19px]
                 mobile:mr-0
                 desktop:mr-[468px]
-              "
-              id="cart-title"
-            >
-              付款資料
-            </div>
+              " id="cart-title">
+            付款資料
           </div>
+        </div>
 
-          <div
-            class="
+        <div class="
               flex flex-row
               w-full
               h-0
@@ -3045,36 +2551,26 @@
               desktop:my-[10px]
               content-['']
               border-solid border-[#3f3a3a] border-b-[1px]
-            "
-            id="split-border"
-          ></div>
-          <div class="" name="" id="">
-            <div
-              class="
+            " id="split-border"></div>
+        <div class="" name="" id="">
+          <div class="
                 flex
                 mobile:flex-col mobile:items-none
                 desktop:items-center desktop:flex-row
                 mobile:mt-[20px]
                 desktop:mt-[30px]
-              "
-              name=""
-              id=""
-            >
-              <div
-                class="
+              " name="" id="">
+            <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
                   inline-block
                   text-[#3f3a3a]
                   mobile:text-[14px] mobile:leading-[17px]
                   desktop:text-[16px] desktop:leading-[19px]
-                "
-                id=" cart-title"
-              >
-                信用卡號碼
-              </div>
-              <input
-                class="
+                " id=" cart-title">
+              信用卡號碼
+            </div>
+            <input class="
                   mobile:w-full mobile:mt-[10px]
                   desktop:mt-0
                   h-[32px]
@@ -3087,42 +2583,27 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                "
-                type="text"
-                placeholder="**** **** **** ****"
-                title="input-credit-card-number"
-                value=""
-                name="nav-searchBar"
-                name=""
-                id=""
-              />
-            </div>
-            <div
-              class="
+                " type="text" placeholder="**** **** **** ****" title="input-credit-card-number" value=""
+              name="nav-searchBar" name="" id="" />
+          </div>
+          <div class="
                 flex
                 mobile:flex-col mobile:items-none
                 desktop:items-center desktop:flex-row
                 mobile:mt-[20px]
                 desktop:mt-[30px]
-              "
-              name=""
-              id=""
-            >
-              <div
-                class="
+              " name="" id="">
+            <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
                   inline-block
                   text-[#3f3a3a]
                   mobile:text-[14px] mobile:leading-[17px]
                   desktop:text-[16px] desktop:leading-[19px]
-                "
-                id=" cart-title"
-              >
-                有效期限
-              </div>
-              <input
-                class="
+                " id=" cart-title">
+              有效期限
+            </div>
+            <input class="
                   mobile:w-full mobile:mt-[10px]
                   desktop:mt-0
                   h-[32px]
@@ -3135,42 +2616,27 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                "
-                type="text"
-                placeholder="MM / YY"
-                title="input-credit-card-valid-month"
-                value=""
-                name="nav-searchBar"
-                name=""
-                id=""
-              />
-            </div>
-            <div
-              class="
+                " type="text" placeholder="MM / YY" title="input-credit-card-valid-month" value="" name="nav-searchBar"
+              name="" id="" />
+          </div>
+          <div class="
                 flex
                 mobile:flex-col mobile:items-none
                 desktop:items-center desktop:flex-row
                 mobile:mt-[20px]
                 desktop:mt-[30px]
-              "
-              name=""
-              id=""
-            >
-              <div
-                class="
+              " name="" id="">
+            <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
                   inline-block
                   text-[#3f3a3a]
                   mobile:text-[14px] mobile:leading-[17px]
                   desktop:text-[16px] desktop:leading-[19px]
-                "
-                id=" cart-title"
-              >
-                安全碼
-              </div>
-              <input
-                class="
+                " id=" cart-title">
+              安全碼
+            </div>
+            <input class="
                   mobile:w-full mobile:mt-[10px]
                   desktop:mt-0
                   h-[32px]
@@ -3183,84 +2649,51 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                "
-                type="text"
-                placeholder="後三碼"
-                title="input-credit-card-CSC"
-                value=""
-                name="nav-searchBar"
-                name=""
-                id=""
-              />
-            </div>
-            <div
-              class="
+                " type="text" placeholder="後三碼" title="input-credit-card-CSC" value="" name="nav-searchBar" name=""
+              id="" />
+          </div>
+          <div class="
                 flex flex-col
                 w-full
                 ml-auto
                 mobile:mt-[24px] mobile:mb-[28px]
                 desktop:mt-[40px] desktop:mb-[148px]
-              "
-              id="product-info"
-            >
-              <div class="w-full ml-auto max-w-[240px]">
-                <div class="flex flex-row items-center ml-auto" name="" id="">
-                  <div
-                    class="text-[#3f3a3a] text-[16px] leading-[19px]"
-                    id="product-name"
-                  >
-                    總金額
-                  </div>
-                  <div
-                    class="
+              " id="product-info">
+            <div class="w-full ml-auto max-w-[240px]">
+              <div class="flex flex-row items-center ml-auto" name="" id="">
+                <div class="text-[#3f3a3a] text-[16px] leading-[19px]" id="product-name">
+                  總金額
+                </div>
+                <div class="
                       ml-auto
                       mr-[8px]
                       text-[#3f3a3a] text-[16px]
                       leading-[19px]
-                    "
-                    id="product-name"
-                  >
-                    NT.
-                  </div>
-                  <div
-                    class="text-[#3f3a3a] text-[30px] leading-[36px]"
-                    id="product-name"
-                  >
-                    2397
-                  </div>
+                    " id="product-name">
+                  NT.
                 </div>
-                <div
-                  class="flex flex-row items-center mt-[20px] ml-auto"
-                  name=""
-                  id=""
-                >
-                  <div
-                    class="text-[#3f3a3a] text-[16px] leading-[19px]"
-                    id="product-name"
-                  >
-                    運費
-                  </div>
-                  <div
-                    class="
+                <div class="text-[#3f3a3a] text-[30px] leading-[36px]" id="product-name">
+                  2397
+                </div>
+              </div>
+              <div class="flex flex-row items-center mt-[20px] ml-auto" name="" id="">
+                <div class="text-[#3f3a3a] text-[16px] leading-[19px]" id="product-name">
+                  運費
+                </div>
+                <div class="
                       ml-auto
                       mr-[8px]
                       text-[#3f3a3a] text-[16px]
                       leading-[19px]
-                    "
-                    id="product-name"
-                  >
-                    NT.
-                  </div>
-                  <div
-                    class="text-[#3f3a3a] text-[30px] leading-[36px]"
-                    id="product-name"
-                  >
-                    30
-                  </div>
+                    " id="product-name">
+                  NT.
                 </div>
+                <div class="text-[#3f3a3a] text-[30px] leading-[36px]" id="product-name">
+                  30
+                </div>
+              </div>
 
-                <div
-                  class="
+              <div class="
                     flex flex-row
                     w-full
                     h-0
@@ -3269,39 +2702,27 @@
                     max-w-[240px]
                     content-['']
                     border-solid border-[#3f3a3a] border-b-[1px]
-                  "
-                  id="split-border"
-                ></div>
+                  " id="split-border"></div>
 
-                <div class="flex flex-row items-center ml-auto" name="" id="">
-                  <div
-                    class="text-[#3f3a3a] text-[16px] leading-[19px]"
-                    id="product-name"
-                  >
-                    應付金額
-                  </div>
-                  <div
-                    class="
+              <div class="flex flex-row items-center ml-auto" name="" id="">
+                <div class="text-[#3f3a3a] text-[16px] leading-[19px]" id="product-name">
+                  應付金額
+                </div>
+                <div class="
                       ml-auto
                       mr-[8px]
                       text-[#3f3a3a] text-[16px]
                       leading-[19px]
-                    "
-                    id="product-name"
-                  >
-                    NT.
-                  </div>
-                  <div
-                    class="text-[#3f3a3a] text-[30px] leading-[36px]"
-                    id="product-name"
-                  >
-                    2427
-                  </div>
+                    " id="product-name">
+                  NT.
+                </div>
+                <div class="text-[#3f3a3a] text-[30px] leading-[36px]" id="product-name">
+                  2427
                 </div>
               </div>
+            </div>
 
-              <div
-                class="
+            <div class="
                   cursor-pointer
                   flex
                   justify-center
@@ -3325,91 +2746,50 @@
                   desktop:border-solid
                   desktop:border-[1px]
                   desktop:border-[#979797]
-                "
-                onclick="alert('開始付款！')"
-              >
-                確認付款
-              </div>
+                " onclick="alert('開始付款！')">
+              確認付款
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="hidden" name="profile-page" id="profile-page"></div>
+  <div class="hidden" name="profile-page" id="profile-page"></div>
 
-    <div class="hidden" name="aboutUs-page" id="aboutUs-page">
-      <div
-        class="
+  <div class="hidden" name="aboutUs-page" id="aboutUs-page">
+    <div class="
           w-fill
           mx-auto
           mobile:max-w-[calc(100%-24px)]
           desktop:max-w-[1200px]
           pt-[30px]
-        "
-        name="aboutUs-page-box"
-        id="aboutUs-page-box"
-      >
-        <iframe
-          frameborder="no"
-          border="0"
-          marginwidth="0"
-          marginheight="0"
-          width="330"
-          height="380"
-          src="//music.163.com/outchain/player?type=4&id=526820640&auto=1&height=430"
-        ></iframe>
+        " name="aboutUs-page-box" id="aboutUs-page-box">
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="380"
+        src="//music.163.com/outchain/player?type=4&id=526820640&auto=1&height=430"></iframe>
 
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/videoseries?list=PLSTNI7-8XwI_sKUzLPJ5r0Ir7IOdVJVxm"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+      <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/videoseries?list=PLSTNI7-8XwI_sKUzLPJ5r0Ir7IOdVJVxm" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/videoseries?list=PLU06aQIBfRn_VsLIt2dlSl6I5osvs24yk"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+      <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/videoseries?list=PLU06aQIBfRn_VsLIt2dlSl6I5osvs24yk" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-        <iframe
-          width="330"
-          height="100"
-          scrolling="no"
-          frameborder="no"
-          allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/199035792&color=%2387d8ef&auto_play=false"
-        ></iframe>
+      <iframe width="330" height="100" scrolling="no" frameborder="no" allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/199035792&color=%2387d8ef&auto_play=false"></iframe>
 
-        <iframe
-          src="https://streetvoice.com/music/embed/?id=387411"
-          width="330"
-          height="100"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          scrolling="no"
-        ></iframe>
+      <iframe src="https://streetvoice.com/music/embed/?id=387411" width="330" height="100" frameborder="0"
+        marginheight="0" marginwidth="0" scrolling="no"></iframe>
 
-        <iframe
-          scrolling="no"
-          allow="autoplay"
-          src="https://open.spotify.com/embed/track/16HPj2zrjdSXCH5SGf0NY0?si=2584d6594f65412a"
-          frameborder="no"
-        ></iframe>
-      </div>
+      <iframe scrolling="no" allow="autoplay"
+        src="https://open.spotify.com/embed/track/16HPj2zrjdSXCH5SGf0NY0?si=2584d6594f65412a" frameborder="no"></iframe>
     </div>
+  </div>
 
-    <!-- footer and bottom navBar content -->
-    <footer class="" name="bottom-nav">
-      <div
-        class="
+  <!-- footer and bottom navBar content -->
+  <footer class="" name="bottom-nav">
+    <div class="
           mobile:hidden
           desktop:flex
           desktop:justify-center
@@ -3418,240 +2798,161 @@
           desktop:h-[115px]
           desktop:mx-auto
           desktop:bg-[#313538]
-        "
-        name="bottom-nav-bar-desktop-box"
-      >
-        <div class="flex mr-[101px]" name="bottom-nav-bar-desktop-links">
-          <div
-            class="
+        " name="bottom-nav-bar-desktop-box">
+      <div class="flex mr-[101px]" name="bottom-nav-bar-desktop-links">
+        <div class="
               cursor-pointer
               w-[134px]
               h-[22px]
               text-[16px] text-[#f5f5f5] text-center
               leading-[22px]
               border-solid border-r-[1px] border-[#828282]
-            "
-            name="bottom-nav-bar-desktop-info-about"
-          >
-            <div name="bottom-nav-bar-desktop-info-about-link">
-              關於 STYLiSH
-            </div>
+            " name="bottom-nav-bar-desktop-info-about">
+          <div name="bottom-nav-bar-desktop-info-about-link">
+            關於 STYLiSH
           </div>
-          <div
-            class="
+        </div>
+        <div class="
               cursor-pointer
               w-[134px]
               h-[22px]
               text-[16px] text-[#f5f5f5] text-center
               leading-[22px]
               border-solid border-r-[1px] border-[#828282]
-            "
-            name="bottom-nav-bar-desktop-info-service-terms"
-          >
-            <div name="bottom-nav-bar-desktop-info-service-terms-link">
-              服務條款
-            </div>
+            " name="bottom-nav-bar-desktop-info-service-terms">
+          <div name="bottom-nav-bar-desktop-info-service-terms-link">
+            服務條款
           </div>
-          <div
-            class="
+        </div>
+        <div class="
               cursor-pointer
               w-[134px]
               h-[22px]
               text-[16px] text-[#f5f5f5] text-center
               leading-[22px]
               border-solid border-r-[1px] border-[#828282]
-            "
-            name="bottom-nav-bar-desktop-privacy-policy"
-          >
-            <div name="bottom-nav-bar-desktop-privacy-policy-link">
-              隱私政策
-            </div>
+            " name="bottom-nav-bar-desktop-privacy-policy">
+          <div name="bottom-nav-bar-desktop-privacy-policy-link">
+            隱私政策
           </div>
-          <div
-            class="
+        </div>
+        <div class="
               cursor-pointer
               w-[134px]
               h-[22px]
               text-[16px] text-[#f5f5f5] text-center
               leading-[22px]
               border-solid border-r-[1px] border-[#828282]
-            "
-            name="bottom-nav-bar-desktop-contact-us"
-          >
-            <div name="bottom-nav-bar-desktop-contact-us-link">聯絡我們</div>
-          </div>
-          <div
-            class="
+            " name="bottom-nav-bar-desktop-contact-us">
+          <div name="bottom-nav-bar-desktop-contact-us-link">聯絡我們</div>
+        </div>
+        <div class="
               cursor-pointer
               w-[134px]
               h-[22px]
               text-[16px] text-[#f5f5f5] text-center
               leading-[22px]
               border-none
-            "
-            name="bottom-nav-bar-desktop-frequently-asked-questions"
-          >
-            <div name="bottom-nav-bar-desktop-frequently-asked-questions-link">
-              FAQ
-            </div>
-          </div>
-        </div>
-        <div
-          class="flex justify-center items-center"
-          name="bottom-nav-bar-desktop-social-media-links"
-        >
-          <div class="cursor-pointer w-[50px] h-[50px] mr-[30px]">
-            <div name="bottom-nav-bar-desktop-line-image-link">
-              <img
-                src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279856017418/line.png"
-                alt=""
-                class="w-full h-full"
-                name="bottom-nav-bar-desktop-line-image"
-              />
-            </div>
-          </div>
-          <div class="cursor-pointer w-[50px] h-[50px] mr-[30px]">
-            <div name="bottom-nav-bar-desktop-twitter-image-link">
-              <img
-                src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279512080465/twitter.png"
-                alt=""
-                class="w-full h-full"
-                name="bottom-nav-bar-desktop-twitter-image"
-              />
-            </div>
-          </div>
-          <div class="cursor-pointer w-[50px] h-[50px] mr-[30px]">
-            <div name="bottom-nav-bar-desktop-facebook-image-link">
-              <img
-                src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138280220917851/facebook.png"
-                alt=""
-                class="w-full h-full"
-                name="bottom-nav-bar-desktop-facebook-image"
-              />
-            </div>
-          </div>
-          <div
-            class="text-[12px] text-[#828282] leading-[17px] text-center"
-            name="bottom-nav-bar-desktop-all-rights-reserved"
-          >
-            © 2018. All rights reserved.
+            " name="bottom-nav-bar-desktop-frequently-asked-questions">
+          <div name="bottom-nav-bar-desktop-frequently-asked-questions-link">
+            FAQ
           </div>
         </div>
       </div>
+      <div class="flex justify-center items-center" name="bottom-nav-bar-desktop-social-media-links">
+        <div class="cursor-pointer w-[50px] h-[50px] mr-[30px]">
+          <div name="bottom-nav-bar-desktop-line-image-link">
+            <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279856017418/line.png" alt=""
+              class="w-full h-full" name="bottom-nav-bar-desktop-line-image" />
+          </div>
+        </div>
+        <div class="cursor-pointer w-[50px] h-[50px] mr-[30px]">
+          <div name="bottom-nav-bar-desktop-twitter-image-link">
+            <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279512080465/twitter.png" alt=""
+              class="w-full h-full" name="bottom-nav-bar-desktop-twitter-image" />
+          </div>
+        </div>
+        <div class="cursor-pointer w-[50px] h-[50px] mr-[30px]">
+          <div name="bottom-nav-bar-desktop-facebook-image-link">
+            <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138280220917851/facebook.png"
+              alt="" class="w-full h-full" name="bottom-nav-bar-desktop-facebook-image" />
+          </div>
+        </div>
+        <div class="text-[12px] text-[#828282] leading-[17px] text-center"
+          name="bottom-nav-bar-desktop-all-rights-reserved">
+          © 2018. All rights reserved.
+        </div>
+      </div>
+    </div>
 
-      <div
-        class="mobile:block desktop:hidden w-full bg-[#313538]"
-        name="bottom-nav-bar-mobile-box-box"
-      >
-        <div
-          class="flex flex-col items-center max-w-[360px] mx-auto pt-[23px]"
-          name="bottom-nav-bar-mobile-box"
-        >
-          <div
-            class="flex justify-center items-end w-full"
-            name="bottom-nav-bar-mobile-contactlist"
-          >
-            <div
-              class="ml-[40px] mr-[36px]"
-              name="bottom-nav-bar-mobile-links-part1"
-            >
-              <div
-                class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]"
-                name="bottom-nav-bar-mobile-info-about"
-              >
-                <div name="bottom-nav-bar-mobile-info-about-link">
-                  關於 STYLiSH
-                </div>
-              </div>
-              <div
-                class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]"
-                name="bottom-nav-bar-mobile-info-service-terms"
-              >
-                <div name="bottom-nav-bar-mobile-info-service-terms-link">
-                  服務條款
-                </div>
-              </div>
-              <div
-                class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[13px]"
-                name="bottom-nav-bar-mobile-privacy-policy"
-              >
-                <div name="bottom-nav-bar-mobile-privacy-policy-link">
-                  隱私政策
-                </div>
+    <div class="mobile:block desktop:hidden w-full bg-[#313538]" name="bottom-nav-bar-mobile-box-box">
+      <div class="flex flex-col items-center max-w-[360px] mx-auto pt-[23px]" name="bottom-nav-bar-mobile-box">
+        <div class="flex justify-center items-end w-full" name="bottom-nav-bar-mobile-contactlist">
+          <div class="ml-[40px] mr-[36px]" name="bottom-nav-bar-mobile-links-part1">
+            <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]" name="bottom-nav-bar-mobile-info-about">
+              <div name="bottom-nav-bar-mobile-info-about-link">
+                關於 STYLiSH
               </div>
             </div>
-            <div class="mr-[31px]" name="bottom-nav-bar-mobile-links-part2">
-              <div
-                class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]"
-                name="bottom-nav-bar-mobile-contact-us"
-              >
-                <div name="bottom-nav-bar-mobile-contact-us-link">聯絡我們</div>
-              </div>
-              <div
-                class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[41px]"
-                name="bottom-nav-bar-mobile-frequently-asked-questions"
-              >
-                <div
-                  name="bottom-nav-bar-mobile-frequently-asked-questions-link"
-                >
-                  FAQ
-                </div>
+            <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]"
+              name="bottom-nav-bar-mobile-info-service-terms">
+              <div name="bottom-nav-bar-mobile-info-service-terms-link">
+                服務條款
               </div>
             </div>
-            <div
-              class="flex justify-between items-center mb-[51px]"
-              name="bottom-nav-bar-mobile-social-media-links"
-            >
-              <div class="w-[20px] h-[20px] mr-[14px]">
-                <div name="bottom-nav-bar-mobile-line-image-link">
-                  <img
-                    src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279856017418/line.png"
-                    alt=""
-                    class="w-full h-full"
-                    name="bottom-nav-bar-mobile-line-image"
-                  />
-                </div>
-              </div>
-              <div class="w-[20px] h-[20px] mr-[14px]">
-                <div name="bottom-nav-bar-mobile-twitter-image-link">
-                  <img
-                    src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279512080465/twitter.png"
-                    alt=""
-                    class="w-full h-full"
-                    name="bottom-nav-bar-mobile-twitter-image"
-                  />
-                </div>
-              </div>
-              <div class="w-[20px] h-[20px] mr-[24px]">
-                <div name="bottom-nav-bar-mobile-facebook-image-link">
-                  <img
-                    src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138280220917851/facebook.png"
-                    alt=""
-                    class="w-full h-full"
-                    name="bottom-nav-bar-mobile-facebook-image"
-                  />
-                </div>
+            <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[13px]"
+              name="bottom-nav-bar-mobile-privacy-policy">
+              <div name="bottom-nav-bar-mobile-privacy-policy-link">
+                隱私政策
               </div>
             </div>
           </div>
-          <div
-            class="
+          <div class="mr-[31px]" name="bottom-nav-bar-mobile-links-part2">
+            <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]" name="bottom-nav-bar-mobile-contact-us">
+              <div name="bottom-nav-bar-mobile-contact-us-link">聯絡我們</div>
+            </div>
+            <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[41px]"
+              name="bottom-nav-bar-mobile-frequently-asked-questions">
+              <div name="bottom-nav-bar-mobile-frequently-asked-questions-link">
+                FAQ
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-between items-center mb-[51px]" name="bottom-nav-bar-mobile-social-media-links">
+            <div class="w-[20px] h-[20px] mr-[14px]">
+              <div name="bottom-nav-bar-mobile-line-image-link">
+                <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279856017418/line.png"
+                  alt="" class="w-full h-full" name="bottom-nav-bar-mobile-line-image" />
+              </div>
+            </div>
+            <div class="w-[20px] h-[20px] mr-[14px]">
+              <div name="bottom-nav-bar-mobile-twitter-image-link">
+                <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279512080465/twitter.png"
+                  alt="" class="w-full h-full" name="bottom-nav-bar-mobile-twitter-image" />
+              </div>
+            </div>
+            <div class="w-[20px] h-[20px] mr-[24px]">
+              <div name="bottom-nav-bar-mobile-facebook-image-link">
+                <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138280220917851/facebook.png"
+                  alt="" class="w-full h-full" name="bottom-nav-bar-mobile-facebook-image" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="
               text-[10px] text-[#828282]
               leading-[14px]
               text-center
               mt-[13px]
               mx-auto
               mb-[80px]
-            "
-            name="bottom-nav-bar-mobile-all-rights-reserved"
-          >
-            © 2018. All rights reserved.
-          </div>
+            " name="bottom-nav-bar-mobile-all-rights-reserved">
+          © 2018. All rights reserved.
         </div>
       </div>
+    </div>
 
-      <div
-        class="
+    <div class="
           mobile:flex
           mobile:fixed
           mobile:justify-center
@@ -3661,22 +2962,16 @@
           mobile:bottom-0
           mobile:bg-[#313538]
           desktop:hidden
-        "
-        name="bottom-nav-bar-mobile-stick"
-      >
-        <div
-          class="
+        " name="bottom-nav-bar-mobile-stick">
+      <div class="
             flex
             justify-center
             items-center
             w-[50%]
             h-[24px]
             border-solid border-r-[1px] border-[#828282]
-          "
-          name="bottom-nav-bar-mobile-stick-cart"
-        >
-          <div
-            class="
+          " name="bottom-nav-bar-mobile-stick-cart">
+        <div class="
               relative
               cursor-pointer
               flex flex-row
@@ -3684,24 +2979,16 @@
               items-center
               w-[180px]
               mx-auto
-            "
-            name="bottom-nav-bar-mobile-stick-shopping-cart-box"
-          >
-            <div name="bottom-nav-bar-mobile-stick-shopping-cart-image-link">
-              <img
-                src="https://cdn.discordapp.com/attachments/1001702231785099304/1006534620352880671/image.png"
-                alt=""
-                name="bottom-nav-bar-mobile-stick-shopping-cart-image"
-              />
-            </div>
-            <div
-              class="text-[16px] text-[#ffffff] leading-[16px] text-center"
-              name="bottom-nav-bar-mobile-stick-shopping-cart-text"
-            >
-              購物車
-            </div>
-            <div
-              class="
+            " name="bottom-nav-bar-mobile-stick-shopping-cart-box">
+          <div name="bottom-nav-bar-mobile-stick-shopping-cart-image-link">
+            <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006534620352880671/image.png" alt=""
+              name="bottom-nav-bar-mobile-stick-shopping-cart-image" />
+          </div>
+          <div class="text-[16px] text-[#ffffff] leading-[16px] text-center"
+            name="bottom-nav-bar-mobile-stick-shopping-cart-text">
+            購物車
+          </div>
+          <div class="
                 absolute
                 flex
                 justify-center
@@ -3714,11 +3001,8 @@
                 rounded-[50%]
                 text-[#ffffff] text-[16px]
                 leading-[24px]
-              "
-              name="bottom-nav-bar-mobile-stick-shopping-cart-notification-numbers"
-            >
-              <div
-                class="
+              " name="bottom-nav-bar-mobile-stick-shopping-cart-notification-numbers">
+            <div class="
                   animate-ping
                   absolute
                   inline-flex
@@ -3727,14 +3011,12 @@
                   rounded-full
                   bg-[#8b572a]
                   opacity-75
-                "
-              ></div>
-              1
-            </div>
+                "></div>
+            1
           </div>
         </div>
-        <div
-          class="
+      </div>
+      <div class="
             relative
             cursor-pointer
             flex flex-row
@@ -3742,59 +3024,53 @@
             items-center
             w-[180px]
             mx-auto
-          "
-          name="bottom-nav-bar-mobile-stick-shopping-profile-box"
-        >
-          <div name="bottom-nav-bar-mobile-stick-shopping-profile-box-link">
-            <img
-              src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055670895890453/profile.png"
-              alt=""
-              name="bottom-nav-bar-mobile-stick-shopping-profile-box-image"
-            />
-          </div>
-          <div
-            class="text-[16px] text-[#ffffff] leading-[16px] text-center"
-            name="bottom-nav-bar-mobile-stick-shopping-profile-box-text"
-          >
-            會員
-          </div>
+          " name="bottom-nav-bar-mobile-stick-shopping-profile-box">
+        <div name="bottom-nav-bar-mobile-stick-shopping-profile-box-link">
+          <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055670895890453/profile.png" alt=""
+            name="bottom-nav-bar-mobile-stick-shopping-profile-box-image" />
+        </div>
+        <div class="text-[16px] text-[#ffffff] leading-[16px] text-center"
+          name="bottom-nav-bar-mobile-stick-shopping-profile-box-text">
+          會員
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <script type="module">
-      // https://swiperjs.com/demos#autoplay
-      // mouseover 跟 mouseenter差別在哪? https://ithelp.ithome.com.tw/articles/10251677
-      //-----------------------------------------------------------------------------------------------
-      // w0p2 Step 1: Get Marketing Campaigns
-      const slidesHtmlDivElement = document.querySelector('div[name="slides"]');
-      // slides navigation dot box for putting slides navigation dot in it
-      const dotBoxHtmlDivElement = document.querySelector(
-        'div[name="dot-box"]'
-      );
-      const slidesTextMainHtmlDivElement = document.querySelector(
-        'div[name="slides-text-main"]'
-      );
-      const slidesTextDescribeHtmlDivElement = document.querySelector(
-        'div[name="slides-text-describe"]'
-      );
-      // get marketingCampaignAPISlidersPromise for API promise
-      const marketingCampaignAPISlidersPromise = fetch(
-        'https://api.appworks-school.tw/api/1.0/marketing/campaigns'
-      ).then((response) => response.json());
-      // get json key "data" value in API promise
-      const marketingCampaignAPIJson =
-        await marketingCampaignAPISlidersPromise.then((result) => result.data);
-      // slidesIntervalID to save interval id, which's running changeSlides function
-      let slidesIntervalID;
-      // slides current activating dot index
-      let currentSlidesIndex = 0;
-      // string variable to save create dotBox dot html code
-      let addToDotListHtmlDivElementString = '';
+  <script type="module">
+    // https://swiperjs.com/demos#autoplay
+    // mouseover 跟 mouseenter差別在哪? https://ithelp.ithome.com.tw/articles/10251677
+    //-----------------------------------------------------------------------------------------------
 
-      // create dotBox dot html code in string
-      for (let i = 0; i < marketingCampaignAPIJson.length; i++) {
-        addToDotListHtmlDivElementString += `<div class="
+    // w0p2 Step 1: Get Marketing Campaigns
+    const slidesHtmlDivElement = document.querySelector('div[name="slides"]');
+    // slides navigation dot box for putting slides navigation dot in it
+    const dotBoxHtmlDivElement = document.querySelector(
+      'div[name="dot-box"]'
+    );
+    const slidesTextMainHtmlDivElement = document.querySelector(
+      'div[name="slides-text-main"]'
+    );
+    const slidesTextDescribeHtmlDivElement = document.querySelector(
+      'div[name="slides-text-describe"]'
+    );
+    // get marketingCampaignAPISlidersPromise for API promise
+    const marketingCampaignAPISlidersPromise = fetch(
+      'https://api.appworks-school.tw/api/1.0/marketing/campaigns'
+    ).then((response) => response.json());
+    // get json key "data" value in API promise
+    const marketingCampaignAPIJson =
+      await marketingCampaignAPISlidersPromise.then((result) => result.data);
+    // slidesIntervalID to save interval id, which's running changeSlides function
+    let slidesIntervalID;
+    // slides current activating dot index
+    let currentSlidesIndex = 0;
+    // string variable to save create dotBox dot html code
+    let addToDotListHtmlDivElementString = '';
+
+    // create dotBox dot html code in string
+    for (let i = 0; i < marketingCampaignAPIJson.length; i++) {
+      addToDotListHtmlDivElementString += `<div class="
                                       cursor-pointer
                                       bg-no-repeat
                                       bg-cover
@@ -3810,105 +3086,107 @@
                                       bg-[#ffffff]/40
                                       " index=${i} id=${marketingCampaignAPIJson[i].id} product_id=${marketingCampaignAPIJson[i].product_id} name="dot
                                       "></div>`;
-      }
+    }
 
-      // add dotBox dot html code to dotBox
-      dotBoxHtmlDivElement.innerHTML = addToDotListHtmlDivElementString;
-      // get dot array from html querySelectorAll( .dot-box div )
-      const dotHtmlDivElement = document.querySelectorAll(
-        'div[name="dot-box"] div'
+    // add dotBox dot html code to dotBox
+    dotBoxHtmlDivElement.innerHTML = addToDotListHtmlDivElementString;
+    // get dot array from html querySelectorAll( .dot-box div )
+    const dotHtmlDivElement = document.querySelectorAll(
+      'div[name="dot-box"] div'
+    );
+
+    // changeSlidesToIndex function, More easily to changing change slides to index informations
+    function changeSlidesToIndex(index) {
+      slidesHtmlDivElement.style.backgroundImage = `url(${marketingCampaignAPIJson[index].picture})`;
+      slidesTextMainHtmlDivElement.innerHTML = marketingCampaignAPIJson[
+        index
+      ].story
+        .split('。')[0]
+        .replaceAll('\r\n', '<br>');
+      slidesTextDescribeHtmlDivElement.innerHTML = marketingCampaignAPIJson[
+        index
+      ].story
+        .split('。')[1]
+        .replaceAll('<br>', '');
+      dotHtmlDivElement.forEach((dotElement) => {
+        dotElement.classList.remove('bg-[#8B572A]');
+        dotElement.classList.add('bg-[#ffffff]/40');
+      });
+      dotHtmlDivElement[index].classList.remove('bg-[#ffffff]/40');
+      dotHtmlDivElement[index].classList.add('bg-[#8B572A]');
+      currentSlidesIndex = index;
+    }
+
+    slidesHtmlDivElement.addEventListener('click', (e) => {
+      history.replaceState(
+        null,
+        null,
+        `/products/${marketingCampaignAPIJson[currentSlidesIndex].product_id}`
       );
+      changePage('product-page');
+      showCategoryNavBarTextColorBrown('all');
+    });
 
-      // changeSlidesToIndex function, More easily to changing change slides to index informations
-      function changeSlidesToIndex(index) {
-        slidesHtmlDivElement.style.backgroundImage = `url(${marketingCampaignAPIJson[index].picture})`;
-        slidesTextMainHtmlDivElement.innerHTML = marketingCampaignAPIJson[
-          index
-        ].story
-          .split('。')[0]
-          .replaceAll('\r\n', '<br>');
-        slidesTextDescribeHtmlDivElement.innerHTML = marketingCampaignAPIJson[
-          index
-        ].story
-          .split('。')[1]
-          .replaceAll('<br>', '');
-        dotHtmlDivElement.forEach((dotElement) => {
-          dotElement.classList.remove('bg-[#8B572A]');
-          dotElement.classList.add('bg-[#ffffff]/40');
-        });
-        dotHtmlDivElement[index].classList.remove('bg-[#ffffff]/40');
-        dotHtmlDivElement[index].classList.add('bg-[#8B572A]');
-        currentSlidesIndex = index;
+    // add click event listener to dotBox, for changing change slides to trigger event dot index informations
+    dotBoxHtmlDivElement.addEventListener('click', (e) => {
+      if (e.target.getAttribute('id') != null) {
+        changeSlidesToIndex(e.target.getAttribute('id') - 1);
       }
+    });
 
-      slidesHtmlDivElement.addEventListener('click', (e) => {
-        history.replaceState(
-          null,
-          null,
-          `products/${marketingCampaignAPIJson[currentSlidesIndex].product_id}`
-        );
-      });
-
-      // add click event listener to dotBox, for changing change slides to trigger event dot index informations
-      dotBoxHtmlDivElement.addEventListener('click', (e) => {
-        if (e.target.getAttribute('id') != null) {
-          changeSlidesToIndex(e.target.getAttribute('id') - 1);
-        }
-      });
-
-      // changeSlides function, that's function for setInterval to autopPlay slides
-      function changeSlides() {
-        if (currentSlidesIndex < marketingCampaignAPIJson.length) {
-          changeSlidesToIndex(currentSlidesIndex);
-          currentSlidesIndex++;
-        } else {
-          changeSlidesToIndex(0);
-        }
+    // changeSlides function, that's function for setInterval to autopPlay slides
+    function changeSlides() {
+      if (currentSlidesIndex < marketingCampaignAPIJson.length) {
+        changeSlidesToIndex(currentSlidesIndex);
+        currentSlidesIndex++;
+      } else {
+        changeSlidesToIndex(0);
       }
+    }
 
-      // addChangeSlidesInterval use for create a interval and save interval id. Set interval to repeat running changeSlides function with delay time
-      function addChangeSlidesInterval(intervalDelay) {
-        clearInterval(slidesIntervalID);
-        slidesIntervalID = setInterval(changeSlides, intervalDelay);
-      }
+    // addChangeSlidesInterval use for create a interval and save interval id. Set interval to repeat running changeSlides function with delay time
+    function addChangeSlidesInterval(intervalDelay) {
+      clearInterval(slidesIntervalID);
+      slidesIntervalID = setInterval(changeSlides, intervalDelay);
+    }
 
-      // remove interval when mouse hover slides area,remove interval running changeSlides function by interval id
-      slidesHtmlDivElement.addEventListener('mouseover', () => {
-        clearInterval(slidesIntervalID);
-      });
+    // remove interval when mouse hover slides area,remove interval running changeSlides function by interval id
+    slidesHtmlDivElement.addEventListener('mouseover', () => {
+      clearInterval(slidesIntervalID);
+    });
 
-      // create a new interval running changeSlides function with delay 5 seconds
-      slidesHtmlDivElement.addEventListener('mouseout', () => {
-        addChangeSlidesInterval(5000);
-      });
-
-      // Main function call for auto play slides entry point
-      changeSlidesToIndex(0);
+    // create a new interval running changeSlides function with delay 5 seconds
+    slidesHtmlDivElement.addEventListener('mouseout', () => {
       addChangeSlidesInterval(5000);
-      //-----------------------------------------------------------------------------------------------
+    });
 
-      //-----------------------------------------------------------------------------------------------
-      // w0p3
-      // w0p3 Step 1: Connect to RESTful API for Data of All Products
-      // get marketingCampaignAPISlidersPromise for API promise
-      const productListAPIPromise = fetch(
-        'https://api.appworks-school.tw/api/1.0/products/all'
-      ).then((response) => response.json());
-      // get json key "data" in API promise
-      const productListAPIJson = await productListAPIPromise.then(
-        (result) => result.data
-      );
+    // Main function call for auto play slides entry point
+    changeSlidesToIndex(0);
+    addChangeSlidesInterval(5000);
+    //-----------------------------------------------------------------------------------------------
 
-      // w0p3 Step 3: Complete Paging Feature
-      const productListHtmlDivElement = document.querySelector(
-        'div[name="product-list"]'
-      );
-      let addToProductListHtmlString = '';
+    //-----------------------------------------------------------------------------------------------
+    // w0p3
+    // w0p3 Step 1: Connect to RESTful API for Data of All Products
+    // get marketingCampaignAPISlidersPromise for API promise
+    const productListAPIPromise = fetch(
+      'https://api.appworks-school.tw/api/1.0/products/all'
+    ).then((response) => response.json());
+    // get json key "data" in API promise
+    const productListAPIJson = await productListAPIPromise.then(
+      (result) => result.data
+    );
 
-      for (let i = 0; i < productListAPIJson.length; i++) {
-        let addToProductColorListHtml = '';
-        for (let j = 0; j < productListAPIJson[i]['colors'].length; j++) {
-          addToProductColorListHtml += `<div class="
+    // w0p3 Step 3: Complete Paging Feature
+    const productListHtmlDivElement = document.querySelector(
+      'div[name="product-list"]'
+    );
+    let addToProductListHtmlString = '';
+
+    for (let i = 0; i < productListAPIJson.length; i++) {
+      let addToProductColorListHtml = '';
+      for (let j = 0; j < productListAPIJson[i]['colors'].length; j++) {
+        addToProductColorListHtml += `<div class="
                                     cursor-pointer
                                     bg-[#${productListAPIJson[i]['colors'][j].code}]
                                     border-solid border-[1px] border-[#d3d3d3]
@@ -3917,8 +3195,8 @@
                                     desktop:h-[24px]
                                     desktop:mt-[20px]
                                     desktop:mr-[10px]" name="product-colors"></div>`;
-        }
-        addToProductListHtmlString += `<div class="
+      }
+      addToProductListHtmlString += `<div class="
                               flex flex-col
                               mobile:w-[calc(50%-27px)] mobile:mx-[3px]
                               desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]" name="product">
@@ -3959,91 +3237,91 @@
                                 desktop:leading-[24px]
                                 desktop:tracking-[4px]" name="product-price">TWD.${productListAPIJson[i].price}</div>
                           </div>`;
+    }
+    productListHtmlDivElement.innerHTML = addToProductListHtmlString;
+
+    //-----------------------------------------------------------------------------------------------
+
+    //-----------------------------------------------------------------------------------------------
+
+    // w0p4
+    // w0p4 Step 1: Complete Product Category Feature
+    //              Infinite Scroll
+    const modeUrl = {
+      all: 'https://api.appworks-school.tw/api/1.0/products/all',
+      women: 'https://api.appworks-school.tw/api/1.0/products/women',
+      men: 'https://api.appworks-school.tw/api/1.0/products/men',
+      accessories:
+        'https://api.appworks-school.tw/api/1.0/products/accessories',
+    };
+    let mode = 'all';
+    let hasNextPage = true;
+    let renderPageNumber = 0;
+    let fetchUrl = '';
+
+    let searchMode = false;
+    let searchKeyWord = '';
+
+    function showProductListUIByCategoryPagingOrSearchKeyWord() {
+      if (renderPageNumber == 0) {
+        scrollTo(0, 0);
       }
-      productListHtmlDivElement.innerHTML = addToProductListHtmlString;
+      if (searchMode) {
+        fetchUrl = `https://api.appworks-school.tw/api/1.0/products/search?keyword=${searchKeyWord}`;
+      } else {
+        fetchUrl = `${modeUrl[mode]}?paging=${renderPageNumber}`;
+      }
+      fetch(fetchUrl).then(async (response) => {
+        const productListAPIJson = await response.json();
+        const productListAPIJsonData = productListAPIJson.data;
 
-      //-----------------------------------------------------------------------------------------------
+        'next_paging' in productListAPIJson
+          ? (hasNextPage = true)
+          : (hasNextPage = false);
 
-      //-----------------------------------------------------------------------------------------------
+        // w0p3 Step 3: Complete Paging Feature
+        const productListHtmlDivElement = document.querySelector(
+          'div[name="product-list"]'
+        );
+        let addToProductListHtmlString = '';
 
-      // w0p4
-      // w0p4 Step 1: Complete Product Category Feature
-      //              Infinite Scroll
-      const modeUrl = {
-        all: 'https://api.appworks-school.tw/api/1.0/products/all',
-        women: 'https://api.appworks-school.tw/api/1.0/products/women',
-        men: 'https://api.appworks-school.tw/api/1.0/products/men',
-        accessories:
-          'https://api.appworks-school.tw/api/1.0/products/accessories',
-      };
-      let mode = 'all';
-      let hasNextPage = true;
-      let renderPageNumber = 0;
-      let fetchUrl = '';
+        renderPageNumber == 0
+          ? (addToProductListHtmlString = '')
+          : (addToProductListHtmlString =
+            productListHtmlDivElement.innerHTML);
 
-      let searchMode = false;
-      let searchKeyWord = '';
-
-      function showProductListUIByCategoryPagingOrSearchKeyWord() {
-        if (renderPageNumber == 0) {
-          scrollTo(0, 0);
-        }
         if (searchMode) {
-          fetchUrl = `https://api.appworks-school.tw/api/1.0/products/search?keyword=${searchKeyWord}`;
-        } else {
-          fetchUrl = `${modeUrl[mode]}?paging=${renderPageNumber}`;
-        }
-        fetch(fetchUrl).then(async (response) => {
-          const productListAPIJson = await response.json();
-          const productListAPIJsonData = productListAPIJson.data;
-
-          'next_paging' in productListAPIJson
-            ? (hasNextPage = true)
-            : (hasNextPage = false);
-
-          // w0p3 Step 3: Complete Paging Feature
-          const productListHtmlDivElement = document.querySelector(
-            'div[name="product-list"]'
-          );
-          let addToProductListHtmlString = '';
-
-          renderPageNumber == 0
-            ? (addToProductListHtmlString = '')
-            : (addToProductListHtmlString =
-                productListHtmlDivElement.innerHTML);
-
-          if (searchMode) {
-            if (productListAPIJsonData.length == 0) {
-              productListHtmlDivElement.innerHTML =
-                '<div class="flex justify-center w-full" name=""><div class="text-[48px] text-[#8B572A]" name="product-error">查無此商品!</div></div>';
-              hasNextPage = false;
-              searchMode = false;
-              return;
-            }
-            addToProductListHtmlString = '';
+          if (productListAPIJsonData.length == 0) {
+            productListHtmlDivElement.innerHTML =
+              '<div class="flex justify-center w-full" name=""><div class="text-[48px] text-[#8B572A]" name="product-error">查無此商品!</div></div>';
+            hasNextPage = false;
+            searchMode = false;
+            return;
           }
+          addToProductListHtmlString = '';
+        }
 
-          const count = (
-            addToProductListHtmlString.match(/product-image/g) || []
-          ).length;
+        const count = (
+          addToProductListHtmlString.match(/product-image/g) || []
+        ).length;
 
-          for (let i = 0; i < productListAPIJsonData.length; i++) {
-            let addToProductColorListHtml = '';
-            for (
-              let j = 0;
-              j < productListAPIJsonData[i]['colors'].length;
-              j++
-            ) {
-              let addTailwindCSSColorMarginLeftAdjust = '';
-              // if (Math.round(window.innerWidth) >= 1280) {}
-              if (j == 0) {
-                addTailwindCSSColorMarginLeftAdjust =
-                  'mobile:mr-[3px] desktop:mr-[5px]';
-              } else {
-                addTailwindCSSColorMarginLeftAdjust =
-                  'mobile:mx-[3px] desktop:mx-[5px]';
-              }
-              addToProductColorListHtml += `<div class="
+        for (let i = 0; i < productListAPIJsonData.length; i++) {
+          let addToProductColorListHtml = '';
+          for (
+            let j = 0;
+            j < productListAPIJsonData[i]['colors'].length;
+            j++
+          ) {
+            let addTailwindCSSColorMarginLeftAdjust = '';
+            // if (Math.round(window.innerWidth) >= 1280) {}
+            if (j == 0) {
+              addTailwindCSSColorMarginLeftAdjust =
+                'mobile:mr-[3px] desktop:mr-[5px]';
+            } else {
+              addTailwindCSSColorMarginLeftAdjust =
+                'mobile:mx-[3px] desktop:mx-[5px]';
+            }
+            addToProductColorListHtml += `<div class="
                                                     cursor-pointer
                                                     bg-[#${productListAPIJsonData[i]['colors'][j].code}]
                                                     border-solid border-[1px] border-[#d3d3d3]
@@ -4053,8 +3331,8 @@
                                                     desktop:h-[24px]
                                                     desktop:mt-[20px]
                                                     desktop:mr-[10px]" name="product-colors"></div>`;
-            }
-            addToProductListHtmlString += `<div class="
+          }
+          addToProductListHtmlString += `<div class="
                                               flex flex-col
                                               mobile:w-[calc(50%-27px)]
                                               desktop:w-[360px] desktop:h-[666px] mobile:mx-[3px] desktop:mx-[20px]" name="product">
@@ -4096,270 +3374,524 @@
                                                 desktop:leading-[24px]
                                                 desktop:tracking-[4px]" name="product-price">TWD.${productListAPIJsonData[i].price}</div>
                                           </div>`;
+        }
+        productListHtmlDivElement.innerHTML = addToProductListHtmlString;
+        searchMode = false;
+      });
+    }
+
+    // w0p4 function
+    function showCategoryNavBarTextColorBrown(divName) {
+      // // method 1
+      // const topNavBarChangeCategoryHtmlDivElement = [document
+      //   .querySelector('div[name="top-nav-bar-desktop-women-dresses"]'), document
+      //     .querySelector('div[name="top-nav-bar-desktop-men-dresses"]'), document
+      //       .querySelector('div[name="top-nav-bar-desktop-accessories"]'), document
+      //         .querySelector('div[name="top-nav-bar-below-mobile-women-dresses"]'), document
+      //           .querySelector('div[name="top-nav-bar-below-mobile-men-dresses"]'), document
+      //             .querySelector('div[name="top-nav-bar-below-mobile-accessories"]')];
+      // if (mode == 'all') {
+      //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove(
+      //     'desktop:text-[#8B572A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[0].classList.add(
+      //     'desktop:text-[#3F3A3A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[1].classList.remove(
+      //     'desktop:text-[#8B572A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[1].classList.add(
+      //     'desktop:text-[#3F3A3A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[2].classList.remove(
+      //     'desktop:text-[#8B572A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[2].classList.add(
+      //     'desktop:text-[#3F3A3A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove(
+      //     'mobile:text-[#ffffff]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[3].classList.add(
+      //     'mobile:text-[#828282]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[4].classList.remove(
+      //     'mobile:text-[#ffffff]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[4].classList.add(
+      //     'mobile:text-[#828282]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[5].classList.remove(
+      //     'mobile:text-[#ffffff]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[5].classList.add(
+      //     'mobile:text-[#828282]'
+      //   );
+      // } else if (mode == 'women') {
+      //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove(
+      //     'desktop:text-[#3F3A3A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[0].classList.add(
+      //     'desktop:text-[#8B572A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[1].classList.remove(
+      //     'desktop:text-[#8B572A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[1].classList.add(
+      //     'desktop:text-[#3F3A3A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[2].classList.remove(
+      //     'desktop:text-[#8B572A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[2].classList.add(
+      //     'desktop:text-[#3F3A3A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove(
+      //     'mobile:text-[#828282]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[3].classList.add(
+      //     'mobile:text-[#ffffff]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[4].classList.remove(
+      //     'mobile:text-[#ffffff]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[4].classList.add(
+      //     'mobile:text-[#828282]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[5].classList.remove(
+      //     'mobile:text-[#ffffff]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[5].classList.add(
+      //     'mobile:text-[#828282]'
+      //   );
+      // } else if (mode == 'men') {
+      //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove(
+      //     'desktop:text-[#8B572A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[0].classList.add(
+      //     'desktop:text-[#3F3A3A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[1].classList.remove(
+      //     'desktop:text-[#3F3A3A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[1].classList.add(
+      //     'desktop:text-[#8B572A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[2].classList.remove(
+      //     'desktop:text-[#8B572A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[2].classList.add(
+      //     'desktop:text-[#3F3A3A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove(
+      //     'mobile:text-[#ffffff]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[3].classList.add(
+      //     'mobile:text-[#828282]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[4].classList.remove(
+      //     'mobile:text-[#828282]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[4].classList.add(
+      //     'mobile:text-[#ffffff]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[5].classList.remove(
+      //     'mobile:text-[#ffffff]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[5].classList.add(
+      //     'mobile:text-[#828282]'
+      //   );
+      // } else if (mode == 'accessories') {
+      //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove(
+      //     'desktop:text-[#8B572A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[0].classList.add(
+      //     'desktop:text-[#3F3A3A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[1].classList.remove(
+      //     'desktop:text-[#8B572A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[1].classList.add(
+      //     'desktop:text-[#3F3A3A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[2].classList.remove(
+      //     'desktop:text-[#3F3A3A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[2].classList.add(
+      //     'desktop:text-[#8B572A]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove(
+      //     'mobile:text-[#ffffff]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[3].classList.add(
+      //     'mobile:text-[#828282]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[4].classList.remove(
+      //     'mobile:text-[#ffffff]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[4].classList.add(
+      //     'mobile:text-[#828282]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[5].classList.remove(
+      //     'mobile:text-[#828282]'
+      //   );
+      //   topNavBarChangeCategoryHtmlDivElement[5].classList.add(
+      //     'mobile:text-[#ffffff]'
+      //   );
+      // }
+
+      // method 2
+      const topNavBarChangeCategoryHtmlDivElementName = [
+        'top-nav-bar-desktop-women-dresses',
+        'top-nav-bar-desktop-men-dresses',
+        'top-nav-bar-desktop-accessories',
+        'top-nav-bar-below-mobile-women-dresses',
+        'top-nav-bar-below-mobile-men-dresses',
+        'top-nav-bar-below-mobile-accessories',
+      ];
+
+      topNavBarChangeCategoryHtmlDivElementName.forEach(
+        (HtmlDivElementName) => {
+          const changeTextColorHtmlDivElement = document.querySelector(
+            `div[name="${HtmlDivElementName}"]`
+          );
+          if (
+            changeTextColorHtmlDivElement.innerHTML.includes(divName) &&
+            divName != 'all'
+          ) {
+            if (
+              changeTextColorHtmlDivElement.classList.contains(
+                'mobile:text-[#828282]'
+              )
+            ) {
+              changeTextColorHtmlDivElement.classList.remove(
+                'mobile:text-[#828282]'
+              );
+              changeTextColorHtmlDivElement.classList.add(
+                'mobile:text-[#ffffff]'
+              );
+            } else if (
+              changeTextColorHtmlDivElement.classList.contains(
+                'desktop:text-[#3F3A3A]'
+              )
+            ) {
+              changeTextColorHtmlDivElement.classList.remove(
+                'desktop:text-[#3F3A3A]'
+              );
+              changeTextColorHtmlDivElement.classList.add(
+                'desktop:text-[#8B572A]'
+              );
+            }
+          } else {
+            if (
+              changeTextColorHtmlDivElement.classList.contains(
+                'mobile:text-[#ffffff]'
+              )
+            ) {
+              changeTextColorHtmlDivElement.classList.remove(
+                'mobile:text-[#ffffff]'
+              );
+              changeTextColorHtmlDivElement.classList.add(
+                'mobile:text-[#828282]'
+              );
+            } else if (
+              changeTextColorHtmlDivElement.classList.contains(
+                'desktop:text-[#8B572A]'
+              )
+            ) {
+              changeTextColorHtmlDivElement.classList.remove(
+                'desktop:text-[#8B572A]'
+              );
+              changeTextColorHtmlDivElement.classList.add(
+                'desktop:text-[#3F3A3A]'
+              );
+            }
           }
-          productListHtmlDivElement.innerHTML = addToProductListHtmlString;
-          searchMode = false;
-        });
+        }
+      );
+    }
+
+    mode = 'all';
+    renderPageNumber = 0;
+    showProductListUIByCategoryPagingOrSearchKeyWord();
+
+    document
+      .querySelector('img[name="top-nav-bar-website-logo"]')
+      .addEventListener('click', (e) => {
+        history.replaceState(null, null, '/');
+        changePage('main-page');
+        showCategoryNavBarTextColorBrown('all');
+        mode = 'all';
+        renderPageNumber = 0;
+        showProductListUIByCategoryPagingOrSearchKeyWord();
+      });
+    document
+      .querySelector('div[name="top-nav-bar-desktop-women-dresses"]')
+      .addEventListener('click', (e) => {
+        history.replaceState(null, null, '/?category=women');
+        changePage('main-page');
+        showCategoryNavBarTextColorBrown(e.target.innerHTML);
+        mode = 'women';
+        renderPageNumber = 0;
+        showProductListUIByCategoryPagingOrSearchKeyWord();
+      });
+    document
+      .querySelector('div[name="top-nav-bar-desktop-men-dresses"]')
+      .addEventListener('click', (e) => {
+        history.replaceState(null, null, '/?category=men');
+        changePage('main-page');
+        showCategoryNavBarTextColorBrown(e.target.innerHTML);
+        mode = 'men';
+        renderPageNumber = 0;
+        showProductListUIByCategoryPagingOrSearchKeyWord();
+      });
+    document
+      .querySelector('div[name="top-nav-bar-desktop-accessories"]')
+      .addEventListener('click', (e) => {
+        history.replaceState(null, null, '/?category=accessories');
+        changePage('main-page');
+        showCategoryNavBarTextColorBrown(e.target.innerHTML);
+        mode = 'accessories';
+        renderPageNumber = 0;
+        showProductListUIByCategoryPagingOrSearchKeyWord();
+      });
+    document
+      .querySelector('div[name="top-nav-bar-below-mobile-women-dresses"]')
+      .addEventListener('click', (e) => {
+        history.replaceState(null, null, '/?category=women');
+        changePage('main-page');
+        showCategoryNavBarTextColorBrown(e.target.innerHTML);
+        mode = 'women';
+        renderPageNumber = 0;
+        showProductListUIByCategoryPagingOrSearchKeyWord('women', 0);
+      });
+    document
+      .querySelector('div[name="top-nav-bar-desktop-men-dresses"]')
+      .addEventListener('click', (e) => {
+        history.replaceState(null, null, '/?category=men');
+        changePage('main-page');
+        showCategoryNavBarTextColorBrown(e.target.innerHTML);
+        mode = 'men';
+        renderPageNumber = 0;
+        showProductListUIByCategoryPagingOrSearchKeyWord();
+      });
+    document
+      .querySelector('div[name="top-nav-bar-desktop-accessories"]')
+      .addEventListener('click', (e) => {
+        history.replaceState(null, null, '/?category=accessories');
+        changePage('main-page');
+        showCategoryNavBarTextColorBrown(e.target.innerHTML);
+        mode = 'accessories';
+        renderPageNumber = 0;
+        showProductListUIByCategoryPagingOrSearchKeyWord();
+      });
+    document
+      .querySelector('div[name="top-nav-bar-below-mobile-women-dresses"]')
+      .addEventListener('click', (e) => {
+        history.replaceState(null, null, '/?category=women');
+        changePage('main-page');
+        showCategoryNavBarTextColorBrown(e.target.innerHTML);
+        mode = 'women';
+        renderPageNumber = 0;
+        showProductListUIByCategoryPagingOrSearchKeyWord();
+      });
+    document
+      .querySelector('div[name="top-nav-bar-below-mobile-men-dresses"]')
+      .addEventListener('click', (e) => {
+        history.replaceState(null, null, '/?category=men');
+        changePage('main-page');
+        showCategoryNavBarTextColorBrown(e.target.innerHTML);
+        mode = 'men';
+        renderPageNumber = 0;
+        showProductListUIByCategoryPagingOrSearchKeyWord();
+      });
+    document
+      .querySelector('div[name="top-nav-bar-below-mobile-accessories"]')
+      .addEventListener('click', (e) => {
+        history.replaceState(null, null, '/?category=accessories');
+        changePage('main-page');
+        showCategoryNavBarTextColorBrown(e.target.innerHTML);
+        mode = 'accessories';
+        renderPageNumber = 0;
+        showProductListUIByCategoryPagingOrSearchKeyWord();
+      });
+
+    // w0p4 spinner animation switch using intersection Observer
+    const spinnerHtmlDivElement = document.querySelector(
+      'div[name="spinner"]'
+    );
+    const intersectionObserverTargetDesktop = document.querySelector(
+      'div[name="bottom-nav-bar-desktop-box"]'
+    );
+    const intersectionObserverTargetMobile = document.querySelector(
+      'div[name="bottom-nav-bar-mobile-box-box"]'
+    );
+
+    let intersectionObserver = new IntersectionObserver((entries) => {
+      if (entries[0].intersectionRatio <= 0) {
+        spinnerHtmlDivElement.style.visibility = 'hidden';
+        return;
       }
+      if (hasNextPage) {
+        spinnerHtmlDivElement.style.visibility = 'visible';
+        renderPageNumber++;
+        showProductListUIByCategoryPagingOrSearchKeyWord();
+      }
+    });
 
-      mode = 'all';
-      renderPageNumber = 0;
-      showProductListUIByCategoryPagingOrSearchKeyWord();
+    intersectionObserver.observe(intersectionObserverTargetDesktop);
+    intersectionObserver.observe(intersectionObserverTargetMobile);
 
-      document
-        .querySelector('img[name="top-nav-bar-website-logo"]')
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, location.pathname);
+    // w0p4 Step 2: Complete Search Feature
+    // desktopSearch
+    document
+      .querySelector('input[name="top-nav-bar-desktop-search-bar"]')
+      .addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          history.replaceState(null, null, `/?keyword=${e.target.value}`);
           changePage('main-page');
           showCategoryNavBarTextColorBrown('all');
-          mode = 'all';
-          renderPageNumber = 0;
-          showProductListUIByCategoryPagingOrSearchKeyWord();
-        });
-      document
-        .querySelector('div[name="top-nav-bar-desktop-women-dresses"]')
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, '?category=women');
-          changePage('main-page');
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
-          mode = 'women';
-          renderPageNumber = 0;
-          showProductListUIByCategoryPagingOrSearchKeyWord();
-        });
-      document
-        .querySelector('div[name="top-nav-bar-desktop-men-dresses"]')
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, '?category=men');
-          changePage('main-page');
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
-          mode = 'men';
-          renderPageNumber = 0;
-          showProductListUIByCategoryPagingOrSearchKeyWord();
-        });
-      document
-        .querySelector('div[name="top-nav-bar-desktop-accessories"]')
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, '?category=accessories');
-          changePage('main-page');
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
-          mode = 'accessories';
-          renderPageNumber = 0;
-          showProductListUIByCategoryPagingOrSearchKeyWord();
-        });
-      document
-        .querySelector('div[name="top-nav-bar-below-mobile-women-dresses"]')
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, '?category=women');
-          changePage('main-page');
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
-          mode = 'women';
-          renderPageNumber = 0;
-          showProductListUIByCategoryPagingOrSearchKeyWord('women', 0);
-        });
-      document
-        .querySelector('div[name="top-nav-bar-desktop-men-dresses"]')
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, '?category=men');
-          changePage('main-page');
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
-          mode = 'men';
-          renderPageNumber = 0;
-          showProductListUIByCategoryPagingOrSearchKeyWord();
-        });
-      document
-        .querySelector('div[name="top-nav-bar-desktop-accessories"]')
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, '?category=accessories');
-          changePage('main-page');
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
-          mode = 'accessories';
-          renderPageNumber = 0;
-          showProductListUIByCategoryPagingOrSearchKeyWord();
-        });
-      document
-        .querySelector('div[name="top-nav-bar-below-mobile-women-dresses"]')
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, '?category=women');
-          changePage('main-page');
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
-          mode = 'women';
-          renderPageNumber = 0;
-          showProductListUIByCategoryPagingOrSearchKeyWord();
-        });
-      document
-        .querySelector('div[name="top-nav-bar-below-mobile-men-dresses"]')
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, '?category=men');
-          changePage('main-page');
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
-          mode = 'men';
-          renderPageNumber = 0;
-          showProductListUIByCategoryPagingOrSearchKeyWord();
-        });
-      document
-        .querySelector('div[name="top-nav-bar-below-mobile-accessories"]')
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, '?category=accessories');
-          changePage('main-page');
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
-          mode = 'accessories';
-          renderPageNumber = 0;
-          showProductListUIByCategoryPagingOrSearchKeyWord();
-        });
-
-      // w0p4 spinner animation switch using intersection Observer
-      const spinnerHtmlDivElement = document.querySelector(
-        'div[name="spinner"]'
-      );
-      const intersectionObserverTargetDesktop = document.querySelector(
-        'div[name="bottom-nav-bar-desktop-box"]'
-      );
-      const intersectionObserverTargetMobile = document.querySelector(
-        'div[name="bottom-nav-bar-mobile-box-box"]'
-      );
-
-      let intersectionObserver = new IntersectionObserver((entries) => {
-        if (entries[0].intersectionRatio <= 0) {
-          spinnerHtmlDivElement.style.visibility = 'hidden';
-          return;
-        }
-        if (hasNextPage) {
-          spinnerHtmlDivElement.style.visibility = 'visible';
-          renderPageNumber++;
+          scrollTo(0, 0);
+          searchKeyWord = e.target.value;
+          searchMode = true;
           showProductListUIByCategoryPagingOrSearchKeyWord();
         }
       });
+    document
+      .querySelector('input[name="top-nav-bar-desktop-search-bar"]')
+      .addEventListener('click', (e) => {
+        const clickTarget = e.target;
+        const clickTargetWidth = clickTarget.offsetWidth;
+        const xCoordInClickTarget =
+          e.clientX - clickTarget.getBoundingClientRect().left;
+        if (clickTargetWidth / 1.2 > xCoordInClickTarget) {
+          // clicked left
+          e.target.focus();
+        } else {
+          // clicked right
+          history.replaceState(null, null, `/?keyword=${e.target.value}`);
+          changePage('main-page');
+          showCategoryNavBarTextColorBrown('all');
+          scrollTo(0, 0);
+          searchKeyWord = e.target.value;
+          searchMode = true;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        }
+      });
+    //. mobileSearch
+    document
+      .querySelector('input[name="top-nav-bar-mobile-search"]')
+      .addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          history.replaceState(null, null, `/?keyword=${e.target.value}`);
+          changePage('main-page');
+          showCategoryNavBarTextColorBrown('all');
+          scrollTo(0, 0);
+          searchKeyWord = e.target.value;
+          searchMode = true;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        }
+      });
+    document
+      .querySelector('input[name="top-nav-bar-mobile-search"]')
+      .addEventListener('click', (e) => {
+        const clickTarget = e.target;
+        const clickTargetWidth = clickTarget.offsetWidth;
+        const xCoordInClickTarget =
+          e.clientX - clickTarget.getBoundingClientRect().left;
+        if (clickTargetWidth / 1.2 > xCoordInClickTarget) {
+          // clicked left
+          e.target.focus();
+        } else {
+          // clicked right
+          history.replaceState(null, null, `/?keyword=${e.target.value}`);
+          changePage('main-page');
+          showCategoryNavBarTextColorBrown('all');
+          scrollTo(0, 0);
+          searchKeyWord = e.target.value;
+          searchMode = true;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        }
+      });
+    //-----------------------------------------------------------------------------------------------
 
-      intersectionObserver.observe(intersectionObserverTargetDesktop);
-      intersectionObserver.observe(intersectionObserverTargetMobile);
+    //-----------------------------------------------------------------------------------------------
 
-      // w0p4 Step 2: Complete Search Feature
-      // desktopSearch
-      document
-        .querySelector('input[name="top-nav-bar-desktop-search-bar"]')
-        .addEventListener('keypress', (e) => {
-          if (e.key === 'Enter') {
-            history.replaceState(null, null, `?keyword=${e.target.value}`);
-            changePage('main-page');
-            showCategoryNavBarTextColorBrown('all');
-            scrollTo(0, 0);
-            searchKeyWord = e.target.value;
-            searchMode = true;
-            showProductListUIByCategoryPagingOrSearchKeyWord();
-          }
-        });
-      document
-        .querySelector('input[name="top-nav-bar-desktop-search-bar"]')
-        .addEventListener('click', (e) => {
-          const clickTarget = e.target;
-          const clickTargetWidth = clickTarget.offsetWidth;
-          const xCoordInClickTarget =
-            e.clientX - clickTarget.getBoundingClientRect().left;
-          if (clickTargetWidth / 1.2 > xCoordInClickTarget) {
-            // clicked left
-            e.target.focus();
-          } else {
-            // clicked right
-            history.replaceState(null, null, `?keyword=${e.target.value}`);
-            changePage('main-page');
-            showCategoryNavBarTextColorBrown('all');
-            scrollTo(0, 0);
-            searchKeyWord = e.target.value;
-            searchMode = true;
-            showProductListUIByCategoryPagingOrSearchKeyWord();
-          }
-        });
-      //. mobileSearch
-      document
-        .querySelector('input[name="top-nav-bar-mobile-search"]')
-        .addEventListener('keypress', (e) => {
-          if (e.key === 'Enter') {
-            history.replaceState(null, null, `?keyword=${e.target.value}`);
-            changePage('main-page');
-            showCategoryNavBarTextColorBrown('all');
-            scrollTo(0, 0);
-            searchKeyWord = e.target.value;
-            searchMode = true;
-            showProductListUIByCategoryPagingOrSearchKeyWord();
-          }
-        });
-      document
-        .querySelector('input[name="top-nav-bar-mobile-search"]')
-        .addEventListener('click', (e) => {
-          const clickTarget = e.target;
-          const clickTargetWidth = clickTarget.offsetWidth;
-          const xCoordInClickTarget =
-            e.clientX - clickTarget.getBoundingClientRect().left;
-          if (clickTargetWidth / 1.2 > xCoordInClickTarget) {
-            // clicked left
-            e.target.focus();
-          } else {
-            // clicked right
-            history.replaceState(null, null, `?keyword=${e.target.value}`);
-            changePage('main-page');
-            showCategoryNavBarTextColorBrown('all');
-            scrollTo(0, 0);
-            searchKeyWord = e.target.value;
-            searchMode = true;
-            showProductListUIByCategoryPagingOrSearchKeyWord();
-          }
-        });
-      //-----------------------------------------------------------------------------------------------
+    // w0p5
+    // Step 1: Complete Product Page Layout
+    // Step 2: Take Parameter from Page URL
+    let id;
 
-      //-----------------------------------------------------------------------------------------------
+    // Listener event for when URL parameters change https://stackoverflow.com/a/73183359
+    let previousUrl = window.location.href;
+    const observer = new MutationObserver(function (mutations) {
+      if (window.location.href !== previousUrl) {
+        console.log(
+          `URL changed from ${previousUrl} to ${window.location.href}`
+        );
+        previousUrl = window.location.href;
 
-      // w0p5
-      // Step 1: Complete Product Page Layout
-      // Step 2: Take Parameter from Page URL
-      // Step 3: Connect to Product Details API
-      // Step 4: Render Product Details in the Product Page
-      const container = document.querySelector('div[name="detail-container"]');
-      const productId = new URL(document.location.href);
-      const params = productId.searchParams;
+        console.log(window.location.href.includes("products"));
 
-      let url = 'https://api.appworks-school.tw/api/1.0/products/details?id=';
-      let id = '';
-      for (const [key, value] of params.entries()) {
-        id = value;
+        // if(window.location.href.includes("products")) {
+        //   let currentURL = new URL(window.location.hf);
+        //   currentURL.pathname.replace("/products/", "");
+
+        //   // Step 3: Connect to Product Details API
+        //   // get marketingCampaignAPISlidersPromise for API promise
+        //   const productDetailsAPIPromise = fetch(
+        //     `https://api.appworks-school.tw/api/1.0/products/details?id=${id}`
+        //   ).then((response) => response.json());
+        //   // get json key "data" in API promise
+        //   const productDetailsAPIJson = await productListAPIPromise.then(
+        //     (result) => result.data
+        //   );
+
+        //   showProductDetail()
+        //   console.log(productDetailsAPIJson);
+        // }
       }
+    });
+    const config = { subtree: true, childList: true };
 
-      fetch(`${url}${id}`)
-        .then((response) => response.json())
-        .then((data) => showProductDetail(data.data));
+    // start listening to changes
+    observer.observe(document, config);
 
-      function showProductDetail(data) {
-        const product = data;
-        console.log(data);
-        let colorList = '';
-        let sizeList = '';
-        let imgList = '';
+    // Step 4: Render Product Details in the Product Page
+    const container = document.querySelector('div[name="detail-container"]');
 
-        for (let i = 0; i < product.colors.length; i++) {
-          colorList += `
+    function showProductDetail() {
+      console.log(productDetailsAPIJson);
+      let colorList = '';
+      let sizeList = '';
+      let imgList = '';
+
+      for (let i = 0; i < productDetailsAPIJson.colors.length; i++) {
+        colorList += `
       		<div class="color-border">
-      			<div class="color-inner" style="background-color:#${product.colors[i].code}"></div>
+      			<div class="color-inner" style="background-color:#${productDetailsAPIJson.colors[i].code}"></div>
       		</div>
       		`;
-        }
+      }
 
-        for (let i = 0; i < product.sizes.length; i++) {
-          sizeList += `<li>${product.sizes[i]}</li>`;
-        }
+      for (let i = 0; i < productDetailsAPIJson.sizes.length; i++) {
+        sizeList += `<li>${productDetailsAPIJson.sizes[i]}</li>`;
+      }
 
-        for (let i = 0; i < product.images.length; i++) {
-          imgList += `<img class="info-picture" src="${product.images[i]}"></img>`;
-        }
+      for (let i = 0; i < productDetailsAPIJson.images.length; i++) {
+        imgList += `<img class="info-picture" src="${productDetailsAPIJson.images[i]}"></img>`;
+      }
 
-        container.innerHTML = `
+      container.innerHTML = `
       	<div class="detail-row">
-              <img class="detial-pic" src="${product.main_image}" />
+              <img class="detial-pic" src="${productDetailsAPIJson.main_image}" />
               <div class="detail-display">
                 <div class="detail-title">
                   <div class="title-name">
-                    <h1>${product.title}</h1>
-                    <p>${product.id}</p>
+                    <h1>${productDetailsAPIJson.title}</h1>
+                    <p>${productDetailsAPIJson.id}</p>
                   </div>
-                  <p class="title-price">TWD.${product.price}</p>
+                  <p class="title-price">TWD.${productDetailsAPIJson.price}</p>
                 </div>
                 <div class="detail-product">
                   <div class="size-color">
@@ -4383,14 +3915,14 @@
                 </div>
                 <div class="detail-add"><button>加入購物車</button></div>
                 <div class="detail-description">
-                  <p class="description-note">${product.note}</p>
+                  <p class="description-note">${productDetailsAPIJson.note}</p>
                   <div class="description-texturemix">
-                    <p class="description-texture">${product.texture}</p>
-                    <p class="description-description">${product.description}</p>
+                    <p class="description-texture">${productDetailsAPIJson.texture}</p>
+                    <p class="description-description">${productDetailsAPIJson.description}</p>
                   </div>
                   <div class="description-clean">
-                    <p class="description-wash">清洗：${product.wash}</p>
-                    <p class="description-location">產地：${product.place}
+                    <p class="description-wash">清洗：${productDetailsAPIJson.wash}</p>
+                    <p class="description-location">產地：${productDetailsAPIJson.place}
                     </p>
                   </div>
                 </div>
@@ -4401,423 +3933,193 @@
                 <p>更多產品資訊</p>
                 <div class="info-dash"></div>
               </div>
-              <p class="info-discription">${product.story}</p>
+              <p class="info-discription">${productDetailsAPIJson.story}</p>
             </div>
             ${imgList}
       	`;
 
-        const border = document.querySelectorAll('.color-border');
-        const size = document.querySelectorAll('.size-switch li');
+      const border = document.querySelectorAll('.color-border');
+      const size = document.querySelectorAll('.size-switch li');
 
-        function clearColorActive() {
-          for (let i = 0; i < border.length; i++) {
-            border[i].removeAttribute('id', 'active');
-          }
-        }
-
-        function clearSizeActive() {
-          for (let i = 0; i < size.length; i++) {
-            size[i].classList.remove('active');
-          }
-        }
-
+      function clearColorActive() {
         for (let i = 0; i < border.length; i++) {
-          border[i].addEventListener('click', () => {
-            clearColorActive();
-            border[i].setAttribute('id', 'active');
-          });
+          border[i].removeAttribute('id', 'active');
         }
+      }
 
+      function clearSizeActive() {
         for (let i = 0; i < size.length; i++) {
-          size[i].addEventListener('click', () => {
-            clearSizeActive();
-            size[i].classList.add('active');
-          });
+          size[i].classList.remove('active');
         }
       }
-      //-----------------------------------------------------------------------------------------------
 
-      // w0p4 function
-      function showCategoryNavBarTextColorBrown(divName) {
-        // // method 1
-        // const topNavBarChangeCategoryHtmlDivElement = [document
-        //   .querySelector('div[name="top-nav-bar-desktop-women-dresses"]'), document
-        //     .querySelector('div[name="top-nav-bar-desktop-men-dresses"]'), document
-        //       .querySelector('div[name="top-nav-bar-desktop-accessories"]'), document
-        //         .querySelector('div[name="top-nav-bar-below-mobile-women-dresses"]'), document
-        //           .querySelector('div[name="top-nav-bar-below-mobile-men-dresses"]'), document
-        //             .querySelector('div[name="top-nav-bar-below-mobile-accessories"]')];
-        // if (mode == 'all') {
-        //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove(
-        //     'desktop:text-[#8B572A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[0].classList.add(
-        //     'desktop:text-[#3F3A3A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[1].classList.remove(
-        //     'desktop:text-[#8B572A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[1].classList.add(
-        //     'desktop:text-[#3F3A3A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[2].classList.remove(
-        //     'desktop:text-[#8B572A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[2].classList.add(
-        //     'desktop:text-[#3F3A3A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove(
-        //     'mobile:text-[#ffffff]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[3].classList.add(
-        //     'mobile:text-[#828282]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList.remove(
-        //     'mobile:text-[#ffffff]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList.add(
-        //     'mobile:text-[#828282]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[5].classList.remove(
-        //     'mobile:text-[#ffffff]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[5].classList.add(
-        //     'mobile:text-[#828282]'
-        //   );
-        // } else if (mode == 'women') {
-        //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove(
-        //     'desktop:text-[#3F3A3A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[0].classList.add(
-        //     'desktop:text-[#8B572A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[1].classList.remove(
-        //     'desktop:text-[#8B572A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[1].classList.add(
-        //     'desktop:text-[#3F3A3A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[2].classList.remove(
-        //     'desktop:text-[#8B572A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[2].classList.add(
-        //     'desktop:text-[#3F3A3A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove(
-        //     'mobile:text-[#828282]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[3].classList.add(
-        //     'mobile:text-[#ffffff]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList.remove(
-        //     'mobile:text-[#ffffff]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList.add(
-        //     'mobile:text-[#828282]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[5].classList.remove(
-        //     'mobile:text-[#ffffff]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[5].classList.add(
-        //     'mobile:text-[#828282]'
-        //   );
-        // } else if (mode == 'men') {
-        //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove(
-        //     'desktop:text-[#8B572A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[0].classList.add(
-        //     'desktop:text-[#3F3A3A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[1].classList.remove(
-        //     'desktop:text-[#3F3A3A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[1].classList.add(
-        //     'desktop:text-[#8B572A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[2].classList.remove(
-        //     'desktop:text-[#8B572A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[2].classList.add(
-        //     'desktop:text-[#3F3A3A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove(
-        //     'mobile:text-[#ffffff]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[3].classList.add(
-        //     'mobile:text-[#828282]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList.remove(
-        //     'mobile:text-[#828282]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList.add(
-        //     'mobile:text-[#ffffff]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[5].classList.remove(
-        //     'mobile:text-[#ffffff]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[5].classList.add(
-        //     'mobile:text-[#828282]'
-        //   );
-        // } else if (mode == 'accessories') {
-        //   topNavBarChangeCategoryHtmlDivElement[0].classList.remove(
-        //     'desktop:text-[#8B572A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[0].classList.add(
-        //     'desktop:text-[#3F3A3A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[1].classList.remove(
-        //     'desktop:text-[#8B572A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[1].classList.add(
-        //     'desktop:text-[#3F3A3A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[2].classList.remove(
-        //     'desktop:text-[#3F3A3A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[2].classList.add(
-        //     'desktop:text-[#8B572A]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[3].classList.remove(
-        //     'mobile:text-[#ffffff]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[3].classList.add(
-        //     'mobile:text-[#828282]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList.remove(
-        //     'mobile:text-[#ffffff]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[4].classList.add(
-        //     'mobile:text-[#828282]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[5].classList.remove(
-        //     'mobile:text-[#828282]'
-        //   );
-        //   topNavBarChangeCategoryHtmlDivElement[5].classList.add(
-        //     'mobile:text-[#ffffff]'
-        //   );
-        // }
-
-        // method 2
-        const topNavBarChangeCategoryHtmlDivElementName = [
-          'top-nav-bar-desktop-women-dresses',
-          'top-nav-bar-desktop-men-dresses',
-          'top-nav-bar-desktop-accessories',
-          'top-nav-bar-below-mobile-women-dresses',
-          'top-nav-bar-below-mobile-men-dresses',
-          'top-nav-bar-below-mobile-accessories',
-        ];
-
-        topNavBarChangeCategoryHtmlDivElementName.forEach(
-          (HtmlDivElementName) => {
-            const changeTextColorHtmlDivElement = document.querySelector(
-              `div[name="${HtmlDivElementName}"]`
-            );
-            if (
-              changeTextColorHtmlDivElement.innerHTML.includes(divName) &&
-              divName != 'all'
-            ) {
-              if (
-                changeTextColorHtmlDivElement.classList.contains(
-                  'mobile:text-[#828282]'
-                )
-              ) {
-                changeTextColorHtmlDivElement.classList.remove(
-                  'mobile:text-[#828282]'
-                );
-                changeTextColorHtmlDivElement.classList.add(
-                  'mobile:text-[#ffffff]'
-                );
-              } else if (
-                changeTextColorHtmlDivElement.classList.contains(
-                  'desktop:text-[#3F3A3A]'
-                )
-              ) {
-                changeTextColorHtmlDivElement.classList.remove(
-                  'desktop:text-[#3F3A3A]'
-                );
-                changeTextColorHtmlDivElement.classList.add(
-                  'desktop:text-[#8B572A]'
-                );
-              }
-            } else {
-              if (
-                changeTextColorHtmlDivElement.classList.contains(
-                  'mobile:text-[#ffffff]'
-                )
-              ) {
-                changeTextColorHtmlDivElement.classList.remove(
-                  'mobile:text-[#ffffff]'
-                );
-                changeTextColorHtmlDivElement.classList.add(
-                  'mobile:text-[#828282]'
-                );
-              } else if (
-                changeTextColorHtmlDivElement.classList.contains(
-                  'desktop:text-[#8B572A]'
-                )
-              ) {
-                changeTextColorHtmlDivElement.classList.remove(
-                  'desktop:text-[#8B572A]'
-                );
-                changeTextColorHtmlDivElement.classList.add(
-                  'desktop:text-[#3F3A3A]'
-                );
-              }
-            }
-          }
-        );
+      for (let i = 0; i < border.length; i++) {
+        border[i].addEventListener('click', () => {
+          clearColorActive();
+          border[i].setAttribute('id', 'active');
+        });
       }
 
-      // function changePage
-      function changePage(showPageName) {
-        const pageHtmlDivElementName = [
-          'main-page',
-          'product-page',
-          'checkout-page',
-          'profile-page',
-          'aboutUs-page',
-        ];
-        pageHtmlDivElementName.forEach((pageName) => {
-          const pageHtmlDivElement = document.querySelector(
-            `div[name="${pageName}"]`
-          );
-          if (!pageHtmlDivElement.classList.contains('hidden')) {
-            pageHtmlDivElement.classList.add('hidden');
-          }
+      for (let i = 0; i < size.length; i++) {
+        size[i].addEventListener('click', () => {
+          clearSizeActive();
+          size[i].classList.add('active');
         });
-        const showPageHtmlDivElement = document.querySelector(
-          `div[name="${showPageName}"]`
-        );
-        if (showPageHtmlDivElement.classList.contains('hidden')) {
-          showPageHtmlDivElement.classList.remove('hidden');
-        }
       }
-      document
-        .querySelector('div[name="top-nav-bar-desktop-shopping-cart-box"]')
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, 'checkout');
-          showCategoryNavBarTextColorBrown('all');
-          changePage('checkout-page');
-        });
-      document
-        .querySelector(
-          'div[name="bottom-nav-bar-mobile-stick-shopping-cart-box"]'
-        )
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, 'checkout');
-          showCategoryNavBarTextColorBrown('all');
-          changePage('checkout-page');
-        });
-      document
-        .querySelector('div[name="top-nav-bar-desktop-profile-box"]')
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, 'profile');
-          showCategoryNavBarTextColorBrown('all');
-          changePage('profile-page');
-        });
-      document
-        .querySelector(
-          'div[name="bottom-nav-bar-mobile-stick-shopping-profile-box"]'
-        )
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, 'profile');
-          showCategoryNavBarTextColorBrown('all');
-          changePage('profile-page');
-        });
-      document
-        .querySelector('div[name="bottom-nav-bar-desktop-info-about"]')
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, 'aboutus');
-          showCategoryNavBarTextColorBrown('all');
-          changePage('aboutUs-page');
-        });
-      document
-        .querySelector('div[name="bottom-nav-bar-mobile-info-about"]')
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, 'aboutus');
-          showCategoryNavBarTextColorBrown('all');
-          changePage('aboutUs-page');
-        });
+    }
+    //-----------------------------------------------------------------------------------------------
 
-      // // how-can-i-get-query-string-values-in-javascript https://stackoverflow.com/a/901144
-      // const params = new Proxy(new URLSearchParams(window.location.search), {
-      //   get: (searchParams, prop) => searchParams.get(prop),
-      // });
-      // // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
-      // let value = params.some_key; // "some_value"
-
-      // // How to detect if URL has changed after hash in JavaScript https://stackoverflow.com/a/52809105
-      // window.addEventListener('locationchange', function () {
-      //   console.log('location changed!');
-      // });
-
-      // Listener event for when URL parameters change https://stackoverflow.com/a/73183359
-      let previousUrl = window.location.href;
-      const observer = new MutationObserver(function (mutations) {
-        if (window.location.href !== previousUrl) {
-          console.log(
-            `URL changed from ${previousUrl} to ${window.location.href}`
-          );
-          previousUrl = window.location.href;
+    // function changePage
+    function changePage(showPageName) {
+      const pageHtmlDivElementName = [
+        'main-page',
+        'product-page',
+        'checkout-page',
+        'profile-page',
+        'aboutUs-page',
+      ];
+      pageHtmlDivElementName.forEach((pageName) => {
+        const pageHtmlDivElement = document.querySelector(
+          `div[name="${pageName}"]`
+        );
+        if (!pageHtmlDivElement.classList.contains('hidden')) {
+          pageHtmlDivElement.classList.add('hidden');
         }
       });
-      const config = { subtree: true, childList: true };
-
-      // start listening to changes
-      observer.observe(document, config);
-
-      // stop listening to changes
-      // observer.disconnect();
-
-      // // Event when window.location.href changes https://stackoverflow.com/a/46428962
-      // var oldHref = document.location.href;
-
-      // window.onload = function () {
-      //   var bodyList = document.querySelector('body');
-
-      //   var observer = new MutationObserver(function (mutations) {
-      //     mutations.forEach(function (mutation) {
-      //       if (oldHref != document.location.href) {
-      //         console.log(
-      //           `URL changed from ${oldHref} to ${document.location.href}`
-      //         );
-      //         oldHref = document.location.href;
-      //         /* Changed ! your code here */
-      //       }
-      //     });
-      //   });
-
-      //   var config = {
-      //     childList: true,
-      //     subtree: true,
-      //   };
-
-      //   observer.observe(bodyList, config);
-      // };
-
-      // JavaScript image viewer. https://github.com/fengyuanchen/viewerjs
-      // View an image.
-      const productMainImageViewer = new Viewer(
-        document.querySelector('div[name="product-main-image-viewer"]'),
-        {
-          inline: false,
-          viewed() {
-            productMainImageViewer.zoomTo(1);
-          },
-        }
+      const showPageHtmlDivElement = document.querySelector(
+        `div[name="${showPageName}"]`
       );
-      const productImageViewer = new Viewer(
-        document.querySelector('div[name="product-image-viewer"]'),
-        {
-          inline: false,
-          viewed() {
-            productImageViewer.zoomTo(1);
-          },
-        }
-      );
-    </script>
+      if (showPageHtmlDivElement.classList.contains('hidden')) {
+        showPageHtmlDivElement.classList.remove('hidden');
+      }
+    }
+    document
+      .querySelector('div[name="top-nav-bar-desktop-shopping-cart-box"]')
+      .addEventListener('click', (e) => {
+        history.replaceState(null, null, 'checkout');
+        showCategoryNavBarTextColorBrown('all');
+        changePage('checkout-page');
+      });
+    document
+      .querySelector(
+        'div[name="bottom-nav-bar-mobile-stick-shopping-cart-box"]'
+      )
+      .addEventListener('click', (e) => {
+        history.replaceState(null, null, 'checkout');
+        showCategoryNavBarTextColorBrown('all');
+        changePage('checkout-page');
+      });
+    document
+      .querySelector('div[name="top-nav-bar-desktop-profile-box"]')
+      .addEventListener('click', (e) => {
+        history.replaceState(null, null, 'profile');
+        showCategoryNavBarTextColorBrown('all');
+        changePage('profile-page');
+      });
+    document
+      .querySelector(
+        'div[name="bottom-nav-bar-mobile-stick-shopping-profile-box"]'
+      )
+      .addEventListener('click', (e) => {
+        history.replaceState(null, null, 'profile');
+        showCategoryNavBarTextColorBrown('all');
+        changePage('profile-page');
+      });
+    document
+      .querySelector('div[name="bottom-nav-bar-desktop-info-about"]')
+      .addEventListener('click', (e) => {
+        history.replaceState(null, null, 'aboutus');
+        showCategoryNavBarTextColorBrown('all');
+        changePage('aboutUs-page');
+      });
+    document
+      .querySelector('div[name="bottom-nav-bar-mobile-info-about"]')
+      .addEventListener('click', (e) => {
+        history.replaceState(null, null, 'aboutus');
+        showCategoryNavBarTextColorBrown('all');
+        changePage('aboutUs-page');
+      });
 
-    <script type="text/babel">
+    // // how-can-i-get-query-string-values-in-javascript https://stackoverflow.com/a/901144
+    // const params = new Proxy(new URLSearchParams(window.location.search), {
+    //   get: (searchParams, prop) => searchParams.get(prop),
+    // });
+    // console.log(params);
+    // // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+    // let value = params.some_key; // "some_value"
+
+    // // How to detect if URL has changed after hash in JavaScript https://stackoverflow.com/a/52809105
+    // window.addEventListener('locationchange', function () {
+    //   console.log('location changed!');
+    // });
+
+    // // Listener event for when URL parameters change https://stackoverflow.com/a/73183359
+    // let previousUrl = window.location.href;
+    // const observer = new MutationObserver(function (mutations) {
+    //   if (window.location.href !== previousUrl) {
+    //     console.log(
+    //       `URL changed from ${previousUrl} to ${window.location.href}`
+    //     );
+    //     previousUrl = window.location.href;
+    //   }
+    // });
+    // const config = { subtree: true, childList: true };
+
+    // // start listening to changes
+    // observer.observe(document, config);
+
+    // stop listening to changes
+    // observer.disconnect();
+
+    // // Event when window.location.href changes https://stackoverflow.com/a/46428962
+    // var oldHref = document.location.href;
+
+    // window.onload = function () {
+    //   var bodyList = document.querySelector('body');
+
+    //   var observer = new MutationObserver(function (mutations) {
+    //     mutations.forEach(function (mutation) {
+    //       if (oldHref != document.location.href) {
+    //         console.log(
+    //           `URL changed from ${oldHref} to ${document.location.href}`
+    //         );
+    //         oldHref = document.location.href;
+    //         /* Changed ! your code here */
+    //       }
+    //     });
+    //   });
+
+    //   var config = {
+    //     childList: true,
+    //     subtree: true,
+    //   };
+
+    //   observer.observe(bodyList, config);
+    // };
+
+    // JavaScript image viewer. https://github.com/fengyuanchen/viewerjs
+    // View an image.
+    const productMainImageViewer = new Viewer(
+      document.querySelector('div[name="product-main-image-viewer"]'),
+      {
+        inline: false,
+        viewed() {
+          productMainImageViewer.zoomTo(1);
+        },
+      }
+    );
+    const productImageViewer = new Viewer(
+      document.querySelector('div[name="product-image-viewer"]'),
+      {
+        inline: false,
+        viewed() {
+          productImageViewer.zoomTo(1);
+        },
+      }
+    );
+  </script>
+
+  <script type="text/babel">
       // const {
       //   useState,
       //   useEffect,
@@ -4864,8 +4166,8 @@
       //     </React.StrictMode>
       //   </QueryClientProvider>
       // );
-    </script>
-    <!--
+  </script>
+  <!--
       Note: this page is a great way to try React but it's not suitable for production.
       It slowly compiles JSX with Babel in the browser and uses a large development build of React.
 
@@ -4878,7 +4180,8 @@
       You can also use React without JSX, in which case you can remove Babel:
       https://reactjs.org/docs/react-without-jsx.html
     -->
-  </body>
+</body>
+
 </html>
 
 <!-- <link rel="stylesheet" href="styles.css" />

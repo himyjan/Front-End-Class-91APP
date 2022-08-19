@@ -3158,13 +3158,7 @@
       showCategoryNavBarTextColorBrown('all');
 
       // w0p5 Step 3: Connect to Product Details API
-      fetch(
-        `https://api.appworks-school.tw/api/1.0/products/details?id=${marketingCampaignAPIJson[currentSlidesIndex].product_id}`
-      ).then(async (response) => {
-        const productDetailsAPIJson = await response.json();
-        const productDetailsAPIJsonData = productDetailsAPIJson.data;
-        showProductDetail(productDetailsAPIJsonData);
-      });
+      showProductDetail(marketingCampaignAPIJson[currentSlidesIndex].product_id);
     });
 
     // add click event listener to dotBox, for changing change slides to trigger event dot index informations
@@ -3453,13 +3447,7 @@
             showCategoryNavBarTextColorBrown('all');
 
             // w0p5 Step 3: Connect to Product Details API
-            fetch(
-              `https://api.appworks-school.tw/api/1.0/products/details?id=${productHtmlDivElement.id}`
-            ).then(async (response) => {
-              const productDetailsAPIJson = await response.json();
-              const productDetailsAPIJsonData = productDetailsAPIJson.data;
-              showProductDetail(productDetailsAPIJsonData);
-            });
+            showProductDetail(productHtmlDivElement.id);
           });
         });
         searchMode = false;
@@ -3993,13 +3981,7 @@
           const productId = currentURL.replace('/products/', '');
 
           // w0p5 Step 3: Connect to Product Details API
-          fetch(
-            `https://api.appworks-school.tw/api/1.0/products/details?id=${productId}`
-          ).then(async (response) => {
-            const productDetailsAPIJson = await response.json();
-            const productDetailsAPIJsonData = productDetailsAPIJson.data;
-            showProductDetail(productDetailsAPIJsonData);
-          });
+          showProductDetail(productId);
         }
       }
     });
@@ -4019,17 +4001,23 @@
       'div[name="product-page-product-box"]'
     );
 
-    function showProductDetail(productDetailsAPIJsonData) {
-      if (productDetailsAPIJsonData.id == container.product_id) {
+    function showProductDetail(showProductId) {
+      if (showProductId == container.product_id) {
         return;
       }
+      container.classList.add("animate-pulse");
       scrollTo(0, 0);
-      container.product_id = productDetailsAPIJsonData.id;
-      let colorList = '';
-      let sizeList = '';
-      let imgList = '';
-      for (let i = 0; i < productDetailsAPIJsonData.colors.length; i++) {
-        colorList += `<div class="
+      fetch(
+        `https://api.appworks-school.tw/api/1.0/products/details?id=${showProductId}`
+      ).then(async (response) => {
+        const productDetailsAPIJson = await response.json();
+        const productDetailsAPIJsonData = productDetailsAPIJson.data;
+        container.product_id = productDetailsAPIJsonData.id;
+        let colorList = '';
+        let sizeList = '';
+        let imgList = '';
+        for (let i = 0; i < productDetailsAPIJsonData.colors.length; i++) {
+          colorList += `<div class="
                             flex
                             justify-center
                             items-center
@@ -4047,10 +4035,10 @@
                               h-[24px]
                               " name="product-page-product-color"></div>
                         </div>`;
-      }
+        }
 
-      for (let i = 0; i < productDetailsAPIJsonData.sizes.length; i++) {
-        sizeList += `<div class="
+        for (let i = 0; i < productDetailsAPIJsonData.sizes.length; i++) {
+          sizeList += `<div class="
                            cursor-pointer
                            flex
                            justify-center
@@ -4065,26 +4053,26 @@
                            " name="product-page-product-size">
                          ${productDetailsAPIJsonData.sizes[i]}
                        </div>`;
-      }
+        }
 
-      for (let i = 0; i < productDetailsAPIJsonData.images.length; i++) {
-        imgList += `<img class="
+        for (let i = 0; i < productDetailsAPIJsonData.images.length; i++) {
+          imgList += `<img class="
                          object-cover
                          mobile:w-full mobile:mt-[20px]
                          desktop:w-[960px] desktop:h-[540px] desktop:mt-[30px]
                          " name="product-picture" src="${productDetailsAPIJsonData.images[i]}">`;
-      }
+        }
 
-      container.innerHTML = `<div class="
+        container.innerHTML = `<div class="
                                    flex
                                    mobile:flex-col mobile:mt-0
                                    desktop:flex-row desktop:mt-[65px] desktop:items-center
                                    " name="product-page-product" product_id="${productDetailsAPIJsonData.id
-        }" >
+          }" >
                                 <div class="" name="product-main-image-viewer-box" id="">
                                   <div class="" name="product-main-image-viewer" id="">
                                     <img src="${productDetailsAPIJsonData.main_image
-        }" class="
+          }" class="
                                         cursor-pointer
                                         object-cover
                                         mobile:w-full
@@ -4299,17 +4287,17 @@
                                       desktop:text-[20px] desktop:leading-[30px]
                                       " name="product-spec">
                                     ${productDetailsAPIJsonData.note
-        }<br /><br />
+          }<br /><br />
                                     ${productDetailsAPIJsonData.texture}<br />
                                     ${productDetailsAPIJsonData.description.slice(
-          0,
-          4
-        )}<br />
+            0,
+            4
+          )}<br />
                                     ${productDetailsAPIJsonData.description.slice(
-          4
-        )}<br />
+            4
+          )}<br />
                                     清洗：${productDetailsAPIJsonData.wash
-        }<br />
+          }<br />
                                     產地：${productDetailsAPIJsonData.place}
                                   </div>
                                 </div>
@@ -4369,104 +4357,107 @@
                                 </div>
                               </div>`;
 
-      // JavaScript image viewer. https://github.com/fengyuanchen/viewerjs
-      // View an image.
-      const productMainImageViewer = new Viewer(
-        document.querySelector('div[name="product-main-image-viewer"]'),
-        {
-          inline: false,
-          viewed() {
-            productMainImageViewer.zoomTo(1);
-          },
-        }
-      );
-      const productImageViewer = new Viewer(
-        document.querySelector('div[name="product-image-viewer"]'),
-        {
-          inline: false,
-          viewed() {
-            productImageViewer.zoomTo(1);
-          },
-        }
-      );
+        container.classList.remove("animate-pulse");
 
-      const border = document.querySelectorAll(
-        'div[name="product-page-product-color-border"]'
-      );
-      const size = document.querySelectorAll(
-        'div[name="product-page-product-size"]'
-      );
+        // JavaScript image viewer. https://github.com/fengyuanchen/viewerjs
+        // View an image.
+        const productMainImageViewer = new Viewer(
+          document.querySelector('div[name="product-main-image-viewer"]'),
+          {
+            inline: false,
+            viewed() {
+              productMainImageViewer.zoomTo(1);
+            },
+          }
+        );
+        const productImageViewer = new Viewer(
+          document.querySelector('div[name="product-image-viewer"]'),
+          {
+            inline: false,
+            viewed() {
+              productImageViewer.zoomTo(1);
+            },
+          }
+        );
 
-      function clearColorActive() {
+        const border = document.querySelectorAll(
+          'div[name="product-page-product-color-border"]'
+        );
+        const size = document.querySelectorAll(
+          'div[name="product-page-product-size"]'
+        );
+
+        function clearColorActive() {
+          for (let i = 0; i < border.length; i++) {
+            if (border[i].classList.contains('border-[1px]')) {
+              border[i].classList.remove('border-[1px]');
+              border[i].classList.add('border-none');
+            }
+          }
+        }
+
+        function clearSizeActive() {
+          for (let i = 0; i < size.length; i++) {
+            if (size[i].classList.contains('bg-[#000000]')) {
+              size[i].classList.remove('bg-[#000000]');
+              size[i].classList.add('bg-[#ececec]');
+              size[i].classList.remove('text-[#ffffff]');
+              size[i].classList.add('text-[#3f3a3a]');
+            }
+          }
+        }
+
         for (let i = 0; i < border.length; i++) {
-          if (border[i].classList.contains('border-[1px]')) {
-            border[i].classList.remove('border-[1px]');
-            border[i].classList.add('border-none');
-          }
+          border[i].addEventListener('click', () => {
+            clearColorActive();
+            if (border[i].classList.contains('border-none')) {
+              border[i].classList.remove('border-none');
+              border[i].classList.add('border-[1px]');
+            }
+          });
         }
-      }
 
-      function clearSizeActive() {
         for (let i = 0; i < size.length; i++) {
-          if (size[i].classList.contains('bg-[#000000]')) {
-            size[i].classList.remove('bg-[#000000]');
-            size[i].classList.add('bg-[#ececec]');
-            size[i].classList.remove('text-[#ffffff]');
-            size[i].classList.add('text-[#3f3a3a]');
-          }
+          size[i].addEventListener('click', () => {
+            clearSizeActive();
+            if (size[i].classList.contains('bg-[#ececec]')) {
+              size[i].classList.remove('bg-[#ececec]');
+              size[i].classList.add('bg-[#000000]');
+              size[i].classList.remove('text-[#3f3a3a]');
+              size[i].classList.add('text-[#ffffff]');
+            }
+          });
         }
-      }
 
-      for (let i = 0; i < border.length; i++) {
-        border[i].addEventListener('click', () => {
+        function initSelectColorFirst() {
           clearColorActive();
-          if (border[i].classList.contains('border-none')) {
-            border[i].classList.remove('border-none');
-            border[i].classList.add('border-[1px]');
-          }
+          border[0].classList.remove('border-none');
+          border[0].classList.add('border-[1px]');
+        }
+
+        initSelectColorFirst();
+
+        const minusButtonHtmlDivElement = document.querySelector(
+          'div[name="product-amount-minus"]'
+        );
+        const plusButtonHtmlDivElement = document.querySelector(
+          'div[name="product-amount-plus"]'
+        );
+        const orderAmountInputHtmlInputElement = document.querySelector(
+          'input[name="product-amount"]'
+        );
+
+        minusButtonHtmlDivElement.addEventListener('click', (e) => {
+          let value = parseInt(orderAmountInputHtmlInputElement.value);
+          value -= 1;
+          orderAmountInputHtmlInputElement.value = value;
         });
-      }
 
-      for (let i = 0; i < size.length; i++) {
-        size[i].addEventListener('click', () => {
-          clearSizeActive();
-          if (size[i].classList.contains('bg-[#ececec]')) {
-            size[i].classList.remove('bg-[#ececec]');
-            size[i].classList.add('bg-[#000000]');
-            size[i].classList.remove('text-[#3f3a3a]');
-            size[i].classList.add('text-[#ffffff]');
-          }
+        plusButtonHtmlDivElement.addEventListener('click', (e) => {
+          let value = parseInt(orderAmountInputHtmlInputElement.value);
+          value += 1;
+          orderAmountInputHtmlInputElement.value = value;
         });
-      }
-
-      function initSelectColorFirst() {
-        clearColorActive();
-        border[0].classList.remove('border-none');
-        border[0].classList.add('border-[1px]');
-      }
-
-      initSelectColorFirst();
-
-      const minusButtonHtmlDivElement = document.querySelector(
-        'div[name="product-amount-minus"]'
-      );
-      const plusButtonHtmlDivElement = document.querySelector(
-        'div[name="product-amount-plus"]'
-      );
-      const orderAmountInputHtmlInputElement = document.querySelector(
-        'input[name="product-amount"]'
-      );
-
-      minusButtonHtmlDivElement.addEventListener('click', (e) => {
-        let value = parseInt(orderAmountInputHtmlInputElement.value);
-        value -= 1;
-        orderAmountInputHtmlInputElement.value = value;
-      });
-
-      plusButtonHtmlDivElement.addEventListener('click', (e) => {
-        let value = parseInt(orderAmountInputHtmlInputElement.value);
-        value += 1;
-        orderAmountInputHtmlInputElement.value = value;
       });
     }
     //-----------------------------------------------------------------------------------------------

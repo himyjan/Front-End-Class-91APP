@@ -3711,6 +3711,7 @@
     // w0p4 Step 2: Complete Product Category Feature - part3 add click event
     mode = 'all';
     renderPageNumber = 0;
+    history.replaceState(null, null, '/');
     showProductListUIByCategoryPagingOrSearchKeyWord();
 
     document
@@ -3991,11 +3992,11 @@
     // start listening to changes
     observer.observe(document, config);
 
-    // // disable website refresh
-    // window.addEventListener('beforeunload', function (e) {
-    //   e.preventDefault();
-    //   e.returnValue = '';
-    // });
+    // disable website refresh
+    window.addEventListener('beforeunload', function (e) {
+      e.preventDefault();
+      e.returnValue = '';
+    });
 
     // w0p5 Step 4: Render Product Details in the Product Page
     const container = document.querySelector('div[name="detail-container"]');
@@ -4274,14 +4275,11 @@
                                       mobile:text-[14px] mobile:leading-[24px]
                                       desktop:text-[20px] desktop:leading-[30px]
                                       " name="product-spec">
-                                    ${productDetailsAPIJsonData.note
-        }<br /><br />
+                                    ${productDetailsAPIJsonData.note}<br /><br />
                                     ${productDetailsAPIJsonData.texture}<br />
-                                    ${productDetailsAPIJsonData.description.replace(
-          ' '
-        )}<br />
-                                    清洗：${productDetailsAPIJsonData.wash
-        }<br />
+                                    ${productDetailsAPIJsonData.description.slice(0, 4)}<br />
+                                    ${productDetailsAPIJsonData.description.slice(4)}<br />
+                                    清洗：${productDetailsAPIJsonData.wash}<br />
                                     產地：${productDetailsAPIJsonData.place}
                                   </div>
                                 </div>
@@ -4371,17 +4369,20 @@
 
       function clearColorActive() {
         for (let i = 0; i < border.length; i++) {
-          if (!border[i].classList.contains('hidden')) {
-            border[i].classList.add('hidden');
+          if (border[i].classList.contains('border-[1px]')) {
+            border[i].classList.remove('border-[1px]');
+            border[i].classList.add('border-none');
           }
         }
       }
 
       function clearSizeActive() {
         for (let i = 0; i < size.length; i++) {
-          if (border[i].classList.contains('bg-[#ececec]')) {
-            size[i].classList.remove('bg-[#ececec]');
-            size[i].classList.add('bg-[#ffffff]');
+          if (size[i].classList.contains('bg-[#000000]')) {
+            size[i].classList.remove('bg-[#000000]');
+            size[i].classList.add('bg-[#ececec]');
+            size[i].classList.remove('text-[#ffffff]');
+            size[i].classList.add('text-[#3f3a3a]');
           }
         }
       }
@@ -4389,8 +4390,9 @@
       for (let i = 0; i < border.length; i++) {
         border[i].addEventListener('click', () => {
           clearColorActive();
-          if (border[i].classList.contains('hidden')) {
-            border[i].classList.remove('hidden');
+          if (border[i].classList.contains('border-none')) {
+            border[i].classList.remove('border-none');
+            border[i].classList.add('border-[1px]');
           }
         });
       }
@@ -4398,12 +4400,38 @@
       for (let i = 0; i < size.length; i++) {
         size[i].addEventListener('click', () => {
           clearSizeActive();
-          if (border[i].classList.contains('#ffffff')) {
-            size[i].classList.remove('bg-[#ffffff]');
-            size[i].classList.add('bg-[#ececec]');
+          if (size[i].classList.contains('bg-[#ececec]')) {
+            size[i].classList.remove('bg-[#ececec]');
+            size[i].classList.add('bg-[#000000]');
+            size[i].classList.remove('text-[#3f3a3a]');
+            size[i].classList.add('text-[#ffffff]');
           }
         });
       }
+
+      function initSelectColorFirst() {
+        clearColorActive();
+        border[0].classList.remove('border-none');
+        border[0].classList.add('border-[1px]');
+      }
+
+      initSelectColorFirst();
+
+      const minusButtonHtmlDivElement = document.querySelector('div[name="product-amount-minus"]');
+      const plusButtonHtmlDivElement = document.querySelector('div[name="product-amount-plus"]');
+      const orderAmountInputHtmlInputElement = document.querySelector('input[name="product-amount"]');
+
+      minusButtonHtmlDivElement.addEventListener('click', (e) => {
+        let value = parseInt(orderAmountInputHtmlInputElement.value);
+        value -= 1
+        orderAmountInputHtmlInputElement.value = value;
+      });
+
+      plusButtonHtmlDivElement.addEventListener('click', (e) => {
+        let value = parseInt(orderAmountInputHtmlInputElement.value);
+        value += 1
+        orderAmountInputHtmlInputElement.value = value;
+      });
     }
       //-----------------------------------------------------------------------------------------------
 

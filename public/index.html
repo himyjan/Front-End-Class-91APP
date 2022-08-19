@@ -3977,11 +3977,11 @@
     // start listening to changes
     observer.observe(document, config);
 
-    // // disable website refresh
-    // window.addEventListener('beforeunload', function (e) {
-    //   e.preventDefault();
-    //   e.returnValue = '';
-    // });
+    // disable website refresh
+    window.addEventListener('beforeunload', function (e) {
+      e.preventDefault();
+      e.returnValue = '';
+    });
 
     // w0p5 Step 4: Render Product Details in the Product Page
     const container = document.querySelector('div[name="detail-container"]');

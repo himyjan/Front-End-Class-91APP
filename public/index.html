@@ -3432,6 +3432,20 @@
                                           </div>`;
         }
         productListHtmlDivElement.innerHTML = addToProductListHtmlString;
+        const productHtmlDivElementNodeList = document.querySelectorAll(
+          'div[name="product"]'
+        );
+        productHtmlDivElementNodeList.forEach((productHtmlDivElement) => {
+          productHtmlDivElement.addEventListener('click', (e) => {
+            history.replaceState(
+              null,
+              null,
+              `/products/${productHtmlDivElement.id}`
+            );
+            changePage('product-page');
+            showCategoryNavBarTextColorBrown('all');
+          });
+        });
         searchMode = false;
       });
     }
@@ -3697,6 +3711,7 @@
     // w0p4 Step 2: Complete Product Category Feature - part3 add click event
     mode = 'all';
     renderPageNumber = 0;
+    history.replaceState(null, null, '/');
     showProductListUIByCategoryPagingOrSearchKeyWord();
 
     document
@@ -3990,7 +4005,7 @@
       let colorList = '';
       let sizeList = '';
       let imgList = '';
-
+      console.log(productDetailsAPIJsonData);
       for (let i = 0; i < productDetailsAPIJsonData.colors.length; i++) {
         colorList += `<div class="
                             flex
@@ -4001,14 +4016,14 @@
                             mobile:ml-[7px] mobile:mr-[7px]
                             desktop:ml-[9.5px] desktop:mr-[9.5px]
                             border-solid border-[1px] border-[#979797]
-                            " name="product-color-border">
+                            " name="product-page-product-color-border">
                           <div class="
                               cursor-pointer
                               bg-[#${productDetailsAPIJsonData.colors[i].code}]
                               border-solid border-[1px] border-[#d3d3d3]
                               w-[24px]
                               h-[24px]
-                              " name="product-color"></div>
+                              " name="product-page-product-color"></div>
                         </div>`;
       }
 
@@ -4025,7 +4040,7 @@
                            h-[36px]
                            mobile:ml-[7px] mobile:mr-[7px]
                            desktop:ml-[9.5px] desktop:mr-[9.5px]
-                           " name="product-size">
+                           " name="product-page-product-size">
                          ${productDetailsAPIJsonData.sizes[i]}
                        </div>`;
       }
@@ -4035,7 +4050,7 @@
                          object-cover
                          mobile:w-full mobile:mt-[20px]
                          desktop:w-[960px] desktop:h-[540px] desktop:mt-[30px]
-                         " name="info-picture" src="${productDetailsAPIJsonData.images[i]}">`;
+                         " name="product-picture" src="${productDetailsAPIJsonData.images[i]}">`;
       }
 
       container.innerHTML = `<div class="
@@ -4045,7 +4060,8 @@
                                    " name="detail-row">
                                 <div class="" name="product-main-image-viewer-box" id="">
                                   <div class="" name="product-main-image-viewer" id="">
-                                    <img src="${productDetailsAPIJsonData.main_image}" class="
+                                    <img src="${productDetailsAPIJsonData.main_image
+        }" class="
                                         cursor-pointer
                                         object-cover
                                         mobile:w-full
@@ -4259,10 +4275,18 @@
                                       mobile:text-[14px] mobile:leading-[24px]
                                       desktop:text-[20px] desktop:leading-[30px]
                                       " name="product-spec">
-                                    ${productDetailsAPIJsonData.note}<br /><br />
+                                    ${productDetailsAPIJsonData.note
+        }<br /><br />
                                     ${productDetailsAPIJsonData.texture}<br />
-                                    ${productDetailsAPIJsonData.description}<br />
-                                    清洗：${productDetailsAPIJsonData.wash}<br />
+                                    ${productDetailsAPIJsonData.description.slice(
+          0,
+          4
+        )}<br />
+                                    ${productDetailsAPIJsonData.description.slice(
+          4
+        )}<br />
+                                    清洗：${productDetailsAPIJsonData.wash
+        }<br />
                                     產地：${productDetailsAPIJsonData.place}
                                   </div>
                                 </div>
@@ -4343,37 +4367,92 @@
         }
       );
 
-      const border = document.querySelectorAll('.color-border');
-      const size = document.querySelectorAll('.size-switch div');
+      const border = document.querySelectorAll(
+        'div[name="product-page-product-color-border"]'
+      );
+      const size = document.querySelectorAll(
+        'div[name="product-page-product-size"]'
+      );
 
       function clearColorActive() {
         for (let i = 0; i < border.length; i++) {
-          border[i].removeAttribute('id', 'active');
+          if (border[i].classList.contains('border-[1px]')) {
+            border[i].classList.remove('border-[1px]');
+            border[i].classList.add('border-none');
+          }
         }
       }
 
       function clearSizeActive() {
         for (let i = 0; i < size.length; i++) {
-          size[i].classList.remove('active');
+          if (size[i].classList.contains('bg-[#000000]')) {
+            size[i].classList.remove('bg-[#000000]');
+            size[i].classList.add('bg-[#ececec]');
+            size[i].classList.remove('text-[#ffffff]');
+            size[i].classList.add('text-[#3f3a3a]');
+          }
         }
       }
 
       for (let i = 0; i < border.length; i++) {
         border[i].addEventListener('click', () => {
           clearColorActive();
-          border[i].setAttribute('id', 'active');
+          if (border[i].classList.contains('border-none')) {
+            border[i].classList.remove('border-none');
+            border[i].classList.add('border-[1px]');
+          }
         });
       }
 
       for (let i = 0; i < size.length; i++) {
         size[i].addEventListener('click', () => {
           clearSizeActive();
-          size[i].classList.add('active');
+          if (size[i].classList.contains('bg-[#ececec]')) {
+            size[i].classList.remove('bg-[#ececec]');
+            size[i].classList.add('bg-[#000000]');
+            size[i].classList.remove('text-[#3f3a3a]');
+            size[i].classList.add('text-[#ffffff]');
+          }
         });
       }
+
+      function initSelectColorFirst() {
+        clearColorActive();
+        border[0].classList.remove('border-none');
+        border[0].classList.add('border-[1px]');
+      }
+
+      initSelectColorFirst();
+
+      const minusButtonHtmlDivElement = document.querySelector(
+        'div[name="product-amount-minus"]'
+      );
+      const plusButtonHtmlDivElement = document.querySelector(
+        'div[name="product-amount-plus"]'
+      );
+      const orderAmountInputHtmlInputElement = document.querySelector(
+        'input[name="product-amount"]'
+      );
+
+      minusButtonHtmlDivElement.addEventListener('click', (e) => {
+        let value = parseInt(orderAmountInputHtmlInputElement.value);
+        value -= 1;
+        orderAmountInputHtmlInputElement.value = value;
+      });
+
+      plusButtonHtmlDivElement.addEventListener('click', (e) => {
+        let value = parseInt(orderAmountInputHtmlInputElement.value);
+        value += 1;
+        orderAmountInputHtmlInputElement.value = value;
+      });
     }
       //-----------------------------------------------------------------------------------------------
 
+      //-----------------------------------------------------------------------------------------------
+
+      //w1p1
+
+      //-----------------------------------------------------------------------------------------------
       // // how-can-i-get-query-string-values-in-javascript https://stackoverflow.com/a/901144
       // const params = new Proxy(new URLSearchParams(window.location.search), {
       //   get: (searchParams, prop) => searchParams.get(prop),

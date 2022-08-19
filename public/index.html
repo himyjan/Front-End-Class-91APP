@@ -4417,19 +4417,25 @@
 
       initSelectColorFirst();
 
-      const minusButtonHtmlDivElement = document.querySelector('div[name="product-amount-minus"]');
-      const plusButtonHtmlDivElement = document.querySelector('div[name="product-amount-plus"]');
-      const orderAmountInputHtmlInputElement = document.querySelector('input[name="product-amount"]');
+      const minusButtonHtmlDivElement = document.querySelector(
+        'div[name="product-amount-minus"]'
+      );
+      const plusButtonHtmlDivElement = document.querySelector(
+        'div[name="product-amount-plus"]'
+      );
+      const orderAmountInputHtmlInputElement = document.querySelector(
+        'input[name="product-amount"]'
+      );
 
       minusButtonHtmlDivElement.addEventListener('click', (e) => {
         let value = parseInt(orderAmountInputHtmlInputElement.value);
-        value -= 1
+        value -= 1;
         orderAmountInputHtmlInputElement.value = value;
       });
 
       plusButtonHtmlDivElement.addEventListener('click', (e) => {
         let value = parseInt(orderAmountInputHtmlInputElement.value);
-        value += 1
+        value += 1;
         orderAmountInputHtmlInputElement.value = value;
       });
     }

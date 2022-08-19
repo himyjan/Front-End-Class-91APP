@@ -35,6 +35,9 @@
               mobile: '0px',
               // => @media (min-width: 640px) { ... }
 
+              mobile360: '360px',
+              // => @media (min-width: 640px) { ... }
+
               desktop: '1280px',
               // => @media (min-width: 1280px) { ... }
             },
@@ -1276,8 +1279,8 @@
         name="detail-wrapper"
         id=""
       >
-        <div class="" name="detail-container"></div>
-        <!-- <div
+        <div class="" name="detail-container">
+          <!-- <div
           class="
             flex
             mobile:flex-col mobile:mt-0
@@ -1789,6 +1792,7 @@
             </div>
           </div>
         </div> -->
+        </div>
       </div>
     </div>
 
@@ -1995,6 +1999,7 @@
                     mobile:block
                     mobile:w-[104px]
                     mobile:h-[17px]
+                    mobile:mr-auto
                     mobile:text-center
                     mobile:text-[14px]
                     mobile:leading-[17px]
@@ -2025,6 +2030,7 @@
                     mobile:block
                     mobile:w-[104px]
                     mobile:h-[17px]
+                    mobile:ml-auto
                     mobile:text-center
                     mobile:text-[14px]
                     mobile:leading-[17px]
@@ -2039,7 +2045,7 @@
                 class="
                   flex flex-row
                   items-center
-                  mobile:h-[30px] mobile:mt-[12px] mobile:ml-[12px]
+                  mobile:h-[30px] mobile:mt-[12px]
                   desktop:h-[32px] desktop:mt-[60px] desktop:ml-0
                 "
                 name=""
@@ -2048,7 +2054,7 @@
                 <select
                   class="
                     w-[80px]
-                    mobile:h-[30px] mobile:mr-[12px]
+                    mobile:h-[30px] mobile:ml-[12px] mobile:mr-auto
                     desktop:h-[32px] desktop:mr-[56px]
                     pl-[16px]
                     bg-[#F3F3F3]
@@ -2085,8 +2091,8 @@
                     justify-center
                     items-center
                     text-[#3f3a3a] text-center
-                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
-                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
+                    desktop:w-[192px] desktop:ml-0 desktop:text-[16px] desktop:leading-[19px]
+                    mobile:w-[104px] mobile:ml-auto mobile:text-[14px] mobile:leading-[17px]
                   "
                   name=""
                   id=""
@@ -2218,6 +2224,7 @@
                     mobile:block
                     mobile:w-[104px]
                     mobile:h-[17px]
+                    mobile:mr-auto
                     mobile:text-center
                     mobile:text-[14px]
                     mobile:leading-[17px]
@@ -2248,6 +2255,7 @@
                     mobile:block
                     mobile:w-[104px]
                     mobile:h-[17px]
+                    mobile:ml-auto
                     mobile:text-center
                     mobile:text-[14px]
                     mobile:leading-[17px]
@@ -2262,7 +2270,7 @@
                 class="
                   flex flex-row
                   items-center
-                  mobile:h-[30px] mobile:mt-[12px] mobile:ml-[12px]
+                  mobile:h-[30px] mobile:mt-[12px]
                   desktop:h-[32px] desktop:mt-[60px] desktop:ml-0
                 "
                 name=""
@@ -2271,7 +2279,7 @@
                 <select
                   class="
                     w-[80px]
-                    mobile:h-[30px] mobile:mr-[12px]
+                    mobile:h-[30px] mobile:ml-[12px] mobile:mr-auto
                     desktop:h-[32px] desktop:mr-[56px]
                     pl-[16px]
                     bg-[#F3F3F3]
@@ -2308,8 +2316,8 @@
                     justify-center
                     items-center
                     text-[#3f3a3a] text-center
-                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
-                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
+                    desktop:w-[192px] desktop:ml-0 desktop:text-[16px] desktop:leading-[19px]
+                    mobile:w-[104px] mobile:ml-auto mobile:text-[14px] mobile:leading-[17px]
                   "
                   name=""
                   id=""
@@ -2441,6 +2449,7 @@
                     mobile:block
                     mobile:w-[104px]
                     mobile:h-[17px]
+                    mobile:mr-auto
                     mobile:text-center
                     mobile:text-[14px]
                     mobile:leading-[17px]
@@ -2471,6 +2480,7 @@
                     mobile:block
                     mobile:w-[104px]
                     mobile:h-[17px]
+                    mobile:ml-auto
                     mobile:text-center
                     mobile:text-[14px]
                     mobile:leading-[17px]
@@ -2485,7 +2495,7 @@
                 class="
                   flex flex-row
                   items-center
-                  mobile:h-[30px] mobile:mt-[12px] mobile:ml-[12px]
+                  mobile:h-[30px] mobile:mt-[12px]
                   desktop:h-[32px] desktop:mt-[60px] desktop:ml-0
                 "
                 name=""
@@ -2494,7 +2504,7 @@
                 <select
                   class="
                     w-[80px]
-                    mobile:h-[30px] mobile:mr-[12px]
+                    mobile:h-[30px] mobile:ml-[12px] mobile:mr-auto
                     desktop:h-[32px] desktop:mr-[56px]
                     pl-[16px]
                     bg-[#F3F3F3]
@@ -2531,8 +2541,8 @@
                     justify-center
                     items-center
                     text-[#3f3a3a] text-center
-                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
-                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
+                    desktop:w-[192px] desktop:ml-0 desktop:text-[16px] desktop:leading-[19px]
+                    mobile:w-[104px] mobile:ml-auto mobile:text-[14px] mobile:leading-[17px]
                   "
                   name=""
                   id=""
@@ -2955,10 +2965,12 @@
               >
                 配送時間
               </div>
-              <form
-                class="flex items-center h-[26px] mobile:mt-[10px] desktop:mt-0"
-              >
-                <div class="flex flex-row items-center h-[26px]" name="" id="">
+              <form class="flex items-center mobile:mt-[10px] desktop:mt-0">
+                <div
+                  class="flex mobile:flex-col mobile360:flex-row items-center"
+                  name=""
+                  id=""
+                >
                   <input
                     type="radio"
                     id="08:00-12:00"
@@ -2968,7 +2980,8 @@
                   <label
                     for="08:00-12:00"
                     class="
-                      ml-[8px]
+                      mobile:ml-0
+                      mobile360:ml-[8px]
                       text-[#3f3a3a]
                       mobile:text-[14px]
                       desktop:text-[16px]
@@ -2981,12 +2994,13 @@
                     id="14:00-18:00"
                     name="time"
                     value="14:00-18:00"
-                    class="ml-[32px]"
+                    class="mobile:ml-0 mobile360:ml-[32px]"
                   />
                   <label
                     for="14:00-18:00"
                     class="
-                      ml-[8px]
+                      mobile:ml-0
+                      mobile360:ml-[8px]
                       text-[#3f3a3a]
                       mobile:text-[14px]
                       desktop:text-[16px]
@@ -2999,12 +3013,13 @@
                     id="not-set"
                     name="time"
                     value="not-set"
-                    class="ml-[32px]"
+                    class="mobile:ml-0 mobile360:ml-[32px]"
                   />
                   <label
                     for="not-set"
                     class="
-                      ml-[8px]
+                      mobile:ml-0
+                      mobile360:ml-[8px]
                       text-[#3f3a3a]
                       mobile:text-[14px]
                       desktop:text-[16px]
@@ -3766,6 +3781,7 @@
       // https://swiperjs.com/demos#autoplay
       // mouseover 跟 mouseenter差別在哪? https://ithelp.ithome.com.tw/articles/10251677
       //-----------------------------------------------------------------------------------------------
+
       // w0p2 Step 1: Get Marketing Campaigns
       const slidesHtmlDivElement = document.querySelector('div[name="slides"]');
       // slides navigation dot box for putting slides navigation dot in it
@@ -3845,8 +3861,10 @@
         history.replaceState(
           null,
           null,
-          `products/${marketingCampaignAPIJson[currentSlidesIndex].product_id}`
+          `/products/${marketingCampaignAPIJson[currentSlidesIndex].product_id}`
         );
+        changePage('product-page');
+        showCategoryNavBarTextColorBrown('all');
       });
 
       // add click event listener to dotBox, for changing change slides to trigger event dot index informations
@@ -3968,7 +3986,7 @@
 
       // w0p4
       // w0p4 Step 1: Complete Product Category Feature
-      //              Infinite Scroll
+      // w0p4 Step 2: Complete Search Feature - part1 data render
       const modeUrl = {
         all: 'https://api.appworks-school.tw/api/1.0/products/all',
         women: 'https://api.appworks-school.tw/api/1.0/products/women',
@@ -4102,342 +4120,7 @@
         });
       }
 
-      mode = 'all';
-      renderPageNumber = 0;
-      showProductListUIByCategoryPagingOrSearchKeyWord();
-
-      document
-        .querySelector('img[name="top-nav-bar-website-logo"]')
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, location.pathname);
-          changePage('main-page');
-          showCategoryNavBarTextColorBrown('all');
-          mode = 'all';
-          renderPageNumber = 0;
-          showProductListUIByCategoryPagingOrSearchKeyWord();
-        });
-      document
-        .querySelector('div[name="top-nav-bar-desktop-women-dresses"]')
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, '?category=women');
-          changePage('main-page');
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
-          mode = 'women';
-          renderPageNumber = 0;
-          showProductListUIByCategoryPagingOrSearchKeyWord();
-        });
-      document
-        .querySelector('div[name="top-nav-bar-desktop-men-dresses"]')
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, '?category=men');
-          changePage('main-page');
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
-          mode = 'men';
-          renderPageNumber = 0;
-          showProductListUIByCategoryPagingOrSearchKeyWord();
-        });
-      document
-        .querySelector('div[name="top-nav-bar-desktop-accessories"]')
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, '?category=accessories');
-          changePage('main-page');
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
-          mode = 'accessories';
-          renderPageNumber = 0;
-          showProductListUIByCategoryPagingOrSearchKeyWord();
-        });
-      document
-        .querySelector('div[name="top-nav-bar-below-mobile-women-dresses"]')
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, '?category=women');
-          changePage('main-page');
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
-          mode = 'women';
-          renderPageNumber = 0;
-          showProductListUIByCategoryPagingOrSearchKeyWord('women', 0);
-        });
-      document
-        .querySelector('div[name="top-nav-bar-desktop-men-dresses"]')
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, '?category=men');
-          changePage('main-page');
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
-          mode = 'men';
-          renderPageNumber = 0;
-          showProductListUIByCategoryPagingOrSearchKeyWord();
-        });
-      document
-        .querySelector('div[name="top-nav-bar-desktop-accessories"]')
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, '?category=accessories');
-          changePage('main-page');
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
-          mode = 'accessories';
-          renderPageNumber = 0;
-          showProductListUIByCategoryPagingOrSearchKeyWord();
-        });
-      document
-        .querySelector('div[name="top-nav-bar-below-mobile-women-dresses"]')
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, '?category=women');
-          changePage('main-page');
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
-          mode = 'women';
-          renderPageNumber = 0;
-          showProductListUIByCategoryPagingOrSearchKeyWord();
-        });
-      document
-        .querySelector('div[name="top-nav-bar-below-mobile-men-dresses"]')
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, '?category=men');
-          changePage('main-page');
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
-          mode = 'men';
-          renderPageNumber = 0;
-          showProductListUIByCategoryPagingOrSearchKeyWord();
-        });
-      document
-        .querySelector('div[name="top-nav-bar-below-mobile-accessories"]')
-        .addEventListener('click', (e) => {
-          history.replaceState(null, null, '?category=accessories');
-          changePage('main-page');
-          showCategoryNavBarTextColorBrown(e.target.innerHTML);
-          mode = 'accessories';
-          renderPageNumber = 0;
-          showProductListUIByCategoryPagingOrSearchKeyWord();
-        });
-
-      // w0p4 spinner animation switch using intersection Observer
-      const spinnerHtmlDivElement = document.querySelector(
-        'div[name="spinner"]'
-      );
-      const intersectionObserverTargetDesktop = document.querySelector(
-        'div[name="bottom-nav-bar-desktop-box"]'
-      );
-      const intersectionObserverTargetMobile = document.querySelector(
-        'div[name="bottom-nav-bar-mobile-box-box"]'
-      );
-
-      let intersectionObserver = new IntersectionObserver((entries) => {
-        if (entries[0].intersectionRatio <= 0) {
-          spinnerHtmlDivElement.style.visibility = 'hidden';
-          return;
-        }
-        if (hasNextPage) {
-          spinnerHtmlDivElement.style.visibility = 'visible';
-          renderPageNumber++;
-          showProductListUIByCategoryPagingOrSearchKeyWord();
-        }
-      });
-
-      intersectionObserver.observe(intersectionObserverTargetDesktop);
-      intersectionObserver.observe(intersectionObserverTargetMobile);
-
-      // w0p4 Step 2: Complete Search Feature
-      // desktopSearch
-      document
-        .querySelector('input[name="top-nav-bar-desktop-search-bar"]')
-        .addEventListener('keypress', (e) => {
-          if (e.key === 'Enter') {
-            history.replaceState(null, null, `?keyword=${e.target.value}`);
-            changePage('main-page');
-            showCategoryNavBarTextColorBrown('all');
-            scrollTo(0, 0);
-            searchKeyWord = e.target.value;
-            searchMode = true;
-            showProductListUIByCategoryPagingOrSearchKeyWord();
-          }
-        });
-      document
-        .querySelector('input[name="top-nav-bar-desktop-search-bar"]')
-        .addEventListener('click', (e) => {
-          const clickTarget = e.target;
-          const clickTargetWidth = clickTarget.offsetWidth;
-          const xCoordInClickTarget =
-            e.clientX - clickTarget.getBoundingClientRect().left;
-          if (clickTargetWidth / 1.2 > xCoordInClickTarget) {
-            // clicked left
-            e.target.focus();
-          } else {
-            // clicked right
-            history.replaceState(null, null, `?keyword=${e.target.value}`);
-            changePage('main-page');
-            showCategoryNavBarTextColorBrown('all');
-            scrollTo(0, 0);
-            searchKeyWord = e.target.value;
-            searchMode = true;
-            showProductListUIByCategoryPagingOrSearchKeyWord();
-          }
-        });
-      //. mobileSearch
-      document
-        .querySelector('input[name="top-nav-bar-mobile-search"]')
-        .addEventListener('keypress', (e) => {
-          if (e.key === 'Enter') {
-            history.replaceState(null, null, `?keyword=${e.target.value}`);
-            changePage('main-page');
-            showCategoryNavBarTextColorBrown('all');
-            scrollTo(0, 0);
-            searchKeyWord = e.target.value;
-            searchMode = true;
-            showProductListUIByCategoryPagingOrSearchKeyWord();
-          }
-        });
-      document
-        .querySelector('input[name="top-nav-bar-mobile-search"]')
-        .addEventListener('click', (e) => {
-          const clickTarget = e.target;
-          const clickTargetWidth = clickTarget.offsetWidth;
-          const xCoordInClickTarget =
-            e.clientX - clickTarget.getBoundingClientRect().left;
-          if (clickTargetWidth / 1.2 > xCoordInClickTarget) {
-            // clicked left
-            e.target.focus();
-          } else {
-            // clicked right
-            history.replaceState(null, null, `?keyword=${e.target.value}`);
-            changePage('main-page');
-            showCategoryNavBarTextColorBrown('all');
-            scrollTo(0, 0);
-            searchKeyWord = e.target.value;
-            searchMode = true;
-            showProductListUIByCategoryPagingOrSearchKeyWord();
-          }
-        });
-      //-----------------------------------------------------------------------------------------------
-
-      //-----------------------------------------------------------------------------------------------
-
-      // w0p5
-      // Step 1: Complete Product Page Layout
-      // Step 2: Take Parameter from Page URL
-      // Step 3: Connect to Product Details API
-      // Step 4: Render Product Details in the Product Page
-      const container = document.querySelector('div[name="detail-container"]');
-      const productId = new URL(document.location.href);
-      const params = productId.searchParams;
-
-      let url = 'https://api.appworks-school.tw/api/1.0/products/details?id=';
-      let id = '';
-      for (const [key, value] of params.entries()) {
-        id = value;
-      }
-
-      fetch(`${url}${id}`)
-        .then((response) => response.json())
-        .then((data) => showProductDetail(data.data));
-
-      function showProductDetail(data) {
-        const product = data;
-        console.log(data);
-        let colorList = '';
-        let sizeList = '';
-        let imgList = '';
-
-        for (let i = 0; i < product.colors.length; i++) {
-          colorList += `
-      		<div class="color-border">
-      			<div class="color-inner" style="background-color:#${product.colors[i].code}"></div>
-      		</div>
-      		`;
-        }
-
-        for (let i = 0; i < product.sizes.length; i++) {
-          sizeList += `<li>${product.sizes[i]}</li>`;
-        }
-
-        for (let i = 0; i < product.images.length; i++) {
-          imgList += `<img class="info-picture" src="${product.images[i]}"></img>`;
-        }
-
-        container.innerHTML = `
-      	<div class="detail-row">
-              <img class="detial-pic" src="${product.main_image}" />
-              <div class="detail-display">
-                <div class="detail-title">
-                  <div class="title-name">
-                    <h1>${product.title}</h1>
-                    <p>${product.id}</p>
-                  </div>
-                  <p class="title-price">TWD.${product.price}</p>
-                </div>
-                <div class="detail-product">
-                  <div class="size-color">
-                    <p>顏色｜</p>
-                    ${colorList}
-                  </div>
-                  <div class="size-select">
-                    <p>尺寸｜</p>
-                    <ul class="size-switch">
-                      ${sizeList}
-                    </ul>
-                  </div>
-                  <div class="number-select">
-                    <p>數量｜</p>
-                    <div class="number-control">
-                      <span class="number-decrease">-</span>
-                      <span class="number-show">1</span>
-                      <span class="number-increase">+</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="detail-add"><button>加入購物車</button></div>
-                <div class="detail-description">
-                  <p class="description-note">${product.note}</p>
-                  <div class="description-texturemix">
-                    <p class="description-texture">${product.texture}</p>
-                    <p class="description-description">${product.description}</p>
-                  </div>
-                  <div class="description-clean">
-                    <p class="description-wash">清洗：${product.wash}</p>
-                    <p class="description-location">產地：${product.place}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="detail-info">
-              <div class="info-moreAbout">
-                <p>更多產品資訊</p>
-                <div class="info-dash"></div>
-              </div>
-              <p class="info-discription">${product.story}</p>
-            </div>
-            ${imgList}
-      	`;
-
-        const border = document.querySelectorAll('.color-border');
-        const size = document.querySelectorAll('.size-switch li');
-
-        function clearColorActive() {
-          for (let i = 0; i < border.length; i++) {
-            border[i].removeAttribute('id', 'active');
-          }
-        }
-
-        function clearSizeActive() {
-          for (let i = 0; i < size.length; i++) {
-            size[i].classList.remove('active');
-          }
-        }
-
-        for (let i = 0; i < border.length; i++) {
-          border[i].addEventListener('click', () => {
-            clearColorActive();
-            border[i].setAttribute('id', 'active');
-          });
-        }
-
-        for (let i = 0; i < size.length; i++) {
-          size[i].addEventListener('click', () => {
-            clearSizeActive();
-            size[i].classList.add('active');
-          });
-        }
-      }
-      //-----------------------------------------------------------------------------------------------
-
-      // w0p4 function
+      // w0p4 top category nav bar text color change function
       function showCategoryNavBarTextColorBrown(divName) {
         // // method 1
         // const topNavBarChangeCategoryHtmlDivElement = [document
@@ -4668,7 +4351,141 @@
         );
       }
 
-      // function changePage
+      // w0p4 Step 1: Complete Product Category Feature
+      //              Infinite Scroll
+      // w0p4 spinner animation switch using intersection Observer
+      const spinnerHtmlDivElement = document.querySelector(
+        'div[name="spinner"]'
+      );
+      const intersectionObserverTargetDesktop = document.querySelector(
+        'div[name="bottom-nav-bar-desktop-box"]'
+      );
+      const intersectionObserverTargetMobile = document.querySelector(
+        'div[name="bottom-nav-bar-mobile-box-box"]'
+      );
+
+      let intersectionObserver = new IntersectionObserver((entries) => {
+        if (entries[0].intersectionRatio <= 0) {
+          spinnerHtmlDivElement.style.visibility = 'hidden';
+          return;
+        }
+        if (hasNextPage) {
+          spinnerHtmlDivElement.style.visibility = 'visible';
+          renderPageNumber++;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        }
+      });
+
+      intersectionObserver.observe(intersectionObserverTargetDesktop);
+      intersectionObserver.observe(intersectionObserverTargetMobile);
+
+      // w0p4 Step 2: Complete Search Feature - part2 add click event
+      mode = 'all';
+      renderPageNumber = 0;
+      showProductListUIByCategoryPagingOrSearchKeyWord();
+
+      document
+        .querySelector('img[name="top-nav-bar-website-logo"]')
+        .addEventListener('click', (e) => {
+          history.replaceState(null, null, '/');
+          changePage('main-page');
+          showCategoryNavBarTextColorBrown('all');
+          mode = 'all';
+          renderPageNumber = 0;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        });
+      document
+        .querySelector('div[name="top-nav-bar-desktop-women-dresses"]')
+        .addEventListener('click', (e) => {
+          history.replaceState(null, null, '/?category=women');
+          changePage('main-page');
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          mode = 'women';
+          renderPageNumber = 0;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        });
+      document
+        .querySelector('div[name="top-nav-bar-desktop-men-dresses"]')
+        .addEventListener('click', (e) => {
+          history.replaceState(null, null, '/?category=men');
+          changePage('main-page');
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          mode = 'men';
+          renderPageNumber = 0;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        });
+      document
+        .querySelector('div[name="top-nav-bar-desktop-accessories"]')
+        .addEventListener('click', (e) => {
+          history.replaceState(null, null, '/?category=accessories');
+          changePage('main-page');
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          mode = 'accessories';
+          renderPageNumber = 0;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        });
+      document
+        .querySelector('div[name="top-nav-bar-below-mobile-women-dresses"]')
+        .addEventListener('click', (e) => {
+          history.replaceState(null, null, '/?category=women');
+          changePage('main-page');
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          mode = 'women';
+          renderPageNumber = 0;
+          showProductListUIByCategoryPagingOrSearchKeyWord('women', 0);
+        });
+      document
+        .querySelector('div[name="top-nav-bar-desktop-men-dresses"]')
+        .addEventListener('click', (e) => {
+          history.replaceState(null, null, '/?category=men');
+          changePage('main-page');
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          mode = 'men';
+          renderPageNumber = 0;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        });
+      document
+        .querySelector('div[name="top-nav-bar-desktop-accessories"]')
+        .addEventListener('click', (e) => {
+          history.replaceState(null, null, '/?category=accessories');
+          changePage('main-page');
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          mode = 'accessories';
+          renderPageNumber = 0;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        });
+      document
+        .querySelector('div[name="top-nav-bar-below-mobile-women-dresses"]')
+        .addEventListener('click', (e) => {
+          history.replaceState(null, null, '/?category=women');
+          changePage('main-page');
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          mode = 'women';
+          renderPageNumber = 0;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        });
+      document
+        .querySelector('div[name="top-nav-bar-below-mobile-men-dresses"]')
+        .addEventListener('click', (e) => {
+          history.replaceState(null, null, '/?category=men');
+          changePage('main-page');
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          mode = 'men';
+          renderPageNumber = 0;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        });
+      document
+        .querySelector('div[name="top-nav-bar-below-mobile-accessories"]')
+        .addEventListener('click', (e) => {
+          history.replaceState(null, null, '/?category=accessories');
+          changePage('main-page');
+          showCategoryNavBarTextColorBrown(e.target.innerHTML);
+          mode = 'accessories';
+          renderPageNumber = 0;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        });
+
+      // w0p4 function changePage
       function changePage(showPageName) {
         const pageHtmlDivElementName = [
           'main-page',
@@ -4695,7 +4512,7 @@
       document
         .querySelector('div[name="top-nav-bar-desktop-shopping-cart-box"]')
         .addEventListener('click', (e) => {
-          history.replaceState(null, null, 'checkout');
+          history.replaceState(null, null, '/checkout');
           showCategoryNavBarTextColorBrown('all');
           changePage('checkout-page');
         });
@@ -4704,14 +4521,14 @@
           'div[name="bottom-nav-bar-mobile-stick-shopping-cart-box"]'
         )
         .addEventListener('click', (e) => {
-          history.replaceState(null, null, 'checkout');
+          history.replaceState(null, null, '/checkout');
           showCategoryNavBarTextColorBrown('all');
           changePage('checkout-page');
         });
       document
         .querySelector('div[name="top-nav-bar-desktop-profile-box"]')
         .addEventListener('click', (e) => {
-          history.replaceState(null, null, 'profile');
+          history.replaceState(null, null, '/profile');
           showCategoryNavBarTextColorBrown('all');
           changePage('profile-page');
         });
@@ -4720,36 +4537,103 @@
           'div[name="bottom-nav-bar-mobile-stick-shopping-profile-box"]'
         )
         .addEventListener('click', (e) => {
-          history.replaceState(null, null, 'profile');
+          history.replaceState(null, null, '/profile');
           showCategoryNavBarTextColorBrown('all');
           changePage('profile-page');
         });
       document
         .querySelector('div[name="bottom-nav-bar-desktop-info-about"]')
         .addEventListener('click', (e) => {
-          history.replaceState(null, null, 'aboutus');
+          history.replaceState(null, null, '/aboutus');
           showCategoryNavBarTextColorBrown('all');
           changePage('aboutUs-page');
         });
       document
         .querySelector('div[name="bottom-nav-bar-mobile-info-about"]')
         .addEventListener('click', (e) => {
-          history.replaceState(null, null, 'aboutus');
+          history.replaceState(null, null, '/aboutus');
           showCategoryNavBarTextColorBrown('all');
           changePage('aboutUs-page');
         });
+      // search input
+      // desktopSearch
+      document
+        .querySelector('input[name="top-nav-bar-desktop-search-bar"]')
+        .addEventListener('keypress', (e) => {
+          if (e.key === 'Enter') {
+            history.replaceState(null, null, `/?keyword=${e.target.value}`);
+            changePage('main-page');
+            showCategoryNavBarTextColorBrown('all');
+            scrollTo(0, 0);
+            searchKeyWord = e.target.value;
+            searchMode = true;
+            showProductListUIByCategoryPagingOrSearchKeyWord();
+          }
+        });
+      document
+        .querySelector('input[name="top-nav-bar-desktop-search-bar"]')
+        .addEventListener('click', (e) => {
+          const clickTarget = e.target;
+          const clickTargetWidth = clickTarget.offsetWidth;
+          const xCoordInClickTarget =
+            e.clientX - clickTarget.getBoundingClientRect().left;
+          if (clickTargetWidth / 1.2 > xCoordInClickTarget) {
+            // clicked left
+            e.target.focus();
+          } else {
+            // clicked right
+            history.replaceState(null, null, `/?keyword=${e.target.value}`);
+            changePage('main-page');
+            showCategoryNavBarTextColorBrown('all');
+            scrollTo(0, 0);
+            searchKeyWord = e.target.value;
+            searchMode = true;
+            showProductListUIByCategoryPagingOrSearchKeyWord();
+          }
+        });
+      //. mobileSearch
+      document
+        .querySelector('input[name="top-nav-bar-mobile-search"]')
+        .addEventListener('keypress', (e) => {
+          if (e.key === 'Enter') {
+            history.replaceState(null, null, `/?keyword=${e.target.value}`);
+            changePage('main-page');
+            showCategoryNavBarTextColorBrown('all');
+            scrollTo(0, 0);
+            searchKeyWord = e.target.value;
+            searchMode = true;
+            showProductListUIByCategoryPagingOrSearchKeyWord();
+          }
+        });
+      document
+        .querySelector('input[name="top-nav-bar-mobile-search"]')
+        .addEventListener('click', (e) => {
+          const clickTarget = e.target;
+          const clickTargetWidth = clickTarget.offsetWidth;
+          const xCoordInClickTarget =
+            e.clientX - clickTarget.getBoundingClientRect().left;
+          if (clickTargetWidth / 1.2 > xCoordInClickTarget) {
+            // clicked left
+            e.target.focus();
+          } else {
+            // clicked right
+            history.replaceState(null, null, `/?keyword=${e.target.value}`);
+            changePage('main-page');
+            showCategoryNavBarTextColorBrown('all');
+            scrollTo(0, 0);
+            searchKeyWord = e.target.value;
+            searchMode = true;
+            showProductListUIByCategoryPagingOrSearchKeyWord();
+          }
+        });
+      //-----------------------------------------------------------------------------------------------
 
-      // // how-can-i-get-query-string-values-in-javascript https://stackoverflow.com/a/901144
-      // const params = new Proxy(new URLSearchParams(window.location.search), {
-      //   get: (searchParams, prop) => searchParams.get(prop),
-      // });
-      // // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
-      // let value = params.some_key; // "some_value"
+      //-----------------------------------------------------------------------------------------------
 
-      // // How to detect if URL has changed after hash in JavaScript https://stackoverflow.com/a/52809105
-      // window.addEventListener('locationchange', function () {
-      //   console.log('location changed!');
-      // });
+      // w0p5
+      // w0p5 Step 1: Complete Product Page Layout
+      // w0p5 Step 2: Take Parameter from Page URL
+      let id;
 
       // Listener event for when URL parameters change https://stackoverflow.com/a/73183359
       let previousUrl = window.location.href;
@@ -4759,12 +4643,174 @@
             `URL changed from ${previousUrl} to ${window.location.href}`
           );
           previousUrl = window.location.href;
+
+          console.log(window.location.href.includes('products'));
+
+          if (window.location.href.includes('products')) {
+            const currentURL = new URL(window.location.hf);
+            const productId = currentURL.pathname.replace('/products/', '');
+
+            console.log();
+
+            // // w0p5 Step 3: Connect to Product Details API
+            // // get marketingCampaignAPISlidersPromise for API promise
+            // const productDetailsAPIPromise = fetch(
+            //   `https://api.appworks-school.tw/api/1.0/products/details?id=${id}`
+            // ).then((response) => response.json());
+            // // get json key "data" in API promise
+            // const productDetailsAPIJson = await productListAPIPromise.then(
+            //   (result) => result.data
+            // );
+
+            // showProductDetail();
+            // console.log(productDetailsAPIJson);
+          }
         }
       });
       const config = { subtree: true, childList: true };
 
       // start listening to changes
       observer.observe(document, config);
+
+      // w0p5 Step 4: Render Product Details in the Product Page
+      const container = document.querySelector('div[name="detail-container"]');
+
+      function showProductDetail() {
+        console.log(productDetailsAPIJson);
+        let colorList = '';
+        let sizeList = '';
+        let imgList = '';
+
+        for (let i = 0; i < productDetailsAPIJson.colors.length; i++) {
+          colorList += `
+      		<div class="color-border">
+      			<div class="color-inner" style="background-color:#${productDetailsAPIJson.colors[i].code}"></div>
+      		</div>
+      		`;
+        }
+
+        for (let i = 0; i < productDetailsAPIJson.sizes.length; i++) {
+          sizeList += `<li>${productDetailsAPIJson.sizes[i]}</li>`;
+        }
+
+        for (let i = 0; i < productDetailsAPIJson.images.length; i++) {
+          imgList += `<img class="info-picture" src="${productDetailsAPIJson.images[i]}"></img>`;
+        }
+
+        container.innerHTML = `
+      	<div class="detail-row">
+              <img class="detial-pic" src="${productDetailsAPIJson.main_image}" />
+              <div class="detail-display">
+                <div class="detail-title">
+                  <div class="title-name">
+                    <h1>${productDetailsAPIJson.title}</h1>
+                    <p>${productDetailsAPIJson.id}</p>
+                  </div>
+                  <p class="title-price">TWD.${productDetailsAPIJson.price}</p>
+                </div>
+                <div class="detail-product">
+                  <div class="size-color">
+                    <p>顏色｜</p>
+                    ${colorList}
+                  </div>
+                  <div class="size-select">
+                    <p>尺寸｜</p>
+                    <ul class="size-switch">
+                      ${sizeList}
+                    </ul>
+                  </div>
+                  <div class="number-select">
+                    <p>數量｜</p>
+                    <div class="number-control">
+                      <span class="number-decrease">-</span>
+                      <span class="number-show">1</span>
+                      <span class="number-increase">+</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="detail-add"><button>加入購物車</button></div>
+                <div class="detail-description">
+                  <p class="description-note">${productDetailsAPIJson.note}</p>
+                  <div class="description-texturemix">
+                    <p class="description-texture">${productDetailsAPIJson.texture}</p>
+                    <p class="description-description">${productDetailsAPIJson.description}</p>
+                  </div>
+                  <div class="description-clean">
+                    <p class="description-wash">清洗：${productDetailsAPIJson.wash}</p>
+                    <p class="description-location">產地：${productDetailsAPIJson.place}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="detail-info">
+              <div class="info-moreAbout">
+                <p>更多產品資訊</p>
+                <div class="info-dash"></div>
+              </div>
+              <p class="info-discription">${productDetailsAPIJson.story}</p>
+            </div>
+            ${imgList}
+      	`;
+
+        const border = document.querySelectorAll('.color-border');
+        const size = document.querySelectorAll('.size-switch li');
+
+        function clearColorActive() {
+          for (let i = 0; i < border.length; i++) {
+            border[i].removeAttribute('id', 'active');
+          }
+        }
+
+        function clearSizeActive() {
+          for (let i = 0; i < size.length; i++) {
+            size[i].classList.remove('active');
+          }
+        }
+
+        for (let i = 0; i < border.length; i++) {
+          border[i].addEventListener('click', () => {
+            clearColorActive();
+            border[i].setAttribute('id', 'active');
+          });
+        }
+
+        for (let i = 0; i < size.length; i++) {
+          size[i].addEventListener('click', () => {
+            clearSizeActive();
+            size[i].classList.add('active');
+          });
+        }
+      }
+      //-----------------------------------------------------------------------------------------------
+
+      // // how-can-i-get-query-string-values-in-javascript https://stackoverflow.com/a/901144
+      // const params = new Proxy(new URLSearchParams(window.location.search), {
+      //   get: (searchParams, prop) => searchParams.get(prop),
+      // });
+      // console.log(params);
+      // // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+      // let value = params.some_key; // "some_value"
+
+      // // How to detect if URL has changed after hash in JavaScript https://stackoverflow.com/a/52809105
+      // window.addEventListener('locationchange', function () {
+      //   console.log('location changed!');
+      // });
+
+      // // Listener event for when URL parameters change https://stackoverflow.com/a/73183359
+      // let previousUrl = window.location.href;
+      // const observer = new MutationObserver(function (mutations) {
+      //   if (window.location.href !== previousUrl) {
+      //     console.log(
+      //       `URL changed from ${previousUrl} to ${window.location.href}`
+      //     );
+      //     previousUrl = window.location.href;
+      //   }
+      // });
+      // const config = { subtree: true, childList: true };
+
+      // // start listening to changes
+      // observer.observe(document, config);
 
       // stop listening to changes
       // observer.disconnect();

@@ -4771,7 +4771,7 @@
 
     // w1p1 Step 3: Shopping Cart Implementation
     // w1p1 Step 4: Add to Cart Implementation
-    let shoppingCartListJsonData = JSON.parse(localStorage.getItem('shoppingCartList')) || [];
+    let shoppingCartListJsonData = JSON.parse(window.localStorage.getItem('shoppingCartList')) || [];
 
     function updateLocalStorage() {
       window.localStorage.setItem('shoppingCartList', JSON.stringify(shoppingCartListJsonData));

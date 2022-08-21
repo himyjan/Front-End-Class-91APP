@@ -1703,7 +1703,7 @@
               flex flex-row
               mobile:mt-[20px]
               desktop:mt-[51px] desktop:items-start
-            " id="cart-title-box">
+            " name="cart-title-box" id="""">
           <div class="
                 inline-block
                 font-bold
@@ -1711,7 +1711,7 @@
                 leading-[19px]
                 mobile:mr-0
                 desktop:mr-[468px]
-              " id="cart-title">
+              " name="check-out-page-notification-title" id="">
             購物車(3)
           </div>
           <div class="
@@ -4857,10 +4857,12 @@
     const mobileShowCartNumberTextHtmlDivElement = document.querySelector(
       'div[name="bottom-nav-bar-mobile-stick-shopping-cart-notification-numbers-text"]'
     );
-    const mobileShowCartNumberAnimationHtmlDivElement =
-      document.querySelector(
-        'div[name="bottom-nav-bar-mobile-stick-shopping-cart-notification-animation"]'
-      );
+    const mobileShowCartNumberAnimationHtmlDivElement = document.querySelector(
+      'div[name="bottom-nav-bar-mobile-stick-shopping-cart-notification-animation"]'
+    );
+    const checkoutPageNotificationHtmlDivElement = document.querySelector(
+      'div[name="check-out-page-notification-title"]'
+    );
 
     updateShoppingCartNotificationNumbers();
 
@@ -4912,6 +4914,7 @@
       sumAllSpecQty();
       desktopShowCartNumberTextHtmlDivElement.innerHTML = totalQty;
       mobileShowCartNumberTextHtmlDivElement.innerHTML = totalQty;
+      checkoutPageNotificationHtmlDivElement.innerHTML = `購物車(${totalQty})`;
       if (totalQty > 0) {
         desktopShowCartNumberAnimationHtmlDivElement.classList.remove(
           'hidden'
@@ -5085,8 +5088,7 @@
                     bg-[#F3F3F3]
                     rounded-[8px]
                     border-solid border-[1px] border-[#979797]
-                  " name="${shoppingCartListJsonData[i]['color'].name}${shoppingCartListJsonData[i].size
-            }amount" name="" id="" title="From">
+                  " name="amount" name="amount${i}" id="" title="From">
               </select>
               <div class="
                     flex
@@ -5129,12 +5131,7 @@
               shoppingCartListJsonData[i].size == productDetailsArray[5]
             ) {
               const availableOrderValue = productDetailsArray[6];
-              const checkoutPageOrderValueSelectDropList =
-                document.querySelector(
-                  'select[name="' +
-                  `${shoppingCartListJsonData[i]['color'].name}${shoppingCartListJsonData[i].size}` +
-                  'amount"]'
-                );
+              const checkoutPageOrderValueSelectDropList = document.querySelector(`select[name="amount${i}"]`);
               checkoutPageOrderValueSelectDropList.options.length = 0;
               for (let j = 1; j <= availableOrderValue; j++) {
                 checkoutPageOrderValueSelectDropList.add(

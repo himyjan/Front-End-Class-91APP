@@ -195,7 +195,9 @@
                   bg-[#8b572a]
                   opacity-75
                 " name="top-nav-bar-desktop-shopping-cart-notification-animation"></div>
-            1
+            <div class="" name="top-nav-bar-desktop-shopping-cart-notification-numbers-text">
+              1
+            </div>
           </div>
         </div>
 
@@ -3045,7 +3047,9 @@
                   bg-[#8b572a]
                   opacity-75
                   " name="bottom-nav-bar-mobile-stick-shopping-cart-notification-animation"></div>
-            1
+            <div class="" name="bottom-nav-bar-mobile-stick-shopping-cart-notification-numbers-text">
+              1
+            </div>
           </div>
         </div>
       </div>
@@ -4775,9 +4779,9 @@
 
     // window.localStorage.clear();
 
-    const showCartNumberHtmlDivElement = document.querySelector('div[name="top-nav-bar-desktop-shopping-cart-notification-numbers"]');
-    const showCartNumberAnimationHtmlDivElement = document.querySelector('div[name="top-nav-bar-desktop-shopping-cart-notification-animation"]');
-    const mobileShowCartNumberHtmlDivElement = document.querySelector('div[name="bottom-nav-bar-mobile-stick-shopping-cart-notification-numbers"]');
+    const desktopShowCartNumberTextHtmlDivElement = document.querySelector('div[name="top-nav-bar-desktop-shopping-cart-notification-numbers-text"]');
+    const desktopShowCartNumberAnimationHtmlDivElement = document.querySelector('div[name="top-nav-bar-desktop-shopping-cart-notification-animation"]');
+    const mobileShowCartNumberTextHtmlDivElement = document.querySelector('div[name="bottom-nav-bar-mobile-stick-shopping-cart-notification-numbers-text"]');
     const mobileShowCartNumberAnimationHtmlDivElement = document.querySelector('div[name="bottom-nav-bar-mobile-stick-shopping-cart-notification-animation"]');
 
     updateShoppingCartNotificationNumbers();
@@ -4808,13 +4812,13 @@
 
     function updateShoppingCartNotificationNumbers() {
       sumAllSpecQty();
-      showCartNumberHtmlDivElement.innerHTML = totalQty;
-      mobileShowCartNumberHtmlDivElement.innerHTML = totalQty;
+      desktopShowCartNumberTextHtmlDivElement.innerHTML = totalQty;
+      mobileShowCartNumberTextHtmlDivElement.innerHTML = totalQty;
       if (totalQty > 0) {
-        showCartNumberAnimationHtmlDivElement.classList.remove('hidden');
-        mobileShowCartNumberAnimationHtmlDivElement.remove('hidden');
+        desktopShowCartNumberAnimationHtmlDivElement.classList.remove('hidden');
+        mobileShowCartNumberAnimationHtmlDivElement.classList.remove('hidden');
       } else {
-        showCartNumberAnimationHtmlDivElement.classList.add('hidden');
+        desktopShowCartNumberAnimationHtmlDivElement.classList.add('hidden');
         mobileShowCartNumberAnimationHtmlDivElement.classList.add('hidden');
       }
     }

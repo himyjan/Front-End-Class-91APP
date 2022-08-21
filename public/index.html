@@ -1825,7 +1825,7 @@
                     desktop:left-[calc(100%-74px)]
                     mobile:mt-0
                     desktop:mt-[54px]
-                  " name="product-image-trash" id="" />
+                  " name="remove-product-trash-image" id="" />
             </div>
             <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" name="" id="">
               <div class="
@@ -1989,7 +1989,7 @@
                     desktop:left-[calc(100%-74px)]
                     mobile:mt-0
                     desktop:mt-[54px]
-                  " name="product-image-trash" id="" />
+                  " name="remove-product-trash-image" id="" />
             </div>
             <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" name="" id="">
               <div class="
@@ -2153,7 +2153,7 @@
                     desktop:left-[calc(100%-74px)]
                     mobile:mt-0
                     desktop:mt-[54px]
-                  " name="product-image-trash" id="" />
+                  " name="remove-product-trash-image" id="" />
             </div>
             <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" name="" id="">
               <div class="
@@ -2785,7 +2785,7 @@
                   desktop:border-solid
                   desktop:border-[1px]
                   desktop:border-[#979797]
-                " onclick="alert('開始付款！')">
+                " name="checkout-page-submit-order" id="">
               確認付款
             </div>
           </div>
@@ -4948,7 +4948,8 @@
     const timeArr = [...timeInput];
 
     function showCheckoutPageCheckoutProductListUI() {
-      console.log(shoppingCartListJsonData);
+      shoppingCartListJsonData =
+        JSON.parse(window.localStorage.getItem('shoppingCartList')) || [];
       let list = '';
       for (let i = 0; i < shoppingCartListJsonData.length; i++) {
         fetch(
@@ -4956,7 +4957,6 @@
         ).then(async (response) => {
           const productDetailsAPIJson = await response.json();
           const productDetailsAPIJsonData = productDetailsAPIJson.data;
-          console.log(productDetailsAPIJsonData);
 
           list += `
         <div class="
@@ -4966,7 +4966,7 @@
                 desktop:flex-row
                 mobile:mt-[10px] mobile:ml-0
                 desktop:mt-[30px] desktop:ml-[32px]
-              " name="" id="">
+              " name="checkout-page-product${i}" id="">
             <div class="
                   flex flex-row
                   w-full
@@ -5032,7 +5032,7 @@
                     desktop:left-[calc(100%-74px)]
                     mobile:mt-0
                     desktop:mt-[54px]
-                  " name="product-image" id="" />
+                  " name="remove-product-trash-image${i}" id="" />
             </div>
             <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" name="" id="">
               <div class="
@@ -5141,10 +5141,106 @@
                 }
                 checkoutPageOrderValueSelectDropList.value =
                   shoppingCartListJsonData[j]['qty'];
+                checkoutPageOrderValueSelectDropList.addEventListener('change', (e) => {
+                  shoppingCartListJsonData[j].qty = parseInt(checkoutPageOrderValueSelectDropList.value);
+                  updateLocalStorage();
+                  updateShoppingCartNotificationNumbers();
+                });
+
+                const checkoutPageRemoveProductTrashImage = document.querySelector(`img[name="remove-product-trash-image${j}"]`);
+                checkoutPageRemoveProductTrashImage.addEventListener('click', (e) => {
+                  // shoppingCartListJsonData = Object.entries(shoppingCartListJsonData) // converts each entry to [key, value]
+                  // .filter((v) => {return v.id !== shoppingCartListJsonData[j].id && v.size !== shoppingCartListJsonData[j].size && v.color.name !== shoppingCartListJsonData[j].color.name}) // define the criteria to include/exclude items
+                  // .reduce((acc, v) => {
+                  //   acc.push(v);
+                  //   return acc; // this function can be improved, it converts the [[k, v]] back to {k: v, k: v, ...}
+                  // }, []);
+                  updateLocalStorage();
+                  updateShoppingCartNotificationNumbers();
+                });
               }
             });
           }
+
+          const checkoutPageSubmitOrder = document.querySelector('div[name="checkout-page-submit-order"');
+
+          checkoutPageSubmitOrder.addEventListener('click', () => {
+            let nameProved = true;
+            if (nameInput.value.replace(/ /g, '').length == 0) {
+              nameInput.classList.add('active');
+              alert('請輸入姓名');
+              nameProved = false;
+            } else {
+              nameInput.classList.remove('active');
+            }
+
+            let phoneProved = true;
+            if (
+              phoneInput.value.replace(/ /g, '').length !== 10 ||
+              phoneInput.value.slice(0, 2) !== '09'
+            ) {
+              phoneInput.classList.add('active');
+              alert('請輸入完整手機號碼');
+              phoneProved = false;
+            } else {
+              phoneInput.classList.remove('active');
+            }
+
+            let addressProved = true;
+            if (!addressInput.value.includes('市')) {
+              addressInput.classList.add('active');
+              alert('請輸入完整地址');
+              addressProved = false;
+            } else {
+              addressInput.classList.remove('active');
+            }
+
+            let emailProved = true;
+            if (!emailInput.value.includes('@')) {
+              emailInput.classList.add('active');
+              alert('請輸入正確電郵地址');
+              emailProved = false;
+            } else {
+              emailInput.classList.remove('active');
+            }
+
+            let timeProved = true;
+            if (!timeArr.some((time) => time.checked == true)) {
+              alert('請選擇配送時間');
+              timeWrapper.classList.add('active');
+              timeProved = false;
+            } else {
+              timeWrapper.classList.remove('active');
+            }
+
+            if (
+              !nameProved ||
+              !phoneProved ||
+              !addressProved ||
+              !emailProved ||
+              !timeProved
+            ) {
+              console.log(false);
+              return;
+            } else {
+              alert('訂單已送出');
+              nameInput.value = '';
+              phoneInput.value = '';
+              addressInput.value = '';
+              emailInput.value = '';
+              timeInput.forEach((input) => {
+                input.checked = false;
+              });
+            }
+          });
         });
+      }
+      if (shoppingCartListJsonData.length == 0) {
+        checkoutPageCheckoutProductListHtmlDivElement.innerHTML = `<div class="flex justify-center w-full" name="">
+                                                                    <div class="text-[48px] text-[#8B572A]" name="product-error">
+                                                                      購物車中還沒有商品，點我到首頁選購
+                                                                    </div>
+                                                                  </div>`;
       }
     }
       // Step 2: Validate User Input

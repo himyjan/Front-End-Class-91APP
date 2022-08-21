@@ -320,7 +320,7 @@
             mx-auto
             max-w-[1160px]
             mobile:w-[calc(100%-48px)]
-          " name="slides-productPageHtmlDivElement">
+          " name="slides-box">
         <div class="absolute w-full" name="slides-slidesTextMain">
           <div class="
                 cursor-pointer
@@ -449,7 +449,7 @@
             desktop:mx-auto
             mobile:mt-[15px]
             desktop:mt-[70px] desktop:max-w-[1200px]
-          " name="product-page-product-box">
+          " name="main-page-product-list-box">
         <!-- <div
             class="
               flex flex-col
@@ -1173,7 +1173,7 @@
           mx-auto
           mobile:mt-[102px] mobile:max-w-[1070px]
           desktop:mt-[140px] desktop:max-w-[960px]
-        " name="product-page-product-box" id="" product_id="">
+        " name="product-page-product-detail-box" id="" product_id="">
       <!-- <div
           class="
             flex
@@ -3129,7 +3129,7 @@
 
     // add dotBox dot html code to dotBox
     dotBoxHtmlDivElement.innerHTML = addToDotListHtmlDivElementString;
-    // get dot array from html querySelectorAll( .main-page-dot-box div )
+    // get dot array from html querySelectorAll( .dot-box div )
     const dotHtmlDivElement = document.querySelectorAll(
       'div[name="main-page-dot-box"] div'
     );
@@ -3222,8 +3222,8 @@
     // );
 
     // // w0p3 Step 2: Create Layout for All Products
-    // const productListHtmlDivElement = document.querySelector(
-    //   'div[name="product-page-product-box"]'
+    // const mainPageProductListHtmlDivElement = document.querySelector(
+    //   'div[name="main-page-product-list-box"]'
     // );
     // let addToProductListHtmlString = '';
 
@@ -3291,7 +3291,7 @@
     //                                   </div>
     //                                 </div>`;
     // }
-    // productListHtmlDivElement.innerHTML = addToProductListHtmlString;
+    // mainPageProductListHtmlDivElement.innerHTML = addToProductListHtmlString;
 
     //-----------------------------------------------------------------------------------------------
 
@@ -3334,19 +3334,19 @@
           : (hasNextPage = false);
 
         // w0p3 Step 3: Complete Paging Feature
-        const productListHtmlDivElement = document.querySelector(
-          'div[name="product-page-product-box"]'
+        const mainPageProductListHtmlDivElement = document.querySelector(
+          'div[name="main-page-product-list-box"]'
         );
         let addToProductListHtmlString = '';
 
         renderPageNumber == 0
           ? (addToProductListHtmlString = '')
           : (addToProductListHtmlString =
-            productListHtmlDivElement.innerHTML);
+            mainPageProductListHtmlDivElement.innerHTML);
 
         if (searchMode) {
           if (productListAPIJsonData.length == 0) {
-            productListHtmlDivElement.innerHTML = `<div class="flex justify-center w-full" name="">
+            mainPageProductListHtmlDivElement.innerHTML = `<div class="flex justify-center w-full" name="">
                                                      <div class="text-[48px] text-[#8B572A]" name="product-error">
                                                        查無此商品!
                                                      </div>
@@ -3448,7 +3448,7 @@
                                            </div>
                                          </div>`;
         }
-        productListHtmlDivElement.innerHTML = addToProductListHtmlString;
+        mainPageProductListHtmlDivElement.innerHTML = addToProductListHtmlString;
         const productHtmlDivElementNodeList = document.querySelectorAll(
           'div[name="product"]'
         );
@@ -4013,15 +4013,15 @@
     });
 
     // w0p5 Step 4: Render Product Details in the Product Page
-    const productPageHtmlDivElement = document.querySelector(
-      'div[name="product-page-product-box"]'
+    const productPageProductDetailHtmlDivElement = document.querySelector(
+      'div[name="product-page-product-detail-box"]'
     );
 
     function showProductDetail(showProductId) {
-      if (showProductId == productPageHtmlDivElement.product_id) {
+      if (showProductId == productPageProductDetailHtmlDivElement.product_id) {
         return;
       }
-      productPageHtmlDivElement.classList.add('animate-pulse');
+      productPageProductDetailHtmlDivElement.classList.add('animate-pulse');
       scrollTo(0, 0);
       fetch(
         `https://api.appworks-school.tw/api/1.0/products/details?id=${showProductId}`
@@ -4032,7 +4032,7 @@
         // w1p1 Step 2: Handle Stock of Product Variants
         updateProductDetailArrayArray(productDetailsAPIJsonData);
 
-        productPageHtmlDivElement.product_id = productDetailsAPIJsonData.id;
+        productPageProductDetailHtmlDivElement.product_id = productDetailsAPIJsonData.id;
         let colorList = '';
         let sizeList = '';
         let imgList = '';
@@ -4083,7 +4083,7 @@
                           " name="product-picture" src="${productDetailsAPIJsonData.images[i]}">`;
         }
 
-        productPageHtmlDivElement.innerHTML = `<div class="
+        productPageProductDetailHtmlDivElement.innerHTML = `<div class="
                                    flex
                                    mobile:flex-col mobile:mt-0
                                    desktop:flex-row desktop:mt-[65px] desktop:items-center
@@ -4383,7 +4383,7 @@
                                  </div>
                                </div>`;
 
-        productPageHtmlDivElement.classList.remove('animate-pulse');
+        productPageProductDetailHtmlDivElement.classList.remove('animate-pulse');
 
         // JavaScript image viewer. https://github.com/fengyuanchen/viewerjs
         // View an image.
@@ -4408,7 +4408,7 @@
 
         // w1p1 Step 1: Handle Product Variants
         // w1p1 Step 2: Handle Stock of Product Variants
-        updateproductPageHtmlDivElementUI();
+        updateProductPageProductDetailHtmlDivElementUI();
       });
     }
     //-----------------------------------------------------------------------------------------------
@@ -4424,7 +4424,7 @@
     let seletedColorEachSizeAvailableAmountArray = [];
     let selectedSizeIndex = 0;
 
-    function setProductPageHtmlDivElementButtonEventElick() {
+    function setProductPageProductDetailButtonEventClick() {
       const borderNodeList = document.querySelectorAll(
         'div[name="product-page-product-color-border"]'
       );
@@ -4765,8 +4765,8 @@
       }
     }
 
-    function updateproductPageHtmlDivElementUI() {
-      setProductPageHtmlDivElementButtonEventElick(productDetailArrayArray);
+    function updateProductPageProductDetailHtmlDivElementUI(); {
+      setProductPageProductDetailButtonEventClick(productDetailArrayArray);
     }
 
     // w1p1 Step 3: Shopping Cart Implementation

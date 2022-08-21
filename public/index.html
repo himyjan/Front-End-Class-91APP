@@ -1742,9 +1742,7 @@
 
         <div class="
               w-full
-              mobile:mt-0
-              mobile:pt-0
-              mobile:pb-0
+              mobile:mt-0 mobile:pt-0 mobile:pb-0
               desktop:mt-[16px]
               desktop:pt-[10px]
               desktop:pb-[40px]
@@ -1752,8 +1750,8 @@
               desktop:border-[1px]
               desktop:border-[#979797]
               mobile:border-none
-            ">
-          <div class="
+            " name="checkout-page-checkout-product-list-box" id="">
+          <!-- <div class="
                 relative
                 flex
                 mobile:flex-col
@@ -2244,7 +2242,7 @@
                 TWD.799
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <div class="
@@ -3054,7 +3052,7 @@
                   rounded-full
                   bg-[#8b572a]
                   opacity-75
-                  " name="bottom-nav-bar-mobile-stick-shopping-cart-notification-animation"></div>
+                " name="bottom-nav-bar-mobile-stick-shopping-cart-notification-animation"></div>
             <div class="" name="bottom-nav-bar-mobile-stick-shopping-cart-notification-numbers-text">
               1
             </div>
@@ -3456,7 +3454,8 @@
                                            </div>
                                          </div>`;
         }
-        mainPageProductListHtmlDivElement.innerHTML = addToProductListHtmlString;
+        mainPageProductListHtmlDivElement.innerHTML =
+          addToProductListHtmlString;
         const productHtmlDivElementNodeList = document.querySelectorAll(
           'div[name="product"]'
         );
@@ -4028,7 +4027,9 @@
     );
 
     function showProductDetail(showProductId) {
-      if (showProductId == productPageProductDetailHtmlDivElement.product_id) {
+      if (
+        showProductId == productPageProductDetailHtmlDivElement.product_id
+      ) {
         return;
       }
       productPageProductDetailHtmlDivElement.classList.add('animate-pulse');
@@ -4042,7 +4043,8 @@
         // w1p1 Step 2: Handle Stock of Product Variants
         updateProductDetailArrayArray(productDetailsAPIJsonData);
 
-        productPageProductDetailHtmlDivElement.product_id = productDetailsAPIJsonData.id;
+        productPageProductDetailHtmlDivElement.product_id =
+          productDetailsAPIJsonData.id;
         let colorList = '';
         let sizeList = '';
         let imgList = '';
@@ -4097,10 +4099,12 @@
                                    flex
                                    mobile:flex-col mobile:mt-0
                                    desktop:flex-row desktop:mt-[65px] desktop:items-center
-                                   " name="product-page-product" product_id="${productDetailsAPIJsonData.id}" >
+                                   " name="product-page-product" product_id="${productDetailsAPIJsonData.id
+          }" >
                                  <div class="" name="product-main-image-viewer-box" id="">
                                    <div class="" name="product-main-image-viewer" id="">
-                                     <img src="${productDetailsAPIJsonData.main_image}" class="
+                                     <img src="${productDetailsAPIJsonData.main_image
+          }" class="
                                          cursor-pointer
                                          object-cover
                                          mobile:w-full
@@ -4329,11 +4333,18 @@
                                        mobile:text-[14px] mobile:leading-[24px]
                                        desktop:text-[20px] desktop:leading-[30px]
                                        " name="product-spec">
-                                     ${productDetailsAPIJsonData.note}<br /><br />
+                                     ${productDetailsAPIJsonData.note
+          }<br /><br />
                                      ${productDetailsAPIJsonData.texture}<br />
-                                     ${productDetailsAPIJsonData.description.slice(0, 4)}<br />
-                                     ${productDetailsAPIJsonData.description.slice(4)}<br />
-                                     清洗：${productDetailsAPIJsonData.wash}<br />
+                                     ${productDetailsAPIJsonData.description.slice(
+            0,
+            4
+          )}<br />
+                                     ${productDetailsAPIJsonData.description.slice(
+            4
+          )}<br />
+                                     清洗：${productDetailsAPIJsonData.wash
+          }<br />
                                      產地：${productDetailsAPIJsonData.place}
                                    </div>
                                  </div>
@@ -4393,7 +4404,9 @@
                                  </div>
                                </div>`;
 
-        productPageProductDetailHtmlDivElement.classList.remove('animate-pulse');
+        productPageProductDetailHtmlDivElement.classList.remove(
+          'animate-pulse'
+        );
 
         // JavaScript image viewer. https://github.com/fengyuanchen/viewerjs
         // View an image.
@@ -4418,7 +4431,9 @@
 
         // w1p1 Step 1: Handle Product Variants
         // w1p1 Step 2: Handle Stock of Product Variants
-        updateProductPageProductDetailHtmlDivElementUI(productDetailsAPIJsonData);
+        updateProductPageProductDetailHtmlDivElementUI(
+          productDetailsAPIJsonData
+        );
       });
     }
     //-----------------------------------------------------------------------------------------------
@@ -4428,13 +4443,15 @@
     // w1p1
     // w1p1 Step 1: Handle Product Variants
     // w1p1 Step 2: Handle Stock of Product Variants - part2
-    let selectedColorName = "";
-    let selectedColorCode = "";
-    let selectedSize = "";
+    let selectedColorName = '';
+    let selectedColorCode = '';
+    let selectedSize = '';
     let seletedColorEachSizeAvailableAmountArray = [];
     let selectedSizeIndex = 0;
 
-    function setProductPageProductDetailButtonEventClick(productDetailsAPIJsonData) {
+    function setProductPageProductDetailButtonEventClick(
+      productDetailsAPIJsonData
+    ) {
       const borderNodeList = document.querySelectorAll(
         'div[name="product-page-product-color-border"]'
       );
@@ -4459,17 +4476,25 @@
         'div[name="btn-add-to-cart-text"]'
       );
 
-      const minusOrderWarningHtmlDivElement = document.querySelector('div[name="btn-amount-minus-warning"]');
+      const minusOrderWarningHtmlDivElement = document.querySelector(
+        'div[name="btn-amount-minus-warning"]'
+      );
 
-      const plusOrderWarningHtmlDivElement = document.querySelector('div[name="btn-amount-plus-warning"]');
+      const plusOrderWarningHtmlDivElement = document.querySelector(
+        'div[name="btn-amount-plus-warning"]'
+      );
 
-      const addToShoppingCartInfoHtmlDivElement = document.querySelector('div[name="btn-add-to-cart-info"]');
+      const addToShoppingCartInfoHtmlDivElement = document.querySelector(
+        'div[name="btn-add-to-cart-info"]'
+      );
 
-      const addToShoppingCartSuccessHtmlDivElement = document.querySelector('div[name="btn-add-to-cart-success"]');
+      const addToShoppingCartSuccessHtmlDivElement = document.querySelector(
+        'div[name="btn-add-to-cart-success"]'
+      );
 
       function clearColorSelected() {
-        selectedColorName = "";
-        selectedColorCode = "";
+        selectedColorName = '';
+        selectedColorCode = '';
         for (let i = 0; i < borderNodeList.length; i++) {
           if (borderNodeList[i].classList.contains('border-[1px]')) {
             borderNodeList[i].classList.remove('border-[1px]');
@@ -4479,7 +4504,7 @@
       }
 
       function clearSizeSelected() {
-        selectedSize = "";
+        selectedSize = '';
         for (let i = 0; i < sizeNodeList.length; i++) {
           if (sizeNodeList[i].classList.contains('bg-[#000000]')) {
             sizeNodeList[i].classList.remove('bg-[#000000]');
@@ -4491,7 +4516,7 @@
       }
 
       function showDisableAllSize() {
-        selectedSize = "";
+        selectedSize = '';
         for (let i = 0; i < sizeNodeList.length; i++) {
           sizeNodeList[i].classList.remove('bg-[#ececec]');
           sizeNodeList[i].classList.remove('text-[#3f3a3a]');
@@ -4505,21 +4530,34 @@
       }
 
       function showEnableAvailableSize(colorCode) {
-        showDisableAllSize()
+        showDisableAllSize();
         seletedColorEachSizeAvailableAmountArray = [];
         let orderAvailable = 0;
         for (let i = 0; i < sizeNodeList.length; i++) {
           let isAvailableSize = false;
           for (let j = 0; j < productDetailArrayArray.length; j++) {
-            if (productDetailArrayArray[j][4] == colorCode && productDetailArrayArray[j][5] == sizeNodeList[i].getAttribute("size") && productDetailArrayArray[j][6] > 0) {
+            if (
+              productDetailArrayArray[j][4] == colorCode &&
+              productDetailArrayArray[j][5] ==
+              sizeNodeList[i].getAttribute('size') &&
+              productDetailArrayArray[j][6] > 0
+            ) {
               // w1p1 Step 4: Add to Cart Implementation
               let currentCartNumber = 0;
               for (let k = 0; k < shoppingCartListJsonData.length; k++) {
-                if (shoppingCartListJsonData[k].id == productDetailArrayArray[0][0] && shoppingCartListJsonData[k].color.code == productDetailArrayArray[j][4] && shoppingCartListJsonData[k].size == sizeNodeList[i].getAttribute("size")) {
+                if (
+                  shoppingCartListJsonData[k].id ==
+                  productDetailArrayArray[0][0] &&
+                  shoppingCartListJsonData[k].color.code ==
+                  productDetailArrayArray[j][4] &&
+                  shoppingCartListJsonData[k].size ==
+                  sizeNodeList[i].getAttribute('size')
+                ) {
                   currentCartNumber = shoppingCartListJsonData[k].qty;
                 }
               }
-              orderAvailable = productDetailArrayArray[j][6] - currentCartNumber
+              orderAvailable =
+                productDetailArrayArray[j][6] - currentCartNumber;
               if (orderAvailable > 0) {
                 isAvailableSize = true;
               } else {
@@ -4529,7 +4567,7 @@
             } else {
               isAvailableSize = false;
             }
-          };
+          }
           if (isAvailableSize) {
             sizeNodeList[i].classList.remove('bg-[#ececec]/25');
             sizeNodeList[i].classList.remove('text-[#3f3a3a]/25');
@@ -4562,8 +4600,8 @@
           borderNodeList[i].classList.remove('border-none');
           borderNodeList[i].classList.add('border-[1px]');
         }
-        selectedColorName = colorNodeList[i].getAttribute("colorName");
-        selectedColorCode = colorNodeList[i].getAttribute("colorCode");
+        selectedColorName = colorNodeList[i].getAttribute('colorName');
+        selectedColorCode = colorNodeList[i].getAttribute('colorCode');
         addToShoppingCartTextHtmlDivElement.innerHTML = '請選擇尺寸';
 
         disableOrderValue();
@@ -4572,7 +4610,7 @@
       for (let i = 0; i < borderNodeList.length; i++) {
         borderNodeList[i].addEventListener('click', () => {
           selectColor(i);
-          showEnableAvailableSize(colorNodeList[i].getAttribute("colorCode"));
+          showEnableAvailableSize(colorNodeList[i].getAttribute('colorCode'));
         });
       }
 
@@ -4585,7 +4623,7 @@
           sizeNodeList[i].classList.add('text-[#ffffff]');
         }
         selectedSizeIndex = i;
-        selectedSize = sizeNodeList[i].getAttribute("size");
+        selectedSize = sizeNodeList[i].getAttribute('size');
         addToShoppingCartTextHtmlDivElement.innerHTML = '加入購物車';
 
         setOrderMaxValue();
@@ -4593,14 +4631,17 @@
 
       function disableOrderValue() {
         productAmountHtmlInputElement.value = 0;
-        productAmountHtmlInputElement.setAttribute("min", 0);
-        productAmountHtmlInputElement.setAttribute("max", 0);
+        productAmountHtmlInputElement.setAttribute('min', 0);
+        productAmountHtmlInputElement.setAttribute('max', 0);
       }
 
       function setOrderMaxValue() {
         productAmountHtmlInputElement.value = 1;
-        productAmountHtmlInputElement.setAttribute("min", 0);
-        productAmountHtmlInputElement.setAttribute("max", seletedColorEachSizeAvailableAmountArray[selectedSizeIndex]);
+        productAmountHtmlInputElement.setAttribute('min', 0);
+        productAmountHtmlInputElement.setAttribute(
+          'max',
+          seletedColorEachSizeAvailableAmountArray[selectedSizeIndex]
+        );
       }
 
       for (let i = 0; i < sizeNodeList.length; i++) {
@@ -4614,7 +4655,7 @@
       function initClickUIFirst() {
         clearColorSelected();
         selectColor(0);
-        showEnableAvailableSize(colorNodeList[0].getAttribute("colorCode"));
+        showEnableAvailableSize(colorNodeList[0].getAttribute('colorCode'));
       }
 
       initClickUIFirst();
@@ -4631,7 +4672,7 @@
 
       minusButtonHtmlDivElement.addEventListener('click', (e) => {
         let value = parseInt(orderAmountInputHtmlInputElement.value);
-        if (!(Number.isInteger(value))) {
+        if (!Number.isInteger(value)) {
           value = 0;
         } else if (value - 1 < 0) {
           value = 0;
@@ -4648,9 +4689,12 @@
 
       plusButtonHtmlDivElement.addEventListener('click', (e) => {
         let value = parseInt(orderAmountInputHtmlInputElement.value);
-        if (!(Number.isInteger(value))) {
+        if (!Number.isInteger(value)) {
           value = 0;
-        } else if (value + 1 > seletedColorEachSizeAvailableAmountArray[selectedSizeIndex]) {
+        } else if (
+          value + 1 >
+          seletedColorEachSizeAvailableAmountArray[selectedSizeIndex]
+        ) {
           plusOrderWarningHtmlDivElement.innerHTML = `已達最大可購買數量: ${value}`;
           plusOrderWarningHtmlDivElement.classList.remove('hidden');
           setTimeout(function () {
@@ -4663,28 +4707,35 @@
       });
 
       orderAmountInputHtmlInputElement.addEventListener('input', (e) => {
-        if (!(Number.isInteger(parseInt(e.target.value)))) {
+        if (!Number.isInteger(parseInt(e.target.value))) {
           e.target.value = 0;
         } else if (e.target.value < 0) {
           e.target.value = 0;
-        } else if (e.target.value > seletedColorEachSizeAvailableAmountArray[selectedSizeIndex]) {
-          e.target.value = seletedColorEachSizeAvailableAmountArray[selectedSizeIndex];
+        } else if (
+          e.target.value >
+          seletedColorEachSizeAvailableAmountArray[selectedSizeIndex]
+        ) {
+          e.target.value =
+            seletedColorEachSizeAvailableAmountArray[selectedSizeIndex];
         }
       });
 
       addToShoppingCartHtmlDivElement.addEventListener('click', (e) => {
-        if (!(selectedSize == "")) {
-          shoppingCartListJsonData = JSON.parse(window.localStorage.getItem('shoppingCartList')) || [];
+        if (!(selectedSize == '')) {
+          shoppingCartListJsonData =
+            JSON.parse(window.localStorage.getItem('shoppingCartList')) || [];
           const addToShoppingCartObject = {};
           const addToShoppingCartColorObject = {};
-          addToShoppingCartObject["id"] = productDetailsAPIJsonData.id;
-          addToShoppingCartObject["name"] = productDetailsAPIJsonData.title;
-          addToShoppingCartObject["price"] = productDetailsAPIJsonData.price;
-          addToShoppingCartColorObject["name"] = selectedColorName;
-          addToShoppingCartColorObject["code"] = selectedColorCode;
-          addToShoppingCartObject["color"] = addToShoppingCartColorObject;
-          addToShoppingCartObject["size"] = selectedSize;
-          addToShoppingCartObject["qty"] = parseInt(orderAmountInputHtmlInputElement.value);
+          addToShoppingCartObject['id'] = productDetailsAPIJsonData.id;
+          addToShoppingCartObject['name'] = productDetailsAPIJsonData.title;
+          addToShoppingCartObject['price'] = productDetailsAPIJsonData.price;
+          addToShoppingCartColorObject['name'] = selectedColorName;
+          addToShoppingCartColorObject['code'] = selectedColorCode;
+          addToShoppingCartObject['color'] = addToShoppingCartColorObject;
+          addToShoppingCartObject['size'] = selectedSize;
+          addToShoppingCartObject['qty'] = parseInt(
+            orderAmountInputHtmlInputElement.value
+          );
 
           shoppingCartListJsonData.push(addToShoppingCartObject);
 
@@ -4692,7 +4743,8 @@
 
           updateLocalStorage();
 
-          seletedColorEachSizeAvailableAmountArray[selectedSizeIndex] -= parseInt(orderAmountInputHtmlInputElement.value);
+          seletedColorEachSizeAvailableAmountArray[selectedSizeIndex] -=
+            parseInt(orderAmountInputHtmlInputElement.value);
           selectedColorCode = colorNodeList[0].getAttribute('colorCode');
           showEnableAvailableSize(selectedColorCode);
           selectColor(0);
@@ -4722,7 +4774,7 @@
             addToShoppingCartSuccessHtmlDivElement.classList.add('hidden');
           }, 3000);
         } else {
-          addToShoppingCartInfoHtmlDivElement.innerHTML = "請先選擇服飾大小";
+          addToShoppingCartInfoHtmlDivElement.innerHTML = '請先選擇服飾大小';
           addToShoppingCartInfoHtmlDivElement.classList.remove('hidden');
           setTimeout(function () {
             addToShoppingCartInfoHtmlDivElement.classList.add('hidden');
@@ -4775,24 +4827,40 @@
       }
     }
 
-    function updateProductPageProductDetailHtmlDivElementUI(productDetailsAPIJsonData) {
+    function updateProductPageProductDetailHtmlDivElementUI(
+      productDetailsAPIJsonData
+    ) {
       setProductPageProductDetailButtonEventClick(productDetailsAPIJsonData);
     }
 
     // w1p1 Step 3: Shopping Cart Implementation
     // w1p1 Step 4: Add to Cart Implementation
-    let shoppingCartListJsonData = JSON.parse(window.localStorage.getItem('shoppingCartList')) || [];
+    let shoppingCartListJsonData =
+      JSON.parse(window.localStorage.getItem('shoppingCartList')) || [];
 
     function updateLocalStorage() {
-      window.localStorage.setItem('shoppingCartList', JSON.stringify(shoppingCartListJsonData));
+      window.localStorage.setItem(
+        'shoppingCartList',
+        JSON.stringify(shoppingCartListJsonData)
+      );
     }
 
     // window.localStorage.clear();
 
-    const desktopShowCartNumberTextHtmlDivElement = document.querySelector('div[name="top-nav-bar-desktop-shopping-cart-notification-numbers-text"]');
-    const desktopShowCartNumberAnimationHtmlDivElement = document.querySelector('div[name="top-nav-bar-desktop-shopping-cart-notification-animation"]');
-    const mobileShowCartNumberTextHtmlDivElement = document.querySelector('div[name="bottom-nav-bar-mobile-stick-shopping-cart-notification-numbers-text"]');
-    const mobileShowCartNumberAnimationHtmlDivElement = document.querySelector('div[name="bottom-nav-bar-mobile-stick-shopping-cart-notification-animation"]');
+    const desktopShowCartNumberTextHtmlDivElement = document.querySelector(
+      'div[name="top-nav-bar-desktop-shopping-cart-notification-numbers-text"]'
+    );
+    const desktopShowCartNumberAnimationHtmlDivElement =
+      document.querySelector(
+        'div[name="top-nav-bar-desktop-shopping-cart-notification-animation"]'
+      );
+    const mobileShowCartNumberTextHtmlDivElement = document.querySelector(
+      'div[name="bottom-nav-bar-mobile-stick-shopping-cart-notification-numbers-text"]'
+    );
+    const mobileShowCartNumberAnimationHtmlDivElement =
+      document.querySelector(
+        'div[name="bottom-nav-bar-mobile-stick-shopping-cart-notification-animation"]'
+      );
 
     updateShoppingCartNotificationNumbers();
 
@@ -4800,12 +4868,32 @@
       let combineIndex = [];
 
       for (let i = 0; i < shoppingCartListLocalStorageJsonData.length; i++) {
-        for (let j = 1; j < shoppingCartListLocalStorageJsonData.length; j++) {
-          if (shoppingCartListLocalStorageJsonData[i].id == shoppingCartListLocalStorageJsonData[j].id && shoppingCartListLocalStorageJsonData[i].name == shoppingCartListLocalStorageJsonData[j].name && shoppingCartListLocalStorageJsonData[i].price == shoppingCartListLocalStorageJsonData[j].price && shoppingCartListLocalStorageJsonData[i].color.code == shoppingCartListLocalStorageJsonData[j].color.code && shoppingCartListLocalStorageJsonData[i].size == shoppingCartListLocalStorageJsonData[j].size && i != j) {
+        for (
+          let j = 1;
+          j < shoppingCartListLocalStorageJsonData.length;
+          j++
+        ) {
+          if (
+            shoppingCartListLocalStorageJsonData[i].id ==
+            shoppingCartListLocalStorageJsonData[j].id &&
+            shoppingCartListLocalStorageJsonData[i].name ==
+            shoppingCartListLocalStorageJsonData[j].name &&
+            shoppingCartListLocalStorageJsonData[i].price ==
+            shoppingCartListLocalStorageJsonData[j].price &&
+            shoppingCartListLocalStorageJsonData[i].color.code ==
+            shoppingCartListLocalStorageJsonData[j].color.code &&
+            shoppingCartListLocalStorageJsonData[i].size ==
+            shoppingCartListLocalStorageJsonData[j].size &&
+            i != j
+          ) {
             combineIndex.push(`${i},${j}`);
-            combineIndex = combineIndex.filter(e => e !== `${j},${i}`);
-            shoppingCartListLocalStorageJsonData[i].qty += shoppingCartListLocalStorageJsonData[j].qty
-            shoppingCartListJsonData = shoppingCartListLocalStorageJsonData.filter(e => e !== shoppingCartListLocalStorageJsonData[j]);
+            combineIndex = combineIndex.filter((e) => e !== `${j},${i}`);
+            shoppingCartListLocalStorageJsonData[i].qty +=
+              shoppingCartListLocalStorageJsonData[j].qty;
+            shoppingCartListJsonData =
+              shoppingCartListLocalStorageJsonData.filter(
+                (e) => e !== shoppingCartListLocalStorageJsonData[j]
+              );
           }
         }
       }
@@ -4825,8 +4913,12 @@
       desktopShowCartNumberTextHtmlDivElement.innerHTML = totalQty;
       mobileShowCartNumberTextHtmlDivElement.innerHTML = totalQty;
       if (totalQty > 0) {
-        desktopShowCartNumberAnimationHtmlDivElement.classList.remove('hidden');
-        mobileShowCartNumberAnimationHtmlDivElement.classList.remove('hidden');
+        desktopShowCartNumberAnimationHtmlDivElement.classList.remove(
+          'hidden'
+        );
+        mobileShowCartNumberAnimationHtmlDivElement.classList.remove(
+          'hidden'
+        );
       } else {
         desktopShowCartNumberAnimationHtmlDivElement.classList.add('hidden');
         mobileShowCartNumberAnimationHtmlDivElement.classList.add('hidden');
@@ -4834,10 +4926,228 @@
     }
     //-----------------------------------------------------------------------------------------------
 
-      //-----------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------
 
-      // w1p3
-      // Step 1: Handle Items in Cart Page
+    // w1p3
+    // Step 1: Handle Items in Cart Page
+    const checkoutPageCheckoutProductListHtmlDivElement =
+      document.querySelector(
+        'div[name="checkout-page-checkout-product-list-box"]'
+      );
+    const timeWrapper = document.querySelector('div[name="time-wrapper"]');
+    const price = document.querySelectorAll('div[name="price"]');
+    const confirmBtn = document.querySelector('div[name="confrim-pay"]');
+    const nameInput = document.querySelector('div[name="order-name"]');
+    const phoneInput = document.querySelector('div[name="order-phone"]');
+    const addressInput = document.querySelector('div[name="order-address"]');
+    const emailInput = document.querySelector('div[name="order-email"]');
+    const timeInput = document.querySelectorAll('div[name="time-select"]');
+    const timeArr = [...timeInput];
+
+    function showCheckoutPageCheckoutProductListUI() {
+      console.log(shoppingCartListJsonData);
+      let list = '';
+      for (let i = 0; i < shoppingCartListJsonData.length; i++) {
+        fetch(
+          `https://api.appworks-school.tw/api/1.0/products/details?id=${shoppingCartListJsonData[i].id}`
+        ).then(async (response) => {
+          const productDetailsAPIJson = await response.json();
+          const productDetailsAPIJsonData = productDetailsAPIJson.data;
+          console.log(productDetailsAPIJsonData);
+
+          list += `
+        <div class="
+                relative
+                flex
+                mobile:flex-col
+                desktop:flex-row
+                mobile:mt-[10px] mobile:ml-0
+                desktop:mt-[30px] desktop:ml-[32px]
+              " name="" id="">
+            <div class="
+                  flex flex-row
+                  w-full
+                  h-0
+                  mobile:block mobile:my-[10px]
+                  desktop:hidden desktop:my-0
+                  content-['']
+                  border-solid border-[#3f3a3a] border-b-[1px]
+                " id="split-border"></div>
+            <div class="flex flex-row" name="" id="">
+              <img src="${productDetailsAPIJsonData.main_image}" alt=""
+                class="object-cover w-[114px] h-[152px]" name="product-image" id="" />
+              <div class="
+                    flex flex-col
+                    mobile:w-full mobile:ml-[10px]
+                    desktop:w-[354px] desktop:ml-[16px]
+                  " name="" id="">
+                <div class="
+                      text-[#000000]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:text-[16px] desktop:leading-[19px]
+                    " name="" id="">
+                  ${productDetailsAPIJsonData.title}
+                </div>
+                <div class="
+                      mobile:mt-[20px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:mt-[18px]
+                      desktop:text-[16px]
+                      desktop:leading-[19px]
+                    " name="" id="">
+                  ${productDetailsAPIJsonData.id}
+                </div>
+                <div class="
+                      mobile:mt-[24px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:mt-[22px]
+                      desktop:text-[16px]
+                      desktop:leading-[19px]
+                    " name="" id="">
+                  顏色｜${shoppingCartListJsonData[i]['color'].name}
+                </div>
+                <div class="
+                      mobile:mt-[12px]
+                      text-[#3f3a3a]
+                      mobile:text-[14px] mobile:leading-[17px]
+                      desktop:mt-[10px]
+                      desktop:text-[16px]
+                      desktop:leading-[19px]
+                    " name="" id="">
+                  尺寸｜${shoppingCartListJsonData[i].size}
+                </div>
+              </div>
+              <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007859059120156743/trash.png" alt=""
+                class="
+                    absolute
+                    object-cover
+                    w-[44px]
+                    h-[44px]
+                    mobile:left-[calc(100%-44px)]
+                    desktop:left-[calc(100%-74px)]
+                    mobile:mt-0
+                    desktop:mt-[54px]
+                  " name="product-image" id="" />
+            </div>
+            <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" name="" id="">
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:mr-auto
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                數量
+              </div>
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                單價
+              </div>
+              <div class="
+                    text-[#3f3a3a]
+                    mobile:block
+                    mobile:w-[104px]
+                    mobile:h-[17px]
+                    mobile:ml-auto
+                    mobile:text-center
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                    desktop:hidden
+                  " id="cart-title">
+                小計
+              </div>
+            </div>
+            <div class="
+                  flex flex-row
+                  items-center
+                  mobile:h-[30px] mobile:mt-[12px]
+                  desktop:h-[32px] desktop:mt-[60px] desktop:ml-0
+                " name="" id="">
+              <select class="
+                    w-[80px]
+                    mobile:h-[30px] mobile:ml-[12px] mobile:mr-auto
+                    desktop:h-[32px] desktop:mr-[56px]
+                    pl-[16px]
+                    bg-[#F3F3F3]
+                    rounded-[8px]
+                    border-solid border-[1px] border-[#979797]
+                  " name="${shoppingCartListJsonData[i]['color'].name}${shoppingCartListJsonData[i].size
+            }amount" name="" id="" title="From">
+              </select>
+              <div class="
+                    flex
+                    justify-center
+                    items-center
+                    text-[#3f3a3a] text-center
+                    desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
+                    mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
+                  " name="" id="">
+                TWD.${productDetailsAPIJsonData.price}
+              </div>
+              <div class="
+                    flex
+                    justify-center
+                    items-center
+                    text-[#3f3a3a] text-center
+                    desktop:w-[192px]
+                    desktop:ml-0
+                    desktop:text-[16px]
+                    desktop:leading-[19px]
+                    mobile:w-[104px]
+                    mobile:ml-auto
+                    mobile:text-[14px]
+                    mobile:leading-[17px]
+                  " name="" id="">
+                TWD.${productDetailsAPIJsonData.price *
+            shoppingCartListJsonData[i].qty
+            }
+              </div>
+            </div>
+          </div>`;
+
+          checkoutPageCheckoutProductListHtmlDivElement.innerHTML = list;
+          updateProductDetailArrayArray(productDetailsAPIJsonData);
+          productDetailArrayArray.forEach((productDetailsArray) => {
+            if (
+              shoppingCartListJsonData[i].name ==
+              productDetailsArray[1] && shoppingCartListJsonData[i].color.name ==
+              productDetailsArray[3] &&
+              shoppingCartListJsonData[i].size == productDetailsArray[5]
+            ) {
+              const availableOrderValue = productDetailsArray[6];
+              const checkoutPageOrderValueSelectDropList =
+                document.querySelector(
+                  'select[name="' +
+                  `${shoppingCartListJsonData[i]['color'].name}${shoppingCartListJsonData[i].size}` +
+                  'amount"]'
+                );
+              checkoutPageOrderValueSelectDropList.options.length = 0;
+              for (let j = 1; j <= availableOrderValue; j++) {
+                checkoutPageOrderValueSelectDropList.add(
+                  new Option(`${j}`, j)
+                );
+              }
+              checkoutPageOrderValueSelectDropList.value =
+                shoppingCartListJsonData[i]['qty'];
+            }
+          });
+        });
+      }
+    }
       // Step 2: Validate User Input
       //-----------------------------------------------------------------------------------------------
 

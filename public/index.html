@@ -5133,7 +5133,7 @@
               ) {
                 const availableOrderValue = productDetailsArray[6];
                 const checkoutPageOrderValueSelectDropList = document.querySelector(`select[name="amount${j}"]`);
-                // checkoutPageOrderValueSelectDropList.options.length = 0;
+                checkoutPageOrderValueSelectDropList.options.length = 0;
                 for (let k = 1; k <= availableOrderValue; k++) {
                   checkoutPageOrderValueSelectDropList.add(
                     new Option(`${k}`, k)

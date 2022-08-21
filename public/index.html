@@ -194,7 +194,7 @@
                   rounded-full
                   bg-[#8b572a]
                   opacity-75
-                "></div>
+                " name="top-nav-bar-desktop-shopping-cart-notification-animation"></div>
             1
           </div>
         </div>
@@ -2822,6 +2822,7 @@
   <footer class="" name="bottom-nav">
     <div class="
           mobile:hidden
+          desktop:z-[999]
           desktop:flex
           desktop:justify-center
           desktop:items-center
@@ -2916,7 +2917,7 @@
       </div>
     </div>
 
-    <div class="mobile:block desktop:hidden w-full bg-[#313538]" name="bottom-nav-bar-mobile-box-box">
+    <div class="mobile:z-[999] mobile:block desktop:hidden w-full bg-[#313538]" name="bottom-nav-bar-mobile-box-box">
       <div class="flex flex-col items-center max-w-[360px] mx-auto pt-[23px]" name="bottom-nav-bar-mobile-box">
         <div class="flex justify-center items-end w-full" name="bottom-nav-bar-mobile-contactlist">
           <div class="ml-[40px] mr-[36px]" name="bottom-nav-bar-mobile-links-part1">
@@ -2984,6 +2985,7 @@
     </div>
 
     <div class="
+          mobile:z-[999]
           mobile:flex
           mobile:fixed
           mobile:justify-center
@@ -3042,7 +3044,7 @@
                   rounded-full
                   bg-[#8b572a]
                   opacity-75
-                "></div>
+                  " name="bottom-nav-bar-mobile-stick-shopping-cart-notification-animation"></div>
             1
           </div>
         </div>
@@ -4022,6 +4024,10 @@
       ).then(async (response) => {
         const productDetailsAPIJson = await response.json();
         const productDetailsAPIJsonData = productDetailsAPIJson.data;
+
+        // w1p1 Step 2: Handle Stock of Product Variants
+        updateProductDetailArrayArray(productDetailsAPIJsonData);
+
         container.product_id = productDetailsAPIJsonData.id;
         let colorList = '';
         let sizeList = '';
@@ -4043,7 +4049,7 @@
                               border-solid border-[1px] border-[#d3d3d3]
                               w-[24px]
                               h-[24px]
-                              " name="product-page-product-color"></div>
+                              " name="product-page-product-color" colorName=${productDetailsAPIJsonData.colors[i].name} colorCode=${productDetailsAPIJsonData.colors[i].code}></div>
                         </div>`;
         }
 
@@ -4060,7 +4066,7 @@
                            h-[36px]
                            mobile:ml-[7px] mobile:mr-[7px]
                            desktop:ml-[9.5px] desktop:mr-[9.5px]
-                           " name="product-page-product-size">
+                           " name="product-page-product-size" size=${productDetailsAPIJsonData.sizes[i]}>
                          ${productDetailsAPIJsonData.sizes[i]}
                        </div>`;
         }
@@ -4229,6 +4235,7 @@
                                          " name="number-control">
                                        <div class="
                                            cursor-pointer
+                                           relative
                                            w-[6px]
                                            h-[32px]
                                            ml-[15px]
@@ -4236,9 +4243,13 @@
                                            leading-[32px]
                                            " name="product-amount-minus">
                                          -
+
+                                         <div class="hidden flex justify-center items-center w-[80px] animate-bounce ease-in duration-300 absolute z-10 bottom-[50%] left-[-35px] p-1 mb-4 text-sm text-yellow-700 bg-yellow-100 rounded-lg dark:bg-yellow-200 dark:text-yellow-800" role="alert" name="btn-amount-minus-warning">
+                                         </div>
                                        </div>
                                        <input class="
                                            cursor-pointer
+                                           relative
                                            w-[90%]
                                            text-center
                                            mobile:text-[20px]
@@ -4248,9 +4259,10 @@
                                            desktop:text-[#8B572A]
                                            desktop:leading-[32px]
                                            leading-[32px]
-                                           " placeholder="1" title="input-amount" value="1" name="product-amount"/>
+                                           " placeholder="1" title="input-amount" value="1" min=0 max=0 name="product-amount"/>
                                        <div class="
                                            cursor-pointer
+                                           relative
                                            w-[9px]
                                            h-[32px]
                                            mr-[15px]
@@ -4258,11 +4270,15 @@
                                            leading-[32px]
                                            " name="product-amount-plus">
                                          +
+
+                                         <div class="hidden flex justify-center items-center w-[80px] animate-bounce ease-in duration-300 absolute z-10 bottom-[50%] left-[-35px] p-1 mb-4 text-sm text-yellow-700 bg-yellow-100 rounded-lg dark:bg-yellow-200 dark:text-yellow-800" role="alert" name="btn-amount-plus-warning">
+                                         </div>
                                        </div>
                                      </div>
                                    </div>
                                    <div class="
                                        cursor-pointer
+                                       relative
                                        flex
                                        justify-center
                                        items-center
@@ -4284,7 +4300,13 @@
                                        desktop:border-[1px]
                                        desktop:border-[#979797]
                                        " name="btn-add-to-cart">
-                                     加入購物車
+                                       <div class="" name="btn-add-to-cart-text">
+                                           加入購物車
+                                       </div>
+                                     <div class="hidden flex justify-center items-center w-[160px] animate-bounce ease-in duration-300 absolute bottom-[50%] p-1 mb-4 text-sm text-blue-700 bg-blue-100 rounded-lg dark:bg-blue-200 dark:text-blue-800" role="alert" name="btn-add-to-cart-info">
+                                     </div>
+                                     <div class="hidden flex justify-center items-center w-[160px] animate-bounce ease-in duration-300 absolute bottom-[50%] p-1 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800" role="alert" name="btn-add-to-cart-success">
+                                     </div>
                                    </div>
                                    <div class="
                                        mobile:mt-[28px]
@@ -4380,95 +4402,422 @@
           }
         );
 
-        const border = document.querySelectorAll(
-          'div[name="product-page-product-color-border"]'
-        );
-        const size = document.querySelectorAll(
-          'div[name="product-page-product-size"]'
-        );
-
-        function clearColorActive() {
-          for (let i = 0; i < border.length; i++) {
-            if (border[i].classList.contains('border-[1px]')) {
-              border[i].classList.remove('border-[1px]');
-              border[i].classList.add('border-none');
-            }
-          }
-        }
-
-        function clearSizeActive() {
-          for (let i = 0; i < size.length; i++) {
-            if (size[i].classList.contains('bg-[#000000]')) {
-              size[i].classList.remove('bg-[#000000]');
-              size[i].classList.add('bg-[#ececec]');
-              size[i].classList.remove('text-[#ffffff]');
-              size[i].classList.add('text-[#3f3a3a]');
-            }
-          }
-        }
-
-        for (let i = 0; i < border.length; i++) {
-          border[i].addEventListener('click', () => {
-            clearColorActive();
-            if (border[i].classList.contains('border-none')) {
-              border[i].classList.remove('border-none');
-              border[i].classList.add('border-[1px]');
-            }
-          });
-        }
-
-        for (let i = 0; i < size.length; i++) {
-          size[i].addEventListener('click', () => {
-            clearSizeActive();
-            if (size[i].classList.contains('bg-[#ececec]')) {
-              size[i].classList.remove('bg-[#ececec]');
-              size[i].classList.add('bg-[#000000]');
-              size[i].classList.remove('text-[#3f3a3a]');
-              size[i].classList.add('text-[#ffffff]');
-            }
-          });
-        }
-
-        function initSelectColorFirst() {
-          clearColorActive();
-          border[0].classList.remove('border-none');
-          border[0].classList.add('border-[1px]');
-        }
-
-        initSelectColorFirst();
-
-        const minusButtonHtmlDivElement = document.querySelector(
-          'div[name="product-amount-minus"]'
-        );
-        const plusButtonHtmlDivElement = document.querySelector(
-          'div[name="product-amount-plus"]'
-        );
-        const orderAmountInputHtmlInputElement = document.querySelector(
-          'input[name="product-amount"]'
-        );
-
-        minusButtonHtmlDivElement.addEventListener('click', (e) => {
-          let value = parseInt(orderAmountInputHtmlInputElement.value);
-          value -= 1;
-          orderAmountInputHtmlInputElement.value = value;
-        });
-
-        plusButtonHtmlDivElement.addEventListener('click', (e) => {
-          let value = parseInt(orderAmountInputHtmlInputElement.value);
-          value += 1;
-          orderAmountInputHtmlInputElement.value = value;
-        });
+        // w1p1 Step 1: Handle Product Variants
+        // w1p1 Step 2: Handle Stock of Product Variants
+        updateProductPageUI();
       });
     }
     //-----------------------------------------------------------------------------------------------
 
-      //-----------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------
 
-      // w1p1
-      // w1p1 Step 1: Handle Product Variants
-      // w1p1 Step 2: Handle Stock of Product Variants
-      // w1p1 Step 3: Shopping Cart Implementation
-      // w1p1 Step 4: Add to Cart Implementation
+    // w1p1
+    // w1p1 Step 1: Handle Product Variants
+    // w1p1 Step 2: Handle Stock of Product Variants - part2
+    let selectedColorName = "";
+    let selectedColorCode = "";
+    let selectedSize = "";
+    let seletedColorEachSizeAvailableAmountArray = [];
+    let selectedSizeIndex = 0;
+
+    function setProductPageButtonEventElick() {
+      const borderNodeList = document.querySelectorAll(
+        'div[name="product-page-product-color-border"]'
+      );
+
+      const colorNodeList = document.querySelectorAll(
+        'div[name="product-page-product-color"]'
+      );
+
+      const sizeNodeList = document.querySelectorAll(
+        'div[name="product-page-product-size"]'
+      );
+
+      const productAmountHtmlInputElement = document.querySelector(
+        'input[name="product-amount"]'
+      );
+
+      const addToShoppingCartHtmlDivElement = document.querySelector(
+        'div[name="btn-add-to-cart"]'
+      );
+
+      const addToShoppingCartTextHtmlDivElement = document.querySelector(
+        'div[name="btn-add-to-cart-text"]'
+      );
+
+      const minusOrderWarningHtmlDivElement = document.querySelector('div[name="btn-amount-minus-warning"]');
+
+      const plusOrderWarningHtmlDivElement = document.querySelector('div[name="btn-amount-plus-warning"]');
+
+      const addToShoppingCartInfoHtmlDivElement = document.querySelector('div[name="btn-add-to-cart-info"]');
+
+      const addToShoppingCartSuccessHtmlDivElement = document.querySelector('div[name="btn-add-to-cart-success"]');
+
+      function clearColorSelected() {
+        selectedColorName = "";
+        selectedColorCode = "";
+        for (let i = 0; i < borderNodeList.length; i++) {
+          if (borderNodeList[i].classList.contains('border-[1px]')) {
+            borderNodeList[i].classList.remove('border-[1px]');
+            borderNodeList[i].classList.add('border-none');
+          }
+        }
+      }
+
+      function clearSizeSelected() {
+        selectedSize = "";
+        for (let i = 0; i < sizeNodeList.length; i++) {
+          if (sizeNodeList[i].classList.contains('bg-[#000000]')) {
+            sizeNodeList[i].classList.remove('bg-[#000000]');
+            sizeNodeList[i].classList.add('bg-[#ececec]');
+            sizeNodeList[i].classList.remove('text-[#ffffff]');
+            sizeNodeList[i].classList.add('text-[#3f3a3a]');
+          }
+        }
+      }
+
+      function showDisableAllSize() {
+        selectedSize = "";
+        for (let i = 0; i < sizeNodeList.length; i++) {
+          sizeNodeList[i].classList.remove('bg-[#ececec]');
+          sizeNodeList[i].classList.remove('text-[#3f3a3a]');
+          sizeNodeList[i].classList.remove('bg-[#000000]');
+          sizeNodeList[i].classList.remove('text-[#ffffff]');
+          sizeNodeList[i].classList.remove('cursor-pointer');
+          sizeNodeList[i].classList.add('bg-[#ececec]/25');
+          sizeNodeList[i].classList.add('text-[#3f3a3a]/25');
+          sizeNodeList[i].classList.add('cursor-not-allowed');
+        }
+      }
+
+      function showEnableAvailableSize(colorCode) {
+        showDisableAllSize()
+        seletedColorEachSizeAvailableAmountArray = [];
+        let orderAvailable = 0;
+        for (let i = 0; i < sizeNodeList.length; i++) {
+          let isAvailableSize = false;
+          for (let j = 0; j < productDetailArrayArray.length; j++) {
+            if (productDetailArrayArray[j][4] == colorCode && productDetailArrayArray[j][5] == sizeNodeList[i].getAttribute("size") && productDetailArrayArray[j][6] > 0) {
+              // w1p1 Step 4: Add to Cart Implementation
+              let currentCartNumber = 0;
+              for (let k = 0; k < shoppingCartListJsonData.length; k++) {
+                if (shoppingCartListJsonData[k].id == productDetailArrayArray[0][0] && shoppingCartListJsonData[k].color.code == productDetailArrayArray[j][4] && shoppingCartListJsonData[k].size == sizeNodeList[i].getAttribute("size")) {
+                  currentCartNumber = shoppingCartListJsonData[k].qty;
+                }
+              }
+              orderAvailable = productDetailArrayArray[j][6] - currentCartNumber
+              if (orderAvailable > 0) {
+                isAvailableSize = true;
+              } else {
+                isAvailableSize = false;
+              }
+              break;
+            } else {
+              isAvailableSize = false;
+            }
+          };
+          if (isAvailableSize) {
+            sizeNodeList[i].classList.remove('bg-[#ececec]/25');
+            sizeNodeList[i].classList.remove('text-[#3f3a3a]/25');
+            sizeNodeList[i].classList.remove('bg-[#000000]');
+            sizeNodeList[i].classList.remove('text-[#ffffff]');
+            sizeNodeList[i].classList.remove('cursor-not-allowed');
+            sizeNodeList[i].classList.add('bg-[#ececec]');
+            sizeNodeList[i].classList.add('text-[#3f3a3a]');
+            sizeNodeList[i].classList.add('cursor-pointer');
+
+            seletedColorEachSizeAvailableAmountArray.push(orderAvailable);
+          } else {
+            sizeNodeList[i].classList.remove('bg-[#ececec]');
+            sizeNodeList[i].classList.remove('text-[#3f3a3a]');
+            sizeNodeList[i].classList.remove('bg-[#000000]');
+            sizeNodeList[i].classList.remove('text-[#ffffff]');
+            sizeNodeList[i].classList.remove('cursor-pointer');
+            sizeNodeList[i].classList.add('bg-[#ececec]/25');
+            sizeNodeList[i].classList.add('text-[#3f3a3a]/25');
+            sizeNodeList[i].classList.add('cursor-not-allowed');
+
+            seletedColorEachSizeAvailableAmountArray.push(0);
+          }
+        }
+      }
+
+      function selectColor(i) {
+        clearColorSelected();
+        if (borderNodeList[i].classList.contains('border-none')) {
+          borderNodeList[i].classList.remove('border-none');
+          borderNodeList[i].classList.add('border-[1px]');
+        }
+        selectedColorName = colorNodeList[i].getAttribute("colorName");
+        selectedColorCode = colorNodeList[i].getAttribute("colorCode");
+        addToShoppingCartTextHtmlDivElement.innerHTML = '請選擇尺寸';
+
+        disableOrderValue();
+      }
+
+      for (let i = 0; i < borderNodeList.length; i++) {
+        borderNodeList[i].addEventListener('click', () => {
+          selectColor(i);
+          showEnableAvailableSize(colorNodeList[i].getAttribute("colorCode"));
+        });
+      }
+
+      function selectSize(i) {
+        clearSizeSelected();
+        if (sizeNodeList[i].classList.contains('bg-[#ececec]')) {
+          sizeNodeList[i].classList.remove('bg-[#ececec]');
+          sizeNodeList[i].classList.add('bg-[#000000]');
+          sizeNodeList[i].classList.remove('text-[#3f3a3a]');
+          sizeNodeList[i].classList.add('text-[#ffffff]');
+        }
+        selectedSizeIndex = i;
+        selectedSize = sizeNodeList[i].getAttribute("size");
+        addToShoppingCartTextHtmlDivElement.innerHTML = '加入購物車';
+
+        setOrderMaxValue();
+      }
+
+      function disableOrderValue() {
+        productAmountHtmlInputElement.value = 0;
+        productAmountHtmlInputElement.setAttribute("min", 0);
+        productAmountHtmlInputElement.setAttribute("max", 0);
+      }
+
+      function setOrderMaxValue() {
+        productAmountHtmlInputElement.value = 1;
+        productAmountHtmlInputElement.setAttribute("min", 0);
+        productAmountHtmlInputElement.setAttribute("max", seletedColorEachSizeAvailableAmountArray[selectedSizeIndex]);
+      }
+
+      for (let i = 0; i < sizeNodeList.length; i++) {
+        if (sizeNodeList[i].classList.contains('cursor-pointer')) {
+          sizeNodeList[i].addEventListener('click', () => {
+            selectSize(i);
+          });
+        }
+      }
+
+      function initClickUIFirst() {
+        clearColorSelected();
+        selectColor(0);
+        showEnableAvailableSize(colorNodeList[0].getAttribute("colorCode"));
+      }
+
+      initClickUIFirst();
+
+      const minusButtonHtmlDivElement = document.querySelector(
+        'div[name="product-amount-minus"]'
+      );
+      const plusButtonHtmlDivElement = document.querySelector(
+        'div[name="product-amount-plus"]'
+      );
+      const orderAmountInputHtmlInputElement = document.querySelector(
+        'input[name="product-amount"]'
+      );
+
+      minusButtonHtmlDivElement.addEventListener('click', (e) => {
+        let value = parseInt(orderAmountInputHtmlInputElement.value);
+        if (!(Number.isInteger(value))) {
+          value = 0;
+        } else if (value - 1 < 0) {
+          value = 0;
+          minusOrderWarningHtmlDivElement.innerHTML = `數量不能小於: 0`;
+          minusOrderWarningHtmlDivElement.classList.remove('hidden');
+          setTimeout(function () {
+            minusOrderWarningHtmlDivElement.classList.add('hidden');
+          }, 3000);
+        } else {
+          value -= 1;
+        }
+        orderAmountInputHtmlInputElement.value = value;
+      });
+
+      plusButtonHtmlDivElement.addEventListener('click', (e) => {
+        let value = parseInt(orderAmountInputHtmlInputElement.value);
+        if (!(Number.isInteger(value))) {
+          value = 0;
+        } else if (value + 1 > seletedColorEachSizeAvailableAmountArray[selectedSizeIndex]) {
+          plusOrderWarningHtmlDivElement.innerHTML = `已達最大可購買數量: ${value}`;
+          plusOrderWarningHtmlDivElement.classList.remove('hidden');
+          setTimeout(function () {
+            plusOrderWarningHtmlDivElement.classList.add('hidden');
+          }, 3000);
+        } else {
+          value += 1;
+        }
+        orderAmountInputHtmlInputElement.value = value;
+      });
+
+      orderAmountInputHtmlInputElement.addEventListener('input', (e) => {
+        if (!(Number.isInteger(parseInt(e.target.value)))) {
+          e.target.value = 0;
+        } else if (e.target.value < 0) {
+          e.target.value = 0;
+        } else if (e.target.value > seletedColorEachSizeAvailableAmountArray[selectedSizeIndex]) {
+          e.target.value = seletedColorEachSizeAvailableAmountArray[selectedSizeIndex];
+        }
+      });
+
+      addToShoppingCartHtmlDivElement.addEventListener('click', (e) => {
+        if (!(selectedSize == "")) {
+          shoppingCartListJsonData = JSON.parse(window.localStorage.getItem('shoppingCartList')) || [];
+          const addToShoppingCartObject = {};
+          const addToShoppingCartColorObject = {};
+          addToShoppingCartObject["id"] = productDetailArrayArray[0][0];
+          addToShoppingCartObject["name"] = productDetailArrayArray[0][1];
+          addToShoppingCartObject["price"] = productDetailArrayArray[0][2];
+          addToShoppingCartColorObject["name"] = selectedColorName;
+          addToShoppingCartColorObject["code"] = selectedColorCode;
+          addToShoppingCartObject["color"] = addToShoppingCartColorObject;
+          addToShoppingCartObject["size"] = selectedSize;
+          addToShoppingCartObject["qty"] = parseInt(orderAmountInputHtmlInputElement.value);
+
+          shoppingCartListJsonData.push(addToShoppingCartObject);
+
+          sumShoppingCartListData(shoppingCartListJsonData);
+
+          window.localStorage.setItem('shoppingCartList', JSON.stringify(shoppingCartListJsonData));
+
+          seletedColorEachSizeAvailableAmountArray[selectedSizeIndex] -= parseInt(orderAmountInputHtmlInputElement.value);
+          selectedColorCode = colorNodeList[0].getAttribute('colorCode');
+          showEnableAvailableSize(selectedColorCode);
+          selectColor(0);
+
+          // alert(`已將
+          //      \nid:${addToShoppingCartObject.id}
+          //      \nname:${addToShoppingCartObject.name}
+          //      \nprice:${addToShoppingCartObject.price}
+          //      \ncolor name:${addToShoppingCartObject.color.name}
+          //      \ncolor code:#${addToShoppingCartObject.color.code}
+          //      \nsize:${addToShoppingCartObject.size}
+          //      \nqty:${addToShoppingCartObject.qty}
+          //      \n加入購物車`);
+
+          addToShoppingCartSuccessHtmlDivElement.innerHTML = `
+                    已將<br />
+                    id:${addToShoppingCartObject.id}<br />
+                    name:${addToShoppingCartObject.name}<br />
+                    price:${addToShoppingCartObject.price}<br />
+                    color name:${addToShoppingCartObject.color.name}<br />
+                    color code:#${addToShoppingCartObject.color.code}<br />
+                    size:${addToShoppingCartObject.size}<br />
+                    qty:${addToShoppingCartObject.qty}<br />
+                    加入購物車`;
+          addToShoppingCartSuccessHtmlDivElement.classList.remove('hidden');
+          setTimeout(function () {
+            addToShoppingCartSuccessHtmlDivElement.classList.add('hidden');
+          }, 3000);
+        } else {
+          addToShoppingCartInfoHtmlDivElement.innerHTML = "請先選擇服飾大小";
+          addToShoppingCartInfoHtmlDivElement.classList.remove('hidden');
+          setTimeout(function () {
+            addToShoppingCartInfoHtmlDivElement.classList.add('hidden');
+          }, 3000);
+        }
+      });
+    }
+    // w1p1 Step 2: Handle Stock of Product Variants - part1
+    // productDetailArray
+    // 0 productDetailsAPIJsonData.id number
+    // 1 productDetailsAPIJsonData.title ""
+    // 2 productDetailsAPIJsonData.price number
+    // 3 productDetailsAPIJsonData.color[]{1} name
+    // 4 productDetailsAPIJsonData.color[]{0} color_code
+    // 5 productDetailsAPIJsonData.size[]
+    // 6 productDetailsAPIJsonData.order number
+
+    // 0 id
+    // 1 name
+    // 2 price
+    // 3 color {name: code:}
+    // 4 size
+    // 5 qty
+
+    const productDetailArrayArray = [];
+    let totalQty = 0;
+
+    function updateProductDetailArrayArray(productDetailsAPIJsonData) {
+      productDetailsAPIJsonData.variants.forEach((productDetailVariant) => {
+        productDetailsAPIJsonData.colors.forEach((productDetailColor) => {
+          if (productDetailVariant.color_code == productDetailColor.code) {
+            productDetailVariant['name'] = productDetailColor.name;
+          }
+        });
+      });
+      for (let i = 0; i < productDetailsAPIJsonData.variants.length; i++) {
+        const productDetailArray = [];
+        productDetailArray.push(productDetailsAPIJsonData.id);
+        productDetailArray.push(productDetailsAPIJsonData.title);
+        productDetailArray.push(productDetailsAPIJsonData.price);
+
+        productDetailArray.push(productDetailsAPIJsonData.variants[i].name);
+        productDetailArray.push(
+          productDetailsAPIJsonData.variants[i].color_code
+        );
+        productDetailArray.push(productDetailsAPIJsonData.variants[i].size);
+        productDetailArray.push(productDetailsAPIJsonData.variants[i].stock);
+
+        productDetailArrayArray.push(productDetailArray);
+      }
+    }
+
+    function updateProductPageUI() {
+      setProductPageButtonEventElick(productDetailArrayArray);
+    }
+
+    // w1p1 Step 3: Shopping Cart Implementation
+    // w1p1 Step 4: Add to Cart Implementation
+    let shoppingCartListJsonData = JSON.parse(localStorage.getItem('shoppingCartList')) || [];
+
+    function updateLocalStorage() {
+      localStorage.setItem('shoppingCartList', JSON.stringify(shoppingCartListJsonData));
+    }
+
+    // window.localStorage.clear();
+
+    const showCartNumberHtmlDivElement = document.querySelector('div[name="top-nav-bar-desktop-shopping-cart-notification-numbers"]');
+    const showCartNumberAnimationHtmlDivElement = document.querySelector('div[name="top-nav-bar-desktop-shopping-cart-notification-animation"]');
+    const mobileShowCartNumberHtmlDivElement = document.querySelector('div[name="bottom-nav-bar-mobile-stick-shopping-cart-notification-numbers"]');
+    const mobileShowCartNumberAnimationHtmlDivElement = document.querySelector('div[name="bottom-nav-bar-mobile-stick-shopping-cart-notification-animation"]');
+
+    updateShoppingCartNotificationNumbers();
+
+    function sumShoppingCartListData(shoppingCartListLocalStorageJsonData) {
+      let combineIndex = [];
+
+      for (let i = 0; i < shoppingCartListLocalStorageJsonData.length; i++) {
+        for (let j = 1; j < shoppingCartListLocalStorageJsonData.length; j++) {
+          if (shoppingCartListLocalStorageJsonData[i].id == shoppingCartListLocalStorageJsonData[j].id && shoppingCartListLocalStorageJsonData[i].name == shoppingCartListLocalStorageJsonData[j].name && shoppingCartListLocalStorageJsonData[i].price == shoppingCartListLocalStorageJsonData[j].price && shoppingCartListLocalStorageJsonData[i].color.code == shoppingCartListLocalStorageJsonData[j].color.code && shoppingCartListLocalStorageJsonData[i].size == shoppingCartListLocalStorageJsonData[j].size && i != j) {
+            combineIndex.push(`${i},${j}`);
+            combineIndex = combineIndex.filter(e => e !== `${j},${i}`);
+            shoppingCartListLocalStorageJsonData[i].qty += shoppingCartListLocalStorageJsonData[j].qty
+            shoppingCartListJsonData = shoppingCartListLocalStorageJsonData.filter(e => e !== shoppingCartListLocalStorageJsonData[j]);
+          }
+        }
+      }
+
+      updateShoppingCartNotificationNumbers();
+    }
+
+    function sumAllSpecQty() {
+      totalQty = 0;
+      shoppingCartListJsonData.forEach((e) => {
+        totalQty += e.qty;
+      });
+    }
+
+    function updateShoppingCartNotificationNumbers() {
+      sumAllSpecQty();
+      showCartNumberHtmlDivElement.innerHTML = totalQty;
+      mobileShowCartNumberHtmlDivElement.innerHTML = totalQty;
+      if (totalQty > 0) {
+        showCartNumberAnimationHtmlDivElement.classList.remove('hidden');
+        mobileShowCartNumberAnimationHtmlDivElement.remove('hidden');
+      } else {
+        showCartNumberAnimationHtmlDivElement.classList.add('hidden');
+        mobileShowCartNumberAnimationHtmlDivElement.classList.add('hidden');
+      }
+    }
       //-----------------------------------------------------------------------------------------------
 
       //-----------------------------------------------------------------------------------------------
@@ -4655,4 +5004,4 @@
 </html>
 
 <!-- <link rel="stylesheet" href="styles.css" />
-<script type="module" src="script.js"></script> -->
+<script type="module" src="script.js"></script> --

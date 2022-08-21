@@ -1748,8 +1748,8 @@
               desktop:border-[1px]
               desktop:border-[#979797]
               mobile:border-none
-            ">
-          <div class="
+            " name="checkout-page-checkout-product-list-box" id="">
+          <!-- <div class="
                 relative
                 flex
                 mobile:flex-col
@@ -2237,7 +2237,7 @@
                 TWD.799
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <div class="
@@ -3866,6 +3866,7 @@
         history.replaceState(null, null, '/checkout');
         showCategoryNavBarTextColorBrown('all');
         changePage('checkout-page');
+        showCheckoutPageCheckoutProductListUI();
       });
     document
       .querySelector(
@@ -3875,6 +3876,7 @@
         history.replaceState(null, null, '/checkout');
         showCategoryNavBarTextColorBrown('all');
         changePage('checkout-page');
+        showCheckoutPageCheckoutProductListUI();
       });
     document
       .querySelector('div[name="top-nav-bar-desktop-profile-box"]')
@@ -4409,7 +4411,7 @@
 
         // w1p1 Step 1: Handle Product Variants
         // w1p1 Step 2: Handle Stock of Product Variants
-        updateProductPageProductDetailHtmlDivElementUI();
+        updateProductPageProductDetailHtmlDivElementUI(productDetailsAPIJsonData);
       });
     }
     //-----------------------------------------------------------------------------------------------
@@ -4425,7 +4427,7 @@
     let seletedColorEachSizeAvailableAmountArray = [];
     let selectedSizeIndex = 0;
 
-    function setProductPageProductDetailButtonEventClick() {
+    function setProductPageProductDetailButtonEventClick(productDetailsAPIJsonData) {
       const borderNodeList = document.querySelectorAll(
         'div[name="product-page-product-color-border"]'
       );
@@ -4668,9 +4670,9 @@
           shoppingCartListJsonData = JSON.parse(window.localStorage.getItem('shoppingCartList')) || [];
           const addToShoppingCartObject = {};
           const addToShoppingCartColorObject = {};
-          addToShoppingCartObject["id"] = productDetailArrayArray[0][0];
-          addToShoppingCartObject["name"] = productDetailArrayArray[0][1];
-          addToShoppingCartObject["price"] = productDetailArrayArray[0][2];
+          addToShoppingCartObject["id"] = productDetailsAPIJsonData.id;
+          addToShoppingCartObject["name"] = productDetailsAPIJsonData.title;
+          addToShoppingCartObject["price"] = productDetailsAPIJsonData.price;
           addToShoppingCartColorObject["name"] = selectedColorName;
           addToShoppingCartColorObject["code"] = selectedColorCode;
           addToShoppingCartObject["color"] = addToShoppingCartColorObject;
@@ -4766,8 +4768,8 @@
       }
     }
 
-    function updateProductPageProductDetailHtmlDivElementUI() {
-      setProductPageProductDetailButtonEventClick(productDetailArrayArray);
+    function updateProductPageProductDetailHtmlDivElementUI(productDetailsAPIJsonData) {
+      setProductPageProductDetailButtonEventClick(productDetailsAPIJsonData);
     }
 
     // w1p1 Step 3: Shopping Cart Implementation
@@ -4825,12 +4827,399 @@
     }
     //-----------------------------------------------------------------------------------------------
 
-      //-----------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------
 
-      // w1p3
-      // Step 1: Handle Items in Cart Page
-      // Step 2: Validate User Input
-      //-----------------------------------------------------------------------------------------------
+    // w1p3
+    // // Step 1: Handle Items in Cart Page
+    // const checkoutPageCheckoutProductListHtmlDivElement = document.querySelector('div[name="checkout-page-checkout-product-list-box"]');
+    // const timeWrapper = document.querySelector('div[name="time-wrapper"]');
+    // const price = document.querySelectorAll('div[name="price"]');
+    // const confirmBtn = document.querySelector('div[name="confrim-pay"]');
+    // const nameInput = document.querySelector('div[name="order-name"]');
+    // const phoneInput = document.querySelector('div[name="order-phone"]');
+    // const addressInput = document.querySelector('div[name="order-address"]');
+    // const emailInput = document.querySelector('div[name="order-email"]');
+    // const timeInput = document.querySelectorAll('div[name="time-select"]');
+    // const timeArr = [...timeInput];
+
+    // function showCheckoutPageCheckoutProductListUI() {
+
+    //   console.log(shoppingCartListJsonData);
+    //   let list = '';
+    //   for (let i = 0; i < shoppingCartListJsonData.length; i++) {
+    //     fetch(
+    //       `https://api.appworks-school.tw/api/1.0/products/details?id=${shoppingCartListJsonData[i].id}`
+    //     ).then(async (response) => {
+    //       const productDetailsAPIJson = await response.json();
+    //       const productDetailsAPIJsonData = productDetailsAPIJson.data;
+    //       console.log(productDetailsAPIJsonData);
+
+    //       list += `
+    //     <div class="
+    //             relative
+    //             flex
+    //             mobile:flex-col
+    //             desktop:flex-row
+    //             mobile:mt-[10px] mobile:ml-0
+    //             desktop:mt-[30px] desktop:ml-[32px]
+    //           " name="" id="">
+    //         <div class="
+    //               flex flex-row
+    //               w-full
+    //               h-0
+    //               mobile:block mobile:my-[10px]
+    //               desktop:hidden desktop:my-0
+    //               content-['']
+    //               border-solid border-[#3f3a3a] border-b-[1px]
+    //             " id="split-border"></div>
+    //         <div class="flex flex-row" name="" id="">
+    //           <img src="${productDetailsAPIJsonData.main_image}" alt=""
+    //             class="object-cover w-[114px] h-[152px]" name="product-image" id="" />
+    //           <div class="
+    //                 flex flex-col
+    //                 mobile:w-full mobile:ml-[10px]
+    //                 desktop:w-[354px] desktop:ml-[16px]
+    //               " name="" id="">
+    //             <div class="
+    //                   text-[#000000]
+    //                   mobile:text-[14px] mobile:leading-[17px]
+    //                   desktop:text-[16px] desktop:leading-[19px]
+    //                 " name="" id="">
+    //               ${productDetailsAPIJsonData.title}
+    //             </div>
+    //             <div class="
+    //                   mobile:mt-[20px]
+    //                   text-[#3f3a3a]
+    //                   mobile:text-[14px] mobile:leading-[17px]
+    //                   desktop:mt-[18px]
+    //                   desktop:text-[16px]
+    //                   desktop:leading-[19px]
+    //                 " name="" id="">
+    //               ${productDetailsAPIJsonData.id}
+    //             </div>
+    //             <div class="
+    //                   mobile:mt-[24px]
+    //                   text-[#3f3a3a]
+    //                   mobile:text-[14px] mobile:leading-[17px]
+    //                   desktop:mt-[22px]
+    //                   desktop:text-[16px]
+    //                   desktop:leading-[19px]
+    //                 " name="" id="">
+    //               顏色｜${shoppingCartListJsonData[i]['color'].name}
+    //             </div>
+    //             <div class="
+    //                   mobile:mt-[12px]
+    //                   text-[#3f3a3a]
+    //                   mobile:text-[14px] mobile:leading-[17px]
+    //                   desktop:mt-[10px]
+    //                   desktop:text-[16px]
+    //                   desktop:leading-[19px]
+    //                 " name="" id="">
+    //               尺寸｜${shoppingCartListJsonData[i].size}
+    //             </div>
+    //           </div>
+    //           <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007859059120156743/trash.png" alt=""
+    //             class="
+    //                 absolute
+    //                 object-cover
+    //                 w-[44px]
+    //                 h-[44px]
+    //                 mobile:left-[calc(100%-44px)]
+    //                 desktop:left-[calc(100%-74px)]
+    //                 mobile:mt-0
+    //                 desktop:mt-[54px]
+    //               " name="product-image" id="" />
+    //         </div>
+    //         <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" name="" id="">
+    //           <div class="
+    //                 text-[#3f3a3a]
+    //                 mobile:block
+    //                 mobile:w-[104px]
+    //                 mobile:h-[17px]
+    //                 mobile:mr-auto
+    //                 mobile:text-center
+    //                 mobile:text-[14px]
+    //                 mobile:leading-[17px]
+    //                 desktop:hidden
+    //               " id="cart-title">
+    //             數量
+    //           </div>
+    //           <div class="
+    //                 text-[#3f3a3a]
+    //                 mobile:block
+    //                 mobile:w-[104px]
+    //                 mobile:h-[17px]
+    //                 mobile:text-center
+    //                 mobile:text-[14px]
+    //                 mobile:leading-[17px]
+    //                 desktop:hidden
+    //               " id="cart-title">
+    //             單價
+    //           </div>
+    //           <div class="
+    //                 text-[#3f3a3a]
+    //                 mobile:block
+    //                 mobile:w-[104px]
+    //                 mobile:h-[17px]
+    //                 mobile:ml-auto
+    //                 mobile:text-center
+    //                 mobile:text-[14px]
+    //                 mobile:leading-[17px]
+    //                 desktop:hidden
+    //               " id="cart-title">
+    //             小計
+    //           </div>
+    //         </div>
+    //         <div class="
+    //               flex flex-row
+    //               items-center
+    //               mobile:h-[30px] mobile:mt-[12px]
+    //               desktop:h-[32px] desktop:mt-[60px] desktop:ml-0
+    //             " name="" id="">
+    //           <select class="
+    //                 w-[80px]
+    //                 mobile:h-[30px] mobile:ml-[12px] mobile:mr-auto
+    //                 desktop:h-[32px] desktop:mr-[56px]
+    //                 pl-[16px]
+    //                 bg-[#F3F3F3]
+    //                 rounded-[8px]
+    //                 border-solid border-[1px] border-[#979797]
+    //               " name="${shoppingCartListJsonData[i]['color'].name}${shoppingCartListJsonData[i].size}amount" name="" id="" title="From">
+    //           </select>
+    //           <div class="
+    //                 flex
+    //                 justify-center
+    //                 items-center
+    //                 text-[#3f3a3a] text-center
+    //                 desktop:w-[192px] desktop:text-[16px] desktop:leading-[19px]
+    //                 mobile:w-[104px] mobile:text-[14px] mobile:leading-[17px]
+    //               " name="" id="">
+    //             TWD.${productDetailsAPIJsonData.price}
+    //           </div>
+    //           <div class="
+    //                 flex
+    //                 justify-center
+    //                 items-center
+    //                 text-[#3f3a3a] text-center
+    //                 desktop:w-[192px]
+    //                 desktop:ml-0
+    //                 desktop:text-[16px]
+    //                 desktop:leading-[19px]
+    //                 mobile:w-[104px]
+    //                 mobile:ml-auto
+    //                 mobile:text-[14px]
+    //                 mobile:leading-[17px]
+    //               " name="" id="">
+    //             TWD.${productDetailsAPIJsonData.price * shoppingCartListJsonData[i].qty}
+    //           </div>
+    //         </div>
+    //       </div>`;
+
+    //       checkoutPageCheckoutProductListHtmlDivElement.innerHTML = list;
+    //       // updateProductDetailArrayArray(productDetailsAPIJsonData);
+    //       // productDetailArrayArray.forEach((productDetailsArray) => {
+    //       //   if (shoppingCartListJsonData[i].color.name == productDetailsArray[3] && shoppingCartListJsonData[i].size == productDetailsArray[5]) {
+    //       //     const availableOrderValue = productDetailsArray[6];
+    //       //     const checkoutPageOrderValueSelectDropList = document.querySelector('select[name="' + `${shoppingCartListJsonData[i]['color'].name}${shoppingCartListJsonData[i].size}` + 'amount"]');
+    //       //     for (let j = 1; j <= availableOrderValue; j++) {
+    //       //       checkoutPageOrderValueSelectDropList.add(new Option(`${j}`, j));
+    //       //     }
+    //       //     checkoutPageOrderValueSelectDropList.value = shoppingCartListJsonData[i]['qty'];
+    //       //   }
+    //       // });
+    //     });
+    //   }
+
+    /*
+            <div class="main-productPageHtmlDivElement">
+                  <div class="main-product">
+                    <img src="${productDetailArrayArray[i].image}" />
+                    <div class="product-info">
+                      <p>${productDetailArrayArray[i].name}</p>
+                      <p>${productDetailArrayArray[i].id}</p>
+                      <div class="product-colorsize">
+                        <p>顏色｜<span>${productDetailArrayArray[i]['color'].name}</span></p>
+                        <p>尺寸｜<span>${productDetailArrayArray[i].size}</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-select">
+                    <div class="product-number">
+                      <p class="product-desktop">數量</p>
+                      <select data-index=${i}>
+                        ${options}
+                      </select>
+                    </div>
+                    <div class="product-price">
+                      <p class="product-desktop">單價</p>
+                      <p class="price-inner" data-price=${productDetailArrayArray[i].price}>
+                      TWD.${productDetailArrayArray[i].price}</p>
+                    </div>
+                    <div class="product-total">
+                      <p class="product-desktop">小計</p>
+                      <p class="total-inner">TWD.${productDetailArrayArray[i].price * productDetailArrayArray[i].qty}</p>
+                    </div>
+                    <img class="product-trash" data-index=${i} src="./img/trash.png" />
+                  </div>
+                </div>
+    */
+
+      // let productproductPageHtmlDivElement = document.querySelectorAll('.main-productPageHtmlDivElement');
+      // let selects = document.querySelectorAll('.product-number select');
+      // let total = document.querySelectorAll('.total-inner');
+      // let productPrice = document.querySelectorAll('.price-inner');
+      // let trashs = document.querySelectorAll('.product-trash');
+
+      // // changeCartCount();
+      // // checkCartLength();
+
+      // selects.forEach((select) => {
+      //   //獲取option當前的值
+      //   let currentValue;
+      //   select.addEventListener('click', () => {
+      //     currentValue = select.options[select.selectedIndex].text;
+      //   });
+      //   //獲取變化後的值
+      //   select.addEventListener('change', (e) => {
+      //     showCartNumber = document.querySelector('.nav-circle');
+      //     mobileShowCartNumber = document.querySelector('.mobile-circle');
+      //     const index = e.target.dataset.index;
+      //     let value = select.options[select.selectedIndex].text;
+      //     productDetailArrayArray[e.target.dataset.index].qty = parseInt(value);
+      //     num = currentValue - value;
+      //     addStockBack(e, num);
+      //     updateLocalStorage();
+      //     total[index].textContent = `TWD.${parseInt(
+      //       productPrice[index].dataset.price * value
+      //     )}`;
+      //     // changeCartCount();
+      //   });
+      // });
+
+      // function checkFreight() {
+      //   displayNumber.textContent.slice(1, -1);
+      //   if (displayNumber.textContent.slice(1, -1) == '0') {
+      //     price[1].textContent = 0;
+      //   }
+      // }
+
+      // trashs.forEach((trash) => {
+      //   trash.addEventListener('click', (e) => {
+      //     updateDOM(e);
+      //     for (let i = 0; i < productproductPageHtmlDivElement.length; i++) {
+      //       selects[i].dataset.index = i;
+      //       trashs[i].dataset.index = i;
+      //     }
+      //     const num = productDetailArrayArray[e.target.dataset.index].qty;
+      //     addStockBack(e, num);
+      //     productDetailArrayArray.splice(e.target.dataset.index, 1);
+      //     updateLocalStorage();
+      //     // changeCartCount();
+      //     alert('已移除商品 !');
+      //   });
+      // });
+
+      // function addStockBack(e, num) {
+      //   let stockIndex;
+      //   stockIndex = stockList.findIndex(
+      //     (listItem) => listItem.id == productDetailArrayArray[e.target.dataset.index].id
+      //   );
+      //   const findStock = stockList[stockIndex]['variants'].findIndex(
+      //     (listItem) =>
+      //       listItem.size == productDetailArrayArray[e.target.dataset.index].size &&
+      //       listItem.color_code == productDetailArrayArray[e.target.dataset.index]['color'].code
+      //   );
+      //   stockList[stockIndex]['variants'][findStock].stock += num;
+      // }
+
+      // function updateDOM(e) {
+      //   productproductPageHtmlDivElement[e.target.dataset.index].remove();
+      //   productproductPageHtmlDivElement = document.querySelectorAll('.main-productPageHtmlDivElement');
+      //   checkCartLength();
+      //   selects = document.querySelectorAll('.product-number select');
+      //   total = document.querySelectorAll('.total-inner');
+      //   productPrice = document.querySelectorAll('.price-inner');
+      //   trashs = document.querySelectorAll('.product-trash');
+      // }
+
+      // function checkCartLength() {
+      //   if (productproductPageHtmlDivElement.length <= 0) {
+      //     checkoutPageCheckoutListHtmlDivElement.innerHTML = `<p class="cart-warning">購物車中還沒有商品，<a href="./index.html">點我到首頁選購</a><p>`;
+      //   }
+      // }
+
+      // confirmBtn.addEventListener('click', () => {
+      //   let nameProved = true;
+      //   if (nameInput.value.replace(/ /g, '').length == 0) {
+      //     nameInput.classList.add('active');
+      //     alert('請輸入姓名');
+      //     nameProved = false;
+      //   } else {
+      //     nameInput.classList.remove('active');
+      //   }
+
+      //   let phoneProved = true;
+      //   if (
+      //     phoneInput.value.replace(/ /g, '').length !== 10 ||
+      //     phoneInput.value.slice(0, 2) !== '09'
+      //   ) {
+      //     phoneInput.classList.add('active');
+      //     alert('請輸入完整手機號碼');
+      //     phoneProved = false;
+      //   } else {
+      //     phoneInput.classList.remove('active');
+      //   }
+
+      //   let addressProved = true;
+      //   if (!addressInput.value.includes('市')) {
+      //     addressInput.classList.add('active');
+      //     alert('請輸入完整地址');
+      //     addressProved = false;
+      //   } else {
+      //     addressInput.classList.remove('active');
+      //   }
+
+      //   let emailProved = true;
+      //   if (!emailInput.value.includes('@')) {
+      //     emailInput.classList.add('active');
+      //     alert('請輸入正確電郵地址');
+      //     emailProved = false;
+      //   } else {
+      //     emailInput.classList.remove('active');
+      //   }
+
+      //   let timeProved = true;
+      //   if (!timeArr.some((time) => time.checked == true)) {
+      //     alert('請選擇配送時間');
+      //     timeWrapper.classList.add('active');
+      //     timeProved = false;
+      //   } else {
+      //     timeWrapper.classList.remove('active');
+      //   }
+
+      //   if (
+      //     !nameProved ||
+      //     !phoneProved ||
+      //     !addressProved ||
+      //     !emailProved ||
+      //     !timeProved
+      //   ) {
+      //     console.log(false);
+      //     return;
+      //   } else {
+      //     alert('訂單已送出');
+      //     nameInput.value = '';
+      //     phoneInput.value = '';
+      //     addressInput.value = '';
+      //     emailInput.value = '';
+      //     timeInput.forEach((input) => {
+      //       input.checked = false;
+      //     });
+      //   }
+      // });
+    // }
+    // Step 2: Validate User Input
+    //-----------------------------------------------------------------------------------------------
 
       //-----------------------------------------------------------------------------------------------
 

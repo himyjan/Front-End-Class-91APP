@@ -5088,7 +5088,7 @@
                     bg-[#F3F3F3]
                     rounded-[8px]
                     border-solid border-[1px] border-[#979797]
-                  " name="amount" name="amount${i}" id="" title="From">
+                  " name="amount${i}" id="" title="From">
               </select>
               <div class="
                     flex
@@ -5123,25 +5123,27 @@
 
           checkoutPageCheckoutProductListHtmlDivElement.innerHTML = list;
           updateProductDetailArrayArray(productDetailsAPIJsonData);
-          productDetailArrayArray.forEach((productDetailsArray) => {
-            if (
-              shoppingCartListJsonData[i].name ==
-              productDetailsArray[1] && shoppingCartListJsonData[i].color.name ==
-              productDetailsArray[3] &&
-              shoppingCartListJsonData[i].size == productDetailsArray[5]
-            ) {
-              const availableOrderValue = productDetailsArray[6];
-              const checkoutPageOrderValueSelectDropList = document.querySelector(`select[name="amount${i}"]`);
-              checkoutPageOrderValueSelectDropList.options.length = 0;
-              for (let j = 1; j <= availableOrderValue; j++) {
-                checkoutPageOrderValueSelectDropList.add(
-                  new Option(`${j}`, j)
-                );
+          for (let j = 0; j < shoppingCartListJsonData.length; j++) {
+            productDetailArrayArray.forEach((productDetailsArray) => {
+              if (
+                shoppingCartListJsonData[j].name ==
+                productDetailsArray[1] && shoppingCartListJsonData[j].color.name ==
+                productDetailsArray[3] &&
+                shoppingCartListJsonData[j].size == productDetailsArray[5]
+              ) {
+                const availableOrderValue = productDetailsArray[6];
+                const checkoutPageOrderValueSelectDropList = document.querySelector(`select[name="amount${j}"]`);
+                // checkoutPageOrderValueSelectDropList.options.length = 0;
+                for (let k = 1; k <= availableOrderValue; k++) {
+                  checkoutPageOrderValueSelectDropList.add(
+                    new Option(`${k}`, k)
+                  );
+                }
+                checkoutPageOrderValueSelectDropList.value =
+                  shoppingCartListJsonData[j]['qty'];
               }
-              checkoutPageOrderValueSelectDropList.value =
-                shoppingCartListJsonData[i]['qty'];
-            }
-          });
+            });
+          }
         });
       }
     }

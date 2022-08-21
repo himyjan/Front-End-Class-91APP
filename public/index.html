@@ -3866,6 +3866,7 @@
         history.replaceState(null, null, '/checkout');
         showCategoryNavBarTextColorBrown('all');
         changePage('checkout-page');
+        showCheckoutPageCheckoutProductListUI();
       });
     document
       .querySelector(
@@ -3875,6 +3876,7 @@
         history.replaceState(null, null, '/checkout');
         showCategoryNavBarTextColorBrown('all');
         changePage('checkout-page');
+        showCheckoutPageCheckoutProductListUI();
       });
     document
       .querySelector('div[name="top-nav-bar-desktop-profile-box"]')
@@ -4409,7 +4411,7 @@
 
         // w1p1 Step 1: Handle Product Variants
         // w1p1 Step 2: Handle Stock of Product Variants
-        updateProductPageProductDetailHtmlDivElementUI();
+        updateProductPageProductDetailHtmlDivElementUI(productDetailsAPIJsonData);
       });
     }
     //-----------------------------------------------------------------------------------------------
@@ -4425,7 +4427,7 @@
     let seletedColorEachSizeAvailableAmountArray = [];
     let selectedSizeIndex = 0;
 
-    function setProductPageProductDetailButtonEventClick() {
+    function setProductPageProductDetailButtonEventClick(productDetailsAPIJsonData) {
       const borderNodeList = document.querySelectorAll(
         'div[name="product-page-product-color-border"]'
       );
@@ -4668,9 +4670,9 @@
           shoppingCartListJsonData = JSON.parse(window.localStorage.getItem('shoppingCartList')) || [];
           const addToShoppingCartObject = {};
           const addToShoppingCartColorObject = {};
-          addToShoppingCartObject["id"] = productDetailArrayArray[0][0];
-          addToShoppingCartObject["name"] = productDetailArrayArray[0][1];
-          addToShoppingCartObject["price"] = productDetailArrayArray[0][2];
+          addToShoppingCartObject["id"] = productDetailsAPIJsonData.id;
+          addToShoppingCartObject["name"] = productDetailsAPIJsonData.title;
+          addToShoppingCartObject["price"] = productDetailsAPIJsonData.price;
           addToShoppingCartColorObject["name"] = selectedColorName;
           addToShoppingCartColorObject["code"] = selectedColorCode;
           addToShoppingCartObject["color"] = addToShoppingCartColorObject;
@@ -4766,8 +4768,8 @@
       }
     }
 
-    function updateProductPageProductDetailHtmlDivElementUI() {
-      setProductPageProductDetailButtonEventClick(productDetailArrayArray);
+    function updateProductPageProductDetailHtmlDivElementUI(productDetailsAPIJsonData) {
+      setProductPageProductDetailButtonEventClick(productDetailsAPIJsonData);
     }
 
     // w1p1 Step 3: Shopping Cart Implementation

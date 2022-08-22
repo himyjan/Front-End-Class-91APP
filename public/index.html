@@ -5133,6 +5133,11 @@
               shoppingCartListJsonData[i]['qty'];
             checkoutPageOrderValueSelectDropList.addEventListener('change', (e) => {
               shoppingCartListJsonData[i].qty = parseInt(checkoutPageOrderValueSelectDropList.value);
+
+              updateLocalStorage();
+              updateShoppingCartNotificationNumbers();
+              showCheckoutPageCheckoutProductListUI();
+              updateCheckoutPagePrice();
             });
           }
         });
@@ -5144,7 +5149,7 @@
         const checkoutPageRemoveProductTrashImage = document.querySelector(`img[name="remove-product-trash-image${i}"]`);
         checkoutPageRemoveProductTrashImage.addEventListener('click', (e) => {
           const checkoutPageProduct = document.querySelector(`div[name="checkout-page-product${i}"]`);
-          shoppingCartListJsonData.splice(e.target.dataset.index, 1);
+          shoppingCartListJsonData.splice(i, 1);
           checkoutPageProduct.remove();
 
           updateLocalStorage();

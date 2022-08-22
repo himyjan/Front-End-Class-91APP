@@ -201,7 +201,6 @@
             </div>
           </div>
         </div>
-        </div>
 
         <div name="top-nav-bar-desktop-profile-box">
           <img class="
@@ -447,7 +446,6 @@
       <div class="
             flex flex-wrap
             mobile:w-[calc(100%-42px)]
-            desktop:mobile:w-[calc(100%-42px)]
             desktop:w-full
             mobile:mx-[21px]
             desktop:mx-auto
@@ -1745,10 +1743,8 @@
 
         <div class="
               w-full
-              mobile:mt-0 mobile:pt-0 mobile:pb-0 mobile:pt-0 mobile:pb-0
+              mobile:mt-0 mobile:pt-0 mobile:pb-0
               desktop:mt-[16px]
-              desktop:pt-[10px]
-              desktop:pb-[40px]
               desktop:pt-[10px]
               desktop:pb-[40px]
               desktop:border-solid
@@ -1823,7 +1819,6 @@
                 class="
                     absolute
                     cursor-pointer
-                    cursor-pointer
                     object-cover
                     w-[44px]
                     h-[44px]
@@ -1988,7 +1983,6 @@
                 class="
                     absolute
                     cursor-pointer
-                    cursor-pointer
                     object-cover
                     w-[44px]
                     h-[44px]
@@ -2152,7 +2146,6 @@
               <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007859059120156743/trash.png" alt=""
                 class="
                     absolute
-                    cursor-pointer
                     cursor-pointer
                     object-cover
                     w-[44px]
@@ -2687,7 +2680,7 @@
                     " id="product-name">
                   NT.
                 </div>
-                <div class="text-[#3f3a3a] text-[30px] leading-[36px]" id="checkout-page-amount-text">
+                <div class="text-[#3f3a3a] text-[30px] leading-[36px]" name="checkout-page-amount-text" id="">
                   2397
                 </div>
               </div>
@@ -2806,7 +2799,6 @@
   <footer class="" name="bottom-nav">
     <div class="
           mobile:hidden
-          desktop:z-[999]
           desktop:z-[999]
           desktop:flex
           desktop:justify-center
@@ -4042,7 +4034,7 @@
                               border-solid border-[1px] border-[#d3d3d3]
                               w-[24px]
                               h-[24px]
-                              " name="product-page-product-color" colorName=${productDetailsAPIJsonData.colors[i].name} colorCode=${productDetailsAPIJsonData.colors[i].code} colorName=${productDetailsAPIJsonData.colors[i].name} colorCode=${productDetailsAPIJsonData.colors[i].code}></div>
+                              " name="product-page-product-color" colorName=${productDetailsAPIJsonData.colors[i].name} colorCode=${productDetailsAPIJsonData.colors[i].code}></div>
                         </div>`;
         }
 
@@ -4059,17 +4051,17 @@
                            h-[36px]
                            mobile:ml-[7px] mobile:mr-[7px]
                            desktop:ml-[9.5px] desktop:mr-[9.5px]
-                           " name="product-page-product-size" size=${productDetailsAPIJsonData.sizes[i]} size=${productDetailsAPIJsonData.sizes[i]}>
+                           " name="product-page-product-size" size=${productDetailsAPIJsonData.sizes[i]}>
                          ${productDetailsAPIJsonData.sizes[i]}
                        </div>`;
         }
 
         for (let i = 0; i < productDetailsAPIJsonData.images.length; i++) {
           imgList += `<img class="
-                           object-cover
-                           mobile:w-full mobile:mt-[20px]
-                           desktop:w-[960px] desktop:h-[540px] desktop:mt-[30px]
-                           " name="product-picture" src="${productDetailsAPIJsonData.images[i]}">`;
+                          object-cover
+                          mobile:w-full mobile:mt-[20px]
+                          desktop:w-[960px] desktop:h-[540px] desktop:mt-[30px]
+                          " name="product-picture" src="${productDetailsAPIJsonData.images[i]}">`;
         }
 
         productPageProductDetailHtmlDivElement.innerHTML = `<div class="
@@ -4380,10 +4372,6 @@
                                    </div>
                                  </div>
                                </div>`;
-
-        productPageProductDetailHtmlDivElement.classList.remove(
-          'animate-pulse'
-        );
 
         productPageProductDetailHtmlDivElement.classList.remove(
           'animate-pulse'
@@ -5094,7 +5082,9 @@
           </div>`;
 
           checkoutPageCheckoutProductListHtmlDivElement.innerHTML = list;
+
           updateProductDetailArrayArray(productDetailsAPIJsonData);
+
           for (let j = 0; j < shoppingCartListJsonData.length; j++) {
             productDetailArrayArray.forEach((productDetailsArray) => {
               if (
@@ -5111,37 +5101,88 @@
                     new Option(`${k}`, k)
                   );
                 }
-                checkoutPageOrderValueSelectDropList.value =
-                  shoppingCartListJsonData[j]['qty'];
-                checkoutPageOrderValueSelectDropList.addEventListener('change', (e) => {
-                  shoppingCartListJsonData[j].qty = parseInt(checkoutPageOrderValueSelectDropList.value);
-                  updateLocalStorage();
-                  updateShoppingCartNotificationNumbers();
-                  showCheckoutPageCheckoutProductListUI()
-                });
-
-                const checkoutPageRemoveProductTrashImage = document.querySelector(`img[name="remove-product-trash-image${j}"]`);
-                checkoutPageRemoveProductTrashImage.addEventListener('click', (e) => {
-                  const checkoutPageProduct = document.querySelector(`div[name="checkout-page-product${j}"]`);
-                  shoppingCartListJsonData.splice(e.target.dataset.index, 1);
-                  if (!(checkoutPageProduct == null)) {
-                    checkoutPageProduct.remove();
-                  }
-                  updateLocalStorage();
-                  updateShoppingCartNotificationNumbers();
-                });
               }
             });
           }
+          updateCheckoutPagePrice();
+          selectLocalhostQtyAtOption();
+          setOrderListTrashClick();
         });
       }
       if (shoppingCartListJsonData.length == 0) {
         checkoutPageCheckoutProductListHtmlDivElement.innerHTML = `<div class="flex justify-center w-full" name="">
-                                                                    <div class="text-[48px] text-[#8B572A]" name="product-error">
-                                                                      購物車中還沒有商品，點我到首頁選購
-                                                                    </div>
-                                                                  </div>`;
+                                                                     <div class="text-[48px] text-[#8B572A]" name="product-error">
+                                                                       購物車中還沒有商品，點我到首頁選購
+                                                                     </div>
+                                                                   </div>`;
       }
+    }
+
+    function selectLocalhostQtyAtOption() {
+      for (let i = 0; i < shoppingCartListJsonData.length; i++) {
+        productDetailArrayArray.forEach((productDetailsArray) => {
+          if (
+            shoppingCartListJsonData[i].name ==
+            productDetailsArray[1] && shoppingCartListJsonData[i].color.name ==
+            productDetailsArray[3] &&
+            shoppingCartListJsonData[i].size == productDetailsArray[5]
+          ) {
+            const availableOrderValue = productDetailsArray[6];
+            const checkoutPageOrderValueSelectDropList = document.querySelector(`select[name="amount${i}"]`);
+            checkoutPageOrderValueSelectDropList.value =
+              shoppingCartListJsonData[i]['qty'];
+            checkoutPageOrderValueSelectDropList.addEventListener('change', (e) => {
+              shoppingCartListJsonData[i].qty = parseInt(checkoutPageOrderValueSelectDropList.value);
+
+              updateLocalStorage();
+              updateShoppingCartNotificationNumbers();
+              showCheckoutPageCheckoutProductListUI();
+              updateCheckoutPagePrice();
+            });
+          }
+        });
+      }
+    }
+
+    function setOrderListTrashClick() {
+      for (let i = 0; i < shoppingCartListJsonData.length; i++) {
+        const checkoutPageRemoveProductTrashImage = document.querySelector(`img[name="remove-product-trash-image${i}"]`);
+        checkoutPageRemoveProductTrashImage.addEventListener('click', (e) => {
+          const checkoutPageProduct = document.querySelector(`div[name="checkout-page-product${i}"]`);
+          shoppingCartListJsonData.splice(i, 1);
+          checkoutPageProduct.remove();
+
+          updateLocalStorage();
+          updateShoppingCartNotificationNumbers();
+          showCheckoutPageCheckoutProductListUI();
+          updateCheckoutPagePrice();
+        });
+      }
+    }
+
+    const amountText = document.querySelector('div[name="checkout-page-amount-text"]');
+    const deliveryFeeText = document.querySelector('div[name="checkout-page-delivery-fee-text"]');
+    const totalText = document.querySelector('div[name="checkout-page-total-text"]');
+
+    function updateCheckoutPagePrice() {
+      let amount = 0;
+      let deliveryFee = 0;
+      let total = 0;
+
+      shoppingCartListJsonData.forEach((productSpec) => {
+        amount += productSpec.price * productSpec.qty;
+      });
+      amountText.innerHTML = `${amount}`;
+
+      if (amount > 0) {
+        deliveryFee = 30;
+        deliveryFeeText.innerHTML = "30";
+      } else {
+        deliveryFee = 0;
+        deliveryFeeText.innerHTML = "0";
+      }
+
+      totalText.innerHTML = `${amount + deliveryFee}`;
     }
     // Step 2: Validate User Input
     //-----------------------------------------------------------------------------------------------
@@ -5154,9 +5195,6 @@
     const cardNumber = document.querySelector('input[name="checkout-page-card-number-input"]');
     const cardValid = document.querySelector('input[name="checkout-page-card-valid-month-input"]');
     const cardCCV = document.querySelector('input[name="checkout-page-card-ccv-input"]');
-    const amountText = document.querySelector('div[name="checkout-page-amount-text"]');
-    const deliveryFeeText = document.querySelector('div[name="checkout-page-delivery-fee-text"]');
-    const totalText = document.querySelector('div[name="checkout-page-total-text"]');
     const checkoutPageSubmitOrder = document.querySelector('div[name="checkout-page-submit-order"]');
 
     nameInput.addEventListener("keypress", (e) => {
@@ -5322,9 +5360,6 @@
 
       //-----------------------------------------------------------------------------------------------
 
-      // w2p2
-      // w2p2 Step 1: Visual Details
-      // w2p2 Step 2: Refactor Code
       // w2p2
       // w2p2 Step 1: Visual Details
       // w2p2 Step 2: Refactor Code

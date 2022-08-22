@@ -2567,7 +2567,7 @@
                 desktop:items-center desktop:flex-row
                 mobile:mt-[20px]
                 desktop:mt-[30px]
-              " name="" id="">
+              " name="checkout-page-tap-pay-card-number-box" id="">
             <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
@@ -2600,7 +2600,7 @@
                 desktop:items-center desktop:flex-row
                 mobile:mt-[20px]
                 desktop:mt-[30px]
-              " name="" id="">
+              " name="checkout-page-tap-pay-card-expiration-date-box" id="">
             <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
@@ -2625,7 +2625,7 @@
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
                 " type="text" placeholder="MM / YY" title="input-credit-card-valid-month" value=""
-              name="checkout-page-card-valid-month-input" id="" />
+              name="checkout-page-card-expiration-date-input" id="" />
           </div>
           <div class="
                 flex
@@ -2633,7 +2633,7 @@
                 desktop:items-center desktop:flex-row
                 mobile:mt-[20px]
                 desktop:mt-[30px]
-              " name="" id="">
+              " name="checkout-page-tap-pay-card-ccv-box" id="">
             <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
@@ -5073,7 +5073,7 @@
                     mobile:ml-auto
                     mobile:text-[14px]
                     mobile:leading-[17px]
-                  " name="" id="">
+                  " name="product${i}-total-text" id="">
                 TWD.${productDetailsAPIJsonData.price *
             shoppingCartListJsonData[i].qty
             }
@@ -5134,9 +5134,11 @@
             checkoutPageOrderValueSelectDropList.addEventListener('change', (e) => {
               shoppingCartListJsonData[i].qty = parseInt(checkoutPageOrderValueSelectDropList.value);
 
+              const productTotalTextHtmlDivElement = document.querySelector(`div[name="product${i}-total-text"]`);
+              productTotalTextHtmlDivElement.innerHTML = `TWD.${shoppingCartListJsonData[i].qty * shoppingCartListJsonData[i].price}`;
+
               updateLocalStorage();
               updateShoppingCartNotificationNumbers();
-              showCheckoutPageCheckoutProductListUI();
               updateCheckoutPagePrice();
             });
           }
@@ -5193,9 +5195,20 @@
     const timeInput = document.querySelectorAll('div[name="checkout-page-receive-time-input"] input');
     const timeInputBox = document.querySelector('div[name="checkout-page-receive-time-input"]');
     const cardNumber = document.querySelector('input[name="checkout-page-card-number-input"]');
-    const cardValid = document.querySelector('input[name="checkout-page-card-valid-month-input"]');
+    const cardExpirationDate = document.querySelector('input[name="checkout-page-card-expiration-date-input"]');
     const cardCCV = document.querySelector('input[name="checkout-page-card-ccv-input"]');
     const checkoutPageSubmitOrder = document.querySelector('div[name="checkout-page-submit-order"]');
+
+    // // w1p4 Step 1: Introduction to TapPay
+    // const cardNumber = document.querySelector('div[name="checkout-page-tap-pay-card-number-box"]');
+
+    // const cardExpirationDate = document.querySelector('div[name="checkout-page-tap-pay-card-expiration-date-box"]');
+
+    // const cardCCV = document.querySelector('div[name="checkout-page-tap-pay-card-ccv-box"]');
+
+    // cardNumber.innerHTML += `<div class="tpfield" id="card-number"></div>`;
+    // cardExpirationDate.innerHTML += `<div class="tpfield" id="card-expiration-date"></div>`;
+    // cardExpirationDate.innerHTML += `<div class="tpfield" id="card-ccv"></div>`;
 
     nameInput.addEventListener("keypress", (e) => {
       if (e.key === 'Enter') {
@@ -5233,11 +5246,11 @@
       if (e.key === 'Enter') {
         e.preventDefault();
         setTimeout(function () {
-          cardValid.focus();
+          cardExpirationDate.focus();
         }, 100);
       }
     });
-    cardValid.addEventListener("keypress", (e) => {
+    cardExpirationDate.addEventListener("keypress", (e) => {
       if (e.key === 'Enter') {
         e.preventDefault();
         setTimeout(function () {
@@ -5332,15 +5345,65 @@
     });
     //-----------------------------------------------------------------------------------------------
 
-      //-----------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------
 
-      // w1p4
-      // w1p4 Step 1: Introduction to TapPay
-      // w1p4 Step 2: Prepare Order Data
-      // w1p4 Step 3: Check Out
-      // w1p4 Step 4: Complete Thank You Page
-      // w1p4 Step 5: Show Order Number in Thank You Page
-      //-----------------------------------------------------------------------------------------------
+    // w1p4
+    // w1p4 Step 1: Introduction to TapPay
+    TPDirect.setupSDK(
+      12348,
+      'app_pa1pQcKoY22IlnSXq5m5WP5jFKzoRG58VEXpT7wU62ud7mMbDOGzCYIlzzLF',
+      'sandbox'
+    );
+
+    TPDirect.card.setup({
+      fields: {
+        number: {
+          element: '#card-number',
+          placeholder: '**** **** **** ****'
+        },
+        expirationDate: {
+          element: document.getElementById('card-expiration-date'),
+          placeholder: 'MM / YY'
+        },
+        ccv: {
+          element: '#card-ccv',
+          placeholder: '後三碼'
+        }
+      },
+      isMaskCreditCardNumber: true,
+      maskCreditCardNumberRange: {
+        beginIndex: 6,
+        endIndex: 11
+      }
+    });
+
+    let prime;
+    let credit = false;
+
+    TPDirect.card.onUpdate((update) => {
+      if (update.canGetPrime) {
+        TPDirect.card.getPrime(function (result) {
+          if (result.status !== 0) {
+            console.log('get prime error ' + result.msg);
+            credit = false;
+            return;
+          }
+          prime = result.card.prime;
+          credit = true;
+        });
+      } else {
+        credit = false;
+      }
+
+      let newType = update.cardType === 'unknown' ? '' : update.cardType;
+      document.querySelector('#card-number').cardType = newType;
+    });
+
+    // w1p4 Step 2: Prepare Order Data
+    // w1p4 Step 3: Check Out
+    // w1p4 Step 4: Complete Thank You Page
+    // w1p4 Step 5: Show Order Number in Thank You Page
+    //-----------------------------------------------------------------------------------------------
 
       //-----------------------------------------------------------------------------------------------
 

@@ -5110,11 +5110,22 @@
         });
       }
       if (shoppingCartListJsonData.length == 0) {
-        checkoutPageCheckoutProductListHtmlDivElement.innerHTML = `<div class="flex justify-center w-full" name="">
-                                                                     <div class="text-[48px] text-[#8B572A]" name="product-error">
+        checkoutPageCheckoutProductListHtmlDivElement.innerHTML = `<div class="
+                                                                       flex justify-center w-full
+                                                                       " name="checkout-page-empty-cart-info-box">
+                                                                     <div class="text-[48px] text-[#8B572A]" name="checkout-page-empty-cart-info-text">
                                                                        購物車中還沒有商品，點我到首頁選購
                                                                      </div>
                                                                    </div>`;
+        document.querySelector('div[name="checkout-page-empty-cart-info-box"]').addEventListener('click', (e) => {
+          history.replaceState(null, null, '/');
+          changePage('main-page');
+          showCategoryNavBarTextColorBrown('all');
+          mode = 'all';
+          renderPageNumber = 0;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        });
+        updateCheckoutPagePrice();
       }
     }
 
@@ -5209,7 +5220,7 @@
 
     const cardCCVHtmlDivElement = document.querySelector('div[name="checkout-page-tap-pay-card-ccv-box"]');
 
-    cardNumberHtmlDivElement.innerHTML += `<div class="tpfield 
+    cardNumberHtmlDivElement.innerHTML += `<div class="tpfield
                   mobile:w-full mobile:mt-[10px]
                   desktop:mt-0
                   h-[32px]
@@ -5222,7 +5233,7 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]" id="card-number"></div>`;
-      cardExpirationDateHtmlDivElement.innerHTML += `<div class="tpfield
+    cardExpirationDateHtmlDivElement.innerHTML += `<div class="tpfield
                   mobile:w-full mobile:mt-[10px]
                   desktop:mt-0
                   h-[32px]
@@ -5235,7 +5246,7 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]" id="card-expiration-date"></div>`;
-        cardCCVHtmlDivElement.innerHTML += `<div class="tpfield
+    cardCCVHtmlDivElement.innerHTML += `<div class="tpfield
                   mobile:w-full mobile:mt-[10px]
                   desktop:mt-0
                   h-[32px]

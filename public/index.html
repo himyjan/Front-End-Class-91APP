@@ -2567,7 +2567,7 @@
                 desktop:items-center desktop:flex-row
                 mobile:mt-[20px]
                 desktop:mt-[30px]
-              " name="checkout-page-tap-pay-card-number-boxcheckout-page-tap-pay-card-number-box" id="">
+              " name="checkout-page-tap-pay-card-number-box" id="">
             <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
@@ -2600,7 +2600,7 @@
                 desktop:items-center desktop:flex-row
                 mobile:mt-[20px]
                 desktop:mt-[30px]
-              " name="checkout-page-tap-pay-card-expiration-date-boxcheckout-page-tap-pay-card-expiration-date-box" id="">
+              " name="checkout-page-tap-pay-card-expiration-date-box" id="">
             <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
@@ -2633,7 +2633,7 @@
                 desktop:items-center desktop:flex-row
                 mobile:mt-[20px]
                 desktop:mt-[30px]
-              " name="checkout-page-tap-pay-card-ccv-boxcheckout-page-tap-pay-card-ccv-box" id="">
+              " name="checkout-page-tap-pay-card-ccv-box" id="">
             <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
@@ -5073,7 +5073,7 @@
                     mobile:ml-auto
                     mobile:text-[14px]
                     mobile:leading-[17px]
-                  " name="product${i}-total-textproduct${i}-total-text" id="">
+                  " name="product${i}-total-text" id="">
                 TWD.${productDetailsAPIJsonData.price *
             shoppingCartListJsonData[i].qty
             }
@@ -5083,9 +5083,7 @@
 
           checkoutPageCheckoutProductListHtmlDivElement.innerHTML = list;
 
-
           updateProductDetailArrayArray(productDetailsAPIJsonData);
-
 
           for (let j = 0; j < shoppingCartListJsonData.length; j++) {
             productDetailArrayArray.forEach((productDetailsArray) => {
@@ -5112,11 +5110,22 @@
         });
       }
       if (shoppingCartListJsonData.length == 0) {
-        checkoutPageCheckoutProductListHtmlDivElement.innerHTML = `<div class="flex justify-center w-full" name="">
-                                                                     <div class="text-[48px] text-[#8B572A]" name="product-error">
+        checkoutPageCheckoutProductListHtmlDivElement.innerHTML = `<div class="
+                                                                       flex justify-center w-full
+                                                                       " name="checkout-page-empty-cart-info-box">
+                                                                     <div class="text-[48px] text-[#8B572A]" name="checkout-page-empty-cart-info-text">
                                                                        購物車中還沒有商品，點我到首頁選購
                                                                      </div>
                                                                    </div>`;
+        document.querySelector('div[name="checkout-page-empty-cart-info-box"]').addEventListener('click', (e) => {
+          history.replaceState(null, null, '/');
+          changePage('main-page');
+          showCategoryNavBarTextColorBrown('all');
+          mode = 'all';
+          renderPageNumber = 0;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        });
+        updateCheckoutPagePrice();
       }
     }
 
@@ -5224,7 +5233,7 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]" id="card-number"></div>`;
-      cardExpirationDateHtmlDivElement.innerHTML += `<div class="tpfield
+    cardExpirationDateHtmlDivElement.innerHTML += `<div class="tpfield
                   mobile:w-full mobile:mt-[10px]
                   desktop:mt-0
                   h-[32px]
@@ -5237,7 +5246,7 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]" id="card-expiration-date"></div>`;
-        cardCCVHtmlDivElement.innerHTML += `<div class="tpfield
+    cardCCVHtmlDivElement.innerHTML += `<div class="tpfield
                   mobile:w-full mobile:mt-[10px]
                   desktop:mt-0
                   h-[32px]

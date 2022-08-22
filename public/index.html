@@ -2578,7 +2578,7 @@
                 " id=" cart-title">
               信用卡號碼
             </div>
-            <input class="
+            <!-- <input class="
                   mobile:w-full mobile:mt-[10px]
                   desktop:mt-0
                   h-[32px]
@@ -2592,7 +2592,7 @@
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
                 " type="text" placeholder="**** **** **** ****" title="input-credit-card-number" value=""
-              name="checkout-page-card-number-input" name="" id="" />
+              name="checkout-page-card-number-input" name="" id="" /> -->
           </div>
           <div class="
                 flex
@@ -2611,7 +2611,7 @@
                 " name="cart-title" id="">
               有效期限
             </div>
-            <input class="
+            <!-- <input class="
                   mobile:w-full mobile:mt-[10px]
                   desktop:mt-0
                   h-[32px]
@@ -2625,7 +2625,7 @@
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
                 " type="text" placeholder="MM / YY" title="input-credit-card-valid-month" value=""
-              name="checkout-page-card-expiration-date-input" id="" />
+              name="checkout-page-card-expiration-date-input" id="" /> -->
           </div>
           <div class="
                 flex
@@ -2644,7 +2644,7 @@
                 " name="cart-title" id="">
               安全碼
             </div>
-            <input class="
+            <!-- <input class="
                   mobile:w-full mobile:mt-[10px]
                   desktop:mt-0
                   h-[32px]
@@ -2658,7 +2658,7 @@
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
                 " type="text" placeholder="後三碼" title="input-credit-card-CSC" value=""
-              name="checkout-page-card-ccv-input" name="" id="" />
+              name="checkout-page-card-ccv-input" name="" id="" /> -->
           </div>
           <div class="
                 flex flex-col
@@ -5194,21 +5194,60 @@
     const emailInput = document.querySelector('input[name="checkout-page-email-input"]');
     const timeInput = document.querySelectorAll('div[name="checkout-page-receive-time-input"] input');
     const timeInputBox = document.querySelector('div[name="checkout-page-receive-time-input"]');
-    const cardNumber = document.querySelector('input[name="checkout-page-card-number-input"]');
-    const cardExpirationDate = document.querySelector('input[name="checkout-page-card-expiration-date-input"]');
-    const cardCCV = document.querySelector('input[name="checkout-page-card-ccv-input"]');
+    // const cardNumber = document.querySelector('input[name="checkout-page-card-number-input"]');
+    // const cardExpirationDate = document.querySelector('input[name="checkout-page-card-expiration-date-input"]');
+    // const cardCCV = document.querySelector('input[name="checkout-page-card-ccv-input"]');
+    // const cardNumber = document.querySelectorAll('iframe').forEach(item=>item.contentWindow.document.querySelector('input[name="cc-number"]'));
+    // const cardExpirationDate = document.querySelectorAll('iframe').forEach(item=>item.contentWindow.document.querySelector('input[name="cc-exp"]'));
+    // const cardCCV = document.querySelectorAll('iframe').forEach(item=>item.contentWindow.document.querySelector('input[name="cc-ccv"]'));
     const checkoutPageSubmitOrder = document.querySelector('div[name="checkout-page-submit-order"]');
 
     // // w1p4 Step 1: Introduction to TapPay
-    // const cardNumber = document.querySelector('div[name="checkout-page-tap-pay-card-number-box"]');
+    const cardNumberHtmlDivElement = document.querySelector('div[name="checkout-page-tap-pay-card-number-box"]');
 
-    // const cardExpirationDate = document.querySelector('div[name="checkout-page-tap-pay-card-expiration-date-box"]');
+    const cardExpirationDateHtmlDivElement = document.querySelector('div[name="checkout-page-tap-pay-card-expiration-date-box"]');
 
-    // const cardCCV = document.querySelector('div[name="checkout-page-tap-pay-card-ccv-box"]');
+    const cardCCVHtmlDivElement = document.querySelector('div[name="checkout-page-tap-pay-card-ccv-box"]');
 
-    // cardNumber.innerHTML += `<div class="tpfield" id="card-number"></div>`;
-    // cardExpirationDate.innerHTML += `<div class="tpfield" id="card-expiration-date"></div>`;
-    // cardExpirationDate.innerHTML += `<div class="tpfield" id="card-ccv"></div>`;
+    cardNumberHtmlDivElement.innerHTML += `<div class="tpfield 
+                  mobile:w-full mobile:mt-[10px]
+                  desktop:mt-0
+                  h-[32px]
+                  desktop:w-[576px]
+                  pl-[1%]
+                  border-solid border-[1px] border-[#979797]
+                  rounded-[8px]
+                  placeholder:text-[#d3d3d3]
+                  mobile:placeholder:text-[14px]
+                  mobile:placeholder:leading-[17px]
+                  desktop:placeholder:text-[16px]
+                  desktop:placeholder:leading-[19px]" id="card-number"></div>`;
+      cardExpirationDateHtmlDivElement.innerHTML += `<div class="tpfield
+                  mobile:w-full mobile:mt-[10px]
+                  desktop:mt-0
+                  h-[32px]
+                  desktop:w-[576px]
+                  pl-[1%]
+                  border-solid border-[1px] border-[#979797]
+                  rounded-[8px]
+                  placeholder:text-[#d3d3d3]
+                  mobile:placeholder:text-[14px]
+                  mobile:placeholder:leading-[17px]
+                  desktop:placeholder:text-[16px]
+                  desktop:placeholder:leading-[19px]" id="card-expiration-date"></div>`;
+        cardCCVHtmlDivElement.innerHTML += `<div class="tpfield
+                  mobile:w-full mobile:mt-[10px]
+                  desktop:mt-0
+                  h-[32px]
+                  desktop:w-[576px]
+                  pl-[1%]
+                  border-solid border-[1px] border-[#979797]
+                  rounded-[8px]
+                  placeholder:text-[#d3d3d3]
+                  mobile:placeholder:text-[14px]
+                  mobile:placeholder:leading-[17px]
+                  desktop:placeholder:text-[16px]
+                  desktop:placeholder:leading-[19px]" id="card-ccv"></div>`;
 
     nameInput.addEventListener("keypress", (e) => {
       if (e.key === 'Enter') {
@@ -5238,33 +5277,35 @@
       if (e.key === 'Enter') {
         e.preventDefault();
         setTimeout(function () {
-          cardNumber.focus();
+          // cardNumber.focus();
         }, 100);
       }
     });
-    cardNumber.addEventListener("keypress", (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        setTimeout(function () {
-          cardExpirationDate.focus();
-        }, 100);
-      }
-    });
-    cardExpirationDate.addEventListener("keypress", (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        setTimeout(function () {
-          cardCCV.focus();
-        }, 100);
-      }
-    });
-    cardCCV.addEventListener("keypress", (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        setTimeout(function () {
-        }, 100);
-      }
-    });
+
+    // setTimeout(function () {
+    //   cardNumber.addEventListener("keypress", (e) => {
+    //   if (e.key === 'Enter') {
+    //     e.preventDefault();
+    //     setTimeout(function () {
+    //       cardExpirationDate.focus();
+    //     }, 100);
+    //   }
+    // });
+    // cardExpirationDate.addEventListener("keypress", (e) => {
+    //   if (e.key === 'Enter') {
+    //     e.preventDefault();
+    //     setTimeout(function () {
+    //       cardCCV.focus();
+    //     }, 100);
+    //   }
+    // });
+    // cardCCV.addEventListener("keypress", (e) => {
+    //   if (e.key === 'Enter') {
+    //     e.preventDefault();
+    //     setTimeout(function () {
+    //     }, 100);
+    //   }
+    // });
 
     checkoutPageSubmitOrder.addEventListener('click', (e) => {
       let nameProved = false;
@@ -5368,6 +5409,40 @@
         ccv: {
           element: '#card-ccv',
           placeholder: '後三碼'
+        }
+      },
+      styles: {
+        // Style all elements
+        input: {
+          color: 'black'
+        },
+        // // Styling ccv field
+        // 'input.ccv': {
+        //   'font-size': '16px'
+        // },
+        // // Styling expiration-date field
+        // 'input.expiration-date': {
+        //   'font-size': '16px'
+        // },
+        // // Styling card-number field
+        // 'input.card-number': {
+        //   'font-size': '16px'
+        // },
+        // style focus state
+        ':focus': {
+          outline: 'black'
+          // color: 'black'
+        },
+        // style valid state
+        '.valid': {
+          color: 'green'
+        },
+        // style invalid state
+        '.invalid': {
+          color: 'red'
+        },
+        '::placeholder': {
+          color: '#d3d3d3'
         }
       },
       isMaskCreditCardNumber: true,

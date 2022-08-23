@@ -1,6 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { trpc } from "../utils/trpc";
+import styled from "styled-components";
+import dynamic from "next/dynamic";
+import { GetServerSideProps } from "next";
 
 const Home: NextPage = () => {
   return (
@@ -539,7 +542,7 @@ const Home: NextPage = () => {
               <div
                 className="
               flex flex-col
-              mobile:mx-[3px] mobile:w-[calc(50%-27px)]
+              mobile:mx-[3px] mobile:w-[calc(50%-6px)]
               desktop:mx-[20px] desktop:h-[666px] desktop:w-[360px]
             "
                 data-name="product-1"
@@ -654,7 +657,7 @@ const Home: NextPage = () => {
               <div
                 className="
               flex flex-col
-              mobile:mx-[3px] mobile:w-[calc(50%-27px)]
+              mobile:mx-[3px] mobile:w-[calc(50%-6px)]
               desktop:mx-[20px] desktop:h-[666px] desktop:w-[360px]
             "
                 data-name="product-2"
@@ -769,7 +772,7 @@ const Home: NextPage = () => {
               <div
                 className="
               flex flex-col
-              mobile:mx-[3px] mobile:w-[calc(50%-27px)]
+              mobile:mx-[3px] mobile:w-[calc(50%-6px)]
               desktop:mx-[20px] desktop:h-[666px] desktop:w-[360px]
             "
                 data-name="product-3"
@@ -884,7 +887,7 @@ const Home: NextPage = () => {
               <div
                 className="
               flex flex-col
-              mobile:mx-[3px] mobile:w-[calc(50%-27px)]
+              mobile:mx-[3px] mobile:w-[calc(50%-6px)]
               desktop:mx-[20px] desktop:h-[666px] desktop:w-[360px]
             "
                 data-name="product-4"
@@ -999,7 +1002,7 @@ const Home: NextPage = () => {
               <div
                 className="
               flex flex-col
-              mobile:mx-[3px] mobile:w-[calc(50%-27px)]
+              mobile:mx-[3px] mobile:w-[calc(50%-6px)]
               desktop:mx-[20px] desktop:h-[666px] desktop:w-[360px]
             "
                 data-name="product-5"
@@ -1114,7 +1117,7 @@ const Home: NextPage = () => {
               <div
                 className="
               flex flex-col
-              mobile:mx-[3px] mobile:w-[calc(50%-27px)]
+              mobile:mx-[3px] mobile:w-[calc(50%-6px)]
               desktop:mx-[20px] desktop:h-[666px] desktop:w-[360px]
             "
                 data-name="product-6"

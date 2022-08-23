@@ -5453,9 +5453,9 @@
           order: {
             shipping: 'delivery',
             payment: 'credit_card',
-            subtotal: parseInt(amountText),
-            freight: parseInt(deliveryFeeText),
-            total: parseInt(totalText),
+            subtotal: parseInt(amountText.innerHTML),
+            freight: parseInt(deliveryFeeText.innerHTML),
+            total: parseInt(totalText.innerHTML),
             recipient: {
               name: nameValue,
               phone: phoneValue,
@@ -5467,20 +5467,33 @@
           }
         };
 
+        console.log(body);
+
+        let checkoutPostHeaders = {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm92aWRlciI6Im5hdGl2ZSIsIm5hbWUiOiJKYXkiLCJlbWFpbCI6IkpheUB0ZXN0LmNvbSIsInBpY3R1cmUiOm51bGwsImlhdCI6MTY2MTEzODY2Nn0.oH_GjdSKu5vctVC1LcaMrJ3EPwMPOSV-YR_JlDbvF-o'
+        }
+
+        console.log(checkoutPostHeaders);
+
         let checkoutJSON = {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization:
-              'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm92aWRlciI6Im5hdGl2ZSIsIm5hbWUiOiJKYXkiLCJlbWFpbCI6IkpheUB0ZXN0LmNvbSIsInBpY3R1cmUiOm51bGwsImlhdCI6MTY2MTEzODY2Nn0.oH_GjdSKu5vctVC1LcaMrJ3EPwMPOSV-YR_JlDbvF-o'
-          },
+          headers: checkoutPostHeaders,
           body: JSON.stringify(body)
         }
 
+        console.log(checkoutJSON);
+
         // w1p4 Step 3: Check Out
+        // get checkOutAPIPromise for API promise
         fetch('https://api.appworks-school.tw/api/1.0//order/checkout', checkoutJSON)
-          .then((res) => res.json())
-          .then((data) => {
+          .then(async (response) => {
+            const checkOutAPIJson = await response.json();
+            const checkOutAPIJsonData = await productDetailsAPIJson.data;
+
+            console.log('getPostResponse!');
+            console.log(checkOutAPIJsonData);
+
             history.replaceState(null, null, `/thankyou?orderNumber=${data['data'].number}`);
             changePage('thankyou-page');
             showCategoryNavBarTextColorBrown('all');
@@ -5495,8 +5508,22 @@
             timeInput.forEach((input) => {
               input.checked = false;
             });
-          })
-          .catch((err) => console.log(err));
+          });
+
+        history.replaceState(null, null, `/thankyou?orderNumber=12348554122`);
+        changePage('thankyou-page');
+        showCategoryNavBarTextColorBrown('all');
+        mode = 'all';
+        renderPageNumber = 0;
+        localStorage.removeItem('shoppingCartList');
+
+        nameInput.value = '';
+        phoneInput.value = '';
+        addressInput.value = '';
+        emailInput.value = '';
+        timeInput.forEach((input) => {
+          input.checked = false;
+        });
       }
     });
     //-----------------------------------------------------------------------------------------------

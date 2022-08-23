@@ -13,8 +13,9 @@
   <!-- <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
   <!-- <script src="https://unpkg.com/@tanstack/react-query/build/umd/index.production.js"></script> -->
   <script src="https://unpkg.com/viewerjs/dist/viewer.min.js"></script>
-  <script src="https://js.tappaysdk.com/tpdirect/v5.13.0"></script>
   <link rel="stylesheet" href="https://unpkg.com/viewerjs/dist/viewer.min.css" />
+  <script src="https://js.tappaysdk.com/tpdirect/v5.13.0"></script>
+  <link rel="stylesheet" href="https://unpkg.com/font-awesome/css/font-awesome.min.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -2578,7 +2579,7 @@
                 " id=" cart-title">
               信用卡號碼
             </div>
-            <input class="
+            <!-- <input class="
                   mobile:w-full mobile:mt-[10px]
                   desktop:mt-0
                   h-[32px]
@@ -2592,7 +2593,7 @@
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
                 " type="text" placeholder="**** **** **** ****" title="input-credit-card-number" value=""
-              name="checkout-page-card-number-input" name="" id="" />
+              name="checkout-page-card-number-input" name="" id="" /> -->
           </div>
           <div class="
                 flex
@@ -2611,7 +2612,7 @@
                 " name="cart-title" id="">
               有效期限
             </div>
-            <input class="
+            <!-- <input class="
                   mobile:w-full mobile:mt-[10px]
                   desktop:mt-0
                   h-[32px]
@@ -2625,7 +2626,7 @@
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
                 " type="text" placeholder="MM / YY" title="input-credit-card-valid-month" value=""
-              name="checkout-page-card-expiration-date-input" id="" />
+              name="checkout-page-card-expiration-date-input" id="" /> -->
           </div>
           <div class="
                 flex
@@ -2644,7 +2645,7 @@
                 " name="cart-title" id="">
               安全碼
             </div>
-            <input class="
+            <!-- <input class="
                   mobile:w-full mobile:mt-[10px]
                   desktop:mt-0
                   h-[32px]
@@ -2658,7 +2659,7 @@
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
                 " type="text" placeholder="後三碼" title="input-credit-card-CSC" value=""
-              name="checkout-page-card-ccv-input" name="" id="" />
+              name="checkout-page-card-ccv-input" name="" id="" /> -->
           </div>
           <div class="
                 flex flex-col
@@ -2756,6 +2757,26 @@
                   desktop:border-[#979797]
                 " name="checkout-page-submit-order" id="">
               確認付款
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hidden" name="thankyou-page" id="thankyou-page">
+    <div class="
+    flex justify-center w-full
+    " name="checkout-page-empty-cart-info-box">
+      <div class="text-[48px] text-[#8B572A]" name="checkout-page-empty-cart-info-text">
+        <div class="main-header">
+          訂購完成<i class="fa-regular fa-circle-check"></i>
+        </div>
+        <div class="num-container">
+          <div class="main-num">
+            訂單編號：
+            <div class="order-num">
+              12348554122
             </div>
           </div>
         </div>
@@ -3817,6 +3838,7 @@
         'main-page',
         'product-page',
         'checkout-page',
+        'thankyou-page',
         'profile-page',
         'aboutUs-page',
       ];
@@ -5110,11 +5132,22 @@
         });
       }
       if (shoppingCartListJsonData.length == 0) {
-        checkoutPageCheckoutProductListHtmlDivElement.innerHTML = `<div class="flex justify-center w-full" name="">
-                                                                     <div class="text-[48px] text-[#8B572A]" name="product-error">
+        checkoutPageCheckoutProductListHtmlDivElement.innerHTML = `<div class="
+                                                                       flex justify-center w-full
+                                                                       " name="checkout-page-empty-cart-info-box">
+                                                                     <div class="text-[48px] text-[#8B572A]" name="checkout-page-empty-cart-info-text">
                                                                        購物車中還沒有商品，點我到首頁選購
                                                                      </div>
                                                                    </div>`;
+        document.querySelector('div[name="checkout-page-empty-cart-info-box"]').addEventListener('click', (e) => {
+          history.replaceState(null, null, '/');
+          changePage('main-page');
+          showCategoryNavBarTextColorBrown('all');
+          mode = 'all';
+          renderPageNumber = 0;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        });
+        updateCheckoutPagePrice();
       }
     }
 
@@ -5194,21 +5227,60 @@
     const emailInput = document.querySelector('input[name="checkout-page-email-input"]');
     const timeInput = document.querySelectorAll('div[name="checkout-page-receive-time-input"] input');
     const timeInputBox = document.querySelector('div[name="checkout-page-receive-time-input"]');
-    const cardNumber = document.querySelector('input[name="checkout-page-card-number-input"]');
-    const cardExpirationDate = document.querySelector('input[name="checkout-page-card-expiration-date-input"]');
-    const cardCCV = document.querySelector('input[name="checkout-page-card-ccv-input"]');
+    // const cardNumber = document.querySelector('input[name="checkout-page-card-number-input"]');
+    // const cardExpirationDate = document.querySelector('input[name="checkout-page-card-expiration-date-input"]');
+    // const cardCCV = document.querySelector('input[name="checkout-page-card-ccv-input"]');
+    // const cardNumber = document.querySelectorAll('iframe').forEach(item=>item.contentWindow.document.querySelector('input[name="cc-number"]'));
+    // const cardExpirationDate = document.querySelectorAll('iframe').forEach(item=>item.contentWindow.document.querySelector('input[name="cc-exp"]'));
+    // const cardCCV = document.querySelectorAll('iframe').forEach(item=>item.contentWindow.document.querySelector('input[name="cc-ccv"]'));
     const checkoutPageSubmitOrder = document.querySelector('div[name="checkout-page-submit-order"]');
 
     // // w1p4 Step 1: Introduction to TapPay
-    // const cardNumber = document.querySelector('div[name="checkout-page-tap-pay-card-number-box"]');
+    const cardNumberHtmlDivElement = document.querySelector('div[name="checkout-page-tap-pay-card-number-box"]');
 
-    // const cardExpirationDate = document.querySelector('div[name="checkout-page-tap-pay-card-expiration-date-box"]');
+    const cardExpirationDateHtmlDivElement = document.querySelector('div[name="checkout-page-tap-pay-card-expiration-date-box"]');
 
-    // const cardCCV = document.querySelector('div[name="checkout-page-tap-pay-card-ccv-box"]');
+    const cardCCVHtmlDivElement = document.querySelector('div[name="checkout-page-tap-pay-card-ccv-box"]');
 
-    // cardNumber.innerHTML += `<div class="tpfield" id="card-number"></div>`;
-    // cardExpirationDate.innerHTML += `<div class="tpfield" id="card-expiration-date"></div>`;
-    // cardExpirationDate.innerHTML += `<div class="tpfield" id="card-ccv"></div>`;
+    cardNumberHtmlDivElement.innerHTML += `<div class="tpfield
+                  mobile:w-full mobile:mt-[10px]
+                  desktop:mt-0
+                  h-[32px]
+                  desktop:w-[576px]
+                  pl-[1%]
+                  border-solid border-[1px] border-[#979797]
+                  rounded-[8px]
+                  placeholder:text-[#d3d3d3]
+                  mobile:placeholder:text-[14px]
+                  mobile:placeholder:leading-[17px]
+                  desktop:placeholder:text-[16px]
+                  desktop:placeholder:leading-[19px]" id="card-number"></div>`;
+    cardExpirationDateHtmlDivElement.innerHTML += `<div class="tpfield
+                  mobile:w-full mobile:mt-[10px]
+                  desktop:mt-0
+                  h-[32px]
+                  desktop:w-[576px]
+                  pl-[1%]
+                  border-solid border-[1px] border-[#979797]
+                  rounded-[8px]
+                  placeholder:text-[#d3d3d3]
+                  mobile:placeholder:text-[14px]
+                  mobile:placeholder:leading-[17px]
+                  desktop:placeholder:text-[16px]
+                  desktop:placeholder:leading-[19px]" id="card-expiration-date"></div>`;
+    cardCCVHtmlDivElement.innerHTML += `<div class="tpfield
+                  mobile:w-full mobile:mt-[10px]
+                  desktop:mt-0
+                  h-[32px]
+                  desktop:w-[576px]
+                  pl-[1%]
+                  border-solid border-[1px] border-[#979797]
+                  rounded-[8px]
+                  placeholder:text-[#d3d3d3]
+                  mobile:placeholder:text-[14px]
+                  mobile:placeholder:leading-[17px]
+                  desktop:placeholder:text-[16px]
+                  desktop:placeholder:leading-[19px]" id="card-ccv"></div>`;
 
     nameInput.addEventListener("keypress", (e) => {
       if (e.key === 'Enter') {
@@ -5238,39 +5310,48 @@
       if (e.key === 'Enter') {
         e.preventDefault();
         setTimeout(function () {
-          cardNumber.focus();
-        }, 100);
-      }
-    });
-    cardNumber.addEventListener("keypress", (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        setTimeout(function () {
-          cardExpirationDate.focus();
-        }, 100);
-      }
-    });
-    cardExpirationDate.addEventListener("keypress", (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        setTimeout(function () {
-          cardCCV.focus();
-        }, 100);
-      }
-    });
-    cardCCV.addEventListener("keypress", (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        setTimeout(function () {
+          // cardNumber.focus();
         }, 100);
       }
     });
 
+    // setTimeout(function () {
+    //   cardNumber.addEventListener("keypress", (e) => {
+    //   if (e.key === 'Enter') {
+    //     e.preventDefault();
+    //     setTimeout(function () {
+    //       cardExpirationDate.focus();
+    //     }, 100);
+    //   }
+    // });
+    // cardExpirationDate.addEventListener("keypress", (e) => {
+    //   if (e.key === 'Enter') {
+    //     e.preventDefault();
+    //     setTimeout(function () {
+    //       cardCCV.focus();
+    //     }, 100);
+    //   }
+    // });
+    // cardCCV.addEventListener("keypress", (e) => {
+    //   if (e.key === 'Enter') {
+    //     e.preventDefault();
+    //     setTimeout(function () {
+    //     }, 100);
+    //   }
+    // });
+
+    // w1p4 Step 2: Prepare Order Data
     checkoutPageSubmitOrder.addEventListener('click', (e) => {
       let nameProved = false;
+      let nameValue;
+      let phoneValue;
+      let addressValue;
+      let emailValue;
+
       if (nameInput.value.replace(/ /g, '').length != 0) {
         nameInput.classList.remove('active');
         nameProved = true;
+        nameValue = nameInput.value;
       } else {
         nameInput.classList.add('active');
         alert('請輸入姓名');
@@ -5284,6 +5365,7 @@
       ) {
         phoneInput.classList.remove('active');
         phoneProved = true;
+        phoneValue = phoneInput.value;
       } else {
         phoneInput.classList.add('active');
         alert('請輸入完整手機號碼');
@@ -5294,6 +5376,7 @@
       if (addressInput.value.includes('市') || addressInput.value.includes('縣')) {
         addressInput.classList.remove('active');
         addressProved = true;
+        addressValue = addressInput.value;
       } else {
         addressInput.classList.add('active');
         alert('請輸入完整地址');
@@ -5304,6 +5387,7 @@
       if (emailInput.value.includes('@')) {
         emailInput.classList.remove('active');
         emailProved = true;
+        emailValue = emailInput.value;
       } else {
         emailInput.classList.add('active');
         alert('請輸入正確電郵地址');
@@ -5311,9 +5395,11 @@
       }
 
       let timeProved = false;
+      let deliverVale;
       timeInput.forEach((time) => {
         if (time.checked) {
           timeProved = true;
+          deliverVale = time.value;
         }
       });
       if (timeProved) {
@@ -5323,17 +5409,114 @@
         timeInputBox.classList.add('active');
       }
 
+      if (!credit) {
+        alert('請輸入完整信用卡資訊');
+      }
+
+      let shoppingCartIsNotEmpty = false;
+      if (shoppingCartListJsonData.length > 0) {
+        shoppingCartIsNotEmpty = true;
+      }
+
       if (
         !nameProved ||
         !phoneProved ||
         !addressProved ||
         !emailProved ||
-        !timeProved
+        !timeProved ||
+        !credit
       ) {
-        console.log(false);
+        return;
+      } else if (!shoppingCartIsNotEmpty) {
+        alert('請先加入商品到購物車後再結帳');
         return;
       } else {
         alert('訂單已送出');
+        let productsList = [];
+
+        shoppingCartListJsonData.forEach((product) => {
+          productsList.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            color: {
+              code: product['color'].code,
+              name: product['color'].name
+            },
+            size: product.size,
+            qty: product.qty
+          });
+        });
+
+        let body = {
+          prime: prime,
+          order: {
+            shipping: 'delivery',
+            payment: 'credit_card',
+            subtotal: parseInt(amountText.innerHTML),
+            freight: parseInt(deliveryFeeText.innerHTML),
+            total: parseInt(totalText.innerHTML),
+            recipient: {
+              name: nameValue,
+              phone: phoneValue,
+              email: emailValue,
+              address: addressValue,
+              time: deliverVale
+            },
+            list: productsList
+          }
+        };
+
+        console.log(body);
+
+        let checkoutPostHeaders = {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm92aWRlciI6Im5hdGl2ZSIsIm5hbWUiOiJKYXkiLCJlbWFpbCI6IkpheUB0ZXN0LmNvbSIsInBpY3R1cmUiOm51bGwsImlhdCI6MTY2MTEzODY2Nn0.oH_GjdSKu5vctVC1LcaMrJ3EPwMPOSV-YR_JlDbvF-o'
+        }
+
+        console.log(checkoutPostHeaders);
+
+        let checkoutJSON = {
+          method: 'POST',
+          headers: checkoutPostHeaders,
+          body: JSON.stringify(body)
+        }
+
+        console.log(checkoutJSON);
+
+        // w1p4 Step 3: Check Out
+        // get checkOutAPIPromise for API promise
+        fetch('https://api.appworks-school.tw/api/1.0//order/checkout', checkoutJSON)
+          .then(async (response) => {
+            const checkOutAPIJson = await response.json();
+            const checkOutAPIJsonData = await productDetailsAPIJson.data;
+
+            console.log('getPostResponse!');
+            console.log(checkOutAPIJsonData);
+
+            history.replaceState(null, null, `/thankyou?orderNumber=${data['data'].number}`);
+            changePage('thankyou-page');
+            showCategoryNavBarTextColorBrown('all');
+            mode = 'all';
+            renderPageNumber = 0;
+            localStorage.removeItem('shoppingCartList');
+
+            nameInput.value = '';
+            phoneInput.value = '';
+            addressInput.value = '';
+            emailInput.value = '';
+            timeInput.forEach((input) => {
+              input.checked = false;
+            });
+          });
+
+        history.replaceState(null, null, `/thankyou?orderNumber=12348554122`);
+        changePage('thankyou-page');
+        showCategoryNavBarTextColorBrown('all');
+        mode = 'all';
+        renderPageNumber = 0;
+        localStorage.removeItem('shoppingCartList');
+
         nameInput.value = '';
         phoneInput.value = '';
         addressInput.value = '';
@@ -5368,6 +5551,40 @@
         ccv: {
           element: '#card-ccv',
           placeholder: '後三碼'
+        }
+      },
+      styles: {
+        // Style all elements
+        input: {
+          color: 'black'
+        },
+        // // Styling ccv field
+        // 'input.ccv': {
+        //   'font-size': '16px'
+        // },
+        // // Styling expiration-date field
+        // 'input.expiration-date': {
+        //   'font-size': '16px'
+        // },
+        // // Styling card-number field
+        // 'input.card-number': {
+        //   'font-size': '16px'
+        // },
+        // style focus state
+        ':focus': {
+          outline: 'black'
+          // color: 'black'
+        },
+        // style valid state
+        '.valid': {
+          color: 'green'
+        },
+        // style invalid state
+        '.invalid': {
+          color: 'red'
+        },
+        '::placeholder': {
+          color: '#d3d3d3'
         }
       },
       isMaskCreditCardNumber: true,

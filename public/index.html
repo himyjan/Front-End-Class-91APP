@@ -13,6 +13,7 @@
   <!-- <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
   <!-- <script src="https://unpkg.com/@tanstack/react-query/build/umd/index.production.js"></script> -->
   <script src="https://unpkg.com/viewerjs/dist/viewer.min.js"></script>
+  <script src="https://js.tappaysdk.com/tpdirect/v5.13.0"></script>
   <link rel="stylesheet" href="https://unpkg.com/viewerjs/dist/viewer.min.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -1825,7 +1826,7 @@
                     desktop:left-[calc(100%-74px)]
                     mobile:mt-0
                     desktop:mt-[54px]
-                  " name="product-image-trash" id="" />
+                  " name="remove-product-trash-image" id="" />
             </div>
             <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" name="" id="">
               <div class="
@@ -1989,7 +1990,7 @@
                     desktop:left-[calc(100%-74px)]
                     mobile:mt-0
                     desktop:mt-[54px]
-                  " name="product-image-trash" id="" />
+                  " name="remove-product-trash-image" id="" />
             </div>
             <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" name="" id="">
               <div class="
@@ -2153,7 +2154,7 @@
                     desktop:left-[calc(100%-74px)]
                     mobile:mt-0
                     desktop:mt-[54px]
-                  " name="product-image-trash" id="" />
+                  " name="remove-product-trash-image" id="" />
             </div>
             <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" name="" id="">
               <div class="
@@ -2372,7 +2373,7 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                " type="text" placeholder="收件人姓名" title="input-name" value="" name="nav-searchBar" name="" id="" />
+                " type="text" placeholder="收件人姓名" title="input-name" value="" name="checkout-page-name-input" id="" />
           </div>
           <div class="
                 mobile:mt-[6px]
@@ -2417,8 +2418,8 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                " type="text" placeholder="手機" title="input-phone-number" value="" name="nav-searchBar" name=""
-              id="" />
+                " type="text" placeholder="手機" title="input-phone-number" value=""
+              name="checkout-page-phone-number-input" id="" />
           </div>
           <div class="
                 flex
@@ -2450,40 +2451,8 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                " type="text" placeholder="地址" title="input-address" value="" name="nav-searchBar" name="" id="" />
-          </div>
-          <div class="
-                flex
-                mobile:flex-col mobile:items-none
-                desktop:items-center desktop:flex-row
-                mobile:mt-[20px]
-                desktop:mt-[30px]
-              " name="" id="">
-            <div class="
-                  mobile:w-auto mobile:text-start
-                  desktop:w-[120px]
-                  inline-block
-                  text-[#3f3a3a]
-                  mobile:text-[14px] mobile:leading-[17px]
-                  desktop:text-[16px] desktop:leading-[19px]
-                " id=" cart-title">
-              手機
-            </div>
-            <input class="
-                  mobile:w-full mobile:mt-[10px]
-                  desktop:mt-0
-                  h-[32px]
-                  desktop:w-[576px]
-                  pl-[1%]
-                  border-solid border-[1px] border-[#979797]
-                  rounded-[8px]
-                  placeholder:text-[#d3d3d3]
-                  mobile:placeholder:text-[14px]
-                  mobile:placeholder:leading-[17px]
-                  desktop:placeholder:text-[16px]
-                  desktop:placeholder:leading-[19px]
-                " type="text" placeholder="手機" title="input-phone-number" value="" name="nav-searchBar" name=""
-              id="" />
+                " type="text" placeholder="地址" title="input-address" value="" name="checkout-page-address-input"
+              name="" id="" />
           </div>
           <div class="
                 flex
@@ -2515,7 +2484,8 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                " type="text" placeholder="Email" title="input-email" value="" name="nav-searchBar" name="" id="" />
+                " type="text" placeholder="Email" title="input-email" value="" name="checkout-page-email-input"
+              id="" />
           </div>
           <div class="
                 flex
@@ -2534,38 +2504,37 @@
                 " id=" cart-title">
               配送時間
             </div>
-            <form class="flex items-center mobile:mt-[10px] desktop:mt-0">
-              <div class="flex mobile:flex-col mobile360:flex-row items-center" name="" id="">
-                <input type="radio" id="08:00-12:00" name="time" value="08:00-12:00" />
-                <label for="08:00-12:00" class="
-                      mobile:ml-0
-                      mobile360:ml-[8px]
-                      text-[#3f3a3a]
-                      mobile:text-[14px]
-                      desktop:text-[16px]
-                      leading-[26px]
-                    ">08:00-12:00</label><br />
-                <input type="radio" id="14:00-18:00" name="time" value="14:00-18:00"
-                  class="mobile:ml-0 mobile360:ml-[32px]" />
-                <label for="14:00-18:00" class="
-                      mobile:ml-0
-                      mobile360:ml-[8px]
-                      text-[#3f3a3a]
-                      mobile:text-[14px]
-                      desktop:text-[16px]
-                      leading-[26px]
-                    ">14:00-18:00</label><br />
-                <input type="radio" id="not-set" name="time" value="not-set" class="mobile:ml-0 mobile360:ml-[32px]" />
-                <label for="not-set" class="
-                      mobile:ml-0
-                      mobile360:ml-[8px]
-                      text-[#3f3a3a]
-                      mobile:text-[14px]
-                      desktop:text-[16px]
-                      leading-[26px]
-                    ">不指定</label>
-              </div>
-            </form>
+            <div class="flex mobile:flex-col mobile360:flex-row items-center mobile:mt-[10px] desktop:mt-0"
+              name="checkout-page-receive-time-input" id="">
+              <input type="radio" id="08:00-12:00" name="time" value="08:00-12:00" />
+              <label for="08:00-12:00" class="
+                    mobile:ml-0
+                    mobile360:ml-[8px]
+                    text-[#3f3a3a]
+                    mobile:text-[14px]
+                    desktop:text-[16px]
+                    leading-[26px]
+                  ">08:00-12:00</label><br />
+              <input type="radio" id="14:00-18:00" name="time" value="14:00-18:00"
+                class="mobile:ml-0 mobile360:ml-[32px]" />
+              <label for="14:00-18:00" class="
+                    mobile:ml-0
+                    mobile360:ml-[8px]
+                    text-[#3f3a3a]
+                    mobile:text-[14px]
+                    desktop:text-[16px]
+                    leading-[26px]
+                  ">14:00-18:00</label><br />
+              <input type="radio" id="not-set" name="time" value="not-set" class="mobile:ml-0 mobile360:ml-[32px]" />
+              <label for="not-set" class="
+                    mobile:ml-0
+                    mobile360:ml-[8px]
+                    text-[#3f3a3a]
+                    mobile:text-[14px]
+                    desktop:text-[16px]
+                    leading-[26px]
+                  ">不指定</label>
+            </div>
           </div>
         </div>
 
@@ -2598,7 +2567,7 @@
                 desktop:items-center desktop:flex-row
                 mobile:mt-[20px]
                 desktop:mt-[30px]
-              " name="" id="">
+              " name="checkout-page-tap-pay-card-number-box" id="">
             <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
@@ -2609,7 +2578,7 @@
                 " id=" cart-title">
               信用卡號碼
             </div>
-            <input class="
+            <!-- <input class="
                   mobile:w-full mobile:mt-[10px]
                   desktop:mt-0
                   h-[32px]
@@ -2623,7 +2592,7 @@
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
                 " type="text" placeholder="**** **** **** ****" title="input-credit-card-number" value=""
-              name="nav-searchBar" name="" id="" />
+              name="checkout-page-card-number-input" name="" id="" /> -->
           </div>
           <div class="
                 flex
@@ -2631,7 +2600,7 @@
                 desktop:items-center desktop:flex-row
                 mobile:mt-[20px]
                 desktop:mt-[30px]
-              " name="" id="">
+              " name="checkout-page-tap-pay-card-expiration-date-box" id="">
             <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
@@ -2639,10 +2608,10 @@
                   text-[#3f3a3a]
                   mobile:text-[14px] mobile:leading-[17px]
                   desktop:text-[16px] desktop:leading-[19px]
-                " id=" cart-title">
+                " name="cart-title" id="">
               有效期限
             </div>
-            <input class="
+            <!-- <input class="
                   mobile:w-full mobile:mt-[10px]
                   desktop:mt-0
                   h-[32px]
@@ -2655,8 +2624,8 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                " type="text" placeholder="MM / YY" title="input-credit-card-valid-month" value="" name="nav-searchBar"
-              name="" id="" />
+                " type="text" placeholder="MM / YY" title="input-credit-card-valid-month" value=""
+              name="checkout-page-card-expiration-date-input" id="" /> -->
           </div>
           <div class="
                 flex
@@ -2664,7 +2633,7 @@
                 desktop:items-center desktop:flex-row
                 mobile:mt-[20px]
                 desktop:mt-[30px]
-              " name="" id="">
+              " name="checkout-page-tap-pay-card-ccv-box" id="">
             <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
@@ -2672,10 +2641,10 @@
                   text-[#3f3a3a]
                   mobile:text-[14px] mobile:leading-[17px]
                   desktop:text-[16px] desktop:leading-[19px]
-                " id=" cart-title">
+                " name="cart-title" id="">
               安全碼
             </div>
-            <input class="
+            <!-- <input class="
                   mobile:w-full mobile:mt-[10px]
                   desktop:mt-0
                   h-[32px]
@@ -2688,8 +2657,8 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                " type="text" placeholder="後三碼" title="input-credit-card-CSC" value="" name="nav-searchBar" name=""
-              id="" />
+                " type="text" placeholder="後三碼" title="input-credit-card-CSC" value=""
+              name="checkout-page-card-ccv-input" name="" id="" /> -->
           </div>
           <div class="
                 flex flex-col
@@ -2711,7 +2680,7 @@
                     " id="product-name">
                   NT.
                 </div>
-                <div class="text-[#3f3a3a] text-[30px] leading-[36px]" id="product-name">
+                <div class="text-[#3f3a3a] text-[30px] leading-[36px]" name="checkout-page-amount-text" id="">
                   2397
                 </div>
               </div>
@@ -2727,7 +2696,7 @@
                     " id="product-name">
                   NT.
                 </div>
-                <div class="text-[#3f3a3a] text-[30px] leading-[36px]" id="product-name">
+                <div class="text-[#3f3a3a] text-[30px] leading-[36px]" name="checkout-page-delivery-fee-text" id="">
                   30
                 </div>
               </div>
@@ -2755,7 +2724,7 @@
                     " id="product-name">
                   NT.
                 </div>
-                <div class="text-[#3f3a3a] text-[30px] leading-[36px]" id="product-name">
+                <div class="text-[#3f3a3a] text-[30px] leading-[36px]" name="checkout-page-total-text" id="">
                   2427
                 </div>
               </div>
@@ -2785,7 +2754,7 @@
                   desktop:border-solid
                   desktop:border-[1px]
                   desktop:border-[#979797]
-                " onclick="alert('開始付款！')">
+                " name="checkout-page-submit-order" id="">
               確認付款
             </div>
           </div>
@@ -4937,18 +4906,10 @@
       document.querySelector(
         'div[name="checkout-page-checkout-product-list-box"]'
       );
-    const timeWrapper = document.querySelector('div[name="time-wrapper"]');
-    const price = document.querySelectorAll('div[name="price"]');
-    const confirmBtn = document.querySelector('div[name="confrim-pay"]');
-    const nameInput = document.querySelector('div[name="order-name"]');
-    const phoneInput = document.querySelector('div[name="order-phone"]');
-    const addressInput = document.querySelector('div[name="order-address"]');
-    const emailInput = document.querySelector('div[name="order-email"]');
-    const timeInput = document.querySelectorAll('div[name="time-select"]');
-    const timeArr = [...timeInput];
 
     function showCheckoutPageCheckoutProductListUI() {
-      console.log(shoppingCartListJsonData);
+      shoppingCartListJsonData =
+        JSON.parse(window.localStorage.getItem('shoppingCartList')) || [];
       let list = '';
       for (let i = 0; i < shoppingCartListJsonData.length; i++) {
         fetch(
@@ -4956,7 +4917,6 @@
         ).then(async (response) => {
           const productDetailsAPIJson = await response.json();
           const productDetailsAPIJsonData = productDetailsAPIJson.data;
-          console.log(productDetailsAPIJsonData);
 
           list += `
         <div class="
@@ -4966,7 +4926,7 @@
                 desktop:flex-row
                 mobile:mt-[10px] mobile:ml-0
                 desktop:mt-[30px] desktop:ml-[32px]
-              " name="" id="">
+              " name="checkout-page-product${i}" id="">
             <div class="
                   flex flex-row
                   w-full
@@ -5032,7 +4992,7 @@
                     desktop:left-[calc(100%-74px)]
                     mobile:mt-0
                     desktop:mt-[54px]
-                  " name="product-image" id="" />
+                  " name="remove-product-trash-image${i}" id="" />
             </div>
             <div class="flex flex-row mobile:mt-[20px] desktop:mt-0" name="" id="">
               <div class="
@@ -5113,7 +5073,7 @@
                     mobile:ml-auto
                     mobile:text-[14px]
                     mobile:leading-[17px]
-                  " name="" id="">
+                  " name="product${i}-total-text" id="">
                 TWD.${productDetailsAPIJsonData.price *
             shoppingCartListJsonData[i].qty
             }
@@ -5122,7 +5082,9 @@
           </div>`;
 
           checkoutPageCheckoutProductListHtmlDivElement.innerHTML = list;
+
           updateProductDetailArrayArray(productDetailsAPIJsonData);
+
           for (let j = 0; j < shoppingCartListJsonData.length; j++) {
             productDetailArrayArray.forEach((productDetailsArray) => {
               if (
@@ -5139,26 +5101,395 @@
                     new Option(`${k}`, k)
                   );
                 }
-                checkoutPageOrderValueSelectDropList.value =
-                  shoppingCartListJsonData[j]['qty'];
               }
+            });
+          }
+          updateCheckoutPagePrice();
+          selectLocalhostQtyAtOption();
+          setOrderListTrashClick();
+        });
+      }
+      if (shoppingCartListJsonData.length == 0) {
+        checkoutPageCheckoutProductListHtmlDivElement.innerHTML = `<div class="
+                                                                       flex justify-center w-full
+                                                                       " name="checkout-page-empty-cart-info-box">
+                                                                     <div class="text-[48px] text-[#8B572A]" name="checkout-page-empty-cart-info-text">
+                                                                       購物車中還沒有商品，點我到首頁選購
+                                                                     </div>
+                                                                   </div>`;
+        document.querySelector('div[name="checkout-page-empty-cart-info-box"]').addEventListener('click', (e) => {
+          history.replaceState(null, null, '/');
+          changePage('main-page');
+          showCategoryNavBarTextColorBrown('all');
+          mode = 'all';
+          renderPageNumber = 0;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        });
+        updateCheckoutPagePrice();
+      }
+    }
+
+    function selectLocalhostQtyAtOption() {
+      for (let i = 0; i < shoppingCartListJsonData.length; i++) {
+        productDetailArrayArray.forEach((productDetailsArray) => {
+          if (
+            shoppingCartListJsonData[i].name ==
+            productDetailsArray[1] && shoppingCartListJsonData[i].color.name ==
+            productDetailsArray[3] &&
+            shoppingCartListJsonData[i].size == productDetailsArray[5]
+          ) {
+            const availableOrderValue = productDetailsArray[6];
+            const checkoutPageOrderValueSelectDropList = document.querySelector(`select[name="amount${i}"]`);
+            checkoutPageOrderValueSelectDropList.value =
+              shoppingCartListJsonData[i]['qty'];
+            checkoutPageOrderValueSelectDropList.addEventListener('change', (e) => {
+              shoppingCartListJsonData[i].qty = parseInt(checkoutPageOrderValueSelectDropList.value);
+
+              const productTotalTextHtmlDivElement = document.querySelector(`div[name="product${i}-total-text"]`);
+              productTotalTextHtmlDivElement.innerHTML = `TWD.${shoppingCartListJsonData[i].qty * shoppingCartListJsonData[i].price}`;
+
+              updateLocalStorage();
+              updateShoppingCartNotificationNumbers();
+              updateCheckoutPagePrice();
             });
           }
         });
       }
     }
-      // Step 2: Validate User Input
-      //-----------------------------------------------------------------------------------------------
 
-      //-----------------------------------------------------------------------------------------------
+    function setOrderListTrashClick() {
+      for (let i = 0; i < shoppingCartListJsonData.length; i++) {
+        const checkoutPageRemoveProductTrashImage = document.querySelector(`img[name="remove-product-trash-image${i}"]`);
+        checkoutPageRemoveProductTrashImage.addEventListener('click', (e) => {
+          const checkoutPageProduct = document.querySelector(`div[name="checkout-page-product${i}"]`);
+          shoppingCartListJsonData.splice(i, 1);
+          checkoutPageProduct.remove();
 
-      // w1p4
-      // w1p4 Step 1: Introduction to TapPay
-      // w1p4 Step 2: Prepare Order Data
-      // w1p4 Step 3: Check Out
-      // w1p4 Step 4: Complete Thank You Page
-      // w1p4 Step 5: Show Order Number in Thank You Page
-      //-----------------------------------------------------------------------------------------------
+          updateLocalStorage();
+          updateShoppingCartNotificationNumbers();
+          showCheckoutPageCheckoutProductListUI();
+          updateCheckoutPagePrice();
+        });
+      }
+    }
+
+    const amountText = document.querySelector('div[name="checkout-page-amount-text"]');
+    const deliveryFeeText = document.querySelector('div[name="checkout-page-delivery-fee-text"]');
+    const totalText = document.querySelector('div[name="checkout-page-total-text"]');
+
+    function updateCheckoutPagePrice() {
+      let amount = 0;
+      let deliveryFee = 0;
+      let total = 0;
+
+      shoppingCartListJsonData.forEach((productSpec) => {
+        amount += productSpec.price * productSpec.qty;
+      });
+      amountText.innerHTML = `${amount}`;
+
+      if (amount > 0) {
+        deliveryFee = 30;
+        deliveryFeeText.innerHTML = "30";
+      } else {
+        deliveryFee = 0;
+        deliveryFeeText.innerHTML = "0";
+      }
+
+      totalText.innerHTML = `${amount + deliveryFee}`;
+    }
+    // Step 2: Validate User Input
+    //-----------------------------------------------------------------------------------------------
+    const nameInput = document.querySelector('input[name="checkout-page-name-input"]');
+    const phoneInput = document.querySelector('input[name="checkout-page-phone-number-input"]');
+    const addressInput = document.querySelector('input[name="checkout-page-address-input"]');
+    const emailInput = document.querySelector('input[name="checkout-page-email-input"]');
+    const timeInput = document.querySelectorAll('div[name="checkout-page-receive-time-input"] input');
+    const timeInputBox = document.querySelector('div[name="checkout-page-receive-time-input"]');
+    // const cardNumber = document.querySelector('input[name="checkout-page-card-number-input"]');
+    // const cardExpirationDate = document.querySelector('input[name="checkout-page-card-expiration-date-input"]');
+    // const cardCCV = document.querySelector('input[name="checkout-page-card-ccv-input"]');
+    // const cardNumber = document.querySelectorAll('iframe').forEach(item=>item.contentWindow.document.querySelector('input[name="cc-number"]'));
+    // const cardExpirationDate = document.querySelectorAll('iframe').forEach(item=>item.contentWindow.document.querySelector('input[name="cc-exp"]'));
+    // const cardCCV = document.querySelectorAll('iframe').forEach(item=>item.contentWindow.document.querySelector('input[name="cc-ccv"]'));
+    const checkoutPageSubmitOrder = document.querySelector('div[name="checkout-page-submit-order"]');
+
+    // // w1p4 Step 1: Introduction to TapPay
+    const cardNumberHtmlDivElement = document.querySelector('div[name="checkout-page-tap-pay-card-number-box"]');
+
+    const cardExpirationDateHtmlDivElement = document.querySelector('div[name="checkout-page-tap-pay-card-expiration-date-box"]');
+
+    const cardCCVHtmlDivElement = document.querySelector('div[name="checkout-page-tap-pay-card-ccv-box"]');
+
+    cardNumberHtmlDivElement.innerHTML += `<div class="tpfield
+                  mobile:w-full mobile:mt-[10px]
+                  desktop:mt-0
+                  h-[32px]
+                  desktop:w-[576px]
+                  pl-[1%]
+                  border-solid border-[1px] border-[#979797]
+                  rounded-[8px]
+                  placeholder:text-[#d3d3d3]
+                  mobile:placeholder:text-[14px]
+                  mobile:placeholder:leading-[17px]
+                  desktop:placeholder:text-[16px]
+                  desktop:placeholder:leading-[19px]" id="card-number"></div>`;
+    cardExpirationDateHtmlDivElement.innerHTML += `<div class="tpfield
+                  mobile:w-full mobile:mt-[10px]
+                  desktop:mt-0
+                  h-[32px]
+                  desktop:w-[576px]
+                  pl-[1%]
+                  border-solid border-[1px] border-[#979797]
+                  rounded-[8px]
+                  placeholder:text-[#d3d3d3]
+                  mobile:placeholder:text-[14px]
+                  mobile:placeholder:leading-[17px]
+                  desktop:placeholder:text-[16px]
+                  desktop:placeholder:leading-[19px]" id="card-expiration-date"></div>`;
+    cardCCVHtmlDivElement.innerHTML += `<div class="tpfield
+                  mobile:w-full mobile:mt-[10px]
+                  desktop:mt-0
+                  h-[32px]
+                  desktop:w-[576px]
+                  pl-[1%]
+                  border-solid border-[1px] border-[#979797]
+                  rounded-[8px]
+                  placeholder:text-[#d3d3d3]
+                  mobile:placeholder:text-[14px]
+                  mobile:placeholder:leading-[17px]
+                  desktop:placeholder:text-[16px]
+                  desktop:placeholder:leading-[19px]" id="card-ccv"></div>`;
+
+    nameInput.addEventListener("keypress", (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        setTimeout(function () {
+          phoneInput.focus();
+        }, 100);
+      }
+    });
+    phoneInput.addEventListener("keypress", (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        setTimeout(function () {
+          addressInput.focus();
+        }, 100);
+      }
+    });
+    addressInput.addEventListener("keypress", (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        setTimeout(function () {
+          emailInput.focus();
+        }, 100);
+      }
+    });
+    emailInput.addEventListener("keypress", (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        setTimeout(function () {
+          // cardNumber.focus();
+        }, 100);
+      }
+    });
+
+    // setTimeout(function () {
+    //   cardNumber.addEventListener("keypress", (e) => {
+    //   if (e.key === 'Enter') {
+    //     e.preventDefault();
+    //     setTimeout(function () {
+    //       cardExpirationDate.focus();
+    //     }, 100);
+    //   }
+    // });
+    // cardExpirationDate.addEventListener("keypress", (e) => {
+    //   if (e.key === 'Enter') {
+    //     e.preventDefault();
+    //     setTimeout(function () {
+    //       cardCCV.focus();
+    //     }, 100);
+    //   }
+    // });
+    // cardCCV.addEventListener("keypress", (e) => {
+    //   if (e.key === 'Enter') {
+    //     e.preventDefault();
+    //     setTimeout(function () {
+    //     }, 100);
+    //   }
+    // });
+
+    checkoutPageSubmitOrder.addEventListener('click', (e) => {
+      let nameProved = false;
+      if (nameInput.value.replace(/ /g, '').length != 0) {
+        nameInput.classList.remove('active');
+        nameProved = true;
+      } else {
+        nameInput.classList.add('active');
+        alert('請輸入姓名');
+        nameProved = false;
+      }
+
+      let phoneProved = false;
+      if (
+        phoneInput.value.replace(/ /g, '').length == 10 ||
+        phoneInput.value.slice(0, 2) == '09'
+      ) {
+        phoneInput.classList.remove('active');
+        phoneProved = true;
+      } else {
+        phoneInput.classList.add('active');
+        alert('請輸入完整手機號碼');
+        phoneProved = false;
+      }
+
+      let addressProved = false;
+      if (addressInput.value.includes('市') || addressInput.value.includes('縣')) {
+        addressInput.classList.remove('active');
+        addressProved = true;
+      } else {
+        addressInput.classList.add('active');
+        alert('請輸入完整地址');
+        addressProved = false;
+      }
+
+      let emailProved = false;
+      if (emailInput.value.includes('@')) {
+        emailInput.classList.remove('active');
+        emailProved = true;
+      } else {
+        emailInput.classList.add('active');
+        alert('請輸入正確電郵地址');
+        emailProved = false;
+      }
+
+      let timeProved = false;
+      timeInput.forEach((time) => {
+        if (time.checked) {
+          timeProved = true;
+        }
+      });
+      if (timeProved) {
+        timeInputBox.classList.remove('active');
+      } else {
+        alert('請選擇配送時間');
+        timeInputBox.classList.add('active');
+      }
+
+      if (
+        !nameProved ||
+        !phoneProved ||
+        !addressProved ||
+        !emailProved ||
+        !timeProved
+      ) {
+        console.log(false);
+        return;
+      } else {
+        alert('訂單已送出');
+        nameInput.value = '';
+        phoneInput.value = '';
+        addressInput.value = '';
+        emailInput.value = '';
+        timeInput.forEach((input) => {
+          input.checked = false;
+        });
+      }
+    });
+    //-----------------------------------------------------------------------------------------------
+
+    //-----------------------------------------------------------------------------------------------
+
+    // w1p4
+    // w1p4 Step 1: Introduction to TapPay
+    TPDirect.setupSDK(
+      12348,
+      'app_pa1pQcKoY22IlnSXq5m5WP5jFKzoRG58VEXpT7wU62ud7mMbDOGzCYIlzzLF',
+      'sandbox'
+    );
+
+    TPDirect.card.setup({
+      fields: {
+        number: {
+          element: '#card-number',
+          placeholder: '**** **** **** ****'
+        },
+        expirationDate: {
+          element: document.getElementById('card-expiration-date'),
+          placeholder: 'MM / YY'
+        },
+        ccv: {
+          element: '#card-ccv',
+          placeholder: '後三碼'
+        }
+      },
+      styles: {
+        // Style all elements
+        input: {
+          color: 'black'
+        },
+        // // Styling ccv field
+        // 'input.ccv': {
+        //   'font-size': '16px'
+        // },
+        // // Styling expiration-date field
+        // 'input.expiration-date': {
+        //   'font-size': '16px'
+        // },
+        // // Styling card-number field
+        // 'input.card-number': {
+        //   'font-size': '16px'
+        // },
+        // style focus state
+        ':focus': {
+          outline: 'black'
+          // color: 'black'
+        },
+        // style valid state
+        '.valid': {
+          color: 'green'
+        },
+        // style invalid state
+        '.invalid': {
+          color: 'red'
+        },
+        '::placeholder': {
+          color: '#d3d3d3'
+        }
+      },
+      isMaskCreditCardNumber: true,
+      maskCreditCardNumberRange: {
+        beginIndex: 6,
+        endIndex: 11
+      }
+    });
+
+    let prime;
+    let credit = false;
+
+    TPDirect.card.onUpdate((update) => {
+      if (update.canGetPrime) {
+        TPDirect.card.getPrime(function (result) {
+          if (result.status !== 0) {
+            console.log('get prime error ' + result.msg);
+            credit = false;
+            return;
+          }
+          prime = result.card.prime;
+          credit = true;
+        });
+      } else {
+        credit = false;
+      }
+
+      let newType = update.cardType === 'unknown' ? '' : update.cardType;
+      document.querySelector('#card-number').cardType = newType;
+    });
+
+    // w1p4 Step 2: Prepare Order Data
+    // w1p4 Step 3: Check Out
+    // w1p4 Step 4: Complete Thank You Page
+    // w1p4 Step 5: Show Order Number in Thank You Page
+    //-----------------------------------------------------------------------------------------------
 
       //-----------------------------------------------------------------------------------------------
 

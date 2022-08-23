@@ -2768,7 +2768,7 @@
     <div class="
     flex justify-center w-full
     " name="checkout-page-empty-cart-info-box">
-      <div class="mobile:mt-[102px] desktop:mt-[140px] text-[48px] text-[#8B572A]"
+      <div class="cursor-pointer mobile:mt-[102px] desktop:mt-[140px] text-[48px] text-[#8B572A]"
         name="thankyou-page-order-num-info-box">
         <div class="" name="main-header">
           訂購完成<i class="fa-regular fa-circle-check"></i>
@@ -5129,11 +5129,12 @@
       if (shoppingCartListJsonData.length == 0) {
         checkoutPageCheckoutProductListHtmlDivElement.innerHTML = `<div class="
                                                                        flex justify-center w-full
-                                                                       " name="checkout-page-empty-cart-info-box">
+                                                                       " class="cursor-pointer"  name="checkout-page-empty-cart-info-box">
                                                                      <div class="text-[48px] text-[#8B572A]" name="checkout-page-empty-cart-info-text">
                                                                        購物車中還沒有商品，點我到首頁選購
                                                                      </div>
                                                                    </div>`;
+
         document.querySelector('div[name="checkout-page-empty-cart-info-box"]').addEventListener('click', (e) => {
           history.replaceState(null, null, '/');
           changePage('main-page');
@@ -5232,9 +5233,7 @@
 
     // // w1p4 Step 1: Introduction to TapPay
     const cardNumberHtmlDivElement = document.querySelector('div[name="checkout-page-tap-pay-card-number-box"]');
-
     const cardExpirationDateHtmlDivElement = document.querySelector('div[name="checkout-page-tap-pay-card-expiration-date-box"]');
-
     const cardCCVHtmlDivElement = document.querySelector('div[name="checkout-page-tap-pay-card-ccv-box"]');
 
     cardNumberHtmlDivElement.innerHTML += `<div class="tpfield

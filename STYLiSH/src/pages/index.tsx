@@ -27,7 +27,7 @@ const Home: NextPage = () => {
           />
         </Head>
 
-        <nav className="absolute top-0 z-[999] w-full mobile:h-[102px] desktop:h-[140px]">
+        <nav className="fixed top-0 z-[999] w-full mobile:h-[102px] desktop:h-[140px]">
           <div
             className="
             flex
@@ -1490,7 +1490,7 @@ const Home: NextPage = () => {
 
           <div
             className="
-          mobile:absolute
+          mobile:fixed
           mobile:left-0
           mobile:bottom-0
           mobile:z-[999]

@@ -2579,7 +2579,7 @@
                 " id=" cart-title">
               信用卡號碼
             </div>
-            <!-- <input class="
+            <!-- <!-- <input class="
                   mobile:w-full mobile:mt-[10px]
                   desktop:mt-0
                   h-[32px]
@@ -2593,7 +2593,7 @@
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
                 " type="text" placeholder="**** **** **** ****" title="input-credit-card-number" value=""
-              name="checkout-page-card-number-input" name="" id="" /> -->
+              name="checkout-page-card-number-input" name="" id="" /> --> -->
           </div>
           <div class="
                 flex
@@ -2612,7 +2612,7 @@
                 " name="cart-title" id="">
               有效期限
             </div>
-            <!-- <input class="
+            <!-- <!-- <input class="
                   mobile:w-full mobile:mt-[10px]
                   desktop:mt-0
                   h-[32px]
@@ -2626,7 +2626,7 @@
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
                 " type="text" placeholder="MM / YY" title="input-credit-card-valid-month" value=""
-              name="checkout-page-card-expiration-date-input" id="" /> -->
+              name="checkout-page-card-expiration-date-input" id="" /> --> -->
           </div>
           <div class="
                 flex
@@ -2645,7 +2645,7 @@
                 " name="cart-title" id="">
               安全碼
             </div>
-            <!-- <input class="
+            <!-- <!-- <input class="
                   mobile:w-full mobile:mt-[10px]
                   desktop:mt-0
                   h-[32px]
@@ -2659,7 +2659,7 @@
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
                 " type="text" placeholder="後三碼" title="input-credit-card-CSC" value=""
-              name="checkout-page-card-ccv-input" name="" id="" /> -->
+              name="checkout-page-card-ccv-input" name="" id="" /> --> -->
           </div>
           <div class="
                 flex flex-col
@@ -2757,6 +2757,26 @@
                   desktop:border-[#979797]
                 " name="checkout-page-submit-order" id="">
               確認付款
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hidden" name="thankyou-page" id="thankyou-page">
+    <div class="
+    flex justify-center w-full
+    " name="checkout-page-empty-cart-info-box">
+      <div class="text-[48px] text-[#8B572A]" name="checkout-page-empty-cart-info-text">
+        <div class="main-header">
+          訂購完成<i class="fa-regular fa-circle-check"></i>
+        </div>
+        <div class="num-container">
+          <div class="main-num">
+            訂單編號：
+            <div class="order-num">
+              12348554122
             </div>
           </div>
         </div>
@@ -3838,6 +3858,7 @@
         'main-page',
         'product-page',
         'checkout-page',
+        'thankyou-page',
         'thankyou-page',
         'profile-page',
         'aboutUs-page',
@@ -5148,6 +5169,15 @@
           showProductListUIByCategoryPagingOrSearchKeyWord();
         });
         updateCheckoutPagePrice();
+        document.querySelector('div[name="checkout-page-empty-cart-info-box"]').addEventListener('click', (e) => {
+          history.replaceState(null, null, '/');
+          changePage('main-page');
+          showCategoryNavBarTextColorBrown('all');
+          mode = 'all';
+          renderPageNumber = 0;
+          showProductListUIByCategoryPagingOrSearchKeyWord();
+        });
+        updateCheckoutPagePrice();
       }
     }
 
@@ -5227,9 +5257,12 @@
     const emailInput = document.querySelector('input[name="checkout-page-email-input"]');
     const timeInput = document.querySelectorAll('div[name="checkout-page-receive-time-input"] input');
     const timeInputBox = document.querySelector('div[name="checkout-page-receive-time-input"]');
-    // const cardNumber = document.querySelector('input[name="checkout-page-card-number-input"]');
-    // const cardExpirationDate = document.querySelector('input[name="checkout-page-card-expiration-date-input"]');
-    // const cardCCV = document.querySelector('input[name="checkout-page-card-ccv-input"]');
+    // // const cardNumber = document.querySelector('input[name="checkout-page-card-number-input"]');
+    // // const cardExpirationDate = document.querySelector('input[name="checkout-page-card-expiration-date-input"]');
+    // // const cardCCV = document.querySelector('input[name="checkout-page-card-ccv-input"]');
+    // const cardNumber = document.querySelectorAll('iframe').forEach(item=>item.contentWindow.document.querySelector('input[name="cc-number"]'));
+    // const cardExpirationDate = document.querySelectorAll('iframe').forEach(item=>item.contentWindow.document.querySelector('input[name="cc-exp"]'));
+    // const cardCCV = document.querySelectorAll('iframe').forEach(item=>item.contentWindow.document.querySelector('input[name="cc-ccv"]'));
     // const cardNumber = document.querySelectorAll('iframe').forEach(item=>item.contentWindow.document.querySelector('input[name="cc-number"]'));
     // const cardExpirationDate = document.querySelectorAll('iframe').forEach(item=>item.contentWindow.document.querySelector('input[name="cc-exp"]'));
     // const cardCCV = document.querySelectorAll('iframe').forEach(item=>item.contentWindow.document.querySelector('input[name="cc-ccv"]'));
@@ -5348,9 +5381,15 @@
       let addressValue;
       let emailValue;
 
+      let nameValue;
+      let phoneValue;
+      let addressValue;
+      let emailValue;
+
       if (nameInput.value.replace(/ /g, '').length != 0) {
         nameInput.classList.remove('active');
         nameProved = true;
+        nameValue = nameInput.value;
         nameValue = nameInput.value;
       } else {
         nameInput.classList.add('active');
@@ -5366,6 +5405,7 @@
         phoneInput.classList.remove('active');
         phoneProved = true;
         phoneValue = phoneInput.value;
+        phoneValue = phoneInput.value;
       } else {
         phoneInput.classList.add('active');
         alert('請輸入完整手機號碼');
@@ -5376,6 +5416,7 @@
       if (addressInput.value.includes('市') || addressInput.value.includes('縣')) {
         addressInput.classList.remove('active');
         addressProved = true;
+        addressValue = addressInput.value;
         addressValue = addressInput.value;
       } else {
         addressInput.classList.add('active');
@@ -5388,6 +5429,7 @@
         emailInput.classList.remove('active');
         emailProved = true;
         emailValue = emailInput.value;
+        emailValue = emailInput.value;
       } else {
         emailInput.classList.add('active');
         alert('請輸入正確電郵地址');
@@ -5396,9 +5438,11 @@
 
       let timeProved = false;
       let deliverVale;
+      let deliverVale;
       timeInput.forEach((time) => {
         if (time.checked) {
           timeProved = true;
+          deliverVale = time.value;
           deliverVale = time.value;
         }
       });
@@ -5418,12 +5462,22 @@
         shoppingCartIsNotEmpty = true;
       }
 
+      if (!credit) {
+        alert('請輸入完整信用卡資訊');
+      }
+
+      let shoppingCartIsNotEmpty = false;
+      if (shoppingCartListJsonData.length > 0) {
+        shoppingCartIsNotEmpty = true;
+      }
+
       if (
         !nameProved ||
         !phoneProved ||
         !addressProved ||
         !emailProved ||
         !timeProved ||
+        !credit ||
         !credit
       ) {
         return;
@@ -5551,6 +5605,40 @@
         ccv: {
           element: '#card-ccv',
           placeholder: '後三碼'
+        }
+      },
+      styles: {
+        // Style all elements
+        input: {
+          color: 'black'
+        },
+        // // Styling ccv field
+        // 'input.ccv': {
+        //   'font-size': '16px'
+        // },
+        // // Styling expiration-date field
+        // 'input.expiration-date': {
+        //   'font-size': '16px'
+        // },
+        // // Styling card-number field
+        // 'input.card-number': {
+        //   'font-size': '16px'
+        // },
+        // style focus state
+        ':focus': {
+          outline: 'black'
+          // color: 'black'
+        },
+        // style valid state
+        '.valid': {
+          color: 'green'
+        },
+        // style invalid state
+        '.invalid': {
+          color: 'red'
+        },
+        '::placeholder': {
+          color: '#d3d3d3'
         }
       },
       styles: {

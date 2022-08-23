@@ -14,6 +14,10 @@ const Home: NextPage = () => {
             href="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"
             type="image/x-icon"
           />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Noto Sans TC"
+          />
         </Head>
 
         <nav className="fixed top-0 z-[999] w-full mobile:h-[102px] desktop:h-[140px]">
@@ -153,8 +157,6 @@ const Home: NextPage = () => {
                 <img
                   src="https://cdn.discordapp.com/attachments/1001702231785099304/1007154394585894962/image.png"
                   alt=""
-                  onmouseover="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1006055626180399154/image_1_.png'"
-                  onmouseout="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1007154394585894962/image.png'"
                   className=""
                   data-name="top-nav-bar-desktop-shopping-cart-image"
                 />
@@ -210,8 +212,6 @@ const Home: NextPage = () => {
               "
                 src="https://cdn.discordapp.com/attachments/1001702231785099304/1007154394904666112/profile.png"
                 alt=""
-                onmouseover="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1006055670421925960/profile_1.png'"
-                onmouseout="this.src='https://cdn.discordapp.com/attachments/1001702231785099304/1007154394904666112/profile.png'"
                 data-name="top-nav-bar-desktop-profile"
               />
             </div>

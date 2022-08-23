@@ -456,7 +456,7 @@
         <!-- <div
             class="
               flex flex-col
-              mobile:w-[calc(50%-27px)] mobile:mx-[3px]
+              mobile:w-[calc(50%-6px)] mobile:mx-[3px]
               desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]
             "
             name="product-1"
@@ -571,7 +571,7 @@
           <div
             class="
               flex flex-col
-              mobile:w-[calc(50%-27px)] mobile:mx-[3px]
+              mobile:w-[calc(50%-6px)] mobile:mx-[3px]
               desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]
             "
             name="product-2"
@@ -686,7 +686,7 @@
           <div
             class="
               flex flex-col
-              mobile:w-[calc(50%-27px)] mobile:mx-[3px]
+              mobile:w-[calc(50%-6px)] mobile:mx-[3px]
               desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]
             "
             name="product-3"
@@ -801,7 +801,7 @@
           <div
             class="
               flex flex-col
-              mobile:w-[calc(50%-27px)] mobile:mx-[3px]
+              mobile:w-[calc(50%-6px)] mobile:mx-[3px]
               desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]
             "
             name="product-4"
@@ -916,7 +916,7 @@
           <div
             class="
               flex flex-col
-              mobile:w-[calc(50%-27px)] mobile:mx-[3px]
+              mobile:w-[calc(50%-6px)] mobile:mx-[3px]
               desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]
             "
             name="product-5"
@@ -1031,7 +1031,7 @@
           <div
             class="
               flex flex-col
-              mobile:w-[calc(50%-27px)] mobile:mx-[3px]
+              mobile:w-[calc(50%-6px)] mobile:mx-[3px]
               desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]
             "
             name="product-6"
@@ -2768,17 +2768,12 @@
     <div class="
     flex justify-center w-full
     " name="checkout-page-empty-cart-info-box">
-      <div class="text-[48px] text-[#8B572A]" name="checkout-page-empty-cart-info-text">
-        <div class="main-header">
+      <div class="mobile:mt-[102px] desktop:mt-[140px] text-[48px] text-[#8B572A]"
+        name="thankyou-page-order-num-info-box">
+        <div class="" name="main-header">
           訂購完成<i class="fa-regular fa-circle-check"></i>
         </div>
-        <div class="num-container">
-          <div class="main-num">
-            訂單編號：
-            <div class="order-num">
-              12348554122
-            </div>
-          </div>
+        <div class="" name="thankyou-page-order-num-info-text">
         </div>
       </div>
     </div>
@@ -3239,7 +3234,7 @@
     //   }
     //   addToProductListHtmlString += `<div class="
     //                                      flex flex-col
-    //                                      mobile:w-[calc(50%-27px)] mobile:mx-[3px]
+    //                                      mobile:w-[calc(50%-6px)] mobile:mx-[3px]
     //                                      desktop:w-[360px] desktop:h-[666px] desktop:mx-[20px]" name="product">
     //                                   <img src="${productListAPIJson[i].main_image}" class="
     //                                       object-cover
@@ -5486,20 +5481,22 @@
 
         // w1p4 Step 3: Check Out
         // get checkOutAPIPromise for API promise
-        fetch('https://api.appworks-school.tw/api/1.0//order/checkout', checkoutJSON)
+        fetch('https://api.appworks-school.tw/api/1.0/order/checkout', checkoutJSON)
           .then(async (response) => {
             const checkOutAPIJson = await response.json();
-            const checkOutAPIJsonData = await productDetailsAPIJson.data;
+            const checkOutAPIJsonData = await checkOutAPIJson.data;
 
-            console.log('getPostResponse!');
-            console.log(checkOutAPIJsonData);
-
-            history.replaceState(null, null, `/thankyou?orderNumber=${data['data'].number}`);
+            history.replaceState(null, null, `/thankyou?orderNumber=${checkOutAPIJsonData.number}`);
             changePage('thankyou-page');
+            localStorage.removeItem('shoppingCartList');
+            updateLocalStorage();
+            updateShoppingCartNotificationNumbers();
+            showCheckoutPageCheckoutProductListUI();
+            updateCheckoutPagePrice();
+
             showCategoryNavBarTextColorBrown('all');
             mode = 'all';
             renderPageNumber = 0;
-            localStorage.removeItem('shoppingCartList');
 
             nameInput.value = '';
             phoneInput.value = '';
@@ -5508,22 +5505,19 @@
             timeInput.forEach((input) => {
               input.checked = false;
             });
+
+            const thankyouPageOrderNumTextHtmlDivElement = document.querySelector('div[name="thankyou-page-order-num-info-text"]');
+            thankyouPageOrderNumTextHtmlDivElement.innerHTML = `訂單編號：${checkOutAPIJsonData.number}`;
+            const thankyouPageOrderNumberInfoBoxHtmlDivElement = document.querySelector('div[name="thankyou-page-order-num-info-box"]');
+            thankyouPageOrderNumberInfoBoxHtmlDivElement.addEventListener('click', (e) => {
+              history.replaceState(null, null, '/');
+              changePage('main-page');
+              showCategoryNavBarTextColorBrown('all');
+              mode = 'all';
+              renderPageNumber = 0;
+              showProductListUIByCategoryPagingOrSearchKeyWord();
+            });
           });
-
-        history.replaceState(null, null, `/thankyou?orderNumber=12348554122`);
-        changePage('thankyou-page');
-        showCategoryNavBarTextColorBrown('all');
-        mode = 'all';
-        renderPageNumber = 0;
-        localStorage.removeItem('shoppingCartList');
-
-        nameInput.value = '';
-        phoneInput.value = '';
-        addressInput.value = '';
-        emailInput.value = '';
-        timeInput.forEach((input) => {
-          input.checked = false;
-        });
       }
     });
     //-----------------------------------------------------------------------------------------------
@@ -5545,7 +5539,7 @@
           placeholder: '**** **** **** ****'
         },
         expirationDate: {
-          element: document.getElementById('card-expiration-date'),
+          element: '#card-expiration-date',
           placeholder: 'MM / YY'
         },
         ccv: {

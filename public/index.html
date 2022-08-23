@@ -60,7 +60,7 @@
 <body class="">
   <!-- header and top navBar content -->
   <header class="" name="top-nav">
-    <nav class="fixed top-0 z-[999] w-full mobile:h-[102px] desktop:h-[140px]">
+    <nav class="absolute top-0 z-[999] w-full mobile:h-[102px] desktop:h-[140px]">
       <div class="
             flex
             bg-[#ffffff]
@@ -221,7 +221,6 @@
               desktop:hidden
               mobile:block
               mobile:absolute
-              mobile:fixed
               mobile:w-[44px]
               mobile:z-0
               mobile:right-5
@@ -1262,7 +1261,7 @@
                 w-full
                 h-0
                 mobile:my-[10px]
-                desktop:max-w-none desktop:my-[20px] desktop:max-w-[360px]
+                mobile:max-w-none desktop:my-[20px] desktop:max-w-[360px]
                 content-['']
                 border-solid border-[#3f3a3a] border-b-[1px]
               "
@@ -2980,7 +2979,7 @@
     <div class="
           mobile:z-[999]
           mobile:flex
-          mobile:fixed
+          mobile:absolute
           mobile:justify-center
           mobile:items-center
           mobile:w-full

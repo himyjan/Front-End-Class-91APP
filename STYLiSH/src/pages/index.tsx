@@ -5,6 +5,10 @@ import styled from "styled-components";
 import dynamic from "next/dynamic";
 import { GetServerSideProps } from "next";
 
+const b = styled(Head)`
+  margin-top: 0;
+`;
+
 const Home: NextPage = () => {
   return (
     <>
@@ -23,7 +27,7 @@ const Home: NextPage = () => {
           />
         </Head>
 
-        <nav className="fixed top-0 z-[999] w-full mobile:h-[102px] desktop:h-[140px]">
+        <nav className="absolute top-0 z-[999] w-full mobile:h-[102px] desktop:h-[140px]">
           <div
             className="
             flex
@@ -221,7 +225,6 @@ const Home: NextPage = () => {
 
             <input
               className="
-              mobile:fixed
               mobile:absolute
               mobile:right-5
               mobile:z-0
@@ -1487,7 +1490,7 @@ const Home: NextPage = () => {
 
           <div
             className="
-          mobile:fixed
+          mobile:absolute
           mobile:left-0
           mobile:bottom-0
           mobile:z-[999]

@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "STYLiSH/out",
+    "public": "STYLiSH/dist",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   }
 }

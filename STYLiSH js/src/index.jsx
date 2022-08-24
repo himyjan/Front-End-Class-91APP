@@ -1,16 +1,16 @@
-import * as React from "react";
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import React from "react";
+import ReactDOM from "react-dom/client";
 import styled from "styled-components";
 import GlobalStyle from "./StyledComponents/index.style";
+import Header from "./Header";
+import Footer from "./Footer";
 import Home from "./Home";
+import Carousel from "./Carousel";
 import Product from "./Product";
 import Checkout from "./Checkout";
 import Thankyou from "./Thankyou";
 
-const rootElement = document.getElementById('root');
-const root = createRoot(rootElement);
-
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Home />

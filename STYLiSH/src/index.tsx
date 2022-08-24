@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import styled from "styled-components";
 import GlobalStyle from "./StyledComponents/index.style";
-import Header from "./Header";
+import Header from "./StyledComponents/Header.style";
 import Footer from "./Footer";
 import Home from "./Home";
 import Carousel from "./Carousel";
@@ -16,7 +16,10 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
+    <Header className="header" />
+    <Carousel />
     <Home />
+    <Footer />
     <GlobalStyle />
   </React.StrictMode>
 );

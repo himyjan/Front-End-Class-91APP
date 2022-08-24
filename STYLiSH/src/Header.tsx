@@ -1,4 +1,3 @@
-import React = require("react");
 import styled from "styled-components";
 import {} from "./StyledComponents/Header.style";
 

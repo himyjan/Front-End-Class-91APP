@@ -1,9 +1,13 @@
 import styled from "styled-components";
-import {} from "./StyledComponents/Checkout.style";
+import CheckoutStyledComponents from "./StyledComponents/Checkout.style";
 import mediaQuery from "./StyledComponents/mediaQuery";
 
-function Checkout() {
+type Props = {
+  className: string;
+};
+
+const Checkout = ({ className }: Props) => {
   return <div className="Checkout"></div>;
-}
+};
 
 export default Checkout;

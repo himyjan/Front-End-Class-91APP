@@ -1,9 +1,13 @@
 import styled from "styled-components";
-import {} from "./StyledComponents/Home.style";
+import HomeStyledComponents from "./StyledComponents/Home.style";
 import mediaQuery from "./StyledComponents/mediaQuery";
 
-function Home() {
+type Props = {
+  className: string;
+};
+
+const Home = ({ className }: Props) => {
   return <div className="Home"></div>;
-}
+};
 
 export default Home;

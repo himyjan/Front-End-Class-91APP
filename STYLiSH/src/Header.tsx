@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {} from "./StyledComponents/Header.style";
+import HeaderStyledComponents from "./StyledComponents/Header.style";
 import mediaQuery from "./StyledComponents/mediaQuery";
 
 type Props = {

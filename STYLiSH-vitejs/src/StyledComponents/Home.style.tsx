@@ -1,3 +1,7 @@
 import styled from "styled-components";
+import mediaQuery from "./mediaQuery";
+import Home from "../Home";
 
-export {};
+const HomeStyledComponents = styled(Home)``;
+
+export default HomeStyledComponents;

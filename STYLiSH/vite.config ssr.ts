@@ -1,6 +1,6 @@
-import { Base } from "./../STYLiSH-vitejs/node_modules/regjsparser/parser.d";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import ssr from "vite-plugin-ssr/plugin";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,7 +11,7 @@ export default defineConfig({
       strict: false,
     },
   },
-  plugins: [react()],
+  plugins: [react(), ssr({ prerender: true })],
   build: {
     outDir: "./build",
   },

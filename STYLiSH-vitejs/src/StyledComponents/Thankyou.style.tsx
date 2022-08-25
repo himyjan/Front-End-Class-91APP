@@ -1,3 +1,7 @@
 import styled from "styled-components";
+import mediaQuery from "./mediaQuery";
+import Thankyou from "../Thankyou";
 
-export {};
+const ThankyouStyledComponents = styled(Thankyou)``;
+
+export default ThankyouStyledComponents;

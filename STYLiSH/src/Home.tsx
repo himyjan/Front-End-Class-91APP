@@ -7,7 +7,7 @@ type Props = {
 };
 
 const Home = ({ className }: Props) => {
-  return <div className="Home"></div>;
+  return <div className="Home">123</div>;
 };
 
 export default Home;

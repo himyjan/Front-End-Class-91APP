@@ -9,7 +9,7 @@ type Props = {
 const navList = ["女裝", "男裝", "配件"];
 const Header = ({ className }: Props) => {
   return (
-    <div className={className}>
+    <header className="header">
       <nav className="top-nav">
         <div className="top-nav-bar-box">
           <div className="top-nav-bar-website-logo-link">
@@ -96,7 +96,7 @@ const Header = ({ className }: Props) => {
           </div>
         </div>
       </nav>
-    </div>
+    </header>
   );
 };
 

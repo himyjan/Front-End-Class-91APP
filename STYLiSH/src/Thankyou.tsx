@@ -8,7 +8,7 @@ type Props = {
 
 const Thankyou = ({ className }: Props) => {
   return (
-    <div className="Thankyou">
+    <div className="thankyou">
       <div className="checkout-page-empty-cart-info-box">
         <div className="thankyou-page-order-num-info-box">
           <div className="main-header">

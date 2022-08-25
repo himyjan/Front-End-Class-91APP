@@ -8,7 +8,7 @@ type Props = {
 
 const Home = ({ className }: Props) => {
   return (
-    <div className="Home">
+    <div className="home">
       <div>
         <div className="main-page-product-list-box">
           <div className="product-1">

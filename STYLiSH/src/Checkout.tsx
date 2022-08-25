@@ -8,7 +8,7 @@ type Props = {
 
 const Checkout = ({ className }: Props) => {
   return (
-    <div className="checkout">
+    <div className={className}>
       <div className="checkout-page-checkout-box" id="">
         <div className="" id="">
           <div className="cart-title-box" id="">

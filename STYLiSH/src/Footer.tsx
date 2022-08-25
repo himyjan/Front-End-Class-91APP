@@ -8,7 +8,7 @@ type Props = {
 
 const Footer = ({ className }: Props) => {
   return (
-    <footer className="footer">
+    <footer className={className}>
       <div className="bottom-nav-bar-desktop-box">
         <div className="bottom-nav-bar-desktop-links">
           <div className="bottom-nav-bar-desktop-info-about">

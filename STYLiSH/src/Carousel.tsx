@@ -8,7 +8,7 @@ type Props = {
 
 const Carousel = ({ className }: Props) => {
   return (
-    <div className="carousel">
+    <div className={className}>
       <div className="slides">
         <div className="slides-box">
           <div className="slides-slidesTextMain">

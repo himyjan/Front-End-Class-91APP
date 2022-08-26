@@ -2981,6 +2981,8 @@
     <div class="
           mobile:z-[999]
           mobile:fixed
+          mobile:flex
+          mobile:flex-row
           mobile:justify-center
           mobile:items-center
           mobile:w-full
@@ -3003,8 +3005,6 @@
               flex flex-row
               justify-center
               items-center
-              w-[180px]
-              mx-auto
             " name="bottom-nav-bar-mobile-stick-shopping-cart-box">
           <div name="bottom-nav-bar-mobile-stick-shopping-cart-image-link">
             <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006534620352880671/image.png" alt=""
@@ -3022,7 +3022,7 @@
                 w-[24px]
                 h-[24px]
                 top-[45%]
-                left-[37%]
+                left-[21%]
                 bg-[#8b572a]
                 rounded-[50%]
                 text-[#ffffff] text-[16px]
@@ -3045,20 +3045,18 @@
         </div>
       </div>
       <div class="
-            relative
-            cursor-pointer
-            flex flex-row
+            flex
             justify-center
             items-center
-            w-[180px]
-            mx-auto
-          " name="bottom-nav-bar-mobile-stick-shopping-profile-box">
-        <div name="bottom-nav-bar-mobile-stick-shopping-profile-box-link">
+            w-[50%]
+            h-[24px]
+          " name="bottom-nav-bar-mobile-stick-shopping-profile">
+        <div name="bottom-nav-bar-mobile-stick-shopping-profile-link">
           <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055670895890453/profile.png" alt=""
-            name="bottom-nav-bar-mobile-stick-shopping-profile-box-image" />
+            name="bottom-nav-bar-mobile-stick-shopping-profile-image" />
         </div>
         <div class="text-[16px] text-[#ffffff] leading-[16px] text-center"
-          name="bottom-nav-bar-mobile-stick-shopping-profile-box-text">
+          name="bottom-nav-bar-mobile-stick-shopping-profile-text">
           會員
         </div>
       </div>
@@ -3879,7 +3877,7 @@
       });
     document
       .querySelector(
-        'div[name="bottom-nav-bar-mobile-stick-shopping-profile-box"]'
+        'div[name="bottom-nav-bar-mobile-stick-shopping-profile"]'
       )
       .addEventListener('click', (e) => {
         history.replaceState(null, null, '/profile');

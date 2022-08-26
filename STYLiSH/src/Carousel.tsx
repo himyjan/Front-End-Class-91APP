@@ -37,8 +37,6 @@ const Carousel = ({ className }: Props) => {
   const [campaigns, setCampaigns] = useState({});
   const [sliderIndex, setSliderIndex] = useState(0);
 
-  console.log(campaigns);
-
   const setSliderData: () => Promise<void> = async () => {
     const campaignsJSON = await fetchAPIService.findSlider();
     setCampaigns(Object.values(campaignsJSON));

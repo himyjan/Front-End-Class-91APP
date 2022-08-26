@@ -8,6 +8,16 @@ import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
+import {
+  Link,
+  MakeGenerics,
+  Outlet,
+  ReactLocation,
+  Router,
+  useMatch,
+} from "@tanstack/react-location";
+import { PostType, LocationGenerics } from "./types/reactLocationType";
+
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import GlobalStyle from "./styledComponents/index.style";
 import Header from "./styledComponents/Header.style";
@@ -21,6 +31,9 @@ import Thankyou from "./styledComponents/Thankyou.style";
 // Create a client
 const queryClient = new QueryClient();
 
+// Set up a ReactLocation instance
+const location = new ReactLocation();
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
@@ -32,6 +45,7 @@ root.render(
       <Carousel className="Carousel" />
       <Home className="Home" />
       <Footer className="Footer" />
+      <Outlet />
       <GlobalStyle />
     </React.StrictMode>
     <ReactQueryDevtools initialIsOpen={false} />

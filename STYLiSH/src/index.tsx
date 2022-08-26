@@ -26,7 +26,7 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <QueryClientProvider client={queryClient}>
+  <QueryClientProvider client={queryClient} contextSharing={true}>
     <React.StrictMode>
       <Header className="header" />
       <Carousel className="Carousel" />

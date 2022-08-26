@@ -65,11 +65,15 @@ const CarouselStyledComponents = styled(Carousel)`
   }
 
   .slides-text-describe {
+    cursor: pointer;
+    text-align: left;
     ${mediaQuery("mobile")`
 
+      color: #000000;
     `}
     ${mediaQuery("desktop")`
 
+     color: #070707;
     `}
   }
 

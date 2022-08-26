@@ -34,13 +34,14 @@ import useInterval from "use-interval";
 import fetchAPIService from "./services/fetchAPIService";
 
 const Carousel = ({ className }: Props) => {
-  const [campaigns, setCampaigns] = useState({});
+  const [campaigns, setCampaigns] = useState([]);
   const [sliderIndex, setSliderIndex] = useState(0);
 
   const setSliderData: () => Promise<void> = async () => {
     const campaignsJSON = await fetchAPIService.findSlider();
     setCampaigns(Object.values(campaignsJSON));
   };
+
   useEffect(() => {
     setSliderData();
   }, []);
@@ -57,18 +58,31 @@ const Carousel = ({ className }: Props) => {
         <div className="slides-box">
           <div className="slides-slidesTextMain">
             <div className="slides-text-main">
-              於是
+              {/* 於是 */}
               <br />
-              我也想要給你
+              {/* 我也想要給你 */}
               <br />
-              一個那麼美好的自己。
+              {/* 一個那麼美好的自己。 */}
               <br />
             </div>
-            <div className="slides-text-describe">不朽《與自己和好如初》</div>
+            <div className="slides-text-describe">
+              {/* 不朽《與自己和好如初》 */}
+            </div>
           </div>
         </div>
         <div className="main-page-dot-box">
-          <div
+          {/* {campaigns.map((item: <string|null>, index: <string|null>) => {
+            return (
+              <div
+                data-index={sliderIndex + 1}
+                id={item.id}
+                data-product_id={item.product_id}
+                className="dot"
+                onClick={() => setSliderIndex(index)}
+              ></div>
+            );
+          })} */}
+          {/* <div
             data-index=""
             id=""
             data-product_id=""
@@ -102,7 +116,7 @@ const Carousel = ({ className }: Props) => {
             data-product_id=""
             className="dot
         "
-          ></div>
+          ></div> */}
         </div>
       </div>
     </div>

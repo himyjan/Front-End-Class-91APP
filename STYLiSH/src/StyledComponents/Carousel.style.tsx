@@ -83,6 +83,9 @@ const CarouselStyledComponents = styled(Carousel)`
   }
 
   .dot {
+    &:nth-child(${(props) => props.activeIndex}) {
+      background-color: #8b572a;
+    }
     ${mediaQuery("mobile")`
 
     `}

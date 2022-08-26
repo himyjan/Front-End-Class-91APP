@@ -1,0 +1,1 @@
+typesync .\STYLiSH\package.json

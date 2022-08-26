@@ -1,10 +1,7 @@
 import styled from "styled-components";
-import CheckoutStyledComponents from "./StyledComponents/Checkout.style";
-import mediaQuery from "./StyledComponents/mediaQuery";
-
-type Props = {
-  className: string;
-};
+import CheckoutStyledComponents from "./styledComponents/Checkout.style";
+import mediaQuery from "./styledComponents/mediaQuery";
+import Props from "./types/styleComponentsType";
 
 const Checkout = ({ className }: Props) => {
   return (

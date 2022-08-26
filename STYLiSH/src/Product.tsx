@@ -1,10 +1,7 @@
 import styled from "styled-components";
-import ProductStyledComponents from "./StyledComponents/Product.style";
-import mediaQuery from "./StyledComponents/mediaQuery";
-
-type Props = {
-  className: string;
-};
+import ProductStyledComponents from "./styledComponents/Product.style";
+import mediaQuery from "./styledComponents/mediaQuery";
+import Props from "./types/styleComponentsType";
 
 const Product = ({ className }: Props) => {
   return (

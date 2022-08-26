@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import FooterStyledComponents from "./StyledComponents/Footer.style";
-import mediaQuery from "./StyledComponents/mediaQuery";
+import FooterStyledComponents from "./styledComponents/Footer.style";
+import mediaQuery from "./styledComponents/mediaQuery";
 
 type Props = {
   className: string;

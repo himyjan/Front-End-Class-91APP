@@ -1,10 +1,7 @@
 import styled from "styled-components";
-import ThankyouStyledComponents from "./StyledComponents/Thankyou.style";
-import mediaQuery from "./StyledComponents/mediaQuery";
-
-type Props = {
-  className: string;
-};
+import ThankyouStyledComponents from "./styledComponents/Thankyou.style";
+import mediaQuery from "./styledComponents/mediaQuery";
+import Props from "./types/styleComponentsType";
 
 const Thankyou = ({ className }: Props) => {
   return (

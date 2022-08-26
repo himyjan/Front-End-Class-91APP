@@ -1,12 +1,46 @@
-import styled from "styled-components";
-import CarouselStyledComponents from "./StyledComponents/Carousel.style";
-import mediaQuery from "./StyledComponents/mediaQuery";
+import {
+  useState,
+  useEffect,
+  useContext,
+  useReducer,
+  useRef,
+  useInsertionEffect,
+  useLayoutEffect,
+  useCallback,
+  useMemo,
+  useImperativeHandle,
+  useDebugValue,
+  useTransition,
+  useDeferredValue,
+  useId,
+  useSyncExternalStore,
+} from "react";
 
-type Props = {
-  className: string;
-};
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from "@tanstack/react-query";
+
+import styled from "styled-components";
+import CarouselStyledComponents from "./styledComponents/Carousel.style";
+import mediaQuery from "./styledComponents/mediaQuery";
+import Props from "./types/styleComponentsType";
+import axios from "axios";
+import useInterval from "use-interval";
 
 const Carousel = ({ className }: Props) => {
+  const [campaigns, setCampaigns] = useState();
+  const [sliderIndex, setSliderIndex] = useState(0);
+  console.log(sliderIndex);
+  useEffect(() => {});
+
+  useInterval(() => {
+    setSliderIndex(sliderIndex + 1);
+  }, 5000);
+
   return (
     <div className={className}>
       <div className="slides">

@@ -8,6 +8,8 @@ import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
 import {
   Link,
   MakeGenerics,
@@ -16,8 +18,8 @@ import {
   Router,
   useMatch,
 } from "@tanstack/react-location";
+import { ReactLocationDevtools } from "@tanstack/react-location-devtools";
 
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import GlobalStyle from "./styledComponents/index.style";
 import Header from "./styledComponents/Header.style";
 import Footer from "./styledComponents/Footer.style";

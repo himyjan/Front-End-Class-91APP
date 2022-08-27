@@ -69,3 +69,6 @@ public/.DS_Store
 # vscode
 .vscode/*
 .DS_Store
+
+package-lock.json
+bun.lockb

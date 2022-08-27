@@ -45,7 +45,7 @@ root.render(
       <Carousel className="Carousel" />
       <Home className="Home" />
       <Footer className="Footer" />
-      <Outlet />
+      {/* <Outlet /> */}
       <GlobalStyle />
     </React.StrictMode>
     <ReactQueryDevtools initialIsOpen={false} />

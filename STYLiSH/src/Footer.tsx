@@ -160,15 +160,15 @@ const Footer = ({ className }: Props) => {
             </div>
           </div>
         </div>
-        <div className="bottom-nav-bar-mobile-stick-shopping-profile-box">
-          <div className="bottom-nav-bar-mobile-stick-shopping-profile-box-link">
+        <div className="bottom-nav-bar-mobile-stick-shopping-profile">
+          <div className="bottom-nav-bar-mobile-stick-shopping-profile-link">
             <img
               src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055670895890453/profile.png"
               alt=""
-              className="bottom-nav-bar-mobile-stick-shopping-profile-box-image"
+              className="bottom-nav-bar-mobile-stick-shopping-profile-image"
             />
           </div>
-          <div className="bottom-nav-bar-mobile-stick-shopping-profile-box-text">
+          <div className="bottom-nav-bar-mobile-stick-shopping-profile-text">
             會員
           </div>
         </div>

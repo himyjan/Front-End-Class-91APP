@@ -8,8 +8,7 @@ const CarouselStyledComponents = styled(Carousel)`
     background-position: center;
     background-size: cover;
     background-image: url("https://cdn.discordapp.com/attachments/1001702231785099304/1006055626872475758/image.png");
-    transition-duration: 500ms;
-    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    /* transition: background-image 0.5s ease-out; */
     ${mediaQuery("mobile")`
         height: 185px;
         margin-top: 102px;

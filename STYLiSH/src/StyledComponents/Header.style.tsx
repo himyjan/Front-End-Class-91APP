@@ -37,8 +37,8 @@ const HeaderStyledComponents = styled(Header)`
   .top-nav-bar-website-logo {
     cursor: pointer;
     ${mediaQuery("mobile")`
-        width: 129px;
-        height: 24px;
+      width: 129px;
+      height: 24px;
     `}
     ${mediaQuery("desktop")`
       width: 258px;
@@ -58,13 +58,14 @@ const HeaderStyledComponents = styled(Header)`
       margin-left: 95px;
       font-size: 20px;
       color: #3f3a3a;
-      &:hover {
-        color: #8b572a;
-      }
-      letter-spacing：30px;
+      letter-spacing: 30px;
       line-height: 28px;
       text-align: center;
       border-right: 1px solid #3f3a3a;
+
+      &:hover {
+        color: #8b572a;
+      }
     `}
   }
 
@@ -79,13 +80,14 @@ const HeaderStyledComponents = styled(Header)`
       margin-left: 36px;
       font-size: 20px;
       color: #3f3a3a;
-      &:hover {
-        color: #8b572a;
-      }
-      letter-spacing：30px;
+      letter-spacing: 30px;
       line-height: 28px;
       text-align: center;
       border-right: 1px solid #3f3a3a;
+
+      &:hover {
+        color: #8b572a;
+      }
     `}
   }
 
@@ -97,16 +99,17 @@ const HeaderStyledComponents = styled(Header)`
       cursor: pointer;
       display: block;
       margin-top: 15px;
-      margin-left: 95px;
+      margin-left: 36px;
       font-size: 20px;
       color: #3f3a3a;
-      &:hover {
-        color: #8b572a;
-      }
-      letter-spacing：30px;
+      letter-spacing: 30px;
       line-height: 28px;
       text-align: center;
       border-right: 0px solid #3f3a3a;
+
+      &:hover {
+        color: #8b572a;
+      }
     `}
   }
 
@@ -173,6 +176,12 @@ const HeaderStyledComponents = styled(Header)`
     .top-nav-bar-desktop-shopping-cart-notification-animation {
       display: inline-flex;
       position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      opacity: 0.75;
+      background: #8b572a;
+
       animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 
       @keyframes ping {
@@ -181,11 +190,6 @@ const HeaderStyledComponents = styled(Header)`
           opacity: 0;
         }
       };
-      width: 100%;
-      height: 100%;
-      border-radius: 100%;
-      opacity: 0.75;
-      background: #8b572a;
     }
 
     .top-nav-bar-desktop-profile {
@@ -265,6 +269,7 @@ const HeaderStyledComponents = styled(Header)`
       `}
       ${mediaQuery("desktop")`
         display: none;
+        border: hidden;
       `}
     }
 
@@ -285,6 +290,7 @@ const HeaderStyledComponents = styled(Header)`
       `}
       ${mediaQuery("desktop")`
         display: none;
+        border: hidden;
       `}
     }
 
@@ -305,6 +311,7 @@ const HeaderStyledComponents = styled(Header)`
       `}
       ${mediaQuery("desktop")`
         display: none;
+        border: hidden;
       `}
     }
   }

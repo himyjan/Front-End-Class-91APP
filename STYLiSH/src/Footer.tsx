@@ -1,23 +1,20 @@
 import styled from "styled-components";
 import FooterStyledComponents from "./styledComponents/Footer.style";
 import mediaQuery from "./styledComponents/mediaQuery";
-
-type Props = {
-  className: string;
-};
+import Props from "./types/styleComponentsType";
 
 const Footer = ({ className }: Props) => {
   return (
     <footer className={className}>
       <div className="bottom-nav-bar-desktop-box">
         <div className="bottom-nav-bar-desktop-links">
-          <div className="bottom-nav-bar-desktop-info-about">
-            <div className="bottom-nav-bar-desktop-info-about-link">
+          <div className="bottom-nav-bar-desktop-about">
+            <div className="bottom-nav-bar-desktop-about-link">
               關於 STYLiSH
             </div>
           </div>
-          <div className="bottom-nav-bar-desktop-info-service-terms">
-            <div className="bottom-nav-bar-desktop-info-service-terms-link">
+          <div className="bottom-nav-bar-desktop-service-terms">
+            <div className="bottom-nav-bar-desktop-service-terms-link">
               服務條款
             </div>
           </div>
@@ -75,13 +72,13 @@ const Footer = ({ className }: Props) => {
         <div className="bottom-nav-bar-mobile-box">
           <div className="bottom-nav-bar-mobile-contactlist">
             <div className="bottom-nav-bar-mobile-links-part1">
-              <div className="bottom-nav-bar-mobile-info-about">
-                <div className="bottom-nav-bar-mobile-info-about-link">
+              <div className="bottom-nav-bar-mobile-about">
+                <div className="bottom-nav-bar-mobile-about-link">
                   關於 STYLiSH
                 </div>
               </div>
-              <div className="bottom-nav-bar-mobile-info-service-terms">
-                <div className="bottom-nav-bar-mobile-info-service-terms-link">
+              <div className="bottom-nav-bar-mobile-service-terms">
+                <div className="bottom-nav-bar-mobile-service-terms-link">
                   服務條款
                 </div>
               </div>

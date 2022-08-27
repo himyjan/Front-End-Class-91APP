@@ -2847,8 +2847,8 @@
               text-[16px] text-[#f5f5f5] text-center
               leading-[22px]
               border-solid border-r-[1px] border-[#828282]
-            " name="bottom-nav-bar-desktop-info-about">
-          <div name="bottom-nav-bar-desktop-info-about-link">
+            " name="bottom-nav-bar-desktop-about">
+          <div name="bottom-nav-bar-desktop-about-link">
             關於 STYLiSH
           </div>
         </div>
@@ -2859,8 +2859,8 @@
               text-[16px] text-[#f5f5f5] text-center
               leading-[22px]
               border-solid border-r-[1px] border-[#828282]
-            " name="bottom-nav-bar-desktop-info-service-terms">
-          <div name="bottom-nav-bar-desktop-info-service-terms-link">
+            " name="bottom-nav-bar-desktop-service-terms">
+          <div name="bottom-nav-bar-desktop-service-terms-link">
             服務條款
           </div>
         </div>
@@ -2929,14 +2929,14 @@
       <div class="flex flex-col items-center max-w-[360px] mx-auto pt-[23px]" name="bottom-nav-bar-mobile-box">
         <div class="flex justify-center items-end w-full" name="bottom-nav-bar-mobile-contactlist">
           <div class="ml-[40px] mr-[36px]" name="bottom-nav-bar-mobile-links-part1">
-            <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]" name="bottom-nav-bar-mobile-info-about">
-              <div name="bottom-nav-bar-mobile-info-about-link">
+            <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]" name="bottom-nav-bar-mobile-about">
+              <div name="bottom-nav-bar-mobile-about-link">
                 關於 STYLiSH
               </div>
             </div>
             <div class="text-[14px] text-[#D3D3D3] leading-[20px] mb-[8px]"
-              name="bottom-nav-bar-mobile-info-service-terms">
-              <div name="bottom-nav-bar-mobile-info-service-terms-link">
+              name="bottom-nav-bar-mobile-service-terms">
+              <div name="bottom-nav-bar-mobile-service-terms-link">
                 服務條款
               </div>
             </div>
@@ -3899,14 +3899,14 @@
         changePage('profile-page');
       });
     document
-      .querySelector('div[name="bottom-nav-bar-desktop-info-about"]')
+      .querySelector('div[name="bottom-nav-bar-desktop-about"]')
       .addEventListener('click', (e) => {
         history.replaceState(null, null, '/aboutus');
         showCategoryNavBarTextColorBrown('all');
         changePage('aboutUs-page');
       });
     document
-      .querySelector('div[name="bottom-nav-bar-mobile-info-about"]')
+      .querySelector('div[name="bottom-nav-bar-mobile-about"]')
       .addEventListener('click', (e) => {
         history.replaceState(null, null, '/aboutus');
         showCategoryNavBarTextColorBrown('all');

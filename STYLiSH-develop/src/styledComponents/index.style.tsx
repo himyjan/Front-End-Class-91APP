@@ -1,3 +1,5 @@
+import styled from "styled-components";
+import mediaQuery from "./mediaQuery";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -94,6 +96,7 @@ meter {
 *, body {
   margin: 0;
   padding: 0;
+  @import url('https://fonts.googleapis.com/css?family=Noto Sans TC');
   font-family: 'Noto Sans TC';
   font-style: normal;
 }

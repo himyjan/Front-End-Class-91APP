@@ -1,5 +1,9 @@
+import styled from "styled-components";
+import HeaderStyledComponents from "./styledComponents/Header.style";
+import mediaQuery from "./styledComponents/mediaQuery";
 import Props from "./types/styleComponentsType";
 
+const navList = ["女裝", "男裝", "配件"];
 const Header = ({ className }: Props) => {
   return (
     <header className={className}>

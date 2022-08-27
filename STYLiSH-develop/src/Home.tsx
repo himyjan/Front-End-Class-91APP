@@ -1,3 +1,6 @@
+import styled from "styled-components";
+import HomeStyledComponents from "./styledComponents/Home.style";
+import mediaQuery from "./styledComponents/mediaQuery";
 import Props from "./types/styleComponentsType";
 
 const Home = ({ className }: Props) => {

@@ -1,3 +1,6 @@
+import styled from "styled-components";
+import FooterStyledComponents from "./styledComponents/Footer.style";
+import mediaQuery from "./styledComponents/mediaQuery";
 import Props from "./types/styleComponentsType";
 
 const Footer = ({ className }: Props) => {

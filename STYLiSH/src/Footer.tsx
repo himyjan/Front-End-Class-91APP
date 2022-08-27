@@ -6,8 +6,8 @@ import Props from "./types/styleComponentsType";
 const Footer = ({ className }: Props) => {
   return (
     <footer className={className}>
-      <div className="bottom-nav-bar-desktop-box">
-        <div className="bottom-nav-bar-desktop-links">
+      <div className="bottom-nav-bar-desktop">
+        <div className="bottom-nav-bar-desktop-box">
           <div className="bottom-nav-bar-desktop-about">
             <div className="bottom-nav-bar-desktop-about-link">
               關於 STYLiSH
@@ -35,7 +35,7 @@ const Footer = ({ className }: Props) => {
           </div>
         </div>
         <div className="bottom-nav-bar-desktop-social-media-links">
-          <div>
+          <div className="bottom-nav-bar-desktop-line-image-box">
             <div className="bottom-nav-bar-desktop-line-image-link">
               <img
                 src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279856017418/line.png"
@@ -44,7 +44,7 @@ const Footer = ({ className }: Props) => {
               />
             </div>
           </div>
-          <div>
+          <div className="bottom-nav-bar-desktop-twitter-image-box">
             <div className="bottom-nav-bar-desktop-twitter-image-link">
               <img
                 src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279512080465/twitter.png"
@@ -53,7 +53,7 @@ const Footer = ({ className }: Props) => {
               />
             </div>
           </div>
-          <div>
+          <div className="bottom-nav-bar-desktop-facebook-image-box">
             <div className="bottom-nav-bar-desktop-facebook-image-link">
               <img
                 src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138280220917851/facebook.png"
@@ -68,7 +68,7 @@ const Footer = ({ className }: Props) => {
         </div>
       </div>
 
-      <div className="bottom-nav-bar-mobile-box-box">
+      <div className="bottom-nav-bar-mobile">
         <div className="bottom-nav-bar-mobile-box">
           <div className="bottom-nav-bar-mobile-contactlist">
             <div className="bottom-nav-bar-mobile-links-part1">
@@ -101,7 +101,7 @@ const Footer = ({ className }: Props) => {
               </div>
             </div>
             <div className="bottom-nav-bar-mobile-social-media-links">
-              <div>
+              <div className="bottom-nav-bar-mobile-line-image-box">
                 <div className="bottom-nav-bar-mobile-line-image-link">
                   <img
                     src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279856017418/line.png"
@@ -110,7 +110,7 @@ const Footer = ({ className }: Props) => {
                   />
                 </div>
               </div>
-              <div>
+              <div className="bottom-nav-bar-mobile-twitter-image-box">
                 <div className="bottom-nav-bar-mobile-twitter-image-link">
                   <img
                     src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279512080465/twitter.png"
@@ -119,7 +119,7 @@ const Footer = ({ className }: Props) => {
                   />
                 </div>
               </div>
-              <div>
+              <div className="bottom-nav-bar-mobile-facebook-image-box">
                 <div className="bottom-nav-bar-mobile-facebook-image-link">
                   <img
                     src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138280220917851/facebook.png"
@@ -138,7 +138,7 @@ const Footer = ({ className }: Props) => {
 
       <div className="bottom-nav-bar-mobile-stick">
         <div className="bottom-nav-bar-mobile-stick-cart">
-          <div className="bottom-nav-bar-mobile-stick-shopping-cart-box">
+          <div className="bottom-nav-bar-mobile-stick-shopping-cart">
             <div className="bottom-nav-bar-mobile-stick-shopping-cart-image-link">
               <img
                 src="https://cdn.discordapp.com/attachments/1001702231785099304/1006534620352880671/image.png"

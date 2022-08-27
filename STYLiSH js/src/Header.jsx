@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {} from "./StyledComponents/Header.style";
+import {} from "./styledComponents/Header.style";
 
 function Header() {
   return <div className="Header"></div>;

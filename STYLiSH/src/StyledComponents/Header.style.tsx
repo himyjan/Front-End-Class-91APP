@@ -8,7 +8,7 @@ const HeaderStyledComponents = styled(Header)`
     margin: 0;
     position: fixed;
     top: 0;
-    z-index: 999;
+    z-index: 10;
     width: 100%;
     ${mediaQuery("mobile")`
         height: 102px;
@@ -209,29 +209,43 @@ const HeaderStyledComponents = styled(Header)`
       ${mediaQuery("mobile")`
         display: block;
         position: fixed;
-        position: absolute;
-        right: 1.25rem;
-        z-index: 0;
+        right: 16px;
+        z-index: 20;
         background-position: right;
         background-repeat: no-repeat;
-        transition-property: all;
-        transition-duration: 700ms;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        border-style: none;
+        border-radius: 20px;
+        border: 0px solid #000000;
         width: 44px;
         height: 44px;
+        margin-left: auto;
         background: url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055671386603581/search.png');
         color: 20px;
-        color: #8B572A;
+        color: #8B572A00;
 
         &:hover {
           color: #8B572A;
-          width: calc(100% - 20px);
-          height: 44px;
+          width: calc(100% - 32px);
           padding-left: 20px;
-          background: url('https://cdn.discordapp.com/attachments/1001702231785099304/1006055671386603581/search.png');
+          border-radius: 20px;
+          border: 1px solid #000000;
           background-position: right;
           background-repeat: no-repeat;
+          transition-property: all;
+          transition-duration: 700ms;
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        &:input:focus {
+          color: #8B572A;
+          width: calc(100% - 32px);
+          padding-left: 20px;
+          border-radius: 20px;
+          border: 1px solid #000000;
+          background-position: right;
+          background-repeat: no-repeat;
+          transition-property: all;
+          transition-duration: 700ms;
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         }
       `}
       ${mediaQuery("desktop")`

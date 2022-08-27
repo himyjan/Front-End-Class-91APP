@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import CarouselStyledComponents from "./StyledComponents/Carousel.style";
-import mediaQuery from "./StyledComponents/mediaQuery";
+import CarouselStyledComponents from "./styledComponents/Carousel.style";
+import mediaQuery from "./styledComponents/mediaQuery";
 
 type Props = {
   className: string;

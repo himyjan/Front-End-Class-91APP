@@ -16,7 +16,6 @@ import {
   Router,
   useMatch,
 } from "@tanstack/react-location";
-import { PostType, LocationGenerics } from "./types/reactLocationType";
 
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import GlobalStyle from "./styledComponents/index.style";

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {} from "./StyledComponents/Thankyou.style";
+import {} from "./styledComponents/Thankyou.style";
 
 function Thankyou() {
   return <div className="Thankyou"></div>;

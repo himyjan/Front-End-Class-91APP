@@ -12,11 +12,21 @@ const axiosClient = axios.create({
   },
 });
 
+interface Color {
+  code: string;
+  name: string;
+}
+
 export interface ApiData {
   id: number;
   product_id: number;
   picture: string;
   story: string;
+  category: string;
+  title: string;
+  price: number;
+  main_image: string;
+  colors: Color[];
 }
 
 // // fetch version

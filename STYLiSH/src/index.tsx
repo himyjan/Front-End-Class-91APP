@@ -67,7 +67,7 @@ root.render(
         <Footer className="Footer" />
         <GlobalStyle />
       </React.StrictMode>
-      <ReactLocationDevtools position="bottom-right" />
+      <ReactLocationDevtools initialIsOpen={false} position="bottom-right" />
     </Router>
     <ReactQueryDevtools initialIsOpen={false} />
   </QueryClientProvider>

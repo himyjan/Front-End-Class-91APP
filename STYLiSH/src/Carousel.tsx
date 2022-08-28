@@ -64,18 +64,20 @@ const Carousel = ({ className }: Props) => {
           </div>
         </div>
         <div className="main-page-dot-box">
-          {sliderData.map((item, index) => {
-            return (
-              <Dot
-                data-index={index}
-                data-id={item.id}
-                data-product_id={item.product_id}
-                color={sliderIndex == index ? "#8b572a" : "#ffffff40"}
-                className="dot"
-                onClick={() => setSliderIndex(index)}
-              ></Dot>
-            );
-          })}
+          {sliderData.length > 0
+            ? sliderData.map((item, index) => {
+                return (
+                  <Dot
+                    data-index={index}
+                    data-id={item.id}
+                    data-product_id={item.product_id}
+                    color={sliderIndex == index ? "#8b572a" : "#ffffff40"}
+                    className="dot"
+                    onClick={() => setSliderIndex(index)}
+                  ></Dot>
+                );
+              })
+            : null}
           {/* <div
             data-index=""
             id=""

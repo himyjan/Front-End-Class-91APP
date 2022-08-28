@@ -35,12 +35,10 @@ const Carousel = ({ className }: Props) => {
             ? (sliderData[sliderIndex] as any).picture
             : null
         }
+        onMouseEnter={() => setPause(true)}
+        onMouseLeave={() => setPause(false)}
       >
-        <div
-          className="slides-box"
-          onMouseEnter={() => setPause(true)}
-          onMouseLeave={() => setPause(false)}
-        >
+        <div className="slides-box">
           <div className="slides-slidesTextMain">
             <div className="slides-text-main">
               {/* 於是 */}
@@ -77,7 +75,7 @@ const Carousel = ({ className }: Props) => {
                 data-index={index}
                 id={(item as any).id}
                 data-product_id={parseInt((item as any).product_id)}
-                color= {sliderIndex==index?"#8b572a":"#ffffff40"}
+                color={sliderIndex == index ? "#8b572a" : "#ffffff40"}
                 className="dot"
                 onClick={() => setSliderIndex(index)}
               ></Dot>

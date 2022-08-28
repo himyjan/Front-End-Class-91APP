@@ -20,9 +20,11 @@ const Carousel = ({ className }: Props) => {
 
   useInterval(
     () => {
-      sliderIndex == sliderData.length - 1
-        ? setSliderIndex(0)
-        : setSliderIndex(sliderIndex + 1);
+      sliderData.length > 0
+        ? sliderIndex == sliderData.length - 1
+          ? setSliderIndex(0)
+          : setSliderIndex(sliderIndex + 1)
+        : null;
     },
     pause ? null : 5000
   );

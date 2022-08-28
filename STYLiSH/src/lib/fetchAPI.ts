@@ -13,7 +13,10 @@ const axiosClient = axios.create({
 });
 
 export interface ApiData {
-  data: object;
+  id: number;
+  product_id: number;
+  picture: string;
+  story: string;
 }
 
 // // fetch version

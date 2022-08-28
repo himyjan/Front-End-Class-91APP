@@ -1,5 +1,5 @@
 import Props from "./types/styleComponentsType";
-import { ApiData, getSliderData } from "./lib/fetchAPI";
+import { getSliderData } from "./lib/fetchAPI";
 import { useInterval } from "usehooks-ts";
 import { useState, useEffect } from "react";
 import { Slides, Dot } from "./styledComponents/Carousel.style";
@@ -10,10 +10,9 @@ const Carousel = ({ className }: Props) => {
   const sliderData = getSliderData();
 
   useEffect(() => {
-    const sliderDataCopy: ApiData[] = [...sliderData];
-    sliderDataCopy.forEach((slider) => {
+    sliderData.forEach((slider) => {
       const img = new Image();
-      img.src = (slider as any).picture;
+      img.src = slider.picture;
     });
   }, [sliderData]);
 
@@ -30,11 +29,7 @@ const Carousel = ({ className }: Props) => {
     <div className={className}>
       <Slides
         className="slides"
-        picture={
-          sliderData.length > 0
-            ? (sliderData[sliderIndex] as any).picture
-            : null
-        }
+        picture={sliderData.length > 0 ? sliderData[sliderIndex].picture : ""}
         onMouseEnter={() => setPause(true)}
         onMouseLeave={() => setPause(false)}
       >
@@ -43,7 +38,7 @@ const Carousel = ({ className }: Props) => {
             <div className="slides-text-main">
               {/* 於是 */}
               {sliderData.length > 0
-                ? (sliderData[sliderIndex] as any).story
+                ? sliderData[sliderIndex].story
                     .split("。")[0]
                     .replaceAll("\r\n", "\n")
                 : null}
@@ -56,12 +51,12 @@ const Carousel = ({ className }: Props) => {
             <div className="slides-text-describe">
               {/* 不朽《與自己和好如初》 */}
               {sliderData.length > 0
-                ? (sliderData[sliderIndex] as any).story
+                ? sliderData[sliderIndex].story
                     .split("。")[1]
                     .replaceAll("<br>", "")
                 : null}
               {/* {Object.keys(campaigns).length > 0
-                ? (campaigns[sliderIndex] as any).story
+                ? campaigns[sliderIndex].story
                     .split("。")[1]
                     .replaceAll("<br>", "")
                 : null} */}
@@ -73,8 +68,8 @@ const Carousel = ({ className }: Props) => {
             return (
               <Dot
                 data-index={index}
-                id={(item as any).id}
-                data-product_id={parseInt((item as any).product_id)}
+                data-id={item.id}
+                data-product_id={item.product_id}
                 color={sliderIndex == index ? "#8b572a" : "#ffffff40"}
                 className="dot"
                 onClick={() => setSliderIndex(index)}

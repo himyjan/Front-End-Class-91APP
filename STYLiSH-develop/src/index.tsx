@@ -54,7 +54,7 @@ root.render(
       {/* <Outlet /> */}
       <GlobalStyle />
     </React.StrictMode>
-    {/* <ReactLocationDevtools position="bottom-right" /> */}
+    <ReactLocationDevtools position="bottom-right" />
     <ReactQueryDevtools initialIsOpen={false} />
   </QueryClientProvider>
 );

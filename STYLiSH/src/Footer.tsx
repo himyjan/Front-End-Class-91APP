@@ -1,8 +1,16 @@
 import Props from "./types/styleComponentsType";
+import { useRef } from "react";
+import { useIntersectionObserver } from "usehooks-ts";
 
 const Footer = ({ className }: Props) => {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const entry = useIntersectionObserver(ref, {});
+  const isVisible = !!entry?.isIntersecting;
+
+  console.log(`Render Section`, { isVisible });
+
   return (
-    <footer className={className}>
+    <footer className={className} ref={ref}>
       <div className="bottom-nav-bar-desktop">
         <div className="bottom-nav-bar-desktop-box">
           <div className="bottom-nav-bar-desktop-about">

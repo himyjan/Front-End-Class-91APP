@@ -13,6 +13,7 @@ const axiosClient = axios.create({
 export interface ApiData {
   data: object;
 }
+
 // // fetch version
 // export const findSliderFetch = async (): Promise<ApiData[]> =>
 //   fetch(`${BASE_URL}/marketing/campaigns`)

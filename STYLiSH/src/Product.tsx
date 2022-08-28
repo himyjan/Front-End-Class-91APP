@@ -1,12 +1,35 @@
 import Props from "./types/styleComponentsType";
+import Viewer from "react-viewer";
+import { useState } from "react";
 
 const Product = ({ className }: Props) => {
+  const [visibleMain, setVisibleMain] = useState(false);
+  const [visible, setVisible] = useState(false);
+
   return (
     <div className={className}>
       <div className="product-page-product-detail-box" id="" data-product_id="">
         <div className="" id="">
           <div className="product-main-image-viewer-box" id="">
-            <div className="product-main-image-viewer" id="">
+            <div
+              className="product-main-image-viewer"
+              id=""
+              onClick={() => {
+                setVisibleMain(true);
+              }}
+            >
+              <Viewer
+                visible={visibleMain}
+                onClose={() => {
+                  setVisibleMain(false);
+                }}
+                images={[
+                  {
+                    src: "https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png",
+                    alt: "",
+                  },
+                ]}
+              />
               <img
                 src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png"
                 alt=""
@@ -87,7 +110,29 @@ const Product = ({ className }: Props) => {
             lighter for those who prefer their summer style extra-breezy.
           </div>
           <div className="product-image-viewer-box" id="">
-            <div className="product-image-viewer" id="">
+            <div
+              className="product-image-viewer"
+              id=""
+              onClick={() => {
+                setVisible(true);
+              }}
+            >
+              <Viewer
+                visible={visible}
+                onClose={() => {
+                  setVisible(false);
+                }}
+                images={[
+                  {
+                    src: "https://cdn.discordapp.com/attachments/1001702231785099304/1007251147632947271/0.png",
+                    alt: "",
+                  },
+                  {
+                    src: "https://cdn.discordapp.com/attachments/1001702231785099304/1007251147196747866/1.png",
+                    alt: "",
+                  },
+                ]}
+              />
               <img
                 src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251147632947271/0.png"
                 alt=""

@@ -10,17 +10,21 @@ const Carousel = ({ className }: Props) => {
   const sliderData = getSliderData();
 
   useEffect(() => {
-    sliderData.forEach((slider) => {
-      const img = new Image();
-      img.src = slider.picture;
-    });
+    sliderData.length > 0
+      ? sliderData.forEach((slider) => {
+          const img = new Image();
+          img.src = slider.picture;
+        })
+      : null;
   }, [sliderData]);
 
   useInterval(
     () => {
-      sliderIndex == sliderData.length - 1
-        ? setSliderIndex(0)
-        : setSliderIndex(sliderIndex + 1);
+      sliderData.length > 0
+        ? sliderIndex == sliderData.length - 1
+          ? setSliderIndex(0)
+          : setSliderIndex(sliderIndex + 1)
+        : null;
     },
     pause ? null : 5000
   );

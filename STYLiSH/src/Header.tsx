@@ -1,9 +1,5 @@
-import styled from "styled-components";
-import HeaderStyledComponents from "./styledComponents/Header.style";
-import mediaQuery from "./styledComponents/mediaQuery";
 import Props from "./types/styleComponentsType";
 
-const navList = ["女裝", "男裝", "配件"];
 const Header = ({ className }: Props) => {
   return (
     <header className={className}>
@@ -73,19 +69,11 @@ const Header = ({ className }: Props) => {
               女裝
             </div>
           </div>
-          <img
-            src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055671801860126/split.png"
-            alt=""
-          />
           <div className="top-nav-bar-below-mobile-men-dresses">
             <div className="top-nav-bar-below-mobile-men-dresses-link">
               男裝
             </div>
           </div>
-          <img
-            src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055671801860126/split.png"
-            alt=""
-          />
           <div className="top-nav-bar-below-mobile-accessories">
             <div className="top-nav-bar-below-mobile-accessories-link">
               配件

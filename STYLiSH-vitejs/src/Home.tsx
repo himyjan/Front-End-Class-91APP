@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import HomeStyledComponents from "./StyledComponents/Home.style";
-import mediaQuery from "./StyledComponents/mediaQuery";
+import HomeStyledComponents from "./styledComponents/Home.style";
+import mediaQuery from "./styledComponents/mediaQuery";
 
 type Props = {
   className: string;

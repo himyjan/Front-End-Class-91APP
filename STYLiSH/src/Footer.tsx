@@ -1,23 +1,25 @@
-import styled from "styled-components";
-import FooterStyledComponents from "./styledComponents/Footer.style";
-import mediaQuery from "./styledComponents/mediaQuery";
-
-type Props = {
-  className: string;
-};
+import Props from "./types/styleComponentsType";
+import { useRef } from "react";
+import { useIntersectionObserver } from "usehooks-ts";
 
 const Footer = ({ className }: Props) => {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const entry = useIntersectionObserver(ref, {});
+  const isVisible = !!entry?.isIntersecting;
+
+  console.log(`Render Section`, { isVisible });
+
   return (
-    <footer className={className}>
-      <div className="bottom-nav-bar-desktop-box">
-        <div className="bottom-nav-bar-desktop-links">
-          <div className="bottom-nav-bar-desktop-info-about">
-            <div className="bottom-nav-bar-desktop-info-about-link">
+    <footer className={className} ref={ref}>
+      <div className="bottom-nav-bar-desktop">
+        <div className="bottom-nav-bar-desktop-box">
+          <div className="bottom-nav-bar-desktop-about">
+            <div className="bottom-nav-bar-desktop-about-link">
               關於 STYLiSH
             </div>
           </div>
-          <div className="bottom-nav-bar-desktop-info-service-terms">
-            <div className="bottom-nav-bar-desktop-info-service-terms-link">
+          <div className="bottom-nav-bar-desktop-service-terms">
+            <div className="bottom-nav-bar-desktop-service-terms-link">
               服務條款
             </div>
           </div>
@@ -38,7 +40,7 @@ const Footer = ({ className }: Props) => {
           </div>
         </div>
         <div className="bottom-nav-bar-desktop-social-media-links">
-          <div>
+          <div className="bottom-nav-bar-desktop-line-image-box">
             <div className="bottom-nav-bar-desktop-line-image-link">
               <img
                 src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279856017418/line.png"
@@ -47,7 +49,7 @@ const Footer = ({ className }: Props) => {
               />
             </div>
           </div>
-          <div>
+          <div className="bottom-nav-bar-desktop-twitter-image-box">
             <div className="bottom-nav-bar-desktop-twitter-image-link">
               <img
                 src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279512080465/twitter.png"
@@ -56,7 +58,7 @@ const Footer = ({ className }: Props) => {
               />
             </div>
           </div>
-          <div>
+          <div className="bottom-nav-bar-desktop-facebook-image-box">
             <div className="bottom-nav-bar-desktop-facebook-image-link">
               <img
                 src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138280220917851/facebook.png"
@@ -71,17 +73,17 @@ const Footer = ({ className }: Props) => {
         </div>
       </div>
 
-      <div className="bottom-nav-bar-mobile-box-box">
+      <div className="bottom-nav-bar-mobile">
         <div className="bottom-nav-bar-mobile-box">
           <div className="bottom-nav-bar-mobile-contactlist">
             <div className="bottom-nav-bar-mobile-links-part1">
-              <div className="bottom-nav-bar-mobile-info-about">
-                <div className="bottom-nav-bar-mobile-info-about-link">
+              <div className="bottom-nav-bar-mobile-about">
+                <div className="bottom-nav-bar-mobile-about-link">
                   關於 STYLiSH
                 </div>
               </div>
-              <div className="bottom-nav-bar-mobile-info-service-terms">
-                <div className="bottom-nav-bar-mobile-info-service-terms-link">
+              <div className="bottom-nav-bar-mobile-service-terms">
+                <div className="bottom-nav-bar-mobile-service-terms-link">
                   服務條款
                 </div>
               </div>
@@ -104,7 +106,7 @@ const Footer = ({ className }: Props) => {
               </div>
             </div>
             <div className="bottom-nav-bar-mobile-social-media-links">
-              <div>
+              <div className="bottom-nav-bar-mobile-line-image-box">
                 <div className="bottom-nav-bar-mobile-line-image-link">
                   <img
                     src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279856017418/line.png"
@@ -113,7 +115,7 @@ const Footer = ({ className }: Props) => {
                   />
                 </div>
               </div>
-              <div>
+              <div className="bottom-nav-bar-mobile-twitter-image-box">
                 <div className="bottom-nav-bar-mobile-twitter-image-link">
                   <img
                     src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138279512080465/twitter.png"
@@ -122,7 +124,7 @@ const Footer = ({ className }: Props) => {
                   />
                 </div>
               </div>
-              <div>
+              <div className="bottom-nav-bar-mobile-facebook-image-box">
                 <div className="bottom-nav-bar-mobile-facebook-image-link">
                   <img
                     src="https://cdn.discordapp.com/attachments/1001702231785099304/1007138280220917851/facebook.png"
@@ -141,7 +143,7 @@ const Footer = ({ className }: Props) => {
 
       <div className="bottom-nav-bar-mobile-stick">
         <div className="bottom-nav-bar-mobile-stick-cart">
-          <div className="bottom-nav-bar-mobile-stick-shopping-cart-box">
+          <div className="bottom-nav-bar-mobile-stick-shopping-cart">
             <div className="bottom-nav-bar-mobile-stick-shopping-cart-image-link">
               <img
                 src="https://cdn.discordapp.com/attachments/1001702231785099304/1006534620352880671/image.png"
@@ -160,15 +162,15 @@ const Footer = ({ className }: Props) => {
             </div>
           </div>
         </div>
-        <div className="bottom-nav-bar-mobile-stick-shopping-profile-box">
-          <div className="bottom-nav-bar-mobile-stick-shopping-profile-box-link">
+        <div className="bottom-nav-bar-mobile-stick-shopping-profile">
+          <div className="bottom-nav-bar-mobile-stick-shopping-profile-link">
             <img
               src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055670895890453/profile.png"
               alt=""
-              className="bottom-nav-bar-mobile-stick-shopping-profile-box-image"
+              className="bottom-nav-bar-mobile-stick-shopping-profile-image"
             />
           </div>
-          <div className="bottom-nav-bar-mobile-stick-shopping-profile-box-text">
+          <div className="bottom-nav-bar-mobile-stick-shopping-profile-text">
             會員
           </div>
         </div>

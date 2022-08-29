@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {} from "./StyledComponents/Home.style";
+import {} from "./styledComponents/Home.style";
 
 function Home() {
   return <div className="Home"></div>;

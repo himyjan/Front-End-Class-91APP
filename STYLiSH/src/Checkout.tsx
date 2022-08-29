@@ -1,6 +1,3 @@
-import styled from "styled-components";
-import CheckoutStyledComponents from "./styledComponents/Checkout.style";
-import mediaQuery from "./styledComponents/mediaQuery";
 import Props from "./types/styleComponentsType";
 
 const Checkout = ({ className }: Props) => {
@@ -201,7 +198,7 @@ const Checkout = ({ className }: Props) => {
 
           <div className="" id="">
             <div className="" id="">
-              <div id=" cart-title">收件人姓名</div>
+              <div id="cart-title">收件人姓名</div>
               <input
                 type="text"
                 placeholder="收件人姓名"
@@ -211,11 +208,11 @@ const Checkout = ({ className }: Props) => {
                 id=""
               />
             </div>
-            <div id=" cart-title">
+            <div id="cart-title">
               務必填寫完整收件人姓名，避免包裹無法順利簽收
             </div>
             <div className="" id="">
-              <div id=" cart-title">手機</div>
+              <div id="cart-title">手機</div>
               <input
                 type="text"
                 placeholder="手機"
@@ -226,7 +223,7 @@ const Checkout = ({ className }: Props) => {
               />
             </div>
             <div className="" id="">
-              <div id=" cart-title">地址</div>
+              <div id="cart-title">地址</div>
               <input
                 type="text"
                 placeholder="地址"
@@ -237,7 +234,7 @@ const Checkout = ({ className }: Props) => {
               />
             </div>
             <div className="" id="">
-              <div id=" cart-title">Email</div>
+              <div id="cart-title">Email</div>
               <input
                 type="text"
                 placeholder="Email"
@@ -248,7 +245,7 @@ const Checkout = ({ className }: Props) => {
               />
             </div>
             <div className="" id="">
-              <div id=" cart-title">配送時間</div>
+              <div id="cart-title">配送時間</div>
               <div className="checkout-page-receive-time-input" id="">
                 <input
                   type="radio"
@@ -284,7 +281,7 @@ const Checkout = ({ className }: Props) => {
           <div id="split-border"></div>
           <div className="" id="">
             <div className="checkout-page-tap-pay-card-number-box" id="">
-              <div id=" cart-title">信用卡號碼</div>
+              <div id="cart-title">信用卡號碼</div>
               <input
                 type="text"
                 placeholder="**** **** **** ****"

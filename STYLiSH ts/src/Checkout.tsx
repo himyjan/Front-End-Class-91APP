@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {} from "./StyledComponents/Checkout.style";
+import {} from "./styledComponents/Checkout.style";
 
 function Checkout() {
   return <div className="Checkout"></div>;

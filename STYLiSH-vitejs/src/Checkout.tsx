@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import CheckoutStyledComponents from "./StyledComponents/Checkout.style";
-import mediaQuery from "./StyledComponents/mediaQuery";
+import CheckoutStyledComponents from "./styledComponents/Checkout.style";
+import mediaQuery from "./styledComponents/mediaQuery";
 
 type Props = {
   className: string;

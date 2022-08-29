@@ -1,87 +1,87 @@
-import {
-  useState,
-  useEffect,
-  useContext,
-  useReducer,
-  useRef,
-  useInsertionEffect,
-  useLayoutEffect,
-  useCallback,
-  useMemo,
-  useImperativeHandle,
-  useDebugValue,
-  useTransition,
-  useDeferredValue,
-  useId,
-  useSyncExternalStore,
-} from "react";
-
-import {
-  useQuery,
-  useMutation,
-  useQueryClient,
-  QueryClient,
-  QueryClientProvider,
-} from "@tanstack/react-query";
-
-import styled from "styled-components";
-import CarouselStyledComponents from "./styledComponents/Carousel.style";
-import mediaQuery from "./styledComponents/mediaQuery";
 import Props from "./types/styleComponentsType";
-import ApiJsonTypes from "./types/ApiJsonTypes";
-import axios from "axios";
-import useInterval from "use-interval";
-import fetchAPIService from "./services/fetchAPIService";
+import { getSliderData } from "./lib/fetchAPI";
+import { useInterval } from "usehooks-ts";
+import { useState, useEffect } from "react";
+import { Slides, Dot } from "./styledComponents/Carousel.style";
 
 const Carousel = ({ className }: Props) => {
-  const [campaigns, setCampaigns] = useState([]);
   const [sliderIndex, setSliderIndex] = useState(0);
-
-  const setSliderData: () => Promise<void> = async () => {
-    const campaignsJSON = await fetchAPIService.findSlider();
-    setCampaigns(Object.values(campaignsJSON));
-  };
+  const [pause, setPause] = useState(false);
+  const sliderData = getSliderData();
 
   useEffect(() => {
-    setSliderData();
-  }, []);
+    sliderData.length > 0
+      ? sliderData.forEach((slider) => {
+          const img = new Image();
+          img.src = slider.picture;
+        })
+      : null;
+  }, [sliderData]);
 
-  useInterval(() => {
-    sliderIndex == Object.keys(campaigns).length - 1
-      ? setSliderIndex(0)
-      : setSliderIndex(sliderIndex + 1);
-  }, 5000);
+  useInterval(
+    () => {
+      sliderData.length > 0
+        ? sliderIndex == sliderData.length - 1
+          ? setSliderIndex(0)
+          : setSliderIndex(sliderIndex + 1)
+        : null;
+    },
+    pause ? null : 5000
+  );
 
   return (
     <div className={className}>
-      <div className="slides">
+      <Slides
+        className="slides"
+        picture={sliderData.length > 0 ? sliderData[sliderIndex].picture : ""}
+        onMouseEnter={() => setPause(true)}
+        onMouseLeave={() => setPause(false)}
+      >
         <div className="slides-box">
           <div className="slides-slidesTextMain">
             <div className="slides-text-main">
               {/* 於是 */}
-              <br />
+              {sliderData.length > 0
+                ? sliderData[sliderIndex].story
+                    .split("。")[0]
+                    .replaceAll("\r\n", "\n")
+                : null}
+              {/* <br /> */}
               {/* 我也想要給你 */}
-              <br />
+              {/* <br /> */}
               {/* 一個那麼美好的自己。 */}
-              <br />
+              {/* <br /> */}
             </div>
             <div className="slides-text-describe">
               {/* 不朽《與自己和好如初》 */}
+              {sliderData.length > 0
+                ? sliderData[sliderIndex].story
+                    .split("。")[1]
+                    .replaceAll("<br>", "")
+                : null}
+              {/* {Object.keys(campaigns).length > 0
+                ? campaigns[sliderIndex].story
+                    .split("。")[1]
+                    .replaceAll("<br>", "")
+                : null} */}
             </div>
           </div>
         </div>
         <div className="main-page-dot-box">
-          {/* {campaigns.map((item: <string|null>, index: <string|null>) => {
-            return (
-              <div
-                data-index={sliderIndex + 1}
-                id={item.id}
-                data-product_id={item.product_id}
-                className="dot"
-                onClick={() => setSliderIndex(index)}
-              ></div>
-            );
-          })} */}
+          {sliderData.length > 0
+            ? sliderData.map((item, index) => {
+                return (
+                  <Dot
+                    data-index={index}
+                    data-id={item.id}
+                    data-product_id={item.product_id}
+                    color={sliderIndex == index ? "#8b572a" : "#ffffff40"}
+                    className="dot"
+                    onClick={() => setSliderIndex(index)}
+                  ></Dot>
+                );
+              })
+            : null}
           {/* <div
             data-index=""
             id=""
@@ -118,7 +118,7 @@ const Carousel = ({ className }: Props) => {
         "
           ></div> */}
         </div>
-      </div>
+      </Slides>
     </div>
   );
 };

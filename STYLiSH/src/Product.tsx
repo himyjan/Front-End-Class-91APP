@@ -1,10 +1,20 @@
 import Props from "./types/styleComponentsType";
-import Viewer from "react-viewer";
 import { useState } from "react";
+import { RViewer, RViewerTrigger } from "react-viewerjs";
 
 const Product = ({ className }: Props) => {
   const [visibleMain, setVisibleMain] = useState(false);
   const [visible, setVisible] = useState(false);
+
+  let sourceUrl =
+    "https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png";
+  let options = {
+    toolbar: {
+      //单张图片预览不要pre和next底部按钮，隐藏它
+      prev: false,
+      next: false,
+    },
+  };
 
   return (
     <div className={className}>
@@ -18,18 +28,11 @@ const Product = ({ className }: Props) => {
                 setVisibleMain(true);
               }}
             >
-              <Viewer
-                visible={visibleMain}
-                onClose={() => {
-                  setVisibleMain(false);
-                }}
-                images={[
-                  {
-                    src: "https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png",
-                    alt: "",
-                  },
-                ]}
-              />
+              <RViewer options={options} imageUrls={sourceUrl}>
+                <RViewerTrigger>
+                  <button>one image preview</button>
+                </RViewerTrigger>
+              </RViewer>
               <img
                 src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png"
                 alt=""
@@ -117,22 +120,6 @@ const Product = ({ className }: Props) => {
                 setVisible(true);
               }}
             >
-              <Viewer
-                visible={visible}
-                onClose={() => {
-                  setVisible(false);
-                }}
-                images={[
-                  {
-                    src: "https://cdn.discordapp.com/attachments/1001702231785099304/1007251147632947271/0.png",
-                    alt: "",
-                  },
-                  {
-                    src: "https://cdn.discordapp.com/attachments/1001702231785099304/1007251147196747866/1.png",
-                    alt: "",
-                  },
-                ]}
-              />
               <img
                 src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251147632947271/0.png"
                 alt=""

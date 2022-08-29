@@ -7,7 +7,7 @@ import { isLoadingStateContext } from "./lib/isLoadingStateCreateContext";
 import { useContext } from "react";
 
 const Home = ({ className }: Props) => {
-  const allJson = getQueryClientFetchData("HomeData");
+  const allJson = getQueryClientFetchData("AllData");
   const allData =
     allJson == undefined
       ? []

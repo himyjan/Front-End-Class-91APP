@@ -1,7 +1,6 @@
 import Props from "./types/styleComponentsType";
 import { Link } from "@tanstack/react-location";
-import { ApiData } from "./lib/fetchAPI";
-import { getQueryClientFetchData } from "./index";
+import { getSliderData, ApiData } from "./lib/fetchAPI";
 import { useInterval } from "usehooks-ts";
 import { useState, useEffect } from "react";
 import { Slides, Dot } from "./styledComponents/Carousel.style";
@@ -9,8 +8,7 @@ import { Slides, Dot } from "./styledComponents/Carousel.style";
 const Carousel = ({ className }: Props) => {
   const [sliderIndex, setSliderIndex] = useState(0);
   const [pause, setPause] = useState(false);
-  const sliderDataJson = getQueryClientFetchData("SliderData");
-  const sliderData = sliderDataJson.data as unknown as ApiData[];
+  const sliderData = getSliderData();
 
   useEffect(() => {
     sliderData.length > 0

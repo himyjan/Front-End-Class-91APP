@@ -55,7 +55,7 @@ export interface ApiDataJson {
 export const getSliderData = () => {
   const { data: SliderData } = useQuery<ApiData[]>(
     ["SliderData"],
-    async () => (await axiosClient.get("/marketing/campaigns")).data,
+    async () => (await axiosClient.get("/marketing/campaigns")).data.data,
     {
       initialData: [],
     }

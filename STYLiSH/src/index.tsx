@@ -22,7 +22,6 @@ import Home from "./styledComponents/Home.style";
 import Product from "./styledComponents/Product.style";
 import Checkout from "./styledComponents/Checkout.style";
 import {
-  getSliderDataLoader,
   getCategoryAllDataLoader,
   getCategoryWomenDataLoader,
   getCategoryMenDataLoader,
@@ -50,109 +49,85 @@ root.render(
           id: "all",
           path: "/",
           loader: () =>
-            queryClient.getQueryData(["SliderData"]) ??
-            queryClient.fetchQuery(["SliderData"], getSliderDataLoader),
+            queryClient.getQueryData(["AllData"]) ??
+            queryClient.fetchQuery(["AllData"], getCategoryAllDataLoader),
           element: (
             <>
               <Carousel className="Carousel" />
               <Home className="Home" />
             </>
           ),
-          children: [
-            {
-              id: "women",
-              path: "/",
-              search: (search) => {
-                return search.category === "women";
-              },
-              loader: () =>
-                queryClient.getQueryData(["WomenData"]) ??
-                queryClient
-                  .fetchQuery(["WomenData"], getCategoryWomenDataLoader)
-                  .then((res) => res.data),
-              element: (
-                <>
-                  <Carousel className="Carousel" />
-                  <Home className="Home" />
-                </>
-              ),
-            },
-            {
-              id: "men",
-              path: "/",
-              search: (search) => {
-                return search.category === "men";
-              },
-              loader: () =>
-                queryClient.getQueryData(["MenData"]) ??
-                queryClient
-                  .fetchQuery(["MenData"], getCategoryMenDataLoader)
-                  .then((res) => res.data),
-              element: (
-                <>
-                  <Carousel className="Carousel" />
-                  <Home className="Home" />
-                </>
-              ),
-            },
-            {
-              id: "accessories",
-              path: "/",
-              search: (search) => {
-                return search.category === "accessories";
-              },
-              loader: () =>
-                queryClient.getQueryData(["AccessoriesData"]) ??
-                queryClient
-                  .fetchQuery(
-                    ["AccessoriesData"],
-                    getCategoryAccessoriesDataLoader
-                  )
-                  .then((res) => res.data),
-              element: (
-                <>
-                  <Carousel className="Carousel" />
-                  <Home className="Home" />
-                </>
-              ),
-            },
-            {
-              id: "search",
-              path: "/",
-              search: (search) => {
-                return (
-                  typeof search.keyword === "string" ||
-                  search.keyword instanceof String
-                );
-              },
-            },
-            {
-              path: "/",
-              loader: () =>
-                queryClient.getQueryData(["HomeData"]) ??
-                queryClient
-                  .fetchQuery(["HomeData"], getCategoryAllDataLoader)
-                  .then((res) => res.data),
-              element: (
-                <>
-                  <Carousel className="Carousel" />
-                  <Home className="Home" />
-                </>
-              ),
-            },
-          ],
+        },
+        {
+          id: "women",
+          path: "/",
+          search: (search) => {
+            return search.category === "women";
+          },
+          loader: () =>
+            queryClient.getQueryData(["WomenData"]) ??
+            queryClient
+              .fetchQuery(["WomenData"], getCategoryWomenDataLoader)
+              .then((res) => res.data),
+          element: (
+            <>
+              <Carousel className="Carousel" />
+              <Home className="Home" />
+            </>
+          ),
+        },
+        {
+          id: "men",
+          path: "/",
+          search: (search) => {
+            return search.category === "men";
+          },
+          loader: () =>
+            queryClient.getQueryData(["MenData"]) ??
+            queryClient
+              .fetchQuery(["MenData"], getCategoryMenDataLoader)
+              .then((res) => res.data),
+          element: (
+            <>
+              <Carousel className="Carousel" />
+              <Home className="Home" />
+            </>
+          ),
+        },
+        {
+          id: "accessories",
+          path: "/",
+          search: (search) => {
+            return search.category === "accessories";
+          },
+          loader: () =>
+            queryClient.getQueryData(["AccessoriesData"]) ??
+            queryClient
+              .fetchQuery(["AccessoriesData"], getCategoryAccessoriesDataLoader)
+              .then((res) => res.data),
+          element: (
+            <>
+              <Carousel className="Carousel" />
+              <Home className="Home" />
+            </>
+          ),
+        },
+        {
+          id: "search",
+          path: "/",
+          search: (search) => {
+            return (
+              typeof search.keyword === "string" ||
+              search.keyword instanceof String
+            );
+          },
         },
         {
           id: "product",
           path: "product",
           children: [
             {
-              path: ":product_id",
-              loader: () =>
-                queryClient.getQueryData(["ProductData"]) ??
-                queryClient
-                  .fetchQuery(["ProductData"], getCategoryAllDataLoader)
-                  .then((res) => res.data),
+              path: "*",
               element: (
                 <>
                   <Product className="Product" />

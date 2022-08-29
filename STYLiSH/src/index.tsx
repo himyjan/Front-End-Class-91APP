@@ -70,6 +70,12 @@ root.render(
                 queryClient
                   .fetchQuery(["WomenData"], getCategoryWomenDataLoader)
                   .then((res) => res.data),
+              element: (
+                <>
+                  <Carousel className="Carousel" />
+                  <Home className="Home" />
+                </>
+              ),
             },
             {
               id: "men",
@@ -82,6 +88,12 @@ root.render(
                 queryClient
                   .fetchQuery(["MenData"], getCategoryMenDataLoader)
                   .then((res) => res.data),
+              element: (
+                <>
+                  <Carousel className="Carousel" />
+                  <Home className="Home" />
+                </>
+              ),
             },
             {
               id: "accessories",
@@ -97,6 +109,12 @@ root.render(
                     getCategoryAccessoriesDataLoader
                   )
                   .then((res) => res.data),
+              element: (
+                <>
+                  <Carousel className="Carousel" />
+                  <Home className="Home" />
+                </>
+              ),
             },
             {
               id: "search",
@@ -115,6 +133,12 @@ root.render(
                 queryClient
                   .fetchQuery(["HomeData"], getCategoryAllDataLoader)
                   .then((res) => res.data),
+              element: (
+                <>
+                  <Carousel className="Carousel" />
+                  <Home className="Home" />
+                </>
+              ),
             },
           ],
         },

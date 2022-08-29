@@ -1,10 +1,21 @@
 import Props from "./types/styleComponentsType";
-import { findAll } from "./lib/fetchAPI";
+import { Link } from "@tanstack/react-location";
+import { ApiData } from "./lib/fetchAPI";
 import { ProductColor } from "./styledComponents/Home.style";
+import { getQueryClientFetchData } from "./index";
+import { isLoadingStateContext } from "./lib/isLoadingStateCreateContext";
+import { useContext } from "react";
 
 const Home = ({ className }: Props) => {
-  const allData = findAll();
-  console.log(allData);
+  const allJson = getQueryClientFetchData("HomeData");
+  const allData =
+    allJson == undefined
+      ? []
+      : Object.keys(allJson).length > 0
+      ? (allJson.data as unknown as ApiData[])
+      : [];
+  const isLoading = useContext(isLoadingStateContext);
+  console.log(isLoading);
 
   return (
     <div className={className}>
@@ -14,25 +25,33 @@ const Home = ({ className }: Props) => {
             ? allData.map((item, index) => {
                 return (
                   <div className="product" data-id={item.id}>
-                    <img
-                      src={item.main_image}
-                      alt=""
-                      className="product-image"
-                    />
+                    <Link to={`product/${item.id}`}>
+                      <img
+                        src={item.main_image}
+                        alt=""
+                        className="product-image"
+                      />
+                    </Link>
                     <div className="product-color-list">
                       {allData.length > 0
-                        ? item.colors.map((item, index) => {
+                        ? item.colors.map((colorItem, index) => {
                             return (
-                              <ProductColor
-                                color={item.code}
-                                className="product-color"
-                              ></ProductColor>
+                              <Link to={`product/${item.id}`}>
+                                <ProductColor
+                                  color={colorItem.code}
+                                  className="product-color"
+                                ></ProductColor>
+                              </Link>
                             );
                           })
                         : null}
                     </div>
-                    <div className="product-name">{item.title}</div>
-                    <div className="product-price">TWD.{item.price}</div>
+                    <Link to={`product/${item.id}`}>
+                      <div className="product-name">{item.title}</div>
+                    </Link>
+                    <Link to={`product/${item.id}`}>
+                      <div className="product-price">TWD.{item.price}</div>
+                    </Link>
                   </div>
                 );
               })

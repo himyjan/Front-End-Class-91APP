@@ -29,6 +29,11 @@ export interface ApiData {
   colors: Color[];
 }
 
+export interface ApiDataJson {
+  data: ApiData;
+  next_paging: number;
+}
+
 // // fetch version
 // export const findSliderFetch = async (): Promise<ApiData[]> =>
 //   fetch(`${BASE_URL}/marketing/campaigns`)
@@ -50,7 +55,7 @@ export interface ApiData {
 export const getSliderData = () => {
   const { data: SliderData } = useQuery<ApiData[]>(
     ["SliderData"],
-    async () => (await axiosClient.get("/marketing/campaigns")).data.data,
+    async () => (await axiosClient.get("/marketing/campaigns")).data,
     {
       initialData: [],
     }
@@ -58,10 +63,16 @@ export const getSliderData = () => {
   return SliderData;
 };
 
+export const getSliderDataLoader = async () => {
+  await new Promise((r) => setTimeout(r, 500));
+  const { data } = await axiosClient.get("/marketing/campaigns");
+  return data;
+};
+
 export const findAll = () => {
   const { data: HomeData } = useQuery<ApiData[]>(
-    ["homeData"],
-    async () => (await axiosClient.get("/products/all")).data.data,
+    ["HomeData"],
+    async () => (await axiosClient.get("/products/all")).data,
     {
       initialData: [],
     }
@@ -69,7 +80,7 @@ export const findAll = () => {
   return HomeData;
 };
 
-export const findAllLoader = async () => {
+export const getCategoryAllDataLoader = async () => {
   await new Promise((r) => setTimeout(r, 500));
   const { data } = await axiosClient.get("/products/all");
   return data;
@@ -78,29 +89,41 @@ export const findAllLoader = async () => {
 export const findWomen = () => {
   const { data: HomeData } = useQuery<ApiData[]>(
     ["homeData"],
-    async () => (await axiosClient.get("/products/women")).data.data,
+    async () => (await axiosClient.get("/products/women")).data,
     {
       initialData: [],
     }
   );
   return HomeData;
+};
+
+export const getCategoryWomenDataLoader = async () => {
+  await new Promise((r) => setTimeout(r, 500));
+  const { data } = await axiosClient.get("/products/women");
+  return data;
 };
 
 export const findMen = () => {
   const { data: HomeData } = useQuery<ApiData[]>(
     ["homeData"],
-    async () => (await axiosClient.get("/products/men")).data.data,
+    async () => (await axiosClient.get("/products/men")).data,
     {
       initialData: [],
     }
   );
   return HomeData;
+};
+
+export const getCategoryMenDataLoader = async () => {
+  await new Promise((r) => setTimeout(r, 500));
+  const { data } = await axiosClient.get("/products/men");
+  return data;
 };
 
 export const findAccessories = () => {
   const { data: HomeData } = useQuery<ApiData[]>(
     ["homeData"],
-    async () => (await axiosClient.get("/products/accessories")).data.data,
+    async () => (await axiosClient.get("/products/accessories")).data,
     {
       initialData: [],
     }
@@ -108,9 +131,15 @@ export const findAccessories = () => {
   return HomeData;
 };
 
+export const getCategoryAccessoriesDataLoader = async () => {
+  await new Promise((r) => setTimeout(r, 500));
+  const { data } = await axiosClient.get("/products/accessories");
+  return data;
+};
+
 export const findSearch = (searchKeyWord: string) => {
   const { data: HomeData } = useQuery<ApiData[]>(
-    ["homeData"],
+    ["SearchData"],
     async () =>
       (await axiosClient.get(`/products/search?keyword=${searchKeyWord}`)).data
         .data,

@@ -21,10 +21,21 @@ import Carousel from "./styledComponents/Carousel.style";
 import Home from "./styledComponents/Home.style";
 import Product from "./styledComponents/Product.style";
 import Checkout from "./styledComponents/Checkout.style";
-import { findAllLoader } from "./lib/fetchAPI";
+import {
+  getSliderDataLoader,
+  getCategoryAllDataLoader,
+  getCategoryWomenDataLoader,
+  getCategoryMenDataLoader,
+  getCategoryAccessoriesDataLoader,
+  ApiDataJson,
+} from "./lib/fetchAPI";
 
 export const queryClient = new QueryClient();
 export const location = new ReactLocation();
+
+export const getQueryClientFetchData = (key: string) => {
+  return queryClient.getQueryData([key]) as ApiDataJson;
+};
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -39,47 +50,73 @@ root.render(
           id: "all",
           path: "/",
           loader: () =>
-            queryClient.getQueryData(["posts"]) ??
-            queryClient
-              .fetchQuery(["posts"], findAllLoader)
-              .then((res) => res.data),
+            queryClient.getQueryData(["SliderData"]) ??
+            queryClient.fetchQuery(["SliderData"], getSliderDataLoader),
           element: (
             <>
               <Carousel className="Carousel" />
               <Home className="Home" />
             </>
           ),
-        },
-        {
-          id: "women",
-          path: "/",
-          search: (search) => {
-            return search.category === "women";
-          },
-        },
-        {
-          id: "men",
-          path: "/",
-          search: (search) => {
-            return search.category === "men";
-          },
-        },
-        {
-          id: "accessories",
-          path: "/",
-          search: (search) => {
-            return search.category === "accessories";
-          },
-        },
-        {
-          id: "search",
-          path: "/",
-          search: (search) => {
-            return (
-              typeof search.keyword === "string" ||
-              search.keyword instanceof String
-            );
-          },
+          children: [
+            {
+              id: "women",
+              path: "/",
+              search: (search) => {
+                return search.category === "women";
+              },
+              loader: () =>
+                queryClient.getQueryData(["WomenData"]) ??
+                queryClient
+                  .fetchQuery(["WomenData"], getCategoryWomenDataLoader)
+                  .then((res) => res.data),
+            },
+            {
+              id: "men",
+              path: "/",
+              search: (search) => {
+                return search.category === "men";
+              },
+              loader: () =>
+                queryClient.getQueryData(["MenData"]) ??
+                queryClient
+                  .fetchQuery(["MenData"], getCategoryMenDataLoader)
+                  .then((res) => res.data),
+            },
+            {
+              id: "accessories",
+              path: "/",
+              search: (search) => {
+                return search.category === "accessories";
+              },
+              loader: () =>
+                queryClient.getQueryData(["AccessoriesData"]) ??
+                queryClient
+                  .fetchQuery(
+                    ["AccessoriesData"],
+                    getCategoryAccessoriesDataLoader
+                  )
+                  .then((res) => res.data),
+            },
+            {
+              id: "search",
+              path: "/",
+              search: (search) => {
+                return (
+                  typeof search.keyword === "string" ||
+                  search.keyword instanceof String
+                );
+              },
+            },
+            {
+              path: "/",
+              loader: () =>
+                queryClient.getQueryData(["HomeData"]) ??
+                queryClient
+                  .fetchQuery(["HomeData"], getCategoryAllDataLoader)
+                  .then((res) => res.data),
+            },
+          ],
         },
         {
           id: "product",
@@ -87,6 +124,11 @@ root.render(
           children: [
             {
               path: ":product_id",
+              loader: () =>
+                queryClient.getQueryData(["ProductData"]) ??
+                queryClient
+                  .fetchQuery(["ProductData"], getCategoryAllDataLoader)
+                  .then((res) => res.data),
               element: (
                 <>
                   <Product className="Product" />
@@ -112,8 +154,8 @@ root.render(
         <Footer className="Footer" />
         <GlobalStyle />
       </React.StrictMode>
-      <ReactLocationDevtools initialIsOpen={false} position="bottom-right" />
+      {/* <ReactLocationDevtools initialIsOpen={false} position="bottom-right" /> */}
     </Router>
-    <ReactQueryDevtools initialIsOpen={false} />
+    {/* <ReactQueryDevtools initialIsOpen={false} /> */}
   </QueryClientProvider>
 );

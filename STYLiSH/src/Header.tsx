@@ -1,25 +1,41 @@
 import Props from "./types/styleComponentsType";
+import { Link } from "@tanstack/react-location";
 
 const Header = ({ className }: Props) => {
   return (
     <header className={className}>
       <nav className="top-nav">
         <div className="top-nav-bar-box">
-          <div className="top-nav-bar-website-logo-link">
+          <Link to="." className="top-nav-bar-website-logo-link">
             <img
               src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055669914406982/logo.png"
               alt=""
               className="top-nav-bar-website-logo"
             />
-          </div>
+          </Link>
           <div className="top-nav-bar-desktop-women-dresses">
-            <div className="top-nav-bar-desktop-women-dresses-link">女裝</div>
+            <Link
+              to="?category=women"
+              className="top-nav-bar-desktop-women-dresses-link"
+            >
+              女裝
+            </Link>
           </div>
           <div className="top-nav-bar-desktop-men-dresses">
-            <div className="top-nav-bar-desktop-men-dresses-link">男裝</div>
+            <Link
+              to="?category=men"
+              className="top-nav-bar-desktop-men-dresses-link"
+            >
+              男裝
+            </Link>
           </div>
           <div className="top-nav-bar-desktop-accessories">
-            <div className="top-nav-bar-desktop-accessories-link">配件</div>
+            <Link
+              to="?category=accessories"
+              className="top-nav-bar-desktop-accessories-link"
+            >
+              配件
+            </Link>
           </div>
 
           <input
@@ -31,27 +47,32 @@ const Header = ({ className }: Props) => {
           />
 
           <div className="top-nav-bar-desktop-shopping-cart-box">
-            <div className="top-nav-bar-desktop-shopping-cart-box-link">
+            <Link
+              to="checkout"
+              className="top-nav-bar-desktop-shopping-cart-box-link"
+            >
               <img
                 src="https://cdn.discordapp.com/attachments/1001702231785099304/1007154394585894962/image.png"
                 alt=""
                 className="top-nav-bar-desktop-shopping-cart-image"
               />
-            </div>
-            <div className="top-nav-bar-desktop-shopping-cart-notification-numbers">
-              <div className="top-nav-bar-desktop-shopping-cart-notification-animation"></div>
-              <div className="top-nav-bar-desktop-shopping-cart-notification-numbers-text">
-                1
+              <div className="top-nav-bar-desktop-shopping-cart-notification-numbers">
+                <div className="top-nav-bar-desktop-shopping-cart-notification-animation"></div>
+                <div className="top-nav-bar-desktop-shopping-cart-notification-numbers-text">
+                  1
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
 
           <div className="top-nav-bar-desktop-profile-box">
-            <img
-              src="https://cdn.discordapp.com/attachments/1001702231785099304/1007154394904666112/profile.png"
-              alt=""
-              className="top-nav-bar-desktop-profile"
-            />
+            <Link to="profile" className="top-nav-bar-desktop-profile-link">
+              <img
+                src="https://cdn.discordapp.com/attachments/1001702231785099304/1007154394904666112/profile.png"
+                alt=""
+                className="top-nav-bar-desktop-profile-image"
+              />
+            </Link>
           </div>
 
           <input
@@ -65,19 +86,28 @@ const Header = ({ className }: Props) => {
 
         <div className="top-nav-bar-below">
           <div className="top-nav-bar-below-mobile-women-dresses">
-            <div className="top-nav-bar-below-mobile-women-dresses-link">
+            <Link
+              to="?category=women"
+              className="top-nav-bar-below-mobile-women-dresses-link"
+            >
               女裝
-            </div>
+            </Link>
           </div>
           <div className="top-nav-bar-below-mobile-men-dresses">
-            <div className="top-nav-bar-below-mobile-men-dresses-link">
+            <Link
+              to="?category=men"
+              className="top-nav-bar-below-mobile-men-dresses-link"
+            >
               男裝
-            </div>
+            </Link>
           </div>
           <div className="top-nav-bar-below-mobile-accessories">
-            <div className="top-nav-bar-below-mobile-accessories-link">
+            <Link
+              to="?category=accessories"
+              className="top-nav-bar-below-mobile-accessories-link"
+            >
               配件
-            </div>
+            </Link>
           </div>
         </div>
       </nav>

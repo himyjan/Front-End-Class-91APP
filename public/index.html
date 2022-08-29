@@ -1739,7 +1739,7 @@
                 leading-[19px]
                 mobile:hidden mobile:mr-0
                 desktop:inline-block desktop:mr-[160px]
-              " id="cart-title">
+              " id="check-out-page-title-qty-text">
             數量
           </div>
           <div class="
@@ -1747,7 +1747,7 @@
                 leading-[19px]
                 mobile:hidden mobile:mr-0
                 desktop:inline-block desktop:mr-[160px]
-              " id="cart-title">
+              " id="check-out-page-title-price-text">
             單價
           </div>
           <div class="
@@ -1755,7 +1755,7 @@
                 leading-[19px]
                 mobile:hidden
                 desktop:inline-block
-              " id="cart-title">
+              " id="check-out-page-title-total-text">
             小計
           </div>
         </div>
@@ -1778,7 +1778,7 @@
                 desktop:flex-row
                 mobile:mt-[10px] mobile:ml-0
                 desktop:mt-[30px] desktop:ml-[32px]
-              " name="" id="">
+              " name="checkout-page-checkout-product-list" id="">
             <div class="
                   flex flex-row
                   w-full
@@ -1786,21 +1786,21 @@
                   mobile:block mobile:my-[10px]
                   desktop:hidden desktop:my-0
                   content-['']
-                  border-solid border-[#3f3a3a] border-b-[1px]
-                " id="split-border"></div>
-            <div class="flex flex-row" name="" id="">
+                  border-solid border-[#3f3a3a] border-[1px]
+                " name="checkout-page-checkout-product-list-split-border"></div>
+            <div class="flex flex-row" name="checkout-page-product" id="">
               <img src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251332052295720/image.png" alt=""
-                class="cursor-pointer object-cover w-[114px] h-[152px]" name="product-image" id="" />
+                class="cursor-pointer object-cover w-[114px] h-[152px]" name="checkout-page-product-image" id="" />
               <div class="
                     flex flex-col
                     mobile:w-full mobile:ml-[10px]
                     desktop:w-[354px] desktop:ml-[16px]
-                  " name="" id="">
+                  " name="checkout-page-product-spec" id="">
                 <div class="
                       text-[#000000]
                       mobile:text-[14px] mobile:leading-[17px]
                       desktop:text-[16px] desktop:leading-[19px]
-                    " name="" id="">
+                    " name="checkout-page-product-name-text" id="">
                   前開衩扭結洋裝
                 </div>
                 <div class="
@@ -1810,7 +1810,7 @@
                       desktop:mt-[18px]
                       desktop:text-[16px]
                       desktop:leading-[19px]
-                    " name="" id="">
+                    " name="checkout-page-product-id-text" id="">
                   201807201824
                 </div>
                 <div class="
@@ -1820,7 +1820,7 @@
                       desktop:mt-[22px]
                       desktop:text-[16px]
                       desktop:leading-[19px]
-                    " name="" id="">
+                    " name="checkout-page-product-color-text" id="">
                   顏色｜白
                 </div>
                 <div class="
@@ -1830,7 +1830,7 @@
                       desktop:mt-[10px]
                       desktop:text-[16px]
                       desktop:leading-[19px]
-                    " name="" id="">
+                    " name="checkout-page-product-size-text" id="">
                   尺寸｜M
                 </div>
               </div>
@@ -3876,7 +3876,7 @@
       });
     document
       .querySelector(
-        'div[name="bottom-nav-bar-mobile-stick-shopping-cart-box"]'
+        'div[name="bottom-nav-bar-mobile-stick-shopping-cart"]'
       )
       .addEventListener('click', (e) => {
         history.replaceState(null, null, '/checkout');
@@ -3885,7 +3885,7 @@
         showCheckoutPageCheckoutProductListUI();
       });
     document
-      .querySelector('div[name="top-nav-bar-desktop-profile-box"]')
+      .querySelector('div[name="top-nav-bar-desktop-profile"]')
       .addEventListener('click', (e) => {
         history.replaceState(null, null, '/profile');
         showCategoryNavBarTextColorBrown('all');
@@ -4023,7 +4023,7 @@
 
     // w0p5 Step 4: Render Product Details in the Product Page
     const productPageProductDetailHtmlDivElement = document.querySelector(
-      'div[name="product-page-product-detail-box"]'
+      'div[name="product-page-product-detail"]'
     );
 
     function showProductDetail(showProductId) {

@@ -38,6 +38,96 @@ const CheckoutStyledComponents = styled(Checkout)`
       align-items: start;
     `}
   }
+  .check-out-page-notification-title {
+    display: inline-block;
+    font-weight: bold;
+    color: #3f3a3a;
+    font-size: 16px;
+    line-height: 19px;
+    ${mediaQuery("mobile")`
+      margin-right: 0;
+    `}
+    ${mediaQuery("desktop")`
+      margin-right: 468px;
+    `}
+  }
+  .check-out-page-title-qty-text {
+    ${mediaQuery("mobile")`
+      display: none;
+    `}
+    ${mediaQuery("desktop")`
+      display: inline-block;
+      margin-right: 160px;
+      color: #3f3a3a;
+      font-size: 16px;
+      line-height: 19px;
+    `}
+  }
+  .check-out-page-title-price-text {
+    ${mediaQuery("mobile")`
+      display: none;
+    `}
+    ${mediaQuery("desktop")`
+      display: inline-block;
+      margin-right: 160px;
+      color: #3f3a3a;
+      font-size: 16px;
+      line-height: 19px;
+    `}
+  }
+  .check-out-page-title-total-text {
+    ${mediaQuery("mobile")`
+      display: none;
+    `}
+    ${mediaQuery("desktop")`
+      display: inline-block;
+      color: #3f3a3a;
+      font-size: 16px;
+      line-height: 19px;
+    `}
+  }
+  .checkout-page-checkout-product-list-box {
+    width: 100%;
+    ${mediaQuery("mobile")`
+      margin-top: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      border: none;
+    `}
+    ${mediaQuery("desktop")`
+      margin-top: 16px;
+      padding-top: 10px;
+      padding-bottom: 40px;
+      border: 1px solid #979797;
+    `}
+  }
+  .checkout-page-checkout-product-list {
+    position: relative;
+    display: flex;
+    ${mediaQuery("mobile")`
+      flex-direction: column;
+      margin-top: 10px;
+      margin-left: 0;
+    `}
+    ${mediaQuery("desktop")`
+      flex-direction: row;
+      margin-top: 30px;
+      margin-left: 32px;
+    `}
+  }
+  .checkout-page-checkout-product-list-split-border {
+    ${mediaQuery("mobile")`
+      display: block;
+    `}
+    ${mediaQuery("desktop")`
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 0;
+      margin: 10px 0;
+      border: 1px solid #3f3a3a;
+    `}
+  }
 `;
 
 export default CheckoutStyledComponents;

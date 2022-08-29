@@ -9,46 +9,55 @@ const Checkout = ({ className }: Props) => {
             <div className="check-out-page-notification-title" id="">
               購物車(3)
             </div>
-            <div id="cart-title">數量</div>
-            <div id="cart-title">單價</div>
-            <div id="cart-title">小計</div>
+            <div className="check-out-page-title-qty-text" id="">
+              數量
+            </div>
+            <div className="check-out-page-title-price-text" id="">
+              單價
+            </div>
+            <div className="check-out-page-title-total-text" id="">
+              小計
+            </div>
           </div>
 
           <div className="checkout-page-checkout-product-list-box" id="">
-            <div className="" id="">
-              <div id="split-border"></div>
-              <div className="" id="">
+            <div className="checkout-page-checkout-product-list" id="">
+              <div
+                className="checkout-page-checkout-product-list-split-border"
+                id=""
+              ></div>
+              <div className="checkout-page-product" id="">
                 <img
                   src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251332052295720/image.png"
                   alt=""
-                  className="product-image"
+                  className="checkout-page-product-image"
                   id=""
                 />
-                <div className="" id="">
-                  <div className="" id="">
+                <div className="checkout-page-product-spec" id="">
+                  <div className="checkout-page-product-name-text" id="">
                     前開衩扭結洋裝
                   </div>
-                  <div className="" id="">
+                  <div className="checkout-page-product-id-text" id="">
                     201807201824
                   </div>
-                  <div className="" id="">
+                  <div className="checkout-page-product-color-text" id="">
                     顏色｜白
                   </div>
-                  <div className="" id="">
+                  <div className="checkout-page-product-size-text" id="">
                     尺寸｜M
                   </div>
                 </div>
                 <img
                   src="https://cdn.discordapp.com/attachments/1001702231785099304/1007859059120156743/trash.png"
                   alt=""
-                  className="remove-product-trash-image"
+                  className="checkout-page-remove-product-trash-image"
                   id=""
                 />
               </div>
               <div className="" id="">
-                <div id="cart-title">數量</div>
-                <div id="cart-title">單價</div>
-                <div id="cart-title">小計</div>
+                <div id="check-out-page-item-price-text">數量</div>
+                <div id="check-out-page-item-price-text">單價</div>
+                <div id="check-out-page-item-price-text">小計</div>
               </div>
               <div className="" id="">
                 <select className="amount" id="" title="From">

@@ -4,8 +4,8 @@ const Checkout = ({ className }: Props) => {
   return (
     <div className={className}>
       <div className="checkout-page-checkout-box" id="">
-        <div className="" id="">
-          <div className="cart-title-box" id="">
+        <div className="checkout-page-cart-title-box-box" id="">
+          <div className="checkout-page-cart-title-box" id="">
             <div className="check-out-page-notification-title" id="">
               購物車(3)
             </div>
@@ -15,106 +15,6 @@ const Checkout = ({ className }: Props) => {
           </div>
 
           <div className="checkout-page-checkout-product-list-box" id="">
-            <div className="" id="">
-              <div id="split-border"></div>
-              <div className="" id="">
-                <img
-                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251332052295720/image.png"
-                  alt=""
-                  className="product-image"
-                  id=""
-                />
-                <div className="" id="">
-                  <div className="" id="">
-                    前開衩扭結洋裝
-                  </div>
-                  <div className="" id="">
-                    201807201824
-                  </div>
-                  <div className="" id="">
-                    顏色｜白
-                  </div>
-                  <div className="" id="">
-                    尺寸｜M
-                  </div>
-                </div>
-                <img
-                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007859059120156743/trash.png"
-                  alt=""
-                  className="remove-product-trash-image"
-                  id=""
-                />
-              </div>
-              <div className="" id="">
-                <div id="cart-title">數量</div>
-                <div id="cart-title">單價</div>
-                <div id="cart-title">小計</div>
-              </div>
-              <div className="" id="">
-                <select className="amount" id="" title="From">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <div className="" id="">
-                  TWD.799
-                </div>
-                <div className="" id="">
-                  TWD.799
-                </div>
-              </div>
-            </div>
-            <div className="" id="">
-              <div id="split-border"></div>
-              <div className="" id="">
-                <img
-                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251332052295720/image.png"
-                  alt=""
-                  className="product-image"
-                  id=""
-                />
-                <div className="" id="">
-                  <div className="" id="">
-                    前開衩扭結洋裝
-                  </div>
-                  <div className="" id="">
-                    201807201824
-                  </div>
-                  <div className="" id="">
-                    顏色｜白
-                  </div>
-                  <div className="" id="">
-                    尺寸｜M
-                  </div>
-                </div>
-                <img
-                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007859059120156743/trash.png"
-                  alt=""
-                  className="remove-product-trash-image"
-                  id=""
-                />
-              </div>
-              <div className="" id="">
-                <div id="cart-title">數量</div>
-                <div id="cart-title">單價</div>
-                <div id="cart-title">小計</div>
-              </div>
-              <div className="" id="">
-                <select className="amount" id="" title="From">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                </select>
-                <div className="" id="">
-                  TWD.799
-                </div>
-                <div className="" id="">
-                  TWD.799
-                </div>
-              </div>
-            </div>
             <div className="" id="">
               <div id="split-border"></div>
               <div className="" id="">

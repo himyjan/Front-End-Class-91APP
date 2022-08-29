@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 
 export const BASE_URL = "https://api.appworks-school.tw/api/1.0";
 
-const axiosClient = axios.create({
+export const axiosClient = axios.create({
   baseURL: BASE_URL,
   headers: {
     "Content-type": "application/json",
@@ -67,6 +67,12 @@ export const findAll = () => {
     }
   );
   return HomeData;
+};
+
+export const findAllLoader = async () => {
+  await new Promise((r) => setTimeout(r, 500));
+  const { data } = await axiosClient.get("/products/all");
+  return data;
 };
 
 export const findWomen = () => {

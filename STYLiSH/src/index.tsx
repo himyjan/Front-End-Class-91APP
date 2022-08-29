@@ -21,6 +21,7 @@ import Carousel from "./styledComponents/Carousel.style";
 import Home from "./styledComponents/Home.style";
 import Product from "./styledComponents/Product.style";
 import Checkout from "./styledComponents/Checkout.style";
+import { findAllLoader } from "./lib/fetchAPI";
 
 export const queryClient = new QueryClient();
 export const location = new ReactLocation();
@@ -35,7 +36,13 @@ root.render(
       location={location}
       routes={[
         {
+          id: "all",
           path: "/",
+          loader: () =>
+            queryClient.getQueryData(["posts"]) ??
+            queryClient
+              .fetchQuery(["posts"], findAllLoader)
+              .then((res) => res.data),
           element: (
             <>
               <Carousel className="Carousel" />
@@ -44,14 +51,52 @@ root.render(
           ),
         },
         {
-          path: "product",
-          element: (
-            <>
-              <Product className="Product" />
-            </>
-          ),
+          id: "women",
+          path: "/",
+          search: (search) => {
+            return search.category === "women";
+          },
         },
         {
+          id: "men",
+          path: "/",
+          search: (search) => {
+            return search.category === "men";
+          },
+        },
+        {
+          id: "accessories",
+          path: "/",
+          search: (search) => {
+            return search.category === "accessories";
+          },
+        },
+        {
+          id: "search",
+          path: "/",
+          search: (search) => {
+            return (
+              typeof search.keyword === "string" ||
+              search.keyword instanceof String
+            );
+          },
+        },
+        {
+          id: "product",
+          path: "product",
+          children: [
+            {
+              path: ":product_id",
+              element: (
+                <>
+                  <Product className="Product" />
+                </>
+              ),
+            },
+          ],
+        },
+        {
+          id: "checkout",
           path: "checkout",
           element: (
             <>

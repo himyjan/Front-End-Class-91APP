@@ -2338,7 +2338,7 @@
           ●選擇超商-請填寫正確收件人姓名(與證件相符)，避免無法領取
         </div>
 
-        <div class="flex flex-row mobile:mt-0 desktop:mt-[50px]" id="cart-title-box">
+        <div class="flex flex-row mobile:mt-0 desktop:mt-[50px]" className="checkout-page-buyer-info-title" id="">
           <div class="
                 inline-block
                 font-bold
@@ -2346,7 +2346,7 @@
                 leading-[19px]
                 mobile:mr-0
                 desktop:mr-[468px]
-              " id="cart-title">
+              " name="checkout-page-buyer-info-title-text" id="">
             訂購資料
           </div>
         </div>
@@ -2359,16 +2359,16 @@
               desktop:my-[10px]
               content-['']
               border-solid border-[#3f3a3a] border-b-[1px]
-            " id="split-border"></div>
+            " name="checkout-page-buyer-info-split-border"></div>
 
-        <div class="" name="" id="">
+        <div class="" name="checkout-page-buyer-info-list" id="">
           <div class="
                 flex
                 mobile:flex-col mobile:items-none
                 desktop:items-center desktop:flex-row
                 mobile:mt-[10px]
                 desktop:mt-[9px]
-              " name="" id="">
+              " name="checkout-page-buyer-name-box" id="">
             <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
@@ -2376,7 +2376,7 @@
                   text-[#3f3a3a]
                   mobile:text-[14px] mobile:leading-[17px]
                   desktop:text-[16px] desktop:leading-[19px]
-                " id=" cart-title">
+                " name="checkout-page-buyer-name-title" id="">
               收件人姓名
             </div>
             <input class="
@@ -2392,7 +2392,8 @@
                   mobile:placeholder:leading-[17px]
                   desktop:placeholder:text-[16px]
                   desktop:placeholder:leading-[19px]
-                " type="text" placeholder="收件人姓名" title="input-name" value="" name="checkout-page-name-input" id="" />
+                " type="text" placeholder="收件人姓名" title="input-name" value="" name="checkout-page-buyer-name-input"
+              id="" />
           </div>
           <div class="
                 mobile:mt-[6px]
@@ -2404,7 +2405,7 @@
                 desktop:max-w-[696px]
                 mobile:text-[14px] mobile:leading-[17px]
                 desktop:text-[16px] desktop:leading-[19px]
-              " id=" cart-title">
+              " name="checkout-page-buyer-name-input-hint" id="">
             務必填寫完整收件人姓名，避免包裹無法順利簽收
           </div>
           <div class="
@@ -2413,7 +2414,7 @@
                 desktop:items-center desktop:flex-row
                 mobile:mt-[20px]
                 desktop:mt-[30px]
-              " name="" id="">
+              " name="checkout-page-buyer-phone-box" id="">
             <div class="
                   mobile:w-auto mobile:text-start
                   desktop:w-[120px]
@@ -2421,7 +2422,7 @@
                   text-[#3f3a3a]
                   mobile:text-[14px] mobile:leading-[17px]
                   desktop:text-[16px] desktop:leading-[19px]
-                " id=" cart-title">
+                " name="checkout-page-buyer-phone-title" id="">
               手機
             </div>
             <input class="
@@ -5231,7 +5232,7 @@
     }
     // Step 2: Validate User Input
     //-----------------------------------------------------------------------------------------------
-    const nameInput = document.querySelector('input[name="checkout-page-name-input"]');
+    const nameInput = document.querySelector('input[name="checkout-page-buyer-name-input"]');
     const phoneInput = document.querySelector('input[name="checkout-page-phone-number-input"]');
     const addressInput = document.querySelector('input[name="checkout-page-address-input"]');
     const emailInput = document.querySelector('input[name="checkout-page-email-input"]');

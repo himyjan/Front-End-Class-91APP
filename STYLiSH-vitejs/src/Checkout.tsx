@@ -12,7 +12,7 @@ const Checkout = ({ className }: Props) => {
       phone: "",
       address: "",
       email: "",
-      time: "not-set",
+      time: "",
     },
   });
   return (
@@ -237,19 +237,23 @@ const Checkout = ({ className }: Props) => {
             ●選擇超商-請填寫正確收件人姓名(與證件相符)，避免無法領取
           </div>
 
-          <div id="cart-title-box">
-            <div id="cart-title">訂購資料</div>
+          <div className="checkout-page-buyer-info-title" id="">
+            <div className="checkout-page-buyer-info-title-text" id="">
+              訂購資料
+            </div>
           </div>
 
-          <div id="split-border"></div>
+          <div className="checkout-page-buyer-info-split-border" id=""></div>
 
-          <div className="" id="">
+          <div className="checkout-page-buyer-info-list" id="">
             <form
               onSubmit={handleSubmit((data) => {
                 console.log(data);
               })}
+              className="checkout-page-buyer-info"
+              id=""
             >
-              <div className="" id="">
+              <div className="checkout-page-buyer-name-title" id="">
                 收件人姓名
               </div>
               <input
@@ -258,15 +262,15 @@ const Checkout = ({ className }: Props) => {
                   minLength: { value: 2, message: "最短兩字" },
                 })}
                 placeholder="收件人姓名"
-                className="checkout-page-name-input"
+                className="checkout-page-buyer-name-input"
               />
-              <div className="" id="">
+              <div className="checkout-page-buyer-name-input-error" id="">
                 {errors.name?.message}
               </div>
-              <div className="" id="">
+              <div className="checkout-page-buyer-name-input-hint" id="">
                 務必填寫完整收件人姓名，避免包裹無法順利簽收
               </div>
-              <div className="" id="">
+              <div className="checkout-page-buyer-phone-title" id="">
                 手機
               </div>
               <input
@@ -280,12 +284,12 @@ const Checkout = ({ className }: Props) => {
                   pattern: /^09[0-9]{8}$/,
                 })}
                 placeholder="手機"
-                className="checkout-page-phone-input"
+                className="checkout-page-buyer-phone-input"
               />
-              <div className="" id="">
+              <div className="checkout-page-buyer-phone-input-error" id="">
                 {errors.phone?.message}
               </div>
-              <div className="" id="">
+              <div className="checkout-page-buyer-address-title" id="">
                 地址
               </div>
               <input
@@ -294,12 +298,12 @@ const Checkout = ({ className }: Props) => {
                   minLength: { value: 3, message: "最短三字" },
                 })}
                 placeholder="地址"
-                className="checkout-page-address-input"
+                className="checkout-page-buyer-address-input"
               />
-              <div className="" id="">
+              <div className="checkout-page-buyer-address-error" id="">
                 {errors.address?.message}
               </div>
-              <div className="" id="">
+              <div className="checkout-page-buyer-email-title" id="">
                 Email
               </div>
               <input
@@ -311,7 +315,7 @@ const Checkout = ({ className }: Props) => {
                 placeholder="Email"
                 className="checkout-page-email-input"
               />
-              <div className="" id="">
+              <div className="checkout-page-buyer-email-error" id="">
                 {errors.email?.message}
               </div>
               <input
@@ -342,10 +346,10 @@ const Checkout = ({ className }: Props) => {
                 value="not-set"
               />
               <label data-for="not-set">不指定</label>
-              <input type="submit" />
               <div className="" id="">
                 {errors.time?.message}
               </div>
+              <input type="submit" />
             </form>
             {/* <div className="" id="">
               <div id="cart-title">收件人姓名</div>

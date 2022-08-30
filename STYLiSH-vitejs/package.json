@@ -16,11 +16,16 @@
     "usehooks-ts": "^2.6.0"
   },
   "devDependencies": {
-    "@types/react": "^18.0.17",
+    "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.6",
     "@types/styled-components": "^5.1.26",
     "@vitejs/plugin-react": "^2.0.1",
     "vite": "^3.0.9"
+  },
+  "overrides": {
+    "@tanstack/react-location-devtools": {
+      "@tanstack/react-location": "^3.7.4"
+    }
   },
   "scripts": {
     "dev": "vite --host",

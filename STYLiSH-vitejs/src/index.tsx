@@ -2,16 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import {
-  Link,
-  MakeGenerics,
-  MatchRoute,
-  Outlet,
-  ReactLocation,
-  Router,
-  useLoadRoute,
-  useMatch,
-} from "@tanstack/react-location";
+import { Outlet, ReactLocation, Router } from "@tanstack/react-location";
 import { ReactLocationDevtools } from "@tanstack/react-location-devtools";
 
 import GlobalStyle from "./styledComponents/index.style";

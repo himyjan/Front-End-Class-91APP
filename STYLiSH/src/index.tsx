@@ -46,19 +46,6 @@ root.render(
       location={location}
       routes={[
         {
-          id: "all",
-          path: "/",
-          loader: () =>
-            queryClient.getQueryData(["AllData"]) ??
-            queryClient.fetchQuery(["AllData"], getCategoryAllDataLoader),
-          element: (
-            <>
-              <Carousel className="Carousel" />
-              <Home className="Home" />
-            </>
-          ),
-        },
-        {
           id: "women",
           path: "/",
           search: (search) => {
@@ -123,6 +110,19 @@ root.render(
           },
         },
         {
+          id: "all",
+          path: "/",
+          loader: () =>
+            queryClient.getQueryData(["AllData"]) ??
+            queryClient.fetchQuery(["AllData"], getCategoryAllDataLoader),
+          element: (
+            <>
+              <Carousel className="Carousel" />
+              <Home className="Home" />
+            </>
+          ),
+        },
+        {
           id: "product",
           path: "product",
           children: [
@@ -153,8 +153,8 @@ root.render(
         <Footer className="Footer" />
         <GlobalStyle />
       </React.StrictMode>
-      {/* <ReactLocationDevtools initialIsOpen={false} position="bottom-right" /> */}
+      <ReactLocationDevtools initialIsOpen={false} position="bottom-right" />
     </Router>
-    {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+    <ReactQueryDevtools initialIsOpen={false} />
   </QueryClientProvider>
 );

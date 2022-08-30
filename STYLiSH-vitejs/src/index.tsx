@@ -46,19 +46,6 @@ root.render(
       location={location}
       routes={[
         {
-          id: "all",
-          path: "/",
-          loader: () =>
-            queryClient.getQueryData(["AllData"]) ??
-            queryClient.fetchQuery(["AllData"], getCategoryAllDataLoader),
-          element: (
-            <>
-              <Carousel className="Carousel" />
-              <Home className="Home" />
-            </>
-          ),
-        },
-        {
           id: "women",
           path: "/",
           search: (search) => {
@@ -121,6 +108,19 @@ root.render(
               search.keyword instanceof String
             );
           },
+        },
+        {
+          id: "all",
+          path: "/",
+          loader: () =>
+            queryClient.getQueryData(["AllData"]) ??
+            queryClient.fetchQuery(["AllData"], getCategoryAllDataLoader),
+          element: (
+            <>
+              <Carousel className="Carousel" />
+              <Home className="Home" />
+            </>
+          ),
         },
         {
           id: "product",

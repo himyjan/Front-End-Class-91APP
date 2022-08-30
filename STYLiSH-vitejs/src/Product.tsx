@@ -1,13 +1,19 @@
 import Props from "./types/styleComponentsType";
-import { ApiData } from "./lib/fetchAPI";
 import { getQueryClientFetchData } from "./index";
 import { useMatch } from "@tanstack/react-location";
+import { useLocalStorage } from "usehooks-ts";
 
 const Product = ({ className }: Props) => {
   const {
     params: { product_id },
   } = useMatch();
   const productJson = getQueryClientFetchData(["product", `${product_id}`]);
+  const [shoppingCartList, setShoppingCartList] = useLocalStorage(
+    "shoppingCartList",
+    window.localStorage.getItem("shoppingCartList")
+      ? JSON.parse(window.localStorage.getItem("shoppingCartList") as string)
+      : []
+  );
   return (
     <div className={className}>
       <div className="product-page-product-detail" id="" data-product_id="">
@@ -119,6 +125,18 @@ const Product = ({ className }: Props) => {
             shirt and upgraded it with slubby linen jersey, making it even
             lighter for those who prefer their summer style extra-breezy. */}
           </div>
+          {productJson
+            ? productJson.data.images.map((url) => {
+                return (
+                  <img
+                    src={url}
+                    alt=""
+                    className="product-page-product-image1"
+                    id=""
+                  />
+                );
+              })
+            : null}
           {/* <img
             src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251147632947271/0.png"
             alt=""

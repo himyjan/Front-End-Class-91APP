@@ -32,6 +32,7 @@ export interface ApiData {
   description: string;
   wash: string;
   place: string;
+  images: string[];
 }
 
 export interface ApiDataJson {

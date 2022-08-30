@@ -1,71 +1,67 @@
-import styled from "styled-components";
-import ProductStyledComponents from "./styledComponents/Product.style";
-import mediaQuery from "./styledComponents/mediaQuery";
-
-type Props = {
-  className: string;
-};
+import Props from "./types/styleComponentsType";
 
 const Product = ({ className }: Props) => {
   return (
     <div className={className}>
-      <div className="product-page-product-detail-box" id="" data-product_id="">
-        <div className="" id="">
-          <div className="product-main-image-viewer-box" id="">
-            <div className="product-main-image-viewer" id="">
-              <img
-                src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png"
-                alt=""
-                className="product-image"
-                id=""
-              />
+      <div className="product-page-product-detail" id="" data-product_id="">
+        <div className="product-page-product-detail-box" id="">
+          <img
+            src="https://cdn.discordapp.com/attachments/1001702231785099304/1006055626515951719/image_2.png"
+            alt=""
+            className="product-page-product-image"
+            id=""
+          />
+          <div className="product-page-product-info" id="">
+            <div className="product-page-product-name" id="">
+              前開衩扭結洋裝
             </div>
-          </div>
-          <div id="product-info">
-            <div id="product-className">前開衩扭結洋裝</div>
-            <div id="product-className">201807201824</div>
-            <div id="product-className">TWD.799</div>
-            <div id="split-border"></div>
-            <div id="product-color">
-              <div id="product-color-label">顏色｜</div>
+            <div className="product-page-product-id" id="">
+              201807201824
+            </div>
+            <div className="product-page-product-price" id="">
+              TWD.799
+            </div>
+            <div className="product-page-product-info-split-border"></div>
+            <div className="product-page-product-color">
+              <div className="product-page-product-color-label">顏色｜</div>
 
-              <div id="product-color">
-                <div>
-                  <div id="product-color1"></div>
+              <div className="product-page-product-color-list">
+                <div className="product-page-product-color-box">
+                  <div className="product-page-product-color1"></div>
                 </div>
-                <div>
-                  <div id="product-color2"></div>
+                <div className="product-page-product-color-box">
+                  <div className="product-page-product-color2"></div>
                 </div>
-                <div>
-                  <div id="product-color3"></div>
+                <div className="product-page-product-color-box">
+                  <div className="product-page-product-color3"></div>
                 </div>
               </div>
             </div>
-            <div id="product-size">
-              <div id="product-size-label">尺寸｜</div>
+            <div className="product-page-product-size">
+              <div className="product-page-product-size-label">尺寸｜</div>
 
-              <div id="product-size">
-                <div id="product-sizeS">S</div>
-                <div id="product-sizeM">M</div>
-                <div id="product-sizeL">L</div>
+              <div className="product-page-product-size-list">
+                <div className="product-page-product-sizeS">S</div>
+                <div className="product-page-product-sizeM">M</div>
+                <div className="product-page-product-sizeL">L</div>
               </div>
             </div>
-            <div id="product-amount-box">
-              <div id="product-amount-label">數量｜</div>
+            <div className="product-page-product-amount">
+              <div className="product-page-product-amount-label">數量｜</div>
 
-              <div className="" id="">
-                <div id="product-amount-minus">-</div>
+              <div className="product-page-product-amount-list" id="">
+                <div className="product-page-product-amount-minus">-</div>
                 <input
                   placeholder="1"
                   title="input-amount"
                   value="1"
-                  id="product-amount"
+                  className="product-page-product-amount-input"
                 />
-                <div id="product-amount-plus">+</div>
+                <div className="product-page-product-amount-plus">+</div>
               </div>
             </div>
-            <div>加入購物車</div>
-            <div id="product-spec">
+            <div className="product-page-btn-add-to-cart">加入購物車</div>
+            <div className="product-page-product-spec">
               實品顏色依單品照為主
               <br />
               <br />
@@ -82,32 +78,30 @@ const Product = ({ className }: Props) => {
             </div>
           </div>
         </div>
-        <div id="product-describe">
-          <div>
-            <div id="product-className">更多產品資訊</div>
-            <div id="split-border"></div>
+        <div className="product-page-product-describe">
+          <div className="product-page-product-describe-box">
+            <div className="product-page-product-describe-title-text">
+              更多產品資訊
+            </div>
+            <div className="product-page-product-describe-split-border"></div>
           </div>
-          <div id="product-className">
+          <div className="product-page-product-className">
             O.N.S is all about options, which is why we took our staple polo
             shirt and upgraded it with slubby linen jersey, making it even
             lighter for those who prefer their summer style extra-breezy.
           </div>
-          <div className="product-image-viewer-box" id="">
-            <div className="product-image-viewer" id="">
-              <img
-                src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251147632947271/0.png"
-                alt=""
-                className="product-image"
-                id=""
-              />
-              <img
-                src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251147196747866/1.png"
-                alt=""
-                className="product-image"
-                id=""
-              />
-            </div>
-          </div>
+          <img
+            src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251147632947271/0.png"
+            alt=""
+            className="product-page-product-image1"
+            id=""
+          />
+          <img
+            src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251147196747866/1.png"
+            alt=""
+            className="product-page-product-image2"
+            id=""
+          />
         </div>
       </div>
     </div>

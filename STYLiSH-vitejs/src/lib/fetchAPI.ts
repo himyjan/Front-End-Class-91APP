@@ -27,6 +27,11 @@ export interface ApiData {
   price: number;
   main_image: string;
   colors: Color[];
+  note: string;
+  texture: string;
+  description: string;
+  wash: string;
+  place: string;
 }
 
 export interface ApiDataJson {
@@ -148,4 +153,18 @@ export const findSearch = (searchKeyWord: string) => {
     }
   );
   return HomeData;
+};
+
+export const getSearchDataLoader = async (searchKeyWord: string) => {
+  await new Promise((r) => setTimeout(r, 500));
+  const { data } = await axiosClient.get(
+    `/products/search?keyword=${searchKeyWord}`
+  );
+  return data;
+};
+
+export const getProductDataLoader = async (product_id: string) => {
+  await new Promise((r) => setTimeout(r, 500));
+  const { data } = await axiosClient.get(`/products/details?id=${product_id}`);
+  return data;
 };

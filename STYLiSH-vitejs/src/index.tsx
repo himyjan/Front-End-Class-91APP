@@ -26,14 +26,15 @@ import {
   getCategoryWomenDataLoader,
   getCategoryMenDataLoader,
   getCategoryAccessoriesDataLoader,
+  getProductDataLoader,
   ApiDataJson,
 } from "./lib/fetchAPI";
 
 export const queryClient = new QueryClient();
 export const location = new ReactLocation();
 
-export const getQueryClientFetchData = (key: string) => {
-  return queryClient.getQueryData([key]) as ApiDataJson;
+export const getQueryClientFetchData = (key: string[]) => {
+  return queryClient.getQueryData(key) as ApiDataJson;
 };
 
 const root = ReactDOM.createRoot(
@@ -127,7 +128,12 @@ root.render(
           path: "product",
           children: [
             {
-              path: "*",
+              path: ":product_id",
+              loader: ({ params: { product_id } }) =>
+                queryClient.getQueryData(["product", product_id]) ??
+                queryClient.fetchQuery(["product", product_id], () =>
+                  getProductDataLoader(product_id)
+                ),
               element: (
                 <>
                   <Product className="Product" />

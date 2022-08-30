@@ -86,7 +86,7 @@ const CheckoutStyledComponents = styled(Checkout)`
       line-height: 19px;
     `}
   }
-  .checkout-page-checkout-product-list-box {
+  .checkout-page-checkout-product-list {
     width: 100%;
     ${mediaQuery("mobile")`
       margin-top: 0;
@@ -101,7 +101,7 @@ const CheckoutStyledComponents = styled(Checkout)`
       border: 1px solid #979797;
     `}
   }
-  .checkout-page-checkout-product-list {
+  .checkout-page-checkout-product {
     position: relative;
     display: flex;
     ${mediaQuery("mobile")`
@@ -115,7 +115,7 @@ const CheckoutStyledComponents = styled(Checkout)`
       margin-left: 32px;
     `}
   }
-  .checkout-page-checkout-product-list-split-border {
+  .checkout-page-checkout-product-split-border {
     ${mediaQuery("mobile")`
       display: flex;
       flex-direction: row;
@@ -128,7 +128,7 @@ const CheckoutStyledComponents = styled(Checkout)`
       display: none;
     `}
   }
-  .checkout-page-product {
+  .checkout-page-product-box {
     display: flex;
     flex-direction: row;
   }
@@ -284,6 +284,55 @@ const CheckoutStyledComponents = styled(Checkout)`
   }
   .check-out-page-item-qty {
     width: 80px;
+    padding-left: 16px;
+    background-color: #f3f3f3;
+    border-radius: 8px;
+    border: 1px solid #979797;
+    ${mediaQuery("mobile")`
+      height: 30px;
+      margin-top: 12px;
+      margin-right: auto;
+    `}
+    ${mediaQuery("desktop")`
+      height: 32px;
+      margin-right: 56px;
+    `}
+  }
+  .check-out-page-item-price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3f3a3a;
+    text-align: center;
+    ${mediaQuery("mobile")`
+      width: 104px;
+      font-size: 14px;
+      line-height: 17px;
+    `}
+    ${mediaQuery("desktop")`
+      width: 192px;
+      font-size: 16px;
+      line-height: 19px;
+    `}
+  }
+  .check-out-page-item-total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3f3a3a;
+    text-align: center;
+    ${mediaQuery("mobile")`
+      width: 104px;
+      margin-left: auto;
+      font-size: 14px;
+      line-height: 17px;
+    `}
+    ${mediaQuery("desktop")`
+      width: 192px;
+      margin-left: 0;
+      font-size: 16px;
+      line-height: 19px;
+    `}
   }
 `;
 

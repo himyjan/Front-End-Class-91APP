@@ -1,6 +1,20 @@
 import Props from "./types/styleComponentsType";
+import { useForm } from "react-hook-form";
 
 const Checkout = ({ className }: Props) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      name: "",
+      phone: "",
+      address: "",
+      email: "",
+      time: "not-set",
+    },
+  });
   return (
     <div className={className}>
       <div className="checkout-page-checkout-box" id="">
@@ -20,13 +34,131 @@ const Checkout = ({ className }: Props) => {
             </div>
           </div>
 
-          <div className="checkout-page-checkout-product-list-box" id="">
-            <div className="checkout-page-checkout-product-list" id="">
+          <div className="checkout-page-checkout-product-list" id="">
+            <div className="checkout-page-checkout-product" id="">
               <div
-                className="checkout-page-checkout-product-list-split-border"
+                className="checkout-page-checkout-product-split-border"
                 id=""
               ></div>
-              <div className="checkout-page-product" id="">
+              <div className="checkout-page-product-box" id="">
+                <img
+                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251332052295720/image.png"
+                  alt=""
+                  className="checkout-page-product-image"
+                  id=""
+                />
+                <div className="checkout-page-product-spec" id="">
+                  <div className="checkout-page-product-name-text" id="">
+                    前開衩扭結洋裝
+                  </div>
+                  <div className="checkout-page-product-id-text" id="">
+                    201807201824
+                  </div>
+                  <div className="checkout-page-product-color-text" id="">
+                    顏色｜白
+                  </div>
+                  <div className="checkout-page-product-size-text" id="">
+                    尺寸｜M
+                  </div>
+                </div>
+                <img
+                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007859059120156743/trash.png"
+                  alt=""
+                  className="checkout-page-remove-product-trash-image"
+                  id=""
+                />
+              </div>
+              <div className="check-out-page-item-text-box" id="">
+                <div className="check-out-page-item-qty-text" id="">
+                  數量
+                </div>
+                <div className="check-out-page-item-price-text" id="">
+                  單價
+                </div>
+                <div className="check-out-page-item-total-text" id="">
+                  小計
+                </div>
+              </div>
+              <div className="check-out-page-item-total-price-box" id="">
+                <select className="check-out-page-item-qty" id="" title="From">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+                <div className="check-out-page-item-price" id="">
+                  TWD.799
+                </div>
+                <div className="check-out-page-item-total" id="">
+                  TWD.799
+                </div>
+              </div>
+            </div>
+            <div className="checkout-page-checkout-product" id="">
+              <div
+                className="checkout-page-checkout-product-split-border"
+                id=""
+              ></div>
+              <div className="checkout-page-product-box" id="">
+                <img
+                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251332052295720/image.png"
+                  alt=""
+                  className="checkout-page-product-image"
+                  id=""
+                />
+                <div className="checkout-page-product-spec" id="">
+                  <div className="checkout-page-product-name-text" id="">
+                    前開衩扭結洋裝
+                  </div>
+                  <div className="checkout-page-product-id-text" id="">
+                    201807201824
+                  </div>
+                  <div className="checkout-page-product-color-text" id="">
+                    顏色｜白
+                  </div>
+                  <div className="checkout-page-product-size-text" id="">
+                    尺寸｜M
+                  </div>
+                </div>
+                <img
+                  src="https://cdn.discordapp.com/attachments/1001702231785099304/1007859059120156743/trash.png"
+                  alt=""
+                  className="checkout-page-remove-product-trash-image"
+                  id=""
+                />
+              </div>
+              <div className="check-out-page-item-text-box" id="">
+                <div className="check-out-page-item-qty-text" id="">
+                  數量
+                </div>
+                <div className="check-out-page-item-price-text" id="">
+                  單價
+                </div>
+                <div className="check-out-page-item-total-text" id="">
+                  小計
+                </div>
+              </div>
+              <div className="check-out-page-item-total-price-box" id="">
+                <select className="check-out-page-item-qty" id="" title="From">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+                <div className="check-out-page-item-price" id="">
+                  TWD.799
+                </div>
+                <div className="check-out-page-item-total" id="">
+                  TWD.799
+                </div>
+              </div>
+            </div>
+            <div className="checkout-page-checkout-product" id="">
+              <div
+                className="checkout-page-checkout-product-split-border"
+                id=""
+              ></div>
+              <div className="checkout-page-product-box" id="">
                 <img
                   src="https://cdn.discordapp.com/attachments/1001702231785099304/1007251332052295720/image.png"
                   alt=""
@@ -112,18 +244,121 @@ const Checkout = ({ className }: Props) => {
           <div id="split-border"></div>
 
           <div className="" id="">
-            <div className="" id="">
+            <form
+              onSubmit={handleSubmit((data) => {
+                console.log(data);
+              })}
+            >
+              <div className="" id="">
+                收件人姓名
+              </div>
+              <input
+                {...register("name", {
+                  required: "此欄位必填",
+                  minLength: { value: 2, message: "最短兩字" },
+                })}
+                placeholder="收件人姓名"
+                className="checkout-page-name-input"
+              />
+              <div className="" id="">
+                {errors.name?.message}
+              </div>
+              <div className="" id="">
+                務必填寫完整收件人姓名，避免包裹無法順利簽收
+              </div>
+              <div className="" id="">
+                手機
+              </div>
+              <input
+                {...register("phone", {
+                  required: "此欄位必填",
+                  minLength: {
+                    value: 10,
+                    message:
+                      "請輸入正確手機號碼:\n\n前兩碼須為09\n共10個數字\n僅限數字不得有任何符號",
+                  },
+                  pattern: /^09[0-9]{8}$/,
+                })}
+                placeholder="手機"
+                className="checkout-page-phone-input"
+              />
+              <div className="" id="">
+                {errors.phone?.message}
+              </div>
+              <div className="" id="">
+                地址
+              </div>
+              <input
+                {...register("address", {
+                  required: "此欄位必填",
+                  minLength: { value: 3, message: "最短三字" },
+                })}
+                placeholder="地址"
+                className="checkout-page-address-input"
+              />
+              <div className="" id="">
+                {errors.address?.message}
+              </div>
+              <div className="" id="">
+                Email
+              </div>
+              <input
+                {...register("email", {
+                  required: "請輸入正確的email格式",
+                  minLength: { value: 2, message: "最短兩字" },
+                  pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+                })}
+                placeholder="Email"
+                className="checkout-page-email-input"
+              />
+              <div className="" id="">
+                {errors.email?.message}
+              </div>
+              <input
+                {...register("time")}
+                type="radio"
+                id="08:00-12:00"
+                className="time"
+                value="08:00-12:00"
+              />
+              <label data-for="08:00-12:00">08:00-12:00</label>
+              <br />
+              <input
+                {...register("time", {
+                  required: "請輸入正確的email格式",
+                })}
+                type="radio"
+                id="14:00-18:00"
+                className="time"
+                value="14:00-18:00"
+              />
+              <label data-for="14:00-18:00">14:00-18:00</label>
+              <br />
+              <input
+                {...register("time")}
+                type="radio"
+                id="not-set"
+                className="time"
+                value="not-set"
+              />
+              <label data-for="not-set">不指定</label>
+              <input type="submit" />
+              <div className="" id="">
+                {errors.time?.message}
+              </div>
+            </form>
+            {/* <div className="" id="">
               <div id="cart-title">收件人姓名</div>
               <input
                 type="text"
                 placeholder="收件人姓名"
-                title="input-className"
+                title="input-name"
                 value=""
-                className="checkout-page-className-input"
+                className="checkout-page-name-input"
                 id=""
               />
             </div>
-            <div id="cart-title">
+            <div className="" id="">
               務必填寫完整收件人姓名，避免包裹無法順利簽收
             </div>
             <div className="" id="">
@@ -186,7 +421,7 @@ const Checkout = ({ className }: Props) => {
                 />
                 <label data-for="not-set">不指定</label>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div id="cart-title-box">

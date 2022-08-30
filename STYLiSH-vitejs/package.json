@@ -26,12 +26,6 @@
     "build": "tsc && vite build",
     "preview": "vite preview --port 8080"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",

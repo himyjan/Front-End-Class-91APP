@@ -2,6 +2,7 @@ import Props from "./types/styleComponentsType";
 import { getQueryClientFetchData } from "./index";
 import { useMatch } from "@tanstack/react-location";
 import { useLocalStorage } from "usehooks-ts";
+import { ColorBox, Color, Size } from "./styledComponents/Product.style";
 
 const Product = ({ className }: Props) => {
   const {
@@ -48,6 +49,21 @@ const Product = ({ className }: Props) => {
               <div className="product-page-product-color-label">顏色｜</div>
 
               <div className="product-page-product-color-list">
+                {productJson
+                  ? productJson.data.colors.map((color, index) => {
+                      return (
+                        <ColorBox
+                          selected={false}
+                          className={`product-page-product-color-box${index}`}
+                        >
+                          <Color
+                            color={color.code}
+                            className={`product-page-product-color${index}`}
+                          ></Color>
+                        </ColorBox>
+                      );
+                    })
+                  : null}
                 {/* <div className="product-page-product-color-box">
                   <div className="product-page-product-color1"></div>
                 </div>
@@ -63,6 +79,19 @@ const Product = ({ className }: Props) => {
               <div className="product-page-product-size-label">尺寸｜</div>
 
               <div className="product-page-product-size-list">
+                {productJson
+                  ? productJson.data.sizes.map((size) => {
+                      return (
+                        <Size
+                          color={"#ececec"}
+                          fontColor={"#3f3a3a"}
+                          className={`product-page-product-size${size}`}
+                        >
+                          {size}
+                        </Size>
+                      );
+                    })
+                  : null}
                 {/* <div className="product-page-product-sizeS">S</div>
                 <div className="product-page-product-sizeM">M</div>
                 <div className="product-page-product-sizeL">L</div> */}

@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "STYLiSH/build",
+    "public": "STYLiSH-vitejs/build",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {

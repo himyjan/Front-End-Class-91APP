@@ -54,22 +54,28 @@ const Checkout = ({ className }: Props) => {
                   id=""
                 />
               </div>
-              <div className="" id="">
-                <div id="check-out-page-item-price-text">數量</div>
-                <div id="check-out-page-item-price-text">單價</div>
-                <div id="check-out-page-item-price-text">小計</div>
+              <div className="check-out-page-item-text-box" id="">
+                <div className="check-out-page-item-qty-text" id="">
+                  數量
+                </div>
+                <div className="check-out-page-item-price-text" id="">
+                  單價
+                </div>
+                <div className="check-out-page-item-total-text" id="">
+                  小計
+                </div>
               </div>
-              <div className="" id="">
-                <select className="amount" id="" title="From">
+              <div className="check-out-page-item-total-price-box" id="">
+                <select className="check-out-page-item-qty" id="" title="From">
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
                 </select>
-                <div className="" id="">
+                <div className="check-out-page-item-price" id="">
                   TWD.799
                 </div>
-                <div className="" id="">
+                <div className="check-out-page-item-total" id="">
                   TWD.799
                 </div>
               </div>

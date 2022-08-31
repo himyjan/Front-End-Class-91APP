@@ -11,7 +11,7 @@ const Footer = ({ className }: Props) => {
 
   return (
     <isLoadingStateContext.Provider value={isVisible}>
-      <footer className={className} ref={ref}>
+      <footer className={className} ref={ref} data-visible={isVisible}>
         <div className="bottom-nav-bar-desktop">
           <div className="bottom-nav-bar-desktop-box">
             <div className="bottom-nav-bar-desktop-about">

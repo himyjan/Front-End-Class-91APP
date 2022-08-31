@@ -40,7 +40,6 @@ const Home = ({ className }: Props) => {
         setApiJsonByMode();
         forceUpdate();
       }
-      console.log(mode);
     });
   }, []);
 

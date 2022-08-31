@@ -4,7 +4,7 @@ import { ApiData, ApiDataJson } from "./lib/fetchAPI";
 import { ProductColor } from "./styledComponents/Home.style";
 import { getQueryClientFetchData, location } from "./index";
 import { isLoadingStateContext } from "./lib/isLoadingStateCreateContext";
-import { useContext, useState, useEffect, useReducer } from "react";
+import { useContext, useEffect, useReducer } from "react";
 
 const Home = ({ className }: Props) => {
   const [, forceUpdate] = useReducer((x) => x + 1, 0);
@@ -12,31 +12,23 @@ const Home = ({ className }: Props) => {
   // let category = params.get("category");
   // console.log(category);
 
-  const [mode, setMode] = useState<string>("all");
-  const [apiJson, setApiJson] = useState<ApiDataJson>();
+  let mode = location.current.search.category as string;
 
   const setApiJsonByMode = () => {
     if ((location.current.search.category as string) === undefined) {
-      setMode("all");
-      setApiJson(getQueryClientFetchData(["AllData"]));
+      return getQueryClientFetchData(["AllData"]) as ApiDataJson;
     } else if ((location.current.search.category as string) == "women") {
-      setMode("women");
-      setApiJson(getQueryClientFetchData(["WomenData"]));
+      return getQueryClientFetchData(["WomenData"]) as ApiDataJson;
     } else if ((location.current.search.category as string) == "men") {
-      setMode("men");
-      setApiJson(getQueryClientFetchData(["MenData"]));
+      return getQueryClientFetchData(["MenData"]) as ApiDataJson;
     } else if ((location.current.search.category as string) == "accessories") {
-      setMode("accessories");
-      setApiJson(getQueryClientFetchData(["AccessoriesData"]));
+      return getQueryClientFetchData(["AccessoriesData"]) as ApiDataJson;
     } else if ((location.current.search.category as string) == "keyword") {
-      setMode("search");
-      setApiJson(getQueryClientFetchData(["SearchData"]));
+      return getQueryClientFetchData(["SearchData"]) as ApiDataJson;
     }
   };
 
-  useEffect(() => {
-    setApiJsonByMode();
-  }, []);
+  let apiJson: ApiDataJson = setApiJsonByMode() as ApiDataJson;
 
   const history = location.history;
   useEffect(() => {
@@ -44,10 +36,13 @@ const Home = ({ className }: Props) => {
       if (mode == (location.current.search.category as string)) {
         return;
       } else {
+        mode = location.current.search.category as string;
         setApiJsonByMode();
+        forceUpdate();
       }
+      console.log(mode);
     });
-  }, [history]);
+  }, []);
 
   const apiData =
     apiJson == undefined

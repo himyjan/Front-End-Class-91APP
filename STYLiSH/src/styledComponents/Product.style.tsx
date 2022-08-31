@@ -2,6 +2,64 @@ import styled from "styled-components";
 import mediaQuery from "./mediaQuery";
 import Product from "../Product";
 
+interface colorBoxProps {
+  selected: boolean;
+}
+
+export const ColorBox = styled.div<colorBoxProps>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border: ${(props) => (props.selected ? "1px solid #979797" : "none")};
+  ${mediaQuery("mobile")`
+      margin-left: 7px;
+      margin-right: 7px;
+    `}
+  ${mediaQuery("desktop")`
+      margin-left: 9.5px;
+      margin-right: 9.5px;
+    `}
+`;
+
+interface colorProps {
+  color: string;
+}
+
+export const Color = styled.div<colorProps>`
+  cursor: pointer;
+  background-color: ${(props) => props.color.replaceAll('"', "")};
+  width: 24px;
+  height: 24px;
+  border: 1px solid #d3d3d3;
+`;
+
+interface sizeProps {
+  color: string;
+  fontColor: string;
+}
+
+export const Size = styled.div<sizeProps>`
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${(props) => props.color.replaceAll('"', "")};
+  color: ${(props) => props.fontColor.replaceAll('"', "")};
+  border-radius: 16px;
+  width: 36px;
+  height: 36px;
+  ${mediaQuery("mobile")`
+      margin-left: 7px;
+      margin-right: 7px;
+    `}
+  ${mediaQuery("desktop")`
+      margin-left: 9.5px;
+      margin-right: 9.5px;
+    `}
+`;
+
 const ProductStyledComponents = styled(Product)`
   .product-page-product-detail {
     display: flex;
@@ -171,7 +229,7 @@ const ProductStyledComponents = styled(Product)`
       margin-right: 9.5px;
     `}
   }
-  .product-page-product-color1 {
+  /* .product-page-product-color1 {
     cursor: pointer;
     background-color: #ffffff;
     width: 24px;
@@ -191,7 +249,7 @@ const ProductStyledComponents = styled(Product)`
     width: 24px;
     height: 24px;
     border: 1px solid #d3d3d3;
-  }
+  } */
   .product-page-product-size {
     display: flex;
     flex-direction: row;
@@ -228,7 +286,7 @@ const ProductStyledComponents = styled(Product)`
       margin-left: 16.5px;
     `}
   }
-  .product-page-product-sizeS {
+  /* .product-page-product-sizeS {
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -284,7 +342,7 @@ const ProductStyledComponents = styled(Product)`
       margin-left: 9.5px;
       margin-right: 9.5px;
     `}
-  }
+  } */
   .product-page-product-amount {
     display: flex;
     flex-direction: row;

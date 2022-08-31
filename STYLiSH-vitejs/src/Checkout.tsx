@@ -1,5 +1,11 @@
 import Props from "./types/styleComponentsType";
 import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+
+const schema = z.object({
+  time: z.string().min(1, { message: "此欄位必填" }),
+});
 
 const Checkout = ({ className }: Props) => {
   const {
@@ -14,6 +20,7 @@ const Checkout = ({ className }: Props) => {
       email: "",
       time: "",
     },
+    resolver: zodResolver(schema),
   });
   return (
     <div className={className}>
@@ -345,11 +352,15 @@ const Checkout = ({ className }: Props) => {
                   id="not-set"
                   className="time"
                 />
-                不指定
+                not-set 不指定
               </label>
-              <div className="" id="">
-                {errors.time?.message}
-              </div>
+
+              {errors.time?.message && (
+                <div className="checkout-page-buyer-time-error" id="">
+                  {errors.time?.message}
+                </div>
+              )}
+
               <input type="submit" />
             </form>
             {/* <div className="" id="">

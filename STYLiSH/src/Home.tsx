@@ -1,28 +1,62 @@
 import Props from "./types/styleComponentsType";
 import { Link } from "@tanstack/react-location";
-import { ApiData } from "./lib/fetchAPI";
+import { ApiData, ApiDataJson } from "./lib/fetchAPI";
 import { ProductColor } from "./styledComponents/Home.style";
-import { getQueryClientFetchData } from "./index";
+import { getQueryClientFetchData, location } from "./index";
 import { isLoadingStateContext } from "./lib/isLoadingStateCreateContext";
-import { useContext } from "react";
+import { useContext, useEffect, useReducer } from "react";
 
 const Home = ({ className }: Props) => {
-  const allJson = getQueryClientFetchData("AllData");
-  const allData =
-    allJson == undefined
+  const [, forceUpdate] = useReducer((x) => x + 1, 0);
+  // let params = new URLSearchParams(document.location.search);
+  // let category = params.get("category");
+  // console.log(category);
+
+  let mode = location.current.search.category as string;
+
+  const setApiJsonByMode = () => {
+    if ((location.current.search.category as string) === undefined) {
+      return getQueryClientFetchData(["AllData"]) as ApiDataJson;
+    } else if ((location.current.search.category as string) == "women") {
+      return getQueryClientFetchData(["WomenData"]) as ApiDataJson;
+    } else if ((location.current.search.category as string) == "men") {
+      return getQueryClientFetchData(["MenData"]) as ApiDataJson;
+    } else if ((location.current.search.category as string) == "accessories") {
+      return getQueryClientFetchData(["AccessoriesData"]) as ApiDataJson;
+    } else if ((location.current.search.category as string) == "keyword") {
+      return getQueryClientFetchData(["SearchData"]) as ApiDataJson;
+    }
+  };
+
+  let apiJson: ApiDataJson = setApiJsonByMode() as ApiDataJson;
+
+  const history = location.history;
+  useEffect(() => {
+    history.listen(() => {
+      if (mode == (location.current.search.category as string)) {
+        return;
+      } else {
+        mode = location.current.search.category as string;
+        setApiJsonByMode();
+        forceUpdate();
+      }
+    });
+  }, []);
+
+  const apiData =
+    apiJson == undefined
       ? []
-      : Object.keys(allJson).length > 0
-      ? (allJson.data as unknown as ApiData[])
+      : Object.keys(apiJson).length > 0
+      ? (apiJson.data as unknown as ApiData[])
       : [];
   const isLoading = useContext(isLoadingStateContext);
-  console.log(isLoading);
 
   return (
     <div className={className}>
       <div>
         <div className="main-page-product-list-box">
-          {allData.length > 0
-            ? allData.map((item, index) => {
+          {apiData.length > 0
+            ? apiData.map((item, index) => {
                 return (
                   <div className="product" data-id={item.id}>
                     <Link to={`product/${item.id}`}>
@@ -33,7 +67,7 @@ const Home = ({ className }: Props) => {
                       />
                     </Link>
                     <div className="product-color-list">
-                      {allData.length > 0
+                      {apiData.length > 0
                         ? item.colors.map((colorItem, index) => {
                             return (
                               <Link to={`product/${item.id}`}>

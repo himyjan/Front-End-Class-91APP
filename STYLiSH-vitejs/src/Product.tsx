@@ -1,6 +1,6 @@
 import Props from "./types/styleComponentsType";
 import { getQueryClientFetchData } from "./index";
-import { useMatch, stringifySearchWith } from "@tanstack/react-location";
+import { useMatch } from "@tanstack/react-location";
 import { useLocalStorage } from "usehooks-ts";
 import { ColorBox, Color, Size } from "./styledComponents/Product.style";
 
@@ -15,7 +15,8 @@ const Product = ({ className }: Props) => {
       ? JSON.parse(window.localStorage.getItem("shoppingCartList") as string)
       : []
   );
-  console.log(productJson);
+  let selectedColor;
+  let selectedSize;
   return (
     <div className={className}>
       <div className="product-page-product-detail" id="" data-product_id="">

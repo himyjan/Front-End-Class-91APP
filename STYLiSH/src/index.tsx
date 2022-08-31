@@ -2,16 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import {
-  Link,
-  MakeGenerics,
-  MatchRoute,
-  Outlet,
-  ReactLocation,
-  Router,
-  useLoadRoute,
-  useMatch,
-} from "@tanstack/react-location";
+import { Outlet, ReactLocation, Router } from "@tanstack/react-location";
 import { ReactLocationDevtools } from "@tanstack/react-location-devtools";
 
 import GlobalStyle from "./styledComponents/index.style";
@@ -26,14 +17,15 @@ import {
   getCategoryWomenDataLoader,
   getCategoryMenDataLoader,
   getCategoryAccessoriesDataLoader,
+  getProductDataLoader,
   ApiDataJson,
 } from "./lib/fetchAPI";
 
 export const queryClient = new QueryClient();
 export const location = new ReactLocation();
 
-export const getQueryClientFetchData = (key: string) => {
-  return queryClient.getQueryData([key]) as ApiDataJson;
+export const getQueryClientFetchData = (key: string[]) => {
+  return queryClient.getQueryData(key) as ApiDataJson;
 };
 
 const root = ReactDOM.createRoot(
@@ -127,7 +119,12 @@ root.render(
           path: "product",
           children: [
             {
-              path: "*",
+              path: ":product_id",
+              loader: ({ params: { product_id } }) =>
+                queryClient.getQueryData(["product", product_id]) ??
+                queryClient.fetchQuery(["product", product_id], () =>
+                  getProductDataLoader(product_id)
+                ),
               element: (
                 <>
                   <Product className="Product" />
@@ -153,8 +150,8 @@ root.render(
         <Footer className="Footer" />
         <GlobalStyle />
       </React.StrictMode>
-      <ReactLocationDevtools initialIsOpen={false} position="bottom-right" />
+      {/* <ReactLocationDevtools initialIsOpen={false} position="bottom-right" /> */}
     </Router>
-    <ReactQueryDevtools initialIsOpen={false} />
+    {/* <ReactQueryDevtools initialIsOpen={false} /> */}
   </QueryClientProvider>
 );

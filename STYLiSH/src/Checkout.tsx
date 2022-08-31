@@ -1,5 +1,22 @@
 import Props from "./types/styleComponentsType";
 import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+
+const schema = z.object({
+  name: z.string().min(1, { message: "此欄位必填" }),
+  phone: z
+    .string()
+    .min(10, { message: "此欄位必填10位數字" })
+    .max(10, { message: "此欄位必填10位數字" })
+    .regex(/^09[0-9]{8}$/),
+  address: z.string().min(1, { message: "此欄位必填" }),
+  email: z
+    .string()
+    .min(1, { message: "此欄位必填" })
+    .regex(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/),
+  time: z.string().min(1, { message: "此欄位必選" }),
+});
 
 const Checkout = ({ className }: Props) => {
   const {
@@ -14,6 +31,7 @@ const Checkout = ({ className }: Props) => {
       email: "",
       time: "",
     },
+    resolver: zodResolver(schema),
   });
   return (
     <div className={className}>
@@ -259,13 +277,14 @@ const Checkout = ({ className }: Props) => {
               <input
                 {...register("name", {
                   required: "此欄位必填",
-                  minLength: { value: 2, message: "最短兩字" },
+                  minLength: { value: 2, message: "最短兩個文字" },
                 })}
                 placeholder="收件人姓名"
                 className="checkout-page-buyer-name-input"
               />
               <div className="checkout-page-buyer-name-input-error" id="">
-                {errors.name?.message}
+                {/* {errors.name?.message} */}
+                {errors.name && "最短兩個文字"}
               </div>
               <div className="checkout-page-buyer-name-input-hint" id="">
                 務必填寫完整收件人姓名，避免包裹無法順利簽收
@@ -287,7 +306,9 @@ const Checkout = ({ className }: Props) => {
                 className="checkout-page-buyer-phone-input"
               />
               <div className="checkout-page-buyer-phone-input-error" id="">
-                {errors.phone?.message}
+                {/* {errors.phone?.message} */}
+                {errors.phone &&
+                  "請輸入正確手機號碼:前兩碼須為09,共10個數字,僅限數字不得有任何符號"}
               </div>
               <div className="checkout-page-buyer-address-title" id="">
                 地址
@@ -295,13 +316,14 @@ const Checkout = ({ className }: Props) => {
               <input
                 {...register("address", {
                   required: "此欄位必填",
-                  minLength: { value: 3, message: "最短三字" },
+                  minLength: { value: 3, message: "最短三個文字" },
                 })}
                 placeholder="地址"
                 className="checkout-page-buyer-address-input"
               />
               <div className="checkout-page-buyer-address-error" id="">
-                {errors.address?.message}
+                {/* {errors.address?.message} */}
+                {errors.address && "最短三個文字"}
               </div>
               <div className="checkout-page-buyer-email-title" id="">
                 Email
@@ -316,39 +338,43 @@ const Checkout = ({ className }: Props) => {
                 className="checkout-page-email-input"
               />
               <div className="checkout-page-buyer-email-error" id="">
-                {errors.email?.message}
+                {/* {errors.email?.message} */}
+                {errors.email && "請輸入正確的email格式"}
               </div>
-              <input
-                {...register("time")}
-                type="radio"
-                id="08:00-12:00"
-                className="time"
-                value="08:00-12:00"
-              />
-              <label data-for="08:00-12:00">08:00-12:00</label>
-              <br />
-              <input
-                {...register("time", {
-                  required: "請輸入正確的email格式",
-                })}
-                type="radio"
-                id="14:00-18:00"
-                className="time"
-                value="14:00-18:00"
-              />
-              <label data-for="14:00-18:00">14:00-18:00</label>
-              <br />
-              <input
-                {...register("time")}
-                type="radio"
-                id="not-set"
-                className="time"
-                value="not-set"
-              />
-              <label data-for="not-set">不指定</label>
-              <div className="" id="">
+              <label htmlFor="08:00-12:00">
+                <input
+                  {...register("time")}
+                  type="radio"
+                  id="08:00-12:00"
+                  className="time"
+                  value="08:00-12:00"
+                />
+                08:00-12:00
+              </label>
+              <label htmlFor="14:00-18:00">
+                <input
+                  {...register("time")}
+                  type="radio"
+                  id="14:00-18:00"
+                  className="time"
+                  value="14:00-18:00"
+                />
+                14:00-18:00
+              </label>
+              <label htmlFor="not-set">
+                <input
+                  {...register("time")}
+                  type="radio"
+                  id="not-set"
+                  className="time"
+                />
+                不指定
+              </label>
+
+              <div className="checkout-page-buyer-time-error" id="">
                 {errors.time?.message}
               </div>
+
               <input type="submit" />
             </form>
             {/* <div className="" id="">

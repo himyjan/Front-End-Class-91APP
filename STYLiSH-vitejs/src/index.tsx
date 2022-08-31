@@ -150,8 +150,8 @@ root.render(
         <Footer className="Footer" />
         <GlobalStyle />
       </React.StrictMode>
-      {/* <ReactLocationDevtools initialIsOpen={false} position="bottom-right" /> */}
+      <ReactLocationDevtools initialIsOpen={false} position="bottom-right" />
     </Router>
-    {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+    <ReactQueryDevtools initialIsOpen={false} />
   </QueryClientProvider>
 );

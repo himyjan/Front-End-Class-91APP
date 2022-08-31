@@ -15,6 +15,7 @@ const Product = ({ className }: Props) => {
       ? JSON.parse(window.localStorage.getItem("shoppingCartList") as string)
       : []
   );
+  console.log(productJson);
   return (
     <div className={className}>
       <div className="product-page-product-detail" id="" data-product_id="">
@@ -57,7 +58,7 @@ const Product = ({ className }: Props) => {
                           className={`product-page-product-color-box${index}`}
                         >
                           <Color
-                            color={color.code}
+                            color={`#${color.code}`}
                             className={`product-page-product-color${index}`}
                           ></Color>
                         </ColorBox>

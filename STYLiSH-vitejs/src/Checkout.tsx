@@ -318,34 +318,35 @@ const Checkout = ({ className }: Props) => {
               <div className="checkout-page-buyer-email-error" id="">
                 {errors.email?.message}
               </div>
-              <input
-                {...register("time")}
-                type="radio"
-                id="08:00-12:00"
-                className="time"
-                value="08:00-12:00"
-              />
-              <label data-for="08:00-12:00">08:00-12:00</label>
-              <br />
-              <input
-                {...register("time", {
-                  required: "請輸入正確的email格式",
-                })}
-                type="radio"
-                id="14:00-18:00"
-                className="time"
-                value="14:00-18:00"
-              />
-              <label data-for="14:00-18:00">14:00-18:00</label>
-              <br />
-              <input
-                {...register("time")}
-                type="radio"
-                id="not-set"
-                className="time"
-                value="not-set"
-              />
-              <label data-for="not-set">不指定</label>
+              <label htmlFor="08:00-12:00">
+                <input
+                  {...register("time")}
+                  type="radio"
+                  id="08:00-12:00"
+                  className="time"
+                  value="08:00-12:00"
+                />
+                08:00-12:00
+              </label>
+              <label htmlFor="14:00-18:00">
+                <input
+                  {...register("time")}
+                  type="radio"
+                  id="14:00-18:00"
+                  className="time"
+                  value="14:00-18:00"
+                />
+                14:00-18:00
+              </label>
+              <label htmlFor="not-set">
+                <input
+                  {...register("time")}
+                  type="radio"
+                  id="not-set"
+                  className="time"
+                />
+                不指定
+              </label>
               <div className="" id="">
                 {errors.time?.message}
               </div>

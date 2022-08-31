@@ -1,5 +1,5 @@
 import Props from "./types/styleComponentsType";
-import { Link, useMatch } from "@tanstack/react-location";
+import { Link } from "@tanstack/react-location";
 import { ApiData, ApiDataJson } from "./lib/fetchAPI";
 import { ProductColor } from "./styledComponents/Home.style";
 import { getQueryClientFetchData, location } from "./index";

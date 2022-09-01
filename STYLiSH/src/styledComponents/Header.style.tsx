@@ -192,7 +192,7 @@ const HeaderStyledComponents = styled(Header)`
     }
   }
 
-  .top-nav-bar-desktop-profile {
+  .top-nav-bar-desktop-profile-box {
     ${mediaQuery("mobile")`
         display: none;
       `}

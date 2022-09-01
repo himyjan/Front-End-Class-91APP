@@ -335,6 +335,7 @@ const FooterStyledComponents = styled(Footer)`
 
   .bottom-nav-bar-mobile-stick-shopping-profile {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 50%;

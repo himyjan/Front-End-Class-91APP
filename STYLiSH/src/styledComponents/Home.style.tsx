@@ -1,6 +1,27 @@
 import styled from "styled-components";
 import mediaQuery from "./mediaQuery";
 import Home from "../Home";
+interface colorProps {
+  color: string;
+}
+
+export const ProductColor = styled.div<colorProps>`
+  cursor: pointer;
+  background-color: ${(props) => props.color};
+  border: 1px solid #d3d3d3;
+  ${mediaQuery("mobile")`
+      width: 12px;
+      height: 12px;
+      margin-top: 8px;
+      margin-right: 6px;
+    `}
+  ${mediaQuery("desktop")`
+      width: 24px;
+      height: 24px;
+      margin-top: 20px;
+      margin-right: 10px;
+    `}
+`;
 
 const HomeStyledComponents = styled(Home)`
   .main-page-product-list-box {

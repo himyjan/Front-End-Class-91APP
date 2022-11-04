@@ -2838,7 +2838,7 @@
           desktop:h-[115px]
           desktop:mx-auto
           desktop:bg-[#313538]
-        " name="bottom-nav-bar-desktop-box">
+        " name="bottom-nav-bar-desktop">
       <div class="flex mr-[101px]" name="bottom-nav-bar-desktop-links">
         <div class="
               cursor-pointer
@@ -2925,7 +2925,7 @@
       </div>
     </div>
 
-    <div class="mobile:z-[999] mobile:block desktop:hidden w-full bg-[#313538]" name="bottom-nav-bar-mobile-box-box">
+    <div class="mobile:z-[999] mobile:block desktop:hidden w-full bg-[#313538]" name="bottom-nav-bar-mobile">
       <div class="flex flex-col items-center max-w-[360px] mx-auto pt-[23px]" name="bottom-nav-bar-mobile-box">
         <div class="flex justify-center items-end w-full" name="bottom-nav-bar-mobile-contactlist">
           <div class="ml-[40px] mr-[36px]" name="bottom-nav-bar-mobile-links-part1">
@@ -3481,10 +3481,10 @@
       'div[name="spinner"]'
     );
     const intersectionObserverTargetDesktop = document.querySelector(
-      'div[name="bottom-nav-bar-desktop-box"]'
+      'div[name="bottom-nav-bar-desktop"]'
     );
     const intersectionObserverTargetMobile = document.querySelector(
-      'div[name="bottom-nav-bar-mobile-box-box"]'
+      'div[name="bottom-nav-bar-mobile"]'
     );
 
     let intersectionObserver = new IntersectionObserver((entries) => {

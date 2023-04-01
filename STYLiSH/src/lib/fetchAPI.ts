@@ -111,7 +111,7 @@ export const getCategoryAllDataRouterLoader = new Loader({
 export const findWomen = () => {
   const { data: HomeData } = useQuery<ApiData[]>(
     ['homeData'],
-    async () => (await axiosClient.get('/products/women')).data.data,
+    async () => (await axiosClient.get('/products/women')),
     {
       initialData: [],
     }
@@ -134,7 +134,7 @@ export const getCategoryWomenDataRouterLoader = new Loader({
 export const findMen = () => {
   const { data: HomeData } = useQuery<ApiData[]>(
     ['homeData'],
-    async () => (await axiosClient.get('/products/men')).data.data,
+    async () => (await axiosClient.get('/products/men')),
     {
       initialData: [],
     }
@@ -157,7 +157,7 @@ export const getCategoryMenDataRouterLoader = new Loader({
 export const findAccessories = () => {
   const { data: HomeData } = useQuery<ApiData[]>(
     ['homeData'],
-    async () => (await axiosClient.get('/products/accessories')).data.data,
+    async () => (await axiosClient.get('/products/accessories')),
     {
       initialData: [],
     }
@@ -181,7 +181,7 @@ export const findSearch = (searchKeyWord: string) => {
   const { data: HomeData } = useQuery<ApiData[]>(
     ['SearchData'],
     async () =>
-      (await axiosClient.get(`/products/search?keyword=${searchKeyWord}`)).data.data,
+      (await axiosClient.get(`/products/search?keyword=${searchKeyWord}`)),
     {
       initialData: [],
     }

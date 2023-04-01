@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
+import { Loader } from '@tanstack/react-loaders';
 
 // https://www.bezkoder.com/react-query-axios-typescript/
 
@@ -12,12 +13,12 @@ export const axiosClient = axios.create({
   },
 });
 
-interface Color {
+export type Color = {
   code: string;
   name: string;
 }
 
-export interface ApiData {
+export type ApiData = {
   id: number;
   product_id: number;
   picture: string;
@@ -72,15 +73,21 @@ export const getSliderData = () => {
 
 export const getSliderDataLoader = async () => {
   await new Promise((r) => setTimeout(r, 500));
-    return {
-      data: await axiosClient.get('/marketing/campaigns'),
-    };
+  return await axiosClient.get('/marketing/campaigns');
 };
+
+export const getSliderDataRouterLoader = new Loader({
+  key: 'Slider',
+  loader: async () => {
+    await new Promise((r) => setTimeout(r, 500));
+    return await axiosClient.get('/marketing/campaigns');
+  }
+})
 
 export const findAll = () => {
   const { data: HomeData } = useQuery<ApiData[]>(
     ['HomeData'],
-    async () => (await axiosClient.get('/products/all')).data,
+    async () => (await axiosClient.get('/products/all')),
     {
       initialData: [],
     }
@@ -90,15 +97,21 @@ export const findAll = () => {
 
 export const getCategoryAllDataLoader = async () => {
   await new Promise((r) => setTimeout(r, 500));
-    return {
-      data: await axiosClient.get('/products/all'),
-    };
+  return await axiosClient.get('/products/all');
 };
+
+export const getCategoryAllDataRouterLoader = new Loader({
+  key: 'All',
+  loader: async () => {
+    await new Promise((r) => setTimeout(r, 500));
+    return await axiosClient.get('/products/all');
+  }
+})
 
 export const findWomen = () => {
   const { data: HomeData } = useQuery<ApiData[]>(
     ['homeData'],
-    async () => (await axiosClient.get('/products/women')).data,
+    async () => (await axiosClient.get('/products/women')).data.data,
     {
       initialData: [],
     }
@@ -108,15 +121,20 @@ export const findWomen = () => {
 
 export const getCategoryWomenDataLoader = async () => {
   await new Promise((r) => setTimeout(r, 500));
-  return {
-    data: await axiosClient.get('/products/women'),
-  };
+  return await axiosClient.get('/products/women');
 };
+
+export const getCategoryWomenDataRouterLoader = new Loader({
+  key: 'Women', loader: async () => {
+    await new Promise((r) => setTimeout(r, 500));
+    return await axiosClient.get('/products/women');
+  }
+})
 
 export const findMen = () => {
   const { data: HomeData } = useQuery<ApiData[]>(
     ['homeData'],
-    async () => (await axiosClient.get('/products/men')).data,
+    async () => (await axiosClient.get('/products/men')).data.data,
     {
       initialData: [],
     }
@@ -126,15 +144,20 @@ export const findMen = () => {
 
 export const getCategoryMenDataLoader = async () => {
   await new Promise((r) => setTimeout(r, 500));
-  return {
-    data: await axiosClient.get('/products/men'),
-  };
+  return await axiosClient.get('/products/men');
 };
+
+export const getCategoryMenDataRouterLoader = new Loader({
+  key: 'Men', loader: async () => {
+    await new Promise((r) => setTimeout(r, 500));
+    return await axiosClient.get('/products/men');
+  }
+})
 
 export const findAccessories = () => {
   const { data: HomeData } = useQuery<ApiData[]>(
     ['homeData'],
-    async () => (await axiosClient.get('/products/accessories')).data,
+    async () => (await axiosClient.get('/products/accessories')).data.data,
     {
       initialData: [],
     }
@@ -144,17 +167,21 @@ export const findAccessories = () => {
 
 export const getCategoryAccessoriesDataLoader = async () => {
   await new Promise((r) => setTimeout(r, 500));
-  return {
-    data: await axiosClient.get('/products/accessories'),
-  };
+  return await axiosClient.get('/products/accessories');
 };
+
+export const getCategoryAccessoriesDataRouterLoader = new Loader({
+  key: 'Accessories', loader: async () => {
+    await new Promise((r) => setTimeout(r, 500));
+    return await axiosClient.get('/products/accessories');
+  }
+})
 
 export const findSearch = (searchKeyWord: string) => {
   const { data: HomeData } = useQuery<ApiData[]>(
     ['SearchData'],
     async () =>
-      (await axiosClient.get(`/products/search?keyword=${searchKeyWord}`)).data
-        .data,
+      (await axiosClient.get(`/products/search?keyword=${searchKeyWord}`)).data.data,
     {
       initialData: [],
     }
@@ -164,14 +191,24 @@ export const findSearch = (searchKeyWord: string) => {
 
 export const getSearchDataLoader = async (searchKeyWord: string) => {
   await new Promise((r) => setTimeout(r, 500));
-  return {
-    data: await axiosClient.get(`/products/search?keyword=${searchKeyWord}`),
-  };
+  return await axiosClient.get(`/products/search?keyword=${searchKeyWord}`);
 };
+
+export const getSearchDataRouterLoader = new Loader({
+  key: "Search", loader: async (searchKeyWord: string) => {
+    await new Promise((r) => setTimeout(r, 500));
+    return await axiosClient.get(`/products/search?keyword=${searchKeyWord}`);
+  }
+})
 
 export const getProductDataLoader = async (product_id: string) => {
   await new Promise((r) => setTimeout(r, 500));
-  return {
-    data: await axiosClient.get(`/products/details?id=${product_id}`),
-  };
+  return await axiosClient.get(`/products/details?id=${product_id}`);
 };
+
+export const getProductDataRouterLoader = new Loader({
+  key: 'Product', loader: async (product_id: string) => {
+    await new Promise((r) => setTimeout(r, 500));
+    return await axiosClient.get(`/products/details?id=${product_id}`);
+  }
+})

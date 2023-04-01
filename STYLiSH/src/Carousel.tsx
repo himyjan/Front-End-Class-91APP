@@ -13,9 +13,9 @@ const Carousel = ({ className }: Props) => {
   useEffect(() => {
     sliderData.length > 0
       ? sliderData.forEach((slider) => {
-          const img = new Image();
-          img.src = slider.picture;
-        })
+        const img = new Image();
+        img.src = slider.picture;
+      })
       : null;
   }, [sliderData]);
 
@@ -33,11 +33,8 @@ const Carousel = ({ className }: Props) => {
   return (
     <div className={className}>
       <Link
-        to={
-          sliderData.length > 0
-            ? `product/${sliderData[sliderIndex].product_id}`
-            : 'product'
-        }
+        to={"/product/$product_id"}
+        params={{ product_id: `${sliderData.length > 0 ? sliderData[sliderIndex].product_id : -1}` }}
       >
         <Slides
           className='slides'
@@ -51,8 +48,8 @@ const Carousel = ({ className }: Props) => {
                 {/* 於是 */}
                 {sliderData.length > 0
                   ? sliderData[sliderIndex].story
-                      .split('。')[0]
-                      .replaceAll('\r\n', '\n')
+                    .split('。')[0]
+                    .replaceAll('\r\n', '\n')
                   : null}
                 {/* <br /> */}
                 {/* 我也想要給你 */}
@@ -64,8 +61,8 @@ const Carousel = ({ className }: Props) => {
                 {/* 不朽《與自己和好如初》 */}
                 {sliderData.length > 0
                   ? sliderData[sliderIndex].story
-                      .split('。')[1]
-                      .replaceAll('<br>', '')
+                    .split('。')[1]
+                    .replaceAll('<br>', '')
                   : null}
                 {/* {Object.keys(campaigns).length > 0
                 ? campaigns[sliderIndex].story
@@ -78,17 +75,17 @@ const Carousel = ({ className }: Props) => {
           <div className='main-page-dot-box'>
             {sliderData.length > 0
               ? sliderData.map((item, index) => {
-                  return (
-                    <Dot
-                      data-index={index}
-                      data-id={item.id}
-                      data-product_id={item.product_id}
-                      color={sliderIndex == index ? '#8b572a' : '#ffffff40'}
-                      className='dot'
-                      onClick={() => setSliderIndex(index)}
-                    ></Dot>
-                  );
-                })
+                return (
+                  <Dot
+                    data-index={index}
+                    data-id={item.id}
+                    data-product_id={item.product_id}
+                    color={sliderIndex == index ? '#8b572a' : '#ffffff40'}
+                    className='dot'
+                    onClick={() => setSliderIndex(index)}
+                  ></Dot>
+                );
+              })
               : null}
             {/* <div
             data-index=""

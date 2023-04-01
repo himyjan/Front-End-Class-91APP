@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import {
-  createReactRouter,
-  createRouteConfig,
+  LoaderClient,
+  LoaderClientProvider,
+} from '@tanstack/react-loaders'
+import {
   Outlet,
-  Router,
   RouterProvider,
+  Router,
+  Route,
+  RootRoute,
 } from '@tanstack/react-router';
 
 import GlobalStyle from './styledComponents/index.style';
@@ -22,68 +26,104 @@ import {
   getCategoryMenDataLoader,
   getCategoryAccessoriesDataLoader,
   getProductDataLoader,
+  getSearchDataLoader,
+  getCategoryAllDataRouterLoader,
+  getCategoryWomenDataRouterLoader,
+  getCategoryMenDataRouterLoader,
+  getCategoryAccessoriesDataRouterLoader,
+  getProductDataRouterLoader,
+  getSearchDataRouterLoader,
   ApiDataJson,
 } from './lib/fetchAPI';
+import { z } from 'zod';
 
 export const queryClient = new QueryClient();
-export const rootRoute = createRouteConfig();
+export const loaderClient = new LoaderClient({
+  getLoaders: () => ({
+  }),
+});
+
+declare module '@tanstack/react-loaders' {
+  interface Register {
+    loaderClient: typeof loaderClient
+  }
+}
+
+type RouterContext = {
+  loaderClient: typeof loaderClient
+}
+
+export const rootRoute = new RootRoute({
+  component: () => {
+    return (
+      <>
+        <Header className='Header' />
+        <Outlet />
+        <Footer className='Footer' />
+        <GlobalStyle />
+      </>
+    )
+  }
+});
 
 export const getQueryClientFetchData = (key: string[]) => {
   return queryClient.getQueryData(key) as ApiDataJson;
 };
 
-const indexRoute = rootRoute.createRoute({
-  id: 'all',
+const productSearchSchema = z.object({
+  category: z.enum(['', 'women', 'men', 'accessories']).catch(''),
+  keyword: z.string().catch(''),
+})
+
+const queryClientKey = {
+  '': 'AllData',
+  'women': 'WomenData',
+  'men': 'MenData',
+  'accessories': 'AccessoriesData',
+}
+
+const getCategoryDataLoader = {
+  '': getCategoryAllDataLoader,
+  'women': getCategoryWomenDataLoader,
+  'men': getCategoryMenDataLoader,
+  'accessories': getCategoryAccessoriesDataLoader,
+}
+
+export const indexRoute = new Route({
+  getParentRoute: () => rootRoute,
+  id: 'home',
   path: '/',
-  component: Home,
+  caseSensitive: true,
+  validateSearch: productSearchSchema,
+  component: () => {
+    return (
+      <>
+        <Carousel className='Carousel' />
+        <Home className='Home' />
+      </>
+    );
+  },
   errorComponent: () => 'Oh crap',
-  loader: async () =>
-    queryClient.getQueryData(['AllData']) ??
-    queryClient
-      .fetchQuery(['AllData'], getCategoryAllDataLoader)
-      .then((res) => res.data),
+  onLoad:
+    async ({ search }) =>
+      queryClient.getQueryData([queryClientKey[search.category]]) ??
+      queryClient
+        .fetchQuery([queryClientKey[search.category]], getCategoryDataLoader[search.category])
+        .then((res) => res.data),
 });
 
-const indexWomenRoute = indexRoute.createRoute({
-  id: 'women',
-  path: '/',
-  component: Home,
-  errorComponent: () => 'Oh crap',
-  loader: async () =>
-    queryClient.getQueryData(['WomenData']) ??
-    queryClient
-      .fetchQuery(['WomenData'], getCategoryWomenDataLoader)
-      .then((res) => res.data),
-});
-
-const indexMenRoute = indexRoute.createRoute({
-  id: 'men',
-  path: '/',
-  component: Home,
-  errorComponent: () => 'Oh crap',
-  loader: async () =>
-    queryClient.getQueryData(['MenData']) ??
-    queryClient
-      .fetchQuery(['MenData'], getCategoryMenDataLoader)
-      .then((res) => res.data),
-});
-
-const indexAccessoriesRoute = indexRoute.createRoute({
-  id: 'accessories',
-  path: '/',
-  component: Home,
-  errorComponent: () => 'Oh crap',
-  loader: async () =>
-    queryClient.getQueryData(['AccessoriesData']) ??
-    queryClient
-      .fetchQuery(['AccessoriesData'], getCategoryAccessoriesDataLoader)
-      .then((res) => res.data),
-});
-
-// const indexSearchRoute = indexRoute.createRoute({
+// export const indexSearchRoute = new Route({
+//   getParentRoute: () => rootRoute,
 //   id: 'search',
 //   path: '/',
-//   component: Home,
+//   component: () => {
+//     return (
+//       <>
+//         <Carousel className='Carousel' />
+//         <Home className='Home' />
+//       </>
+//     );
+//   },
 //   errorComponent: () => 'Oh crap',
 //   search: (search) => {
 //     return (
@@ -92,71 +132,88 @@ const indexAccessoriesRoute = indexRoute.createRoute({
 //   },
 // });
 
-const productPage = () => {
-  return (
-    <>
-      <div>productID not found!</div>
-    </>
-  );
-};
-
-export const productRoute = rootRoute.createRoute({
-  path: '/product',
-  component: productPage,
-});
-
-export const productIDRoute = productRoute.createRoute({
+export const productIDRoute = new Route({
+  getParentRoute: () => rootRoute,
   id: 'product',
-  path: '/:product_id',
-  component: Product,
+  path: 'product/$product_id',
+  parseParams: (params) => ({ product_id: params.product_id }),
+  component: () => {
+    return (
+      <Product className='Product' />
+    );
+  },
   errorComponent: () => 'Oh crap',
-  loader: async ({ params: { product_id } }) =>
+  onLoad: async ({ params: { product_id } }) =>
     queryClient.getQueryData(['product', product_id]) ??
     queryClient.fetchQuery(['product', product_id], () =>
       getProductDataLoader(product_id)
     ),
 });
 
-export const checkoutRoute = rootRoute.createRoute({
-  path: '/checkout',
+export const checkoutRoute = new Route({
+  getParentRoute: () => rootRoute,
+  path: 'checkout',
   component: Checkout,
 });
 
-const routeConfig = createRouteConfig().addChildren([
-  // indexRoute,
-  indexRoute.addChildren([
-    indexWomenRoute,
-    indexMenRoute,
-    indexAccessoriesRoute,
-  ]),
-  productRoute.addChildren([productIDRoute]),
+const routeTree = rootRoute.addChildren([
+  indexRoute,
+  productIDRoute,
+  checkoutRoute,
 ]);
 
 // Set up a ReactRouter instance
-const router = createReactRouter({
-  routeConfig,
-  // defaultPreload: 'intent',
-});
+const router = new Router({
+  routeTree,
+  defaultPreload: 'intent',
+})
 
 declare module '@tanstack/react-router' {
-  interface RegisterRouter {
-    router: typeof router;
+  interface Register {
+    router: typeof router
   }
 }
+
+const ReactQueryDevtools =
+  process.env.NODE_ENV === 'production'
+    ? () => null // Render nothing in production
+    : React.lazy(() =>
+      // Lazy load in development
+      import('@tanstack/react-query-devtools').then((res) => ({
+        default: res.ReactQueryDevtools,
+        // For Embedded Mode
+        // default: res.ReactQueryDevtoolsPanel
+      })),
+    );
+
+const TanStackRouterDevtools =
+  process.env.NODE_ENV === 'production'
+    ? () => null // Render nothing in production
+    : React.lazy(() =>
+      // Lazy load in development
+      import('@tanstack/react-router-devtools').then((res) => ({
+        default: res.TanStackRouterDevtools,
+        // For Embedded Mode
+        // default: res.TanStackRouterDevtoolsPanel
+      })),
+    );
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
 root.render(
-  <QueryClientProvider client={queryClient} contextSharing={true}>
-    <RouterProvider router={router}>
-      <React.StrictMode>
-        <Header className='header' />
-        <Outlet />
-        <Footer className='Footer' />
-        <GlobalStyle />
-      </React.StrictMode>
-    </RouterProvider>
-  </QueryClientProvider>
+  <StrictMode>
+    <LoaderClientProvider loaderClient={loaderClient}>
+      <QueryClientProvider client={queryClient}>
+        {process.env.NODE_ENV === 'production'
+          ? null
+          : <ReactQueryDevtools initialIsOpen={false} />}
+        <RouterProvider router={router} />
+        {process.env.NODE_ENV === 'production'
+          ? null
+          : <TanStackRouterDevtools router={router} position='bottom-right' />}
+      </QueryClientProvider>
+    </LoaderClientProvider>
+  </StrictMode>
 );

@@ -6,7 +6,7 @@ const Header = ({ className }: Props) => {
     <header className={className}>
       <nav className='top-nav'>
         <div className='top-nav-bar-box'>
-          <Link to='.' className='top-nav-bar-website-logo-link'>
+          <Link to='/' search={{}} className='top-nav-bar-website-logo-link'>
             <img
               src='https://cdn.discordapp.com/attachments/1001702231785099304/1006055669914406982/logo.png'
               alt=''
@@ -15,7 +15,8 @@ const Header = ({ className }: Props) => {
           </Link>
           <div className='top-nav-bar-desktop-women-dresses'>
             <Link
-              to='?category=women'
+              to='/'
+              search={{ category: 'women' }}
               className='top-nav-bar-desktop-women-dresses-link'
             >
               女裝
@@ -23,7 +24,8 @@ const Header = ({ className }: Props) => {
           </div>
           <div className='top-nav-bar-desktop-men-dresses'>
             <Link
-              to='?category=men'
+              to='/'
+              search={{ category: 'men' }}
               className='top-nav-bar-desktop-men-dresses-link'
             >
               男裝
@@ -31,7 +33,8 @@ const Header = ({ className }: Props) => {
           </div>
           <div className='top-nav-bar-desktop-accessories'>
             <Link
-              to='?category=accessories'
+              to='/'
+              search={{ category: 'accessories' }}
               className='top-nav-bar-desktop-accessories-link'
             >
               配件
@@ -49,6 +52,7 @@ const Header = ({ className }: Props) => {
           <div className='top-nav-bar-desktop-shopping-cart-box'>
             <Link
               to='checkout'
+              search={{}}
               className='top-nav-bar-desktop-shopping-cart-box-link'
             >
               <img
@@ -66,7 +70,7 @@ const Header = ({ className }: Props) => {
           </div>
 
           <div className='top-nav-bar-desktop-profile-box'>
-            <Link to='profile' className='top-nav-bar-desktop-profile-link'>
+            <Link to='profile' search={{}} className='top-nav-bar-desktop-profile-link'>
               <img
                 src='https://cdn.discordapp.com/attachments/1001702231785099304/1007154394904666112/profile.png'
                 alt=''
@@ -87,7 +91,8 @@ const Header = ({ className }: Props) => {
         <div className='top-nav-bar-below'>
           <div className='top-nav-bar-below-mobile-women-dresses'>
             <Link
-              to='?category=women'
+              to='/'
+              search={{ category: 'women' }}
               className='top-nav-bar-below-mobile-women-dresses-link'
             >
               女裝
@@ -95,7 +100,8 @@ const Header = ({ className }: Props) => {
           </div>
           <div className='top-nav-bar-below-mobile-men-dresses'>
             <Link
-              to='?category=men'
+              to='/'
+              search={{ category: 'men' }}
               className='top-nav-bar-below-mobile-men-dresses-link'
             >
               男裝
@@ -103,7 +109,8 @@ const Header = ({ className }: Props) => {
           </div>
           <div className='top-nav-bar-below-mobile-accessories'>
             <Link
-              to='?category=accessories'
+              to='/'
+              search={{ category: 'accessories' }}
               className='top-nav-bar-below-mobile-accessories-link'
             >
               配件

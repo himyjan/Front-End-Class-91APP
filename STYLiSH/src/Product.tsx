@@ -3,14 +3,14 @@ import { getQueryClientFetchData, productIDRoute } from './index';
 import { useParams } from '@tanstack/react-router';
 import { useLocalStorage } from 'usehooks-ts';
 import { ColorBox, Color, Size } from './styledComponents/Product.style';
-import { Color as ColorType } from './lib/fetchAPI';
+import { ApiData, Color as ColorType } from './types/apiDataType';
 
 const Product = ({ className }: Props) => {
   const {
     product_id
   } = useParams({ from: productIDRoute.id });
 
-  const productJson = getQueryClientFetchData(['product', `${product_id}`]).data.data;
+  const productJson = (getQueryClientFetchData(['product', `${product_id}`]) as { data: { data: ApiData } }).data.data;
   const [shoppingCartList, setShoppingCartList] = useLocalStorage(
     'shoppingCartList',
     window.localStorage.getItem('shoppingCartList')

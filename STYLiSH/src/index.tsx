@@ -20,27 +20,22 @@ import Carousel from './styledComponents/Carousel.style';
 import Home from './styledComponents/Home.style';
 import Product from './styledComponents/Product.style';
 import Checkout from './styledComponents/Checkout.style';
-import {
-  getCategoryAllDataLoader,
-  getCategoryWomenDataLoader,
-  getCategoryMenDataLoader,
-  getCategoryAccessoriesDataLoader,
-  getProductDataLoader,
-  getSearchDataLoader,
-  getCategoryAllDataRouterLoader,
-  getCategoryWomenDataRouterLoader,
-  getCategoryMenDataRouterLoader,
-  getCategoryAccessoriesDataRouterLoader,
-  getProductDataRouterLoader,
-  getSearchDataRouterLoader,
-  ApiDataJson,
-} from './lib/fetchAPI';
+import api from './lib/fetchAPI';
+import { ApiDataJson } from './types/apiDataType';
 import { z } from 'zod';
 
 export const queryClient = new QueryClient();
 export const loaderClient = new LoaderClient({
   getLoaders: () => ({
-  }),
+    getSliderDataLoader: api.getSliderDataLoader,
+    getSearchDataLoader: api.getSearchDataLoader,
+    getCategoryAllDataRouterLoader: api.getCategoryAllDataRouterLoader,
+    getCategoryWomenDataRouterLoader: api.getCategoryWomenDataRouterLoader,
+    getCategoryMenDataRouterLoader: api.getCategoryMenDataRouterLoader,
+    getCategoryAccessoriesDataRouterLoader: api.getCategoryAccessoriesDataRouterLoader,
+    getProductDataRouterLoader: api.getProductDataRouterLoader,
+    getSearchDataRouterLoader: api.getSearchDataRouterLoader,
+  } as any),
 });
 
 declare module '@tanstack/react-loaders' {
@@ -67,26 +62,26 @@ export const rootRoute = new RootRoute({
 });
 
 export const getQueryClientFetchData = (key: string[]) => {
-  return queryClient.getQueryData(key) as ApiDataJson;
+  return queryClient.getQueryData(key);
 };
 
 const productSearchSchema = z.object({
-  category: z.enum(['', 'women', 'men', 'accessories']).catch(''),
+  category: z.enum(['all', 'women', 'men', 'accessories']).catch('all'),
   keyword: z.string().catch(''),
 })
 
 const queryClientKey = {
-  '': 'AllData',
+  'all': 'AllData',
   'women': 'WomenData',
   'men': 'MenData',
   'accessories': 'AccessoriesData',
 }
 
 const getCategoryDataLoader = {
-  '': getCategoryAllDataLoader,
-  'women': getCategoryWomenDataLoader,
-  'men': getCategoryMenDataLoader,
-  'accessories': getCategoryAccessoriesDataLoader,
+  'all': api.getCategoryAllDataLoader,
+  'women': api.getCategoryWomenDataLoader,
+  'men': api.getCategoryMenDataLoader,
+  'accessories': api.getCategoryAccessoriesDataLoader,
 }
 
 export const indexRoute = new Route({
@@ -146,7 +141,7 @@ export const productIDRoute = new Route({
   onLoad: async ({ params: { product_id } }) =>
     queryClient.getQueryData(['product', product_id]) ??
     queryClient.fetchQuery(['product', product_id], () =>
-      getProductDataLoader(product_id)
+      api.getProductDataLoader(product_id)
     ),
 });
 

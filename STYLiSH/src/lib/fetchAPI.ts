@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 import { Loader } from '@tanstack/react-loaders';
+import { ApiDataJson, ApiData } from '../types/apiDataType';
 
 // https://www.bezkoder.com/react-query-axios-typescript/
 
@@ -13,202 +14,238 @@ export const axiosClient = axios.create({
   },
 });
 
-export type Color = {
-  code: string;
-  name: string;
-}
+// export type Color = {
+//   code: string;
+//   name: string;
+// }
 
-export type ApiData = {
-  id: number;
-  product_id: number;
-  picture: string;
-  story: string;
-  category: string;
-  title: string;
-  price: number;
-  main_image: string;
-  colors: Color[];
-  note: string;
-  texture: string;
-  description: string;
-  wash: string;
-  place: string;
-  images: string[];
-  sizes: string[];
-}
+// export type ApiData = {
+//   id: number;
+//   product_id: number;
+//   picture: string;
+//   story: string;
+//   category: string;
+//   title: string;
+//   price: number;
+//   main_image: string;
+//   colors: Color[];
+//   note: string;
+//   texture: string;
+//   description: string;
+//   wash: string;
+//   place: string;
+//   images: string[];
+//   sizes: string[];
+// }
 
-export interface ApiDataJson {
-  data: ApiData;
-  next_paging: number;
-}
+// export interface ApiDataJson {
+//   data: ApiData[];
+//   next_paging: number;
+// }
 
 // // fetch version
-// export const findSliderFetch = async (): Promise<ApiData[]> =>
+// export const findSliderFetch = async (): Promise<{
+//   data: {
+//     data: ApiData[]
+//   }
+// }> =>
 //   fetch(`${BASE_URL}/marketing/campaigns`)
 //     .then((res) => res.json())
 //     .then((data) => data.data);
 
 // export const getSliderDataFetch = () => {
-//   const { data: SliderData } = useQuery<ApiData[]>(
+//   const { data: SliderData } = useQuery<{
+//     data: {
+//       data: ApiData[]
+//     }
+//   }>(
 //     ["SliderData"],
 //     findSliderFetch,
 //     {
-//       initialData: [],
+//       initialData: { data: { data: [] } },
 //     }
 //   );
 //   return SliderData;
 // };
 
 // axios version
-export const getSliderData = () => {
-  const { data: SliderData } = useQuery<ApiData[]>(
-    ['SliderData'],
-    async () => (await axiosClient.get('/marketing/campaigns')).data.data,
-    {
-      initialData: [],
+
+const api = {
+  async getProducts(category: string, paging: number) {
+    return await axiosClient.get(
+      `/products/${category}?paging=${paging}`,
+    ) as { data: ApiDataJson };
+  },
+  async searchProducts(keyword: string, paging: number) {
+    return await axiosClient.get(
+      `/products/search?keyword=${keyword}&paging=${paging}`,
+    ) as { data: ApiDataJson };
+  },
+  getSliderData() {
+    const { data: { data: SliderData } } = useQuery<{
+      data: {
+        data: ApiData[]
+      }
+    }>(
+      ['SliderData'],
+      async () => (await axiosClient.get('/marketing/campaigns')),
+      {
+        initialData: { data: { data: [] } },
+      }
+    );
+    return SliderData;
+  },
+  async getSliderDataLoader() {
+    return await axiosClient.get('/marketing/campaigns') as { data: { data: ApiData[] } };
+  },
+  async getSliderDataRouterLoader() {
+    return new Loader({
+      key: 'Slider',
+      loader: async () => {
+        return await axiosClient.get('/marketing/campaigns') as { data: { data: ApiData[] } };
+      }
+    })
+  },
+  findAll() {
+    const { data: HomeData } = useQuery<{
+      data: ApiDataJson
+    }>(
+      ['HomeData'],
+      async () => (await axiosClient.get('/products/all') as { data: ApiDataJson }),
+      {
+        initialData: {
+          data: {
+            data: [],
+            next_paging: -1,
+          } as ApiDataJson
+        },
+      }
+    );
+    return HomeData;
+  },
+  async getCategoryAllDataLoader() {
+    return await axiosClient.get('/products/all') as { data: ApiDataJson };
+  },
+  async getCategoryAllDataRouterLoader() {
+    return new Loader({
+      key: 'All',
+      loader: async () => {
+        return await axiosClient.get('/products/all') as { data: ApiDataJson };
+      }
+    })
+  },
+  findWomen() {
+    const { data: HomeData } = useQuery<{
+      data: ApiDataJson
+    }>(
+      ['homeData'],
+      async () => (await axiosClient.get('/products/women') as { data: ApiDataJson }),
+      {
+        initialData: {
+          data: {
+            data: [],
+            next_paging: -1,
+          } as ApiDataJson
+        },
+      }
+    );
+    return HomeData;
+  },
+  async getCategoryWomenDataLoader() {
+    return await axiosClient.get('/products/women') as { data: ApiDataJson };
+  },
+  getCategoryWomenDataRouterLoader: new Loader({
+    key: 'Women', loader: async () => {
+      return await axiosClient.get('/products/women') as { data: ApiDataJson };
     }
-  );
-  return SliderData;
-};
-
-export const getSliderDataLoader = async () => {
-  await new Promise((r) => setTimeout(r, 500));
-  return await axiosClient.get('/marketing/campaigns');
-};
-
-export const getSliderDataRouterLoader = new Loader({
-  key: 'Slider',
-  loader: async () => {
-    await new Promise((r) => setTimeout(r, 500));
-    return await axiosClient.get('/marketing/campaigns');
-  }
-})
-
-export const findAll = () => {
-  const { data: HomeData } = useQuery<ApiData[]>(
-    ['HomeData'],
-    async () => (await axiosClient.get('/products/all')),
-    {
-      initialData: [],
+  }),
+  findMen() {
+    const { data: HomeData } = useQuery<{
+      data: ApiDataJson
+    }>(
+      ['homeData'],
+      async () => (await axiosClient.get('/products/men') as { data: ApiDataJson }),
+      {
+        initialData: {
+          data: {
+            data: [],
+            next_paging: -1,
+          } as ApiDataJson
+        },
+      }
+    );
+    return HomeData;
+  },
+  async getCategoryMenDataLoader() {
+    return await axiosClient.get('/products/men') as { data: ApiDataJson };
+  },
+  getCategoryMenDataRouterLoader: new Loader({
+    key: 'Men', loader: async () => {
+      return await axiosClient.get('/products/men') as { data: ApiDataJson };
     }
-  );
-  return HomeData;
-};
-
-export const getCategoryAllDataLoader = async () => {
-  await new Promise((r) => setTimeout(r, 500));
-  return await axiosClient.get('/products/all');
-};
-
-export const getCategoryAllDataRouterLoader = new Loader({
-  key: 'All',
-  loader: async () => {
-    await new Promise((r) => setTimeout(r, 500));
-    return await axiosClient.get('/products/all');
-  }
-})
-
-export const findWomen = () => {
-  const { data: HomeData } = useQuery<ApiData[]>(
-    ['homeData'],
-    async () => (await axiosClient.get('/products/women')),
-    {
-      initialData: [],
+  }),
+  async findAccessories() {
+    const { data: HomeData } = useQuery<{
+      data: ApiDataJson
+    }>(
+      ['homeData'],
+      async () => (await axiosClient.get('/products/accessories') as { data: ApiDataJson }),
+      {
+        initialData: {
+          data: {
+            data: [],
+            next_paging: -1,
+          } as ApiDataJson
+        },
+      }
+    );
+    return HomeData;
+  },
+  async getCategoryAccessoriesDataLoader() {
+    return await axiosClient.get('/products/accessories') as { data: ApiDataJson };
+  },
+  getCategoryAccessoriesDataRouterLoader: new Loader({
+    key: 'Accessories', loader: async () => {
+      return await axiosClient.get('/products/accessories') as { data: ApiDataJson };
     }
-  );
-  return HomeData;
-};
-
-export const getCategoryWomenDataLoader = async () => {
-  await new Promise((r) => setTimeout(r, 500));
-  return await axiosClient.get('/products/women');
-};
-
-export const getCategoryWomenDataRouterLoader = new Loader({
-  key: 'Women', loader: async () => {
-    await new Promise((r) => setTimeout(r, 500));
-    return await axiosClient.get('/products/women');
-  }
-})
-
-export const findMen = () => {
-  const { data: HomeData } = useQuery<ApiData[]>(
-    ['homeData'],
-    async () => (await axiosClient.get('/products/men')),
-    {
-      initialData: [],
+  }),
+  findSearch(searchKeyWord: string) {
+    const { data: HomeData } = useQuery<{
+      data: ApiDataJson
+    }>(
+      ['SearchData'],
+      async () =>
+        (await axiosClient.get(`/products/search?keyword=${searchKeyWord}`) as { data: ApiDataJson }),
+      {
+        initialData: {
+          data: {
+            data: [],
+            next_paging: -1,
+          } as ApiDataJson
+        },
+      }
+    );
+    return HomeData;
+  },
+  async getSearchDataLoader(searchKeyWord: string) {
+    return await axiosClient.get(`/products/search?keyword=${searchKeyWord}`) as { data: ApiDataJson };
+  },
+  getSearchDataRouterLoader: new Loader({
+    key: "Search", loader: async (searchKeyWord: string) => {
+      return await axiosClient.get(`/products/search?keyword=${searchKeyWord}`) as { data: ApiDataJson };
     }
-  );
-  return HomeData;
-};
-
-export const getCategoryMenDataLoader = async () => {
-  await new Promise((r) => setTimeout(r, 500));
-  return await axiosClient.get('/products/men');
-};
-
-export const getCategoryMenDataRouterLoader = new Loader({
-  key: 'Men', loader: async () => {
-    await new Promise((r) => setTimeout(r, 500));
-    return await axiosClient.get('/products/men');
-  }
-})
-
-export const findAccessories = () => {
-  const { data: HomeData } = useQuery<ApiData[]>(
-    ['homeData'],
-    async () => (await axiosClient.get('/products/accessories')),
-    {
-      initialData: [],
+  }),
+  async getProduct(id: string) {
+    return await axiosClient.get(`/products/details?id=${id}`) as { data: { data: ApiData } };
+  },
+  async getProductDataLoader(product_id: string) {
+    return await axiosClient.get(`/products/details?id=${product_id}`) as { data: { data: ApiData } };
+  },
+  getProductDataRouterLoader: new Loader({
+    key: 'Product', loader: async (product_id: string) => {
+      return await axiosClient.get(`/products/details?id=${product_id}`) as { data: { data: ApiData } };
     }
-  );
-  return HomeData;
-};
+  })
+}
 
-export const getCategoryAccessoriesDataLoader = async () => {
-  await new Promise((r) => setTimeout(r, 500));
-  return await axiosClient.get('/products/accessories');
-};
-
-export const getCategoryAccessoriesDataRouterLoader = new Loader({
-  key: 'Accessories', loader: async () => {
-    await new Promise((r) => setTimeout(r, 500));
-    return await axiosClient.get('/products/accessories');
-  }
-})
-
-export const findSearch = (searchKeyWord: string) => {
-  const { data: HomeData } = useQuery<ApiData[]>(
-    ['SearchData'],
-    async () =>
-      (await axiosClient.get(`/products/search?keyword=${searchKeyWord}`)),
-    {
-      initialData: [],
-    }
-  );
-  return HomeData;
-};
-
-export const getSearchDataLoader = async (searchKeyWord: string) => {
-  await new Promise((r) => setTimeout(r, 500));
-  return await axiosClient.get(`/products/search?keyword=${searchKeyWord}`);
-};
-
-export const getSearchDataRouterLoader = new Loader({
-  key: "Search", loader: async (searchKeyWord: string) => {
-    await new Promise((r) => setTimeout(r, 500));
-    return await axiosClient.get(`/products/search?keyword=${searchKeyWord}`);
-  }
-})
-
-export const getProductDataLoader = async (product_id: string) => {
-  await new Promise((r) => setTimeout(r, 500));
-  return await axiosClient.get(`/products/details?id=${product_id}`);
-};
-
-export const getProductDataRouterLoader = new Loader({
-  key: 'Product', loader: async (product_id: string) => {
-    await new Promise((r) => setTimeout(r, 500));
-    return await axiosClient.get(`/products/details?id=${product_id}`);
-  }
-})
+export default api;

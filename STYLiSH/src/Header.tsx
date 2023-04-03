@@ -70,7 +70,11 @@ const Header = ({ className }: Props) => {
           </div>
 
           <div className='top-nav-bar-desktop-profile-box'>
-            <Link to='profile' search={{}} className='top-nav-bar-desktop-profile-link'>
+            <Link
+              // to='profile'
+              search={{}}
+              className='top-nav-bar-desktop-profile-link'
+            >
               <img
                 src='https://cdn.discordapp.com/attachments/1001702231785099304/1007154394904666112/profile.png'
                 alt=''

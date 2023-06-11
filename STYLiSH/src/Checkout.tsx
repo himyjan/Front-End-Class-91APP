@@ -266,7 +266,7 @@ const Checkout = ({ className }: Props) => {
           <div className="checkout-page-buyer-info-list" id="">
             <form
               onSubmit={handleSubmit((data) => {
-                console.log(data);
+                // console.log(data);
               })}
               className="checkout-page-buyer-info"
               id=""

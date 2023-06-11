@@ -1,14 +1,15 @@
 import Props from './types/styleComponentsType';
 import { Link } from '@tanstack/react-router';
-import api from './lib/fetchAPI';
+import api from './utils/api';
 import { useInterval } from 'usehooks-ts';
 import { useState, useEffect } from 'react';
 import { Slides, Dot } from './styledComponents/Carousel.style';
+import { CarouselDetails, MarketingCampaigns } from './types/marketingType';
 
 const Carousel = ({ className }: Props) => {
   const [sliderIndex, setSliderIndex] = useState(0);
   const [pause, setPause] = useState(false);
-  const sliderData = api.getSliderData().data;
+  const sliderData = api.getSliderData().data?.data.data ?? [];
 
   useEffect(() => {
     sliderData.length > 0
@@ -77,6 +78,7 @@ const Carousel = ({ className }: Props) => {
               ? sliderData.map((item, index) => {
                 return (
                   <Dot
+                    key={item.id}
                     data-index={index}
                     data-id={item.id}
                     data-product_id={item.product_id}

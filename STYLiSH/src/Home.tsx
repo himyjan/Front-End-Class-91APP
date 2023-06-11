@@ -1,11 +1,12 @@
 import Props from './types/styleComponentsType';
 import { Link, useSearch } from '@tanstack/react-router';
+import { useInfiniteQuery } from '@tanstack/react-query';
 import { ProductColor } from './styledComponents/Home.style';
 import { getQueryClientFetchData, rootRoute, indexRoute } from './index';
-import { isLoadingStateContext } from './lib/isLoadingStateCreateContext';
 import { MutableRefObject, useContext, useEffect, useReducer, useRef, useState } from 'react';
-import { ApiData, ApiDataJson } from './types/apiDataType';
-import api from './lib/fetchAPI';
+import { useInView } from 'react-intersection-observer';
+import api from './utils/api';
+import { ProductsSearch, ProductDetailsData, ProductDetails } from './types/productType';
 
 const useIntersectionObserver = (ref: MutableRefObject<undefined>, options: {}) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -29,87 +30,68 @@ const useIntersectionObserver = (ref: MutableRefObject<undefined>, options: {}) 
 
 const Home = ({ className }: Props) => {
   const { category, keyword } = useSearch({ from: indexRoute.id });
-  const [products, setProducts] = useState<ApiData[]>([]);
+  const getProducts = async ({ pageParam = { search: 'all', paging: 0 } }) => {
+    const response = ['all', 'men', 'women', 'acccessories'].includes(pageParam.search) ?
+      await fetch(
+        `https://api.appworks-school.tw/api/1.0/products/${pageParam.search}?paging=${pageParam.paging ?? 0}`
+      )
+      : await fetch(
+        `https://api.appworks-school.tw/api/1.0/products/search?keyword=${pageParam.search}&paging=${pageParam.paging ?? 0}`
+      );
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const data = await response.json() as ProductsSearch
+    data['search'] = pageParam.search;
+    return data;
+  }
+  const {
+    data,
+    error,
+    fetchNextPage,
+    hasNextPage,
+    isFetching,
+    isFetchingNextPage,
+    status,
+  } = useInfiniteQuery({
+    queryKey: ['product'],
+    queryFn: getProducts,
+    getNextPageParam: (lastPage) => (lastPage.next_paging === undefined ? undefined : { search: lastPage.search ?? 'all', paging: lastPage.next_paging ?? 0 }),
+    defaultPageParam: { search: keyword !== '' ? keyword : category, paging: 0 }
+  })
+  const [products, setProducts] = useState<ProductDetailsData[]>(data?.pages[0].data ?? []);
   const [isLoading, setIsLoading] = useState(false);
-  const [savedCategory, setSavedCategory] = useState(category);
   const [nextPaging, setNextPaging] = useState(0);
-  const isFetching = useRef(false);
   const [, forceUpdate] = useReducer((x) => x + 1, 0);
   // let params = new URLSearchParams(document.rootRoute.search);
   // let category = params.get("category");
   // console.log(category);
 
-  const setApiJsonByMode = () => {
-    if (category === 'all') {
-      return (getQueryClientFetchData(['AllData']) as { data: ApiDataJson }).data;
-    } else if (category == 'women') {
-      return (getQueryClientFetchData(['WomenData']) as { data: ApiDataJson }).data;
-    } else if (category == 'men') {
-      return (getQueryClientFetchData(['MenData']) as { data: ApiDataJson }).data;
-    } else if (category == 'accessories') {
-      return (getQueryClientFetchData(['AccessoriesData']) as { data: ApiDataJson }).data;
-    }
-    // else if (category == 'keyword') {
-    //   return getQueryClientFetchData(['SearchData']) as { data: ApiDataJson };
-    // }
-  };
-
-  let apiJson: ApiDataJson = setApiJsonByMode() as ApiDataJson;
-
-  async function fetchProducts() {
-    isFetching.current = true;
-    setIsLoading(true);
-
-    const loading = async (apiJson: ApiDataJson) => {
-      const response: ApiDataJson = await apiJson;
-      if (nextPaging === 0 || savedCategory !== category || keyword) {
-        setProducts(response.data);
-        setSavedCategory(category);
-      } else if (nextPaging !== undefined) {
-        setProducts((prev) => [...prev, ...response.data]);
-      }
-
-      setNextPaging(response.next_paging);
-      isFetching.current = false;
-      setIsLoading(false);
-    };
-
-    if (keyword != '') {
-      setNextPaging(0);
-      loading((await api.searchProducts(keyword, 0)).data);
-    } else {
-      if (savedCategory !== category) {
-        setNextPaging(0);
-        loading((await api.getProducts(category, 0)).data);
-      } else {
-        loading((await api.getProducts(category, nextPaging)).data);
-      }
-    }
-  }
-
   useEffect(() => {
-    fetchProducts();
+    fetchNextPage();
   }, [keyword, category]);
 
-  const ref = useRef();
-  const onScreen = useIntersectionObserver(ref, { threshold: 0.5 });
+  // const ref = useRef();
+  // const onScreen = useIntersectionObserver(ref, { threshold: 0.5 });
+  const { ref, inView, entry } = useInView({ threshold: 0.5 });
 
   useEffect(() => {
-    if (!onScreen) return;
+    if (!inView) return;
     if (nextPaging === undefined) return;
-    if (isFetching.current) return;
+    if (isFetching) return;
 
-    fetchProducts();
-  }, [onScreen]);
+    fetchNextPage();
+    setProducts(data?.pages[0].data ?? [])
+  }, [inView, data?.pages[0].data]);
 
   return (
     <div className={className}>
       <div>
         <div className='main-page-product-list-box'>
-          {products.length > 0
+          {products
             ? products.map((item, index) => {
               return (
-                <div className='product' data-id={item.id}>
+                <div className='product' data-id={item.id} key={item.id}>
                   <Link to={"/product/$product_id"} params={{ product_id: `${item.id}` }}>
                     <img
                       src={item.main_image}

@@ -46,6 +46,7 @@ const Header = ({ className }: Props) => {
             placeholder=''
             title='search-bar'
             value=''
+            onChange={(e) => e.target.value}
             className='top-nav-bar-desktop-search-bar'
           />
 
@@ -88,6 +89,7 @@ const Header = ({ className }: Props) => {
             placeholder=''
             title='search-bar'
             value=''
+            onChange={(e) => e.target.value}
             className='top-nav-bar-mobile-search'
           />
         </div>

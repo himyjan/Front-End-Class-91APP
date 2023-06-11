@@ -20,22 +20,17 @@ import Carousel from './styledComponents/Carousel.style';
 import Home from './styledComponents/Home.style';
 import Product from './styledComponents/Product.style';
 import Checkout from './styledComponents/Checkout.style';
-import api from './lib/fetchAPI';
-import { ApiDataJson } from './types/apiDataType';
+import api from './utils/api';
 import { z } from 'zod';
 
 export const queryClient = new QueryClient();
 export const loaderClient = new LoaderClient({
   getLoaders: () => ({
-    getSliderDataLoader: api.getSliderDataLoader,
-    getSearchDataLoader: api.getSearchDataLoader,
-    getCategoryAllDataRouterLoader: api.getCategoryAllDataRouterLoader,
-    getCategoryWomenDataRouterLoader: api.getCategoryWomenDataRouterLoader,
-    getCategoryMenDataRouterLoader: api.getCategoryMenDataRouterLoader,
-    getCategoryAccessoriesDataRouterLoader: api.getCategoryAccessoriesDataRouterLoader,
-    getProductDataRouterLoader: api.getProductDataRouterLoader,
+    getSliderDataRouterLoader: api.getSliderDataRouterLoader,
     getSearchDataRouterLoader: api.getSearchDataRouterLoader,
-  } as any),
+    getCategoryAllDataRouterLoader: api.getProductsDataRouterLoader,
+    getProductDataRouterLoader: api.getProductDataRouterLoader,
+  }),
 });
 
 declare module '@tanstack/react-loaders' {
@@ -70,20 +65,6 @@ const productSearchSchema = z.object({
   keyword: z.string().catch(''),
 })
 
-const queryClientKey = {
-  'all': 'AllData',
-  'women': 'WomenData',
-  'men': 'MenData',
-  'accessories': 'AccessoriesData',
-}
-
-const getCategoryDataLoader = {
-  'all': api.getCategoryAllDataLoader,
-  'women': api.getCategoryWomenDataLoader,
-  'men': api.getCategoryMenDataLoader,
-  'accessories': api.getCategoryAccessoriesDataLoader,
-}
-
 export const indexRoute = new Route({
   getParentRoute: () => rootRoute,
   id: 'home',
@@ -99,12 +80,6 @@ export const indexRoute = new Route({
     );
   },
   errorComponent: () => 'Oh crap',
-  onLoad:
-    async ({ search }) =>
-      queryClient.getQueryData([queryClientKey[search.category]]) ??
-      queryClient
-        .fetchQuery([queryClientKey[search.category]], getCategoryDataLoader[search.category])
-        .then((res) => res.data),
 });
 
 // export const indexSearchRoute = new Route({
@@ -140,9 +115,10 @@ export const productIDRoute = new Route({
   errorComponent: () => 'Oh crap',
   onLoad: async ({ params: { product_id } }) =>
     queryClient.getQueryData(['product', product_id]) ??
-    queryClient.fetchQuery(['product', product_id], () =>
-      api.getProductDataLoader(product_id)
-    ),
+    queryClient.fetchQuery({
+      queryKey: ['product', product_id], queryFn: () =>
+        api.getProductDataLoader(product_id)
+    }),
 });
 
 export const checkoutRoute = new Route({
@@ -207,7 +183,7 @@ root.render(
         <RouterProvider router={router} />
         {process.env.NODE_ENV === 'production'
           ? null
-          : <TanStackRouterDevtools router={router} position='bottom-right' />}
+          : <TanStackRouterDevtools router={router} position='bottom-left' />}
       </QueryClientProvider>
     </LoaderClientProvider>
   </StrictMode>

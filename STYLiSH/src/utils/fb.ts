@@ -39,7 +39,7 @@ const fb = {
       appId: '700590737403665',
       cookie: true,
       xfbml: true,
-      version: 'v10.0',
+      version: 'v17.0',
     });
   },
   getLoginStatus() {

@@ -13,7 +13,7 @@
     "@tanstack/react-loaders": "^0.0.1-beta.89",
     "@tanstack/react-query": "^5.0.0-alpha.71",
     "@tanstack/react-query-devtools": "^5.0.0-alpha.72",
-    "@tanstack/react-router": "^0.0.1-beta.83",
+    "@tanstack/react-router": "^1.0.0",
     "@tanstack/react-router-devtools": "^0.0.1-beta.83",
     "axios": "^1.4.0",
     "deepmerge-ts": "^5.1.0",

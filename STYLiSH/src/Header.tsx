@@ -72,7 +72,7 @@ const Header = ({ className }: Props) => {
 
           <div className='top-nav-bar-desktop-profile-box'>
             <Link
-              // to='profile'
+              to='profile'
               search={{}}
               className='top-nav-bar-desktop-profile-link'
             >

@@ -61,8 +61,8 @@ export const getQueryClientFetchData = (key: string[]) => {
 };
 
 const productSearchSchema = z.object({
-  category: z.enum(['all', 'women', 'men', 'accessories']).catch('all'),
-  keyword: z.string().catch(''),
+  category: z.enum(['all', 'women', 'men', 'accessories']).catch('all').optional(),
+  keyword: z.string().catch('').optional(),
 })
 
 export const indexRoute = new Route({
@@ -113,7 +113,7 @@ export const productIDRoute = new Route({
     );
   },
   errorComponent: () => 'Oh crap',
-  onLoad: async ({ params: { product_id } }) =>
+  loader: async ({ params: { product_id } }: { params: { product_id: string } }) =>
     queryClient.getQueryData(['product', product_id]) ??
     queryClient.fetchQuery({
       queryKey: ['product', product_id], queryFn: () =>

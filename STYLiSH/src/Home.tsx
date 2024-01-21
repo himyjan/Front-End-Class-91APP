@@ -56,7 +56,7 @@ const Home = ({ className }: Props) => {
   } = useInfiniteQuery({
     queryKey: ['product'],
     queryFn: getProducts,
-    getNextPageParam: (lastPage) => (lastPage.next_paging === undefined ? undefined : { search: lastPage.search ?? 'all', paging: lastPage.next_paging ?? 0 }),
+    getNextPageParam: (lastPage) => ((lastPage as ProductsSearch).next_paging === undefined ? undefined : { search: (lastPage as ProductsSearch).search ?? 'all', paging: (lastPage as ProductsSearch).next_paging ?? 0 }),
     defaultPageParam: { search: keyword !== '' ? keyword : category, paging: 0 }
   })
   const [products, setProducts] = useState<ProductDetailsData[]>(data?.pages[0].data ?? []);

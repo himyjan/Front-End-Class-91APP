@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
-import { Loader } from '@tanstack/react-loaders';
 import type { CarouselDetails, MarketingCampaigns } from "../types/marketingType";
 import type { ProductDetails, ProductDetailsData, ProductsSearch } from "../types/productType";
 import type { profile } from "../types/profileType";

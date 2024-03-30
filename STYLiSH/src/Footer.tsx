@@ -189,7 +189,7 @@ const Footer = ({ className }: Props) => {
       </div>
 
       <div className='bottom-nav-bar-mobile-stick'>
-        <Link to={'checkout'} className='bottom-nav-bar-mobile-stick-cart'>
+        <Link to={'/checkout'} className='bottom-nav-bar-mobile-stick-cart'>
           <div className='bottom-nav-bar-mobile-stick-shopping-cart'>
             <div className='bottom-nav-bar-mobile-stick-shopping-cart-image-box'>
               <img
@@ -210,7 +210,7 @@ const Footer = ({ className }: Props) => {
           </div>
         </Link>
         <Link
-          to='profile'
+          to='/profile'
           className='bottom-nav-bar-mobile-stick-shopping-profile'
         >
           <div className='bottom-nav-bar-mobile-stick-shopping-profile-image-box'>

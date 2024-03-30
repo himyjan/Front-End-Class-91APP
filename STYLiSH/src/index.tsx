@@ -2,10 +2,6 @@ import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import {
-  LoaderClient,
-  LoaderClientProvider,
-} from '@tanstack/react-loaders'
-import {
   Outlet,
   RouterProvider,
   Router,
@@ -24,24 +20,6 @@ import api from './utils/api';
 import { z } from 'zod';
 
 export const queryClient = new QueryClient();
-export const loaderClient = new LoaderClient({
-  getLoaders: () => ({
-    getSliderDataRouterLoader: api.getSliderDataRouterLoader,
-    getSearchDataRouterLoader: api.getSearchDataRouterLoader,
-    getCategoryAllDataRouterLoader: api.getProductsDataRouterLoader,
-    getProductDataRouterLoader: api.getProductDataRouterLoader,
-  }),
-});
-
-declare module '@tanstack/react-loaders' {
-  interface Register {
-    loaderClient: typeof loaderClient
-  }
-}
-
-type RouterContext = {
-  loaderClient: typeof loaderClient
-}
 
 export const rootRoute = new RootRoute({
   component: () => {
@@ -175,16 +153,14 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <StrictMode>
-    <LoaderClientProvider loaderClient={loaderClient}>
-      <QueryClientProvider client={queryClient}>
-        {process.env.NODE_ENV === 'production'
-          ? null
-          : <ReactQueryDevtools initialIsOpen={false} />}
-        <RouterProvider router={router} />
-        {process.env.NODE_ENV === 'production'
-          ? null
-          : <TanStackRouterDevtools router={router} position='bottom-left' />}
-      </QueryClientProvider>
-    </LoaderClientProvider>
+    <QueryClientProvider client={queryClient}>
+      {process.env.NODE_ENV === 'production'
+        ? null
+        : <ReactQueryDevtools initialIsOpen={false} />}
+      <RouterProvider router={router} />
+      {process.env.NODE_ENV === 'production'
+        ? null
+        : <TanStackRouterDevtools router={router} position='bottom-left' />}
+    </QueryClientProvider>
   </StrictMode>
 );

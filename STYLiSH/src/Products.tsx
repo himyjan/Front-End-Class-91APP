@@ -1,8 +1,8 @@
 import Props from './types/styleComponentsType';
 import { Link, useSearch } from '@tanstack/react-router';
 import { useInfiniteQuery } from '@tanstack/react-query';
-import { ProductColor } from './styledComponents/Home.style';
-import { getQueryClientFetchData, rootRoute, indexRoute } from './index';
+import { ProductColor } from './styledComponents/Products.style';
+import { getQueryClientFetchData, rootRoute, indexRoute } from './app';
 import { MutableRefObject, useContext, useEffect, useReducer, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import api from './utils/api';
@@ -28,7 +28,7 @@ const useIntersectionObserver = (ref: MutableRefObject<undefined>, options: {}) 
   return isIntersecting;
 };
 
-const Home = ({ className }: Props) => {
+const Index = ({ className }: Props) => {
   const { category, keyword } = useSearch({ from: indexRoute.id });
   const getProducts = async ({ pageParam = { search: 'all', paging: 0 } }) => {
     const response = ['all', 'men', 'women', 'acccessories'].includes(pageParam.search) ?
@@ -215,4 +215,4 @@ const Home = ({ className }: Props) => {
   );
 };
 
-export default Home;
+export default Index;

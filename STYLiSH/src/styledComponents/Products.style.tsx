@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import mediaQuery from "./mediaQuery";
-import Home from "../Home";
+import Products from "../Products";
 interface colorProps {
   color: string;
 }
@@ -23,7 +23,7 @@ export const ProductColor = styled.div<colorProps>`
     `}
 `;
 
-const HomeStyledComponents = styled(Home)`
+const ProductsStyledComponents = styled(Products)`
   .main-page-product-list-box {
     display: flex;
     flex-wrap: wrap;
@@ -191,4 +191,4 @@ const HomeStyledComponents = styled(Home)`
   }
 `;
 
-export default HomeStyledComponents;
+export default ProductsStyledComponents;

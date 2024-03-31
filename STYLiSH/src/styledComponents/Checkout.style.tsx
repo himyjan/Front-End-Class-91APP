@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import mediaQuery from "./mediaQuery";
-import Checkout from "../Checkout";
+import Checkout from "../routes/Checkout.lazy";
 
 const CheckoutStyledComponents = styled(Checkout)`
   .checkout-page-checkout-box {

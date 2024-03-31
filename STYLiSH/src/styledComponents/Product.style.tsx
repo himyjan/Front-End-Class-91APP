@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import mediaQuery from "./mediaQuery";
-import Product from "../Product";
+import Product from "../routes/Product.lazy";
 
 interface colorBoxProps {
   selected: boolean;

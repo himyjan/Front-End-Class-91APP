@@ -1,9 +1,9 @@
-import Props from './types/styleComponentsType';
-import { getQueryClientFetchData, productIDRoute } from './index';
-import { useParams } from '@tanstack/react-router';
+import Props from '../types/styleComponentsType';
+import { getQueryClientFetchData, productIDRoute } from '../app';
+import { createLazyFileRoute, useParams } from '@tanstack/react-router';
 import { useLocalStorage } from 'usehooks-ts';
-import { ColorBox, Color, Size } from './styledComponents/Product.style';
-import { ProductDetailsData, Color as ColorType } from './types/productType';
+import { ColorBox, Color, Size } from '../styledComponents/Product.style';
+import { ProductDetailsData, Color as ColorType } from '../types/productType';
 
 const Product = ({ className }: Props) => {
   const {
@@ -188,4 +188,6 @@ const Product = ({ className }: Props) => {
   );
 };
 
-export default Product;
+export const Route = createLazyFileRoute('/Product')({
+  component: Product,
+})

@@ -14,10 +14,10 @@ export const Route = createRootRoute({
       <GlobalStyle />
       {process.env.NODE_ENV === 'production'
         ? null
-        : <TanStackRouterDevtools position='bottom-left' />}
+        : <TanStackRouterDevtools buttonPosition-='bottom-left' position='bottom-left' />}
       {process.env.NODE_ENV === 'production'
         ? null
-        : <ReactQueryDevtools position='right' />}
+        : <ReactQueryDevtools buttonPosition='bottom-right' position='right' />}
     </>
   ),
 })

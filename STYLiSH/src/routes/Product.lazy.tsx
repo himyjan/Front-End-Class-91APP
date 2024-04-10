@@ -1,14 +1,15 @@
 import Props from '../types/styleComponentsType';
-import { getQueryClientFetchData, productIDRoute } from '../app';
-import { createLazyFileRoute, useParams } from '@tanstack/react-router';
+import { getQueryClientFetchData } from '../app';
+import { createFileRoute } from '@tanstack/react-router';
 import { useLocalStorage } from 'usehooks-ts';
 import { ColorBox, Color, Size } from '../styledComponents/Product.style';
 import { ProductDetailsData, Color as ColorType } from '../types/productType';
+import api from '../utils/api';
 
-const Product = ({ className }: Props) => {
+export const Product = ({ className }: Props) => {
   const {
     product_id
-  } = useParams({ from: productIDRoute.id });
+  } = Route.useParams();
 
   const productJson = (getQueryClientFetchData(['product', `${product_id}`]) as { data: { data: ProductDetailsData } }).data.data;
   const [shoppingCartList, setShoppingCartList] = useLocalStorage(
@@ -188,6 +189,9 @@ const Product = ({ className }: Props) => {
   );
 };
 
-export const Route = createLazyFileRoute('/Product')({
+export const ProductRoute = createFileRoute('/product')({
+  loader: async ({ params }) => {
+    return api.getProductDataRouterLoader(params.product_id)
+  },
   component: Product,
 })

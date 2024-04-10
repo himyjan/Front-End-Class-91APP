@@ -148,11 +148,6 @@ const api = {
   async getSliderDataLoader() {
     return await axiosClient.get('/marketing/campaigns') as { data: { data: CarouselDetails[] } };
   },
-  getSliderDataRouterLoader: new Loader({
-    fn: async () => {
-      return await axiosClient.get('/marketing/campaigns') as { data: { data: CarouselDetails[] } };
-    }
-  }),
   getProducts() {
     return useQuery<{
       data: ProductDetailsData
@@ -164,11 +159,6 @@ const api = {
   async getProductsDataLoader() {
     return await axiosClient.get('/products/all') as { data: ProductDetailsData };
   },
-  getProductsDataRouterLoader: new Loader({
-    fn: async () => {
-      return await axiosClient.get('/products/all') as { data: ProductDetailsData };
-    }
-  }),
   findSearch(searchKeyWord: string) {
     return useQuery<{
       data: ProductDetailsData
@@ -181,22 +171,12 @@ const api = {
   async getSearchDataLoader(searchKeyWord: string) {
     return await axiosClient.get(`/products/search?keyword=${searchKeyWord}`) as { data: ProductDetailsData };
   },
-  getSearchDataRouterLoader: new Loader({
-    fn: async (searchKeyWord: string) => {
-      return await axiosClient.get(`/products/search?keyword=${searchKeyWord}`) as { data: ProductDetailsData };
-    }
-  }),
   async getProduct(id: string) {
     return await axiosClient.get(`/products/details?id=${id}`) as { data: { data: ProductDetailsData } };
   },
   async getProductDataLoader(product_id: string) {
     return await axiosClient.get(`/products/details?id=${product_id}`) as { data: { data: ProductDetailsData } };
-  },
-  getProductDataRouterLoader: new Loader({
-    fn: async (product_id: string) => {
-      return await axiosClient.get(`/products/details?id=${product_id}`) as { data: { data: ProductDetailsData } };
-    }
-  })
+  }
 };
 
 export default api;

@@ -1,8 +1,8 @@
 import { createRootRoute, Outlet } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import Header from '../Header'
-import Footer from '../Footer'
+import Header from '../styledComponents/Header.style';
+import Footer from '../styledComponents/Footer.style';
 import GlobalStyle from '../styledComponents/index.style'
 
 export const Route = createRootRoute({

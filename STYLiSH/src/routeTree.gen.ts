@@ -13,43 +13,43 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as IndexImport } from './routes/index'
 
 // Create Virtual Routes
 
-const ProductLazyImport = createFileRoute('/Product')()
-const IndexLazyImport = createFileRoute('/Index')()
-const CheckoutLazyImport = createFileRoute('/Checkout')()
+const ProductLazyImport = createFileRoute('/product')()
+const CheckoutLazyImport = createFileRoute('/checkout')()
 
 // Create/Update Routes
 
 const ProductLazyRoute = ProductLazyImport.update({
-  path: '/Product',
+  path: '/product',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/Product.lazy').then((d) => d.Route))
-
-const IndexLazyRoute = IndexLazyImport.update({
-  path: '/Index',
-  getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/Index.lazy').then((d) => d.Route))
+} as any).lazy(() => import('./routes/product.lazy').then((d) => d.Route))
 
 const CheckoutLazyRoute = CheckoutLazyImport.update({
-  path: '/Checkout',
+  path: '/checkout',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/Checkout.lazy').then((d) => d.Route))
+} as any).lazy(() => import('./routes/checkout.lazy').then((d) => d.Route))
+
+const IndexRoute = IndexImport.update({
+  path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
 
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/Checkout': {
+    '/': {
+      preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/checkout': {
       preLoaderRoute: typeof CheckoutLazyImport
       parentRoute: typeof rootRoute
     }
-    '/Index': {
-      preLoaderRoute: typeof IndexLazyImport
-      parentRoute: typeof rootRoute
-    }
-    '/Product': {
+    '/product': {
       preLoaderRoute: typeof ProductLazyImport
       parentRoute: typeof rootRoute
     }
@@ -59,8 +59,8 @@ declare module '@tanstack/react-router' {
 // Create and export the route tree
 
 export const routeTree = rootRoute.addChildren([
+  IndexRoute,
   CheckoutLazyRoute,
-  IndexLazyRoute,
   ProductLazyRoute,
 ])
 

@@ -2,11 +2,12 @@ import Props from './types/styleComponentsType';
 import { Link, useSearch } from '@tanstack/react-router';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { ProductColor } from './styledComponents/Products.style';
-import { getQueryClientFetchData, rootRoute, indexRoute } from './app';
+import { getQueryClientFetchData } from './app';
 import { MutableRefObject, useContext, useEffect, useReducer, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import api from './utils/api';
 import { ProductsSearch, ProductDetailsData, ProductDetails } from './types/productType';
+import { Route } from './routes';
 
 const useIntersectionObserver = (ref: MutableRefObject<undefined>, options: {}) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -29,7 +30,7 @@ const useIntersectionObserver = (ref: MutableRefObject<undefined>, options: {}) 
 };
 
 const Index = ({ className }: Props) => {
-  const { category, keyword } = useSearch({ from: indexRoute.id });
+  const { category, keyword } = Route.useSearch();
   const getProducts = async ({ pageParam = { search: 'all', paging: 0 } }) => {
     const response = ['all', 'men', 'women', 'acccessories'].includes(pageParam.search) ?
       await fetch(

@@ -1,8 +1,6 @@
-import Props from "../types/styleComponentsType";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
-import { createLazyFileRoute } from '@tanstack/react-router';
+import { createLazyFileRoute } from '@tanstack/react-router'
+import { z } from 'zod';
+import Props from '../types/styleComponentsType';
 
 const schema = z.object({
   name: z.string().min(1, { message: "此欄位必填" }),
@@ -19,7 +17,7 @@ const schema = z.object({
   time: z.string().min(1, { message: "此欄位必選" }),
 });
 
-const Checkout = ({ className }: Props) => {
+export const Checkout = ({ className }: Props) => {
   const {
     register,
     handleSubmit,
@@ -540,6 +538,6 @@ const Checkout = ({ className }: Props) => {
   );
 };
 
-export const Route = createLazyFileRoute('/Checkout')({
+export const CheckoutRoute = createLazyFileRoute('/checkout')({
   component: Checkout,
 })

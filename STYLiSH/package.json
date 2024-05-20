@@ -16,7 +16,7 @@
     "@tanstack/react-router": "^1.26.18",
     "@tanstack/router-devtools": "^1.26.18",
     "axios": "^1.6.8",
-    "deepmerge-ts": "^5.1.0",
+    "deepmerge-ts": "^7.0.0",
     "react": "next",
     "react-dom": "next",
     "react-hook-form": "^7.51.2",

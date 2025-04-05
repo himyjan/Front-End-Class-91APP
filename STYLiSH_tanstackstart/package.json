@@ -9,7 +9,7 @@
     "start": "vinxi start"
   },
   "dependencies": {
-    "@hookform/resolvers": "^4.0.0",
+    "@hookform/resolvers": "^5.0.0",
     "@tanstack/react-router": "^1.76.1",
     "@tanstack/router-devtools": "^1.76.1",
     "@tanstack/start": "^1.76.1",

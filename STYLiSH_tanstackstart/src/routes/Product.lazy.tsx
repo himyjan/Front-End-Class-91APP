@@ -6,7 +6,7 @@ import { ColorBox, Color, Size } from '../styledComponents/Product.style';
 import { type ProductDetailsData, type Color as ColorType } from '../types/productType';
 import api from '../utils/api';
 
-export const Product = ({ className }: Props) => {
+const Product = ({ className }: Props) => {
   const {
     product_id
   } = Route.useParams();
@@ -189,9 +189,4 @@ export const Product = ({ className }: Props) => {
   );
 };
 
-export const ProductRoute = createLazyFileRoute('/Product')({
-  loader: async ({ params }) => {
-    return api.getProductDataRouterLoader(params.product_id)
-  },
-  component: Product,
-})
+export default Product;

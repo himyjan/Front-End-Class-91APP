@@ -19,7 +19,7 @@ const schema = z.object({
   time: z.string().min(1, { message: "此欄位必選" }),
 });
 
-export const Checkout = ({ className }: Props) => {
+const Checkout = ({ className }: Props) => {
   const {
     register,
     handleSubmit,
@@ -540,6 +540,4 @@ export const Checkout = ({ className }: Props) => {
   );
 };
 
-export const CheckoutRoute = createLazyFileRoute('/Checkout')({
-  component: Checkout,
-})
+export default Checkout;

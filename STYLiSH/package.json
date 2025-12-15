@@ -32,6 +32,6 @@
     "@vitejs/plugin-react-swc": "^4.0.0",
     "typescript": "^5.4.4",
     "vite": "^7.0.0",
-    "vite-tsconfig-paths": "^5.0.0"
+    "vite-tsconfig-paths": "^6.0.0"
   }
 }
